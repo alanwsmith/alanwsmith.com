@@ -17,7 +17,7 @@ export function getAllPosts() {
     return {
       ...data,
       slug,
-      permalink: `/posts/${slug}`,
+      permalink: `/${slug}`,
     }
   })
 }
