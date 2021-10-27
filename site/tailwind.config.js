@@ -10,5 +10,15 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      const extendUnderline = {
+        '.underline': {
+          textDecoration: 'underline',
+          'text-decoration-color': '#5675a8',
+        },
+      }
+      addUtilities(extendUnderline)
+    },
+  ],
 }
