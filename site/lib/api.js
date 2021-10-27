@@ -4,8 +4,6 @@ import matter from 'gray-matter'
 import { remark } from 'remark'
 import html from 'remark-html'
 
-import { MDXProvider } from '@mdx-js/react'
-
 export function getAllPosts() {
   const postsDirectory = path.join(process.cwd(), '_posts')
   const filenames = fs.readdirSync(postsDirectory)
@@ -31,6 +29,7 @@ export function getPostBySlug(slug) {
   )
   const { content, data } = matter(file)
   const body = remark().use(html).processSync(content).toString()
+  // const body = content
   return {
     ...data,
     body,

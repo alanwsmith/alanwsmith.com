@@ -1,6 +1,8 @@
 import { getAllPosts, getPostBySlug } from '../lib/api'
 import Head from 'next/head'
 import LayoutMain from '../components/LayoutMain.js'
+import { serialize } from 'next-mdx-remote/serialize'
+import { MDXRemote } from 'next-mdx-remote'
 
 export default function Post({ post }) {
   return (
