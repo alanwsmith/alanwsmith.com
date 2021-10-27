@@ -15,7 +15,7 @@ export default function Post({ post }) {
       </Head>
       <LayoutMain
         content={
-          <div class="max-w-prose">
+          <div className="max-w-prose">
             <div dangerouslySetInnerHTML={{ __html: post.body }} />
           </div>
         }
