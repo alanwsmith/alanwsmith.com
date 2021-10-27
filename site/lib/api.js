@@ -4,6 +4,8 @@ import matter from 'gray-matter'
 import { remark } from 'remark'
 import html from 'remark-html'
 
+import { MDXProvider } from '@mdx-js/react'
+
 export function getAllPosts() {
   const postsDirectory = path.join(process.cwd(), '_posts')
   const filenames = fs.readdirSync(postsDirectory)
@@ -13,7 +15,7 @@ export function getAllPosts() {
       'utf8'
     )
     const { data } = matter(file)
-    const slug = filename.replace(/\.md$/, '')
+    const slug = filename.replace(/\.md$/, '').replace(/\.mdx$/, '')
     return {
       ...data,
       slug,
@@ -24,7 +26,7 @@ export function getAllPosts() {
 
 export function getPostBySlug(slug) {
   const file = fs.readFileSync(
-    path.join(process.cwd(), '_posts', `${slug}.md`),
+    path.join(process.cwd(), '_posts', `${slug}.mdx`),
     'utf8'
   )
   const { content, data } = matter(file)
