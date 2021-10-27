@@ -16,6 +16,7 @@ export default function Post({ post }) {
       <LayoutMain
         content={
           <div className="max-w-prose">
+            <h3 className="text-blue-600 text-3xl pb-3">{post.title}</h3>
             <div dangerouslySetInnerHTML={{ __html: post.body }} />
           </div>
         }
