@@ -11,7 +11,6 @@ export default function Posts({ posts }) {
     <LayoutMain
       content={
         <div>
-          <h1>Posts</h1>This is it{' '}
           {posts.map((post) => {
             return (
               <div key={post.permalink}>
