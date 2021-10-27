@@ -1,0 +1,19 @@
+---
+category: Live Coding
+date: '2020-11-19'
+draft: true
+slug: /stream-notes-2020-11-19
+tags: []
+title: 'Stream Notes for November 19, 2020 #LiveCoding'
+type: post
+---
+
+
+### Notes
+
+More tweaks to my snake_case_renamer and making the Cobra_Case_Renamer. Added tests to both that I missed the first time around that keep files from overwriting if there's a name collision.
+
+
+### Links From The Stream
+
+Oops, I erased the pages before picking up the links.

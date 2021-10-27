@@ -1,0 +1,13 @@
+---
+category: Miscellaneous
+date: '2006-10-09'
+slug: /atl
+title: ATL
+type: post
+---
+
+
+Incidentally, I'm in Atlanta right now. Sitting in the hotel lobby
+at the
+[Sheraton Colony Square Hotel](http://www.google.com/maps?hl=en&lr=lang_en&client=firefox-a&q=sheraton&near=Atlanta,+GA&radius=0.0&cid=33748889,-84388056,1552803418126705070&li=lmd&ie=UTF8&z=16&ll=33.78621,-84.381738&spn=0.008132,0.014634&t=h&om=1)
+surfing on their free wireless. Technology is cool.

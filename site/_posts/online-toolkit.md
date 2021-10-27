@@ -1,0 +1,71 @@
+---
+category: Miscellaneous
+date: '2020-10-02'
+draft: true
+slug: /online-toolkit
+tags: []
+title: Online Toolkit
+type: post
+---
+
+
+### TODO:
+
+https://www.webbloatscore.com
+https://www.base64decode.org
+https://pythex.org
+https://timqian.com/chart.xkcd/
+https://themarkup.org/blacklight?url=www.pgatour.com
+https://www.html2pdf.guru
+
+
+
+### Searches
+
+```html
+- <form id="search" action="https://stackoverflow.com/search" method="get">
+    <input id="StackOverflowSearchBox" name="q" type="search" placeholder="StackOverflow" value="" maxlength="240">
+	</form>
+- <form action="https://en.wikiquote.org//w/index.php" id="searchform">
+    <input type="search" name="search" placeholder="Wikiquote" id="searchInputWikiQuote">
+    <input type="hidden" name="title" value="Special:Search">
+	</form>
+- <form action="https://www.etymonline.com/search">
+	<input type="search" value="" placeholder="Etymonline" name="q">
+	</form>
+- <form action="https://www.thesaurus.com/browse/test" method="get">
+	<input type="search" value="" placeholder="thesaurus" name="s">
+    </form>
+- <form action="https://www.dictionary.com/browse/test" method="get">
+	<input type="search" value="" placeholder="dictionary" name="s">
+    </form>
+```
+
+
+
+### Connection
+
+- [What is my IP address](https://www.google.com/search?q=what+is+my+ip+address) - Speed test from the Google search results page
+- [Fast.com](https://www.google.com/search?q=speed+test) - Quick test from Netflis to show your speed. Click the "More Info" button to see upload speeds
+
+
+### CSS
+
+- [:nth Tested](https://css-tricks.com/examples/nth-child-tester/) - Examples of how to select different parts of a DOM with `nth` selectors
+
+
+### Design
+
+- [Text Contrast Ration Checker](https://snook.ca/technical/colour_contrast/colour.html#fg=33FF33,bg=333333) - Based on the [Web Content Accessibility Guidelines (WCAG) 2.0](https://www.w3.org/TR/WCAG20/)
+- [Modular Scale](https://www.modularscale.com) - Check out how your fonts look at various scales
+
+
+### JSON
+
+- [JSON Path Evaluator](http://jsonpath.com/?) - Test expressions against JSONs to target specific elements
+
+
+### Optimization
+
+- [Web.dev](https://web.dev/measure/) - A site analyzer from Google Developers that checks performance, accessibility, best practices, and seo
+- [WebPageTest](https://www.webpagetest.org) - Gives a good report of your website including images of page load timing

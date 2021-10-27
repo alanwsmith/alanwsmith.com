@@ -1,0 +1,33 @@
+---
+category: Live Coding
+date: '2020-11-28'
+draft: true
+slug: /stream-notes-2020-11-28
+tags: []
+title: 'Stream Notes for November 28, 2020 #LiveCoding'
+type: post
+---
+
+
+### Notes
+
+- Messing with Django
+
+
+### Links From The Stream
+
+
+- [Auto import—PyCharm](https://www.jetbrains.com/help/pycharm/creating-and-optimizing-imports.html#import-packages)
+- [GitHub: asgiref - ASGI specification and utilities (from django)](https://github.com/django/asgiref)
+- [Google Search: alabama football schedule](https://www.google.com/search?client=safari&rls=en&q=alabama+football+schedule&ie=UTF-8&oe=UTF-8)
+- [Google Search: asgiref](https://www.google.com/search?client=safari&rls=en&q=asgiref&ie=UTF-8&oe=UTF-8)
+- [Google Search: pycharm auto-add interpreter](https://www.google.com/search?client=safari&rls=en&q=pycharm+auto-add+interpreter&ie=UTF-8&oe=UTF-8)
+- [Google Search: pycharm project same directory new interpreter](https://www.google.com/search?client=safari&rls=en&q=pycharm+project+same+directory+new+interpreter&ie=UTF-8&oe=UTF-8)
+- [Google Search: python foreign key](https://www.google.com/search?client=safari&rls=en&q=python+foreign+key&ie=UTF-8&oe=UTF-8)
+- [Google Search: python version](https://www.google.com/search?client=safari&rls=en&q=python+version&ie=UTF-8&oe=UTF-8)
+- [How to enable git auto adding files – IDEs Support (IntelliJ Platform) | JetBrains](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206344669-How-to-enable-git-auto-adding-files)
+- [How to make pycharm always recognize imports in the same directory?](https://www.xspdf.com/resolution/56543034.html)
+- [PyCharm startup, No Python Interpreter – IDEs Support (IntelliJ Platform) | JetBrains](https://intellij-support.jetbrains.com/hc/en-us/community/posts/205815789-PyCharm-startup-No-Python-Interpreter)
+- [Python Programming Tutorials](https://pythonprogramming.net/foreign-keys-django-tutorial/)
+- [Python.org: Download Python](https://www.python.org/downloads/)
+- [Stack Overflow: PyCharm current working directory](https://stackoverflow.com/questions/34304044/pycharm-current-working-directory)

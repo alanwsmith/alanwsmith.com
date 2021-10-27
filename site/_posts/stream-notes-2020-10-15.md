@@ -1,0 +1,65 @@
+---
+category: Live Coding
+date: '2020-10-15'
+slug: /stream-notes-2020-10-15
+tags: []
+title: 'Updating My Daily Link Grabber - #LiveCoding'
+type: post
+---
+
+
+`youtube: https://www.youtube.com/watch?v=DIHhUYzuMVc`
+
+### [Start: 00:00:00] - Chatting and Review
+
+Just chatting.
+
+### [Time: 00:10:45] - Enhancing The Daily Link Grabber
+
+I spent a while before the 3 hour mark trying to figure out this look which only adds items to an object if they don't match a set of exclude patterns. This is what I ended up with
+
+    def clean_data_remove_excludes(self):
+        new_object = {}
+        for item in self.object_data:
+            def include_item():
+                for pattern in self.exclude_patterns:
+                    if re.search(pattern, item):
+                        return False
+                return True
+            if include_item():
+                new_object[item] = self.object_data[item]
+        self.object_data = new_object
+
+
+TODO List for the grabber:
+
+- Update timestamp in blogpost template
+- Load config files (zero, one, or more)
+- Move hard coded variables into a config file
+- Filter out regex patterns (e.g.)
+    - docs.google.com
+    - localhost
+    - www.alanwsmith.com
+    - launchpad
+    - work domains
+    - amazon stuff that's not browsing
+    - youtube links that aren't videos
+- Flip the title of searching so "Google Search" is at the start.
+- Update Stack Overflow to use share link
+- Drop preface category from stackoverflow links.
+
+
+
+### Links From The Stream
+
+- [Basic Usage | Hugo](https://gohugo.io/getting-started/usage/)
+- [Code coverage - Help | PyCharm](https://www.jetbrains.com/help/pycharm/code-coverage.html)
+- [Configuring code coverage measurement - Help | PyCharm](https://www.jetbrains.com/help/pycharm/configuring-code-coverage-measurement.html)
+- [Coverage - Help | PyCharm](https://www.jetbrains.com/help/pycharm/coverage-settings.html)
+- [datetime – Date/time value manipulation - Python Module of the Week](https://pymotw.com/2/datetime/)
+- [Feature Spotlight: Python Code Coverage with PyCharm – PyCharm Blog | JetBrains](https://blog.jetbrains.com/pycharm/2015/06/feature-spotlight-python-code-coverage-with-pycharm/)
+- [How does Jekyll date formatting work? - Stack Overflow](https://stackoverflow.com/questions/7395520/how-does-jekyll-date-formatting-work)
+- [Python: Continuing to next iteration in outer loop - Stack Overflow](https://stackoverflow.com/questions/1859072/python-continuing-to-next-iteration-in-outer-loop)
+- [Random Noun Generator — 1000+ Random Nouns](https://randomwordgenerator.com/noun.php)
+- [Running with coverage - Help | PyCharm](https://www.jetbrains.com/help/pycharm/running-test-with-coverage.html)
+- [Viewing code coverage results - Help | PyCharm](https://www.jetbrains.com/help/pycharm/viewing-code-coverage-results.html)

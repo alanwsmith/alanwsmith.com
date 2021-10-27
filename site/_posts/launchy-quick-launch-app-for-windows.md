@@ -1,0 +1,21 @@
+---
+category: Miscellaneous
+date: '2007-03-18'
+slug: /launchy-quick-launch-app-for-windows
+title: Launchy - quick launch app for Windows
+type: post
+---
+
+
+Found this one via [Life hacker](http://lifehacker.com/). The
+program is [Launchy](http://www.launchy.net/). It's a keyboard
+quick launcher for windows. The default way to bring it up is by
+holding down the "Alt" key and hitting the space bar. It pops up
+and presents you with a text cursor. From there, you start typing
+the name of the application you want to launch. Usually withing a
+two or three letters, it'll have what you want and show you its
+icon. Then just hit "Enter" and the app launches. If you already
+have your hands on the keyboard, it is much faster than taking one
+off, grabbing your mouse and searching thru you quick launch bar or
+under your start menu. Takes a little getting used to, but if you
+jump around as often as I seem to between software it's very handy.

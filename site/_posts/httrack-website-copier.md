@@ -1,0 +1,16 @@
+---
+category: Miscellaneous
+date: '2006-09-23'
+slug: /httrack-website-copier
+title: HTTrack - Website Copier
+type: post
+---
+
+
+If you ever need to make a copy of a web site to keep on your local
+machine, you can use [HTTrack](http://www.httrack.com/). It grabs
+local copies of the files require to render the site and converts
+them so that you can browse the site offline on your computer.
+Great for things like documentation sites that you want to be able
+to use when you are on your computer but away from an internet
+connection.

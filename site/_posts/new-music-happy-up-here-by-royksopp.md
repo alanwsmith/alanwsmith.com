@@ -1,0 +1,16 @@
+---
+category: Miscellaneous
+date: '2009-02-27'
+slug: /new-music-happy-up-here-by-royksopp
+title: 'New Music: Happy Up Here by Royksopp '
+type: post
+---
+
+
+I really like the video. The song is groovy, and I like it too. I
+probably would have liked the song on its own, but it got a nice
+bump from the video. The visuals are so good they definitely
+influenced my first opinion.
+  
+[Happy Up Here](http://vimeo.com/3281558) from
+[Röyksopp](http://vimeo.com/royksopp) on [Vimeo](http://vimeo.com).

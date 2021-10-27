@@ -1,0 +1,14 @@
+---
+category: Miscellaneous
+date: '2011-04-27'
+slug: /symmetry-from-radiolab
+title: Symmetry from Radiolab - Video for April 27, 2011
+type: post
+---
+
+
+The follow up to the "Words" video.
+
+<div style="text-align:center; margin-bottom:14px;"><iframe title="YouTube video player" width="640" height="390" src="http://www.youtube.com/embed/zEQskIsHKT8?rel=0" frameborder="0"> </iframe></div>
+
+Right powerful piece of work.

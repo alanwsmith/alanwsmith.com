@@ -1,0 +1,23 @@
+---
+category: Miscellaneous
+date: '2008-03-28'
+slug: /iphoneipod-touch-has-an-odd-screen-size
+title: iPhone/iPod Touch has an odd screen size
+type: post
+---
+
+
+I was looking up the aspect ratio for my iPod Touch so that I can
+size some photos for its specific size and came across
+[this article](http://crave.cnet.com/8301-1_105-9677969-1.html). I
+had noticed before that when I was watching HD formatted videos
+(16:9) there was letterboxing. I kept trying to find a setting that
+was causing it, but finally gave up. Good to know I'm not that
+inept and that the screen aspect ration really is different from
+HD. It weighs in with a 3:2 ratio from its 480x320 pixels. It's
+more than a little disappointing. Only thing I can really think of
+is that the cost to produce a screen with true HD dimensions would
+have raised the cost significantly. Interestingly, this ratio is
+the same as my camera. So at least it makes that transition easy.
+Of course, I'm not a big fan of that ratio for still photos and
+tend to crop them to 4:5.

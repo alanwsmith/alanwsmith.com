@@ -1,0 +1,15 @@
+---
+blurb: Risking bodily harm for the betterment of all mankind.
+category: Photographs
+date: '2012-10-14'
+slug: /mythbusters-photo-for-2012-10-14
+tags:
+- Project 365 Photos
+title: Mythbusters - Photo for October 14, 2012
+type: post
+---
+
+
+![Image: aws-20121014--1816-01.jpg](/aws-20121014--1816-01.jpg)
+
+I had great seats for the Mythbuster - Behind the Myths Tour tonight. It was quite fun. The highlight (not represented here) is that I got on stage to blow a raspberry in front of a high speed camera. The video hasn't been posted yet, but should be up at some point. Can't wait for that.

@@ -1,0 +1,37 @@
+---
+category: Miscellaneous
+date: '2006-07-26'
+slug: /found-a-lab
+title: Found a lab
+type: post
+---
+
+
+I think I found the photolab that I'm going to use. I've been
+looking for a lab that offers an API to their services. (API, for
+those that are wondering, means Application Programming Interface,
+and is a fancy term that just means that you can write a program
+that talks to the software that has the the API.) A few places out
+there have some basic APIs, but most of them just let you upload
+prints and still require you to go to their web page manually to
+complete the orders. The one exception to this that I've found is
+[White House Custom Colour](http://www.whcc.com/). They don't have
+a full API, but they have a service where you upload images via FTP
+to different size folders. For each file you upload to a specific
+folder, you get one print of it in the respective size. Since I can
+write programs to automatically FTP this means that I can hack
+together my own poor man's API. What all this means, is that I
+should be able to setup my photo order web pages on my site and
+have them automatically fulfilled. It would be much easier to go
+with one of the many online photo labs out there and just use their
+built in shopping carts, but I have looked at a ton of them and
+don't like any. So, the web geek in me looks like it's gonna have a
+chance to run a little project. I think the first lab that's out
+there that creates a full blown API is going to get a huge bump in
+business. There is some open-source web gallery software called
+"Gallery" that has a few simple shopping cart features in it with
+shutterfly and one or two other labs. None of the available
+services is fully customizeable though which means that what you
+can do with it is limited. The first online lab that provides an
+open API will probably get immediate visibility into the 50,000
+Gallery installs the next time they update.

@@ -1,0 +1,164 @@
+---
+category: Programming
+date: '2021-04-12'
+slug: /electron-v12-example-app-template
+tags:
+- Electron
+- Grimoire
+title: Electron (v12) Example App Template
+type: post
+---
+
+
+### There is a better version
+
+This works, but there is a better version I'll post as soon as I can. 
+
+
+
+
+### NOTE:
+
+I spent a good bit of time figuring all this out. Then researching to make sure I had stuff in line I found a post that confirmed my approach and showed an example that I could have just used.... 
+
+It does a different (and better) way of issolating the messages from main to renderer. 
+
+You can read up on it here:
+
+https://github.com/electron/electron/issues/9920#issuecomment-575839738
+
+
+
+
+
+### TL;DR: 
+
+Neither the [official quick start tutorial](https://www.electronjs.org/docs/tutorial/quick-start) nor any other examples I could find provide a complete example of secure, bi-directional communication between the main.js Node file and the windows of an Electron (v12) app. So, I made this full sample. More details below the code.
+
+### Module Instillation
+
+    mkdir electron_v12_app_template
+    cd electron_v12_app_template
+    npm init -y
+    npm install --save-dev electron
+
+
+### Updated package.json
+
+    {
+        "name": "electron_v12_app_template",
+        "version": "1.0.0",
+        "description": "Basic example of an Electron v12 app",
+        "main": "main.js",
+        "scripts": {
+            "start": "electron ."
+        },
+        "devDependencies": {
+            "electron": "^12.0.2"
+        }
+    }
+
+### main.js
+
+    const { app, BrowserWindow, ipcMain } = require('electron')
+    const path = require('path')
+
+    const overseer = {
+        'count': 0 
+    }
+
+    function createWindow () {
+        const win = new BrowserWindow({
+            width: 800,
+            height: 600,
+            webPreferences: {
+            preload: path.join(__dirname, 'preload.js')
+            }
+        })
+        
+        win.loadFile('index.html')
+
+        win.webContents.openDevTools()
+
+    }
+
+    app.whenReady().then(() => {
+        createWindow()
+    })
+
+    ipcMain.on('main:increment-count', (event, payload) => {
+        console.log('main:increment-count')
+        overseer.count += 1
+    })
+
+    ipcMain.on('main:request-count', (event, payload) => {
+        console.log('main:request-count')
+        event.reply('preload:set-count', overseer.count)
+    })
+
+
+### preload.js
+
+    const { contextBridge, ipcRenderer } = require('electron')
+
+    contextBridge.exposeInMainWorld(
+        'bridgeAPI',
+        {
+            updateCountDisplay: () => { 
+                console.log('preload:bridgeAPI:updateCountDisplay')
+                ipcRenderer.send('main:request-count', {})
+            },
+            incrementCount: () => {
+                console.log('preload:bridgeAPI:incrementCount')
+                ipcRenderer.send('main:increment-count', {})
+                ipcRenderer.send('main:request-count', {})
+            },
+        }
+    )
+
+    ipcRenderer.on('preload:set-count', (event, newCount) => {
+        console.log("preload:set-count")
+        document.getElementById('count').innerHTML = newCount
+    })
+
+
+
+### renderer.js
+
+    document.getElementById('incrementCount').addEventListener('click', () => {
+        console.log('renderer:incrementCount:click')
+        bridgeAPI.incrementCount()
+    })
+
+    document.addEventListener('DOMContentLoaded', () => {
+        console.log('renderer:DOMContentLoaded')
+        bridgeAPI.updateCountDisplay()
+    })
+
+
+### index.html
+
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <title>Electron v12 Example App Template</title>
+        </head>
+        <body>
+
+            <div>Counter: <span id="count"></span><div>
+            <button id="incrementCount">Increment the counter</button>
+
+            <script src="./renderer.js"></script>
+
+        </body>
+    </html>
+
+
+### Details
+
+- Most Electron examples tell you to override the defaults for `nodeIntegration` and `contextIsolation` when setting up BrowserWindows to allow Node API calls (e.g. for reading files) from directly inside the app windows. That practice [opens a security hole](https://www.electronjs.org/docs/tutorial/security#isolation-for-untrusted-content). The solution is to use inter-process communication via [ipcMain](https://www.electronjs.org/docs/api/ipc-main#ipcmain) and [ipcRenderer](https://www.electronjs.org/docs/api/ipc-renderer#ipcrenderer) as demonstrated here. 
+- This example uses async methods. Details on synchronous methods are available in the [ipcMain](https://www.electronjs.org/docs/api/ipc-main#ipcmain) and [ipcRenderer](https://www.electronjs.org/docs/api/ipc-renderer#ipcrenderer) docs. 
+- There's nothing special about the colon separated channel names (e.g. `preload:set-count`), that's just a convention I'm using to track what files the functions are in.
+- The `win.webContents.openDevTools()` in `main.js` opens up the dev console automatically. Not something you'd want to do in production but useful for the example to watch the communication traffic. 
+- The `console.log()` messages from `main.js` show up in the terminal that's running the app. Those from  `renderer.js` and `preload.js` show up in the app/browser dev console.
+- This was a very helpful page for getting this all figured out, but didn't show bi-directional communication.

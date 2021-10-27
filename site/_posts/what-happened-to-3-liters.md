@@ -1,0 +1,13 @@
+---
+category: Miscellaneous
+date: '2007-06-13'
+slug: /what-happened-to-3-liters
+title: What happened to 3 liters
+type: post
+---
+
+
+None of the grocery or corner stores that I shop at carry 3 liter
+bottles of coke. Do they exist anymore? It seems like they would be
+a natural fit in these days when you can get a 1 gallon Big Gulp.
+Weird.

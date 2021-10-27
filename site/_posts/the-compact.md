@@ -1,0 +1,24 @@
+---
+category: Miscellaneous
+date: '2006-03-23'
+slug: /the-compact
+title: The Compact
+type: post
+---
+
+
+I've seen a couple things about this idea recently and like the
+basic idea though it's perhaps a bit extreme for me:
+[The Compact](http://groups.yahoo.com/group/thecompact/). Here's a
+[USA TODAY article](http://www.usatoday.com/news/nation/2006-03-22-simple-life_x.htm)
+that I saw from yesterday that brought it back to the forefront of
+my mind. End of the first graph pretty much spells out the entire
+idea: Buy nothing new except food, medicine and toiletries for six
+months. I'm really not that big of a consumer and when I am buying
+something I generally like to try to find a used whatever it is
+first. Camera lenses are a good example. I end up buying books more
+often than I like becuase my local library branch is pretty small
+doesn't have a lot of the stuff I'm interested in. Since so much of
+what I do and enjoy revolves around "technology" now days a lot of
+my purchases end up being brand new. Still, I like the fact that
+these folks are thinking this way.

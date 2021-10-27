@@ -1,0 +1,24 @@
+---
+blurb: Penn plays a mean bass.
+category: Photographs
+date: '2012-09-05'
+slug: /photo-for-2012-09-05-penn-and-bass
+tags:
+- Project 365 Photos
+title: Penn &amp; Bass -- Photo for September 5, 2012
+type: post
+---
+
+
+![Image: aws-20120905--2033-01.jpg](/aws-20120905--2033-01.jpg)
+
+I crossed something off the bucket list today. Namely: see Penn and Teller<sup>1</sup> do a live show. It was great. If you find yourself in Vegas, make sure to check out the show. Penn does double duty as a musician during the pre-show. He plays a mean bass with a crazy good pianist named Mike Jones<sup>2</sup>. This is Penn laying it down before changing into a magician. Dude is talented in multiple disciplines.
+
+---
+
+
+_Links and Notes_
+
+1. [Penn and Teller](http://www.pennandteller.com/) - I would be shocked if you don't already know about these guys. However, if that's the case, you should know that they are magicians and that one of them doesn't talk. They'll also [tell you how tricks are done](http://www.youtube.com/watch?v=BPyvAtQYVok) from time to time.
+
+2. [Mike Jones](http://www.jonesjazz.com/) - Bad ass pianist. Piano jazz generally doesn't do much for me, but Mike blew me away. I haven't pulled it down yet because I'm on a slow hotel connection, but his latest CD is free on his web site. I'll be grabbing that and also purchasing some of his music because everyone should support artists they like.

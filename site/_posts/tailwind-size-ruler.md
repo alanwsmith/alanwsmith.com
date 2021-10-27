@@ -1,0 +1,40 @@
+---
+category: Miscellaneous
+date: '2021-05-26'
+slug: /tailwind-break-point-size-ruler
+title: Tailwind Breakpoint Size Ruler
+type: post
+---
+
+
+
+This snippet of code shows you where Tailwind breakpoints are:
+
+```html
+<div class="bg-yellow-300 sm:bg-green-700
+md:bg-red-400 lg:bg-purple-600 
+xl:bg-blue-400 2xl:bg-gray-500 
+">
+    <div class="block sm:hidden">Less than small</div>
+    <div class="hidden sm:block md:hidden">Small (sm)</div>
+    <div class="hidden md:block lg:hidden">Medium (md)</div>
+    <div class="hidden lg:block xl:hidden">Large (lg)</div>
+    <div class="hidden xl:block 2xl:hidden">Extra Large (xl)</div>
+    <div class="hidden 2xl:block">2 Extra Large (2xl)</div>
+</div>
+```
+
+Here's what it looks like. 
+
+<div class="bg-yellow-300 sm:bg-green-700
+md:bg-red-400 lg:bg-purple-600 
+xl:bg-blue-400 2xl:bg-gray-500 
+">
+    <div class="block sm:hidden">Less than small</div>
+    <div class="hidden sm:block md:hidden">Small (sm)</div>
+    <div class="hidden md:block lg:hidden">Medium (md)</div>
+    <div class="hidden lg:block xl:hidden">Large (lg)</div>
+    <div class="hidden xl:block 2xl:hidden">Extra Large (xl)</div>
+    <div class="hidden 2xl:block">2 Extra Large (2xl)</div>
+</div>
+
