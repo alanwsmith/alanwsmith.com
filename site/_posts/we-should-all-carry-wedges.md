@@ -1,0 +1,22 @@
+---
+category: Miscellaneous
+date: '2009-02-05'
+slug: /we-should-all-carry-wedges
+title: We should all carry wedges
+type: post
+---
+
+
+![wobble-wedge.jpg](http://www.alanwsmith.com/blog/wp-content/uploads/2009/02/wobble-wedge.jpg)Saw
+these
+[Wobble Wedges](http://www.kk.org/cooltools/archives/003491.php) on
+[Cool Tools](http://www.kk.org/cooltools/). These things could make
+great promotional tchotchkes that would actually serve a practical
+purpose. Print a logo, web site and a slogan like "Stability
+brought to you by ACME Computer Systems" on them and pass them out.
+I'd be happy to keep a handful in my bag and leave them stuck under
+tables where ever they are needed. In coffee shops and restaurants
+tables get jostled around enough that you can be confident they
+would get bumped out of place from time to time and have to be put
+back in place. The brand message would get seen on a regular basis
+and associated with a "well isn't that thoughtful" idea.

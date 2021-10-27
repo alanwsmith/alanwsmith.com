@@ -1,0 +1,22 @@
+---
+category: Miscellaneous
+date: '2006-02-26'
+slug: /laaaaaazer-printer
+title: Laaaaaazer Printer
+type: post
+---
+
+
+Just got an
+[HP LaserJet 1020](http://h10010.www1.hp.com/wwpc/us/en/sm/WF05a/18972-236251-236263-14638-f51-439423.html)
+printer. A huge portion of the stuff I print is just for the text.
+Articles, receptings from online purchases, documentation, etc... I
+got fed up with how long it takes to print this stuff on my Epson
+Photo printer and the cost of ink. I'm very impressed with the HP.
+It is very fast, not horribly loud and the toner is considerably
+less expensive per printed page. I also like the actual output more
+as well. Text just looks crisper and I'm not worried about it
+fading. Newegg happend to have it on sale the day I went to buy it
+for $120 including shipping. I'm already pleased with the purchase
+and I'll probably save that much from the reduce opperating cost in
+the first year. Two thumbs up.

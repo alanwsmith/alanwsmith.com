@@ -1,0 +1,44 @@
+---
+category: jekyll
+date: '2012-05-10'
+slug: /now-you-can-write-on-my-site
+tags:
+- design
+title: Now, You Too Can Write On My Site!
+type: post
+---
+
+
+Jekyll<sup>1</sup>, the software I'm now using for this site, doesn't come with a built-in comment system. When I was first deciding how to relaunch the site, getting an external system setup for comments was a requirement. About the same time, a rampant discussion<sup>2</sup> on the value of comments started in sites and podcasts I frequent. Arguments against them tended to the "comments are basically useless or worse" perspective. The opposing viewpoint was largely "Thar's gold in them thar comments."
+
+Like most heated internet discussions, so much variation exists that no one-size-fits-all answer applies. The usefulness/quality of comments has too many variables. The number of people who use the site, the overall tone of the site, if anonymous comments are allowed, how much moderation is done, etc... 
+
+I had taken it for granted that I wouldn't relaunch the site until I had comments in place. After tuning in to that debate, I decided to abandon comments for launch. By removing that piece of work, I was able to get the site up faster. Also, I was a little intrigued by the idea of having 100% of the content on my site be mine. 
+
+Now that the site is back up and running, I miss comments. Since the number of people who visit the site is small and I know most of them, comments here have historically be a nice bonus. So, post-launch next-step number one: Find and implement a comment system. 
+
+After taking a brief look, all signs pointed to Disqus<sup>3</sup> as the way to go. The navigation of their Knowledge Base could use some work, but the basics are easy to get up and running without much fuss. Just register, drop a little code into your templates, season to taste with CSS and you're ready to go.
+
+For the sake of anyone who finds this post and is looking for a little better than the default set of code to drop in your templates, this is what I'm currently using:
+
+
+```html{numberLines: true}
+    <!-- An update to my blog engine broke this code sample. So, I removed it -->
+```
+
+
+The variables are recommended by Disqus. They setup the function so it doesn't have to do any guessing when it's trying to coordinate the comments.
+
+With that in place, the comment system for this site is now fully operational. At least, for new comments. All the old comments (from when the site was in WordPress) are still locked in the old database. I'll get them added back in at a later time. 
+
+
+---
+
+
+Footnotes:
+
+1. [Jekyll](https://github.com/mojombo/jekyll/wiki) - The simple, blog aware, static site generator that I'm using to make this site. If you're a techie, you'll love it. If the command line scares you (or you don't really know what that is), jekyll is not the blog engine your looking for. 
+
+2. An example of the comments discussion from the "Turn them off side" is [Comments Off](http://mattgemmell.com/2011/11/29/comments-off/) by Matt Gemmell. He also created a round up of arguments in his post [Comments Commentary](http://mattgemmell.com/2012/01/07/comments-commentary/). Both are worth the read. 
+
+3. [Disqus](https://disqus.com/) - The crowd favorite, external comment system. And, it just so happens, the system I just installed on my site.

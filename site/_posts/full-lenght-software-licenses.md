@@ -1,0 +1,17 @@
+---
+blurb: In case you ever wondered how long an iPad would have to be to show the full
+  Terms of Service at one time.
+category: Miscellaneous
+date: '2014-11-22'
+slug: /full-lenght-software-licenses
+tags: []
+title: Full Length Software Licenses
+type: post
+---
+
+
+Even lawyers don't read software agreements. It's no wonder. Here's the three different agreements that must be accepted before installing an iPad software update. The first image in each set shows what fits on the screen. The next one assembles the entire scrolling text and shows how long it actually is. 
+
+![Image: ios-8-0-2-agreement.jpg](/ios-8-0-2-agreement.jpg) 
+
+Most amusing is the dozen or so paragraphs that are written in all caps to show how important they are.

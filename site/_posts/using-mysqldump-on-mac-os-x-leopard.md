@@ -1,0 +1,18 @@
+---
+category: Miscellaneous
+date: '2009-08-14'
+slug: /using-mysqldump-on-mac-os-x-leopard
+title: Using mysqldump on Mac OS X Leopard
+type: post
+---
+
+
+Originally found this
+[here](http://www.themomorohoax.com/2008/12/29/use-mysqldump-with-leopard)
+after lots of searching. Making my own link to make sure I can find
+it again. To use mysqldump on a Mac running OS X 10.5 (Leopard),
+run the following from the command line:
+`sudo ln -s /usr/local/mysql-5.0.67-osx10.5-x86/bin/mysqldump /usr/bin/mysqldump`
+(I think I had to manually install MySQL from the supplemental CDs
+that came with the Mac. I'm assuming this version of mysqldump was
+installed at the same time.)

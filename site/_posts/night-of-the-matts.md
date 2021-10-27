@@ -1,0 +1,24 @@
+---
+category: Miscellaneous
+date: '2005-10-08'
+slug: /night-of-the-matts
+title: Night of the Matts
+type: post
+---
+
+
+Just got back from a show at Freebird Live (one of the only places
+in Jax that has live music). There were three acts. Two of which
+were named Matt. I did some shooting which I'll post once I get a
+chance to edit it. The real key to the night was the other Matt.
+The Matt who was running the lights. I've talked to him a couple
+times before when I've been shooting and he's always been cool
+about making the lights a little hotter for me. That's just
+awesome. Afterall, photography is really painting with light. So,
+the guy who contorls the lights is key.  
+I plan on brining him some prints just as a thank you. Tonight, I
+also discovered that he's the son of the bar owner. This makes
+things even better since I've been wanting to provide some images
+to the bar as well.  
+And now, heading to bed with a nice little buzz.....  
+-- Tags: tagPhotography tagMusic

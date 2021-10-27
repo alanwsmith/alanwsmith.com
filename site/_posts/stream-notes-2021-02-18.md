@@ -1,0 +1,36 @@
+---
+category: Stream Notes
+date: '2021-02-18'
+draft: true
+slug: /stream-notes-2021-02-18
+tags: []
+title: Stream Notes February 18, 2021
+type: post
+---
+
+
+### Notes
+
+Figured out how to get JSON and YAML into Gatsby. 
+
+Also, spent an hour trying to figure out why my cam wasn't working. Punted on that and just went without the face cam.
+
+### Links From The Stream
+
+
+- [DigitalOcean: How To Use .map() to Iterate Through Array Items in JavaScript](https://www.digitalocean.com/community/tutorials/4-uses-of-javascripts-arraymap-you-should-know)
+- [Gatsby: Building Interactive Mapping Apps with Gatsby](https://www.gatsbyjs.com/blog/interactive-mapping-apps/)
+- [Gatsby: gatsby-source-filesystem](https://www.gatsbyjs.com/plugins/gatsby-source-filesystem/)
+- [Gatsby: Sourcing Content from JSON or YAML](https://www.gatsbyjs.com/docs/how-to/sourcing-data/sourcing-from-json-or-yaml/)
+- [Google Search: gatsby get data form jsson](https://www.google.com/search?client=safari&rls=en&q=gatsby+get+data+form+jsson&ie=UTF-8&oe=UTF-8)
+- [Google Search: gatsby loop over array](https://www.google.com/search?client=safari&rls=en&q=gatsby+loop+over+array&ie=UTF-8&oe=UTF-8)
+- [Google Search: gatsby map array](https://www.google.com/search?newwindow=1&client=safari&rls=en&ei=wSgvYJpEgeXmAoSztJgJ&q=gatsby+map+array&oq=gatsby+map+array&gs_lcp=Cgdnd3Mtd2l6EAMyAggAOgcIABBHELADOgYIABAWEB46AggmUJZNWMxSYKpWaAFwAngAgAGZAYgB_wSSAQM1LjKYAQCgAQGqAQdnd3Mtd2l6yAEIwAEB&sclient=gws-wiz&ved=0ahUKEwjaqOy8-fTuAhWBslkKHYQZDZMQ4dUDCAw&uact=5)
+- [Google Search: gatsby-source-filesystem](https://www.google.com/search?client=safari&rls=en&q=gatsby-source-filesystem&ie=UTF-8&oe=UTF-8)
+- [Google Search: javascript loop over array with map](https://www.google.com/search?client=safari&rls=en&q=javascript+loop+over+array+with+map&ie=UTF-8&oe=UTF-8)
+- [Google Search: javascript map](https://www.google.com/search?client=safari&rls=en&q=javascript+map&ie=UTF-8&oe=UTF-8)
+- [Iterate through simple data? · Gatsby](https://spectrum.chat/gatsby-js/general/iterate-through-simple-data~853c5374-0102-45cf-93cd-5771de6db5cb)
+- [MDN: Map - JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
+- [Querying GraphQL by array / how to handle relational queries · Issue #8166 ·...](https://github.com/gatsbyjs/gatsby/issues/8166)
+- [Stack Overflow: How do I map an array in Gatsby?](https://stackoverflow.com/questions/57964639/how-do-i-map-an-array-in-gatsby)
+- [Stack Overflow: Loop through an array in JavaScript](https://stackoverflow.com/questions/3010840/loop-through-an-array-in-javascript)
+- [Write JavaScript loops using map, filter, reduce and find](https://flaviocopes.com/javascript-loops-map-filter-reduce-find/)

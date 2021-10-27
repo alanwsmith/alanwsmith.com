@@ -1,0 +1,52 @@
+---
+category: Ruby
+date: '2014-11-08'
+slug: /assigning-ruby-variables-with-a-case-statement
+tags: []
+title: Assigning Ruby Variables with a Case Statement
+type: post
+---
+
+
+Reading [Refactoring: Ruby Edition](http://smile.amazon.com/dp/0321984137) I came across an example of assigning a variable via a case statement. For example:
+
+```ruby{numberLines: true}
+#!/usr/bin/env ruby
+
+trigger_value = 7
+
+output_string = case trigger_value
+  when 1
+    "First number"
+  when 7
+    "Lucky number"
+  else
+    "Something else"
+end
+
+puts output_string   # Outputs: Lucky number
+```
+
+
+Using the return values from the case statement directly for the assignment is much cleaner than the way I used to do it:
+
+```ruby{numberLines: true}
+#!/usr/bin/env ruby
+
+trigger_value = 7
+output_string = ""
+
+case trigger_value
+  when 1
+    output_string = "First number"
+  when 7
+    output_string = "Lucky number"
+  else
+    output_string = "Something else"
+end
+
+puts output_string   # Outputs: Lucky number
+```
+
+
+I'm learning that most case statements are prime candidates for refactoring. The direct assignment is a nice way to use them until that happens.

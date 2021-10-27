@@ -1,0 +1,16 @@
+---
+category: Miscellaneous
+date: '2007-12-07'
+slug: /awesome-example-of-80s-trailer
+title: AWESOME example of 80s trailer
+type: post
+---
+
+
+A buddy at work was talking about the movie Firefox which I'm
+familiar with but don't think I've ever seen. He sent me
+[this trailer](http://www.youtube.com/watch?v=wdnnZMyKpg4) on you
+tube. A wonderful example of movie trailers form the early 80s.
+Explosions, super serious but short dialog, sneaking around the
+corner with a gun, a hell of a left hook, and that A-Team sounding
+announcer guy. Awesome!

@@ -1,0 +1,11 @@
+---
+category: Live Writing
+date: '2020-09-16'
+slug: /stream-notes-2020-09-16-3
+tags: []
+title: Writing My Daily Journal - Sept. 16, 2020
+type: post
+---
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2UPUoS7Vnlk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

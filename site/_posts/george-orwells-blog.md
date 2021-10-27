@@ -1,0 +1,18 @@
+---
+category: Miscellaneous
+date: '2008-08-15'
+slug: /george-orwells-blog
+title: George Orwell's Blog
+type: post
+---
+
+
+George Orwell's diary is being transposed to a blog with each entry
+being posted seventy years after the original. That's just cool.
+
+Here's the
+[internal entry about what's going](http://orwelldiaries.wordpress.com/1938/07/23/orwelldiaries/)
+on and here's
+[the blog itself](http://orwelldiaries.wordpress.com/) to follow. A
+[few days ago](http://orwelldiaries.wordpress.com/1938/08/11/august-11/),
+it seems the men caught a snake.

@@ -1,0 +1,15 @@
+---
+category: Miscellaneous
+created: 1612827292
+date: '2021-02-08'
+slug: /background-image-feb-2021
+title: New Background Image (Feb. 2021)
+type: post
+---
+
+
+I've been playing with the design of the site. I like the white notecard look, but couldn't get a background color that I liked to work with it. Finally figured out that what I wanted is a breakup pattern. Searching around for background images I found this free one from a person named Yongja Kim: [Dust & Scratches](https://www.toptal.com/designers/subtlepatterns/dust-scratches/)
+
+![Image: dust_scratches.png](/dust_scratches.png)
+
+I love it.

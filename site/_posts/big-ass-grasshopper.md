@@ -1,0 +1,15 @@
+---
+category: Miscellaneous
+date: '2007-10-09'
+slug: /big-ass-grasshopper
+title: Big Ass Grasshopper
+type: post
+---
+
+
+While hanging out at CJ's family place a few miles north over
+fourth of july, this little guy showed up:
+![Big Ass Grasshopper](http://www.alanwsmith.com/blog/wp-content/uploads/20070721-0005.jpg)
+Took this photo with my most recent
+[point and shoot](http://www.dpreview.com/reviews/fujifilmf31fd/).
+I'm pretty happy with the quality.

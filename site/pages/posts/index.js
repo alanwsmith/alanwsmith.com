@@ -8,7 +8,7 @@ export default function Posts({ posts }) {
       <h1>Posts</h1>This is it{' '}
       {posts.map((post) => {
         return (
-          <div key={post.title}>
+          <div key={post.permalink}>
             <Link href={post.permalink}>
               <a>{post.title}</a>
             </Link>

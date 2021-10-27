@@ -1,0 +1,28 @@
+---
+category: Miscellaneous
+date: '2008-04-09'
+slug: /frog-portrait
+title: Frog Portrait
+type: post
+---
+
+
+Found this little guy when I was leaving the office one night and
+decided to shoot a few portraits with my little point and shoot
+camera.
+![Frog Portrait](http://www.alanwsmith.com/blog/wp-content/uploads/20080402-snaps-0008.jpg)
+A couple times I got too close and he did this:
+![Frog legs](http://www.alanwsmith.com/blog/wp-content/uploads/20080402-snaps-0007.jpg)
+Note: in this shot he was facing the other direction from the
+portrait above. I probably couldn't get that shot again with a
+point and shoot if I tried 1,000 times. I think would fall into
+what Henri Cartier-Bresson calls
+[The Decisive Moment](http://en.wikipedia.org/wiki/Henri_Cartier-Bresson#The_Decisive_Moment).
+From the Wikipedia article:
+> "Photography is not like painting," Cartier-Bresson told the
+> Washington Post in 1957. "There is a creative fraction of a second
+> when you are taking a picture. Your eye must see a composition or
+> an expression that life itself offers you, and you must know with
+> intuition when to click the camera. That is the moment the
+> photographer is creative," he said. "Oop! The Moment! Once you miss
+> it, it is gone forever."
