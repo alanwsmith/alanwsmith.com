@@ -8,112 +8,129 @@ title: My Streaming Startup Checklist (aka Runbook)
 type: post
 ---
 
-<Checklist
-  data={[
-    {
-      title: 'Part 1',
-      items: [
-        'Turn on lights',
-        'Restart facecam',
-        'Start SnapCam',
-        'Start Virtual Cable',
-        'Start Audition',
-        'Set Audition Dynamics - Noise Gate to 48.8dB (35.2 when not streaming)',
-        'Open OBS',
-        'Verify StreamDeck is running',
-        'Verify keyboard cam is in place and shutter is open',
-        'Put mic in place',
-        'Switch OBS to Starting Soon scene',
-      ],
-    },
-    {
-      title: 'Windows Audio',
-      items: [
-        'Start Monster Cat Audio',
-        'Set Monster Cat Audio to Shuffle',
-        'Mute headphones',
-      ],
-    },
-    {
-      title: 'Misc',
-      items: [
-        'Run Keyboard Maestro stream prep script',
-        'Verify work stuff is out of grimoire',
-        'Move Github Desktop to working project',
-        "Verify you're logged out of work email",
-        "Verify you're logged out of AWS",
-      ],
-    },
-    {
-      title: 'Windows Desktop',
-      items: [
-        'Pop out chat and followers',
-        'Open Twitch In Mod View',
-        'Verify snapcam bot is running - D:/Twitch_Stuff/snap_cam_channel_points/02',
-        'Verify snapcam close down bot script is running',
-        'Verify captions are running - D:/Twitch_Stuff/obs_live_captions',
-        'TODO: put in all the steps for getting captions running',
-        'Turn down monitor brightness',
-        'TODO: Get Start binary clock running',
-      ],
-    },
-    {
-      title: 'Mac Stuff',
-      items: [
-        'Set 4K60 resolution to &quot;Scaled - Looks Like 1920x1080&quot;',
-        'Open stream notes',
-        'Set Sublime Texts font size to 26',
-        'Set nvAlt Font size to 24',
-        'Set Code Runner Font size to 24',
-        'Set VSCode window zoom to 3 (leave font at 15)',
-        'Set iTerm2 default profile to Stream V1',
-        'Set Safari font zoom to 125%',
-        'Start Keychain Access on second monitor to prevent accidentally flashing it',
-        'Turn down monitor brightness',
-        'Set PyCharm font to 19px',
-        'Review Open apps',
-        'Close browser tabs',
-        'Start Event Bot',
-        'Start TheBotOfAlan chat bot',
-      ],
-    },
-    {
-      title: 'Twitch',
-      items: [
-        'Update Stream Title',
-        'Set tags to some of: Programming, IRL, Creative, Web Development, JavaScript, Python',
-        'Start tmux for bots if necessary `tmux new -s bots`, new pane with `Ctrl+b`, switch panes with `Ctrl+b <arrow>`',
-        'Verify chatbot is running (tmux a -t bots: ~/Users/alans/workshop/thebotofalan_mac/start-thebotofalan.bash)',
-        "TODO: Look at event bot to see what's up with it",
-        'Verify event bot is running (tmux a -t bots ~/Users/alans/workshop/thebotofalan_mac/start-eventbot.bash)',
-        'Start your music',
-        'Pop out chat in chrome',
-        'Open safari, iterm, and nvAlt in their own desktops',
-      ],
-    },
-    {
-      title: 'Misc 2',
-      items: [
-        'Post link on twitter',
-        'Turn on fan',
-        'Make a pitstop',
-        'Start streaming in OBS',
-        'Open stream on twitch in windows',
-        'Mute stream audio',
-        'Start your music',
-      ],
-    },
-    {
-      title: 'Post-Stream',
-      items: [
-        'System Preferences -> Display -> Scaled -> Looks like 2560x1440',
-        'nvAlt Font Size: JetBrains Mono 14',
-        'iTerm2: Non-Stream-V2',
-        'Safari Zoom 100%',
-      ],
-    },
-  ]}
-/>
+export const data = [
+  {
+    title: 'Part 1',
+    items: [
+      'Turn on lights',
+      'Restart facecam',
+      'Start SnapCam',
+      'Start Virtual Cable',
+      'Start Audition',
+      'Set Audition Dynamics - Noise Gate to 48.8dB (35.2 when not streaming)',
+      'Open OBS',
+      'Verify StreamDeck is running',
+      'Verify keyboard cam is in place and shutter is open',
+      'Put mic in place',
+      'Switch OBS to Starting Soon scene',
+    ],
+  },
+  {
+    title: 'Windows Audio',
+    items: [
+      'Start Monster Cat Audio',
+      'Set Monster Cat Audio to Shuffle',
+      'Mute headphones',
+    ],
+  },
+  {
+    title: 'Misc',
+    items: [
+      'Run Keyboard Maestro stream prep script',
+      'Verify work stuff is out of grimoire',
+      'Move Github Desktop to working project',
+      "Verify you're logged out of work email",
+      "Verify you're logged out of AWS",
+    ],
+  },
+  {
+    title: 'Windows Desktop',
+    items: [
+      'Pop out chat and followers',
+      'Open Twitch In Mod View',
+      'Verify snapcam bot is running - D:/Twitch_Stuff/snap_cam_channel_points/02',
+      'Verify snapcam close down bot script is running',
+      'Verify captions are running - D:/Twitch_Stuff/obs_live_captions',
+      'TODO: put in all the steps for getting captions running',
+      'Turn down monitor brightness',
+      'TODO: Get Start binary clock running',
+    ],
+  },
+  {
+    title: 'Mac Stuff',
+    items: [
+      'Set 4K60 resolution to &quot;Scaled - Looks Like 1920x1080&quot;',
+      'Open stream notes',
+      'Set Sublime Texts font size to 26',
+      'Set nvAlt Font size to 24',
+      'Set Code Runner Font size to 24',
+      'Set VSCode window zoom to 3 (leave font at 15)',
+      'Set iTerm2 default profile to Stream V1',
+      'Set Safari font zoom to 125%',
+      'Start Keychain Access on second monitor to prevent accidentally flashing it',
+      'Turn down monitor brightness',
+      'Set PyCharm font to 19px',
+      'Review Open apps',
+      'Close browser tabs',
+      'Start Event Bot',
+      'Start TheBotOfAlan chat bot',
+    ],
+  },
+  {
+    title: 'Twitch',
+    items: [
+      'Update Stream Title',
+      'Set tags to some of: Programming, IRL, Creative, Web Development, JavaScript, Python',
+      'Start tmux for bots if necessary `tmux new -s bots`, new pane with `Ctrl+b`, switch panes with `Ctrl+b <arrow>`',
+      'Verify chatbot is running (tmux a -t bots: ~/Users/alans/workshop/thebotofalan_mac/start-thebotofalan.bash)',
+      "TODO: Look at event bot to see what's up with it",
+      'Verify event bot is running (tmux a -t bots ~/Users/alans/workshop/thebotofalan_mac/start-eventbot.bash)',
+      'Start your music',
+      'Pop out chat in chrome',
+      'Open safari, iterm, and nvAlt in their own desktops',
+    ],
+  },
+  {
+    title: 'Misc 2',
+    items: [
+      'Post link on twitter',
+      'Turn on fan',
+      'Make a pitstop',
+      'Start streaming in OBS',
+      'Open stream on twitch in windows',
+      'Mute stream audio',
+      'Start your music',
+    ],
+  },
+  {
+    title: 'Post-Stream',
+    items: [
+      'System Preferences -> Display -> Scaled -> Looks like 2560x1440',
+      'nvAlt Font Size: JetBrains Mono 14',
+      'iTerm2: Non-Stream-V2',
+      'Safari Zoom 100%',
+    ],
+  },
+]
+
+export function Checklist({ data }) {
+  const theList = data.map((heading) => (
+    <>
+      <h3>{heading.title}</h3>
+      <ul>
+        {heading.items.map((item) => (
+          <li key={item}>
+            <input type="checkbox" id={item} />
+            <label for={item}>&nbsp;&nbsp;{item}</label>
+          </li>
+        ))}
+      </ul>
+    </>
+  ))
+  return <div>{theList}</div>
+}
+
+<Checklist data={data} />
 
 ---
 

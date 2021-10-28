@@ -1,9 +1,17 @@
-import Link from 'next/link'
-import { getAllPosts } from '../utils/mdx'
-import LayoutMain from '../components/LayoutMain.js'
 import Head from 'next/head'
+import Image from 'next/image'
+import styles from '../styles/Home.module.css'
+import Link from 'next/link'
+import LayoutMain from '../components/LayoutMain.js'
 
-export default function BlogList({ posts }) {
+// import { getAllPosts } from '../lib/api'
+
+export default function Posts() {
+  return <div>qwer</div>
+}
+
+/*
+export default function Posts({ posts }) {
   return (
     <>
       <Head>
@@ -23,13 +31,15 @@ export default function BlogList({ posts }) {
               posts on the site.
             </p>
             <div className="max-w-prose pt-4 border-t border-gray-400 text-blue-200">
-              <ul>
-                {posts.map((post, index) => (
-                  <li key={index}>
-                    <Link href={`${post.slug}`}>{post.frontmatter.title}</Link>
-                  </li>
-                ))}
-              </ul>
+              {posts.map((post) => {
+                return (
+                  <div key={post.permalink}>
+                    <Link href={post.permalink}>
+                      <a>{post.title}</a>
+                    </Link>
+                  </div>
+                )
+              })}
             </div>
           </>
         }
@@ -38,9 +48,11 @@ export default function BlogList({ posts }) {
   )
 }
 
-export const getStaticProps = async () => {
-  const posts = getAllPosts()
+export function getStaticProps() {
   return {
-    props: { posts },
+    props: {
+      posts: getAllPosts(),
+    },
   }
 }
+*/

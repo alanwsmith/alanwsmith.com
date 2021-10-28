@@ -5,6 +5,7 @@ import { remark } from 'remark'
 import html from 'remark-html'
 import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote } from 'next-mdx-remote'
+// import { bundlerMDX } from 'mdx-bundler'
 
 export function getAllPosts() {
   const postsDirectory = path.join(process.cwd(), '_posts')
@@ -34,5 +35,17 @@ export async function getPostBySlug(slug) {
   return {
     mdxSource,
     data,
+  }
+}
+
+export async function getPostBySlug2(slug) {
+  const source = fs.readFileSync(
+    path.join(process.cwd(), '_posts', `${slug}.mdx`),
+    'utf8'
+  )
+  const { code, frontmatter } = await bunleMDX(source)
+  return {
+    frontmatter,
+    code,
   }
 }

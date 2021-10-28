@@ -1,26 +1,25 @@
-import { getAllPosts, getPostBySlug } from '../lib/api'
+import React from 'react'
+import { getMDXComponent } from 'mdx-bundler/client'
+import { getAllPosts, getSinglePost } from '../utils/mdx'
 import Head from 'next/head'
 import LayoutMain from '../components/LayoutMain.js'
-import { MDXRemote } from 'next-mdx-remote'
-import Checklist from '../components/Checklist'
 
-const components = { Checklist }
-
-export default function Post({ frontMatter, mdxSource }) {
+const Post = ({ code, frontmatter }) => {
+  const Component = React.useMemo(() => getMDXComponent(code), [code])
   return (
     <>
       <Head>
         <meta
           name="og:image"
           content={`https://res.cloudinary.com/awsimages/image/upload/c_fit,l_text:Arial_68_bold:${encodeURIComponent(
-            frontMatter.title
+            frontmatter.title
           )},w_720/fl_layer_apply,g_north_west,x_480,y_68/og-image-v3_eka6dz.png`}
         />
       </Head>
       <LayoutMain
         content={
           <div className="max-w-prose">
-            <h3 className="text-blue-300 text-3xl ">{frontMatter.title}</h3>
+            <h3 className="text-blue-300 text-3xl ">{frontmatter.title}</h3>
             <div
               className="
               border-b 
@@ -30,10 +29,11 @@ export default function Post({ frontMatter, mdxSource }) {
               pb-4
               mb-4"
             >
-              {frontMatter.date}
+              {frontmatter.date}
             </div>
+
             <div className="text-blue-200">
-              <MDXRemote {...mdxSource} components={components} />
+              <Component />
             </div>
           </div>
         }
@@ -42,26 +42,19 @@ export default function Post({ frontMatter, mdxSource }) {
   )
 }
 
-export async function getStaticProps({ params }) {
-  const source = await getPostBySlug(params.slug)
-  const mdxSource = source.mdxSource
-  const frontMatter = source.data
-  console.log(source)
+export const getStaticProps = async ({ params }) => {
+  const post = await getSinglePost(params.slug)
   return {
-    props: {
-      mdxSource,
-      frontMatter,
-    },
+    props: { ...post },
   }
 }
 
-export function getStaticPaths() {
+export const getStaticPaths = async () => {
+  const paths = getAllPosts().map(({ slug }) => ({ params: { slug } }))
   return {
+    paths,
     fallback: false,
-    paths: getAllPosts().map((post) => ({
-      params: {
-        slug: post.slug,
-      },
-    })),
   }
 }
+
+export default Post
