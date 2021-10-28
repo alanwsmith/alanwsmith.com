@@ -30,24 +30,9 @@ export async function getPostBySlug(slug) {
     'utf8'
   )
   const { content, data } = matter(file)
-  // const frontMatter = matter(file)
   const mdxSource = await serialize(content)
-  // const mdxSource = await serialize(file)
-  /// const mdxSource = <div>here</div>
-
-  // const body = remark().use(html).processSync(content).toString()
-  // const body = content
-  //
-
   return {
     mdxSource,
     data,
   }
-
-  //return {
-  // ...data,
-  // body,
-  //mdxSource,
-  // content,
-  // }
 }

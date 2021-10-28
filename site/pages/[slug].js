@@ -1,17 +1,8 @@
 import { getAllPosts, getPostBySlug } from '../lib/api'
 import Head from 'next/head'
 import LayoutMain from '../components/LayoutMain.js'
-// import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote } from 'next-mdx-remote'
-
 import Checklist from '../components/Checklist'
-
-/*
-            <div
-              className="text-blue-200"
-              dangerouslySetInnerHTML={{ __html: post }}
-            />
-          */
 
 const components = { Checklist }
 
@@ -61,10 +52,6 @@ export async function getStaticProps({ params }) {
       mdxSource,
       frontMatter,
     },
-
-    // props: {
-    //   post,
-    // },
   }
 }
 
