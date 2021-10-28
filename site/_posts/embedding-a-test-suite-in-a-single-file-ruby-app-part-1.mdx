@@ -10,6 +10,9 @@ type: post
 ---
 
 
+```
+TODO: Figure out why this isn't working in MDX
+
 _"You only write code because you expect it to get executed. If you expect it to get executed, you ought to know that it works. The only way to know this is to test it."_
 
 _-- Robert "Uncle Bob" Martin<sup>1</sup>_
@@ -32,7 +35,7 @@ The key: _Don't worry about separating test execution from actual execution. Jus
 
 Here's an example [filename: drink-example.rb]:
 
-```ruby{numberLines: true}
+ruby{numberLines: true}
 #!/usr/bin/env ruby
 
 require 'minitest'
@@ -68,7 +71,7 @@ else
   puts "Tests Failed! Drink *is not* safe!"
   puts "-- No process run --"
 end
-```
+
 
 
 The `Drink` and `DrinkTest` classes are standard Ruby and MiniTest<sup>8</sup> fare. The `MiniTest.run` conditional at the end provides the magic. Running the file with `ruby drink-example.rb` kicks off MiniTest from there. If all the tests pass, the app gets on with its actual business. 
@@ -146,3 +149,4 @@ __Footnotes__
 7. Testing by hand was all I used to know. Trying to imagine going back to that makes me wonder how I got anything done. While I have no real complaints about my coding journey so far, learning how to build automated tests from the start is one thing I'd absolutely change if I could go back in time.
 
 8. The initial tutorials I went through to learn Ruby used [RSpec](http://rspec.info/) for testing. While I can see some of the appeal, I was happy when I found [MiniTest](http://ruby-doc.org/stdlib-2.0.0/libdoc/MiniTest/rdoc/MiniTest.html). It makes more sense to my brain and has less overhead since it doesn't require learning a [Domain Specific Language](https://en.wikipedia.org/wiki/Domain-specific_language) (which slowed my overall learning progress considerably).
+```

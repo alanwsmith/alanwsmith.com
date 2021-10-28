@@ -7,6 +7,10 @@ type: post
 ---
 
 
+```
+TODO: Figure out why this isn't working in MDX
+
+
 ### [x] TL;DR
 
 Jump down to the Details section for a step-by-step walk-thru of how to setup to receive EventSub notifications from Twitch. 
@@ -153,7 +157,7 @@ You need the numeric ID of the account you want to watch. To get it, replace `AC
 
 - create a JSON file named `request.json` like this:
 
-```
+
 {
     "type": "channel.follow",
     "version": "1",
@@ -166,20 +170,20 @@ You need the numeric ID of the account you want to watch. To get it, replace `AC
         "secret": "{YOUR_SECRET}"
     }
 }
-```
+
 
 
 
 - Finally, run this to do the subscription:
 
-```
+
 curl -X POST \
 -H "Client-ID: {CLIENT_ID}" \
 -H "Authorization: Bearer {BEARER_TOKEN}" \
 -H "Content-Type: application/json" \
 -d '@request.json' \
 https://api.twitch.tv/helix/eventsub/subscriptions
-```
+
 
 
 
@@ -192,3 +196,4 @@ TODO: Create a python example for sending the subscription request
 TOOD: Determine if you can start localtunnel before flask (just to make sure that's not a gotcha)
 
 
+```

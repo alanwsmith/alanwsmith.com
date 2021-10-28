@@ -8,6 +8,10 @@ type: post
 ---
 
 
+
+```
+TODO: Figure out why this isn't working in MDX
+
 NOTE: This started as my notes on the course, but it gets into a critique of the course and my thoughts and ideas for eduction. 
 
 I need to go in and refine some of the examples, but I'm leaving them as is to demonstrate some of the struggles I have with learning from them. 
@@ -30,9 +34,9 @@ They show you how to do it with codesandbox which looks cool, but I want to dev 
 
 You can use this to server HTML files out of a directory:
 
-```command
+command
 npx browser-sync start --server --files "./*.html" --no-open --no-notify --directory
-```
+
 
 ---
 
@@ -44,34 +48,34 @@ You can call external scripts from [unpkg.com](https://unpkg.com) to use React, 
 
 When your doing JSX Stuff, things inside the `{}` are evaluated and the return value is what's rendered
 
-```jsx
+jsx
 const message = 'Hello, World'
 const className = 'container'
 const welcomeElement = <div className={className}>{message}</div>
-```
+
 
 ---
 
 
 You can use the special `children` property to pass things instead of putting them inside the HTML tags
 
-```jsx
+jsx
 const message = 'Hello, World'
 const className = 'container'
 const welcomeElement = <div className={className} children={message} />
-```
+
 
 ---
 
 
 If you name your variables `children` and `className`, you can moved them into a `props` variable and use the spread operator to load them like this:
 
-```jsx
+jsx
 const children = 'Hello, World'
 const className = 'some_style'
 const props = { children, className }
 const welcomeElement = <div {...props} />
-```
+
 
 This is because `children` and `className` have special meaning to a react element
 
@@ -80,12 +84,12 @@ This is because `children` and `className` have special meaning to a react eleme
 
 You can add your own props in from of the `{...props}` spread:
 
-```jsx
+jsx
 const children = 'Hello, World'
 const className = 'some_style'
 const props = { children, className }
 const welcomeElement = <div id="myElementId" {...props} />
-```
+
 
 ---
 
@@ -97,12 +101,12 @@ They never say it, but I guessing "props" is short for properties
 
 You can also override the props given in `{...props}` by passing a key/value after it:
 
-```jsx
+jsx
 const children = 'Hello, World'
 const className = 'some_style'
 const props = { children, className }
 const welcomeElement = <div id="myElementId" {...props} className="a_differnt_style" />
-```
+
 
 ---
 
@@ -133,25 +137,25 @@ If you include it, use it.
 
 You can use React Fragments to build things like this:
 
-```jsx
+jsx
 const element = (
     <>
         <span>Hello</span>
         <span>World</span>
     </>
 )
-```
+
 
 The lesson starts out by showing it like this: 
 
-```jsx
+jsx
 const element = (
     <React.Fragment>
         <span>Hello</span>
         <span>World</span>
     </React.Fragment>
 )
-```
+
 
 This is another case where they could have stuck with one or the other. For example, do the longer, more explit `<React.Fragment>` and don't mention the other one for now. Wait for a few lessons so that folks are used to the idea of a react fragment and used to seeing its name before switching to the shorthand. 
 
@@ -165,7 +169,7 @@ There's a decent amount of time spent showing the console of the browser to show
 
 You can make a reusable element like this, using the special, built-in `children` property that picks up what's inside the element
 
-```jsx
+jsx
 const Message = (props) => <div className="message">{props.children}</div>
 
 const element = (
@@ -174,11 +178,11 @@ const element = (
         <Message>Goodbyeeee World</Message>
     </div>
 )
-```
+
 
 This was an earlier way they showed how to do it (again, frustraing)
 
-```jsx
+jsx
 const Message = (props) => <div className="message">{props.msg}</div>
 
 const element = (
@@ -187,11 +191,11 @@ const element = (
         <Message msg="Hello Father" />
     </div>
 )
-```
+
 
 This first time through, they showed it like this. (which is again frustrating since we're not using it)
 
-```jsx
+jsx
 const Message = (props) => <div className="message">{props.msg}</div>
 
 const element = (
@@ -200,7 +204,7 @@ const element = (
         {Message({msg: 'Goodbye World'})}
     </div>
 )
-```
+
 
 This was another case where they did something one way and then changed it up. The first time through, they used 'message' lower case and then showed the warning it brings and how you need to do it upper case. It would have been better to start with the correct (Uppercase) way and then say something to the effect of "by the way, the reason this is upper case is because..." They also used the `{Message({msg: 'Hello World'})}` format instead of the `` which it sounds like is how everyone actually does it. 
 
@@ -214,7 +218,7 @@ This one also spent some time showing type object types in the console. Way more
 
 This is how to make a function to work with an element. 
 
-```javascript
+javascript
 function Box({className = '', ...rest}) {
     return <div className={`box ${className}`} {...rest} />
 }
@@ -223,7 +227,7 @@ const element = (
         This is the box
     </Box>
 )
-```
+
 
 - They `className` gets a default value of nothing. Without that, it would error if the `<Box>` didn't have a className. 
 - I think the `{...rest}` in the function captures anything that's not already defined, but they didn't make that clear. 
@@ -235,7 +239,7 @@ const element = (
 
 Here's another example from above with some more stuff in it
 
-```html
+html
 <html>
 <head>
     <title>Another Beginner's Guide To React Example</title>  
@@ -279,7 +283,7 @@ Here's another example from above with some more stuff in it
   </script>
 </body>
 </html>
-```
+
 
 Note that the `{...rest}` doesn't appear to actually get used. And on that note, they show that first instead of the individual props. It's easier to reason about the individual stuff. That should have gone first. 
 
@@ -323,9 +327,9 @@ Think about adding Anki style spaced repetition to a course
 
 Never really explained this syntax
 
-```javascript
+javascript
 `${size}`
-```
+
 
 It's possible that's a well known javascript thing and not a react thing, but I wasn't familiar with it. 
 
@@ -370,18 +374,18 @@ doent's talk about how `Object.assing()` works even though that's what we're usi
 
 Anyway, here's a way to call a function from an `onclick` event:
 
-```html
+html
 <button onClick={() => setState({eventCount: state.eventCount + 1 })}>
     Click me
 </button>
-```
+
 
 ---
 
 
 They make a `handleClick` function that they put inside the `App` function but don't explain why it's there instead of a sibling of the rest of the funcitons
 
-```html
+html
 function App() {
     function handleClick() {
         setState({eventCount: state.eventCount + 1 })
@@ -389,16 +393,16 @@ function App() {
     return (
         <div>
             ...
-```
+
 
 ---
 
 
 This is how to get the value of an item that just got updated
 
-```html
+html
 <input onBlur={event => setState({username: event.target.value })} />
-```
+
 
 ---
  
@@ -406,7 +410,7 @@ This is how to get the value of an item that just got updated
 You can extract the event handler to a function like this:
 
 
-```html
+html
 function handleChage(event) {
     setState({username: event.target.value}) 
 }
@@ -414,7 +418,7 @@ function handleChage(event) {
 ...
 
 <input onBlur={handleChange} />
-```
+
 
 The author doesn't say way you don't have to pass `event` to the `onBlur` (e.g. why don't you have to do: `<input onBlur={handleChange(event)} />`)
 
@@ -429,7 +433,7 @@ The author gets into synthetic events vs native events. More info that I don't n
 
 This is the basic way to do state. 
 
-```javascript
+javascript
 function Greeting() {
 
     const [name, setName] = React.useState('')
@@ -459,25 +463,25 @@ function Greeting() {
 }
 
 ReactDOM.render(<Greeting />, document.getElementById('root'))
-```
+
 
 
 
 Do this to set an initial value for `name` of 'carl'
 
-```javascript
+javascript
 const [name, setName] = React.useState('carl')
-```
+
 
 The value gets updated with something like:
 
-```javascript
+javascript
 setName('john')
-```
+
 
 This is what it looks like in a handler with just one item. 
 
-```javascript
+javascript
 function Greeting() {
     const [name, setName] = React.useState('carl')
     const handleChange = event => setName(event.target.value)
@@ -491,19 +495,19 @@ function Greeting() {
         </div>
     )
 }
-```
+
 
 You can add pairs of useState calls:
 
-```javascript
+javascript
 const [name, setName] = React.useState('')
 const [favoriteColor, setFavoriteColor] = React.useState('')
-```
+
 
 
 For the state stuff, this is the first way they showed you how to do it before immediately saying "no one wants to do it like this". Better to use the above, this is just here for reference. 
 
-```javascript
+javascript
 function Greeting() {
     const stateArray = React.useState('')
     const name = stateArray[0]
@@ -519,7 +523,7 @@ function Greeting() {
         </div>
     )
 }
-```
+
 
 This example was a little confusing because when I cleared the form box it looked like it went back to the initial default value (which was an empty string), but that's not what was happening. It was getting the empty string from the form via `setName`
 
@@ -533,36 +537,36 @@ example would have been better served if they use variables like `name` and `ran
 
 Minor thing, but they started with:
 
-```html
+html
 <div>
     <form />
 </div>
-```
+
 
 and when they added the second example went to:
 
-```html
+html
 <div>
     <form />
     <div>
         <form />
     </div>
 </div>
-```
+
 
 I almost messed up by copying the full div which would have tried to pass back two elements. Better would have been to start with:
 
-```html
+html
 <div>
     <div>
         <form />
     </div>
 </div>
-```
+
 
 Which would move to 
 
-```html
+html
 <div>
     <div>
         <form />
@@ -571,7 +575,7 @@ Which would move to
         <form />
     </div>
 </div>
-```
+
 
 ---
 
@@ -593,25 +597,25 @@ One idea is to have bullet points that you show at the start of each lesson abou
 
 Another way to do things is to have folks write code in a collapsing way with a checker at each stage to make sure they have it right. That way, they see it before they get errors in the final thing. For example, start by just writing
 
-```javascript
+javascript
 function Greeting() {
 
 }
-```
+
 
 Then
 
-```javascript
+javascript
 function Greeting() {
     return (
 
     )
 }
-```
+
 
 Then
 
-```javascript
+javascript
 function Greeting() {
     return (
         <div>
@@ -619,7 +623,7 @@ function Greeting() {
         </div>
     )
 }
-```
+
 
 etc...
 
@@ -633,7 +637,7 @@ NOTE: Don't do this: do the lazy initialize below. (This is a case where it woul
 
 This is the example of how to use `useEffect` to update local storage
 
-```javascript
+javascript
 function Greeting() {
     
     const [name, setName] = React.useState(
@@ -658,7 +662,7 @@ function Greeting() {
 }
     
 ReactDOM.render(<Greeting />, document.getElementById('root'))
-```
+
 
 They don't really explian the concept of side effects except to say that it stores data in local storage. Not sure if there's more to it than that. 
 
@@ -671,24 +675,24 @@ Note that this is the same as above, basically, but a function is used so that t
 
 do this:
 
-```javascript
+javascript
 
-```
+
 
 instead of this (which is what was above)
 
-```javascript
+javascript
 const [name, setName] = React.useState(
     window.localStorage.getItem('name') || ''
 )
-```
+
 
 ---
 
 
 For the react dependency array, they used the empty `<>` as a wrapper. Can't remember if I've seen that here before, but it was distracting. Not sure why they didn't use a `<div>`
 
-```javascript
+javascript
 return (
     <>
         <p>stuff</p>
@@ -703,14 +707,14 @@ When you have an element that contains a `useEffect` and is the child of another
 
 An optimization to prevent this is to pass a "dependency array" as the second argument to use effect (after the function). 
 
-```javascript
+javascript
 React.useEffect(
     () => {
         window.localStorage.setItem('name', name)
     },
     [name]
 )
-```
+
 
 With that, the only time useEffect gets called is when `name` has changed. 
 
@@ -729,7 +733,7 @@ When it moves to lesson 17, the code base is a pick up for 14 or 15, but stuff i
 
 Something that might be an interesting idea is to just have a bunch of files that start as shells and then the files that have the progress in different states in the sample repo. For example, the initial template would be:
 
-```html
+html
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -742,7 +746,7 @@ Something that might be an interesting idea is to just have a bunch of files tha
         </script>
     </body>
 </html>
-```
+
 
 So that folks can start up with just that file. 
 
@@ -753,7 +757,7 @@ Then you could progress with different files showing the state of the progress a
 
 This is the sample for making a reusable hook
 
-```javascript
+javascript
 function useLocalStorageState(key, defaultValue = '') {
     const [state, setState] = React.useState(
         () => window.localStorage.getItem(key) || defaultValue 
@@ -790,7 +794,7 @@ function Greeting() {
 }
 
 ReactDOM.render(<Greeting />, document.getElementById('root'))
-```
+
 
 You don't have to use `use...` as the prefix for your function but if you do some of the linters can do more checking
 
@@ -867,17 +871,17 @@ Make sure things rendered 100% of the time (or you only got one step away from g
 
 For forms, if you set an `id` for the element, you can access it like this (for `id="username"`):
 
-```javascript
+javascript
 function handleSubmit(event) {
     event.preventDefault()
     const username = event.target.elements.username.value
     // do something with username
 }
-```
+
 
 Here's the full example:
 
-```javascript
+javascript
 function UsernameForm() {
     function handleSubmit(event) {
         event.preventDefault()
@@ -896,7 +900,7 @@ function UsernameForm() {
     )
 }
 ReactDOM.render(<UsernameForm/>, document.getElementById('root'))
-```
+
 
 ---
 
@@ -910,15 +914,15 @@ They actually show you a few ways to do it before getting to the one you should 
 
 Note that `<button>` elements without a `type` are implicitly submit buttons. To make the not that, do:
 
-```html
+html
 <button type="button">No A Submit</button>
-```
+
 
 To keep things explicit, set the type for submit too:
 
-```html
+html
 <button type="submit">Submit</button>
-```
+
 
 ---
 
@@ -932,12 +936,12 @@ Use `event.preventDefault()` to keep the page from refreshing when the form is s
 
 e.g.
 
-```html
+html
 function handleForm(event) {
     event.preventDefault()
     // do other stuff
 }
-```
+
 
 which will receive `event` from the `onSubmit={formHandler}` call
 
@@ -952,16 +956,16 @@ Lesson 21, did a comparison of the username to itself lowercased. Would be bette
 
 You can disable buttons in forms with something like
 
-```jsx
+jsx
 <button disabled={Boolean(error)} type="submit">Submit</button>
-```
+
 
 ---
 
 
 By setting a `value` for a form input, it gets controlled by React. For example, in this case, the input field is changed to lower case when a user types anything uppercase. 
 
-```jsx
+jsx
 function UsernameForm() {
     const [username, setUsername] = React.useState('')
 
@@ -984,7 +988,7 @@ function UsernameForm() {
     )
 }
 ReactDOM.render(<UsernameForm/>, document.getElementById('root'))
-```
+
 
 ---
 
@@ -1030,7 +1034,7 @@ They show you how to do map to turn into a series of element, but it would be wa
 
 The crux of the lesson is when you're using map to make a set of element, you need to add a `key` prop with some unique value to them.
 
-```jsx
+jsx
 const animals = [
     { id: 1, name: "cat" },
     { id: 2, name: "dog" },
@@ -1048,7 +1052,7 @@ function TheList() {
     )
 }
 ReactDOM.render(<TheList/>, document.getElementById('root'))
-```
+
 
 Note that the video doesn't make it clear how in their example they iterate over the items in the list. You have to trace it through use state. 
 
@@ -1067,15 +1071,15 @@ Pretty sure this is the first time I've seen them use something like `onNameChan
 
 Also, in the other examples, they would call a function like:
 
-```jsx
+jsx
 onChange={functionName}
-```
+
 
 In this one, they do:
 
-```jsx
+jsx
 onChange={event => setName(event.target.value)}
-```
+
 
 Would have been nice to been given a heads up about the change since that's the first time I've seen it, I think
 
@@ -1084,16 +1088,16 @@ Would have been nice to been given a heads up about the change since that's the 
 
 Thing to cover in a beginner course that gets into JS as well is string inside backtics that have variables in them e.g.
 
-```jsx
+jsx
 `hello, ${name}`
-```
+
 
 ---
 
 
 This is the example of how to have state lifted into a parent of two siblings that need to deal with each others state. The `onWhateverChange` is still something I'm getting my head around. I diagram or two probably would have helped. 
 
-```jsx
+jsx
 function Name({name, onNameChange}) {
     return (
         <div>
@@ -1132,7 +1136,7 @@ function App() {
 }
 
 ReactDOM.render(<App/>, document.getElementById('root'))
-```
+
 
 ---
 
@@ -1179,17 +1183,17 @@ That was hard to follow since I'm not familiar with the lines yet. Would have be
 
 In the example returning data from `fetch`, they use:
 
-```jsx
+jsx
 .then(r => r.json())
 .then(response => response.data.pokemon)
-```
+
     
 That makes it look like they are two different things somehow, but I'm pretty sure they are both responses in which case this would have been better (unless there's some reason I don't know whey not do to it)
 
-```jsx
+jsx
 .then(response => response.json())
 .then(response => response.data.pokemon)
-```
+
 
 consistency is key
 
@@ -1198,7 +1202,7 @@ consistency is key
 
 Here's the example I did for myself to figure out what was going on. 
 
-```jsx
+jsx
 function App() {
     const [theStatus, setTheStatus] = React.useState('Checking')
     React.useEffect(() => {
@@ -1219,11 +1223,11 @@ function fetchWeatherStatus() {
 }
 
 ReactDOM.render(<App/>, document.getElementById('root'))
-```
+
 
 Compare this to the example from the video:
 
-```jsx
+jsx
 function PokemonInfo({pokemonName}) {
   const [pokemon, setPokemon] = React.useState(null)
 
@@ -1305,11 +1309,11 @@ function fetchPokemon(name) {
 }
 
 ReactDOM.render(<App />, document.getElementById('root'))
-```
+
 
 Mine is 20 lines. Here's another version I put together showing how to use a button to run the update:
 
-```jsx
+jsx
 function App() {
     const [theStatus, setTheStatus] = React.useState('???')
     const [pageFetchInProgress, setPageFetchInProgress] = React.useState(false)
@@ -1332,7 +1336,7 @@ function App() {
 }
 
 ReactDOM.render(<App/>, document.getElementById('root'))
-```
+
 
 22 lines...
 
@@ -1351,7 +1355,7 @@ The one in the video is good for showing the input fields. I don't have a proble
 
 This is what I came up with. It's a little more straight forward for me to understand than the example they give to start with. Their example is nice, but the order they give it in threw me a little and it has a little more stuff in it than needed for. see below
 
-```jsx
+jsx
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -1401,11 +1405,11 @@ body { background-color: #555; }
     </script>
 </body>
 </html>
-```
+
 
 And here's the example from the course for comparison. 
 
-```jsx
+jsx
 <body>
   <div id="root"></div>
   <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
@@ -1511,12 +1515,12 @@ And here's the example from the course for comparison.
     ReactDOM.render(<App />, document.getElementById('root'))
   </script>
 </body>
-```
+
 
 Overall, the course was a little harder for me to understand than what I'd like to see in a beginner course. It went too fast and I had to do a bunch of review. I spent 20+ hours going over the 2.5 hours worth of videos. That's not awful, by the way. It's just that that effort was harder than it had to be based off the way I learn. 
 
 The thing I keep coming back to though is that it didn't show me how to make a local react app for development. The codesandbox example they show is nice and all, but I want to do local dev. So, I'm off to look at create-react-app. 
 
 If you'd like to see the full set of examples from the course they are available in [this github repo](https://github.com/kentcdodds/beginners-guide-to-react)
-
+```
 

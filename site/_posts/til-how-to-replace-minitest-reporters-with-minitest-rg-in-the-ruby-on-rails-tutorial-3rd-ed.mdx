@@ -11,17 +11,21 @@ type: post
 ---
 
 
+```
+TODO: Figure out why this isn't working in MDX
+
+
 [Michael Hartl](http://www.michaelhartl.com) uses the [minitest-reporters](https://github.com/kern/minitest-reporters) gem to colorize test results in the third edition of the excellent [Ruby on Rails Tutorail](https://www.railstutorial.org). I prefer [minitest-rg](https://github.com/blowmage/minitest-rg). To use it instead:
 
 {% capture codeA %}
-```ruby{numberLines: true}
+ruby{numberLines: true}
 require 'minitest/reporters'
 Minitest::Reporters.use!
-```
+
 {% endcapture %}
 
 
-```html
+html
 <ol>
   <li>
     Remove (or just don't add) these lines to <code>test/test_helper.rb</code>:<br /><br />
