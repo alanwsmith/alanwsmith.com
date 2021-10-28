@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "esbuild": "^0.13.9",
+    "esbuild-loader": "^2.16.0",
     "gray-matter": "^4.0.3",
     "mdx-bundler": "^6.0.2",
     "next": "11.1.2",
