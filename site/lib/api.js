@@ -3,6 +3,8 @@ import path from 'path'
 import matter from 'gray-matter'
 import { remark } from 'remark'
 import html from 'remark-html'
+import { serialize } from 'next-mdx-remote/serialize'
+import { MDXRemote } from 'next-mdx-remote'
 
 export function getAllPosts() {
   const postsDirectory = path.join(process.cwd(), '_posts')
@@ -22,16 +24,15 @@ export function getAllPosts() {
   })
 }
 
-export function getPostBySlug(slug) {
+export async function getPostBySlug(slug) {
   const file = fs.readFileSync(
     path.join(process.cwd(), '_posts', `${slug}.mdx`),
     'utf8'
   )
   const { content, data } = matter(file)
-  const body = remark().use(html).processSync(content).toString()
-  // const body = content
+  const mdxSource = await serialize(content)
   return {
-    ...data,
-    body,
+    mdxSource,
+    data,
   }
 }
