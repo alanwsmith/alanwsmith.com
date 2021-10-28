@@ -1,12 +1,44 @@
 import { getAllPosts, getPostBySlug } from '../lib/api'
 import Head from 'next/head'
 import LayoutMain from '../components/LayoutMain.js'
-import { MDXRemote } from 'next-mdx-remote'
-import Checklist from '../components/Checklist'
+// import { MDXRemote } from 'next-mdx-remote'
+// import Checklist from '../components/Checklist'
+
+// import { getMDXComponent } from 'mdx-bundler/client'
+
+export default function Post() {
+  return <div>here</div>
+}
+
+/*
+const Post = ({ code, frontmatter }) => {
+  const Component = React.useMemo(() => getMDXComponent(code), [code])
+  return (
+    <div className="wrapper">
+      <h1>{frontmatter.title}</h1>
+      <Component />
+    </div>
+  )
+}
+
+export const getStaticProps = async ({ params }) => {
+  const post = await getSinglePost(params.slug)
+  return {
+    props: { ...post },
+  }
+}
+
+export const getStaticPaths = async () => {
+  const paths = getAllPosts().map(({ slug }) => ({ params: { slug } }))
+  return {
+    paths,
+    fallback: false,
+  }
+}
 
 const components = { Checklist }
 
-export default function Post({ frontMatter, mdxSource }) {
+export function old_Post({ frontMatter, mdxSource }) {
   return (
     <>
       <Head>
@@ -42,11 +74,10 @@ export default function Post({ frontMatter, mdxSource }) {
   )
 }
 
-export async function getStaticProps({ params }) {
+export async function old_getStaticProps({ params }) {
   const source = await getPostBySlug(params.slug)
   const mdxSource = source.mdxSource
   const frontMatter = source.data
-  console.log(source)
   return {
     props: {
       mdxSource,
@@ -55,7 +86,7 @@ export async function getStaticProps({ params }) {
   }
 }
 
-export function getStaticPaths() {
+export function old_getStaticPaths() {
   return {
     fallback: false,
     paths: getAllPosts().map((post) => ({
@@ -65,3 +96,4 @@ export function getStaticPaths() {
     })),
   }
 }
+*/
