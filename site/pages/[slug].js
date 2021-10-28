@@ -1,6 +1,6 @@
 import React from 'react'
 import { getMDXComponent } from 'mdx-bundler/client'
-import { getAllPosts, getSinglePost } from '../../utils/mdx'
+import { getAllPosts, getSinglePost } from '../utils/mdx'
 
 const Post = ({ code, frontmatter }) => {
   const Component = React.useMemo(() => getMDXComponent(code), [code])
