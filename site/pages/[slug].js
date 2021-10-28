@@ -4,12 +4,16 @@ import LayoutMain from '../components/LayoutMain.js'
 // import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote } from 'next-mdx-remote'
 
+import Checklist from '../components/Checklist'
+
 /*
             <div
               className="text-blue-200"
               dangerouslySetInnerHTML={{ __html: post }}
             />
           */
+
+const components = { Checklist }
 
 export default function Post({ frontMatter, mdxSource }) {
   return (
@@ -38,7 +42,7 @@ export default function Post({ frontMatter, mdxSource }) {
               {frontMatter.date}
             </div>
             <div className="text-blue-200">
-              <MDXRemote {...mdxSource} />
+              <MDXRemote {...mdxSource} components={components} />
             </div>
           </div>
         }
