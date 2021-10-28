@@ -1,0 +1,40 @@
+---
+category: Miscellaneous
+date: '2006-05-01'
+slug: /wireless-flash-mod
+title: Wireless Flash Mod
+type: post
+---
+
+
+An amazing piece of tech in modern photography is the ability to
+have wireless automatic TTL exposure control of multiple strobes.
+The fact that the two flashes can communicate via pulses of light
+and automatically determine their exposure so fast that you
+effectively can't tell the difference between their communication
+and the exposure burst in incredible. It's one of the most telling
+signs for me of exactly how fast computer chips can work and I'm
+sure the chips that make it work are an order of magnitude less
+powerful than what's in everyday personal computers. Right now,
+I've got two Canon flashes that I use in this setup with the master
+on the camera and a slave setup somewhere else in the room. One of
+the few drawbacks of the system is that when a flash is set to
+slave mode its auto-focus assist lamp blinks every second or so.
+This light is surprisingly bright, especially if it keeps hitting
+you in the eye from less than a few yards. It also creates an
+annoying blink on your subject if you happen to have it pointed
+directly at whatever you are shooting. You can pivot the flash head
+to try and get this to aim somewhere else, but in general it seems
+to always end up being a distraction. The good news is that it
+appears that you can cover the AF assist lamp and not affect the
+wireless operation. For example:
+![Flash Mod](http://www.alanwsmith.com/blog/wp-content/uploads/20060430_234118a.jpg "Flash Mod")
+It turns out that the wireless sensor is directly above the Canon
+mark. Also, to give you an idea of how bright the assist lamp is,
+the blue tape you see is actually two pieces of painters masking
+tape with a piece of black paper in between and if you look
+directly at the strobe you can still see the red blinking through
+it.It takes a little getting used to and the user interface for
+controlling the stobes leaves a lot to be desired, but if you spend
+a little time to get through the learning curve it's a great tool
+to add to the box.

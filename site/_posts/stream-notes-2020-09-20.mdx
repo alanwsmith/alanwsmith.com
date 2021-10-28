@@ -1,0 +1,11 @@
+---
+category: Live Writing
+date: '2020-09-20'
+slug: /stream-notes-2020-09-20
+tags: []
+title: 'Starting a Post About Doing Performance Art #LiveWriting'
+type: post
+---
+
+
+`youtube: https://www.youtube.com/watch?v=b4tArT3iiNM`

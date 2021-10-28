@@ -1,0 +1,31 @@
+---
+category: Live Coding
+date: '2020-11-20'
+draft: true
+slug: /stream-notes-2020-11-20
+tags: []
+title: 'Stream Notes for November 20, 2020 #LiveCoding'
+type: post
+---
+
+
+### Notes
+
+Built a new NASA Video Downloader so I can have that process be separate from the slicing and the assembling of the videos. 
+
+### Links From The Stream
+
+- [gitignore/Python.gitignore at master · github/gitignore](https://github.com/github/gitignore/blob/master/Python.gitignore)
+- [Google Search: declamatory](https://www.google.com/search?client=safari&rls=en&q=declamatory&ie=UTF-8&oe=UTF-8)
+- [Google Search: interagovite](https://www.google.com/search?client=safari&rls=en&q=interagovite&ie=UTF-8&oe=UTF-8)
+- [Google Search: Neil Postman & Charles Weingartner called Teaching as a Subversive Activity](https://www.google.com/search?client=safari&rls=en&q=Neil+Postman+%26+Charles+Weingartner+called+Teaching+as+a+Subversive+Activity&ie=UTF-8&oe=UTF-8)
+- [Google Search: Paulo Friere on problem-posing education](https://www.google.com/search?client=safari&rls=en&q=Paulo+Friere+on+problem-posing+education&ie=UTF-8&oe=UTF-8)
+- [Google Search: python get file extension](https://www.google.com/search?client=safari&rls=en&q=python+get+file+extension&ie=UTF-8&oe=UTF-8)
+- [Google Search: python requests tmp file](https://www.google.com/search?client=safari&rls=en&q=python+requests+tmp+file&ie=UTF-8&oe=UTF-8)
+- [Google Search: random word](https://www.google.com/search?client=safari&rls=en&q=random+word&ie=UTF-8&oe=UTF-8)
+- [Learn Basic HTML and HTML5: Say Hello to HTML Elements | freeCodeCamp.org](https://www.freecodecamp.org/learn/responsive-web-design/basic-html-and-html5/say-hello-to-html-elements)
+- [Random Word Generator](https://randomwordgenerator.com/)
+- [Stack Overflow: Extracting extension from filename in Python](https://stackoverflow.com/questions/541390/extracting-extension-from-filename-in-python)
+- [Tailwind CSS - Rapidly build modern websites without ever leaving your HTML.](https://tailwindcss.com/)
+- [Tailwind CSS v2.0 - Rapidly build modern websites without ever leaving your...](https://www.producthunt.com/)
+- [Wikipedia: Problem-posing education](https://en.wikipedia.org/wiki/Problem-posing_education)

@@ -1,0 +1,15 @@
+---
+category: Miscellaneous
+date: '2006-02-27'
+slug: /windows-explorer-shotcut
+title: Windows Explorer Shotcut
+type: post
+---
+
+
+I don't like the way Windows Explorer opens on default. From that
+view, I almost always have to close something in order to get at
+what I want. Instead, I change the target of the shortcut to this:
+%SystemRoot%\\explorer.exe /e, /select, d:\\ Which opens in a basic
+view with the drives waiting for me to figure out when one I want
+to dive into.

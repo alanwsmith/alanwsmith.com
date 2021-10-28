@@ -1,0 +1,40 @@
+---
+category: Miscellaneous
+date: '2009-01-25'
+slug: /tracking-where-our-tax-dollars-go-with-recoverygov
+title: Tracking where our tax dollars go with Recovery.gov
+type: post
+---
+
+
+Regardless of your political affiliation, it would be hard to make
+a case against the idea behind
+[Recovery.gov](http://recovery.gov/).
+> SEC. 1226. RECOVERY.GOV. (a) REQUIREMENT TO ESTABLISH WEBSITE.— The
+> Board shall establish and maintain a website on the Internet to be
+> named Recovery.gov, to foster greater accountability and
+> transparency in the use of funds made available in this Act.
+
+You can
+[read a little more about it](http://www.opencongress.org/articles/view/819-Recovery-gov)
+at [OpenCongress.org](http://www.opencongress.org/).
+
+* * * * *
+
+Just putting the data out there is one thing, but they also have
+the following mandate: "The website shall provide data on relevant
+economic, financial, grant, and contract information
+**in user-friendly visual presentations** to enhance public
+awareness of the use funds made available in this Act." This will
+be tremendously helpful if done well. Hearing about spending ones,
+tens and hundreds of millions, billions and trillions of dollars is
+tough to digest without context. Those amounts always seem like a
+lot (and rightly so), but when they are covered in the media it
+tends to be an abstract number. A reference point or a comparison
+can lead to surprising realizations about how some of the amounts
+compare. One of the best examples of this I've seen is the
+[Death and Taxes](http://forever.broked.net/~jason/images/Death_and_Taxes_____.jpg)
+maps. (That one is from 2004.) The Recovery.gov web site is based
+around the bail out money. I hope that it is expanded to cover all
+our Tax spending. I, for one, would like to have a better grasp on
+where my tax dollars are going.

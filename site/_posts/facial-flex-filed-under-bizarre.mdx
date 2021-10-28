@@ -1,0 +1,13 @@
+---
+category: Miscellaneous
+date: '2011-04-30'
+slug: /facial-flex-filed-under-bizarre
+title: Facial Flex - Filed Under Bizarre - Video for April 30, 2011
+type: post
+---
+
+
+Starts off a little slow. Make sure to stick around till at least 1:15. You'll probably be too weirded out to turn it off after that. Facial Flex! Get yours today!
+
+
+<div style="text-align:center"><iframe width="640" height="510" src="http://www.youtube.com/embed/etU_wtP5Pck?rel=0" frameborder="0"> </iframe></div>

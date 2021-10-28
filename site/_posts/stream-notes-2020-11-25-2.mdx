@@ -1,0 +1,35 @@
+---
+category: Live Coding
+date: '2020-11-25'
+draft: true
+slug: /stream-notes-2020-11-25-2
+tags: []
+title: 'Stream Notes for November 25, 2020 #LiveCoding'
+type: post
+---
+
+
+### Notes
+
+Spent the stream making a script that produces samples of all the different GL transition effects that are available. A sample is made from each one with three seconds padding on each side from the same two clips. The durations of the transitions range from 250ms to 10sec in 250ms intervals.
+
+
+### Links From The Stream
+
+
+- [complete list of ffmpeg flags / commands](https://gist.github.com/tayvano/6e2d456a9897f55025e25035478a3a50)
+- [ffmpeg - Skip process if output already exists - Super User](https://superuser.com/questions/922866/ffmpeg-skip-process-if-output-already-exists)
+- [FFmpeg drawtext filter to Insert Dynamic Overlays, Scrolling Text, and...](https://ottverse.com/ffmpeg-drawtext-filter-dynamic-overlays-timecode-scrolling-text-credits/)
+- [GL Transitions](https://gl-transitions.com/)
+- [Google Search: f string printf](https://www.google.com/search?client=safari&rls=en&q=f+string+printf&ie=UTF-8&oe=UTF-8)
+- [Google Search: ffmpeg no flag to not overwrite](https://www.google.com/search?newwindow=1&client=safari&rls=en&biw=960&bih=489&ei=cx2_X4n0Ks6QwbkP3ZWG-Ag&q=ffmpeg+no+flag+to+not+overwrite&oq=ffmpeg+no+flag+to+not+overwrite&gs_lcp=CgZwc3ktYWIQAzoECAAQRzoJCAAQyQMQFhAeOggIIRAWEB0QHjoFCCEQoAE6BQghEKsCOgcIIRAKEKABUNUhWMtSYMBTaAVwAngAgAHwA4gB8hWSAQoxOS40LjEuMC4xmAEAoAEBqgEHZ3dzLXdpesgBCMABAQ&sclient=psy-ab&ved=0ahUKEwjJ-Zr5np_tAhVOSDABHd2KAY8Q4dUDCAw&uact=5)
+- [Google Search: ffmpeg text overlay](https://www.google.com/search?client=safari&rls=en&q=ffmpeg+text+overlay&ie=UTF-8&oe=UTF-8)
+- [Google Search: ffmpeg-concat](https://www.google.com/search?client=safari&rls=en&q=ffmpeg-concat&ie=UTF-8&oe=UTF-8)
+- [Google Search: fstring python leading zero](https://www.google.com/search?client=safari&rls=en&q=fstring+python+leading+zero&ie=UTF-8&oe=UTF-8)
+- [Google Search: python range](https://www.google.com/search?client=safari&rls=en&q=python+range&ie=UTF-8&oe=UTF-8)
+- [Google Search: tearing me up bob moses](https://www.google.com/search?client=safari&rls=en&q=tearing+me+up+bob+moses&ie=UTF-8&oe=UTF-8)
+- [Python 3's f-Strings: An Improved String Formatting Syntax (Guide) – Real Python](https://realpython.com/python-f-strings/)
+- [Stack Overflow: ffmpeg override output file if exists](https://stackoverflow.com/questions/39788972/ffmpeg-override-output-file-if-exists)
+- [Stack Overflow: How to pad a string with leading zeros in Python 3](https://stackoverflow.com/questions/39402795/how-to-pad-a-string-with-leading-zeros-in-python-3/39402910)
+- [Stack Overflow: Is there an ffmpeg flag to not ask for overwrite but add a...](https://stackoverflow.com/questions/34382922/is-there-an-ffmpeg-flag-to-not-ask-for-overwrite-but-add-a-number-at-the-end/47955085)
+- [Stack Overflow: Text on video ffmpeg](https://stackoverflow.com/questions/17623676/text-on-video-ffmpeg)

@@ -1,0 +1,14 @@
+---
+category: Miscellaneous
+date: '2006-02-21'
+slug: /movie-list
+title: Movie list
+type: post
+---
+
+
+just posted a copy of the AFI top 100 list so I can
+[check off the movies I've seen](http://www.alanwsmith.com/blog/top-100-movie-checklist/).
+Right now, I'm about half way thru. There are some movies (like
+Rear Window) that I'm pretty sure I've seen, but it's tied up with
+some other films in my brain so I'm not counting it yet.

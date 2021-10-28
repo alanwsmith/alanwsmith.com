@@ -1,0 +1,14 @@
+---
+category: Miscellaneous
+date: '2008-06-17'
+slug: /mahna-mahna
+title: Mahna Mana
+type: post
+---
+
+
+And here's one to stick in your head:
+It's amazing how expressive the Muppets are. They still look great.
+Do doooo do du du! And one more that I found in the related links
+to the first one:
+F-ing percussionists.

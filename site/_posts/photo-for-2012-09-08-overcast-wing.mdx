@@ -1,0 +1,15 @@
+---
+blurb: Flying through the soup.
+category: Photographs
+date: '2012-09-08'
+slug: /photo-for-2012-09-08-overcast-wing
+tags:
+- Project 365 Photos
+title: Overcast Wing -- Photo for September 8, 2012
+type: post
+---
+
+
+![Image: aws-20120908--1526-03.jpg](/aws-20120908--1526-03.jpg)
+
+Flying through the soup on the way back home.

@@ -1,0 +1,28 @@
+---
+category: Miscellaneous
+date: '2006-01-12'
+slug: /the-beginning-of-the-end-for-nikons-with-film
+title: The beginning of the end for Nikons with film
+type: post
+---
+
+
+I had pretty much accepted that it would come sometime in my
+lifetime, but Nikon UK, today has announced that it's starting the
+phase out of their film bodies. Holy Shit.
+> As the film camera market shrinks and the popularity of compact
+> digital cameras increases, demand for products that offer advanced
+> features and extra value is continuing to grow. High performance
+> digital SLR cameras are performing well as users shift from
+> film-based SLR cameras or upgrade from compact digital cameras to
+> digital SLR cameras. As a result of the new strategy Nikon will
+> discontinue production of all lenses for large format cameras and
+> enlarging lenses with sales of these products ceasing as soon as
+> they run out of stock. This also applies to most of our film camera
+> bodies, interchangeable manual focus lenses and related
+> accessories. Although Nikon anticipates that the products will
+> still be in retail distribution up to Summer 2006. In recognition
+> of Nikonâ€™s commitment to professional photographers we will
+> continue to manufacturer and sell the F6, our flagship film model,
+> as well as a number of manual interchangeable lenses. Sales of the
+> manual FM10 will also continue outside Europe.

@@ -1,0 +1,58 @@
+---
+category: Live Coding
+date: '2020-10-26'
+slug: /stream-notes-2020-10-26
+tags: []
+title: 'Updating My Keyboard Maestro Stream Setup Macro And Finding A Bug - #LiveCoding
+  Stream Notes for October 26, 2020'
+type: post
+---
+
+
+`youtube: https://www.youtube.com/watch?v=UsELjrRoDyY`
+
+
+### Timestamps
+
+<span class="post-info">__[Start: 00:00:00]__</span><br />
+Enhancing my [Keyboard Maestro](https://www.keyboardmaestro.com/main/) hot keys to automate streaming prep.
+
+Figured out how to use [Menu Conditions](https://wiki.keyboardmaestro.com/condition/Menu) to close windows in BBEdit, Sublime Text (2 and 3), and PyCharm. The same technique will work in other apps too. 
+
+
+### Links From The Stream
+
+
+- [Closing literally around 1300 files - add the function to CLOSE ALL Files...](https://forum.sublimetext.com/t/closing-literally-around-1300-files-add-the-function-to-close-all-files-without-saving/39880/5)
+- [Commands – Sublime Text 3 Documentation](http://www.sublimetext.com/docs/3/commands.html)
+- [Commands — Sublime Text Unofficial Documentation](https://sublime-text-unofficial-documentation.readthedocs.io/en/sublime-text-2/reference/commands.html)
+- [Connect external terminal to Sublime - Plugin Announcements - Sublime Forum](https://forum.sublimetext.com/t/connect-external-terminal-to-sublime/51479)
+- [DanThomas/Keyboard Maestro Macros, Plugins and Videos.md at master · dagware/DanThomas](https://github.com/dagware/DanThomas/blob/master/Keyboard%20Maestro%20Macros%2C%20Plugins%20and%20Videos.md)
+- [External Command - Packages - Package Control](https://packagecontrol.io/packages/External%20Command)
+- [Google Search: keyboard maestro dynamic menu item](https://www.google.com/search?client=safari&rls=en&q=keyboard+maestro+dynamic+menu+item&ie=UTF-8&oe=UTF-8)
+- [Google Search: keyboard maestro menu while match](https://www.google.com/search?client=safari&rls=en&q=keyboard+maestro+menu+while+match&ie=UTF-8&oe=UTF-8)
+- [Google Search: keyboard maestro tell if menu is disabled](https://www.google.com/search?client=safari&rls=en&q=keyboard+maestro+tell+if+menu+is+disabled&ie=UTF-8&oe=UTF-8)
+- [Google Search: keyboard maestro tell if menu item is disabled](https://www.google.com/search?client=safari&rls=en&q=keyboard+maestro+tell+if+menu+item+is+disabled&ie=UTF-8&oe=UTF-8)
+- [Google Search: menu item path keyboard maestro](https://www.google.com/search?client=safari&rls=en&q=menu+item+path+keyboard+maestro&ie=UTF-8&oe=UTF-8)
+- [Google Search: send sublime text external command](https://www.google.com/search?client=safari&rls=en&q=send+sublime+text+external+command&ie=UTF-8&oe=UTF-8)
+- [Google Search: sublime text command line close file](https://www.google.com/search?client=safari&rls=en&q=sublime+text+command+line+close+file&ie=UTF-8&oe=UTF-8)
+- [Google Search: sublime text commands](https://www.google.com/search?client=safari&rls=en&q=sublime+text+commands&ie=UTF-8&oe=UTF-8)
+- [Google Search: subllime text command line](https://www.google.com/search?client=safari&rls=en&q=subllime+text+command+line&ie=UTF-8&oe=UTF-8)
+- [Keyboard Maestro 6 Documentation: Menus](https://www.keyboardmaestro.com/documentation/6/menus.html)
+- [Keyboard Maestro Discourse: Fuzzy menu item name in select menu action](https://forum.keyboardmaestro.com/t/fuzzy-menu-item-name-in-select-menu-action/8734)
+- [Keyboard Maestro Discourse: Keyboard Maestro 8.0.4 “If Then Else” Action - A...](https://forum.keyboardmaestro.com/t/keyboard-maestro-8-0-4-if-then-else-action-a-menu-item-with-path/9027)
+- [Keyboard Maestro Discourse: Looking for a simple regex formula I could use...](https://forum.keyboardmaestro.com/t/looking-for-a-simple-regex-formula-i-could-use-with-the-show-or-select-menu-item-action-to-cover-menu-items-with-multiple-toggles/13357)
+- [Keyboard Maestro Discourse: Menu Item Disabled Alert](https://forum.keyboardmaestro.com/t/menu-item-disabled-alert/7082)
+- [Keyboard Maestro Plugins for the Elgato Stream Deck | ThoughtAsylum](https://www.thoughtasylum.com/2020/01/11/keyboard-maestro-stream-deck-plugins/)
+- [Keyboard Maestro Wiki: action:Select or Show a Menu Item](https://wiki.keyboardmaestro.com/action/Select_or_Show_a_Menu_Item)
+- [Keyboard Maestro Wiki: condition:Menu](https://wiki.keyboardmaestro.com/condition/Menu)
+- [Keyboard Maestro Wiki: Conditions](https://wiki.keyboardmaestro.com/Conditions)
+- [Keyboard Maestro Wiki: manual:Menus](https://wiki.keyboardmaestro.com/manual/Menus)
+- [Keyboard Maestro Wiki: Regular Expressions](https://wiki.keyboardmaestro.com/Regular_Expressions)
+- [Keyboard Maestro Wiki: Troubleshooting](https://wiki.keyboardmaestro.com/Troubleshooting)
+- [OS X Command Line - Sublime Text 2 Documentation](http://www.sublimetext.com/docs/2/osx_command_line.html)
+- [OS X Command Line – Sublime Text 3 Documentation](https://www.sublimetext.com/docs/3/osx_command_line.html)
+- [Stack Overflow: Sublime Text 3 - ?send commands to sublime console](https://stackoverflow.com/questions/61902017/sublime-text-3-send-commands-to-sublime-console)
+- [Sublime Text - Commands](https://www.sublimetext.com/docs/1/commands)
+- [Sublime Text 3 Cheat Sheet | ShortcutFoo](https://www.shortcutfoo.com/app/dojos/sublime-text-3-win/cheatsheet)
+- [Workflows in Personal and Professional Productivity](https://wippp.com/home/tag/Keyboard+Maestro)

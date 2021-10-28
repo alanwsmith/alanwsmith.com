@@ -1,0 +1,15 @@
+---
+blurb: I don't think he's with us anymore.
+category: Photographs
+date: '2012-10-25'
+slug: /snail-photo-for-2012-10-25
+tags:
+- Project 365 Photos
+title: Snail - Photo for October 25, 2012
+type: post
+---
+
+
+![Image: aws-20121025--1315-02a.jpg](/aws-20121025--1315-02a.jpg)
+
+Sadly, this little fellow isn't with us anymore. Only his shell remains.

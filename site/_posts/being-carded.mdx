@@ -1,0 +1,12 @@
+---
+category: Miscellaneous
+date: '2006-01-09'
+slug: /being-carded
+title: Being carded
+type: post
+---
+
+
+Tonight I went out with a few friends for a quick drink after work
+to celebrate my 31st birthday. I got carded and no one else (most
+younger than me) did. Makes me laugh just a little.

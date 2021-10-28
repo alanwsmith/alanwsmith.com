@@ -1,0 +1,13 @@
+---
+category: Miscellaneous
+date: '2007-04-24'
+slug: /lots-of-visual-charts
+title: Lots of Visual Charts
+type: post
+---
+
+
+This is a neat
+[table of charts](http://www.visual-literacy.org/periodic_table/periodic_table.html).
+Mouse over an "element" to see an example. Found this on
+[cool tools](http://www.kk.org/cooltools/).

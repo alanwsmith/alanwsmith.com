@@ -1,0 +1,15 @@
+---
+blurb: The stinger hasn't fully developed yet. When it does, we're in trouble.
+category: Photographs
+date: '2012-10-08'
+slug: /flying-scorpion-photo-for-2012-10-08
+tags:
+- Project 365 Photos
+title: Flying Scorpion - Photo for October 8, 2012
+type: post
+---
+
+
+![Image: aws-20121008--1142-04.jpg](/aws-20121008--1142-04.jpg)
+
+The stinger hasn't fully developed yet. When it does, we're in trouble.

@@ -1,0 +1,21 @@
+---
+category: Miscellaneous
+date: '2007-08-22'
+slug: /post-launch-but-still-going
+title: Post launch, but still going
+type: post
+---
+
+
+We just launched a redesign of PGATOUR.com this Sunday to help
+promote the new PGA TOUR Playoffs for the FedExCup. Redesigns are
+always exhausting. Unfortunately, we don't get to let up since we
+are starting the process for the next one a few weeks ago. That's
+right, before the most recent one launched, we were already working
+on the next one. Thankfully, it's not usually like this. We made
+the current change specifically because it's the first year of the
+FedExCup. The trick with this is that we just changed partners at
+the start of this year. So, I've basically been working full
+throttle since October of last year. Once we get past the next
+redesign and to what should be a much more normal working rotation,
+I'm seriously thinking about taking a sabbatical.

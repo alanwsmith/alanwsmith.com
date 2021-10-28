@@ -1,0 +1,41 @@
+---
+category: Journal
+date: '2020-09-15'
+slug: /journal-2020-09-15
+tags: []
+title: 'Journal: Sept. 15, 2020'
+type: post
+---
+
+
+Starting to get the hang of starting up the Twitch stream. I still need to finish setting up my checklist. I've got a good start, but there's still somethings to add and I need to put it into an HTML page with checkboxes so that I can literal check stuff off when going through it. I used sticky notes and nvAlt for checklists before, but it's going to be better when I put it into my local launchpad web site. 
+
+The cool thing about it is that it doesn't have to be dynamic. Like, no PHP or anything like that required on the back end, it'll just be straight HTML. When you load the page, the checkboxes will be unchecked. Then you just check them down when completing the items. Finally, just refresh the page (or leave it and come back to it) in order to clear it. 
+
+Not sure why I didn't think about that before. I'd thought about making checklists before, but always thought about making them dynamic. No need for that. 
+
+Amyway, I made a bunch more tweaks the to python scripts to send data to S3/Redshift last night. They were already working, but I cleaned up the user interface. Mainly, I built a little text input where you can put in the MFA ID and token so that the end users won't have to edit a JSON file. 
+
+Working with a co-worker today to polish them up and hopefully will get a chance to send them off to our users today. Would be slick to get that working. The only bummer about this is that I'm now back in the support game. When something borks out (e.g. the user does something unexpected), I'm the one who's going to get the call. So, that's not as great, but that's just incentive to fix things well. I already know a couple of things that can go wrong and am adding error handling for them. But, there's always the unexpected. 
+
+The trick, of course, is just to address each fix fully. i.e. making sure to add code that deals with the situation. For example, if a user adds white space to the end of a text field, don't just tell them to remove it, write code that looks for it and chops it off if it finds it. 
+
+Anyway, looking forward to getting that going. 
+
+Stayed up a little late last night because I was working on that script so late (or, not the script, but the UI in Alteryx). I was originally trying to use Interface Designer in Alteryx but couldn't get it to work. I could get it to show up and accept input, but couldn't for the life of me figure out how to get the data to pass to python. I couldn't find the details anywere in their docs or with general searching. Spent a couple hours on that before dropping back to using a text input field. 
+
+The thing I don't like about the text input field is that you can't hide the entry in a password field. So, I'm not going to use that for readshift credentails. I'll just drop those into a JSON config file for now. Eventually, I'll see about getting a different way to handle those. 
+
+I feel like these journal entries used to be different. Not sure exactly how, but maybe less work talk. Makes me wonder if it's because I'm casting? I mean, I know that has an effect, but maybe it's bigger than I realized?
+
+I'm going to write in the journal privately today and we'll see about that. And then we'll see what tomrrow's public journal looks like. 
+
+Oh, yeah, one last thing is that I kept my twitch stream up and running last night. Just mutted the mic and played spotify. So, Twitch will mute all the audio. Not sure if I'm going to post that one on YouTube or not. Still experimenting there, but it was kinda interesting to keep it going. 
+
+Anyway, that's enough for now. 
+
+Y'all take care
+
+Cheers,
+
+-a

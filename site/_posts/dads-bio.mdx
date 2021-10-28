@@ -1,0 +1,25 @@
+---
+category: Miscellaneous
+date: '2006-01-10'
+slug: /dads-bio
+title: Dad's Bio
+type: post
+---
+
+
+There is a local radio show called Music from the Electro Lounge
+that I listen to a lot on the local NPR station. Tonight they are
+doing and 80s edition with music and some interspersed audio clips.
+One of the clips was the announcement of the assassination attempt
+of President Reagan. This, got me thinking about the book my dad
+wrote with/about Dennis McCarthy. I remember him as "Denny" who was
+one of my dad's friends when we lived in D.C. He was also the
+Secret Service agent who tackled Hinckley when he fired on Reagan.
+Anyway, I pulled down a copy of the book and just flipped thru it
+for a sec. On the dust cover is a bio for my dad: Philip W. Smith
+was born in Fayetteville, Tennessee, and attended the University of
+Southern Mississippi for one year before joining the Huntsville
+(Alabama) Times. In 1971 he became the paper's Washington
+correspondent and spent the next twelve years in the capital
+working for Newhouse Newspapers. He now lives in Huntsville,
+Alabama, with his wife, Susan, and their ten-year-old son, Alan.

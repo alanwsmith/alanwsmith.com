@@ -1,0 +1,54 @@
+---
+category: Live Coding
+date: '2020-11-13'
+slug: /stream-notes-2020-11-13
+tags: []
+title: 'Working On A snake_case_renamber in Bash ~ Stream Notes for November 13, 2020
+  #LiveCoding'
+type: post
+---
+
+
+`youtube: https://www.youtube.com/watch?v=Z4nFsFDfG0U`
+
+
+### Notes
+
+Working on a snake_case_renamer to batch rename files in bash.
+
+### Links From The Stream
+
+
+
+
+- [[SOLVED] Can't use variable in mv command](https://www.linuxquestions.org/questions/linux-general-1/can%27t-use-variable-in-mv-command-811009/)
+- [bash - Can I unset the $1 variable? - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/365710/can-i-unset-the-1-variable)
+- [bash - mv : not found when executed from script that modifies PATH variable -...](https://unix.stackexchange.com/questions/360972/mv-not-found-when-executed-from-script-that-modifies-path-variable)
+- [BASH with Debugger and Improved Debug Support and Error Handling](http://bashdb.sourceforge.net/)
+- [Debug your shell scripts with bashdb - Linux.com](https://www.linux.com/news/debug-your-shell-scripts-bashdb/)
+- [Google Search: bash -e empty $1](https://www.google.com/search?newwindow=1&client=safari&rls=en&ei=UFSvX5HtBqLz5gLl9qLwAw&q=bash+-e+empty+%241&oq=bash+-e+empty+%241&gs_lcp=CgZwc3ktYWIQAzoECAAQR1DJDFisEGDUEWgAcAJ4AIABXIgBqQGSAQEymAEAoAEBqgEHZ3dzLXdpesgBCMABAQ&sclient=psy-ab&ved=0ahUKEwiR1Y2CkYHtAhWiuVkKHWW7CD4Q4dUDCAw&uact=5)
+- [Google Search: bash script argument](https://www.google.com/search?client=safari&rls=en&q=bash+script+argument&ie=UTF-8&oe=UTF-8)
+- [Google Search: bash varaible doesn't work as mv file](https://www.google.com/search?client=safari&rls=en&q=bash+varaible+doesn%27t+work+as+mv+file&ie=UTF-8&oe=UTF-8)
+- [Google Search: bashdb](https://www.google.com/search?client=safari&rls=en&q=bashdb&ie=UTF-8&oe=UTF-8)
+- [Google Search: command line flags](https://www.google.com/search?client=safari&rls=en&q=command+line+flags&ie=UTF-8&oe=UTF-8)
+- [Google Search: coub](https://www.google.com/search?client=safari&rls=en&q=coub&ie=UTF-8&oe=UTF-8)
+- [Google Search: mendelevee](https://www.google.com/search?client=safari&rls=en&q=mendelevee&ie=UTF-8&oe=UTF-8)
+- [Google Search: nasa image api](https://www.google.com/search?client=safari&rls=en&q=nasa+image+api&ie=UTF-8&oe=UTF-8)
+- [Google Search: python chdir](https://www.google.com/search?client=safari&rls=en&q=python+chdir&ie=UTF-8&oe=UTF-8)
+- [Google Search: python run subprocess file doesn't exist](https://www.google.com/search?client=safari&rls=en&q=python+run+subprocess+file+doesn%27t+exist&ie=UTF-8&oe=UTF-8)
+- [Google Search: sed match first character](https://www.google.com/search?client=safari&rls=en&q=sed+match+first+character&ie=UTF-8&oe=UTF-8)
+- [Google Search: sed match first character space](https://www.google.com/search?client=safari&rls=en&q=sed+match+first+character+space&ie=UTF-8&oe=UTF-8)
+- [Google Search: tomsk](https://www.google.com/search?client=safari&rls=en&q=tomsk&ie=UTF-8&oe=UTF-8)
+- [Google Search: vscode change hotkey](https://www.google.com/search?client=safari&rls=en&q=vscode+change+hotkey&ie=UTF-8&oe=UTF-8)
+- [Hot Coubs - The Biggest Video Meme Platform](https://coub.com/)
+- [How to match whitespace in sed? - Super User](https://superuser.com/questions/112834/how-to-match-whitespace-in-sed)
+- [How to test for null or empty variables within Bash script - LinuxConfig.org](https://linuxconfig.org/how-to-test-for-null-or-empty-variables-within-bash-script)
+- [How to Use Command Line Arguments in a Bash Script - Baeldung on Linux](https://www.baeldung.com/linux/use-command-line-arguments-in-bash-script)
+- [NASA Open APIs](https://api.nasa.gov/)
+- [Python os.chdir() Method - Tutorialspoint](https://www.tutorialspoint.com/python/os_chdir.htm)
+- [Stack Overflow: "$1" is empty when running bash -c scriptname arg](https://stackoverflow.com/questions/48351074/1-is-empty-when-running-bash-c-scriptname-arg)
+- [Stack Overflow: bash substitute first character in every line](https://stackoverflow.com/questions/10140213/bash-substitute-first-character-in-every-line)
+- [Stack Overflow: Cannot use this variable in the mv command](https://stackoverflow.com/questions/54136639/cannot-use-this-variable-in-the-mv-command)
+- [Stack Overflow: operating system - python subprocess file does not exist](https://stackoverflow.com/questions/13169302/python-subprocess-file-does-not-exist)
+- [Visual Studio Code Key Bindings](https://code.visualstudio.com/docs/getstarted/keybindings)
+- [Wikipedia: Dmitri Mendeleev](https://en.wikipedia.org/wiki/Dmitri_Mendeleev)

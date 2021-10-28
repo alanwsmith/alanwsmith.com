@@ -1,0 +1,12 @@
+---
+category: Miscellaneous
+date: '2011-04-25'
+slug: /iron-by-woodkid
+title: Video for April 25, 2011 - Iron by WOODKID
+type: post
+---
+
+
+Some of the nicest black and white footage I can remember seeing.
+
+<div style="text-align:center"><iframe src="http://player.vimeo.com/video/21604065?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="640" height="360" frameborder="0"> </iframe><p style="text-align:center; margin-top:10px;"><a href="http://vimeo.com/21604065">Woodkid - Iron</a> from <a href="http://vimeo.com/woodkidmusic">WOODKID</a> on <a href="http://vimeo.com">Vimeo</a>.</p></div>

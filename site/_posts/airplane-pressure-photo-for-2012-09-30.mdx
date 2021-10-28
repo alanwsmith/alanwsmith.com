@@ -1,0 +1,15 @@
+---
+blurb: No wonder your ears pop on planes.
+category: Photographs
+date: '2012-09-30'
+slug: /airplane-pressure-photo-for-2012-09-30
+tags:
+- Project 365 Photos
+title: Airplane Pressure - Photo for September 30, 2012
+type: post
+---
+
+
+![Image: aws-20120930--2211-01.jpg](/aws-20120930--2211-01.jpg)
+
+No wonder your ears pop on airplane flights. This water bottle was capped in N.Y. After a short flight without opening, this is what it looked like after landing in Jacksonville.

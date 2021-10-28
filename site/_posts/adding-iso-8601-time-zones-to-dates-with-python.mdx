@@ -1,0 +1,223 @@
+---
+category: Python
+date: '2020-11-12'
+slug: /adding-iso-8601-time-zones-to-dates-with-python
+tags: []
+title: Adding ISO 8601 UTC Time Zones To Dates With Python
+type: post
+---
+
+
+### TL;DR
+
+I need to add ISO 8601[^iso] UTC timezone offsets to datetime strings that are missing them. Here's how I'm doing it:
+
+```python{numberLines: true}
+#!/usr/bin/env python3
+
+import pytz
+
+from dateutil.parser import isoparse
+
+def add_eastern_timezone(*, input):
+    naive_datetime = isoparse(input)
+    nyc_timezone = pytz.timezone("America/New_York")
+    nyc_aware_datetime = nyc_timezone.localize(naive_datetime)
+    iso_formatted_string = nyc_aware_datetime.isoformat('T', 'seconds')
+    return iso_formatted_string
+    
+# Example: Eastern Daylight Time
+print(add_eastern_timezone(input='2020-07-15T12:30:00'))
+# >>>>>>>>>>>>>>>>>>>>>>>> OUTPUT 2020-07-15T12:30:00-04:00
+
+# Example: Eastern Standard Time
+print(add_eastern_timezone(input='2020-11-15T12:30:00'))
+# >>>>>>>>>>>>>>>>>>>>>>>> OUTPUT 2020-11-15T12:30:00-05:00
+```
+
+
+### Details
+
+
+I've got a set of data coming in that includes datetime strings. They're in the format `2020-11-10T18:29:57` which looks like ISO 8601, but isn't. There's no UTC timezone information. 
+
+The system that produces the data lives in U.S. Eastern time and always spits out dates for that timezone. That would make it easy to add the timezone, except, of course, for the scourge that is Daylight Savings Time. 
+
+Thankfully, we have the python _pytz_[^pytz] module. 
+
+In python-speak, datatime objects that don't have timezones are called 'naive'. Those with timezone data are called 'aware'. The pytz module works by identifying a timezone from the Olson tz database[^tzdb] and making an aware version of the timestamp with the timezone set to the corresponding city. 
+
+As an example, here's a naive datetime for 2020-07-15 which is during Daylight Savings Time in the U.S. Eastern timezone. 
+
+```python{numberLines: true}
+#!/usr/bin/env python3
+
+from datetime import datetime
+
+naive_daylight_time = datetime(2020, 7, 15, 12, 30, 0)
+
+print(naive_daylight_time)
+```
+
+Which outputs: 
+
+```txt
+2020-07-15 12:30:00
+```
+
+Adding the timezone with pytz looks like this:
+
+```python{numberLines: true}
+#!/usr/bin/env python3
+
+import pytz
+
+from datetime import datetime
+
+# Create a 'naive' datetime (with no timezone info)
+naive_daylight_time = datetime(2020, 7, 15, 12, 30, 0)
+
+# Create a target timezone for NYC
+nyc_timezone = pytz.timezone("America/New_York")
+
+# Make an 'aware' datetime (with timezone info)
+nyc_daylight_time = nyc_timezone.localize(naive_daylight_time)
+
+# Print it out
+print(nyc_daylight_time)
+```
+
+Which outputs our string with the proper timezone offset:
+
+```txt
+2020-07-15 12:30:00-04:00
+```
+
+Because pytz takes Daylight Savings Time into account, using a date during Eastern Standard Time produces the proper offset of `-05:00` instead of `-04:00`. For example, here's a run for 2020-11-09
+
+```python{numberLines: true}
+#!/usr/bin/env python3
+
+import pytz
+
+from datetime import datetime
+
+# Create a 'naive' datetime (with no timezone info)
+naive_standard_time = datetime(2020, 11, 9, 12, 30, 0)
+
+# Create a target timezone for NYC
+nyc_timezone = pytz.timezone("America/New_York")
+
+# Make an 'aware' datetime (with timezone info)
+nyc_standard_time = nyc_timezone.localize(naive_standard_time)
+
+# Print it out
+print(nyc_standard_time)
+```
+
+Which produces:
+```txt
+2020-11-09 12:30:00-05:00
+```
+
+
+The last piece of the puzzle is to get the explicit ISO 8601 format. Pythons default output is close, but it's missing the "T" separator.
+
+```python{numberLines: true}
+from datetime import datetime
+
+my_date = datetime(2020, 7, 15, 12, 30, 0)
+
+print(my_date)
+```
+
+Outputs:
+
+```txt
+2020-07-15 12:30:00
+```
+
+Using `.isoformat()` drops in the proper separator:
+
+```python{numberLines: true}
+from datetime import datetime
+
+my_date = datetime(2020, 7, 15, 12, 30, 0)
+
+print(my_date.isoformat())
+```
+
+Output:
+
+```txt
+2020-07-15T12:30:00
+```
+
+There is one thing to keep in mind with `.isoformat()`, by default, it'll show milliseconds. 
+
+```python{numberLines: true}
+from datetime import datetime
+
+my_date = datetime.now()
+
+print(my_date.isoformat())
+```
+
+Output something like:
+
+```txt
+2020-11-12T13:53:49.511174
+```
+
+It can be limited to seconds by passing an argument in the second position. The first position is the separator to use between the date and time. So, we just pass 'T' to maintain it. Looks like this:
+
+```python{numberLines: true}
+from datetime import datetime
+
+my_date = datetime.now()
+
+print(my_date.isoformat('T', 'seconds'))
+```
+
+Which outputs something like:
+
+```txt
+2020-11-12T13:53:49
+```
+
+Putting it all together, we get this:
+
+
+```python{numberLines: true}
+#!/usr/bin/env python3
+
+import pytz
+
+from dateutil.parser import isoparse
+
+def add_eastern_timezone(*, input):
+    naive_datetime = isoparse(input)
+    nyc_timezone = pytz.timezone("America/New_York")
+    nyc_aware_datetime = nyc_timezone.localize(naive_datetime)
+    iso_formatted_string = nyc_aware_datetime.isoformat('T', 'seconds')
+    return iso_formatted_string
+    
+# Example: Eastern Daylight Time
+print(add_eastern_timezone(input='2020-07-15T12:30:00'))
+# >>>>>>>>>>>>>>>>>>>>>>>> OUTPUT 2020-07-15T12:30:00-04:00
+
+# Example: Eastern Standard Time
+print(add_eastern_timezone(input='2020-11-15T12:30:00'))
+# >>>>>>>>>>>>>>>>>>>>>>>> OUTPUT 2020-11-15T12:30:00-05:00
+```
+
+This is yet another time when I'm glade other folks [deal with computer time an timezones](https://www.youtube.com/watch?v=-5wpm-gesOY). 
+
+pyzt isn't a standard module. You'll need to install it with: `pip install pyzt`. 
+
+Also, if you typo and do `pyzt`, that's a module too. So, it'll install and you'll think you've got the timezone one, but it won't actually be there and the errors will be very confusing until you figure it out. 
+
+
+[^iso]: [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) is the international standard for dates and times. It's the only way to fly. (Get it, like, time flies?)
+[^pytz]: [pytz](https://pypi.org/project/pytz/) brings the Olson tz database into Python. This library allows accurate and cross platform timezone calculations using Python 2.4 or higher. It also solves the issue of ambiguous times at the end of daylight saving time.
+[^tzdb]: [The tz (Olson) database](https://en.wikipedia.org/wiki/Tz_database) is a collaborative compilation of information about the world's time zones, primarily intended for use with computer programs and operating systems. The tz database is also known as tzdata, the zoneinfo database or IANA time zone database, and occasionally as the Olson database, referring to the founding contributor, Arthur David Olson.

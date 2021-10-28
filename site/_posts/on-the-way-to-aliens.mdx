@@ -1,0 +1,15 @@
+---
+category: Miscellaneous
+date: '2008-01-15'
+slug: /on-the-way-to-aliens
+title: On the way to Aliens
+type: post
+---
+
+
+With a title like
+"[Strap-on robot suit takes the pain out of backbreaking farm work](http://mdn.mainichi.jp/national/news/20080110p2a00m0na022000c.html)"
+you know you want one even if you're not a farmer. I mean STRAP-ON
+ROBOT SUIT! Even if you're not a complete geek, that's gotta sound
+at least a little awesome. Countdown to a real life version of
+Ripley's Loader has begun.

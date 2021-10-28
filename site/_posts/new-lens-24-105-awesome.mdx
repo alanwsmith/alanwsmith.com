@@ -1,0 +1,45 @@
+---
+category: Miscellaneous
+date: '2007-05-21'
+slug: /new-lens-24-105-awesome
+title: New Lens - 24-105 - awesome
+type: post
+---
+
+
+Not too long ago, Canon introduced a new lens: the
+[EF 24-105mm f/4L IS USM](http://www.usa.canon.com/consumer/controller?act=ModelInfoAct&fcategoryid=149&modelid=11924).
+I've been lusting after this lens from the day I first heard about
+it. When I was shooting with my old Nikon F3, I would generally
+carry two lenses. A 24mm and a 105mm. Now, I can have them both in
+a single lens. Granted, my prime lenses were of the f/2.8 variety
+which would have been nice, but loosing one stop in light is worth
+it for keeping the lens a manageable size and weight. Last
+Saturday, I was shooting a wedding for some friends so I decided to
+finally break down and get the lens before the big day. From that
+experience, I think the lens is just about the perfect lens for
+wedding photography. On the wide side, a 28mm angle of view would
+have been just fine, but the 105mm is just right. I've always loved
+the perspective. It keeps enough of the background so you can
+figure out what's going on, but has a narrow enough depth of field
+to keep it from competing. Prior to getting this lens my main lens
+was a 28-70 f/28. And while I love having the extra stop of light
+for shooting bands (main venue where I shoot the lighting generally
+rings in at 1/15 - f/2.8 at ISO 800) the 70mm perspective just
+isn't telephoto enough for what I like. Of course, I could always
+switch over to the 80-200, but when running and gunning this is so
+much of a hassle that I wouldn't do it unless the shot really
+needed it. Now, I don't have to worry. This is my first Image
+Stabalization lens and I haven't really used it yet at all. Just
+turned it on for a couple of test shots. It was a little
+disorienting since it creates a bit of a disconnect between what
+you feel in the camera movement in your hands and what is going on
+in the viewfinder. I'm sure it'll be nice to have, but it'll
+probably take me a while to remember it's there. My only minor
+gripe is the fact that the lens hood is only effective at the wide
+end of the range. A nice thing about the 28-70 is that it moves to
+wide as the front is extended. This means that the hood works well
+the 70mm angle of view as well. Not a huge deal most of the time,
+but it would be nice if the 24-105 had similar working
+functionality. Bottom line. After one day of shooting with it, I'm
+very happy with the lens.
