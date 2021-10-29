@@ -1,0 +1,28 @@
+---
+category: Miscellaneous
+date: '2012-04-23'
+slug: /return-of-the-site-hello-jekyll
+title: Return of the Site - Hello, jekyll
+type: post
+---
+
+
+Finally!
+
+Prior to this post, the last one I made was on May 30, 2011. Today is April 23, 2012. Almost a year of downtime. I blame Facebook. Also, Twitter and the day job. But mostly Facebook. That vast time sink that's trying to eat the internet. Of course, this hiatus was shorter than the last one which lasted from Sept. 1, 2009 to March 5, 2011. You figure I would have made at least one post about Arthur C. Clarke's "2010" *during* 2010. But no. I missed the entire year.
+
+Neither break was really Facebook's fault. I was using WordPress to power the site and had grown tired of it. I was constantly struggling to get it do what I wanted. It was slow and required frequent security updates. The site even got hacked when I didn't get one of those security updates done fast enough. A pain to deal with. I'll do everything I can to avoid in the future. That means dropping WordPress.
+
+So, the quest for a new blog package began. Each period of downtime was spent looking for something to replace WordPress. In theory, this shouldn't have stopped me from continuing to post inside WordPress. In practice, I didn't want to put more into a system I knew I was leaving. I was also reluctant to keep WordPress running for fear of another security breakdown. The brief set of posts in 2011 was when I realized it was going to be a long time before I could spend enough time to figure out a good solution. Might as well be posting while doing the search. Then the aggravation with WordPress hit again. I decided I wouldn't post again until I figure out where I was going.
+
+I want my site to be fast, flexible and easy to maintain. After experimenting with other blogging software and even taking another short run at building my own, I've settled on using [jekyll][1]. If you are a tech geek and willing to mess around with it a bit (which is almost the definition of tech geek), it's great. It generates static/flat HTML pages. No performance or security problems associated with dynamic content. There's also no database to deal with. Posts are stored as easily managed, individual [Markdown][2] files.
+
+Every piece of usability research I've heard suggests the easier something is to use, the more likely it is to actually be used. After getting over the small initial learning curve, using jekyll is proving to be very easy. I spent a lot of time futzing around with the layout and trying to figure out what I was going to do with comments. Short of that, I could have relaunched months ago. (Not that I spent all that time working on it. Work/life just kept me from getting to it.)
+
+There's still work to do. RSS feeds, maybe some Responsive Design and the tweaks that always come post-launch are on the list. Comments are gone for now. I'm not sure if I'm brining them back. I'll be figuring all this out as I go. For now, at least I can post stuff again. 
+
+I've got a bunch of notes/thoughts on things to post. I'm excited to have a place to get this stuff out of my head again. Hope you enjoy. 
+
+[1]: https://github.com/mojombo/jekyll/blob/master/README.textile
+
+[2]: http://daringfireball.net/projects/markdown/

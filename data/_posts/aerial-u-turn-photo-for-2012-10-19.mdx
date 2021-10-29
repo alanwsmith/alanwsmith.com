@@ -1,0 +1,15 @@
+---
+blurb: What goes up...
+category: Photographs
+date: '2012-10-19'
+slug: /aerial-u-turn-photo-for-2012-10-19
+tags:
+- Project 365 Photos
+title: Aerial U-Turn - Photo for October 19, 2012
+type: post
+---
+
+
+![Image: aws-20121019--1226-03a.jpg](/aws-20121019--1226-03a.jpg)
+
+What goes up...

@@ -1,0 +1,75 @@
+---
+category: Miscellaneous
+date: '2020-12-07'
+draft: true
+slug: /stream-notes-2020-12-07
+tags: []
+title: Stream Notes 2020 12 07
+type: post
+---
+
+
+### Notes
+
+- Installing Nginx on my mac and getting in running to server Django. 
+
+- The Nginx install was easy. Getting it to serve, not so much. No good documentation exists out there for how to set it up easily on the mac. Finally found it but putting together a bunch of docs from below. 
+
+
+### Links From The Stream
+
+
+- [Adding Startup Scripts to Launch Daemon on Mac OS X Sierra 10.12.6 | by Fahim...](https://medium.com/@fahimhossain_16989/adding-startup-scripts-to-launch-daemon-on-mac-os-x-sierra-10-12-6-7e0318c74de1)
+- [Amazon.com: Novation MK2 Launchpad Mini Compact USB Grid Controller for...](https://www.amazon.com/Novation-Launchpad-Compact-Controller-Ableton/dp/B00W5F3GJ0)
+- [Ask Different: Launchd - Run as if you're logged in as a user using sudo](https://apple.stackexchange.com/questions/93161/launchd-run-as-if-youre-logged-in-as-a-user-using-sudo)
+- [Better performance by optimizing Gunicorn config | by Omar Rayward | Building...](https://medium.com/building-the-system/gunicorn-3-means-of-concurrency-efbb547674b7)
+- [Configuring ASGI Django Application using Daphne and Nginx Server | by Ritik...](https://medium.com/@Ritiktaneja/configuring-asgi-django-application-using-daphne-and-nginx-server-59a90456fe17)
+- [Deploy a Django project](https://docs.bitnami.com/installer/infrastructure/django/get-started/deploy-django-project/)
+- [Deploy Django Project in nginx with uWSGI on Mac OS X | Crusade](https://www.sean-lan.com/2016/09/15/django-uwsgi-nginx/)
+- [Deploying Django | Django documentation | Django](https://docs.djangoproject.com/en/3.1/howto/deployment/)
+- [Deploying Gunicorn — Gunicorn 20.0.4 documentation](https://docs.gunicorn.org/en/stable/deploy.html)
+- [Deployment - Uvicorn](https://www.uvicorn.org/deployment/)
+- [GitHub: asciimatics - A cross platform package to do curses-like operations,...](https://github.com/peterbrittain/asciimatics)
+- [GitHub: daphne - Django Channels HTTP/WebSocket server (from django)](https://github.com/django/daphne)
+- [Google Search: asciimatics](https://www.google.com/search?newwindow=1&client=safari&rls=en&q=asciimatics&spell=1&sa=X&ved=2ahUKEwjW14TPpr3tAhUq1VkKHW1jCSUQBSgAegQIBBAv&biw=1152&bih=587)
+- [Google Search: daphne mac socket](https://www.google.com/search?client=safari&rls=en&q=daphne+mac+socket&ie=UTF-8&oe=UTF-8)
+- [Google Search: deploy django](https://www.google.com/search?client=safari&rls=en&q=deploy+django&ie=UTF-8&oe=UTF-8)
+- [Google Search: django daphne mac deploy](https://www.google.com/search?client=safari&rls=en&q=django+daphne+mac+deploy&ie=UTF-8&oe=UTF-8)
+- [Google Search: django deploy](https://www.google.com/search?client=safari&rls=en&q=django+deploy&ie=UTF-8&oe=UTF-8)
+- [Google Search: django nginx](https://www.google.com/search?client=safari&rls=en&q=django+nginx&ie=UTF-8&oe=UTF-8)
+- [Google Search: gunicorn slow](https://www.google.com/search?client=safari&rls=en&q=gunicorn+slow&ie=UTF-8&oe=UTF-8)
+- [Google Search: gunicorn socket](https://www.google.com/search?client=safari&rls=en&q=gunicorn+socket&ie=UTF-8&oe=UTF-8)
+- [Google Search: mac django deployment](https://www.google.com/search?client=safari&rls=en&q=mac+django+deployment&ie=UTF-8&oe=UTF-8)
+- [Google Search: mac launchd different user](https://www.google.com/search?client=safari&rls=en&q=mac+launchd+different+user&ie=UTF-8&oe=UTF-8)
+- [Google Search: mac nginx config file](https://www.google.com/search?client=safari&rls=en&q=mac+nginx+config+file&ie=UTF-8&oe=UTF-8)
+- [Google Search: mac nginx port 80](https://www.google.com/search?client=safari&rls=en&q=mac+nginx+port+80&ie=UTF-8&oe=UTF-8)
+- [Google Search: mac setup socket](https://www.google.com/search?client=safari&rls=en&q=mac+setup+socket&ie=UTF-8&oe=UTF-8)
+- [Google Search: nginx sites-avaialble](https://www.google.com/search?client=safari&rls=en&q=nginx+sites-avaialble&ie=UTF-8&oe=UTF-8)
+- [Google Search: run mac sudo user different nginx](https://www.google.com/search?client=safari&rls=en&q=run+mac+sudo+user+different+nginx&ie=UTF-8&oe=UTF-8)
+- [Google Search: start launchdaemon mac](https://www.google.com/search?client=safari&rls=en&q=start+launchdaemon+mac&ie=UTF-8&oe=UTF-8)
+- [Google Search: Uvicorn nginx](https://www.google.com/search?client=safari&rls=en&q=Uvicorn+nginx&ie=UTF-8&oe=UTF-8)
+- [Graham Dumpleton: Introducing mod_wsgi-express.](http://blog.dscpl.com.au/2015/04/introducing-modwsgi-express.html)
+- [How to Configure NGINX | Linode](https://www.linode.com/docs/guides/how-to-configure-nginx/)
+- [How To Set Up Django with Postgres, Nginx, and Gunicorn on Ubuntu 18.04 | DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-18-04)
+- [How To Set Up Nginx Server Blocks (Virtual Hosts) on Ubuntu 16.04 | DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-set-up-nginx-server-blocks-virtual-hosts-on-ubuntu-16-04)
+- [How To Set Up Nginx Server Blocks on Ubuntu 18.04 | Linuxize](https://linuxize.com/post/how-to-set-up-nginx-server-blocks-on-ubuntu-18-04/)
+- [How to use Django with Daphne | Django documentation | Django](https://docs.djangoproject.com/en/3.1/howto/deployment/asgi/daphne/)
+- [How to use Django with Hypercorn | Django documentation | Django](https://docs.djangoproject.com/en/3.1/howto/deployment/asgi/hypercorn/)
+- [How to use Django with Uvicorn | Django documentation | Django](https://docs.djangoproject.com/en/3.1/howto/deployment/asgi/uvicorn/)
+- [Install Socket For Python In Mac - basebermo](https://basebermo.weebly.com/install-socket-for-python-in-mac.html)
+- [NGINX Config | DigitalOcean](https://www.digitalocean.com/community/tools/nginx?domains.0.server.domain=launchpad&domains.0.server.path=%2FUsers%2Falans%2Ftoolkit%2Flauncpad&domains.0.php.php=false&domains.0.python.python=true&domains.0.python.djangoRules=true&domains.0.routing.root=false)
+- [Nginx configuration for Mac OS X with Homebrew, using sites-enabled directory.](https://gist.github.com/jimothyGator/5436538)
+- [nginx documentation](https://nginx.org/en/docs/)
+- [PyPI: mod-wsgi](https://pypi.org/project/mod-wsgi/)
+- [Server Fault: How to start/stop/restart launchd services from the command line?](https://serverfault.com/questions/194832/how-to-start-stop-restart-launchd-services-from-the-command-line)
+- [Setting up a Nginx web server on macOS – Sylvain Durand](https://sylvaindurand.org/setting-up-a-nginx-web-server-on-macos/)
+- [Settings - Uvicorn](https://www.uvicorn.org/settings/)
+- [Stack Overflow: Daphne deployment issue](https://stackoverflow.com/questions/63371298/nginx-daphne-deployment-issue)
+- [Stack Overflow: deploying a django app on osx](https://stackoverflow.com/questions/46679727/deploying-a-django-app-on-osx)
+- [Stack Overflow: gunicorn slower than flask development server](https://stackoverflow.com/questions/26985382/gunicorn-slower-than-flask-development-server)
+- [Stack Overflow: List of ANSI color escape sequences](https://stackoverflow.com/questions/4842424/list-of-ansi-color-escape-sequences)
+- [Stack Overflow: Nginx : Cannot listen on port 80 ... only port 8080 works on OSX 10.11](https://stackoverflow.com/questions/35230971/nginx-cannot-listen-on-port-80-only-port-8080-works-on-osx-10-11)
+- [Stack Overflow: Using Daphne behind nginx](https://stackoverflow.com/questions/50792452/using-daphne-behind-nginx)
+- [yzguy-netbox/Dockerfile at master · yzguy/yzguy-netbox](https://github.com/yzguy/yzguy-netbox/blob/master/netbox/Dockerfile#L31)
+- [yzguy-netbox/gunicorn.py at master · yzguy/yzguy-netbox](https://github.com/yzguy/yzguy-netbox/blob/master/netbox/gunicorn.py)
+- [yzguy-netbox/netbox.conf at master · yzguy/yzguy-netbox](https://github.com/yzguy/yzguy-netbox/blob/master/nginx/netbox.conf#L8-L14)

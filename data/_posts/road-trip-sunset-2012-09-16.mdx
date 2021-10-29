@@ -1,0 +1,12 @@
+---
+blurb: Nice sunset on the way back home.
+category: Photographs
+date: '2012-09-16'
+slug: /road-trip-sunset-2012-09-16
+tags: []
+title: Road Trip Sunset
+type: post
+---
+
+
+![Image: aws-20120916--1831-03.jpg" caption="I made the trip home a little longer by stopping to take some sunset shots. Totally worth it.](/aws-20120916--1831-03.jpg" caption="I made the trip home a little longer by stopping to take some sunset shots. Totally worth it.)

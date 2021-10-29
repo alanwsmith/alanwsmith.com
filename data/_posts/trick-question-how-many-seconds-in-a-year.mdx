@@ -1,0 +1,96 @@
+---
+blurb: Time sure seems stable. Except for the part where it's not.
+category: Miscellaneous
+date: '2015-01-07'
+slug: /trick-question-how-many-seconds-in-a-year
+tags: []
+title: Trick question&#58; How many seconds in a year?
+type: post
+---
+
+
+```
+TODO: Figure out why this isn't working in MDX
+
+
+Time is weird. Or, if you prefer, wibbly-wobbly<sup>1</sup>. 
+
+Take someone who lives on a border between time zones and has a five minute commute. Separate clocks at home and the office show they make it in before waking up and that it takes two hours longer to trek home than it did to come in.
+
+Weird. 
+
+A more subtle strangeness is the Leap Second<sup>2</sup>.  Like the days we add for Leap Years, these seconds keep our clocks and calendars from drifting away from their proper seasons. The expected math class answer for determining how many seconds there are in a year looks like this:
+
+> 365 days * 24 hr * 60 min * 60 sec = **31,536,000 seconds**
+
+A year with a positive Leap Second is just slighly longer<sup>3</sup>.
+
+> 365 days * 24 hr * 60 min * 60 sec + 1 Leap Sec = **31,536,001 seconds**
+    
+Notice the explicit use of "positive" above. That's required since Lead Seconds can, in theory, be negative. 
+
+> 365 days * 24 hr * 60 min * 60 sec - 1 Leap Sec = **31,535,999 seconds**
+
+Of course, Leap Seconds can happen on Leap Years too. So, based on our current system of time<sup>4</sup>, a year can have one of six possible total seconds.
+
+
+<table style="margin-left:auto; margin-right:auto;">
+  <thead>
+    <tr>
+      <th>Leap Year</th>
+      <th>Leap Second</th>
+      <th style="text-align: right">Number of Seconds</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>no</td>
+      <td>negative</td>
+      <td style="text-align: right">31,535,999</td>
+    </tr>
+    <tr>
+      <td>no</td>
+      <td>–none–</td>
+      <td style="text-align: right">31,536,000</td>
+    </tr>
+    <tr>
+      <td>no</td>
+      <td>positive</td>
+      <td style="text-align: right">31,536,001</td>
+    </tr>
+    <tr>
+      <td>yes</td>
+      <td>negative</td>
+      <td style="text-align: right">31,622,399</td>
+    </tr>
+    <tr>
+      <td>yes</td>
+      <td>–none–</td>
+      <td style="text-align: right">31,622,400</td>
+    </tr>
+    <tr>
+      <td>yes</td>
+      <td>positive</td>
+      <td style="text-align: right">31,622,401</td>
+    </tr>
+  </tbody>
+</table>
+
+
+Our global time keepers came up with the Leap Second in 1972. Since then, 25 have been added.  All of the "positive" variety. And, we're ready for another one<sup>5</sup>. This June will be one second longer than last. 
+
+Wibbly-wobbly indeed.
+
+
+---
+
+
+_Footnotes_
+
+
+1. Season three, episode ten of the modern Doctor Who is titled "Blink". It's a masterpiece. It's also where [this wonderful 14 second description of time](https://www.youtube.com/watch?v=vY_Ry8J_jdw) comes from. (If you've not yet tuned into Doctor Who, do yourself a favor and start from the first episode of the modern reboot.)
+2. To quote the [Wikipedia entry for Leap Second](http://en.wikipedia.org/wiki/Leap_second): A leap second is a one-second adjustment that is occasionally applied to Coordinated Universal Time (UTC) in order to keep its time of day close to the mean solar time. Without such a correction, time reckoned by Earth's rotation drifts away from atomic time because of irregularities in the Earth's rate of rotation.
+3. I trust some clever, smart-ass student will get the "How many seconds in a year" question and use a Leap Second in the calculation to see if they can argue the point.
+4. Anyone else remember when, in 1998, Swatch tried to redefine time with their '.beats' Internet Time? Saying: _Internet Time exists so that we do not have to think about timezones. For example, if a New York web-supporter makes a date for a chat with a cyber friend in Rome, they can simply agree to meet at an "@ time" - because internet time is the same all over the world._ I was a little surprised that [Beats is still around](http://www.swatch.com/en_us/internet-time), though, I haven't heard it mentioned since the '98. 
+5. Here's the [leap second announcement](http://hpiers.obspm.fr/iers/bul/bulc/bulletinc.dat) from the International Earth Rotation And Reference Systems Service. It contains the line, "_To authorities responsible for the measurement and distribution of time._" That's just begging to be the opening of a sci-fi novel.
+```

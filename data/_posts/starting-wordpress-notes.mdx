@@ -1,0 +1,20 @@
+---
+category: Miscellaneous
+date: '2005-11-06'
+slug: /starting-wordpress-notes
+title: Starting WordPress Notes
+type: post
+---
+
+
+As I mentioned before, I've moved over to my own copy of WordPress
+for the back end for my blog. This not only give me more control
+over the software, but make sure that the content is in my
+possession as well. (Okay, so it's really sitting on someone else's
+server, but you get the point.) I'm going to keep some notes about
+WordPress in the blog itself as a reference and in case anyone else
+is interested. The install is very simple. Just upload and unpack
+the individual files and then create an empty database that
+WordPress can connect to. This should be really simple to do in
+just about any hosting package. So far, I'm liking WordPress. Stay
+tuned for updates.

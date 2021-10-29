@@ -1,0 +1,26 @@
+---
+category: Miscellaneous
+date: '2006-09-03'
+slug: /ir-proofs
+title: IR Proofs
+type: post
+---
+
+
+Here is the first real batch of Infra Red shots that I took a few
+weeks ago. It's a raggae band named "De Lions of Jah" playing out a
+bar called Spare Time. I had one strobe on the camera with an
+infrared filter over it and was shooting with it on manual. I would
+change either the flash output or the aperature depending on how
+far away from the subject I was. Even after a fair amount of
+drinking it was pretty easy to get a good guess on the
+distance/power quickly. Of course, what really helped things was
+the ability to get a quick review on the LCD screen.
+
+Here's
+[the proofs](http://www.alanwsmith.com/proofs/de-lions-of-jah-2006-08-05).
+
+One interesting thing about the IR shooting is that things tend to
+change "color". Or, at least grayscale value. For instance,
+[this guy](http://www.alanwsmith.com/proofs/de-lions-of-jah-2006-08-05/view/c/12)
+was wearing a black shirt.

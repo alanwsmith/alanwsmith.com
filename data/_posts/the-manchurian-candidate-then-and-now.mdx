@@ -1,0 +1,21 @@
+---
+category: Miscellaneous
+date: '2006-05-18'
+slug: /the-manchurian-candidate-then-and-now
+title: The Manchurian Candidate - Then and Now
+type: post
+---
+
+
+Last night I watched the 2004 version of The Manchurian Candidate.
+I've always enjoyed the 1962 version so I was hoping that the
+remake was done well. I think the '62 version is a better film, but
+they are both very much worth watching. Considering them side by
+side really provides an excellent marker of social commentary. I
+was expecting the 2004 version to be just and updated filming of
+the same story, but that's not the case. There are a few
+differences in the overall story line, but they have a dramatic
+impact on the overall story arc. The recent version amplifies many
+of the current terrorism fears and keys off of them. The '62
+version seems a little anachronistic in 2006, but I wonder if it
+didn't have the similar societal, psychological link in its day.

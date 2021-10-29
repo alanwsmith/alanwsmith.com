@@ -1,0 +1,12 @@
+---
+blurb: Carrying on the long standing tradition of photographers photographing themselves.
+category: Photographs
+date: '2014-11-20'
+slug: /self-portrait-nov-2014
+tags: []
+title: Self Portrait - November 2014
+type: post
+---
+
+
+![Image: aws-20141116--1416-02a.jpg" caption="Carrying on the long standing tradition of photographers photographing themselves.](/aws-20141116--1416-02a.jpg" caption="Carrying on the long standing tradition of photographers photographing themselves.)

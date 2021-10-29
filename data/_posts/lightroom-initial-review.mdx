@@ -1,0 +1,50 @@
+---
+category: Miscellaneous
+date: '2007-06-11'
+slug: /lightroom-initial-review
+title: Lightroom initial review
+type: post
+---
+
+
+Been playing around with Lightroom a little more. Mainly using it
+to edit down a wedding I shot a couple weeks ago. By and large,
+it's a very good application for something that has just hit
+version 1.0. That said, there are a few things that still need to
+be worked out. My main gripe is that I run into "Out of Memory"
+issues from time to time. This appears to be a Windows only thing
+and doesn't seem to be related to the actual amount of memory in
+the machine. (Possible culprit is Norton's real-time anti-virus
+protection, but that remains to be confirmed.) These errors don't
+seem critical and simply shutting down and restarting the
+application (not the entire computer) seem to get everything
+humming along again. By and large, it's very quick to do cropping,
+color correction, keyword input and making picks and discarding
+rejects. Way faster than anything else I've used before.
+Admittedly, I've only toyed around with a few other tools, but
+compared to Adobe Bridge combined with Camera Raw that I had been
+using, it's measurably faster. Another item that Adobe needs to
+come up with a solution for is the ability to transport libraries
+between different computers. Right now, that doesn't appear to be
+possible. I've seen a few hacks around the net, but nothing that I
+would want to try for fear of royally screwing things up. I
+wouldn't be surprised if this improvement is close to the top of
+the list of things the engineers are working on. Most shooters I
+know use a laptop for in the field and on location, but then dump
+to a desktop machine as soon as they are able for heavy lifting and
+archive purposes. A final grip is that lack of a function in
+lightroom that drives a batch process in photoshop. As a specific
+example of where this would be nice, in the wedding images I'm
+processing I want to a apply a mild soft focus to each image.
+Lightroom doesn't have that so I created an action in Photoshop to
+accommodate the desired effect. Trouble is, the only way I can get
+the edits and selections I made in lightroom over is to export
+plain files from that applcatoin and then run a separate batch in
+Photoshop. It should be as simply as making my selection and then
+telling lightroom which action in photoshop I want to run with the
+chosen images. I'll bet that's not too far away either. All and
+all, it's a solid start for an application. Still have a few bugs
+to work out to make it as stable as I would expect and then a few
+improvements to add to get it on down the path to more expected
+functionality. Still, it's saved me a ton of time running the
+wedding, so money well spent.

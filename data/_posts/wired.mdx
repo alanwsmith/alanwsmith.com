@@ -1,0 +1,12 @@
+---
+category: Miscellaneous
+date: '2008-01-07'
+slug: /wired
+title: Wired
+type: post
+---
+
+
+Damn good TV. The Wire on HBO came back after a long ass time. Love
+that show. If you haven't watched it, I recommend renting the DVDs
+and starting all the way back in season 1. It is fascinating.

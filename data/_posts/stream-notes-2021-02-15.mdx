@@ -1,0 +1,35 @@
+---
+category: Stream Notes
+date: '2021-02-15'
+draft: true
+slug: /stream-notes-2021-02-15
+tags: []
+title: Stream Notes February 15, 2021
+type: post
+---
+
+
+### Notes
+
+Figured out how to get MDX setup in Gatsby so that the `slug` key in the frontmatter controls the URL. 
+
+### Links From The Stream
+
+
+
+- [Dev Diary: Change the URLs of posts in Gatsby](https://markoskon.com/change-the-url-of-posts-in-gatsby/)
+- [Gatsby: Add components to content using MDX](https://www.gatsbyjs.com/docs/how-to/routing/mdx/?__hstc=247646936.ae144a099f650cc659fb0641ca89e6dd.1613001819689.1613356794303.1613409654390.12&__hssc=247646936.6.1613409654390&__hsfp=2080001980)
+- [Gatsby: Adding Markdown Pages](https://www.gatsbyjs.com/docs/how-to/routing/adding-markdown-pages/)
+- [Gatsby: gatsby-plugin-mdx](https://www.gatsbyjs.com/plugins/gatsby-plugin-mdx/)
+- [Gatsby: gatsby-plugin-mdx](https://www.gatsbyjs.com/plugins/gatsby-plugin-mdx/#default-layouts)
+- [Gatsby: gatsby-plugin-page-creator](https://www.gatsbyjs.com/plugins/gatsby-plugin-page-creator/)
+- [Gatsby: Migrating Remark to MDX](https://www.gatsbyjs.com/docs/how-to/routing/migrate-remark-to-mdx/)
+- [Gatsby: Programmatically Creating Pages](https://www.gatsbyjs.com/docs/mdx/programmatically-creating-pages/)
+- [Gatsby: Writing Pages in MDX](https://www.gatsbyjs.com/docs/mdx/writing-pages/)
+- [GitHub: slugify - Slugify a string (from sindresorhus)](https://github.com/sindresorhus/slugify#options)
+- [Google Search: change mdx gatscy url](https://www.google.com/search?client=safari&rls=en&q=change+mdx+gatscy+url&ie=UTF-8&oe=UTF-8)
+- [Google Search: gatsbd mdx](https://www.google.com/search?newwindow=1&client=safari&rls=en&ei=O_AqYObTCITZ5gL7oL_wAQ&q=gatsbd+mdx&oq=gatsbd+mdx&gs_lcp=Cgdnd3Mtd2l6EAMyBAgAEA0yBAgAEA0yBAgAEA0yBAgAEA0yBAgAEA0yBAgAEA0yBAgAEA0yBAgAEA0yBAgAEA0yBAgAEA06BwgAELADEA1Q0xBY0xBg3hRoAXAAeACAAaYBiAH3AZIBAzEuMZgBAKABAaoBB2d3cy13aXrIAQrAAQE&sclient=gws-wiz&ved=0ahUKEwim3YmB8-zuAhWErFkKHXvQDx4Q4dUDCAw&uact=5)
+- [Google Search: gatsby createpage mdx layout](https://www.google.com/search?newwindow=1&client=safari&rls=en&ei=NAcrYMqRLIGe5gKBqKo4&q=gatsby+createpage+mdx+layout&oq=gatsby+createpage+mdx+layout&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEM0COgcIABBHELADUJoUWJoUYIMbaAFwAngAgAGGAYgB2QGSAQMxLjGYAQCgAQGqAQdnd3Mtd2l6yAEIwAEB&sclient=gws-wiz&ved=0ahUKEwjK-9D1iO3uAhUBj1kKHQGUCgcQ4dUDCAw&uact=5)
+- [Google Search: gatsby markdown](https://www.google.com/search?newwindow=1&client=safari&rls=en&ei=HfUqYMniMYHW5gKfnq04&q=gatsby+markdown&oq=gatsby+markdown&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEJECMgIIADICCAAyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAOgcIABBHELADOgQIABANUK4hWMQwYNg1aANwAngAgAFniAGgBJIBAzYuMZgBAKABAaoBB2d3cy13aXrIAQjAAQE&sclient=gws-wiz&ved=0ahUKEwiJ5bjV9-zuAhUBq1kKHR9PCwcQ4dUDCAw&uact=5)
+- [Google Search: gatscy don't restart develop from browser](https://www.google.com/search?client=safari&rls=en&q=gatscy+don%27t+restart+develop+from+browser&ie=UTF-8&oe=UTF-8)
+- [How to create pages dynamically in Gatsby using MDX - MalikGabroun](https://malikgabroun.com/blog/gatsby-create-pages-with-mdx)

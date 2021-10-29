@@ -1,0 +1,34 @@
+---
+category: Miscellaneous
+date: '2007-03-25'
+slug: /cf-bulbs
+title: CF bulbs
+type: post
+---
+
+
+My local Home Depot currently has a sale running on Compact
+Fluorescent bulbs. Six for $10. I've been wanting to get some CF
+bulbs to try out. I had one when they first came out, but it
+flickered a little and the color was not very pleasing. That was
+probably eight or nine years ago. They have come a long way since
+then. The ones I got were marked to indicate that they had a color
+range similar to a traditional incandescent bulb and this seems to
+be pretty much the case. It's a little different, but not at all
+unpleasant. As far as I can tell, they have no discernible flicker
+and turn on effectively instantly without any perceived warm up
+being necessary. One drawback is that the ones I got don't work on
+dimmers which is unfortunate as I've switched most of my overhead
+lights to be on dimmer switches. But for the floor lamps and the
+standard switches are all going to get the CF bulbs. If you are not
+familiar with them, they fit in the same socket as regular bulbs
+but use something like 1/3 as much energy and should last about 10
+times as long. You can read a little about them
+[here](http://www.energystar.gov/index.cfm?c=cfls.pr_cfls). At some
+point, I'll get some daylight balanced ones too for my office. A
+lot of photo office have daylight balanced bulbs for looking at
+prints. With CF bulbs, you can have that in your house now too. Oh
+yeah, and they don't get nearly as hot. So, if you are reading in
+bed and reach to put out the light and accidentally hit the bulb
+you won't burn yourself nearly as bad. (It'll still hurt and if you
+leave your skin on the bulb, it'll get ya, but it's not AS bad.)

@@ -1,0 +1,19 @@
+---
+category: Miscellaneous
+date: '2005-10-17'
+slug: /sudoku-for-when-you-want-to-drive-yourself-mad
+title: Sudoku - for when you want to drive yourself mad
+type: post
+---
+
+
+I've heard of Sudoku before, but never saw a free online version to
+play till today. Granted, I hadn't really looked. When I stumbled
+on this site I figured I'd give it a try. I didn't really know what
+to expect, but this shit is hard. It took me several hours to get
+thru one of the "Easy" ones.  
+Of course, part of the problem might have been that I was only
+using two of the three rules to play the game. (I missed the part
+about getting one number in each 3x3 square.) Oh well, live and
+learn.  
+[http://www.websudoku.com/](http://www.websudoku.com/)

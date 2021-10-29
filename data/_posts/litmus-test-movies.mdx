@@ -1,0 +1,186 @@
+---
+category: Miscellaneous
+date: '2021-02-04'
+slug: /litmus-test-movies
+title: Litmus Test Movies ~ Or, How To Know If We're Gonna Be Friends
+type: post
+---
+
+
+Saw a great question come across twitter:
+
+@kerrizor - [Do you have films that are litmus tests for you?](https://twitter.com/kerrizor/status/1357404034827644928)
+
+Super fun! I went through my list to pick out a few... Ended up being more than a few. 
+
+So, here's my test. If you don't dig, say, 50% of these that you've seen, I wonder if we'd get along. 
+
+(Caveat: This list is based off when I saw the films. I haven't seen most of in years. Lots probably don't hold up and I'm sure some have become problematic. )
+
+- A Beautiful Mind
+- Amadeus
+- Amélie
+- American History X
+- The Animatrix
+- Atomic Blonde
+- Blade
+- Blade Runner
+- The Bourne Identity
+- Bram Stoker's Dracula
+- Buffy the Vampire Slayer
+- Casablanca
+- The City of Lost Children
+- Clash of the Titans
+- Code 46
+- Contact
+- Cube
+- Dark City
+- Dark Knight, The
+- Dead Poets Society
+- The Departed
+- Die Hard
+- Enemy Mine
+- Eternal Sunshine of the Spotless Mind
+- Ex Machina
+- Exit through the Gift Shop
+- Fantastic Mr Fox
+- Fear and Loathing in Las Vegas
+- The Fifth Element
+- Firefly
+- Galaxy Quest
+- The Game
+- Gangs of New York
+- Get Shorty
+- Ghost in the Shell
+- Ghostbusters (1984)
+- Ghostbusters (2016)
+- Glory
+- Go
+- The Green Mile
+- Groundhog Day
+- Hackers
+- Halloween
+- Hero
+- High Fidelity
+- Highlander
+- The Hudsucker Proxy
+- The Hunt for Red October
+- Interstellar
+- The Iron Giant
+- Iron Man
+- John Wick
+- Jumpin' Jack Flash
+- Justice League Unlimited
+- The Karate Kid
+- Kill Bill: Vol. 1
+- Kodachrome
+- L.A. Confidential
+- La La Land
+- La Femme Nikita
+- Labyrinth
+- Ladyhawke
+- The Last Starfighter
+- Lawrence of Arabia
+- Lean on Me
+- Legend
+- The Lego Movie
+- Lethal Weapon
+- Life of Pi
+- The Lion King
+- Little Miss Sunshine
+- Logan's Run
+- Looper
+- Léon: The Professional
+- The Machinist
+- Mad Max: Fury Road
+- Major League
+- The Manchurian Candidate
+- The Mask
+- The Matrix
+- Maverick
+- Memento
+- Men in Black
+- Monsters, Inc.
+- Moon
+- Natural Born Killers: Director's Cut
+- Ninja Scroll
+- Ocean's Eleven
+- Pi
+- Pink Floyd: The Wall
+- Pitch Perfect
+- Police Academy
+- Predator
+- The Princess Bride
+- Princess Mononoke
+- Pulp Fiction
+- Quills
+- Real Genius
+- Requiem for a Dream
+- Ricochet
+- Robin Hood: Men in Tights
+- RoboCop
+- Romancing the Stone
+- Romeo + Juliet
+- Run Lola Run
+- Rushmore
+- The Saint
+- Saving Private Ryan
+- Scott Pilgrim vs. the World
+- Seabiscuit
+- Serenity
+- Seven
+- Shaun of the Dead
+- The Shawshank Redemption
+- Short Circuit
+- Shrek
+- Silence of the Lambs
+- Sixth Sense, The
+- Sling Blade
+- Snatch
+- Solaris (2002)
+- Source Code 
+- South Park: Bigger, Longer and Uncut
+- Spaceballs
+- Speed Racer
+- Spiderman Homecoming
+- Stand by Me
+- Star Trek (2009)
+- Star Wars: Episode IV: A New Hope
+- Star Wars: Episode V: The Empire Strikes Back
+- Star Wars: Episode VI: Return of the Jedi
+- Star Wars: Episode VII: The Force Awakens
+- Star Wars: Episode IX: The Rise of Skywalker
+- Stargate
+- Starship Troopers
+- Superbad
+- Superman The Movie (1978)
+- Tank Girl
+- Teen Wolf
+- Terminator
+- Terminator 2: Judgment Day
+- They Live
+- Thomas Crown Affair, The
+- Three Amigos
+- Tombstone
+- Top Gun
+- Toy Story
+- Toy Story 3
+- Trainspotting
+- Tron
+- The Truman Show
+- V for Vendetta
+- Vanilla Sky
+- Wall-E
+- War Games
+- West Side Story
+- Who Framed Roger Rabbit
+- Whole Nine Yards, The
+- Willow
+- The Wizard of Oz
+- Wonder Woman
+- The Wrestler
+- X-Men
+- Zombieland
+
+
+If you passed the test and want to hang out, I'm at [@TheIdOfAlan](https://twitter.com/theidofalan). And, if you have different taste, we should probably still hang out to compare notes.

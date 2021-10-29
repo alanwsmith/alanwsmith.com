@@ -1,0 +1,19 @@
+---
+category: Miscellaneous
+date: '2007-12-19'
+slug: /funny-quote
+title: Funny quote
+type: post
+---
+
+
+"Shooting the Leica is like going out with Pamela Anderson. The
+camera keeps saying you can make me clean, cook, raise the kids,
+but I won't be very good at it. Though, if you let me do what I'm
+good at you'll be very happy." 
+
+-- James Russell (from
+[Leica M8 Revisited](http://www.luminous-landscape.com/reviews/cameras/leica-m8-revisited.shtml))
+
+Even if you are not into photography or Leica's you gotta give him
+props for that quote.

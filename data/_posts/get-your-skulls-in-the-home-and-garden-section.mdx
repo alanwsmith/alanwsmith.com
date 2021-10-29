@@ -1,0 +1,31 @@
+---
+category: Miscellaneous
+date: '2009-03-08'
+slug: /get-your-skulls-in-the-home-and-garden-section
+title: Get your skulls in the Home and Garden section
+type: post
+---
+
+
+I've heard one of the reasons you see skulls in old paintings so
+often is that artists used to keep one around as a reminder of
+their mortality. This seems like a good idea to me. Following along
+the line of making sure that you live every day to its fullest and
+to try not to let the little things get to you. So, I went in
+search of a skull. They are really cheap these days. Like under
+$10.
+
+The one I ended up with is
+[this one](http://tr.im/h8YB "Grinning Skull"). It's very well
+detailed but a little smaller than I expected. No big deal, I
+really like it. The funniest part of the shopping experience to me
+was where Amazon had the skull categorized: Home and Garden. Here's
+a grab of the search results.
+
+  
+![home-and-garden-skull.png](http://www.alanwsmith.com/blog/wp-content/uploads/2009/03/home-and-garden-skull.png)
+
+I'm not sure where I would have expected it, but Home and Garden
+would have been way down on my list of guesses. I'm not a big
+shopper of that department, but I'll have to browse around a little
+to see what other interesting surprises are there.

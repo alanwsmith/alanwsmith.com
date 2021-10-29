@@ -1,0 +1,42 @@
+---
+category: Miscellaneous
+date: '2007-11-08'
+slug: /virtual-credit-cards-and-the-time-it-takes-to-purchase
+title: Virtual Credit Cards and the Time it Takes to Purchase
+type: post
+---
+
+
+I think I've written before about the fact that I use a "virtual"
+credit card number for my purchases on the internet. The way that
+this works is that I log into my credit cards web site and launch a
+tool from there (that I also have to log into) that creates a new
+number for me any time I want. The charge goes to my regular credit
+card, it's just a one time use number that's tied into my account.
+The tool has a way that you can download and install it directly on
+your computer so that it ties directly into your browser. With
+this, it'll pop up and just require you to log in once then
+automatically fill out standard purchase forms for you. I actually
+prefer the web version one. It take a few minutes to go all the way
+through the process, but I think this is a good thing. It's a
+little bit of a pain to do, which means that it's much harder to
+buy things on a whim. I really got to thinking about this the other
+day when I saw one of the Visa Check Card
+[commercials](http://www.youtube.com/watch?v=kOMhNb6jtrg). The ad
+is really saying, you should consume as fast as possible.
+Literally, the tagline at the end is "Life takes faster money".
+Consume, consume, comsume. Faster, faster, faster. And for heaven's
+sake, don't stop to think about it. No wonder our national debt has
+grown to
+[$9 TRILLION](http://ap.google.com/article/ALeqM5iysuMkhgYOGlcySlgMom_teZ6WcQD8SP46T00).
+Speaking of buying with cards, here's one more Dave Ramsey plug.
+Apparently, if you use a credit card for your purchases instead of
+cash, the average person will spend more money overall. Ramsey says
+12-18% more. I don't know where he gets that number specifically,
+but I've heard similar things before. He's got a page on
+[The Truth about Credit Cards](http://www.daveramsey.com/the_truth_about/credit_card_debt_3478.html.cfm)
+that's a good read. On the flip site, Citigroup stock is close to a
+4 year low right now. Probably worth looking into buying a little
+if you have some money to invest. Even though they are getting
+hammered right now, over the long term, I'm betting they will make
+it back up.

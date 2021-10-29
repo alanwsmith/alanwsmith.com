@@ -1,0 +1,54 @@
+---
+category: Miscellaneous
+date: '2008-03-05'
+slug: /not-broken
+title: Not Broken
+type: post
+---
+
+
+So, I shot a wedding for a couple of friends on Saturday. Overall,
+it went very well. At least I think it did. I'm not sure yet since
+I haven't pulled down the images yet. I'm in the process of
+cleaning up my digital photo archive and want to get that done
+before I throw more images in. Anyway, one not so fun part of the
+evening is when my I was adjusting my camera on it's tripod and
+didn't have the tilt locked in. The result was the camera, while
+staying attached to the tripod pitched forward with basically all
+its weight and smashed my left pointer finger between it and the
+tripod. Hurt pretty bad, but I was able to keep shooting without
+much issue. If it had been my right hand I would have had to taken
+a couple quick shots of whiskey to dull the pain to be able to keep
+shooting since it would have been my shutter pressing finger. By
+the end of the night, the finger had swollen a decent amount and
+started to turn a little blue/gray. One of the guys at the wedding
+was a doctor and said I should take it in a get X-rayed. He said it
+was unlikely that it was serious but if it did break and did it a
+certain way it could cause some pretty serious issues. The good
+news for me is that according to the doctor I saw today, it's not
+broken. Just need to keep some ice on it when I can. Take some
+ibuprofen for the swelling and keep a little finger guard on it so
+I don't keep knocking it into things. Interesting things in this
+experience:
+-   My doctor at the clinic looked exactly like Teller from Penn
+    and Teller. He wore glasses, didn't do magic and, of course,
+    talked, so I'm pretty sure it wasn't him but I suppose that could
+    have been the trick.
+-   The little exam room had a TV with cable and a remote in it.
+    It's a great touch. Instead of that awkward just sitting and
+    waiting on the little bench with the roll of paper on it, I channel
+    surfed. Made for a much more comfortable wait.
+-   I asked for the X-ray which they let me have. I don't think
+    I've seen an X-ray of myself before. The only time I can think of
+    that I'ce had an X-ray was before I was going up in a ROTC
+    helicopter to shoot photos for a story in my college paper. They
+    made me have an X-ray of my teeth so they had my dental records to
+    match in case the thing went down. It's really odd to see an X-ray
+    of part of my body. I've seen a few other X-rays before of other
+    people, but this is the first time I've "seen" my own bones. They
+    are much smaller than I would have thought.
+-  
+
+So, the main outcome of all that is that I'm finally going to get a
+ball head for my tripod instead of the one I have now where you
+have to lock down three gears or risk serious injury.

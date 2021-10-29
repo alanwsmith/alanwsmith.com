@@ -1,0 +1,17 @@
+---
+category: Miscellaneous
+date: '2008-02-08'
+slug: /no-more-polaroids
+title: No more Polaroids
+type: post
+---
+
+
+Yet another part of the film world of photography is about to
+disappear. Seems
+[Polaroid is going to stop producing film](http://www.washingtonpost.com/wp-dyn/content/article/2008/02/08/AR2008020803598.html?hpid=topnews).
+Trigger nostalgia. I never had a Polaroid camera myself, but used
+Polaroid backs all the time when working on commercial and studio
+shoots. I'm glad they mention that part of it in the article. I
+don't think that most people know that pros used Polaroids all the
+time.

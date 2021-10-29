@@ -1,0 +1,28 @@
+---
+category: Miscellaneous
+date: '2005-11-14'
+slug: /identity-theft-protection-by-opting-out
+title: Identity Theft Protection by opting out
+type: post
+---
+
+
+Aside from snuffing out a huge portion of you junk mail another
+benefit of opting out via
+[optoutprescreen.com](http://www.optoutprescreen.com/) is that it
+reduces the chance of identify theft from someone filling out your
+info to apply for credit. I went to Home Depot this weekend and
+applied for a credit card. The idea was to use their store credit
+card to purchase some hardwood flooring since I would get 10% off
+and no payments or interest till 2007. By which time I should have
+easily sold my house which means I would have gotten a 0% loan for
+an improvement. Anyways, after filling out the little pamphlet to
+apply for the card the lady came back out and asked for my drivers
+license. Generally they don't require any idea just a name that
+matches a S.S.N. Because of the opt out, she had to call the credit
+reporting agency and verify she was looking at my drivers license
+and read the number over to them. The Home Depot lady said that's
+the first time that had ever happened to her and that she never had
+to ask for an I.D. for someone before. Very, very scary. So, if you
+haven't opted out yet.
+[Do it now](http://www.optoutprescreen.com/), and spread the word.

@@ -1,0 +1,19 @@
+---
+category: Miscellaneous
+date: '2007-03-04'
+slug: /open-source-alt
+title: Open Source Alt
+type: post
+---
+
+
+Happy day. I just found: [osalt.com](http://www.osalt.com/) (Open
+Source Alternative). It has mappings between open source and
+commercial software so you can easily check to see if there is an
+open source alternative to an app you use. They seem to keep their
+alternative list paired down nicely. This is a great advantage as
+there can be a ton of alternatives to some of the more popular
+commercial applications. The problem is lots of them are dead
+projects that didn't get very far or are so "beta" to not really be
+useful at all. With luck, they will just maintain a list of the top
+alternatives.

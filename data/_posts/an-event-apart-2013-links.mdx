@@ -1,0 +1,177 @@
+---
+blurb: A collection of links from the 2013 An Event Apart conference in San Francisco.
+category: Dev
+date: '2013-12-14'
+slug: /an-event-apart-2013-links
+tags: []
+title: An Event Apart 2013 (San Francisco) Links
+type: post
+---
+
+
+The San Francisco instance of the [An Event Apart 2013](http://aneventapart.com/) conference is in the books. An overwhelming amount of great, up-to-the-minute information on web design and development was shared. This post contains the links I compiled for future reference. Since an oft repeated theme of the conference is that we should all make an effort to share knowledge, I'm posting them here for posterities sake.
+
+[*Note to attendees: Yes. About 95% of the conference was focused on responsive design. No. This site is not responsive. Someday, I'll fix that. But if I waited until that happened, I'd never get anything posted.*]
+
+###Speakers
+
+- [Jeffrey Zeldman](http://www.zeldman.com/) - Founder, Happy Cog and A List Apart
+- [Samantha Warren](http://samanthatoy.com/) - Designer, Twitter
+- [Tim Brown](http://tbrown.org/) - Type Manager, Adobe Typekit
+- [Luke Wroblewski](http://lukew.com/) - CEO & Co-Founder of Input Factory Inc.
+- [Ethan Marcotte](http://ethanmarcotte.com/) - Author, Responsive Web Design
+- [Karen McGrane](http://karenmcgrane.com/) - Author, Content Strategy for Mobile
+- [Jeremy Keith](http://adactio.com/) - Maker Of Websites
+- [Chris Coyier](http://twitter.com/chriscoyier) - Author, CSS-Tricks.com
+- [Lea Verou](http://lea.verou.me/) - Developer Relations, W3C
+- [Mike Monteiro](http://twitter.com/mike_ftw) - Design Director, Mule Design
+- [Erika Hall](http://twitter.com/mulegirl) - Co-founder, Mule Design Studio
+- [Jared Spool](http://twitter.com/jmspool) - Founder, User Interface Engineering
+
+
+###The Links
+
+- [1811 COMMISSIONERS PLAN FOR NEW YORK](http://library.cornell.edu/Reps/DOCS/nyc1811.htm)
+- [4 awesome slides showing how page speed correlates to business metrics at Walmart.com](http://www.webperformancetoday.com/2012/02/28/4-awesome-slides-showing-how-page-speed-correlates-to-business-metrics-at-walmart-com/)
+- [A Book Apart, Design Is a Job](http://www.abookapart.com/products/design-is-a-job)
+- [A conversation with Erik Spiekermann Blog Elliot Jay Stocks](http://elliotjaystocks.com/blog/a-conversation-with-erik-spiekermann/)<br />Elliot Jay Stocks is a designer, speaker, and author
+- [A Dao of Web Design · An A List Apart Article](http://alistapart.com/article/dao)<br />Web designers often bemoan the malleable nature of the web, which seems to defy our efforts at strict control over layout and typography. But maybe the problem is not the web. Maybe the problem is us. John Allsopp looks at web design through the prism of the Tao Te Ching, and decides that designers should let the web be the web.
+- [A List Apart: For People Who Make Websites](http://alistapart.com/)<br />A List Apart explores the design, development, and meaning of web content, with a special focus on web standards and best practices.
+- [A Simpler Page · An A List Apart Article](http://alistapart.com/articles/a-simpler-page/)<br />Want to design a book? There are mountains of beautifully designed examples to inspire you. But what about digital books? How do you create elegantly typeset, gloriously balanced reading experiences when tablets render type differently and support different fonts, text can extend in every direction, and type can change size? Craig Mod (Flipboard, Art Space Tokyo) addresses these questions and presents the initial release of Bibliotype, an HTML baseline typography library for tablet reading.
+- [ABC notation - Wikipedia, the free encyclopedia](http://en.wikipedia.org/wiki/ABC_notation)
+- [Actual Facebook Graph Searches](http://actualfacebookgraphsearches.tumblr.com/)<br />Compiled by @tomscott. Don't worry, we'll all be used to this in a few weeks' time. You may also enjoy When Facebook Resurrected The Dead.
+- [adactio/Canvas-Sparkline · GitHub](https://github.com/adactio/Canvas-Sparkline)<br />Canvas-Sparkline - Create a sparkline in a canvas element.
+- [adactio/Pattern-Primer · GitHub](https://github.com/adactio/Pattern-Primer)<br />Pattern-Primer - Generating styled markup from a folder of markup snippets.
+- [Alexa Top 500 Global Sites](http://www.alexa.com/topsites)
+- [Asia: mobile internet`s tomorrow - South Africa - Moneyweb](http://www.moneyweb.co.za/moneyweb-south-africa/asia-mobile-internets-tomorrow)<br />Moneyweb - Breaking news, independent analysis, latest JSE share prices, exchange rates and data on investment, finance and business in South Africa
+- [Bangladesh Internet Usage and Telecommunications Reports](http://internetworldstats.com/asia/bd.htm)<br />Bangladesh Internet usage, population, and telecommunications reports.
+- [BBC - Homepage](http://m.bbc.co.uk/)<br />Breaking news, sport, TV, radio and a whole lot more. The BBC informs, educates and entertains - wherever you are, whatever your age.
+- [BBC News - Home](http://www.bbc.co.uk/news/)
+- [Bibliotype — Craig Mod](http://craigmod.com/bibliotype/)<br />Homeland for Bibliotype, HTML tablet typography library
+- [Building the Happy Cog Test Lab - Cognition: The blog of web design & development firm Happy Cog](http://cognition.happycog.com/article/building-the-happy-cog-test-lab)<br />Cognition - the blog by world-renowned web design and development agency Happy Cog, discussing design, user experience, business, content strategy and more.
+- [Cloudinary - Cloud-based image management & upload](http://cloudinary.com/)<br />Manage your website's images in the cloud - Cloudinary seamlessly delivers your website's images from the cloud to your users.
+- [CodeKit — THE Mac App For Web Developers](http://incident57.com/codekit/)
+- [Compass.app: compile Sass/Compass easily without resorting to command line interface](http://compass.kkbox.com/)
+- [Contents Magazine - a new magazine for new-school editorial](http://contentsmagazine.com/)
+- [dabblet.com](http://dabblet.com/)<br />An interactive CSS playground and code sharing tool. Dabblet saves to Github gists and offers many conveniences for CSS editing.
+- [Design For The Real World: Human Ecology and Social Change: Victor Papanek PAPANEK: 9780897331531: Amazon.com: Books](http://www.amazon.com/gp/product/0897331532/ref=as_li_ss_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=0897331532&linkCode=as2&tag=tioa-20)<br />Design For The Real World: Human Ecology and Social Change [Victor Papanek PAPANEK] on Amazon.com. *FREE* shipping on qualifying offers. Design for the Real World has, since its first appearance twenty-five years ago, become a classic. Translated into twenty-three languages
+- [designaw](http://designaw.me/mobileaf.html)
+- [Don't Overthink It Grids - CSS-Tricks](http://css-tricks.com/dont-overthink-it-grids/)<br />The vast majority of websites out there use a grid. They may not explicitly have a grid system in place, but if they have a "main content area" floated to
+- [Editorially](https://editorially.com/)
+- [Embeddable Comments? Yes, Please. ∙ An A List Apart Blog Post](http://alistapart.com/blog/post/embeddable-comments-yes-please)<br />Just like tweets, you can now embed ALA comments anywhere you like. This is one of those features that we’ve been wanting for our own purposes, and then we figured: as long as we’re building it, let’s give everyone the ability to embed comments.
+- [Experiment No 8 — Responding to Voice Commands](http://www.jordanm.co.uk/lab/respondtovoice)
+- [Facebook Announces Monthly Active Users Were At 1.01 Billion As Of September 30th, An Increase Of 26% Year-Over-Year  -  TechCrunch](http://techcrunch.com/2012/10/23/facebook-announces-monthly-active-users-were-at-1-01-billion-as-of-september-30th/)<br />Today, Facebook introduced its third quarter earnings for 2012 and shared some updated stats on how the social network is performing. Recently, Mark..
+- [filamentgroup/grunticon · GitHub](https://github.com/filamentgroup/grunticon)<br />grunticon - A mystical CSS icon solution.
+- [filamentgroup/picturefill · GitHub](https://github.com/filamentgroup/picturefill)<br />picturefill - A Responsive Images approach that you can use today!
+- [FitText - A plugin for inflating web type](http://fittextjs.com/)
+- [FitWeird by davatron5000](http://davatron5000.github.io/fitWeird/)
+- [Font Hinting and the Future of Responsive Typography ∙ An A List Apart Column](http://alistapart.com/column/font-hinting-and-the-future-of-responsive-typography)<br />Font hinting has been the source of countless headaches for type designers and users. In the meantime, some of the most fundamental and important elements of typography still can’t be addressed with the web of today. Rather than being seen as a tedious chore whose demise will be celebrated, hinting might actually provide the essentials for truly responsive design, and vastly expand the possibilities of digital typography for designers, publishers, and readers.
+- [Foundation - MobilityFoundation: The Most Advanced Responsive Front-end Framework from ZURB](http://foundation.zurb.com/mobility.html)<br />Documentation and reference library for ZURB Foundation. JavaScript, CSS, components, grid and more.
+- [Francis O'Neill - Wikipedia, the free encyclopedia](http://en.wikipedia.org/wiki/Francis_O'Neill)
+- [Generate a placeholder attribute from the datalist associated with that input.](https://gist.github.com/adactio/3332444)<br />Generate a placeholder attribute from the datalist associated with that input. - Gist is a simple way to share snippets of text and code with others.
+- [Globe circulation rises on wave of digital subscriptions - Business - The Boston Globe](http://www.bostonglobe.com/business/2013/04/30/globe-circulation-rises-wave-digital-subscriptions/5Nuz9OJpA7Zsmw91CPh1vK/story.html?s_campaign=sm_tw)<br />Paid circulation at The Boston Globe continues to climb on the strength of digital subscriptions, which shot up by almost 50 percent in six months, according to figures released Tuesday by the Alliance for Audited Media.  The Globeâs weekday circulation, which includes print readership and digital subscriptions, was 245,572 during the six-month period ended in March â its highest since 2009 and 8.9 percent higher than figures for the same period a year earlier. Sunday circulation rose 4.6 percent to 382,452.  It was the third straight period of gains, after circulation fell in every reporting period from 2004 to 2011. The increases helped make the Globe the 24th highest among paid circulation papers in the country, a year after it had fallen out of the top 25.
+- [Gridset - Fully-custom grids for responsive layouts](https://gridsetapp.com/)<br />Gridset is a tool that allows you to create sets of responsive grids for your site.
+- [Grumpicon. A Web app for the Grunticon workflow.](http://www.grumpicon.com/)
+- [Grunt: The JavaScript Task Runner](http://gruntjs.com/)
+- [guard/guard · GitHub](https://github.com/guard/guard)<br />guard - Guard is a command line tool to easily handle events on file system modifications.
+- [Guy's Pod  Blog Archive   Responsive Web Design Makes It Hard To Be Fast](http://www.guypo.com/technical/responsive-web-design-is-bad-for-performance-there-i-said-it/)
+- [Hotel Tonight is revamping the hotel review for mobile devices —     Tech News and Analysis](http://gigaom.com/2013/05/08/hotel-tonight-is-revamping-the-hotel-review-for-mobile-devices/)<br />Relying on the smartphone's built-in camera, the app for last-minute, day-of bookings is looking to enhance its curated hotel choices with photo-oriented user reviews.
+- [How Apple.com will serve retina images to new iPads Cloud Four Blog](http://blog.cloudfour.com/how-apple-com-will-serve-retina-images-to-new-ipads/)
+- [How Do Users Really Hold Mobile Devices? :: UXmatters](http://www.uxmatters.com/mt/archives/2013/02/how-do-users-really-hold-mobile-devices.php)
+- [How People Really Use Mobile - Harvard Business Review](http://hbr.org/2013/01/how-people-really-use-mobile/ar/1)
+- [How to Explain Why Typography Matters](http://www.commarts.com/columns/how-explain-typography.html)<br />Awareness of fonts and typography has become a bigger part of mainstream culture. If you are a designer who cares about typography, odds are that you regularly try to explain to somebody why anybody should care about it.
+- [How to make Chrome understand the Sass/SCSS in your rails app - fonicmonkey](http://fonicmonkey.net/2013/03/25/native-sass-scss-source-map-support-in-chrome-and-rails/)<br />When you open the Chrome web inspector, you can browse to the styles that are being applied to your elements. It's great. Unfortunately, if you're using a framework like LESS or Sass, then by default Chrome will reference the CSS files that those frameworks generate, even if you've never seen them before. If you pay…
+- [How to Prioritize: 12 Steps (with Pictures) - wikiHow](http://www.wikihow.com/Prioritize)<br />How to Prioritize. Have a lot to do and running out of time? Then learn to rearrange things in order of priority. Here's how: Choose the scope. It's easier to prioritize if you focus on a single area at a time. Choose homework, housework,...
+- [How to Size Text in CSS · An A List Apart Article](http://alistapart.com/article/howtosizetextincss)<br />It's a tug-of-war as old as web design. Designers need to control text size and the vertical grid; readers need to be able to resize text. A better best practice for sizing type and controlling line-height is needed; and in this article, Richard Rutter obligingly supplies one.
+- [How we learned to leave default font-size alone and embrace the em - Filament Group, Inc., Boston, MA](http://filamentgroup.com/lab/how_we_learned_to_leave_body_font_size_alone)<br />At Filament Group, we build elegant communications and interactions that help people understand, work, and collaborate effectively across a variety of media - from web sites to wireless, to interactive exhibits and print.
+- [http://www.asymco.com/](http://www.asymco.com/)
+- [IcoMoon - Icon Fonts Done Right](http://icomoon.io/)<br />IcoMoon provides a package of vector icons, along with a free HTML5 app for making custom icon fonts. Browse among thousands of pixel perfect icons or import your own vectors.
+- [Icon Fonts are Awesome](http://css-tricks.com/examples/IconFont/)
+- [imgix - Image Processing On-Demand, Served By CDN](http://www.imgix.com/)<br />The on-demand image-resizing CDN. Our technology is faster and easier than doing image processing yourself. Never deploy ImageMagick again.
+- [Inside Paragraphs: Typographic Fundamentals](http://insideparagraphs.com/)<br />A book by Cyrus Highsmith about what goes on inside a paragraph of printed text. Published by Font Bureau.
+- [Key findings from the Mobile Africa 2012 report - Communicating Data](http://communicatingdata.com/2012/05/08/key-findings-from-the-mobile-africa-2012-report/)<br />Recently, the fourth annual Mobile Africa Report (2012) was recently released by Mobile Monday and Extensia.  The report contains an absolute treasure trove of ideas, reflections and quantitative assessments of the continued growth of mobile ownership and use throughout the continent. The research behind the report was led by Dr. Madanmohan Rao, Research Project Director…
+- [Kick Ass Kickoff Meetings · An A List Apart Article](http://alistapart.com/article/kick-ass-kickoff-meetings)<br />Too many kickoff meetings squander the busiest, most expensive people's time reiterating what everyone already knows. If every meeting is an opportunity, why waste your first one? By asking stakeholders tough questions before the kick-off, and using the meeting itself to explore ideas and build relationships, you can turn a room of mutually suspicious turf battlers into an energetic team with shared ownership of the end-product and the kind of bond that can sustain the group through the challenges ahead.
+- [Koala - a gui application for LESS, Sass, Compass and CoffeeScript compilation.](http://koala-app.com/)<br />Koala is a gui for Less, Sass, Compass and CoffeeScript. Koala can run in windows, mac, and linux.
+- [LiveReload](http://livereload.com/)
+- [Long Live the Web: A Call for Continued Open Standards and Neutrality: Scientific American](http://www.scientificamerican.com/article.cfm?id=long-live-the-web)<br />The Web is critical not merely to the digital revolution but to our continued prosperity&mdash;and even our liberty. Like democracy itself, it needs defending
+- [LukeW - Breaking Development: Optimizing the Critical Rendering Path](http://www.lukew.com/ff/entry.asp?1756)<br />LukeW Ideation + Design provides resources for mobile and Web product design and strategy including presentations, workshops, articles, books and more on usability, interaction design and visual design.
+- [LukeW - Data Monday: How Long To a Mobile Majority?](http://www.lukew.com/ff/entry.asp?1581)<br />LukeW Ideation + Design provides resources for mobile and Web product design and strategy including presentations, workshops, articles, books and more on usability, interaction design and visual design.
+- [LukeW - Data Monday: Mobile Is Entertainment](http://www.lukew.com/ff/entry.asp?1673)<br />LukeW Ideation + Design provides resources for mobile and Web product design and strategy including presentations, workshops, articles, books and more on usability, interaction design and visual design.
+- [LukeW - Data Monday: Multiple Device Users](http://www.lukew.com/ff/entry.asp?1596)<br />LukeW Ideation + Design provides resources for mobile and Web product design and strategy including presentations, workshops, articles, books and more on usability, interaction design and visual design.
+- [LukeW - Data Monday: The Growing Mobile Only Audience](http://www.lukew.com/ff/entry.asp?1597)<br />LukeW Ideation + Design provides resources for mobile and Web product design and strategy including presentations, workshops, articles, books and more on usability, interaction design and visual design.
+- [LukeW - Data Monday: While Watching TV...](http://www.lukew.com/ff/entry.asp?1624)<br />LukeW Ideation + Design provides resources for mobile and Web product design and strategy including presentations, workshops, articles, books and more on usability, interaction design and visual design.
+- [LukeW - Quotes from Objectified](http://www.lukew.com/ff/entry.asp?788)<br />LukeW Ideation + Design provides resources for mobile and Web product design and strategy including presentations, workshops, articles, books and more on usability, interaction design and visual design.
+- [LukeW - RESS: Responsive Design + Server Side Components](http://www.lukew.com/ff/entry.asp?1392)<br />LukeW Ideation + Design provides resources for mobile and Web product design and strategy including presentations, workshops, articles, books and more on usability, interaction design and visual design.
+- [LukeW - Warm Gun: Designing for Mobile Commerce](http://www.lukew.com/ff/entry.asp?1671)<br />LukeW Ideation + Design provides resources for mobile and Web product design and strategy including presentations, workshops, articles, books and more on usability, interaction design and visual design.
+- [Meta viewport](http://quirksmode.org/mobile/metaviewport/)
+- [Microjs: Fantastic Micro-Frameworks and Micro-Libraries for Fun and Profit!](http://microjs.com/)
+- [Modular Scale](http://modularscale.com/)<br />
+- [Molten Leading](http://moltenleading.com/)
+- [More Meaningful Typography · An A List Apart Article](http://alistapart.com/article/more-meaningful-typography)<br />Designing with modular scales is one way to make more conscious, meaningful choices about measurement on the web. Modular scales work with—not against—responsive design and grids, provide a sensible alternative to basing our compositions on viewport limitations du jour, and help us achieve a visual harmony not found in compositions that use arbitrary, conventional, or easily divisible numbers. Tim Brown shows us how.
+- [Mule Design Studio](http://muledesign.com/)<br />
+- [Naming Media Queries - CSS-Tricks](http://css-tricks.com/naming-media-queries/)<br />It would be pretty cool if we could do this someday in CSS. The best idea for it that I've come across is to define it in a tag in the . That way (perhaps)
+- [Nice Web Type   – Breakpoints and range rules](http://nicewebtype.com/notes/2012/01/27/breakpoints-and-range-rules/)<br />For the betterment of typographic style and practice.
+- [Nicholas Zambetti – LiveView for iPhone & iPad](http://www.zambetti.com/projects/liveview/)<br />Mobile Application Design & Prototyping Tool
+- [NPD ConnectedIntelligence](http://www.connected-intelligence.com/)
+- [Oakley Airbrake MX // A Revolution In Impact Protection](http://moto.oakley.com/)<br />Introducing Oakley Airbrake MX, a revolution in impact protection. A moto MX game changer.
+- [Optimize CSS Delivery - PageSpeed Insights — Google Developers](https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery)
+- [Page Weight Matters](http://blog.chriszacharias.com/page-weight-matters)<br />Three years ago, while I was a web developer at YouTube, one of the senior engineers began a rant about the page weight of the video watch page being far too large. The page had ballooned to as high as 1.2MB and dozens of requests. This engineer... - Chris Zacharias - Founder of imgix. YCombinator alum. Ex-YouTuber. Studied New Media at RIT.
+- [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+- [Pears](http://pea.rs/)
+- [phuu/sparksvg · GitHub](https://github.com/phuu/sparksvg)<br />sparksvg - SVG Sparklines all up in your browser
+- [Pirate-themed CT scanner helps New York City kids find calm waters before tests  - NY Daily News](http://www.nydailynews.com/new-york/pirate-themed-ct-scanner-helps-new-york-city-kids-find-calm-waters-tests-article-1.1435876)<br />Young buccaneers in need of a CT scan at one New York City hospital are in for an adventure on the high seas.
+- [Prefix free: Break free from CSS vendor prefix hell!](http://leaverou.github.io/prefixfree/)
+- [Prepros :: Compile Sass, less or any preprocessing language](http://alphapixels.com/prepros/)<br />Compile less, sass, scss, compass, stylus, cofffeescript, jade, haml, slim and markdown with live browser refresh.
+- [Prism](http://prismjs.com/)
+- [Rare 1770 Map of New York City Is Restored - NYTimes.com](http://www.nytimes.com/2011/01/17/nyregion/17map.html?_r=0)<br />Restoring a 1770 map, found at the Brooklyn Historical Society, entailed boiling old books to get the right aged color.
+- [Remote Preview](http://viljamis.com/blog/2012/remote-preview/)<br />Remote Preview allows you to preview any URL on large number of mobile devices simultaneously
+- [Remote Research: Real Users, Real Time, Real Research: Nate Bolt, Tony Tulathimutte: 9781933820774: Amazon.com: Books](http://www.amazon.com/gp/product/1933820772/ref=as_li_ss_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=1933820772&linkCode=as2&tag=tioa-20)<br />Remote Research: Real Users, Real Time, Real Research [Nate Bolt, Tony Tulathimutte] on Amazon.com. *FREE* shipping on qualifying offers. Remote studies allow you to recruit subjects quickly, cheaply, and immediately, and give you the opportunity to observe users as they behave naturally in their on environment. In Remote Research
+- [Responsive Design on a Budget - Clear Thinking - The Clearleft  Blog](http://clearleft.com/thinks/responsivedesignonabudget/)
+- [Responsive Measure: A jQuery plugin for responsive typography](http://responsivemeasure.com/)<br />Responsive
+- [Responsive News](http://responsivenews.co.uk/)<br />Where BBC News developers blog about responsive design. Opinions expressed on this blog are those of a specific product team, and are not necessarily those of the BBC as a whole.
+- [Responsive News — Cutting the mustard](http://responsivenews.co.uk/post/18948466399/cutting-the-mustard)<br />Cutting the mustard
+- [Responsive Retrofitting - Web Standards Sherpa](http://webstandardssherpa.com/reviews/responsive-retrofitting/)<br />Older, legacy sites may limit your ability to modify CSS, but you can still use responsive web design techniques for a better user experience. Ben introduces you to responsive retrofitting.
+- [responsive table patterns](http://filamentgroup.com/examples/rwd-table-patterns/)<br />Donec semper quam scelerisque tortor dictum gravida. In hac habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit, sem diam ultrices mauris, eu consequat purus.
+- [Responsive Typography Demo](http://webdesign.maratz.com/lab/responsivetypography/realtime/)
+- [Responsive Web Design · An A List Apart Article](http://alistapart.com/article/responsive-web-design/)<br />Designers have coveted print for its precision layouts, lamenting the varying user contexts on the web that compromise their designs. Ethan Marcotte advocates we shift our design thinking to appropriate these constraints: using fluid grids, flexible images, and media queries, he shows us how to embrace the “ebb and flow of things” with responsive web design.
+- [Sass: Syntactically Awesome Style Sheets](http://sass-lang.com/)<br />
+- [scottjehl/picturefill · GitHub](https://github.com/scottjehl/picturefill)<br />picturefill - A Responsive Images approach that you can use today!
+- [Scout - Compass and Sass without all the hassle](http://mhs.github.io/scout-app/)<br />
+- [ShopTalk: A Web Design and Development Podcast with Chris Coyier and Dave Rupert](http://shoptalkshow.com/)
+- [Sight on Vimeo](http://vimeo.com/46304267)<br />A short futuristic film by Eran May-raz and Daniel Lazo.  This is our graduation project from Bezaleal academy of arts.   Please share if you enjoyed it!   Contact:…
+- [Skinny Ties and responsive eCommerce Blog Gravity Department](http://gravitydept.com/blog/skinny-ties-and-responsive-ecommerce/)
+- [Slides: Mobile is eating the world  –  Quartz](http://qz.com/145704/slides-mobile-is-eating-the-world/)<br />This is a high-level view of mobile devices and usage worldwide, and the dynamics that shape them. Click to skip ahead to each section: mobile scale, tablets, ecosystem, mobile social & discovery. You can leave an annotation by hovering above any slide and clicking on the quote bubble to the right.  ​ ​ ​ ​ ​...
+- [Style Tiles](http://styletil.es/)<br />A Style Tile is a design deliverable consisting of fonts, colors and interface elements that communicates the evolution of a visual brand for the web. Learn how to use them here.
+- [Surveying the Big Screen · An A List Apart Article](http://alistapart.com/article/surveying-the-big-screen)<br />We’ve been designing responsively for more than three years, now, and have the small-screen pattern libraries and portfolios to prove it. But what about larger screens? While we commonly use liquid design for smaller breakpoints, allowing our content to expand and contract as needed, few of us consider what happens beyond a maximum width of 960 pixels or so—which can leave a heap of unused pixels on a contemporary desktop display. Mike Pick explores how to use negative space, scale, density, and layout devices such as grids, modules, and columns to break through the 1024-pixel layout barrier.
+- [Sweet Systems - Cognition: The blog of web design & development firm Happy Cog](http://cognition.happycog.com/article/sweet-systems)<br />Cognition - the blog by world-renowned web design and development agency Happy Cog, discussing design, user experience, business, content strategy and more.
+- [Taking Your Talent to the Web is now a free downloadable book  –   Jeffrey Zeldman Presents The Daily Report](http://www.zeldman.com/2009/04/16/taking-your-talent-to-the-web-is-now-a-free-downloadable-book-from-zeldmancom/)
+- [Test on Real Mobile Devices without Breaking the Bank - Brad Frost Web](http://bradfrostweb.com/blog/mobile/test-on-real-mobile-devices-without-breaking-the-bank/)
+- [The Asset Pipeline — Ruby on Rails Guides](http://guides.rubyonrails.org/asset_pipeline.html)
+- [The CSS3 Test](http://css3test.com/)
+- [The Reading Edge™ Series – A group of fonts for small sizes on screens](http://www.fontbureau.com/ReadingEdge/)<br />The Reading Edge series of webfonts were designed from the ground up by Font Bureau specifically for small sizes onscreen.
+- [The Session](http://thesession.org/)<br />An online community dedicated to traditional Irish music. Find tunes, recordings, sessions and events.
+- [The Technium: Better Than Free](http://kk.org/thetechnium/archives/2008/01/better_than_fre.php)
+- [The Web Is a Customer Service Medium (Ftrain.com)](http://www.ftrain.com/wwic.html)<br />I look forward to your feedback.
+- [Time spent on the most visited websites in the United States 2013 - Statistic](http://www.statista.com/statistics/272535/time-spent-on-the-most-visited-websites-in-the-us/)<br />The statistic presents the most visited websites in the United States in June 2013, sorted by user engagement.
+- [Trent Walton - Trent Walton's Web Site](http://trentwalton.com/)
+- [Twitter / KentBeck: first you learn the value of ...](https://twitter.com/KentBeck/status/258316233068396544)<br />Instantly connect to what's most important to you. Follow your friends, experts, favorite celebrities, and breaking news.
+- [Type Rendering Mix](http://typerendering.com/)
+- [Type study: Sizing the legible letter - The Typekit Blog](http://blog.typekit.com/2011/11/09/type-study-sizing-the-legible-letter/)<br />Type study is an ongoing series of guest posts about typography on the web. In this article, Ethan Marcotte dishes up advice on font size. Yes, it’s true. This is a blog entry about sizing text for the web. …look, I know you’re still out there. I can hear you breathing. Sure, sizing text isn’t…
+- [Typekit](https://typekit.com/)
+- [TYPEKIT - Font events](http://help.typekit.com/customer/portal/articles/6787-font-events)
+- [Unicorn Institute](http://unicorninstitute.com/)<br />Dr. Leslie Jensen-Inman and Jared Spool research the skills user experience   designers need and what type of learning environment is best suited to   learn UX skills.
+- [Urban Development](http://www.worldbank.org/en/topic/urbandevelopment)<br />
+- [User Interface Engineering - Usability Research, Training, and Events - UIE](http://www.uie.com/)
+- [VW vs. FitText - CodePen](http://codepen.io/timbrown/full/EGjAm)
+- [Web Design Best Practices](http://wdbp.net/)
+- [Web Font Specimen](http://webfontspecimen.com/)
+- [Web metrics: Size and number of resources - Make the Web Faster — Google Developers](https://developers.google.com/speed/articles/web-metrics)
+- [WebKit for Developers - Paul Irish](http://paulirish.com/2013/webkit-for-developers/)<br />Let's try to answer some questions: What is WebKit? What isn't WebKit? How is WebKit used by WebKit-based browsers? Why are all WebKits not the same?
+- [When the Most Personal Secrets Get Outed on Facebook - WSJ.com](http://online.wsj.com/news/articles/SB10000872396390444165804578008740578200224)<br />The era of social networks like Facebook creates a challenge for individuals navigating the personal-data economy: how to keep anything private when it is difficult to predict where your information will end up.
+- [WordPress › AssetsMinify « WordPress Plugins](http://wordpress.org/plugins/assetsminify/)
+- [Yelp Official Blog: Ask Yelp: Why can't I write reviews from my mobile?](http://officialblog.yelp.com/2009/12/ask-yelp-why-cant-i-write-reviews-from-my-mobile.html)<br />Over here in Yelpland, we get quite a few questions on everything from our products and people to just about everything in between. We do our best to answer these via our FAQ, our customer service team, and of course,...
+- [Yeoman - Modern workflows for modern webapps](http://yeoman.io/)
+- [You like apples? - Electric Pulp](http://electricpulp.com/notes/you-like-apples/)
+
+
+This collection was built by running a script over the URLs I bookmarked. The source of the HTML returned was parsed. The text form the HTML &lt;title&gt; tag was used for the link. The content from the &lt;meta name="description"&gt; tag was used for the follow up description. Lots of sites didn't have the meta tag which is why several links don't have follow up descriptions. It's interesting to me to see how sites are treating those two tags.
