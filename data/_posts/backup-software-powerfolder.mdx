@@ -1,0 +1,23 @@
+---
+category: Miscellaneous
+date: '2008-06-02'
+slug: /backup-software-powerfolder
+title: 'Backup Software: PowerFolder'
+type: post
+---
+
+
+I haven't played with it yet, but there is an open source backup
+application called
+"[PowerFolder](http://sourceforge.net/project/showfiles.php?group_id=119524)"
+that looks interesting. It is SoureForge's
+[Project of the Month](http://sourceforge.net/community/potm-200806/)
+this month. To get that distinction, an application has to be
+pretty high quality, so it's certainly worth checking out. I'm
+dropping it here so I can find it later. It could be a little
+confusing to search for since:
+[http://sourceforge.net/projects/powerfolder/](http://sourceforge.net/projects/powerfolder/)
+takes you to: PowerFolder is workflow server and development
+studio. As opposed to:
+[http://sourceforge.net/projects/powerfolder-/](http://sourceforge.net/projects/powerfolder-/)
+which is where the backup software is.

@@ -1,0 +1,26 @@
+---
+category: Miscellaneous
+date: '2007-09-14'
+slug: /airplane-sign-hack
+title: Airplane sign hack
+type: post
+---
+
+
+My flight back from ATL last night was on a Boeing 767-300. These
+aircraft have three rows of seats in the main cabin. Two seats for
+the outside rows and three in the middle. As you enter the plane,
+the first two rows are "A" and "B". The middle seats are "C", "D"
+and "E" with the "F" and "G" making up the last row. I've been on
+these flights enough that this is in the back of my brain but a
+standard for most passengers I've seen is when they enter the
+plane, the ask the flight attendant which aisle they need to go
+down to get to their seat. Last night, I saw a great little hack.
+One of the flight attendants drew a little diagram with a note
+saying that you could get to the A, B, C and D seats from the first
+aisle while E, F, and G where the second one. I mentioned that I
+thought it was a great idea, and she said that it really seemed to
+help. It was in the perfect place. Just as soon as the passenger
+realizes they need to make an aisle decision this little sign was
+there. I wish I had snagged a picture, but I had already stowed my
+camera.

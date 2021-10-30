@@ -1,0 +1,85 @@
+---
+category: Live Coding
+date: '2020-09-30'
+description: 'A #LiveCoding stream adding Twitter Social Cards to the Hugo site'
+draft: true
+slug: /stream-notes-2020-09-30-2
+tags: []
+title: Adding Social Media Cards to My Hugo Site
+type: post
+---
+
+
+```
+TODO: Figure out why this isn't working in MDX
+
+
+`youtube: https://www.youtube.com/watch?v=oTcI-H8j8sE`
+
+
+### Starting with Pagination
+
+Started the stream by looking at Hugo's pagination. Was thinking about setting up my indexes to be based off the year. Played around for a bit, but didn't find a quick solution. Decided instead of just adjust the number of items on each time. That's done simply enough in the config file with:
+
+> paginate=60
+
+
+### 18:30 - Twitter Social Card
+
+The process here was to add in the HTML meta tags that Twitter looks for to produce the cards on its site. 
+
+
+
+https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/summary
+
+https://cards-dev.twitter.com/validator
+
+
+
+- 1:00:00 Facebook card
+
+https://developers.facebook.com/docs/sharing/webmasters/
+
+https://developers.facebook.com/tools/debug
+
+https://developers.facebook.com/docs/sharing/best-practices#images
+
+
+In the video, I used `{{ .URL }}` in the header. This caused this warning from hugo when building the site:
+
+> WARN 2020/10/01 12:31:13 Page.URL is deprecated and will be removed in a future release. Use .Permalink or .RelPermalink. If what you want is the front matter URL value, use .Params.url
+
+
+
+
+
+1:14:00ish see if you can hear yourself drinking.....
+
+
+- 1:20:00 work on getting Atom feed to show full body of text. 
+
+
+https://www.binarytides.com/linux-find-command-examples/
+
+
+Default template: 
+	
+	https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/_default/rss.xml
+
+
+
+      <content type="html">
+        {{ "<![CDATA[" | safeHTML }}
+{{ .Content | safeHTML }}
+        {{ "]]>" | safeHTML }}
+      </content>	
+
+
+See if you can answer this:
+
+	https://stackoverflow.com/questions/61938505/how-to-customize-rss-feeds-in-hugo
+
+
+https://dereckcurry.com/posts/limiting-the-generation-of-rss-feeds-in-hugo/
+
+```

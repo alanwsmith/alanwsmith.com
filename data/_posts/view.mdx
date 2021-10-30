@@ -1,0 +1,15 @@
+---
+category: Miscellaneous
+date: '2005-10-02'
+slug: /view
+title: View
+type: post
+---
+
+
+After watching the Crimson Tide beat the tar out of Florida and
+then hitting the bars for several drinks, I ended up crashing at a
+friend's place for the night. This is the view from his apartment.
+If you have a million dollars you can buy the empty lot in the
+foreground.  
+[![image](http://photos1.blogger.com/blogger/2691/1643/400/20051002_123638a1.jpg)](http://photos1.blogger.com/blogger/2691/1643/1600/20051002_123638a1.jpg)

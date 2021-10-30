@@ -1,0 +1,57 @@
+---
+category: Miscellaneous
+date: '2006-06-20'
+slug: /the-power-of-a-commercial
+title: The Power of a Commercial (and some other stuff)
+type: post
+---
+
+
+Last week after 9 holes of employee golf, I went out with my group
+to grab a bite to eat and have a few drinks. During the round, two
+of them were chain smoking. Not really like either of them, though
+they do have the occasional cigarette. I generally give my friends
+a little grief whenever I see them smoking, but nothing to much.
+So, after a few jabs on the course, I let it drop. At the bar,
+after the round, a commercial came on the big screen that I had
+seen before and pointed out to them as soon as it started. It shows
+a guy who had throat cancer and had to have a hole drilled in his
+throat so he can breath. He also, talks with one of those robot
+sounding devices that he has to hold to the side of his neck. If
+you have seen one of these commercials, you know what I'm talking
+about, if not,
+[here's a quick article](http://abcnews.go.com/GMA/story?id=2078894&page=1)
+on it. (Surprisingly, I can't find anywhere with the actual video
+posted.) Anyway, my friends handed over their smokes and made a bet
+with me that if they ever took another puff, they would buy the
+group a meal a Ruth Chris (a fairly expensive steak how, where
+dinner for the four of us would probably end up being $400 or so.)
+I hope never to collect, but the most striking thing is that I've
+never seen a more direct (and powerful) effect on someone from a
+commercial. The commercial is pretty disturbing, but it's impact
+was well worth any discomfort. This actually gets me thinking about
+how sanitized our society is now. At least when it comes to the
+real life. In movies, you can find amazingly gory visuals. But
+that's just fantasy. Back in the real world, the news is generally
+white-washed to avoid overly disturbing visuals. Sure, you get
+numbers, and sometimes descriptions that are a little rough, but
+even those strike me as toned down. From stories that I've heard
+about news broadcasts during Vietnam, there would be actual footage
+of combat dead. In today's always on, media rich United States, the
+government won't even allow images of the caskets of our fallen
+soldiers to be filmed coming off the plan on their final journey.
+For me, it's hard to wrap my mind around what's going on in Iraq.
+With all the images we see every day, I think not seeing some of
+the harder scenes from there acts as a bit of a sedative. I'm a bit
+conflicted about this, because I wouldn't want it to be an over
+produced media piece that's just trying to grab ratings. But, I
+think in the same way that the anti-smoking commercial shocked my
+friends into really thinking about smoking, making sure that we, as
+a society, are fully aware of what's going on would make us pay
+more attention to it. I don't know if any of the decisions from
+this point forward would change, and I'm not suggesting any course
+of action. I just want to make sure that while we have troops
+fighting in another country, we are paying attention to it. Cause,
+frankly, I don't think we really are. (Note, this post took one
+hell of a tangent. Originally, it was just going to be about the
+commercial itself.)

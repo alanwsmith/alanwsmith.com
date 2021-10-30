@@ -1,0 +1,16 @@
+---
+category: Miscellaneous
+date: '2006-03-03'
+slug: /pressure
+title: Pressure
+type: post
+---
+
+
+Haven't noticed this before, but I pulled up beside a cement truck
+the other day and saw this on their tires:
+![Cement Truck](http://www.alanwsmith.com/blog/wp-content/uploads/2006/03/20060227_093946a.jpg "Cement Truck")
+I'm gussing the driver can actually control the pressure in the
+tires to depending on how much cement is in the mixer. I wonder how
+much weight those tires can support. The concept of a ton is hard
+for me to grasp.

@@ -1,0 +1,23 @@
+---
+category: Miscellaneous
+date: '2007-11-09'
+slug: /the-future-return-of-film
+title: The future return of film?
+type: post
+---
+
+
+I've been doing more and more looking around at photography web
+sites and it seems like there is increasing tendency for them to be
+more like photoshop gallery web sites than photography gallery web
+sites. It's nice when you find people that have both parts of the
+art, but I often find myself looking more at the post processing
+that was done to the image than the image itself. It makes me
+wonder when (I think it's fairly inevitable) the pendulum swings
+back and the in thing becomes to have "unmanipulated" images. Even
+perhaps to the point of stuff shot on film again and printed.
+Probably be relegated to pure artists, but that's okay. And don't
+get me wrong, I like a lot of the stuff I see. But I really love
+images that stand on their own without a ton of post manipulation.
+Okay, maybe a little dodging and burning here and there and a
+slight bump in contrast...... he says with a grin.

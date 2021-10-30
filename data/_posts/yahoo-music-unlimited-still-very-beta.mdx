@@ -1,0 +1,59 @@
+---
+category: Miscellaneous
+date: '2005-09-26'
+slug: /yahoo-music-unlimited-still-very-beta
+title: Yahoo Music Unlimited - still very Beta
+type: post
+---
+
+
+So far, not so good as I had hoped.  
+Ever since MP3s first made their way into existence I've been
+looking for a service like Yahoo's Music Unlimited (or Napster to
+Go, etc...). I think the balance of paying a subscription for
+access to a ton of music is a very happy medium between the theft
+by consumers via downloads and the highway robbery by record
+companies via hugely inflated CD prices.  
+And the price is, at least theoretically, quite good for the Yahoo
+offering. It's $5 a month if you sign up for a year at a time, or
+$7 a month if you go month to month. I took a shot at the year plan
+which means that I pay less for a month of music service than I do
+for a 7&7 at most bars when you figure in tip.  
+The problem at the moment is that they aren't really ready for
+prime time. Their software is still in 'beta' which basically means
+that they know it's going to screw up more than it should and some
+stuff simply might not work. Now don't get me wrong some beta
+release offerings work a lot better than others. Take
+[Google Maps](http://maps.google.com/), for example. I would see
+nothing wrong if Google classified that as a production level
+service.  
+The software that powers Yahoo's setup, their Music Engine, is at
+the other side of the spectrum. It's often slow to start and more
+often than not causing odd things to happen with the rest of my
+machine. Since this is beta that would be fine except for the fact
+that Yahoo is charging for it. It pisses me off when companies do
+this, but I suppose it's more then norm than the exception. The
+philosophy seems to be: Get as many people paying as early as
+possible, even if it means launching a shoddy product.  
+My current frustration with Yahoo is that I had songs downloaded
+onto one of my machines that I transferred to my Dell DJ (more will
+probably come on that later). The way the system works you have to
+plug back into the net every 30days so the digital license can be
+updated allowing you to play ~~your~~ the tunes for another 30
+days. I was running low on disk space from the computer so I erased
+the files from there, but left them on the portable player. It
+seems that this isn't good enough since the licenses have expired
+and I can't get them to update.  
+I've got a request into Yahoo, but haven't heard if this how it's
+supposed to be or if it's yet another bug. Either way, it's a poor
+experience. All I want to do is listen to some tunes, but the whole
+system makes that an exercise in frustration. Welcome to the Early
+Adopter Penalty.  
+The selection of songs seems pretty decent, but I've already run
+into a bunch of stuff that isn't in their catalog at the moment.
+I'd like to see something like PlayLouder which
+[apparently](http://www.guardian.co.uk/arts/netmusic/story/0,13368,1553962,00.html)lets
+you download any song from sony as long as you are going thru their
+service. Of course, it would be better if it was every song out
+there. That's right, I'm still looking for the Celestial Jukebox.  
+-- Tags: tagMusic

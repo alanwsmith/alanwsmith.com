@@ -1,0 +1,85 @@
+---
+category: Python
+date: '2020-10-09'
+draft: true
+slug: /python-unittest-red-green
+tags: []
+title: Showing Red For Failure and Green For Success with Python's Unittest
+type: post
+---
+
+
+To use it, just call:
+
+```python
+from unittest_red_green import unittest_red_green
+```
+
+and then replace:
+
+```python{numberLines: true}
+if __name__ == '__main__':
+    unittest.main()
+```
+
+with:
+
+```python{numberLines: true}
+if __name__ == '__main__':
+    unittest_red_green()
+```
+
+
+Full samples look like this:
+
+```python{numberLines: true}
+### file_under_test.py
+
+class ClassUnderTest():
+    def __init__(self):
+        self.tone = 1
+```
+
+```python{numberLines: true}
+### unittest_red_green.py
+
+import inspect
+import re
+import sys
+import unittest
+
+from io import StringIO
+
+def unittest_red_green():
+    frm = inspect.stack()[1]
+    mod = inspect.getmodule(frm[0])
+    capture_stream = StringIO()
+    suite = unittest.TestLoader().loadTestsFromModule(sys.modules[mod.__name__])
+    results = unittest.TextTestRunner(stream=capture_stream, failfast=True).run(suite)
+    if len(results.failures) or len(results.errors):
+        print("\033[31m")
+        print("ERROR: Failed Test Run - Execution halted.")
+        print(re.sub("\n$", "", capture_stream.getvalue()), end='')
+    else:
+        print("\033[32m")
+        print(re.sub("\n$", "", capture_stream.getvalue()), end='')
+```
+
+```python{numberLines: true}
+### test_file_under_test.py
+
+import unittest
+
+from unittest_red_green import unittest_red_green
+from file_under_test import ClassUnderTest
+
+class TestClassUnderTest(unittest.TestCase):
+    def test_tone(self):
+        cut = ClassUnderTest()
+        expected = 1
+        actual = cut.tone
+        self.assertEqual(expected, actual)
+
+if __name__ == '__main__':
+    unittest_red_green()
+```

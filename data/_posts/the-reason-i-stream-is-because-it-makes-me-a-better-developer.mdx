@@ -1,0 +1,78 @@
+---
+category: Streaming
+date: '2020-12-09'
+slug: /the-reason-i-stream-is-because-it-makes-me-a-better-developer
+tags:
+- Miscellaneous
+title: 'The Reason I Stream: It Makes Me A Better Developer'
+type: post
+---
+
+
+---
+
+
+_NOTE: This is my <strike>first</strike> second version of this piece. I publishing it now as part of the Digital Garden philosophy of doing more work in public. It's maybe version 0.8 ~ close to being fully backed, but some work yet to do. That said, I'm proud enough of it as is to put it out in the world. Enjoy. -- Alan_
+
+---
+
+
+<br />
+
+### Why? 
+
+Someone asked me if I had any tips about streaming. I started to [put some thoughts together](/advice-for-new-streamers/). During the process, I realized my biggest suggestion is not about tech, or approach. It's to answer the question "Why are you streaming?"
+
+Why is a weapon. 
+
+Nothing kills creativity and exploration faster. 
+
+_(TKTKTKT: I need more here about how the question why comes from other people, but also from ourselves, and more to the point how us imagining other folks asking it is the most destructive of all.)_
+
+
+There are two defenses against why:
+
+1 - A specific answer
+
+2 - A general answer
+
+The specific answer is the one we feel we need all the time. "Why are you getting your car keys?" Because, I'm going for a drive. "Why are you going for a drive?" To go shopping. "Why are you going grocery shopping?" ... at this point you flip them the bird and walk off because the answer is obvious. 
+
+The other defense is the general. Think of Sir Edmund Hillary who, when asked why he climbed Mt. Everest purportedly said, "Because it was there." But, very few folks can pull off that confidence early in their lives. Most never do. We're taught at every age that we must have a specific answer for what we do. Oh, and by the way, "Because I enjoy it" isn't allowed. That's too general and too self indulgent.
+
+So, here's a specific answer for you, my soon to be partner in streaming: 
+
+<strong class="font-bold">We stream because it makes us better developers.</strong>
+
+<span class="text-center">~~~</span>
+
+### The Camera Is A Rubber Duck
+
+If you've never heard of rubber duck debugging, it's awesome, and it goes like this. 
+
+- You're stuck on a problem. 
+- You start talking with another developer to explain the problem to them. 
+- While your explaining it, you have an epiphany and come up with a solution. 
+
+The key part here is the other person didn't say anything. So, they kinda didn't need to be there. Except you needed someone to talk to. Hence, the rubber duck. You can talk to it at any time. (And, yeah, it has to be out loud.)
+
+Here's the trick. The camera is a rubber duck. But, you don't just talk to it when you're stuck on a problem, you talk to it all the time. 
+
+The things I've discovered is that it's not only helpful to talk out loud when you're stuck. It's fantastic when you're just coding along. 
+
+I think about things differently when I'm talking to the stream. I end up with different approaches than I otherwise would have taken. 
+
+Probably the biggest benefit is that I literally hear myself starting to make shortcuts and decision I know aren't a good way to go.
+
+It's a low-key superpower. 
+
+And what's doubly awesome, it gives me a knock out response when someone hurtles a "why" at me. 
+
+Why? 
+
+Because it makes me better.
+
+---
+
+
+Like all things, this is not a new idea. Check out [On The Gradual Construction Of Thoughts During Speech](https://www.ias-research.net/wp-content/uploads/2012/01/Kleist-and-Hamburger_-_1951_-_On-the-Gradual-Construction-of-Thoughts-During-Speech.pdf) by Heinrich Von Kleist

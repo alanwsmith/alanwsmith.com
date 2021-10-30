@@ -1,0 +1,75 @@
+---
+blurb: Now with ISO 8601 goodness
+category: TextExpander
+date: '2015-06-30'
+slug: /iso-8601-time-stamp-snippet-for-textexpander
+tags: []
+title: Time Stamp Snippet for TextExpander
+type: post
+---
+
+
+Ask any programmer who's dealt with dates, times, and timezones to describe them. They'll start to twitch. As YouTube's [Computerphile](https://www.youtube.com/watch?v=-5wpm-gesOY) explains, setting a computer's clock for wherever you happen to be is an ugly mismash of science, culture, and international politics.
+
+`youtube: https://www.youtube.com/watch?v=-5wpm-gesOY`
+
+In short, it's a mess.
+
+The International Organization for Standardization addressed some of the wibbly-wobbly aspects of time with a notation standard called [ISO 8601](https://en.wikipedia.org/?title=ISO_8601). The template looks like this:
+
+    2015-06-30T04:03:31-0400
+
+which corresponds to:
+
+    [year]-[month]-[day]T[hour]:[minute]:[second]-[timezone_offset]
+
+It's the best solution we have the computers understand and humans can still read but it's a pain to type. That's where [TextExpander](https://smilesoftware.com/TextExpander/index.html), one of my desert island apps, comes in.
+
+TextExpander let's you define a set of short abbreviations. They automatically expand to longer strings of text. For example, when I type `sta;` TextExpander sees it and instantly replaces it with `St. Augustine`. Nothing ground breaking. Just a nice convenience where the computer saves me a little typing. 
+
+I have snippets setup for email signatures, locations, command phrases, and my personal collection of frequent typos (e.g. auto-correcting "teh" to "the"). There's some basic Date/Time placeholders built-in but timezones aren't included. That wouldn't be a problem if Daylight Savings Time didn't exist but it does. And, because of how it works, the timezone offset has to change twice a year. I could do that manually but the likelihood of remembering makes that a non-starter.
+
+Enter the recently released TextExpander Version 5. In addition to basic expansions, it brings ability to write expansions in the JavaScript programming language. Here's my chunk of code to solve the timezone problem and create a current date/time stamp in the ISO format:
+
+```javascript{numberLines: true}
+function awsIsoDateTime(awsDate) {
+  var awsYear  = awsDate.getYear() + 1900;
+  var awsMonth = (awsDate.getMonth() < 9) ? ('0' + (awsDate.getMonth() + 1)) : (awsDate.getMonth() + 1);
+  var awsDay   = (awsDate.getDate() < 9) ? ('0' + awsDate.getDate()) : awsDate.getDate();
+  var awsHours = (awsDate.getHours() < 10) ? '0' + awsDate.getHours() : awsDate.getHours();
+  var awsMinutes = (awsDate.getMinutes() < 10) ? '0' + awsDate.getMinutes() : awsDate.getMinutes();
+  var awsSeconds = (awsDate.getSeconds() < 10) ? '0' + awsDate.getSeconds() : awsDate.getSeconds();
+  var awsOffsetFlag = (awsDate.getTimezoneOffset() == 0) ? 'Z' : ((awsDate.getTimezoneOffset() > 0) ? '-' : '+');
+  var awsAbsoluteOffset = Math.abs(awsDate.getTimezoneOffset());
+  var awsHoursOffset = awsOffsetFlag == 'Z' ? '' : ((awsAbsoluteOffset / 60) < 10) ? ('0' + parseInt(awsAbsoluteOffset / 60)) : (parseInt(awsAbsoluteOffset / 60));
+  var awsMinutesOffset = awsOffsetFlag == 'Z' ? '' : ((awsAbsoluteOffset % 60) < 10) ? ('0' + parseInt(awsAbsoluteOffset % 60)) : (parseInt(awsAbsoluteOffset % 60));
+  var awsString = awsYear + '-' + awsMonth + '-' + awsDay + 'T';
+  awsString += awsHours + ':' + awsMinutes + ':' + awsSeconds + awsOffsetFlag + awsHoursOffset + awsMinutesOffset;
+  return awsString;
+}
+
+awsIsoDateTime(new Date());
+```
+
+Create a new snippet, switch it to JavaScript, drop that in and you're ready to go.
+
+```
+<div class="photoWrapper">
+    <img src="/i/screengrab-20150630--2021-01a.png" class="img-responsive center-block" />
+</div>
+```
+
+Of course, being JavaScript it works in browsers too. Here's an example generated on the fly when you loaded this page:
+
+```
+<code id="awsIsoDateTimeExample"></code>
+
+<noscript>You can't see the JavaScript example if you have JavaScript turned off</noscript>
+
+<script type="text/javascript">function awsIsoDateTime(awsDate) {var awsYear  = awsDate.getYear() + 1900;var awsMonth = (awsDate.getMonth() < 9) ? ('0' + (awsDate.getMonth() + 1)) : (aws.getMonth() + 1);var awsDay   = (awsDate.getDate() < 9) ? ('0' + awsDate.getDate()) : awsDate.getDate();var awsHours = (awsDate.getHours() < 10) ? '0' + awsDate.getHours() : awsDate.getHours();var awsMinutes = (awsDate.getMinutes() < 10) ? '0' + awsDate.getMinutes() : awsDate.getMinutes();var awsSeconds = (awsDate.getSeconds() < 10) ? '0' + awsDate.getSeconds() : awsDate.getSeconds();var awsOffsetFlag = (awsDate.getTimezoneOffset() == 0) ? 'Z' : ((awsDate.getTimezoneOffset() > 0) ? '-' : '+');var awsAbsoluteOffset = Math.abs(awsDate.getTimezoneOffset());var awsHoursOffset = awsOffsetFlag == 'Z' ? '' : ((awsAbsoluteOffset / 60) < 10) ? ('0' + parseInt(awsAbsoluteOffset / 60)) : (parseInt(awsAbsoluteOffset / 60));var awsMinutesOffset = awsOffsetFlag == 'Z' ? '' : ((awsAbsoluteOffset % 60) < 10) ? ('0' + parseInt(awsAbsoluteOffset % 60)) : (parseInt(awsAbsoluteOffset % 60));var awsString = awsYear + '-' + awsMonth + '-' + awsDay + 'T'; awsString += awsHours + ':' + awsMinutes + ':' + awsSeconds + awsOffsetFlag + awsHoursOffset + awsMinutesOffset; return awsString; }; document.getElementById('awsIsoDateTimeExample').innerHTML = awsIsoDateTime(new Date());</script>
+```
+
+---
+
+
+(_For the programmers yelling that the code is hard to read, you're right. Because I want to be able to see the entire block in the TextExpander window I went for fewer lines over readability._)

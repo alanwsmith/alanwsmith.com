@@ -1,0 +1,33 @@
+---
+category: Miscellaneous
+date: '2007-10-27'
+slug: /might-need-business-cards
+title: Might need business cards
+type: post
+---
+
+
+I've been doing a lot of thinking about getting back into weddings
+again. This is a topic I flip-flop on a lot. I won't be able to
+really do anything about it till we get past the new year due to
+the amount of stuff going on at work. After that though, I think
+I'm going to take a run at it again. The digital thing is a big
+factor and another is Adobe lightroom. After using it a little, I
+think it's a great way to run the preliminary wedding edit. The
+first wedding that I did all digital, I was using Photoshop and
+Bridge on my old ass computer and it took forever. While the
+process itself is decently time consuming, the real issue I had was
+the amount of time that I was waiting on the computer. I'll get
+around to building a new computer before too long. If I haven't
+done it before my next wedding, I'll definitely do it at that point
+just to make sure I can get thru the edits in a reasonable time.
+Anyway, about the business cards. I went to a Halloween party last
+night as Peter Parker. The reason for picking that character was so
+that I could fit my camera in as part of the costume. Did the same
+thing last year when I went as a Playboy photographer. It's great
+because for a while no ones sure if you are really taking photos or
+if you are just pretending as part of the costume. After it became
+fairly obvious that I really was shooting, I talked to two couples
+about shooting their weddings and a couple other folks about some
+photography in general. All of them, of course, asked for cards.
+So, I guess it's time to get some made up.

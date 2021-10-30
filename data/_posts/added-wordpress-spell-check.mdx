@@ -1,0 +1,27 @@
+---
+category: Miscellaneous
+date: '2005-11-08'
+slug: /added-wordpress-spell-check
+title: Added WordPress Spell Check
+type: post
+---
+
+
+I'm trying out the
+[Spelling Checker plug-in for WordPress from coldforged.org](http://www.coldforged.org/spelling-checker-plugin-for-wordpress/).
+It seems to work nicely and I like the interface. According to the
+author of the plug-in, it piggy backs off of the open source
+package [Speller Pages](http://spellerpages.sourceforge.net/) for
+the core functionality. Open Source is sooooo very cool. This is a
+great example of it literally building on itself and becoming
+greater than the sum of its parts. One note, the default install of
+the plug-in didn't work for me with out changing the "Aspell
+language" from "en\_US" to "en". Before I made that change I got
+and error that listed the aspell command it was trying to run
+followed by the string "Error: X?w". Once I made changed the
+language option it kicked up just fine. By default, the plug-in
+only adds a spell check button to the place where you create new
+entries. Directions are included on the main scripts page for how
+to added the spell check button to the comments area as well. I've
+done this as well since I'm bad at spelling and want to not make a
+fool out of myself when adding comments.

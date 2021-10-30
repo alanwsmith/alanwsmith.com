@@ -1,0 +1,32 @@
+---
+category: Miscellaneous
+date: '2008-03-11'
+slug: /opting-out-of-more-junk-mail
+title: Opting out of more junk mail
+type: post
+---
+
+
+Some time ago I discovered
+[optoutprescreen.com](https://www.optoutprescreen.com/?rf=t) which
+lets you tell the three major credit bureaus that you don't want to
+get all those pre-approved credit card solicitations in the mail.
+After I got my house, I was getting probably 20-30 a week. None of
+which I wanted. I have one card and that's all I want. Within a few
+months, my junk mail was way, way, way down. I've been meaning to
+try to kill some of the rest of it and have known about the Direct
+Marketing Association, but have done a little more research that
+points to the Abacus Catalog Alliance as well. It took me a little
+while to cross reference, but "Smart Money" has
+[this article](http://www.smartmoney.com/dealoftheday/index.cfm?story=20070206)
+up with how to opt out. I also verified the Abacus Opt Out address
+by searching the epsilon.com web site and getting to
+[this page](http://www.abacusoptout.com/). Epsilon is the company
+that maintains the Abacus database. By the way, if you want to
+freak out your privacy meter, jump around the epsilon web site for
+a bit. Once again, in some ways 1984 ain't got shit on 2008. In my
+searching, I saw another address for the Epsilon/Abacus opt-out,
+which may work, but I trust the Smart Money article and internal
+address more. So, now that I've had a chance to cross reference
+this stuff, I'm gonna give it a shot tonight. In a few months, I'll
+try to remember to post a follow up.
