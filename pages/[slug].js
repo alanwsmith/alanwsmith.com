@@ -4,6 +4,26 @@ import { getAllPosts, getSinglePost } from '../utils/mdx'
 import Head from 'next/head'
 import LayoutMain from '../components/LayoutMain.js'
 
+// <div style="padding:75.4% 0 0 0;position:relative;">
+//
+// style="position:absolute;top:0;left:0;width:100%;height:100%;"
+
+const VimeoVideo = ({ id }) => {
+  return (
+    <>
+      <div>
+        <iframe
+          src="https://player.vimeo.com/video/3817271?h=7ec54b53c7&title=0&byline=0&portrait=0"
+          frameBorder="0"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowFullScreen
+        />
+      </div>
+      <script src="https://player.vimeo.com/api/player.js"></script>
+    </>
+  )
+}
+
 const Post = ({ code, frontmatter }) => {
   const Component = React.useMemo(() => getMDXComponent(code), [code])
   return (
@@ -33,7 +53,7 @@ const Post = ({ code, frontmatter }) => {
             </div>
 
             <div className="text-blue-200">
-              <Component />
+              <Component components={{ VimeoVideo: VimeoVideo }} />
             </div>
           </div>
         }
