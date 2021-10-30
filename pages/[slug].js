@@ -37,32 +37,34 @@ const VimeoVideo = ({ id }) => {
 
 const YouTubeVideo = ({ id }) => {
   return (
-    <div
-      style={{
-        position: 'relative',
-        paddingBottom: '56.25%',
-        height: '0',
-        overflow: 'hidden',
-        maxWidth: '100%',
-      }}
-    >
-      <iframe
+    <>
+      <div
         style={{
-          position: 'absolute',
-          top: '0',
-          left: '0',
-          width: '100%',
-          height: '100%',
+          position: 'relative',
+          paddingBottom: '56.25%',
+          height: '0',
+          overflow: 'hidden',
+          maxWidth: '100%',
         }}
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/S_inYj3J0h8?controls=0"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      ></iframe>
-    </div>
+      >
+        <iframe
+          style={{
+            position: 'absolute',
+            top: '0',
+            left: '0',
+            width: '100%',
+            height: '100%',
+          }}
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/S_inYj3J0h8?controls=0"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </>
   )
 }
 
@@ -93,9 +95,13 @@ const Post = ({ code, frontmatter }) => {
             >
               {frontmatter.date}
             </div>
-
             <div className="text-blue-200">
-              <Component components={{ VimeoVideo: VimeoVideo }} />
+              <Component
+                components={{
+                  VimeoVideo: VimeoVideo,
+                  YouTubeVideo: YouTubeVideo,
+                }}
+              />
             </div>
           </div>
         }
