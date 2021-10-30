@@ -4,21 +4,6 @@ import { getAllPosts, getSinglePost } from '../utils/mdx'
 import Head from 'next/head'
 import LayoutMain from '../components/LayoutMain.js'
 
-// <div style="padding:75.4% 0 0 0;position:relative;">
-//
-// style="position:absolute;top:0;left:0;width:100%;height:100%;"
-//
-// <style>.embed-container
-// { position: relative; padding-bottom: 56.25%;
-// height: 0; overflow: hidden; max-width: 100%; }
-// .embed-container iframe, .embed-container object,
-// .embed-container embed {
-// position: absolute; top: 0; left: 0;
-// width: 100%; height: 100%; }
-// </style>
-// <div class='embed-container'>
-// <iframe src='https://player.vimeo.com/video/66140585' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
-
 const VimeoVideo = ({ id }) => {
   return (
     <>
@@ -39,56 +24,45 @@ const VimeoVideo = ({ id }) => {
             width: '100%',
             height: '100%',
           }}
-          src="https://player.vimeo.com/video/66140585"
+          src={`https://player.vimeo.com/video/${id}`}
           frameborder="0"
           webkitAllowFullScreen
           mozAllowFullscreen
           allowFullScreen
         />
       </div>
-      <div
-        style={{
-          position: 'relative',
-          paddingBottom: '56.25%',
-          height: '0',
-          overflow: 'hidden',
-          maxWidth: '100%',
-        }}
-      >
-        <iframe
-          style={{
-            position: 'absolute',
-            top: '0',
-            left: '0',
-            width: '100%',
-            height: '100%',
-          }}
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/S_inYj3J0h8?controls=0"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      </div>
-      <div style={{ padding: '75.4 0 0 0', position: 'relative' }}>
-        <iframe
-          src="https://player.vimeo.com/video/3817271?h=7ec54b53c7&title=0&byline=0&portrait=0"
-          style={{
-            position: 'absolute',
-            top: '0',
-            left: '0',
-            width: '100%',
-            height: '100%;',
-          }}
-          frameBorder="0"
-          allow="autoplay; fullscreen; picture-in-picture"
-          allowFullScreen
-        />
-      </div>
-      <script src="https://player.vimeo.com/api/player.js"></script>
     </>
+  )
+}
+
+const YouTubeVideo = ({ id }) => {
+  return (
+    <div
+      style={{
+        position: 'relative',
+        paddingBottom: '56.25%',
+        height: '0',
+        overflow: 'hidden',
+        maxWidth: '100%',
+      }}
+    >
+      <iframe
+        style={{
+          position: 'absolute',
+          top: '0',
+          left: '0',
+          width: '100%',
+          height: '100%',
+        }}
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/S_inYj3J0h8?controls=0"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
   )
 }
 
