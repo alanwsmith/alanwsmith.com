@@ -21,8 +21,9 @@ export function LocalChecklist({ data }) {
             type="checkbox"
             id={item[1]}
             checked={item[0] === 1 ? true : false}
+            readOnly
           />
-          <label for={item[1]}>&nbsp;&nbsp;{item[1]}</label>
+          <label htmlFor={item[1]}>&nbsp;&nbsp;{item[1]}</label>
         </li>
       ))}
     </ul>
