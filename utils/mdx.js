@@ -18,8 +18,10 @@ export const getAllPosts = () => {
       const slug = fileName.replace(/\.mdx?$/, '')
       const { data } = matter(source)
 
+      const title = data.title
+
       return {
-        frontmatter: data,
+        title: title,
         slug: slug,
       }
     })

@@ -1,0 +1,34 @@
+---
+title: 2021 Site Update Checklist
+slug: /2021-site-update-checklist
+date: '2021-10-30'
+---
+
+export const listData = [
+  [1, 'Make a/this checklist for tracking TODOs'],
+  [0, 'Create responsive video player for vimeo'],
+  [0, 'Create responsive video player for youtube'],
+  [0, 'Remove all dead links'],
+  [0, 'Convert http links to https'],
+]
+
+export function LocalChecklist({ data }) {
+  return (
+    <ul>
+      {data.map((item) => (
+        <li key={item}>
+          <input
+            type="checkbox"
+            id={item[1]}
+            checked={item[0] === 1 ? true : false}
+          />
+          <label for={item[1]}>&nbsp;&nbsp;{item[1]}</label>
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+Here is some stuff...
+
+<LocalChecklist data={listData} />
