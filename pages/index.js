@@ -40,7 +40,6 @@ export default function BlogList({ posts }) {
 
 export const getStaticProps = async () => {
   const posts = getAllPosts()
-
   return {
     props: { posts },
   }
