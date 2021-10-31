@@ -1,0 +1,21 @@
+---
+title: "Write To A Log File From A Neovim Lua Plugin"
+slug: /write-to-a-log-file-from-a-neovim-lua-plugin
+type: post
+status: wip
+category: Miscellaneous
+date: 2021-06-13T13:31:11-0400
+---
+
+
+
+```lua
+local log = function(message)
+    local log_file_path = './logs/window_open_file_test_1.log'
+    local log_file = io.open(log_file_path, "a")
+    io.output(log_file)
+    io.write(message.."\n")
+    io.close(log_file)
+end
+```
+

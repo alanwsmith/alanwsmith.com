@@ -1,0 +1,42 @@
+---
+title: "Dump An Object In React"
+slug: /react-dump-an-object-in-react-with-json.stringify
+type: post
+status: published
+category: React
+date: 2021-09-06T20:24:47-0400
+keywords:
+- js- 
+- nextjs- 
+---
+
+Use this snippet:
+
+```javascript
+return (
+    <div>
+        <pre>{JSON.stringify(someObject, null, 2)}</pre>
+    </div>
+)
+```
+
+To replace this:
+
+```javascript
+return (
+    <div>
+        {someData}
+    </div>
+)
+```
+
+When you get errors like:
+
+```
+Unhandled Runtime Error
+Error: Objects are not valid as a React child (found: object with keys {displayTitle, primaryKey}). If you meant to render a collection of children, use an array instead.
+
+Call Stack
+throwOnInvalidObjectType
+```
+

@@ -1,0 +1,40 @@
+---
+title: Create A New nginx Server On A Mac
+slug: /create-a-new-nginx-server-on-a-mac
+created: 1613346918
+date: 1613346918
+---
+
+
+Setting up an nginx server
+==========================
+
+Create a config file under:
+
+    /usr/local/etc/nginx/servers
+
+
+Make it look something like this:
+
+    server {
+        listen       80;
+        server_name  legendary.react_scratchpad;
+
+        #access_log  logs/host.access.log  main;
+
+        location / {
+            root   /Users/alans/dev/react_scratchpad;
+            index  index.html;
+        }
+
+        error_page  404              /404.html;
+        error_page   500 502 503 504  /50x.html;
+    }
+    
+
+
+Then start and stop nginx with:
+
+    sudo launchctl unload /Library/LaunchDaemons/homebrew.mxcl.nginx.plist
+    sudo launchctl load /Library/LaunchDaemons/homebrew.mxcl.nginx.plist
+

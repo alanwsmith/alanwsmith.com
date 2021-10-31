@@ -1,0 +1,18 @@
+---
+title: "Get The Current Buffer ID For A Window In Neovim"
+slug: /get-the-current-buffer-id-for-a-window-in-neovim
+type: post
+status: complete
+category: Neovim
+date: 2021-06-16T22:16:43-0400
+---
+
+```lua
+buffer_id = vim.api.nvim_win_get_buf(0)
+```
+
+The `0` give you the current window. 
+
+You can also pass in a window
+
+

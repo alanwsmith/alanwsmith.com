@@ -1,0 +1,19 @@
+---
+title: "Push Items Onto Lua Table Via Insert"
+slug: /push-items-onto-lua-table-via-insert
+type: post
+status: wip
+category: Miscellaneous
+date: 2021-06-20T20:13:06-0400
+---
+
+
+
+```lua
+a = {}
+for line in io.lines() do
+    table.insert(a, line)
+end
+print(table.getn(a))         --> (number of lines read)
+```
+
