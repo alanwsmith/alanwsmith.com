@@ -2,8 +2,7 @@
 category: Streaming
 date: '2021-01-01'
 slug: /my-streaming-startup-checklist-aka-runbook
-status: wip
-tags: []
+status: published
 title: My Streaming Startup Checklist (aka Runbook)
 type: post
 ---
@@ -22,7 +21,6 @@ export const data = [
       'Verify StreamDeck is running',
       'Verify keyboard cam is in place and shutter is open',
       'Put mic in place',
-      'Switch OBS to Starting Soon scene',
     ],
   },
   {
@@ -41,6 +39,7 @@ export const data = [
       'Move Github Desktop to working project',
       "Verify you're logged out of work email",
       "Verify you're logged out of AWS",
+      'Turn down brightness on monitors',
     ],
   },
   {
@@ -48,12 +47,12 @@ export const data = [
     items: [
       'Launch Stream Manager',
       'Update stream title and info',
-      'Open Twitch In Mod View',
+      'Set stream tags as appropriate: English - Python - JavaScript - Web Development - Programming - IRL - Creative',
       'Verify snapcam bot is running - D:/Twitch_Stuff/snap_cam_channel_points/02',
       'Verify snapcam close down bot script is running',
-      'Verify captions are running - D:/Twitch_Stuff/obs_live_captions',
-      'TODO: put in all the steps for getting captions running',
-      'Turn down monitor brightness',
+      'Verify captions are running - D:/Twitch_Stuff/obs_live_captions/obs_live_captions.py',
+      'Open the Chrome Browser page to the localhost for Live Captions',
+      'Refresh the OBS source for "Captions - Full..."',
       'TODO: Get Start binary clock running',
     ],
   },
@@ -69,7 +68,6 @@ export const data = [
       'Set iTerm2 default profile to Stream V1',
       'Set Chrome font zoom to 125%',
       'Start Keychain Access on second monitor to prevent accidentally flashing it',
-      'Turn down monitor brightness for mac',
       'Set PyCharm font to 19px',
       'Review Open apps',
       'Close browser tabs',
@@ -80,14 +78,13 @@ export const data = [
   {
     title: 'Twitch',
     items: [
-      'Set tags to some of: Programming, IRL, Creative, Web Development, JavaScript, Python',
       'Start tmux for bots if necessary `tmux new -s bots`, new pane with `Ctrl+b`, switch panes with `Ctrl+b <arrow>`',
       'Verify chatbot is running (tmux a -t bots: ~/Users/alans/workshop/thebotofalan_mac/start-thebotofalan.bash)',
       "TODO: Look at event bot to see what's up with it",
       'Verify event bot is running (tmux a -t bots ~/Users/alans/workshop/thebotofalan_mac/start-eventbot.bash)',
       'Start your music',
       'Pop out chat in chrome',
-      'Open safari, iterm, and nvAlt in their own desktops',
+      'Open chrom, iterm, and nvAlt in the main desktop',
     ],
   },
   {
@@ -96,21 +93,17 @@ export const data = [
       'Post link on twitter',
       'Turn on fan',
       'Make a pitstop',
-      'Start streaming in OBS',
-      'Open stream on twitch in windows',
-      'Mute stream audio',
+      'Refill water bottle',
+      'Raise Mac Monitor',
       'Start your music',
+      'Switch OBS to Starting Soon scene',
+      'Start streaming in OBS',
+      'Open stream on twitch in safari',
+      'Mute stream audio on safari when it starts',
+      'Open a tab to hide the stream',
     ],
   },
-  {
-    title: 'Post-Stream',
-    items: [
-      'System Preferences -> Display -> Scaled -> Looks like 2560x1440',
-      'nvAlt Font Size: JetBrains Mono 14',
-      'iTerm2: Non-Stream-V2',
-      'Safari Zoom 100%',
-    ],
-  },
+
 ]
 
 export function Checklist({ data }) {
@@ -133,6 +126,26 @@ export function Checklist({ data }) {
 <Checklist data={data} />
 
 ---
+
+
+### TODO:
+
+Move this to a post stream checklist page:
+
+```
+  {
+    title: 'Post-Stream',
+    items: [
+      'System Preferences -> Display -> Scaled -> Looks like 2560x1440',
+      'nvAlt Font Size: JetBrains Mono 14',
+      'iTerm2: Non-Stream-V2',
+      'Safari Zoom 100%',
+    ],
+  },
+```
+
+
+
 
 ### TL;DR
 
