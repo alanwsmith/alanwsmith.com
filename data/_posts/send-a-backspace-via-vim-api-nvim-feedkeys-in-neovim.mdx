@@ -1,0 +1,24 @@
+---
+title: "Send A Modifier Via vim.api.nvim_feedkeys in Neovim"
+slug: /send-a-backspace-via-vim-api-nvim-feedkeys-in-neovim
+type: post
+status: wip
+category: Miscellaneous
+date: 2021-07-9T21:21:52-0400
+---
+
+Code snippet to remind myself how to do it
+
+```lua
+local delete_key = vim.api.nvim_replace_termcodes('<BS>', true, false, true)
+vim.api.nvim_feedkeys(delete_key, "i", true)
+```
+
+```lua
+local enter_key = vim.api.nvim_replace_termcodes('<CR>', true, false, true)
+vim.api.nvim_feedkeys(enter_key, "i", true)
+```
+
+
+
+

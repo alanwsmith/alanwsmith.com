@@ -20,6 +20,11 @@ export const getAllPosts = () => {
 
       const title = data.title
 
+      // if (title === undefined) {
+      //   console.log(fileName)
+      //   console.log(title)
+      // }
+
       return {
         title: title,
         slug: slug,

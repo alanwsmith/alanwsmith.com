@@ -1,0 +1,25 @@
+---
+title: "Neovim Scratchpad Plugins"
+slug: /neovim-scratchpad-plugins
+type: post
+status: wip
+category: Neovim
+date: 2021-06-18T12:05:47-0400
+---
+
+This probably isn't the best way to do it, but I current put plugin files in:
+
+    ~/workshop/neovim-scratchpad/PLUGIN_NAME.lua
+    ~/workshop/neovim-scratchpad/PLUGIN_NAME.vim 
+    
+And then run symbolic links in the main directories:
+
+    cd ~/.config/nvim/lua
+    ln -s ~/workshop/neovim-scratchpad/PLUGIN_NAME.lua
+    
+    cd ~/.config/nvim/plugin
+    ln -s ~/workshop/neovim-scratchpad/PLUGIN_NAME.vim
+
+
+
+    
