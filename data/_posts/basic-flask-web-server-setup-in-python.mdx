@@ -7,9 +7,18 @@ category: Python
 date: 2021-07-13T13:09:15-0400
 ---
 
+
+TODO: Fix the formatting of this post that got busted during the move to nextjs
+
+---
+
+```
+
+
+
 ### Basic Hello, World
 
-```python 
+``python 
 #!/usr/bin/env python 
 
 from flask import Flask
@@ -21,7 +30,7 @@ def index():
     return "Hello, World"
 
 app.run(port=8000, host='0.0.0.0')
-```
+``
             
 --------------------------------------------------------------------------------
 
@@ -29,7 +38,7 @@ TODO: Verify this works as expected
 
 ### Using query strings
 
-```python
+``python
 from flask import Flask
 from flask import request
 
@@ -42,7 +51,7 @@ def index(name="Example"):
     return "Hello {}".format(name)
 
 app.run(port=8000, host='0.0.0.0')  
-```  
+``
     
 ---
 
@@ -95,6 +104,7 @@ Multiple routes with types
     def multiply(val1=5, val2=5):
         return str(val1 * val2)
 
+```
 
         
 

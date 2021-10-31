@@ -7,13 +7,17 @@ category: Miscellaneous
 date: 2021-06-13T16:55:30-0400
 ---
 
+TODO: Fix the formatting of this post
+
+
+```
 ### TL;DR
 
 The key to getting nvim_rocks to install was running this on the command line before running `PlugInstall`
 
-```command
+``command
 export MACOSX_DEPLOYMENT_TARGET=10.15
-```
+``
 
 Notes:
 
@@ -29,18 +33,18 @@ This is how I got the nvim_rocks neovim plugin to install on my mac running Big 
 
 1. Add the plugin call to `~/.config/nvim/init.vim` in the Plug section:
 
-```vim
+``vim
 call plug#begin("~/.vim/plugged")
     " ... other plugins ...
     Plug 'theHamsta/nvim_rocks', {'do': 'pip3 install --user hererocks && python3 -mhererocks . -j2.1.0-beta3 -r3.0.0 && cp nvim_rocks.lua lua'}
 call plug#end()
-```
+``
 
 2. Exit to the command line and run this:
 
-```command
+``command
 MACOSX_DEPLOYMENT_TARGET=10.15 nvim +PlugInstall
-```
+``
 
 
 
@@ -60,7 +64,7 @@ When I pulled out this command:
 it would error out with something like:
 
 
-```txt
+``txt
 Undefined symbols for architecture x86_64:
   "__Unwind_DeleteException", referenced from:
       _lj_err_unwind_dwarf in libluajit.a(lj_err.o)
@@ -79,16 +83,18 @@ make: *** [default] Error 2
 Error: got exitcode 2 from command make
 
 [Process exited 1]
-```
+``
 
 I found [this](https://github.com/nvim-lua/plenary.nvim/issues/4) bug report which has an answer that worked for me. 
 
 Prior to running `PlugInstall`, run this on the command line:
 
-```command
+``command
 export MACOSX_DEPLOYMENT_TARGET=10.15
-```
+``
 
 That worked for me. (Not really sure why, but it did)
+```
+
 
  
