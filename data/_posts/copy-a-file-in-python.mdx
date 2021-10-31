@@ -9,10 +9,15 @@ date: 2021-10-31T12:17:07-0400
 
 The basic way to copy a file in Python 3 is (though it does not do all metadata)
 
-    from shutil import copy2
-    
-    copy2(scr, dst)
-    
+```python3
+from shutil import copy2
+
+source_path = 'some/source/path.txt'
+dest_path = 'path/to/put/the/file.txt'
+
+copy2(source_path, dest_path)
+```
+
 
 - It will copy files and directories (need to test the last part)
 - It also copies file permissions. 
@@ -21,12 +26,15 @@ The basic way to copy a file in Python 3 is (though it does not do all metadata)
 
 Here's a nice table someone put together:
 
+```
 | Function    | Copies Metadata | Copies Permissions | Can Specify Buffer |
 |-------------|-----------------|--------------------|--------------------|
 | copy        | No              | Yes                | No                 |
 | copyfile    | No              | No                 | No                 |
 | copy2       | Yes             | Yes                | No                 |
 | copyfileobj | No              | No                 | Yes                |
+```
+
 
 
 ---
@@ -37,7 +45,7 @@ Old Notes:
 See this from here: https://alexwlchan.net/2019/03/atomic-cross-filesystem-moves-in-python/
 
 
-
+```
 import errno
 import os
 import shutil
@@ -78,6 +86,7 @@ def safe_move(src, dst):
             os.unlink(src)
         else:
             raise
-            
+```
+
             
 
