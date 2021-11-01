@@ -7,7 +7,7 @@ export default function BlogList({ posts }) {
   return (
     <>
       <Head>
-        <meta charset="utf-8" />
+        <meta charSet="utf-8" />
         <meta property="og:title" content="alanwsmith.com" />
         <meta property="og:type" content="website" />
         <meta name="twitter:creator" content="@theidofalan" />
