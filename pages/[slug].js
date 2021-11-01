@@ -83,7 +83,7 @@ const Post = ({ code, frontmatter }) => {
       <LayoutMain
         content={
           <div className="max-w-prose">
-            <h3 className="text-blue-300 text-3xl ">{frontmatter.title}</h3>
+            <h1 className="text-blue-300 text-3xl ">{frontmatter.title}</h1>
             <div
               className="
               border-b 

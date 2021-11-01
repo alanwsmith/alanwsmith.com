@@ -23,6 +23,7 @@ export const lists = [
             [0, "Setup so we can add new commands to the bot via chat (or whatever)"],
             [0, "Make some type of space invaders game"],
             [0, "Finish up your nasa videos with free music thing"],
+            [0, 'Add !dotfiles command'], 
             [0, "See about setting up a sqlite3 database to manage some of the content on the site"],
             [0, "Check out Microsoft Teams' Voice Recognition CC to compare against web speech api"],
             [0, "Do a comparison of AWS, Teams (Probably Azure AI), Web Speech, etc... for voice recogintion"],
@@ -263,7 +264,7 @@ export function LocalChecklist({ lists }) {
             checked={item[0] === 1 ? true : false}
             readOnly
           />
-            <label htmlFor={index}>{item[1]}</label>
+            <label className="pl-2" htmlFor={index}>{item[1]}</label>
           </li>
         ))}
       </ul>
