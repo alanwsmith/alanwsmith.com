@@ -7,8 +7,16 @@ export default function BlogList({ posts }) {
   return (
     <>
       <Head>
+        <meta property="og:title" content="alanwsmith.com" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:creator" content="@theidofalan" />
         <meta
-          name="og:image"
+          property="og:description"
+          content="The personal website of Alan W. Smith"
+        />
+        <meta property="og:url" content={`https://www.alanwsmith.com`} />
+        <meta
+          property="og:image"
           content={`https://res.cloudinary.com/awsimages/image/upload/c_fit,l_text:Arial_68_bold:TheSiteOfAlan,w_720/fl_layer_apply,g_north_west,x_480,y_68/og-image-v3_eka6dz.png`}
         />
       </Head>

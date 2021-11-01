@@ -73,8 +73,16 @@ const Post = ({ code, frontmatter }) => {
   return (
     <>
       <Head>
+        <meta property="og:title" content={frontmatter.title} />
+        <meta property="og:type" content="article" />
+        <meta name="twitter:creator" content="@theidofalan" />
+        <meta property="og:description" content="A post from Alan W. Smith" />
         <meta
-          name="og:image"
+          property="og:url"
+          content={`https://www.alanwsmith.com${frontmatter.slug}`}
+        />
+        <meta
+          property="og:image"
           content={`https://res.cloudinary.com/awsimages/image/upload/c_fit,l_text:Arial_68_bold:${encodeURIComponent(
             frontmatter.title
           )},w_720/fl_layer_apply,g_north_west,x_480,y_68/og-image-v3_eka6dz.png`}
