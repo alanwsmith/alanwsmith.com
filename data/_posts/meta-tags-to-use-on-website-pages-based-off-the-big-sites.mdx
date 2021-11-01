@@ -7,8 +7,116 @@ category: Web Development
 date: 2021-11-01T14:18:08-0400
 ---
 
+This is a work in progress. I'm deciding what I want to do for meta data for my site. Below is a collection of samples from the heavy hitters. There are two samples per page. The first is from the "Sources" tab of the chrome developer console. The second is from the "Elements" tab.
 
-Here's an audit of some pages showing their original source and then the processed elements. 
+Here's some notes while I figure things out:
+
+
+- These are copies of the `<head>` section/data from the various pages. 
+- I removed `<script>` and `<style>` tags. I also removed `<link>` tags for `text/css`. Everything else has been left in place. (Oh, yeah, I also removed `<link>` calls for fonts.)
+- Twitter really doesn't have a `<head>` tag or a `<title>` tag in the source. It also doesn't have a closing `</body>` tag in the source file. All of these show up under the "Elements" tab though.
+- Note if you're using react, you need to do `charSet` with a capital `S` instead of `charset` where it's lowercase. 
+- It's funny to me that google starts with lowercase `<!doctype html>` instead of `<!DOCTYPE html>`. I thought it was supposed to always be uppercase. I wonder what the reason for the lowercase is. 
+- While I shortened and obfuscated some values, no attributes were removed.
+- I've not seen the thing that YouTube Video Pages are doing where there's a `<div>` in the head that has meta tags wrapping the `http://schema.org/VideoObject` stuff. Especially weird since it has `<span>` elements in it.
+- There were a ton of `rel="preload" as="script"` tags in the Facebook Elements. I just kept one for reference.
+- It surprises me that there's not explicit meta tags for open graph content in the amazon pages.
+
+
+---
+
+
+### Amazon - Home Page - Source
+
+```html
+<!doctype html>
+<html lang="en-us" class="a-no-js" data-19jf="dingo">
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv='x-dns-prefetch-control' content='on'>
+<link rel="dns-prefetch" href="https://images-na.ssl-images-amazon.com">
+<link rel="dns-prefetch" href="https://m.media-amazon.com">
+<link rel="dns-prefetch" href="https://completion.amazon.com">
+<title>Amazon.com. Spend less. Smile more.
+</title>
+<meta name="description" content="Free shipping on millions of items. Get the best of Shopping and Entertainment with Prime. Enjoy low prices and great deals on the largest selection of everyday essentials and other products, including fashion, home, beauty, electronics, Alexa Devices, sporting goods, toys, automotive, pets, baby, books, video games, musical instruments, office supplies, and more.">
+<meta name="keywords" content="Amazon, Amazon.com, Books, Online Shopping, Book Store, Magazine, Subscription, Music, CDs, DVDs, Videos, Electronics, Video Games, Computers, Cell Phones, Toys, Games, Apparel, Accessories, Shoes, Jewelry, Watches, Office Products, Sports & Outdoors, Sporting Goods, Baby Products, Health, Personal Care, Beauty, Home, Garden, Bed & Bath, Furniture, Tools, Hardware, Vacuums, Outdoor Living, Automotive Parts, Pet Supplies, Broadband, DSL">
+<meta name="google" content="nositelinkssearchbox">
+<meta name="google-site-verification" content="9v...c4">
+<link rel="canonical" href="https://www.amazon.com/">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta property="fb:app_id" content="164734381262">
+<meta name="twitter:card" value="summary">
+<meta name="twitter:site:id" value="20793816">
+<meta property="og:image" content="http://g-ec2.images-amazon.com/images/G/01/social/api-share/amazon_logo_500500._V323939215_.png" xmlns:og="http://opengraphprotocol.org/schema/">
+<meta property="og:description" content="Free shipping on millions of items. Get the best of Shopping and Entertainment with Prime. Enjoy low prices and great deals on the largest selection of everyday essentials and other products, including fashion, home, beauty, electronics, Alexa Devices, sporting goods, toys, automotive, pets, baby, books, video games, musical instruments, office supplies, and more." xmlns:og="http://opengraphprotocol.org/schema/">
+<meta name="msvalidate.01" content="3C...F3" />
+```
+
+### Amazon - Home Page - Elements
+
+```html
+<!DOCTYPE html>
+<html lang="en-us" class=" a-js a-audio a-video a-canvas a-svg a-drag-drop a-geolocation a-history a-webworker a-autofocus a-input-placeholder a-textarea-placeholder a-local-storage a-gradients a-hires a-transform3d a-touch-scrolling a-text-shadow a-text-stroke a-box-shadow a-border-radius a-border-image a-opacity a-transform a-transition a-ember" data-19ax5a9jf="dingo" data-aui-build-date="3.21.7-2021-10-25" data-useragent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36" data-platform="MacIntel">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-dns-prefetch-control" content="on">
+<link rel="dns-prefetch" href="https://images-na.ssl-images-amazon.com">
+<link rel="dns-prefetch" href="https://m.media-amazon.com">
+<link rel="dns-prefetch" href="https://completion.amazon.com">
+<title>Amazon.com. Spend less. Smile more.
+</title>
+<meta name="description" content="Free shipping on millions of items. Get the best of Shopping and Entertainment with Prime. Enjoy low prices and great deals on the largest selection of everyday essentials and other products, including fashion, home, beauty, electronics, Alexa Devices, sporting goods, toys, automotive, pets, baby, books, video games, musical instruments, office supplies, and more.">
+<meta name="keywords" content="Amazon, Amazon.com, Books, Online Shopping, Book Store, Magazine, Subscription, Music, CDs, DVDs, Videos, Electronics, Video Games, Computers, Cell Phones, Toys, Games, Apparel, Accessories, Shoes, Jewelry, Watches, Office Products, Sports &amp; Outdoors, Sporting Goods, Baby Products, Health, Personal Care, Beauty, Home, Garden, Bed &amp; Bath, Furniture, Tools, Hardware, Vacuums, Outdoor Living, Automotive Parts, Pet Supplies, Broadband, DSL">
+<meta name="google" content="nositelinkssearchbox">
+<meta name="google-site-verification" content="9vpzZueNucS8hPqoGpZ5r10Nr2_sLMRG3AnDtNlucc4">
+<link rel="canonical" href="https://www.amazon.com/">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta property="fb:app_id" content="164734381262">
+<meta name="twitter:card" value="summary">
+<meta name="twitter:site:id" value="20793816">
+<meta property="og:image" content="http://g-ec2.images-amazon.com/images/G/01/social/api-share/amazon_logo_500500._V323939215_.png" xmlns:og="http://opengraphprotocol.org/schema/">
+<meta property="og:description" content="Free shipping on millions of items. Get the best of Shopping and Entertainment with Prime. Enjoy low prices and great deals on the largest selection of everyday essentials and other products, including fashion, home, beauty, electronics, Alexa Devices, sporting goods, toys, automotive, pets, baby, books, video games, musical instruments, office supplies, and more." xmlns:og="http://opengraphprotocol.org/schema/">
+<meta name="msvalidate.01" content="3C...F3">
+```
+
+
+### Amazon - Product Page - Source
+
+```html
+<!doctype html>
+<html lang="en-us" class="a-no-js" data-19af="dingo">
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv='x-dns-prefetch-control' content='on'>
+<link rel="dns-prefetch" href="https://images-na.ssl-images-amazon.com">
+<link rel="dns-prefetch" href="https://m.media-amazon.com">
+<link rel="dns-prefetch" href="https://completion.amazon.com">
+<link rel="preload" as="script" crossorigin="anonymous" href="https://images-na.ssl-images-amazon.com/images/I/61XKxrBtDVL.js?AUIClients/AmazonUIjQuery" />
+<link rel="preload" as="script" crossorigin="anonymous" href="https://images-na.ssl-images-amazon.com/images/I/11Y+5x+kkTL._RC|51106gSDnJL.js,11UEXQOFCsL.js,11giXtZCwVL.js,01+z+uIeJ-L.js,01VRMV3FBdL.js,21SDJtBU-PL.js,11rRjDLdAVL.js,51H19hJRYrL.js,11kWu3cNjYL.js,11g2BPXNlrL.js,11OREnu1epL.js,11wcWdhrnDL.js,21r53SJg7LL.js,0190vxtlzcL.js,511VNbag2QL.js,31NShmNbJyL.js,01Gf12ogmOL.js,01ezj5Rkz1L.js,11+RxVdhNcL.js,31o2NGTXThL.js,01rpauTep4L.js,01rvjRKHRNL.js_.js?AUIClients/AmazonUI&gOUTNJqP#page_type-Detail.372963-T1.354901-T1.351411-T1" />
+<link rel="preload" as="script" crossorigin="anonymous" href="https://images-na.ssl-images-amazon.com/images/I/51xaFbd-18L.js?AUIClients/CardJsRuntimeBuzzCopyBuild" />
+```
+
+### Amazon - Product Page - Elements
+
+```html
+<!DOCTYPE html>
+<html lang="en-us" class=" a-js a-audio a-video a-canvas a-svg a-drag-drop a-geolocation a-history a-webworker a-autofocus a-input-placeholder a-textarea-placeholder a-local-storage a-gradients a-hires a-transform3d -scrolling a-text-shadow a-text-stroke a-box-shadow a-border-radius a-border-image a-opacity a-transform a-transition a-ember" data-19ax5a9jf="dingo" data-aui-build-date="3.21.7-2021-10-25">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-dns-prefetch-control" content="on">
+<link rel="dns-prefetch" href="https://images-na.ssl-images-amazon.com">
+<link rel="dns-prefetch" href="https://m.media-amazon.com">
+<link rel="dns-prefetch" href="https://completion.amazon.com">
+<link rel="stylesheet" href="https://images-na.ssl-images-amazon.com/images/I/11EIQ5IGqaL._RC|01ZTHTZObnL.css,41jsiPzxYxL.css,31qGOnSAToL.css,013z33uKh2L.css,017DsKjNQJL.css,0131vqwP5UL.css,41EWOOlBJ9L.css,11TIuySqr6L.css,01ElnPiDxWL.css,11bGSgD5pDL.css,01Dm5eKVxwL.css,01IdKcBuAdL.css,01y-XAlI+2L.css,21N4kUH7pxL.css,01oDR3IULNL.css,41-PwE7+H0L.css,21j0IlW7xKL.css,01XPHJk60-L.css,116uEeuY3+L.css,21aPhFy+riL.css,11gneA3MtJL.css,21fecG8pUzL.css,01ulGzBW88L.css,01CFUgsA-YL.css,31C80IiXalL.css,11qour3ND0L.css,11gKCCKQV+L.css,11061HxnEvL.css,11oHt2HYxnL.css,013RDhw9hoL.css,11JQtnL-6eL.css,11RKoGSb-gL.css,11jtXRmppwL.css,01QrWuRrZ-L.css,21zuRztKjtL.css,11QyqG8yiqL.css,01890+Vwk8L.css,11K24eOJg4L.css,11F2+OBzLyL.css,11Y05DTEL6L.css,01cbS3UK11L.css,21F85am0yFL.css,01giMEP+djL.css_.css?AUIClients/AmazonUI#us.page_type-Detail.not-trident">
+<link rel="preload" as="script" crossorigin="anonymous" href="https://images-na.ssl-images-amazon.com/images/I/61XKxrBtDVL.js?AUIClients/AmazonUIjQuery">
+<link rel="preload" as="script" crossorigin="anonymous" href="https://images-na.ssl-images-amazon.com/images/I/11Y+5x+kkTL._RC|51106gSDnJL.js,11UEXQOFCsL.js,11giXtZCwVL.js,01+z+uIeJ-L.js,01VRMV3FBdL.js,21SDJtBU-PL.js,11rRjDLdAVL.js,51H19hJRYrL.js,11kWu3cNjYL.js,11g2BPXNlrL.js,11OREnu1epL.js,11wcWdhrnDL.js,21r53SJg7LL.js,0190vxtlzcL.js,511VNbag2QL.js,31NShmNbJyL.js,01Gf12ogmOL.js,01ezj5Rkz1L.js,11+RxVdhNcL.js,31o2NGTXThL.js,01rpauTep4L.js,01rvjRKHRNL.js_.js?AUIClients/AmazonUI&amp;gOUTNJqP#page_type-Detail.372963-T1.354901-T1.351411-T1">
+<link rel="preload" as="script" crossorigin="anonymous" href="https://images-na.ssl-images-amazon.com/images/I/51xaFbd-18L.js?AUIClients/CardJsRuntimeBuzzCopyBuild">
+```
+
+
+
+ 
 
 
 ### Facebook - Movie Page - Source
@@ -721,17 +829,131 @@ Here's an audit of some pages showing their original source and then the process
 ```
 
 
+### Wikipedia - Home Page (English) - Source
 
-### Notes
+```html
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Wikipedia, the free encyclopedia</title>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.38.0-wmf.6"/>
+<meta name="referrer" content="origin"/>
+<meta name="referrer" content="origin-when-crossorigin"/>
+<meta name="referrer" content="origin-when-cross-origin"/>
+<meta name="format-detection" content="telephone=no"/>
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/b/b5/Charles_Green%2C_CO_2_11th_Battalion_at_Wewak%2C_New_Guinea_in_September_1945.jpg"/>
+<meta property="og:title" content="Wikipedia, the free encyclopedia"/>
+<meta property="og:type" content="website"/>
+<link rel="preconnect" href="//upload.wikimedia.org"/>
+<link rel="alternate" media="only screen and (max-width: 720px)" href="//en.m.wikipedia.org/wiki/Main_Page"/>
+<link rel="alternate" type="application/atom+xml" title="Wikipedia picture of the day feed" href="/w/api.php?action=featuredfeed&amp;feed=potd&amp;feedformat=atom"/>
+<link rel="alternate" type="application/atom+xml" title="Wikipedia featured articles feed" href="/w/api.php?action=featuredfeed&amp;feed=featured&amp;feedformat=atom"/>
+<link rel="alternate" type="application/atom+xml" title="Wikipedia &quot;On this day...&quot; feed" href="/w/api.php?action=featuredfeed&amp;feed=onthisday&amp;feedformat=atom"/>
+<link rel="apple-touch-icon" href="/static/apple-touch/wikipedia.png"/>
+<link rel="shortcut icon" href="/static/favicon/wikipedia.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipedia (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="//en.wikipedia.org/w/api.php?action=rsd"/>
+<link rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/"/>
+<link rel="canonical" href="https://en.wikipedia.org/wiki/Main_Page"/>
+<link rel="dns-prefetch" href="//meta.wikimedia.org" />
+<link rel="dns-prefetch" href="//login.wikimedia.org"/>
+```
 
-- These are copies of the `<head>` section/data from the various pages. 
-- I removed `<script>` and `<style>` tags. I also removed `<link>` tags for `text/css`. Everything else has been left in place. (Oh, yeah, I also removed `<link>` calls for fonts.)
-- Twitter really doesn't have a `<head>` tag or a `<title>` tag in the source. It also doesn't have a closing `</body>` tag in the source file. All of these show up under the "Elements" tab though.
-- Note if you're using react, you need to do `charSet` with a capital `S` instead of `charset` where it's lowercase. 
-- It's funny to me that google starts with lowercase `<!doctype html>` instead of `<!DOCTYPE html>`. I thought it was supposed to always be uppercase. I wonder what the reason for the lowercase is. 
-- While I shortened and obfuscated some values, no attributes were removed.
-- I've not seen the thing that YouTube Video Pages are doing where there's a `<div>` in the head that has meta tags wrapping the `http://schema.org/VideoObject` stuff. Especially weird since it has `<span>` elements in it.
-- There were a ton of `rel="preload" as="script"` tags in the Facebook Elements. I just kept one for reference.
+### Wikipedia - Home Page (English) - Elements
+
+```html
+<!DOCTYPE html>
+<html class="client-js ve-available" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Wikipedia, the free encyclopedia</title>
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.38.0-wmf.6">
+<meta name="referrer" content="origin">
+<meta name="referrer" content="origin-when-crossorigin">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="format-detection" content="telephone=no">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/b/b5/Charles_Green%2C_CO_2_11th_Battalion_at_Wewak%2C_New_Guinea_in_September_1945.jpg">
+<meta property="og:title" content="Wikipedia, the free encyclopedia">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="//upload.wikimedia.org">
+<link rel="alternate" media="only screen and (max-width: 720px)" href="//en.m.wikipedia.org/wiki/Main_Page">
+<link rel="alternate" type="application/atom+xml" title="Wikipedia picture of the day feed" href="/w/api.php?action=featuredfeed&amp;feed=potd&amp;feedformat=atom">
+<link rel="alternate" type="application/atom+xml" title="Wikipedia featured articles feed" href="/w/api.php?action=featuredfeed&amp;feed=featured&amp;feedformat=atom">
+<link rel="alternate" type="application/atom+xml" title="Wikipedia &quot;On this day...&quot; feed" href="/w/api.php?action=featuredfeed&amp;feed=onthisday&amp;feedformat=atom">
+<link rel="apple-touch-icon" href="/static/apple-touch/wikipedia.png">
+<link rel="shortcut icon" href="/static/favicon/wikipedia.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipedia (en)">
+<link rel="EditURI" type="application/rsd+xml" href="//en.wikipedia.org/w/api.php?action=rsd">
+<link rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">
+<link rel="canonical" href="https://en.wikipedia.org/wiki/Main_Page">
+<link rel="dns-prefetch" href="//meta.wikimedia.org">
+<link rel="dns-prefetch" href="//login.wikimedia.org">
+```
+
+
+### Wikipedia - Content Page - Source
+
+```html
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Dune (novel) - Wikipedia</title>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.38.0-wmf.6"/>
+<meta name="referrer" content="origin"/>
+<meta name="referrer" content="origin-when-crossorigin"/>
+<meta name="referrer" content="origin-when-cross-origin"/>
+<meta name="format-detection" content="telephone=no"/>
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/en/d/de/Dune-Frank_Herbert_%281965%29_First_edition.jpg"/>
+<meta property="og:title" content="Dune (novel) - Wikipedia"/>
+<meta property="og:type" content="website"/>
+<link rel="preconnect" href="//upload.wikimedia.org"/>
+<link rel="alternate" media="only screen and (max-width: 720px)" href="//en.m.wikipedia.org/wiki/Dune_(novel)"/>
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="/w/index.php?title=Dune_(novel)&amp;action=edit"/>
+<link rel="apple-touch-icon" href="/static/apple-touch/wikipedia.png"/>
+<link rel="shortcut icon" href="/static/favicon/wikipedia.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipedia (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="//en.wikipedia.org/w/api.php?action=rsd"/>
+<link rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/"/>
+<link rel="canonical" href="https://en.wikipedia.org/wiki/Dune_(novel)"/>
+<link rel="dns-prefetch" href="//meta.wikimedia.org" />
+<link rel="dns-prefetch" href="//login.wikimedia.org"/>
+```
+
+
+### Wikipedia - Content Page - Elements
+
+```html
+<!DOCTYPE html>
+<html class="client-js ve-available" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Dune (novel) - Wikipedia</title>
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.38.0-wmf.6">
+<meta name="referrer" content="origin">
+<meta name="referrer" content="origin-when-crossorigin">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="format-detection" content="telephone=no">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/en/d/de/Dune-Frank_Herbert_%281965%29_First_edition.jpg">
+<meta property="og:title" content="Dune (novel) - Wikipedia">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="//upload.wikimedia.org">
+<link rel="alternate" media="only screen and (max-width: 720px)" href="//en.m.wikipedia.org/wiki/Dune_(novel)">
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="/w/index.php?title=Dune_(novel)&amp;action=edit">
+<link rel="apple-touch-icon" href="/static/apple-touch/wikipedia.png">
+<link rel="shortcut icon" href="/static/favicon/wikipedia.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipedia (en)">
+<link rel="EditURI" type="application/rsd+xml" href="//en.wikipedia.org/w/api.php?action=rsd">
+<link rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">
+<link rel="canonical" href="https://en.wikipedia.org/wiki/Dune_(novel)">
+<link rel="dns-prefetch" href="//meta.wikimedia.org">
+<link rel="dns-prefetch" href="//login.wikimedia.org">
+```
 
 
 
