@@ -1,6 +1,6 @@
 ---
-title: "Meta Tags To Use On Website Pages Based On The Big Sites"
-slug: /meta-tags-to-use-on-website-pages-based-on-the-big-sites
+title: "Meta Tags To Use On Website Pages Based Off The Big Sites"
+slug: /meta-tags-to-use-on-website-pages-based-off-the-big-sites
 type: post
 status: wip
 category: Web Development
@@ -9,6 +9,72 @@ date: 2021-11-01T14:18:08-0400
 
 
 Here's an audit of some pages showing their original source and then the processed elements. 
+
+
+### Facebook - Movie Page - Source
+
+```html
+<!DOCTYPE html>
+<html lang="en" id="facebook" class="no_js">
+<head>
+<meta charset="utf-8" />
+<meta name="referrer" content="origin-when-crossorigin" id="meta_referrer" />
+<link rel="manifest" href="/data/manifest/" crossorigin="use-credentials" />
+<title id="pageTitle">Dune Movie - Home | Facebook
+</title>
+<link rel="alternate" media="only screen and (max-width: 640px)" href="https://m.facebook.com/dune/" />
+<link rel="alternate" media="handheld" href="https://m.facebook.com/dune/" />
+<link rel="alternate" hreflang="x-default" href="https://www.facebook.com/dune/" />
+<link rel="alternate" hreflang="en" href="https://www.facebook.com/dune/" />
+<meta property="al:android:app_name" content="Facebook" />
+<meta property="al:android:package" content="com.facebook.katana" />
+<meta property="al:android:url" content="fb://page/101611144857507?referrer=app_link" />
+<meta property="al:ios:app_name" content="Facebook" />
+<meta property="al:ios:app_store_id" content="284882215" />
+<meta property="al:ios:url" content="fb://page/?id=101611144857507" />
+<meta name="description" content="Dune Movie. 81,845 likes &#xb7; 66,730 talking about this. Oscar nominee Denis Villeneuve (&#x201c;Arrival,&#x201d; &#x201c;Blade Runner 2049&#x201d;) directs Warner Bros. Pictures and..." />
+<link rel="canonical" href="https://www.facebook.com/dune/" />
+<meta property="og:title" content="Dune Movie" />
+<meta property="og:description" content="Dune Movie. 81,845 likes &#xb7; 66,730 talking about this. Oscar nominee Denis Villeneuve (&#x201c;Arrival,&#x201d; &#x201c;Blade Runner 2049&#x201d;) directs Warner Bros. Pictures and Legendary Pictures&#x2019; &#x201c;Dune,&#x201d; the big-screen..." />
+<meta property="og:image" content="https://scontent-atl3-1.xx.fbcdn.net/v/t1.6435-1/p200x200/247720128_427888415563110_6193931324334113087_n.jpg?_nc_cat=1&amp;ccb=1-5&amp;_nc_sid=dbb9e7&amp;_nc_ohc=k-Sq66c5kB0AX__VDRO&amp;_nc_ht=scontent-atl3-1.xx&amp;oh=09f28d5aebe45c04d24fcd7bcb9acc69&amp;oe=61A7288F" />
+<meta property="og:url" content="https://www.facebook.com/dune/" />
+<link rel="shortcut icon" href="https://static.xx.fbcdn.net/rsrc.php/yb/r/hLRGG_y0J.ico" />
+```
+
+
+### Facebook - Movie Page - Elements
+
+```html
+<!DOCTYPE html>
+<html lang="en" id="facebook" class="tinyViewport tinyHeight">
+<head>
+<meta charset="utf-8">
+<meta name="referrer" content="origin-when-crossorigin" id="meta_referrer">
+<link rel="manifest" href="/data/manifest/" crossorigin="use-credentials">
+<title id="pageTitle">Dune Movie - Home | Facebook
+</title>
+<link rel="alternate" media="only screen and (max-width: 640px)" href="https://m.facebook.com/dune/">
+<link rel="alternate" media="handheld" href="https://m.facebook.com/dune/">
+<link rel="alternate" hreflang="x-default" href="https://www.facebook.com/dune/">
+<link rel="alternate" hreflang="en" href="https://www.facebook.com/dune/">
+<meta property="al:android:app_name" content="Facebook">
+<meta property="al:android:package" content="com.facebook.katana">
+<meta property="al:android:url" content="fb://page/101611144857507?referrer=app_link">
+<meta property="al:ios:app_name" content="Facebook">
+<meta property="al:ios:app_store_id" content="284882215">
+<meta property="al:ios:url" content="fb://page/?id=101611144857507">
+<meta name="description" content="Dune Movie. 81,845 likes · 66,730 talking about this. Oscar nominee Denis Villeneuve (“Arrival,” “Blade Runner 2049”) directs Warner Bros. Pictures and...">
+<link rel="canonical" href="https://www.facebook.com/dune/">
+<meta property="og:title" content="Dune Movie">
+<meta property="og:description" content="Dune Movie. 81,845 likes · 66,730 talking about this. Oscar nominee Denis Villeneuve (“Arrival,” “Blade Runner 2049”) directs Warner Bros. Pictures and Legendary Pictures’ “Dune,” the big-screen...">
+<meta property="og:image" content="https://scontent-atl3-1.xx.fbcdn.net/v/t1.6435-1/p200x200/247720128_427888415563110_6193931324334113087_n.jpg?_nc_cat=1&amp;ccb=1-5&amp;_nc_sid=dbb9e7&amp;_nc_ohc=k-Sq66c5kB0AX__VDRO&amp;_nc_ht=scontent-atl3-1.xx&amp;oh=09f28d5aebe45c04d24fcd7bcb9acc69&amp;oe=61A7288F">
+<meta property="og:url" content="https://www.facebook.com/dune/">
+<link rel="shortcut icon" href="https://static.xx.fbcdn.net/rsrc.php/yb/r/hLG_y0J.ico">
+<link href="https://static.xx.fbcdn.net/rsrc.php/v3/yU/r/IB7Ce3Vxnr4.js?_nc_x=Ij3Wp8lg5Kz" rel="preload" as="script" crossorigin="anonymous">
+```
+
+
+
 
 
 ### Google - Home Page - Source
@@ -155,8 +221,278 @@ Here's an audit of some pages showing their original source and then the process
 ```
 
 
+### YouTube - Search Results Page - Elements
+
+```html
+<!DOCTYPE html>
+<html style="font-size: 10px;font-family: Roboto, Arial, sans-serif;" lang="en" dark="true" system-icons="" typography="" typography-spacing="" standardized-themed-scrollbar="">
+<head>
+<link rel="shortcut icon" href="https://www.youtube.com/s/desktop/b349a03a/img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="https://www.youtube.com/s/desktop/ba/img/favicon_32x32.png" sizes="32x32">
+<link rel="icon" href="https://www.youtube.com/s/desktop/ba/img/favicon_48x48.png" sizes="48x48">
+<link rel="icon" href="https://www.youtube.com/s/desktop/ba/img/favicon_96x96.png" sizes="96x96">
+<link rel="icon" href="https://www.youtube.com/s/desktop/ba/img/favicon_144x144.png" sizes="144x144">
+<link rel="preload" href="https://i.ytimg.com/generate_204" as="fetch">
+<link as="script" rel="preload" href="https://www.youtube.com/s/desktop/ba/jsbin/desktop_polymer.vflset/desktop_polymer.js" nonce="mE...dQ">
+<meta name="theme-color" content="rgba(33,33,33,0.98)">
+<link rel="search" type="application/opensearchdescription+xml" href="https://www.youtube.com/opensearch?locale=en_US" title="YouTube">
+<link rel="manifest" href="/manifest.webmanifest" crossorigin="use-credentials">
+<title>dune trailer 2021 - YouTube
+</title>
+```
 
 
+### YouTube - Video Page - Source
+
+```html
+<!DOCTYPE html>
+<html style="font-size: 10px;font-family: Roboto, Arial, sans-serif;" lang="en" dark system-icons typography typography-spacing>
+<head>
+<link rel="shortcut icon" href="https://www.youtube.com/s/desktop/ba/img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="https://www.youtube.com/s/desktop/ba/img/favicon_32x32.png" sizes="32x32">
+<link rel="icon" href="https://www.youtube.com/s/desktop/ba/img/favicon_48x48.png" sizes="48x48">
+<link rel="icon" href="https://www.youtube.com/s/desktop/ba/img/favicon_96x96.png" sizes="96x96">
+<link rel="icon" href="https://www.youtube.com/s/desktop/ba/img/favicon_144x144.png" sizes="144x144">
+<link rel="preload" href="https://i.ytimg.com/generate_204" as="fetch">
+<meta name="theme-color" content="rgba(33, 33, 33, 0.98)">
+<link rel="search" type="application/opensearchdescription+xml" href="https://www.youtube.com/opensearch?locale=en_US" title="YouTube">
+<link rel="manifest" href="/manifest.webmanifest" crossorigin="use-credentials">
+<link rel="preload" href="https://r5---sn-hp57kn6r.googlevideo.com/generate_204" as="fetch">
+<link rel="preload" href="https://r5---sn-hp57kn6r.googlevideo.com/generate_204?conn2" as="fetch">
+<link rel="canonical" href="https://www.youtube.com/watch?v=8g18jFHCLXk">
+<link rel="alternate" media="handheld" href="https://m.youtube.com/watch?v=8g18jFHCLXk">
+<link rel="alternate" media="only screen and (max-width: 640px)" href="https://m.youtube.com/watch?v=8g18jFHCLXk">
+<title>Dune | Official Main Trailer - YouTube
+</title>
+<meta name="title" content="Dune | Official Main Trailer">
+<meta name="description" content="IT’S TIME. #DuneMovie coming October 22.-----------------https://www.instagram.com/dunemovie/https://www.facebook.com/dunehttps://twitter.com/dunemovie https...">
+<meta name="keywords" content="Action, Arrakis, Arrival, Atreides, Bene Gesserit, Blade Runner 2049, Coming Soon, Denis Villeneuve, Duke Leto Atreides, Duncan Idaho, Dune, Enemy, Film, Film Trailer, Film Warner, Frank Herbert, Fremen, Harkonnen, Jason Momoa, Javier Bardem, Josh Brolin, Movie, Official Trailer, Oscar Isaac, Paul Atreides, Rebecca Ferguson, Sandworm, Sci-Fi, Stellan Skarsgard, Timothee Chalamet, Trailer, Trailer 2019, WB, Warner, Warner Bros, Warner Brothers, Warner Media, Zendaya">
+<link rel="shortlinkUrl" href="https://youtu.be/8g18jFHCLXk">
+<link rel="alternate" href="android-app://com.google.android.youtube/http/www.youtube.com/watch?v=8g18jFHCLXk">
+<link rel="alternate" href="ios-app://544007664/vnd.youtube/www.youtube.com/watch?v=8g18jFHCLXk">
+<link rel="alternate" type="application/json+oembed" href="https://www.youtube.com/oembed?format=json&amp;url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D8g18jFHCLXk" title="Dune | Official Main Trailer">
+<link rel="alternate" type="text/xml+oembed" href="https://www.youtube.com/oembed?format=xml&amp;url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D8g18jFHCLXk" title="Dune | Official Main Trailer">
+<link rel="image_src" href="https://i.ytimg.com/vi/8g18jFHCLXk/maxresdefault.jpg">
+<meta property="og:site_name" content="YouTube">
+<meta property="og:url" content="https://www.youtube.com/watch?v=8g18jFHCLXk">
+<meta property="og:title" content="Dune | Official Main Trailer">
+<meta property="og:image" content="https://i.ytimg.com/vi/8g18jFHCLXk/maxresdefault.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta property="og:description" content="IT’S TIME. #DuneMovie coming October 22.-----------------https://www.instagram.com/dunemovie/https://www.facebook.com/dunehttps://twitter.com/dunemovie https...">
+<meta property="al:ios:app_store_id" content="544007664">
+<meta property="al:ios:app_name" content="YouTube">
+<meta property="al:ios:url" content="vnd.youtube://www.youtube.com/watch?v=8g18jFHCLXk&amp;feature=applinks">
+<meta property="al:android:url" content="vnd.youtube://www.youtube.com/watch?v=8g18jFHCLXk&amp;feature=applinks">
+<meta property="al:web:url" content="http://www.youtube.com/watch?v=8g18jFHCLXk&amp;feature=applinks">
+<meta property="og:type" content="video.other">
+<meta property="og:video:url" content="https://www.youtube.com/embed/8g18jFHCLXk">
+<meta property="og:video:secure_url" content="https://www.youtube.com/embed/8g18jFHCLXk">
+<meta property="og:video:type" content="text/html">
+<meta property="og:video:width" content="1280">
+<meta property="og:video:height" content="720">
+<meta property="al:android:app_name" content="YouTube">
+<meta property="al:android:package" content="com.google.android.youtube">
+<meta property="og:video:tag" content="Action">
+<meta property="og:video:tag" content="Arrakis">
+<meta property="og:video:tag" content="Arrival">
+<meta property="og:video:tag" content="Atreides">
+<meta property="og:video:tag" content="Bene Gesserit">
+<meta property="og:video:tag" content="Blade Runner 2049">
+<meta property="og:video:tag" content="Coming Soon">
+<meta property="og:video:tag" content="Denis Villeneuve">
+<meta property="og:video:tag" content="Duke Leto Atreides">
+<meta property="og:video:tag" content="Duncan Idaho">
+<meta property="og:video:tag" content="Dune">
+<meta property="og:video:tag" content="Enemy">
+<meta property="og:video:tag" content="Film">
+<meta property="og:video:tag" content="Film Trailer">
+<meta property="og:video:tag" content="Film Warner">
+<meta property="og:video:tag" content="Frank Herbert">
+<meta property="og:video:tag" content="Fremen">
+<meta property="og:video:tag" content="Harkonnen">
+<meta property="og:video:tag" content="Jason Momoa">
+<meta property="og:video:tag" content="Javier Bardem">
+<meta property="og:video:tag" content="Josh Brolin">
+<meta property="og:video:tag" content="Movie">
+<meta property="og:video:tag" content="Official Trailer">
+<meta property="og:video:tag" content="Oscar Isaac">
+<meta property="og:video:tag" content="Paul Atreides">
+<meta property="og:video:tag" content="Rebecca Ferguson">
+<meta property="og:video:tag" content="Sandworm">
+<meta property="og:video:tag" content="Sci-Fi">
+<meta property="og:video:tag" content="Stellan Skarsgard">
+<meta property="og:video:tag" content="Timothee Chalamet">
+<meta property="og:video:tag" content="Trailer">
+<meta property="og:video:tag" content="Trailer 2019">
+<meta property="og:video:tag" content="WB">
+<meta property="og:video:tag" content="Warner">
+<meta property="og:video:tag" content="Warner Bros">
+<meta property="og:video:tag" content="Warner Brothers">
+<meta property="og:video:tag" content="Warner Media">
+<meta property="og:video:tag" content="Zendaya">
+<meta property="fb:app_id" content="87...05">
+<meta name="twitter:card" content="player">
+<meta name="twitter:site" content="@youtube">
+<meta name="twitter:url" content="https://www.youtube.com/watch?v=8g18jFHCLXk">
+<meta name="twitter:title" content="Dune | Official Main Trailer">
+<meta name="twitter:description" content="IT’S TIME. #DuneMovie coming October 22.-----------------https://www.instagram.com/dunemovie/https://www.facebook.com/dunehttps://twitter.com/dunemovie https...">
+<meta name="twitter:image" content="https://i.ytimg.com/vi/8g18jFHCLXk/maxresdefault.jpg">
+<meta name="twitter:app:name:iphone" content="YouTube">
+<meta name="twitter:app:id:iphone" content="544007664">
+<meta name="twitter:app:name:ipad" content="YouTube">
+<meta name="twitter:app:id:ipad" content="544007664">
+<meta name="twitter:app:url:iphone" content="vnd.youtube://www.youtube.com/watch?v=8g18jFHCLXk&amp;feature=applinks">
+<meta name="twitter:app:url:ipad" content="vnd.youtube://www.youtube.com/watch?v=8g18jFHCLXk&amp;feature=applinks">
+<meta name="twitter:app:name:googleplay" content="YouTube">
+<meta name="twitter:app:id:googleplay" content="com.google.android.youtube">
+<meta name="twitter:app:url:googleplay" content="https://www.youtube.com/watch?v=8g18jFHCLXk">
+<meta name="twitter:player" content="https://www.youtube.com/embed/8g18jFHCLXk">
+<meta name="twitter:player:width" content="1280">
+<meta name="twitter:player:height" content="720">
+<div id="watch7-content" class="watch-main-col" itemscope itemid="" itemtype="http://schema.org/VideoObject">
+<link itemprop="url" href="https://www.youtube.com/watch?v=8g18jFHCLXk">
+<meta itemprop="name" content="Dune | Official Main Trailer">
+<meta itemprop="description" content="IT’S TIME. #DuneMovie coming October 22.-----------------https://www.instagram.com/dunemovie/https://www.facebook.com/dunehttps://twitter.com/dunemovie https...">
+<meta itemprop="paid" content="False">
+<meta itemprop="channelId" content="UCjmJDM5pRKbUlVIzDYYWb6g">
+<meta itemprop="videoId" content="8g18jFHCLXk">
+<meta itemprop="duration" content="PT3M28S">
+<meta itemprop="unlisted" content="False">
+<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+<link itemprop="url" href="http://www.youtube.com/user/WarnerBrosPictures">
+<link itemprop="name" content="Warner Bros. Pictures">
+</span>
+<link itemprop="thumbnailUrl" href="https://i.ytimg.com/vi/8g18jFHCLXk/maxresdefault.jpg">
+<span itemprop="thumbnail" itemscope itemtype="http://schema.org/ImageObject">
+<link itemprop="url" href="https://i.ytimg.com/vi/8g18jFHCLXk/maxresdefault.jpg">
+<meta itemprop="width" content="1280">
+<meta itemprop="height" content="720">
+</span>
+<link itemprop="embedUrl" href="https://www.youtube.com/embed/8g18jFHCLXk">
+<meta itemprop="playerType" content="HTML5 Flash">
+<meta itemprop="width" content="1280">
+<meta itemprop="height" content="720">
+<meta itemprop="isFamilyFriendly" content="true">
+<meta itemprop="regionsAllowed" content="AD,AE,AF,AG,AI,AL,AM,AO,AQ,AR,AS,AT,AU,AW,AX,AZ,BA,BB,BD,BE,BF,BG,BH,BI,BJ,BL,BM,BN,BO,BQ,BR,BS,BT,BV,BW,BY,BZ,CA,CC,CD,CF,CG,CH,CI,CK,CL,CM,CN,CO,CR,CU,CV,CW,CX,CY,CZ,DE,DJ,DK,DM,DO,DZ,EC,EE,EG,EH,ER,ES,ET,FI,FJ,FK,FM,FO,FR,GA,GB,GD,GE,GF,GG,GH,GI,GL,GM,GN,GP,GQ,GR,GS,GT,GU,GW,GY,HK,HM,HN,HR,HT,HU,ID,IE,IL,IM,IN,IO,IQ,IR,IS,IT,JE,JM,JO,JP,KE,KG,KH,KI,KM,KN,KP,KR,KW,KY,KZ,LA,LB,LC,LI,LK,LR,LS,LT,LU,LV,LY,MA,MC,MD,ME,MF,MG,MH,MK,ML,MM,MN,MO,MP,MQ,MR,MS,MT,MU,MV,MW,MX,MY,MZ,NA,NC,NE,NF,NG,NI,NL,NO,NP,NR,NU,NZ,OM,PA,PE,PF,PG,PH,PK,PL,PM,PN,PR,PS,PT,PW,PY,QA,RE,RO,RS,RU,RW,SA,SB,SC,SD,SE,SG,SH,SI,SJ,SK,SL,SM,SN,SO,SR,SS,ST,SV,SX,SY,SZ,TC,TD,TF,TG,TH,TJ,TK,TL,TM,TN,TO,TR,TT,TV,TW,TZ,UA,UG,UM,US,UY,UZ,VA,VC,VE,VG,VI,VN,VU,WF,WS,YE,YT,ZA,ZM,ZW">
+<meta itemprop="interactionCount" content="26228093">
+<meta itemprop="datePublished" content="2021-07-22">
+<meta itemprop="uploadDate" content="2021-07-22">
+<meta itemprop="genre" content="Film &amp; Animation">
+</div>
+```
+
+
+### YouTube - Video Page - Elements
+
+```html
+<!DOCTYPE html>
+<html style="font-size: 10px;font-family: Roboto, Arial, sans-serif;" lang="en" dark="true" system-icons="" typography="" typography-spacing="" standardized-themed-scrollbar="">
+<head>
+<link rel="shortcut icon" href="https://www.youtube.com/s/desktop/b3/img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="https://www.youtube.com/s/desktop/b3/img/favicon_32x32.png" sizes="32x32">
+<link rel="icon" href="https://www.youtube.com/s/desktop/b3/img/favicon_48x48.png" sizes="48x48">
+<link rel="icon" href="https://www.youtube.com/s/desktop/b3/img/favicon_96x96.png" sizes="96x96">
+<link rel="icon" href="https://www.youtube.com/s/desktop/b3/img/favicon_144x144.png" sizes="144x144">
+<link rel="preload" href="https://i.ytimg.com/generate_204" as="fetch">
+<meta name="theme-color" content="rgba(33,33,33,0.98)">
+<link rel="search" type="application/opensearchdescription+xml" href="https://www.youtube.com/opensearch?locale=en_US" title="YouTube">
+<link rel="manifest" href="/manifest.webmanifest" crossorigin="use-credentials">
+<link rel="preload" href="https://r5---sn-hp57kn6r.googlevideo.com/generate_204" as="fetch">
+<link rel="preload" href="https://r5---sn-hp57kn6r.googlevideo.com/generate_204?conn2" as="fetch">
+<link rel="canonical" href="https://www.youtube.com/watch?v=8g18jFHCLXk">
+<link rel="alternate" media="handheld" href="https://m.youtube.com/watch?v=8g18jFHCLXk">
+<link rel="alternate" media="only screen and (max-width: 640px)" href="https://m.youtube.com/watch?v=8g18jFHCLXk">
+<title>Dune | Official Main Trailer - YouTube
+</title>
+<meta name="title" content="Dune | Official Main Trailer">
+<meta name="description" content="IT’S TIME. #DuneMovie coming October 22.-----------------https://www.instagram.com/dunemovie/https://www.facebook.com/dunehttps://twitter.com/dunemovie https...">
+<meta name="keywords" content="Action, Arrakis, Arrival, Atreides, Bene Gesserit, Blade Runner 2049, Coming Soon, Denis Villeneuve, Duke Leto Atreides, Duncan Idaho, Dune, Enemy, Film, Film Trailer, Film Warner, Frank Herbert, Fremen, Harkonnen, Jason Momoa, Javier Bardem, Josh Brolin, Movie, Official Trailer, Oscar Isaac, Paul Atreides, Rebecca Ferguson, Sandworm, Sci-Fi, Stellan Skarsgard, Timothee Chalamet, Trailer, Trailer 2019, WB, Warner, Warner Bros, Warner Brothers, Warner Media, Zendaya">
+<link rel="shortlinkUrl" href="https://youtu.be/8g18jFHCLXk">
+<link rel="alternate" href="android-app://com.google.android.youtube/http/www.youtube.com/watch?v=8g18jFHCLXk">
+<link rel="alternate" href="ios-app://544007664/vnd.youtube/www.youtube.com/watch?v=8g18jFHCLXk">
+<link rel="alternate" type="application/json+oembed" href="https://www.youtube.com/oembed?format=json&amp;url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D8g18jFHCLXk" title="Dune | Official Main Trailer">
+<link rel="alternate" type="text/xml+oembed" href="https://www.youtube.com/oembed?format=xml&amp;url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D8g18jFHCLXk" title="Dune | Official Main Trailer">
+<link rel="image_src" href="https://i.ytimg.com/vi/8g18jFHCLXk/maxresdefault.jpg">
+<meta property="og:site_name" content="YouTube">
+<meta property="og:url" content="https://www.youtube.com/watch?v=8g18jFHCLXk">
+<meta property="og:title" content="Dune | Official Main Trailer">
+<meta property="og:image" content="https://i.ytimg.com/vi/8g18jFHCLXk/maxresdefault.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta property="og:description" content="IT’S TIME. #DuneMovie coming October 22.-----------------https://www.instagram.com/dunemovie/https://www.facebook.com/dunehttps://twitter.com/dunemovie https...">
+<meta property="al:ios:app_store_id" content="544007664">
+<meta property="al:ios:app_name" content="YouTube">
+<meta property="al:ios:url" content="vnd.youtube://www.youtube.com/watch?v=8g18jFHCLXk&amp;feature=applinks">
+<meta property="al:android:url" content="vnd.youtube://www.youtube.com/watch?v=8g18jFHCLXk&amp;feature=applinks">
+<meta property="al:web:url" content="http://www.youtube.com/watch?v=8g18jFHCLXk&amp;feature=applinks">
+<meta property="og:type" content="video.other">
+<meta property="og:video:url" content="https://www.youtube.com/embed/8g18jFHCLXk">
+<meta property="og:video:secure_url" content="https://www.youtube.com/embed/8g18jFHCLXk">
+<meta property="og:video:type" content="text/html">
+<meta property="og:video:width" content="1280">
+<meta property="og:video:height" content="720">
+<meta property="al:android:app_name" content="YouTube">
+<meta property="al:android:package" content="com.google.android.youtube">
+<meta property="og:video:tag" content="Action">
+<meta property="og:video:tag" content="Arrakis">
+<meta property="og:video:tag" content="Arrival">
+<meta property="og:video:tag" content="Atreides">
+<meta property="og:video:tag" content="Bene Gesserit">
+<meta property="og:video:tag" content="Blade Runner 2049">
+<meta property="og:video:tag" content="Coming Soon">
+<meta property="og:video:tag" content="Denis Villeneuve">
+<meta property="og:video:tag" content="Duke Leto Atreides">
+<meta property="og:video:tag" content="Duncan Idaho">
+<meta property="og:video:tag" content="Dune">
+<meta property="og:video:tag" content="Enemy">
+<meta property="og:video:tag" content="Film">
+<meta property="og:video:tag" content="Film Trailer">
+<meta property="og:video:tag" content="Film Warner">
+<meta property="og:video:tag" content="Frank Herbert">
+<meta property="og:video:tag" content="Fremen">
+<meta property="og:video:tag" content="Harkonnen">
+<meta property="og:video:tag" content="Jason Momoa">
+<meta property="og:video:tag" content="Javier Bardem">
+<meta property="og:video:tag" content="Josh Brolin">
+<meta property="og:video:tag" content="Movie">
+<meta property="og:video:tag" content="Official Trailer">
+<meta property="og:video:tag" content="Oscar Isaac">
+<meta property="og:video:tag" content="Paul Atreides">
+<meta property="og:video:tag" content="Rebecca Ferguson">
+<meta property="og:video:tag" content="Sandworm">
+<meta property="og:video:tag" content="Sci-Fi">
+<meta property="og:video:tag" content="Stellan Skarsgard">
+<meta property="og:video:tag" content="Timothee Chalamet">
+<meta property="og:video:tag" content="Trailer">
+<meta property="og:video:tag" content="Trailer 2019">
+<meta property="og:video:tag" content="WB">
+<meta property="og:video:tag" content="Warner">
+<meta property="og:video:tag" content="Warner Bros">
+<meta property="og:video:tag" content="Warner Brothers">
+<meta property="og:video:tag" content="Warner Media">
+<meta property="og:video:tag" content="Zendaya">
+<meta property="fb:app_id" content="87741124305">
+<meta name="twitter:card" content="player">
+<meta name="twitter:site" content="@youtube">
+<meta name="twitter:url" content="https://www.youtube.com/watch?v=8g18jFHCLXk">
+<meta name="twitter:title" content="Dune | Official Main Trailer">
+<meta name="twitter:description" content="IT’S TIME. #DuneMovie coming October 22.-----------------https://www.instagram.com/dunemovie/https://www.facebook.com/dunehttps://twitter.com/dunemovie https...">
+<meta name="twitter:image" content="https://i.ytimg.com/vi/8g18jFHCLXk/maxresdefault.jpg">
+<meta name="twitter:app:name:iphone" content="YouTube">
+<meta name="twitter:app:id:iphone" content="544007664">
+<meta name="twitter:app:name:ipad" content="YouTube">
+<meta name="twitter:app:id:ipad" content="544007664">
+<meta name="twitter:app:url:iphone" content="vnd.youtube://www.youtube.com/watch?v=8g18jFHCLXk&amp;feature=applinks">
+<meta name="twitter:app:url:ipad" content="vnd.youtube://www.youtube.com/watch?v=8g18jFHCLXk&amp;feature=applinks">
+<meta name="twitter:app:name:googleplay" content="YouTube">
+<meta name="twitter:app:id:googleplay" content="com.google.android.youtube">
+<meta name="twitter:app:url:googleplay" content="https://www.youtube.com/watch?v=8g18jFHCLXk">
+<meta name="twitter:player" content="https://www.youtube.com/embed/8g18jFHCLXk">
+<meta name="twitter:player:width" content="1280">
+<meta name="twitter:player:height" content="720">
+<meta name="referrer" content="origin-when-cross-origin">
+```
 
 
 ### Twitter - Home Page - Source
@@ -394,6 +730,8 @@ Here's an audit of some pages showing their original source and then the process
 - Note if you're using react, you need to do `charSet` with a capital `S` instead of `charset` where it's lowercase. 
 - It's funny to me that google starts with lowercase `<!doctype html>` instead of `<!DOCTYPE html>`. I thought it was supposed to always be uppercase. I wonder what the reason for the lowercase is. 
 - While I shortened and obfuscated some values, no attributes were removed.
+- I've not seen the thing that YouTube Video Pages are doing where there's a `<div>` in the head that has meta tags wrapping the `http://schema.org/VideoObject` stuff. Especially weird since it has `<span>` elements in it.
+- There were a ton of `rel="preload" as="script"` tags in the Facebook Elements. I just kept one for reference.
 
 
 
