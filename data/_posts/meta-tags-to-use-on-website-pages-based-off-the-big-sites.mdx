@@ -21,12 +21,18 @@ Here's some notes while I figure things out:
 - I've not seen the thing that YouTube Video Pages are doing where there's a `<div>` in the head that has meta tags wrapping the `http://schema.org/VideoObject` stuff. Especially weird since it has `<span>` elements in it.
 - There were a ton of `rel="preload" as="script"` tags in the Facebook Elements. I just kept one for reference.
 - It surprises me that there's not explicit meta tags for open graph content in the amazon pages.
+- My understanding is that the Star Wars site is a Wordpress site. Including it since there's a huge number of those out there (understanding that it almost certainly has a bunch of customiztion)
+- Twitter title for the star wars content page has the `<em>` element in it. Seems like not the best idea.
+- The `msapplication-` stuff on the star wars page is commented out. Makes me wonder if there's a technical reason for that.
+- Star Wars has all the old `if lt IE 7` stuff. I'm guessing that's more legacy code hanging around than for a specific target to that browser. 
 
 
 ---
 
 
 ### Amazon - Home Page - Source
+
+[source](https://www.amazon.com/)
 
 ```html
 <!doctype html>
@@ -37,8 +43,7 @@ Here's some notes while I figure things out:
 <link rel="dns-prefetch" href="https://images-na.ssl-images-amazon.com">
 <link rel="dns-prefetch" href="https://m.media-amazon.com">
 <link rel="dns-prefetch" href="https://completion.amazon.com">
-<title>Amazon.com. Spend less. Smile more.
-</title>
+<title>Amazon.com. Spend less. Smile more.</title>
 <meta name="description" content="Free shipping on millions of items. Get the best of Shopping and Entertainment with Prime. Enjoy low prices and great deals on the largest selection of everyday essentials and other products, including fashion, home, beauty, electronics, Alexa Devices, sporting goods, toys, automotive, pets, baby, books, video games, musical instruments, office supplies, and more.">
 <meta name="keywords" content="Amazon, Amazon.com, Books, Online Shopping, Book Store, Magazine, Subscription, Music, CDs, DVDs, Videos, Electronics, Video Games, Computers, Cell Phones, Toys, Games, Apparel, Accessories, Shoes, Jewelry, Watches, Office Products, Sports & Outdoors, Sporting Goods, Baby Products, Health, Personal Care, Beauty, Home, Garden, Bed & Bath, Furniture, Tools, Hardware, Vacuums, Outdoor Living, Automotive Parts, Pet Supplies, Broadband, DSL">
 <meta name="google" content="nositelinkssearchbox">
@@ -53,7 +58,11 @@ Here's some notes while I figure things out:
 <meta name="msvalidate.01" content="3C...F3" />
 ```
 
+---
+
 ### Amazon - Home Page - Elements
+
+[source](https://www.amazon.com/)
 
 ```html
 <!DOCTYPE html>
@@ -64,8 +73,7 @@ Here's some notes while I figure things out:
 <link rel="dns-prefetch" href="https://images-na.ssl-images-amazon.com">
 <link rel="dns-prefetch" href="https://m.media-amazon.com">
 <link rel="dns-prefetch" href="https://completion.amazon.com">
-<title>Amazon.com. Spend less. Smile more.
-</title>
+<title>Amazon.com. Spend less. Smile more.</title>
 <meta name="description" content="Free shipping on millions of items. Get the best of Shopping and Entertainment with Prime. Enjoy low prices and great deals on the largest selection of everyday essentials and other products, including fashion, home, beauty, electronics, Alexa Devices, sporting goods, toys, automotive, pets, baby, books, video games, musical instruments, office supplies, and more.">
 <meta name="keywords" content="Amazon, Amazon.com, Books, Online Shopping, Book Store, Magazine, Subscription, Music, CDs, DVDs, Videos, Electronics, Video Games, Computers, Cell Phones, Toys, Games, Apparel, Accessories, Shoes, Jewelry, Watches, Office Products, Sports &amp; Outdoors, Sporting Goods, Baby Products, Health, Personal Care, Beauty, Home, Garden, Bed &amp; Bath, Furniture, Tools, Hardware, Vacuums, Outdoor Living, Automotive Parts, Pet Supplies, Broadband, DSL">
 <meta name="google" content="nositelinkssearchbox">
@@ -80,8 +88,12 @@ Here's some notes while I figure things out:
 <meta name="msvalidate.01" content="3C...F3">
 ```
 
+---
+
 
 ### Amazon - Product Page - Source
+
+[source](https://www.amazon.com/Coding-Games-Scratch-Step-Step/dp/1465477330)
 
 ```html
 <!doctype html>
@@ -97,7 +109,11 @@ Here's some notes while I figure things out:
 <link rel="preload" as="script" crossorigin="anonymous" href="https://images-na.ssl-images-amazon.com/images/I/51xaFbd-18L.js?AUIClients/CardJsRuntimeBuzzCopyBuild" />
 ```
 
+---
+
 ### Amazon - Product Page - Elements
+
+[source](https://www.amazon.com/Coding-Games-Scratch-Step-Step/dp/1465477330)
 
 ```html
 <!DOCTYPE html>
@@ -108,18 +124,17 @@ Here's some notes while I figure things out:
 <link rel="dns-prefetch" href="https://images-na.ssl-images-amazon.com">
 <link rel="dns-prefetch" href="https://m.media-amazon.com">
 <link rel="dns-prefetch" href="https://completion.amazon.com">
-<link rel="stylesheet" href="https://images-na.ssl-images-amazon.com/images/I/11EIQ5IGqaL._RC|01ZTHTZObnL.css,41jsiPzxYxL.css,31qGOnSAToL.css,013z33uKh2L.css,017DsKjNQJL.css,0131vqwP5UL.css,41EWOOlBJ9L.css,11TIuySqr6L.css,01ElnPiDxWL.css,11bGSgD5pDL.css,01Dm5eKVxwL.css,01IdKcBuAdL.css,01y-XAlI+2L.css,21N4kUH7pxL.css,01oDR3IULNL.css,41-PwE7+H0L.css,21j0IlW7xKL.css,01XPHJk60-L.css,116uEeuY3+L.css,21aPhFy+riL.css,11gneA3MtJL.css,21fecG8pUzL.css,01ulGzBW88L.css,01CFUgsA-YL.css,31C80IiXalL.css,11qour3ND0L.css,11gKCCKQV+L.css,11061HxnEvL.css,11oHt2HYxnL.css,013RDhw9hoL.css,11JQtnL-6eL.css,11RKoGSb-gL.css,11jtXRmppwL.css,01QrWuRrZ-L.css,21zuRztKjtL.css,11QyqG8yiqL.css,01890+Vwk8L.css,11K24eOJg4L.css,11F2+OBzLyL.css,11Y05DTEL6L.css,01cbS3UK11L.css,21F85am0yFL.css,01giMEP+djL.css_.css?AUIClients/AmazonUI#us.page_type-Detail.not-trident">
 <link rel="preload" as="script" crossorigin="anonymous" href="https://images-na.ssl-images-amazon.com/images/I/61XKxrBtDVL.js?AUIClients/AmazonUIjQuery">
 <link rel="preload" as="script" crossorigin="anonymous" href="https://images-na.ssl-images-amazon.com/images/I/11Y+5x+kkTL._RC|51106gSDnJL.js,11UEXQOFCsL.js,11giXtZCwVL.js,01+z+uIeJ-L.js,01VRMV3FBdL.js,21SDJtBU-PL.js,11rRjDLdAVL.js,51H19hJRYrL.js,11kWu3cNjYL.js,11g2BPXNlrL.js,11OREnu1epL.js,11wcWdhrnDL.js,21r53SJg7LL.js,0190vxtlzcL.js,511VNbag2QL.js,31NShmNbJyL.js,01Gf12ogmOL.js,01ezj5Rkz1L.js,11+RxVdhNcL.js,31o2NGTXThL.js,01rpauTep4L.js,01rvjRKHRNL.js_.js?AUIClients/AmazonUI&amp;gOUTNJqP#page_type-Detail.372963-T1.354901-T1.351411-T1">
 <link rel="preload" as="script" crossorigin="anonymous" href="https://images-na.ssl-images-amazon.com/images/I/51xaFbd-18L.js?AUIClients/CardJsRuntimeBuzzCopyBuild">
 ```
 
-
-
- 
+---
 
 
 ### Facebook - Movie Page - Source
+
+[source](https://www.facebook.com/dune/)
 
 ```html
 <!DOCTYPE html>
@@ -128,8 +143,7 @@ Here's some notes while I figure things out:
 <meta charset="utf-8" />
 <meta name="referrer" content="origin-when-crossorigin" id="meta_referrer" />
 <link rel="manifest" href="/data/manifest/" crossorigin="use-credentials" />
-<title id="pageTitle">Dune Movie - Home | Facebook
-</title>
+<title id="pageTitle">Dune Movie - Home | Facebook</title>
 <link rel="alternate" media="only screen and (max-width: 640px)" href="https://m.facebook.com/dune/" />
 <link rel="alternate" media="handheld" href="https://m.facebook.com/dune/" />
 <link rel="alternate" hreflang="x-default" href="https://www.facebook.com/dune/" />
@@ -149,8 +163,13 @@ Here's some notes while I figure things out:
 <link rel="shortcut icon" href="https://static.xx.fbcdn.net/rsrc.php/yb/r/hLRGG_y0J.ico" />
 ```
 
+---
+
 
 ### Facebook - Movie Page - Elements
+
+[source](https://www.facebook.com/dune/)
+
 
 ```html
 <!DOCTYPE html>
@@ -159,8 +178,7 @@ Here's some notes while I figure things out:
 <meta charset="utf-8">
 <meta name="referrer" content="origin-when-crossorigin" id="meta_referrer">
 <link rel="manifest" href="/data/manifest/" crossorigin="use-credentials">
-<title id="pageTitle">Dune Movie - Home | Facebook
-</title>
+<title id="pageTitle">Dune Movie - Home | Facebook</title>
 <link rel="alternate" media="only screen and (max-width: 640px)" href="https://m.facebook.com/dune/">
 <link rel="alternate" media="handheld" href="https://m.facebook.com/dune/">
 <link rel="alternate" hreflang="x-default" href="https://www.facebook.com/dune/">
@@ -181,11 +199,11 @@ Here's some notes while I figure things out:
 <link href="https://static.xx.fbcdn.net/rsrc.php/v3/yU/r/IB7Ce3Vxnr4.js?_nc_x=Ij3Wp8lg5Kz" rel="preload" as="script" crossorigin="anonymous">
 ```
 
-
-
-
+---
 
 ### Google - Home Page - Source
+
+[source](https://www.google.com/)
 
 ```html
 <!doctype html>
@@ -196,11 +214,14 @@ Here's some notes while I figure things out:
 <meta content="origin" name="referrer">
 <meta content="/images/branding/googleg/1x/googleg_standard_color_128dp.png" itemprop="image">
 <link href="/manifest?pwa=webhp" crossorigin="use-credentials" rel="manifest">
-<title>Google
-</title>
+<title>Google</title>
 ```
 
+---
+
 ### Google - Home Page - Elements
+
+[source](https://www.google.com/)
 
 ```html
 <!DOCTYPE html>
@@ -211,12 +232,14 @@ Here's some notes while I figure things out:
 <meta content="origin" name="referrer">
 <meta content="/images/branding/googleg/1x/googleg_standard_color_128dp.png" itemprop="image">
 <link href="/manifest?pwa=webhp" crossorigin="use-credentials" rel="manifest">
-<title>Google
-</title>
+<title>Google</title>
 ```
 
+---
 
 ### Google - Search Results Page - Source
+
+[source](https://www.google.com/search?q=dune)
 
 ```html
 <!doctype html>
@@ -227,11 +250,15 @@ Here's some notes while I figure things out:
 <meta content="origin" name="referrer">
 <meta content="An...X0=" http-equiv="origin-trial">
 <meta content="/images/branding/googleg/1x/googleg_standard_color_128dp.png" itemprop="image">
-<title>website - Google Search
-</title>
+<title>website - Google Search</title>
 ```
 
+---
+
+
 ### Google - Search Results Page - Elements
+
+[source](https://www.google.com/search?q=dune)
 
 ```html
 <!DOCTYPE html>
@@ -240,16 +267,297 @@ Here's some notes while I figure things out:
 <meta charset="UTF-8">
 <meta content="dark" name="color-scheme">
 <meta content="origin" name="referrer">
-<meta content="Anb2GUnhMjfTIX0D2a4a6NPAqPI5GaxxRAiF81XTjHJ2qK4E3Hw3VFM4eaJBgRzz45CNPt624audv+wHOJwfAAEAAABieyJvcmlnaW4iOiJodHRwczovL2dvb2dsZS5jb206NDQzIiwiZmVhdHVyZSI6IlRydXN0VG9rZW5zIiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZX0=" http-equiv="origin-trial">
+<meta content="Anb...1ZX0=" http-equiv="origin-trial">
 <meta content="/images/branding/googleg/1x/googleg_standard_color_128dp.png" itemprop="image">
-<title>website - Google Search
-</title>
+<title>website - Google Search</title>
 <link rel="preconnect" href="https://www.googleadservices.com/">
 ```
 
+---
+
+
+### Star Wars - Home Page - Source
+
+[source](https://www.starwars.com/)
+
+```html
+<!DOCTYPE html>
+<!--
+
+    "May the Source be with you"
+    
+-->
+<!--[if lt IE 9]><html class="no-js no-media-query"><![endif]-->
+<!--[if (gte IE 9)|(!IE)]><!-->
+<html class="no-js" version="HTML+RDFa 1.1" lang="en">
+<!--<![endif]-->
+<head prefix="fb: http://ogp.me/ns/fb# og: http://ogp.me/ns#">
+<title>StarWars.com | The Official Star Wars Website</title>
+<link rel="canonical" href="https://www.starwars.com/">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="apple-mobile-web-app-title" content="Star Wars">
+<link rel="apple-touch-icon" href="https://lumiere-a.akamaihd.net/v1/images/b-boba-favicon-sw-512x512_e7aeaa0b.png?region=0%2C0%2C512%2C512">
+<link rel="icon" sizes="196x196" href="https://lumiere-a.akamaihd.net/v1/images/b-boba-favicon-sw-512x512_e7aeaa0b.png?region=0%2C0%2C512%2C512">
+<link rel="shortcut icon" href="https://lumiere-a.akamaihd.net/v1/images/b-boba-favicon-sw-512x512_e7aeaa0b.png?region=0%2C0%2C512%2C512">
+<meta http-equiv="content-language" content="en">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@starwars">
+<meta name="msvalidate.01" content="B6..74">
+<meta name="google-site-verification" content="vc..Q4">
+<meta name="twitter:app:name:iphone" content="Star Wars">
+<meta name="twitter:app:id:iphone" content="960108075">
+<meta name="twitter:app:url:iphone" content="starwars://dashboard/">
+<meta name="apple-itunes-app" content="app-id=960108075">
+<meta name="description" content="The official site for Star Wars, featuring the latest news on Star Wars movies, series, video games, books, and more.">
+<meta name="no_follow" content="false">
+<meta name="no_index" content="false">
+<meta property="fb:app_id" content="25..19">
+<meta property="og:title" content="StarWars.com | The Official Star Wars Website">
+<meta property="og:description" content="The official site for Star Wars, featuring the latest on Star Wars: The Rise of Skywalker and The Mandalorian, as well as Star Wars series, video games, books, and more.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="StarWars.com">
+<meta property="og:url" content="https://www.starwars.com/">
+<meta property="og:image" content="https://lumiere-a.akamaihd.net/v1/images/og-generic_02031d2b.png?region=0%2C0%2C1200%2C1200">
+<meta property="context" content="http://schema.org">
+```
+
+---
+
+### Star Wars - Home Page - Elements
+
+
+[source](https://www.starwars.com/)
+
+
+```html
+<!DOCTYPE html>
+<!--
+
+    "May the Source be with you"
+    
+-->
+<!--[if lt IE 9]><html class="no-js no-media-query"><![endif]-->
+<!--[if (gte IE 9)|(!IE)]><!-->
+<html class=" js canvas no-touch geolocation borderradius csstransitions fontface generatedcontent video audio localstorage svg svgclippaths no-mobile no-flash no-ios no-android no-kindle scrolling_text filereader" version="HTML+RDFa 1.1" lang="en" style="">
+<!--<![endif]-->
+<head prefix="fb: http://ogp.me/ns/fb# og: http://ogp.me/ns#">
+<title>StarWars.com | The Official Star Wars Website</title>
+<link rel="canonical" href="https://www.starwars.com/">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="apple-mobile-web-app-title" content="Star Wars">
+<link rel="apple-touch-icon" href="https://lumiere-a.akamaihd.net/v1/images/b-boba-favicon-sw-512x512_e7aeaa0b.png?region=0%2C0%2C512%2C512">
+<link rel="icon" sizes="196x196" href="https://lumiere-a.akamaihd.net/v1/images/b-boba-favicon-sw-512x512_e7aeaa0b.png?region=0%2C0%2C512%2C512">
+<link rel="shortcut icon" href="https://lumiere-a.akamaihd.net/v1/images/b-boba-favicon-sw-512x512_e7aeaa0b.png?region=0%2C0%2C512%2C512">
+<meta http-equiv="content-language" content="en">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@starwars">
+<meta name="msvalidate.01" content="B6..74">
+<meta name="google-site-verification" content="vc..Q4">
+<meta name="twitter:app:name:iphone" content="Star Wars">
+<meta name="twitter:app:id:iphone" content="960108075">
+<meta name="twitter:app:url:iphone" content="starwars://dashboard/">
+<meta name="apple-itunes-app" content="app-id=960108075">
+<meta name="description" content="The official site for Star Wars, featuring the latest news on Star Wars movies, series, video games, books, and more.">
+<meta name="no_follow" content="false">
+<meta name="no_index" content="false">
+<meta property="fb:app_id" content="251829831684619">
+<meta property="og:title" content="StarWars.com | The Official Star Wars Website">
+<meta property="og:description" content="The official site for Star Wars, featuring the latest on Star Wars: The Rise of Skywalker and The Mandalorian, as well as Star Wars series, video games, books, and more.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="StarWars.com">
+<meta property="og:url" content="https://www.starwars.com/">
+<meta property="og:image" content="https://lumiere-a.akamaihd.net/v1/images/og-generic_02031d2b.png?region=0%2C0%2C1200%2C1200">
+<meta property="context" content="http://schema.org">
+<meta http-equiv="origin-trial" content="A6d...0In0=">
+<meta http-equiv="origin-trial" content="A6d...0In0=">
+```
+
+---
+
+
+### Star Wars - Content Page - Source 
+
+[source](https://www.starwars.com/news/star-wars-insider-206-kuiil)
+
+```html
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en-US"> <!--<![endif]-->
+<head>
+<meta charset="utf-8">        
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="apple-mobile-web-app-title" content="Star Wars">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" sizes="196x196" href="/apple-touch-icon.png">
+<link rel="shortcut icon" href="//a.dilcdn.com/sw/favicon-44660648232d.ico">
+<meta property="fb:pages" content="169299103121699">
+<meta property="fb:pages" content="99502471185">
+<meta property="fb:pages" content="180356405454324">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@starwars">
+<meta name="twitter:site" content="@starwars">
+<meta name="twitter:title" content="From the Pages of &lt;em&gt;Star Wars Insider&lt;/em&gt;: Going in for the Kuiil &#8211; Exclusive Excerpt">
+<meta name="twitter:description" content="While many characters from The Mandalorian have resonated with Star Wars fans, Kuiil remains particularly beloved. The wise Ugnaught risked everything so that Grogu might live, proving to be as honora">
+<meta name="twitter:image" content="https://starwarsblog.starwars.com/wp-content/uploads/2021/10/star-wars-insider-206-the-mandalorian-behind-the-scenes_TALL-2.jpg">
+<title>Going in for the Kuiil - Star Wars Insider 206 Excerpt | StarWars.com</title>
+<meta name="description" content="In this excerpt from Star Wars Insider #206, performance artist Misty Rosas talks about bringing The Mandalorian’s Kuiil to life."/>
+<link rel="canonical" href="https://www.starwars.com/news/star-wars-insider-206-kuiil" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="In this excerpt from issue #206, performance artist Misty Rosas talks about bringing The Mandalorian’s fan-favorite Ugnaught to life." />
+<meta name="twitter:title" content="From the Pages of Star Wars Insider: Going in for the Kuiil - Exclusive Excerpt | StarWars.com" />
+<meta name="twitter:image" content="https://starwarsblog.starwars.com/wp-content/uploads/2021/10/star-wars-insider-206-the-mandalorian-behind-the-scenes_TALL-2.jpg" />
+<link rel="dns-prefetch" href="//connect.facebook.net" />
+<link rel='dns-prefetch' href='//connect.facebook.net' />
+<link rel='dns-prefetch' href='//www.starwars.com' />
+<link rel='dns-prefetch' href='//native.sharethrough.com' />
+<link rel='dns-prefetch' href='//starwarsblog.starwars.com' />
+<link rel='dns-prefetch' href='//a.dilcdn.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="StarWars.com &raquo; Feed" href="https://www.starwars.com/feed" />
+<link rel="alternate" type="application/rss+xml" title="StarWars.com &raquo; Comments Feed" href="https://www.starwars.com/comments/feed" />
+<link rel='https://api.w.org/' href='https://www.starwars.com/news/wp-json/' />
+<link rel='shortlink' href='https://www.starwars.com/?p=178553' />
+<link rel="alternate" type="application/json+oembed" href="https://www.starwars.com/news/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.starwars.com%2Fnews%2Fstar-wars-insider-206-kuiil" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.starwars.com/news/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.starwars.com%2Fnews%2Fstar-wars-insider-206-kuiil&#038;format=xml" />
+<meta name="generator" content="WPML ver:3.9.4 stt:1,3,65,44;" />
+<meta property="og:site_name" content="StarWars.com" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_US" />
+<meta property="fb:app_id" content="251829831684619" />
+<meta property="og:url" content="https://www.starwars.com/news/star-wars-insider-206-kuiil" />
+<meta property="og:title" content="From the Pages of Star Wars Insider: Going in for the Kuiil - Exclusive Excerpt | StarWars.com" />
+<meta property="og:description" content="In this excerpt from issue #206, performance artist Misty Rosas talks about bringing The Mandalorian’s fan-favorite Ugnaught to life." />
+<meta property="og:image" content="https://starwarsblog.starwars.com/wp-content/uploads/2021/10/star-wars-insider-206-the-mandalorian-behind-the-scenes_TALL-2.jpg" />
+<meta property="og:image:width" content="1536" />
+<meta property="og:image:height" content="864" />
+<meta property="og:image" content="https://starwarsblog.starwars.com/wp-content/uploads/2021/10/star-wars-insider-206-exclusive.jpg" />
+<meta property="og:image:width" content="723" />
+<meta property="og:image:height" content="1000" />
+<meta property="og:image" content="https://starwarsblog.starwars.com/wp-content/uploads/2021/10/star-wars-insider-206-kuiil-the-mandalorian-behind-the-scenes.jpg" />
+<meta property="og:image:width" content="1280" />
+<meta property="og:image:height" content="853" />
+<meta property="article:published_time" content="2021-11-01T15:00:47+00:00" />
+<meta property="article:modified_time" content="2021-10-26T16:11:45+00:00" />
+<meta property="article:author" content="https://www.starwars.com/news/contributor/starwarsblog" />
+<meta property="article:section" content="Books + Comics" />
+<meta property="article:tag" content="The Mandalorian" />
+<meta property="article:tag" content="Kuiil" />
+<meta property="article:tag" content="Star Wars Insider" />
+<link rel="icon" href="https://starwarsblog.starwars.com/wp-content/uploads/2021/11/cropped-B-Boba-Favicon-SW-512x512-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://starwarsblog.starwars.com/wp-content/uploads/2021/11/cropped-B-Boba-Favicon-SW-512x512-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="https://starwarsblog.starwars.com/wp-content/uploads/2021/11/cropped-B-Boba-Favicon-SW-512x512-180x180.png" />
+<meta name="msapplication-TileImage" content="https://starwarsblog.starwars.com/wp-content/uploads/2021/11/cropped-B-Boba-Favicon-SW-512x512-270x270.png" />
+```
+
+---
+
+### Star Wars - Content Page - Elements
+
+[source](https://www.starwars.com/news/star-wars-insider-206-kuiil)
+
+```html
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html lang="en-US" style="" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache no-svg no-inlinesvg no-smil no-svgclippaths js canvas no-touch geolocation borderradius csstransitions fontface generatedcontent video audio localstorage svg svgclippaths no-mobile no-flash no-ios no-android no-kindle scrolling_text filereader">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="apple-mobile-web-app-title" content="Star Wars">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" sizes="196x196" href="/apple-touch-icon.png">
+<link rel="shortcut icon" href="//a.dilcdn.com/sw/favicon-44660648232d.ico">
+<meta property="fb:pages" content="169299103121699">
+<meta property="fb:pages" content="99502471185">
+<meta property="fb:pages" content="180356405454324">
+<!-- 
+<meta name="msapplication-TileColor" content="#f01d4f">
+<meta name="msapplication-TileImage" content="https://www.starwars.com/wp-content/themes/starwars-theme/library/images/win8-tile-icon.png">
+-->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@starwars">
+<meta name="twitter:site" content="@starwars">
+<meta name="twitter:title" content="From the Pages of <em>Star Wars Insider</em>: Going in for the Kuiil – Exclusive Excerpt">
+<meta name="twitter:description" content="While many characters from The Mandalorian have resonated with Star Wars fans, Kuiil remains particularly beloved. The wise Ugnaught risked everything so that Grogu might live, proving to be as honora">
+<meta name="twitter:image" content="https://starwarsblog.starwars.com/wp-content/uploads/2021/10/star-wars-insider-206-the-mandalorian-behind-the-scenes_TALL-2.jpg">
+<title>Going in for the Kuiil - Star Wars Insider 206 Excerpt | StarWars.com</title>
+<meta name="description" content="In this excerpt from Star Wars Insider #206, performance artist Misty Rosas talks about bringing The Mandalorian’s Kuiil to life.">
+<link rel="canonical" href="https://www.starwars.com/news/star-wars-insider-206-kuiil">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="In this excerpt from issue #206, performance artist Misty Rosas talks about bringing The Mandalorian’s fan-favorite Ugnaught to life.">
+<meta name="twitter:title" content="From the Pages of Star Wars Insider: Going in for the Kuiil - Exclusive Excerpt | StarWars.com">
+<meta name="twitter:image" content="https://starwarsblog.starwars.com/wp-content/uploads/2021/10/star-wars-insider-206-the-mandalorian-behind-the-scenes_TALL-2.jpg">
+<link rel="dns-prefetch" href="//connect.facebook.net">
+<link rel="dns-prefetch" href="//connect.facebook.net">
+<link rel="dns-prefetch" href="//www.starwars.com">
+<link rel="dns-prefetch" href="//native.sharethrough.com">
+<link rel="dns-prefetch" href="//starwarsblog.starwars.com">
+<link rel="dns-prefetch" href="//a.dilcdn.com">
+<link rel="dns-prefetch" href="//s.w.org">
+<link rel="alternate" type="application/rss+xml" title="StarWars.com » Feed" href="https://www.starwars.com/feed">
+<link rel="alternate" type="application/rss+xml" title="StarWars.com » Comments Feed" href="https://www.starwars.com/comments/feed">
+<link rel="https://api.w.org/" href="https://www.starwars.com/news/wp-json/">
+<link rel="shortlink" href="https://www.starwars.com/?p=178553">
+<link rel="alternate" type="application/json+oembed" href="https://www.starwars.com/news/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.starwars.com%2Fnews%2Fstar-wars-insider-206-kuiil">
+<link rel="alternate" type="text/xml+oembed" href="https://www.starwars.com/news/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.starwars.com%2Fnews%2Fstar-wars-insider-206-kuiil&amp;format=xml">
+<meta name="generator" content="WPML ver:3.9.4 stt:1,3,65,44;">
+<meta property="og:site_name" content="StarWars.com">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="fb:app_id" content="251829831684619">
+<meta property="og:url" content="https://www.starwars.com/news/star-wars-insider-206-kuiil">
+<meta property="og:title" content="From the Pages of Star Wars Insider: Going in for the Kuiil - Exclusive Excerpt | StarWars.com">
+<meta property="og:description" content="In this excerpt from issue #206, performance artist Misty Rosas talks about bringing The Mandalorian’s fan-favorite Ugnaught to life.">
+<meta property="og:image" content="https://starwarsblog.starwars.com/wp-content/uploads/2021/10/star-wars-insider-206-the-mandalorian-behind-the-scenes_TALL-2.jpg">
+<meta property="og:image:width" content="1536">
+<meta property="og:image:height" content="864">
+<meta property="og:image" content="https://starwarsblog.starwars.com/wp-content/uploads/2021/10/star-wars-insider-206-exclusive.jpg">
+<meta property="og:image:width" content="723">
+<meta property="og:image:height" content="1000">
+<meta property="og:image" content="https://starwarsblog.starwars.com/wp-content/uploads/2021/10/star-wars-insider-206-kuiil-the-mandalorian-behind-the-scenes.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="853">
+<meta property="article:published_time" content="2021-11-01T15:00:47+00:00">
+<meta property="article:modified_time" content="2021-10-26T16:11:45+00:00">
+<meta property="article:author" content="https://www.starwars.com/news/contributor/starwarsblog">
+<meta property="article:section" content="Books + Comics">
+<meta property="article:tag" content="The Mandalorian">
+<meta property="article:tag" content="Kuiil">
+<meta property="article:tag" content="Star Wars Insider">
+<link rel="icon" href="https://starwarsblog.starwars.com/wp-content/uploads/2021/11/cropped-B-Boba-Favicon-SW-512x512-32x32.png" sizes="32x32">
+<link rel="icon" href="https://starwarsblog.starwars.com/wp-content/uploads/2021/11/cropped-B-Boba-Favicon-SW-512x512-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon-precomposed" href="https://starwarsblog.starwars.com/wp-content/uploads/2021/11/cropped-B-Boba-Favicon-SW-512x512-180x180.png">
+<meta name="msapplication-TileImage" content="https://starwarsblog.starwars.com/wp-content/uploads/2021/11/cropped-B-Boba-Favicon-SW-512x512-270x270.png">
+<meta class="foundation-data-attribute-namespace">
+<meta class="foundation-mq-xxlarge">
+<meta class="foundation-mq-xlarge-only">
+<meta class="foundation-mq-xlarge">
+<meta class="foundation-mq-large-only">
+<meta class="foundation-mq-large">
+<meta class="foundation-mq-medium-only">
+<meta class="foundation-mq-medium">
+<meta class="foundation-mq-small-only">
+<meta class="foundation-mq-small">
+<meta class="foundation-mq-topbar">
+```
+
+---
 
 
 ### YouTube - Home Page - Source
+
+[source](https://www.youtube.com/)
 
 ```html
 <!DOCTYPE html>
@@ -279,7 +587,12 @@ Here's some notes while I figure things out:
 <link rel="manifest" href="/manifest.webmanifest" crossorigin="use-credentials">
 ```
 
+---
+
 ### YouTube - Home Page - Elements
+
+[source](https://www.youtube.com/)
+
 
 ```html
 <!DOCTYPE html>
@@ -309,7 +622,11 @@ Here's some notes while I figure things out:
 <link rel="manifest" href="/manifest.webmanifest" crossorigin="use-credentials">
 ```
 
+---
+
 ### YouTube - Search Results Page - Source
+
+[source](https://www.youtube.com/results?search_query=dune+trailer+2021)
 
 ```html
 <!DOCTYPE html>
@@ -328,8 +645,11 @@ Here's some notes while I figure things out:
 </head>
 ```
 
+---
 
 ### YouTube - Search Results Page - Elements
+
+[source](https://www.youtube.com/results?search_query=dune+trailer+2021)
 
 ```html
 <!DOCTYPE html>
@@ -349,8 +669,11 @@ Here's some notes while I figure things out:
 </title>
 ```
 
+---
 
 ### YouTube - Video Page - Source
+
+[source](https://www.youtube.com/watch?v=8g18jFHCLXk)
 
 ```html
 <!DOCTYPE html>
@@ -490,8 +813,13 @@ Here's some notes while I figure things out:
 </div>
 ```
 
+---
+
 
 ### YouTube - Video Page - Elements
+
+[source](https://www.youtube.com/watch?v=8g18jFHCLXk)
+
 
 ```html
 <!DOCTYPE html>
@@ -602,8 +930,12 @@ Here's some notes while I figure things out:
 <meta name="referrer" content="origin-when-cross-origin">
 ```
 
+---
+
 
 ### Twitter - Home Page - Source
+
+[source](https://twitter.com/home)
 
 ```html
 <!DOCTYPE html>
@@ -641,8 +973,11 @@ Here's some notes while I figure things out:
 <meta http-equiv="origin-trial" content="Apir4c...VlfQ==" />
 ```
 
+---
 
 ### Twitter - Home Page - Elements
+
+[source](https://twitter.com/home)
 
 ```html
 <!DOCTYPE html>
@@ -685,10 +1020,12 @@ Here's some notes while I figure things out:
 <meta content="Home / Twitter" property="og:title" data-rh="true">
 ```
 
-
+---
 
 
 ### Twitter - Individual Tweet - Source
+
+[source](https://twitter.com/TheIdOfAlan/status/1302648818060726273)
 
 ```html
 <!DOCTYPE html>
@@ -726,8 +1063,11 @@ Here's some notes while I figure things out:
 <meta http-equiv="origin-trial" content="Ap...fQ==" />
 ```
 
+---
 
 ### Twitter - Individual Tweet - Elements
+
+[source](https://twitter.com/TheIdOfAlan/status/1302648818060726273)
 
 ```html
 <!DOCTYPE html>
@@ -828,8 +1168,12 @@ Here's some notes while I figure things out:
 <meta content="Twitter" property="al:android:app_name" data-rh="true">
 ```
 
+---
+
 
 ### Wikipedia - Home Page (English) - Source
+
+[source](https://en.wikipedia.org/wiki/Main_Page)
 
 ```html
 <!DOCTYPE html>
@@ -861,7 +1205,12 @@ Here's some notes while I figure things out:
 <link rel="dns-prefetch" href="//login.wikimedia.org"/>
 ```
 
+---
+
+
 ### Wikipedia - Home Page (English) - Elements
+
+[source](https://en.wikipedia.org/wiki/Main_Page)
 
 ```html
 <!DOCTYPE html>
@@ -893,8 +1242,11 @@ Here's some notes while I figure things out:
 <link rel="dns-prefetch" href="//login.wikimedia.org">
 ```
 
+---
 
 ### Wikipedia - Content Page - Source
+
+<a href="https://en.wikipedia.org/wiki/Dune_(novel)">source</a>
 
 ```html
 <!DOCTYPE html>
@@ -924,8 +1276,12 @@ Here's some notes while I figure things out:
 <link rel="dns-prefetch" href="//login.wikimedia.org"/>
 ```
 
+---
+
 
 ### Wikipedia - Content Page - Elements
+
+<a href="https://en.wikipedia.org/wiki/Dune_(novel)">source</a>
 
 ```html
 <!DOCTYPE html>
@@ -954,6 +1310,7 @@ Here's some notes while I figure things out:
 <link rel="dns-prefetch" href="//meta.wikimedia.org">
 <link rel="dns-prefetch" href="//login.wikimedia.org">
 ```
+
 
 
 
