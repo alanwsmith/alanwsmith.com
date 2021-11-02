@@ -7,10 +7,24 @@ category: Web Development
 date: 2021-11-01T14:18:08-0400
 ---
 
-This is a work in progress. I'm deciding what I want to do for meta data for my site. Below is a collection of samples from the heavy hitters. There are two samples per page. The first is from the "Sources" tab of the chrome developer console. The second is from the "Elements" tab.
+This is a work in progress. Like, really early in the process....
+
+I'm deciding what I want to do for meta data for my site. Below is a collection of samples from a few of the bigger sites. For the raw data, there are two samples per page. The first is from the "Sources" tab of the chrome developer console. The second is from the "Elements" tab.
+
+This is what I have so far:
+
+```html
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>The Site of Alan W. Smith</title>
+<meta name="description" content="The personal website/blog/digital garden of Alan W. Smith">
+<meta name="keywords" content="Python">
+<link rel="canonical" href="https://www.alanwsmith.com/">
+```
 
 Here's some notes while I figure things out:
-
 
 - These are copies of the `<head>` section/data from the various pages. 
 - I removed `<script>` and `<style>` tags. I also removed `<link>` tags for `text/css`. Everything else has been left in place. (Oh, yeah, I also removed `<link>` calls for fonts.)
@@ -31,7 +45,6 @@ Here's some notes while I figure things out:
 - Facebook uses only a `<link rel="shortcut icon" href="https://static.xx.fbcdn.net/rsrc.php/yb/r/hLRGG_y0J.ico" />` instead of individual files. Maybe see about moving over to a single .ico file or at least compare the options a little more.
 
 
-
 Related links:
 
 - [Facebook sharing for webmasters](https://developers.facebook.com/docs/sharing/webmasters/)
@@ -42,24 +55,11 @@ Related links:
 - [Tags Google Understands](https://developers.google.com/search/docs/advanced/crawling/special-tags)
 
 
-Work in progress tag set:
-
-```html
-<!DOCTYPE html>
-<html lang="en-us">
-<head>
-<meta charset="utf-8">
-<title>The Site of Alan W. Smith</title>
-<meta name="description" content="The personal website/blog/digital garden of Alan W. Smith">
-<meta name="keywords" content="Python">
-<link rel="canonical" href="https://www.alanwsmith.com/">
-
-```
 
 TODO:
 
 - Get details on `dir="ltr"` for `<html>`
-- Get details on `itemscope="" itemtype="http://schema.org/WebPage"` for `<html>
+- Get details on `itemscope="" itemtype="http://schema.org/WebPage"` for `<html>`
 - Get details on `<meta name="robots" content="noindex,nofollow">` from [here](https://developers.google.com/search/docs/advanced/crawling/special-tags)
 - Go through [this](https://developers.google.com/search/docs/advanced/crawling/special-tags)
 - Get details on `<meta name="google" content="nositelinkssearchbox">`
@@ -75,7 +75,7 @@ TODO:
 - See about adding `id` to `<title>` like `<title id="pageTitle">Dune Movie - Home | Facebook</title>`
 - Get details on `<link rel="alternate" media="handheld" href="https://m.facebook.com/dune/" />`
 - Get details on `<link rel="alternate" media="handheld" href="https://m.facebook.com/dune/" />`
-- 
+
 
 
 Full set of `<meta name="twitter:...` tags from all sources:
@@ -121,7 +121,7 @@ Full set of `og:` tags from all sources:
 
 
 
-Look into these:
+This is the collection of tags to figure out:
 
 ```
 <html itemscope="" itemtype="http://schema.org/WebPage" lang="en">
@@ -200,6 +200,108 @@ Look into these:
 <meta property="article:tag" content="Kuiil" />
 <meta property="article:tag" content="Star Wars Insider" />
 
+<link rel="apple-touch-icon-precomposed" href="https://starwarsblog.starwars.com/wp-content/uploads/2021/11/cropped-B-Boba-Favicon-SW-512x512-180x180.png" />
+<meta name="msapplication-TileImage" content="https://starwarsblog.starwars.com/wp-content/uploads/2021/11/cropped-B-Boba-Favicon-SW-512x512-270x270.png" />
+
+
+<!-- 
+<meta name="msapplication-TileColor" content="#f01d4f">
+<meta name="msapplication-TileImage" content="https://www.starwars.com/wp-content/themes/starwars-theme/library/images/win8-tile-icon.png">
+-->
+
+<link rel="https://api.w.org/" href="https://www.starwars.com/news/wp-json/">
+
+<link rel="shortlink" href="https://www.starwars.com/?p=178553">
+<link rel="shortlinkUrl" href="https://youtu.be/8g18jFHCLXk">
+
+<meta class="foundation-data-attribute-namespace">
+<meta class="foundation-mq-xxlarge">
+<meta class="foundation-mq-xlarge-only">
+<meta class="foundation-mq-xlarge">
+<meta class="foundation-mq-large-only">
+<meta class="foundation-mq-large">
+<meta class="foundation-mq-medium-only">
+<meta class="foundation-mq-medium">
+<meta class="foundation-mq-small-only">
+<meta class="foundation-mq-small">
+<meta class="foundation-mq-topbar">
+
+<meta name="theme-color" content="rgba(33, 33, 33, 0.98)">
+
+<link rel="search" type="application/opensearchdescription+xml" href="https://www.youtube.com/opensearch?locale=en_US" title="YouTube">
+<link rel="manifest" href="/manifest.webmanifest" crossorigin="use-credentials">
+
+<link rel="alternate" href="android-app://com.google.android.youtube/http/www.youtube.com/">
+<link rel="alternate" href="ios-app://54...64/vnd.youtube/www.youtube.com/">
+
+<link rel="alternate" media="handheld" href="https://m.youtube.com/watch?v=8g18jFHCLXk">
+<link rel="alternate" media="only screen and (max-width: 640px)" href="https://m.youtube.com/watch?v=8g18jFHCLXk">
+
+<link rel="image_src" href="https://i.ytimg.com/vi/8g18jFHCLXk/maxresdefault.jpg">
+
+
+<meta property="al:android:app_name" content="YouTube">
+<meta property="al:android:package" content="com.google.android.youtube">
+
+<meta name="referrer" content="origin-when-cross-origin">
+
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-title" content="Twitter" />
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<meta name="theme-color" content="#ffffff" />
+
+<meta http-equiv="origin-trial" content="Apir4c...VlfQ==" />
+
+<meta name="google-site-verification" content="ac...V0">
+<meta name="facebook-domain-verification" content="x6...t1">
+
+
+<link rel="alternate" hreflang="x-default" href="https://twitter.com/">
+
+
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="Twitter">
+
+<link rel="mask-icon" sizes="any" href="https://abs.twimg.com/responsive-web/client-web/icon-svg.16d5.svg" color="#1da1f2">
+
+<link href="https://twitter.com/home" rel="canonical" data-rh="true">
+
+<link rel="apple-touch-icon" sizes="192x192" href="https://abs.twimg.com/responsive-web/client-web/icon-ios.b5.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Twitter">
+<meta name="apple-mobile-web-app-status-bar-style" content="white">
+
+<link href="https://twitter.com/TheIdOfAlan/status/1302648818060726273" rel="canonical" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273" hreflang="x-default" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=ar" hreflang="ar" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=ar-x-fm" hreflang="ar-x-fm" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=bg" hreflang="bg" rel="alternate" data-rh="true">
+<!-- etc... -->
+
+<meta content="333903271" property="al:ios:app_store_id" data-rh="true">
+
+<meta content="Twitter" property="al:ios:app_name" data-rh="true">
+
+<meta content="twitter://status?id=1302648818060726273" property="al:android:url" data-rh="true">
+<meta content="com.twitter.android" property="al:android:package" data-rh="true">
+<meta content="Twitter" property="al:android:app_name" data-rh="true">
+
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.38.0-wmf.6"/>
+<meta name="referrer" content="origin"/>
+<meta name="referrer" content="origin-when-crossorigin"/>
+<meta name="referrer" content="origin-when-cross-origin"/>
+
+<meta name="format-detection" content="telephone=no"/>
+
+<link rel="alternate" media="only screen and (max-width: 720px)" href="//en.m.wikipedia.org/wiki/Main_Page"/>
+
+<link rel="alternate" type="application/atom+xml" title="Wikipedia picture of the day feed" href="/w/api.php?action=featuredfeed&amp;feed=potd&amp;feedformat=atom"/>
+
+<link rel="EditURI" type="application/rsd+xml" href="//en.wikipedia.org/w/api.php?action=rsd"/>
+
+<link rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/"/>
+
+<meta name="ResourceLoaderDynamicStyles" content="">
 ```
 
 
@@ -221,7 +323,40 @@ and
 <!--[if gt IE 8]><!--> <html lang="en-US"> <!--<![endif]-->
 ```
 
+Look at this section from the YouTube page. 
 
+```
+<div id="watch7-content" class="watch-main-col" itemscope itemid="" itemtype="http://schema.org/VideoObject">
+<link itemprop="url" href="https://www.youtube.com/watch?v=8g18jFHCLXk">
+<meta itemprop="name" content="Dune | Official Main Trailer">
+<meta itemprop="description" content="IT’S TIME. #DuneMovie coming October 22.-----------------https://www.instagram.com/dunemovie/https://www.facebook.com/dunehttps://twitter.com/dunemovie https...">
+<meta itemprop="paid" content="False">
+<meta itemprop="channelId" content="UCjmJDM5pRKbUlVIzDYYWb6g">
+<meta itemprop="videoId" content="8g18jFHCLXk">
+<meta itemprop="duration" content="PT3M28S">
+<meta itemprop="unlisted" content="False">
+<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+<link itemprop="url" href="http://www.youtube.com/user/WarnerBrosPictures">
+<link itemprop="name" content="Warner Bros. Pictures">
+</span>
+<link itemprop="thumbnailUrl" href="https://i.ytimg.com/vi/8g18jFHCLXk/maxresdefault.jpg">
+<span itemprop="thumbnail" itemscope itemtype="http://schema.org/ImageObject">
+<link itemprop="url" href="https://i.ytimg.com/vi/8g18jFHCLXk/maxresdefault.jpg">
+<meta itemprop="width" content="1280">
+<meta itemprop="height" content="720">
+</span>
+<link itemprop="embedUrl" href="https://www.youtube.com/embed/8g18jFHCLXk">
+<meta itemprop="playerType" content="HTML5 Flash">
+<meta itemprop="width" content="1280">
+<meta itemprop="height" content="720">
+<meta itemprop="isFamilyFriendly" content="true">
+<meta itemprop="regionsAllowed" content="AD,AE,AF,AG,AI,AL,AM,AO,AQ,AR,AS,AT,AU,AW,AX,AZ,BA,BB,BD,BE,BF,BG,BH,BI,BJ,BL,BM,BN,BO,BQ,BR,BS,BT,BV,BW,BY,BZ,CA,CC,CD,CF,CG,CH,CI,CK,CL,CM,CN,CO,CR,CU,CV,CW,CX,CY,CZ,DE,DJ,DK,DM,DO,DZ,EC,EE,EG,EH,ER,ES,ET,FI,FJ,FK,FM,FO,FR,GA,GB,GD,GE,GF,GG,GH,GI,GL,GM,GN,GP,GQ,GR,GS,GT,GU,GW,GY,HK,HM,HN,HR,HT,HU,ID,IE,IL,IM,IN,IO,IQ,IR,IS,IT,JE,JM,JO,JP,KE,KG,KH,KI,KM,KN,KP,KR,KW,KY,KZ,LA,LB,LC,LI,LK,LR,LS,LT,LU,LV,LY,MA,MC,MD,ME,MF,MG,MH,MK,ML,MM,MN,MO,MP,MQ,MR,MS,MT,MU,MV,MW,MX,MY,MZ,NA,NC,NE,NF,NG,NI,NL,NO,NP,NR,NU,NZ,OM,PA,PE,PF,PG,PH,PK,PL,PM,PN,PR,PS,PT,PW,PY,QA,RE,RO,RS,RU,RW,SA,SB,SC,SD,SE,SG,SH,SI,SJ,SK,SL,SM,SN,SO,SR,SS,ST,SV,SX,SY,SZ,TC,TD,TF,TG,TH,TJ,TK,TL,TM,TN,TO,TR,TT,TV,TW,TZ,UA,UG,UM,US,UY,UZ,VA,VC,VE,VG,VI,VN,VU,WF,WS,YE,YT,ZA,ZM,ZW">
+<meta itemprop="interactionCount" content="26228093">
+<meta itemprop="datePublished" content="2021-07-22">
+<meta itemprop="uploadDate" content="2021-07-22">
+<meta itemprop="genre" content="Film &amp; Animation">
+</div>
+```
 
 
 
@@ -234,7 +369,7 @@ Notes:
 
 
 
-Things I'm skipping for now
+Things I'm skipping for now:
 
 ```html
 <meta http-equiv="x-dns-prefetch-control" content="on">
@@ -243,9 +378,11 @@ Things I'm skipping for now
 ```
 
 - Everything is on my domain right now but I'll add these in if there's stuff I need to pull from other domains. Details on [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-DNS-Prefetch-Control)
-- 
+
+---
 
 
+This is the raw data samples
 
 
 ---
@@ -1526,7 +1663,4 @@ Things I'm skipping for now
 <link rel="dns-prefetch" href="//meta.wikimedia.org">
 <link rel="dns-prefetch" href="//login.wikimedia.org">
 ```
-
-
-
 
