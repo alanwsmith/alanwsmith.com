@@ -16,8 +16,15 @@
   ul {
     @apply list-disc;
     @apply pl-5;
+    @apply pb-5;
+  }
+  li {
+    @apply pb-2;
   }
   p {
     @apply pb-5;
+  }
+  hr {
+    @apply py-1;
   }
 }
