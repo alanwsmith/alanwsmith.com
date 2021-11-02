@@ -1,6 +1,6 @@
 ---
-title: "Meta Tags To Use On Website Pages Based Off The Big Sites"
-slug: /meta-tags-to-use-on-website-pages-based-off-the-big-sites
+title: "Meta Tags To Use Based On The Big Sites"
+slug: /meta-tags-to-use-based-on-the-big-sites
 type: post
 status: wip
 category: Web Development
@@ -25,6 +25,227 @@ Here's some notes while I figure things out:
 - Twitter title for the star wars content page has the `<em>` element in it. Seems like not the best idea.
 - The `msapplication-` stuff on the star wars page is commented out. Makes me wonder if there's a technical reason for that.
 - Star Wars has all the old `if lt IE 7` stuff. I'm guessing that's more legacy code hanging around than for a specific target to that browser. 
+- I've heard both that keywords don't matter and that Bing might actually treat them like a signal for spam. For now, I'm going to use a single keyword with the category of the page when it's available.
+- Note that the Star Wars page uses multiple `twitter:` and `og:` calls for the same subtag (e.g there are multiple `og:image` calls). Need to look that up.
+- The Star Wars site uses `<meta property="og:type" content="article" />` for posts and `<meta property="og:type" content="website">` which is how I setup too.
+- Facebook uses only a `<link rel="shortcut icon" href="https://static.xx.fbcdn.net/rsrc.php/yb/r/hLRGG_y0J.ico" />` instead of individual files. Maybe see about moving over to a single .ico file or at least compare the options a little more.
+
+
+
+Related links:
+
+- [Facebook sharing for webmasters](https://developers.facebook.com/docs/sharing/webmasters/)
+- https://developers.facebook.com/tools/debug/
+- [Twitter card validator](https://cards-dev.twitter.com/validator)
+- [opengraph.xyz](https://www.opengraph.xyz/url/https%3A%2F%2Fwww.alanwsmith.com%2F/)
+- [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/)
+- [Tags Google Understands](https://developers.google.com/search/docs/advanced/crawling/special-tags)
+
+
+Work in progress tag set:
+
+```html
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>The Site of Alan W. Smith</title>
+<meta name="description" content="The personal website/blog/digital garden of Alan W. Smith">
+<meta name="keywords" content="Python">
+<link rel="canonical" href="https://www.alanwsmith.com/">
+
+```
+
+TODO:
+
+- Get details on `dir="ltr"` for `<html>`
+- Get details on `itemscope="" itemtype="http://schema.org/WebPage"` for `<html>
+- Get details on `<meta name="robots" content="noindex,nofollow">` from [here](https://developers.google.com/search/docs/advanced/crawling/special-tags)
+- Go through [this](https://developers.google.com/search/docs/advanced/crawling/special-tags)
+- Get details on `<meta name="google" content="nositelinkssearchbox">`
+- Figure out if there are google services I need to use using `<meta name="google-site-verification" content="9v...c4">`
+- Look at `<meta property="fb:app_id" content="16...62">`. Can probably make a good guess, but will get the details.
+- Examine: `<head prefix="fb: http://ogp.me/ns/fb# og: http://ogp.me/ns#">`
+- Look at `data-rh="treu"` in `<meta content="Home / Twitter" property="og:title" data-rh="true">`
+- Look at `<meta name="msvalidate.01" content="3C...F3" />`. Guessing Bing related, but we'll see.
+- Get details on `<link rel="preload" as="script" crossorigin="anonymous" href="https://images-na..." />` type tags
+- Get details on `<html lang="en-us" class="..." data-19ax5a9jf="dingo" data-aui-build-date="3.21.7-2021-10-25">` to see if that's something internal or something in a spec.
+- Get details on `<meta name="referrer" content="origin-when-crossorigin" id="meta_referrer" />`
+- Get details on `<link rel="manifest" href="/data/manifest/" crossorigin="use-credentials" />`
+- See about adding `id` to `<title>` like `<title id="pageTitle">Dune Movie - Home | Facebook</title>`
+- Get details on `<link rel="alternate" media="handheld" href="https://m.facebook.com/dune/" />`
+- Get details on `<link rel="alternate" media="handheld" href="https://m.facebook.com/dune/" />`
+- 
+
+
+Full set of `<meta name="twitter:...` tags from all sources:
+
+- twitter:card
+- twitter:site:id
+- twitter:site
+- twitter:app:name:iphone
+- twitter:app:id:iphone
+- twitter:app:url:iphone
+- twitter:creator
+- twitter:title
+- twitter:description
+- twitter:image
+- twitter:url
+- twitter:app:name:ipad
+- twitter:app:id:ipad
+- twitter:app:url:ipad
+- twitter:app:name:googleplay
+- twitter:app:id:googleplay
+- twitter:app:url:googleplay
+- twitter:player
+- twitter:player:width
+- twitter:player:height
+
+Full set of `og:` tags from all sources:
+
+- og:image
+- og:description
+- og:title
+- og:url
+- og:site_name
+- og:type
+- og:locale
+- og:image:width
+- og:image:height
+- og:video:url
+- og:video:secure_url
+- og:video:type
+- og:video:width
+- og:video:height
+- og:video:tag
+
+
+
+Look into these:
+
+```
+<html itemscope="" itemtype="http://schema.org/WebPage" lang="en">
+
+<meta property="al:android:app_name" content="Facebook" />
+<meta property="al:android:package" content="com.facebook.katana" />
+<meta property="al:android:url" content="fb://page/101611144857507?referrer=app_link" />
+<meta property="al:ios:app_name" content="Facebook" />
+<meta property="al:ios:app_store_id" content="284882215" />
+<meta property="al:ios:url" content="fb://page/?id=101611144857507" />
+
+<meta content="dark" name="color-scheme">
+<meta content="origin" name="referrer">
+<meta content="/images/branding/googleg/1x/googleg_standard_color_128dp.png" itemprop="image">
+
+<link href="/manifest?pwa=webhp" crossorigin="use-credentials" rel="manifest">
+
+<meta content="An...X0=" http-equiv="origin-trial">
+
+<html itemscope="" itemtype="http://schema.org/SearchResultsPage" lang="en">
+
+<link rel="preconnect" href="https://www.googleadservices.com/">
+
+<head prefix="fb: http://ogp.me/ns/fb# og: http://ogp.me/ns#">
+
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+
+<meta name="apple-mobile-web-app-title" content="Star Wars">
+
+<link rel="apple-touch-icon" href="https://lumiere-a.akamaihd.net/v1/images/b-boba-favicon-sw-512x512_e7aeaa0b.png?region=0%2C0%2C512%2C512">
+<link rel="icon" sizes="196x196" href="https://lumiere-a.akamaihd.net/v1/images/b-boba-favicon-sw-512x512_e7aeaa0b.png?region=0%2C0%2C512%2C512">
+<link rel="shortcut icon" href="https://lumiere-a.akamaihd.net/v1/images/b-boba-favicon-sw-512x512_e7aeaa0b.png?region=0%2C0%2C512%2C512">
+
+<meta name="apple-itunes-app" content="app-id=960108075">
+
+<meta name="no_follow" content="false">
+<meta name="no_index" content="false">
+
+<meta property="context" content="http://schema.org">
+
+<meta http-equiv="origin-trial" content="A6d...0In0=">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<meta name="HandheldFriendly" content="True">
+
+<meta name="MobileOptimized" content="320">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<meta name="apple-mobile-web-app-title" content="Star Wars">
+
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" sizes="196x196" href="/apple-touch-icon.png">
+
+<meta property="fb:pages" content="169299103121699">
+
+
+<link rel="alternate" type="application/rss+xml" title="StarWars.com &raquo; Feed" href="https://www.starwars.com/feed" />
+
+<link rel="alternate" type="application/rss+xml" title="StarWars.com &raquo; Comments Feed" href="https://www.starwars.com/comments/feed" />
+
+<link rel='https://api.w.org/' href='https://www.starwars.com/news/wp-json/' />
+
+<link rel="alternate" type="application/json+oembed" href="https://www.starwars.com/news/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.starwars.com%2Fnews%2Fstar-wars-insider-206-kuiil" />
+
+<link rel="alternate" type="text/xml+oembed" href="https://www.starwars.com/news/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.starwars.com%2Fnews%2Fstar-wars-insider-206-kuiil&#038;format=xml" />
+
+<meta name="generator" content="WPML ver:3.9.4 stt:1,3,65,44;" />
+
+<meta property="article:published_time" content="2021-11-01T15:00:47+00:00" />
+<meta property="article:modified_time" content="2021-10-26T16:11:45+00:00" />
+<meta property="article:author" content="https://www.starwars.com/news/contributor/starwarsblog" />
+<meta property="article:section" content="Books + Comics" />
+<meta property="article:tag" content="The Mandalorian" />
+<meta property="article:tag" content="Kuiil" />
+<meta property="article:tag" content="Star Wars Insider" />
+
+```
+
+
+TODO - Make a note on all the:
+
+```
+<!--[if lt IE 9]><html class="no-js no-media-query"><![endif]-->
+<!--[if (gte IE 9)|(!IE)]><!-->
+<html class="no-js" version="HTML+RDFa 1.1" lang="en">
+<!--<![endif]-->
+```
+
+and
+
+```
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en-US"> <!--<![endif]-->
+```
+
+
+
+
+
+Notes:
+
+- Going with lowercase for `<meta charset="utf-8">` based on [MDN](https://developer.mozilla.org/en-US/docs/Glossary/character_encoding)
+- Prefetching note from [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-DNS-Prefetch-Control) for `x-dns-prefetch-control`. Sounds like it's not really necessary, but that's a bit unclear and it doesn't seems like it would hurt.
+- I don't really need the canonical since my pages shouldn't be duplicated, but I like the link being there regardless. (e.g. `<link rel="canonical" href="https://www.alanwsmith.com/">`)
+- According to [this stackoverflow answer](https://stackoverflow.com/a/4696517/102401), `<meta charset="utf-8"/>` and `<meta http-equiv="content-type" content="text/html; charset=UTF-8">` are equivalent for HTML5. Since that's what I'm going for, I'll be using the shorter one. 
+
+
+
+Things I'm skipping for now
+
+```html
+<meta http-equiv="x-dns-prefetch-control" content="on">
+<link rel="dns-prefetch" href="https://www.mozilla.org/contribute/">
+<link rel="dns-prefetch" href="//www.mozilla.org/contribute/">
+```
+
+- Everything is on my domain right now but I'll add these in if there's stuff I need to pull from other domains. Details on [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-DNS-Prefetch-Control)
+- 
+
+
 
 
 ---
@@ -568,8 +789,7 @@ Here's some notes while I figure things out:
 <link rel="icon" href="https://www.youtube.com/s/desktop/b33a/img/favicon_48x48.png" sizes="48x48">
 <link rel="icon" href="https://www.youtube.com/s/desktop/b33a/img/favicon_96x96.png" sizes="96x96">
 <link rel="icon" href="https://www.youtube.com/s/desktop/b33a/img/favicon_144x144.png" sizes="144x144">
-<title>YouTube
-</title>
+<title>YouTube</title>
 <link rel="canonical" href="https://www.youtube.com/">
 <link rel="alternate" media="handheld" href="https://m.youtube.com/">
 <link rel="alternate" media="only screen and (max-width: 640px)" href="https://m.youtube.com/">
@@ -603,8 +823,7 @@ Here's some notes while I figure things out:
 <link rel="icon" href="https://www.youtube.com/s/desktop/ba/img/favicon_48x48.png" sizes="48x48">
 <link rel="icon" href="https://www.youtube.com/s/desktop/ba/img/favicon_96x96.png" sizes="96x96">
 <link rel="icon" href="https://www.youtube.com/s/desktop/ba/img/favicon_144x144.png" sizes="144x144">
-<title>YouTube
-</title>
+<title>YouTube</title>
 <link rel="canonical" href="https://www.youtube.com/">
 <link rel="alternate" media="handheld" href="https://m.youtube.com/">
 <link rel="alternate" media="only screen and (max-width: 640px)" href="https://m.youtube.com/">
@@ -665,8 +884,7 @@ Here's some notes while I figure things out:
 <meta name="theme-color" content="rgba(33,33,33,0.98)">
 <link rel="search" type="application/opensearchdescription+xml" href="https://www.youtube.com/opensearch?locale=en_US" title="YouTube">
 <link rel="manifest" href="/manifest.webmanifest" crossorigin="use-credentials">
-<title>dune trailer 2021 - YouTube
-</title>
+<title>dune trailer 2021 - YouTube</title>
 ```
 
 ---
@@ -693,8 +911,7 @@ Here's some notes while I figure things out:
 <link rel="canonical" href="https://www.youtube.com/watch?v=8g18jFHCLXk">
 <link rel="alternate" media="handheld" href="https://m.youtube.com/watch?v=8g18jFHCLXk">
 <link rel="alternate" media="only screen and (max-width: 640px)" href="https://m.youtube.com/watch?v=8g18jFHCLXk">
-<title>Dune | Official Main Trailer - YouTube
-</title>
+<title>Dune | Official Main Trailer - YouTube</title>
 <meta name="title" content="Dune | Official Main Trailer">
 <meta name="description" content="IT’S TIME. #DuneMovie coming October 22.-----------------https://www.instagram.com/dunemovie/https://www.facebook.com/dunehttps://twitter.com/dunemovie https...">
 <meta name="keywords" content="Action, Arrakis, Arrival, Atreides, Bene Gesserit, Blade Runner 2049, Coming Soon, Denis Villeneuve, Duke Leto Atreides, Duncan Idaho, Dune, Enemy, Film, Film Trailer, Film Warner, Frank Herbert, Fremen, Harkonnen, Jason Momoa, Javier Bardem, Josh Brolin, Movie, Official Trailer, Oscar Isaac, Paul Atreides, Rebecca Ferguson, Sandworm, Sci-Fi, Stellan Skarsgard, Timothee Chalamet, Trailer, Trailer 2019, WB, Warner, Warner Bros, Warner Brothers, Warner Media, Zendaya">
@@ -1014,8 +1231,7 @@ Here's some notes while I figure things out:
 <meta name="apple-mobile-web-app-status-bar-style" content="white">
 <meta name="theme-color" content="#000000">
 <meta http-equiv="origin-trial" content="Ap...fQ==">
-<title>Home / Twitter
-</title>
+<title>Home / Twitter</title>
 <link href="https://twitter.com/home" rel="canonical" data-rh="true">
 <meta content="Home / Twitter" property="og:title" data-rh="true">
 ```
