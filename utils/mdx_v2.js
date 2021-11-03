@@ -30,8 +30,8 @@ export const getAllPosts = () => {
 
       // TODO: Pull the actual frontmatter title
       // after scrubbing it
-      const slug = `${fileId}-${scrubbedTitle}`
-      // const slug = fileId
+      // const slug = `${fileId}-${scrubbedTitle}`
+      const slug = fileId
 
       // TODO: Figure out what to do if title is undefined
       // if (title === undefined) {
