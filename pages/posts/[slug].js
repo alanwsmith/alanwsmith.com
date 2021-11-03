@@ -19,15 +19,17 @@ const Post = ({ code, frontmatter }) => {
 
 export const getStaticProps = async ({ params }) => {
   console.log('-- This is getStaticProps --')
-  const post = await getSinglePost(params.slug)
+  // const post = await getSinglePost(params.slug)
+  const post = await getSinglePost('QWERQWER')
+  // const post = {}
   return {
-    // props: { ...post },
-    props: {},
+    props: { ...post },
+    // props: {},
   }
 }
 
 export const getStaticPaths = async () => {
-  console.log('-- This is getStaticPaths --')
+  console.log('### This is getStaticPaths ###')
   const paths = getAllPosts().map(({ slug }) => ({ params: { slug } }))
   console.log(`-- Lenght of paths: ${paths.length}`)
   console.log(`-- Paths: ${Object.keys(paths[0])}`)
