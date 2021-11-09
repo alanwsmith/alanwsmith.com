@@ -16,6 +16,7 @@ export const getAllPosts = () => {
     .map((fileName) => {
       const source = getSourceOfFile(fileName)
       const fileId = fileName.replace(/\.mdx?$/, '')
+      const slug = fileId
       //
       const { data } = matter(source)
 
@@ -26,12 +27,12 @@ export const getAllPosts = () => {
 
       // TODO: make a scrubbed version of the title
       // hard coding for now
-      const scrubbedTitle = 'some-new-file-title'
+      // const scrubbedTitle = 'some-new-file-title'
 
       // TODO: Pull the actual frontmatter title
       // after scrubbing it
       // const slug = `${fileId}-${scrubbedTitle}`
-      const slug = fileId
+      // const slug = fileId
 
       // TODO: Figure out what to do if title is undefined
       // if (title === undefined) {
@@ -50,14 +51,12 @@ export const getAllPosts = () => {
 }
 
 export const getSinglePost = async (slug) => {
-  console.log(`getSinglePost - ${slug}`)
-  return {}
+  //  console.log(`getSinglePost - ${slug}`)
+  // return {}
 
-  /*
   const slug_parts = slug.split('/')
   console.log(`Looking for: ${slug_parts[0]}`)
   const source = getSourceOfFile(slug_parts[0] + '.mdx')
-
   const { code, frontmatter } = await bundleMDX(source, {
     cwd: POSTS_PATH,
   })
@@ -65,5 +64,4 @@ export const getSinglePost = async (slug) => {
     frontmatter,
     code,
   }
-  */
 }
