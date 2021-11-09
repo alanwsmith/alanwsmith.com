@@ -1,0 +1,31 @@
+---
+blurb: ''
+categories:
+  - Python
+  - MySQL
+date: '2021-08-31T20:20:09'
+id: 20eOOuynr3Wt
+scrubbed_2021: false
+status: unpublished
+type: post
+title: Get The Number Of Rows Returned In A MySQL Query In Python
+slug: 20eOOuynr3Wt--get-the-number-of-rows-returned-in-a-mysql-query-in-python
+---
+
+```
+import keyring
+import mysql.connector
+
+cnx = mysql.connector.connect(
+    database=keyring.get_password('mysql-database', 'local_username'),
+    host=keyring.get_password('mysql-host', 'local_username'),
+    user=keyring.get_password('mysql-username', 'local_username'),
+    password=keyring.get_password('mysql-password', 'local_username')
+)
+
+query = ("SELECT COUNT(*) FROM table_to_count")
+cursor = cnx.cursor()
+cursor.execute(query)
+the_count = cursor.fetchone()[0]
+print(the_count)
+```

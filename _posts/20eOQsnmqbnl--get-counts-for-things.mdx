@@ -1,0 +1,24 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2021-09-05T23:50:03'
+id: 20eOQsnmqbnl
+scrubbed_2021: false
+status: unpublished
+type: post
+title: Get Counts For Things
+slug: 20eOQsnmqbnl--get-counts-for-things
+---
+
+Example that needs to be refined:
+
+```sql
+-- Get number of files songs appear in the playlists
+SELECT songs.displayTitle, songs.idString, playlistSongs.songPrimaryKey, count(*) as countOfSongs 
+FROM playlistSongs, songs 
+WHERE songs.primaryKey = playlistSongs.songPrimaryKey
+GROUP BY songPrimaryKey ORDER BY countOfSongs DESC, displayTitle DESC;
+```
+
+See also: https://stackoverflow.com/a/10199972/102401

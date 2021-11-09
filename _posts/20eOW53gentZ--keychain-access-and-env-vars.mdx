@@ -1,0 +1,22 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2021-10-02T19:10:25'
+id: 20eOW53gentZ
+scrubbed_2021: false
+status: unpublished
+type: post
+title: Keychain Access And Env Vars
+slug: 20eOW53gentZ--keychain-access-and-env-vars
+---
+
+const { execSync } = require('child_process')
+
+const meilisearchPublicKey = process.env.MEILISEARCH_PUBLIC_KEY
+  ? process.env.MEILISEARCH_PUBLIC_KEY
+  : execSync(
+      'security find-generic-password -w -a alans -s alans--github--TheTestAppOfAlan--client-id'
+    )
+      .toString()
+      .trim()

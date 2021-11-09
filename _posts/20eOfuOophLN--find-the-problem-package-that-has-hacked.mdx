@@ -1,0 +1,20 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2021-11-05T11:41:48'
+id: 20eOfuOophLN
+scrubbed_2021: false
+status: unpublished
+type: post
+title: Find the problem package that has hacked
+slug: 20eOfuOophLN--find-the-problem-package-that-has-hacked
+---
+
+This is the way to find the package that was hacked in node. 
+
+```
+find . -type f \( -name "package-lock.json" -o -name "yarn.lock" \) -exec grep --color -EHni "ua-parser-js-(0.7.29|0.8.0|1.0.0)" {} \; 2>/dev/null
+```
+
+From what I understand, the issue only affected windows, but I haven't confirmed that.

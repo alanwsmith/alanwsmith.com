@@ -1,0 +1,32 @@
+---
+blurb: ''
+categories:
+  - Programming
+date: '2021-05-04T00:00:00'
+id: 20eO2xld7LUK
+scrubbed_2021: false
+status: published
+type: post
+title: Requiring One and Only One Argument In A Bash Function
+slug: 20eO2xld7LUK--requiring-one-and-only-one-argument-in-a-bash-function
+---
+
+This is an example function you can add to your .rc files that requires exactly one argument to run. It checks to make sure there's an argument in slot `$1` otherwise it bails. Once it's past that check, it checks to see if an extra argument was passed in slot `$2` and bails if that's the case.
+
+Quotes can be used if you need an argument with spaces in it (e.g. `my_command "roll tide").
+
+```bash
+function my_command () {
+    if [ "$1" ]
+    then
+        if [ "$2" ]
+        then
+            echo "You passed too many arguments"
+        else
+            echo "Got: $1 - Do Stuff Here"
+        fi
+    else
+        echo "You need to pass an argument"
+    fi
+}
+```

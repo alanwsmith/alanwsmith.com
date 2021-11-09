@@ -1,0 +1,44 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2021-10-29T23:18:43'
+id: 20eOaywjSF2z
+scrubbed_2021: false
+status: unpublished
+type: post
+title: tailwind- Add Background Color To Body
+slug: 20eOaywjSF2z--add-background-color-to-body
+---
+
+Make a `pages/_document.js` file which will let you set a class for a body tage like this:
+
+
+```javascript
+import Document, { Html, Head, Main, NextScript } from 'next/document'
+
+class MyDocument extends Document {
+  static async getInitialProps(ctx) {
+    const initialProps = await Document.getInitialProps(ctx)
+    return { ...initialProps }
+  }
+
+  render() {
+    return (
+      <Html>
+        <Head />
+        <body className="bg-gray-800">
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    )
+  }
+}
+
+export default MyDocument
+```
+
+
+
+via: https://nextjs.org/docs/advanced-features/custom-document

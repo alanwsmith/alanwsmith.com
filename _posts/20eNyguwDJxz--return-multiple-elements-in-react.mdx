@@ -1,0 +1,30 @@
+---
+blurb: ''
+categories:
+  - React
+  - Gatsby
+date: '2021-02-19T20:30:15'
+id: 20eNyguwDJxz
+scrubbed_2021: false
+status: published
+type: post
+title: Return Multiple Elements In React
+slug: 20eNyguwDJxz--return-multiple-elements-in-react
+---
+
+To return multiple elements, wrap them in `React.Fragment`
+
+
+```javascript
+import React from 'react'
+
+export default function HomePageTiles() {
+
+    return (
+        <React.Fragment>
+            <div>Element 1</div>
+            <div>Element 2</div>
+        </React.Fragment>
+    )
+}
+```

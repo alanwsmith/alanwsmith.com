@@ -1,0 +1,87 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2021-10-02T21:10:01'
+id: 20eOWN9GsjFf
+scrubbed_2021: false
+status: unpublished
+type: post
+title: nextjs - Customized Display
+slug: 20eOWN9GsjFf--nextjs--customized-display
+---
+
+import { InstantSearch, SearchBox, connectHits } from 'react-instantsearch-dom'
+import { instantMeiliSearch } from '@meilisearch/instant-meilisearch'
+import Image from 'next/image'
+
+const meiliClient = instantMeiliSearch(
+  process.env.NEXT_PUBLIC_MEILISEARCH_DOMAIN,
+  process.env.NEXT_PUBLIC_MEILISEARCH_PUBLIC_KEY
+)
+
+const searchClient = {
+  ...meiliClient,
+  search(requests) {
+    if (requests.every(({ params }) => !params.query)) {
+      return Promise.resolve({
+        results: requests.map(() => ({
+          hits: [],
+          nbHits: 0,
+          nbPages: 0,
+          page: 0,
+          processingTimeMS: 0,
+        })),
+      })
+    }
+    return meiliClient.search(requests)
+  },
+}
+
+const HitsDisplay = ({ hits }) => (
+  <table>
+    <tbody>
+      {hits.map((hit) => (
+        <tr key={hit.idString}>
+          <td>
+            <Image
+              src={`https://i.ytimg.com/vi/${hit.idString}/default.jpg`}
+              alt={`${hit.displayTitle} cover art`}
+              width="60"
+              height="45"
+            />
+          </td>
+          <td>{hit.displayTitle}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+)
+
+const CustomHits = connectHits(HitsDisplay)
+
+// const Hit = ({ hit }) => (
+//   <div>
+//     <Image
+//       src={`https://i.ytimg.com/vi/${hit.idString}/default.jpg`}
+//       alt={`${hit.displayTitle} cover art`}
+//       width="60"
+//       height="45"
+//     />
+//     {hit.displayTitle}
+//   </div>
+// )
+
+export default function Searcher() {
+  return (
+    <>
+      <h3>Search</h3>
+      <InstantSearch indexName="songs" searchClient={searchClient}>
+        <SearchBox autoFocus />
+        <CustomHits />
+      </InstantSearch>
+    </>
+  )
+}
+
+Searcher.secure = false

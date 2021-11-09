@@ -1,0 +1,128 @@
+---
+blurb: ''
+categories:
+  - Live Coding
+date: '2020-09-23T00:00:00'
+id: 20eNEblgrSEb
+scrubbed_2021: false
+status: draft
+type: post
+title: Building a local version of Giphy - Part 2 LiveCoding
+slug: 20eNEblgrSEb--building-a-local-version-of-giphy--part-2-livecoding
+---
+
+*NOTE: TODO: This pages needs updates to work with MDX*
+
+Things done:
+
+
+```html
+<ul>
+	<li><strike>Don't rebuild resized images each time the page is loaded</strike></li>
+	<li><strike>Display the file names to get a quick search going</strike></li>
+	<li><strike>Get the resized gifs to animate</strike></li>
+	<li><strike>Size both width and height of preview images to drop into a square area</strike></li>
+	<li><strike>Get some CSS going to make the display nicer</strike></li>
+</ul>
+```
+
+Other possiblites for the future,
+
+```html
+<ul>
+	<li>Present some random images at the top of the page each time it loads</li>
+	<li>See if you can use EXIF metadata to store tags and search terms</li>
+	<li>Log which images get used</li>
+	<li>If exif data works, build a tool to edit it on the gifs</li>
+	<li>If performance becomes an issue, do some pagination, but so far that isn't a problem</li>
+	<li>Make a tags filter that loads images with a specific tag</li>
+  <li>Try to make it so the main page doesn't jump to the top when you select a gif</li>
+</ul>
+```
+
+
+---
+
+
+- https://www.mamp.info/en/mamp/mac/
+- https://www.mamp.info/en/windows/
+
+
+---
+
+
+https://stackify.com/how-to-log-to-console-in-php/
+
+get a little debugger going. you bugger
+
+
+```php
+<?php
+function console_log($output, $with_script_tags = true) {
+    $js_code = 'console.log(' . json_encode($output, JSON_HEX_TAG) .
+');';
+    if ($with_script_tags) {
+        $js_code = '<script>' . $js_code . '</script>';
+    }
+    echo $js_code;
+}
+```
+
+---
+
+
+
+---
+
+
+https://www.php.net/manual/en/function.file-exists.php
+
+
+---
+
+
+https://www.php.net/manual/en/function.sprintf.php
+
+---
+
+
+
+
+https://stackoverflow.com/a/10128978/102401
+
+https://stackoverflow.com/a/34577896/102401
+
+
+
+
+---
+
+
+
+convert source.png -resize 500x dest.png
+
+
+https://stackoverflow.com/a/718500/102401
+
+```php
+$resize_command =
+  sprintf(
+    '/usr/local/bin/convert %s -resize 200x200 %s',
+    $gif_file,
+    $resized_file_path
+  );
+
+  ---
+
+
+  General page I like:
+
+  https://www.w3.org/Style/Examples/007/figures.en.html
+
+  ---
+
+
+  CSS for centering
+
+  https://jsfiddle.net/dnk7oc6u/1/
+```

@@ -1,0 +1,57 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2021-07-12T17:15:08'
+id: 20eOGv5nZtYg
+scrubbed_2021: false
+status: scratch
+type: post
+title: Get An Epoch Time Stamp In Python
+slug: 20eOGv5nZtYg--get-an-epoch-time-stamp-in-python
+---
+
+Here's some code to get to epoch time in seconds:
+
+
+```python
+import time
+
+from_epoch_to_now = int(time.time())
+print(from_epoch_to_now)
+```
+
+This is how to get it for a specific time
+
+```python
+import time
+from calendar import timegm
+
+utc_time = time.strptime("2020-11-11T21:20:31.807Z", "%Y-%m-%dT%H:%M:%S.%fZ")
+from_epoch_to_specific_time = timegm(utc_time)
+print(from_epoch_to_specific_time)
+```
+
+
+
+
+The code below works too, but it sounds like it's not the ideal way to do it. 
+
+---
+
+Old notes that need review
+
+Python doesn't actually support %s as an argument to strftime (if you check at http://docs.python.org/library/datetime.html#strftime-and-strptime-behavior it's not in the list), the only reason it's working is because Python is passing the information to your system's strftime, which uses your local timezone.
+
+If you want to convert a python datetime to seconds since epoch you should do it explicitly:
+
+>>> datetime.datetime(2012,04,01,0,0).strftime('%s')
+'1333234800'
+
+>>> (datetime.datetime(2012,04,01,0,0) - datetime.datetime(1970,1,1)).total_seconds()
+1333238400.0
+
+In Python 3.3+ you can use timestamp() instead:
+
+>>> datetime.datetime(2012,4,1,0,0).timestamp()
+1333234800.0

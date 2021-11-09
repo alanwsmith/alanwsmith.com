@@ -1,0 +1,53 @@
+---
+blurb: >-
+  A little snippet of code to help out when developing Photoshop Scripts in the
+  ExtendScript ToolKit app.
+categories:
+  - Miscellaneous
+date: '2014-02-27T00:00:00'
+id: 20eMxnDxjEyJ
+scrubbed_2021: false
+status: published
+type: post
+title: Clearing the Adobe ExtendScript ToolKit Console Window
+slug: 20eMxnDxjEyJ--clearing-the-adobe-extendscript-toolkit-console-window
+---
+
+While creating a new JavaScript to automate some day-job Photoshop work, I gave Adobe's ExtendScript Toolkit a spin. It's designed specifically for building scripts for Adobe products and it's pretty nice. Especially the JavaScript Console window that makes it nice and easy to see debugging messages.
+
+![ExtendScript ToolKit windows.](/awsgrab-20140227--1524-01a.png) 
+
+By default, this window doesn't clear itself before each run which degrades a lot of its value. It can be cleared manually before the start of each test run, but that's a pain. The good news is there's a way to do it with code. If the script is run from ExtendScript Toolkit itself, this snippet of code will do it:
+
+```javascript{numberLines: true}
+app.clc();
+```
+
+Unfortunately, that same code causes Photoshop to choke which defeats the purpose. The first solution I came up with to get around this is to check to make sure the script was being run in ExtendScript ToolKit before making the call. 
+
+```javascript{numberLines: true}
+if (app.name === "ExtendScript Toolkit") { 
+  app.clc(); 
+}
+```   
+
+This clears the console when run in ExtendScript ToolKit but not Photoshop. Useful for early stage development but resulting in having to fall back to manually clearing after each Photoshop run. After some digging through the "Interapplication Communication with Scripts" chapter of the "JavaScript Tools Guide CS6" docs, I came up with this:
+
+```javascript{numberLines: true}
+if (app.name === "ExtendScript Toolkit") { 
+  app.clc(); 
+}
+else {
+  var estApp= BridgeTalk.getSpecifier("estoolkit");
+  if(estApp) {
+    var bt = new BridgeTalk;
+    bt.target = estApp;
+    bt.body = "app.clc()";
+    bt.send();
+  }
+}
+```
+
+This code checks to see if the script is being run from ExtendScript Toolkit. If so, it clears the console natively. If the script is being run in another app (e.g. Photoshop), it attempts to send the clear message to ExtendScript Toolkit. 
+
+An alternate way to clear the console would be to use the `Cmd+Shift+C` hot-key combo, but I'd much rather let the script do it for me.

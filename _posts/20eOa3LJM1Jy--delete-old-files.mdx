@@ -1,0 +1,25 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2021-10-25T16:12:44'
+id: 20eOa3LJM1Jy
+scrubbed_2021: false
+status: unpublished
+type: post
+title: Delete Old Files
+slug: 20eOa3LJM1Jy--delete-old-files
+---
+
+this is for a crotab:
+
+```
+25 0 * * 6 find /var/log/sharplink/ -mtime +28 -name 'crontab-*.log' -delete
+```
+
+
+And general usage:
+
+```
+find /var/log/sharplink/ -mtime +28 -name 'crontab-*.log' -delete
+```

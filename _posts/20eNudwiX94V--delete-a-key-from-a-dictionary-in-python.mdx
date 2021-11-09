@@ -1,0 +1,44 @@
+---
+blurb: ''
+date: '2021-02-09T22:01:37'
+id: 20eNudwiX94V
+scrubbed_2021: false
+status: published
+type: post
+title: Delete A Key From A Dictionary In Python
+slug: 20eNudwiX94V--delete-a-key-from-a-dictionary-in-python
+---
+
+Top recommened way to delete a key in a python dictionary is:
+
+(via: https://stackoverflow.com/a/11277439/102401)
+
+
+To delete a key regardless of whether it is in the dictionary, use the two-argument form of dict.pop():
+
+    my_dict.pop('key', None)
+    
+This will return my_dict[key] if key exists in the dictionary, and None otherwise. If the second parameter is not specified (ie. my_dict.pop('key')) and key does not exist, a KeyError is raised.
+
+To delete a key that is guaranteed to exist, you can also use
+
+del my_dict['key']
+This will raise a KeyError if the key is not in the dictionary.
+
+
+---
+
+
+
+Specifically to answer "is there a one line way of doing this?"
+
+if 'key' in my_dict: del my_dict['key']
+...well, you asked ;-)
+
+You should consider, though, that this way of deleting an object from a dict is not atomic—it is possible that 'key' may be in my_dict during the if statement, but may be deleted before del is executed, in which case del will fail with a KeyError. Given this, it would be safest to either use dict.pop or something along the lines of
+
+try:
+    del my_dict['key']
+except KeyError:
+    pass
+which, of course, is definitely not a one-liner.

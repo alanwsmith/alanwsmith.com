@@ -1,0 +1,149 @@
+---
+blurb: ''
+categories:
+  - Twitch
+date: '2021-10-25T15:40:56'
+id: 20eOZx98majF
+scrubbed_2021: false
+status: unpublished
+type: post
+title: Setup Event Sub Auth For Twitch
+slug: 20eOZx98majF--setup-event-sub-auth-for-twitch
+---
+
+- Create a new app with an OAuth Redirect URL set to: http://localhost:17563
+- Get the Client ID and Client Secret
+- Make a python virtual environment
+- `pip install twitchAPI`
+
+
+
+
+
+
+
+
+---
+Older notes
+---
+
+
+How to get an EventSub Setup:
+
+(Use `OAuth client credentials flow` for the access key)
+
+---
+
+Optional: If you have an existing Twitch account, go through the process of setting the switch so you can use the same email address on multiple accounts. 
+
+---
+
+
+- use localtunnel 
+- use flask
+
+- Go here to register your app, and get your client ID and Client Secret: 
+        https://dev.twitch.tv/console/apps
+
+
+- Use your cliet access and secret to get the access key with:
+
+    curl -XPOST https://id.twitch.tv/oauth2/token \
+        -d "client_id=AAAABBBB&client_secret=CCCCDDDD&grant_type=client_credentials"
+        
+    
+
+    
+    
+---
+
+Start up localtunnel with:
+
+    lt -port 5000
+    
+with flask running
+
+
+TODO: 
+
+    debugging with:
+    https://github.com/twitchdev/twitch-cli/blob/main/docs/event.md
+
+---
+
+
+
+    
+---
+
+You need the broadcast_id which (hopefully) is the client ID, which you can get by running this:
+
+
+curl -X GET 'https://api.twitch.tv/helix/users?login=theidofalan' \
+-H 'Authorization: Bearer {BEARER-TOKEN}' \
+-H 'Client-Id: {CLIENT-ID}'
+
+
+
+
+---
+
+
+Generate your own secret between 10-100 characters with a password generator. We'll reference it as {YOUR_SECRET} below
+
+----
+
+
+
+----
+
+
+
+
+When you have your webservice setup, create a JSON file named `request.json` like this:
+
+```javascript
+{
+    "type": "channel.follow",
+    "version": "1",
+    "condition": {
+        "broadcaster_user_id": "{ID_NUMBER}"
+    },
+    "transport": {
+        "method": "webhook",
+        "callback": "{CALLBACK_URL}",
+        "secret": "{YOUR_SECRET}"
+    }
+}
+```
+
+Then run this curl command (which you can also put in a file for ease of use.):
+
+This is what you use to make a specific subscription. Note that you need to run this command in the same directory as the  `request.json` file you just made since the `-d` option access the file. 
+
+```bash
+curl -X POST \
+-H "Client-ID: $CLIENT_ID" \
+-H "Authorization: Bearer $BEARER_TOKEN" \
+-H "Content-Type: application/json" \
+-d '@request.json' \
+https://api.twitch.tv/helix/eventsub/subscriptions
+```
+
+
+
+
+---
+        
+
+
+Notes:
+
+    https://dev.twitch.tv/docs/authentication/getting-tokens-oauth/#oauth-client-credentials-flow
+    
+    
+---
+
+This is what a response from a follow looks like:
+
+{'subscription': {'id': '30631779-c945-4a49-88fa-bd324dfbd6e4', 'status': 'enabled', 'type': 'channel.follow', 'version': '1', 'condition': {'broadcaster_user_id': '125363791'}, 'transport': {'method': 'webhook', 'callback': 'https://happy-gecko-57.loca.lt/webhooks/twitch-callback'}, 'created_at': '2021-04-26T00:57:48.008347851Z', 'cost': 1}, 'event': {'user_id': '680013568', 'user_login': 'thebotofalan', 'user_name': 'TheBotOfAlan', 'broadcaster_user_id': '125363791', 'broadcaster_user_login': 'theidofalan', 'broadcaster_user_name': 'TheIdOfAlan', 'followed_at': '2021-04-26T01:06:09.305410176Z'}}

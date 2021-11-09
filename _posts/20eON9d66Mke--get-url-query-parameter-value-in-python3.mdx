@@ -1,0 +1,73 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2021-08-26T15:02:22'
+id: 20eON9d66Mke
+scrubbed_2021: false
+status: unpublished
+type: post
+title: Get URL Query Parameter Value In Python3
+slug: 20eON9d66Mke--get-url-query-parameter-value-in-python3
+---
+
+This is how to get a query parameter's value from a url string in python3
+
+
+```python
+#!/usr/bin/env python3 
+
+from urllib.parse import urlparse
+from urllib.parse import parse_qs
+
+url = 'https://www.example.com/some_path?key1=value1&key2=value2'
+
+query_data = parse_qs(urlparse(url).query)
+captured_value = query_data['some_key'][0]
+
+print(captured_value)
+```
+
+And here it is as a funcion
+
+```python
+#!/usr/bin/env python3
+
+from urllib.parse import urlparse
+from urllib.parse import parse_qs
+
+def get_query_value(url, key):
+    query_data = parse_qs(urlparse(url).query)
+    return query_data[key][0]
+
+captured_value = get_query_value(
+    'https://www.example.com/some_path?key1=value1&key2=value2',
+    'key2'
+)
+print(captured_value)
+```
+
+
+That's the way I use it. Here's the step by step for a clearer idea of what's going on:
+
+
+```python
+#!/usr/bin/env python3 
+
+from urllib.parse import urlparse
+from urllib.parse import parse_qs
+
+url = 'https://www.example.com/some_path?key1=value1&key2=value2'
+
+parsed_url = urlparse(url)
+print(parsed_url)
+
+parsed_query_string = parse_qs(parsed_url.query)
+print(parsed_query_string)
+
+list_for_key = parsed_query_string['key1']
+print(list_for_key)
+
+captured_value = list_for_key[0]
+print(captured_value)
+```

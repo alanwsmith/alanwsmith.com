@@ -1,0 +1,49 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2021-10-02T12:45:11'
+id: 20eOVdROoMzO
+scrubbed_2021: false
+status: scratch
+type: post
+title: Fundamentals - Looking For Errors
+slug: 20eOVdROoMzO--fundamentals--looking-for-errors
+---
+
+When you see an error message, look for the line before it to see if something wasn't closed
+
+
+```python3
+18    def add_channel(self, *, channelPrimaryKey, channelIdString):
+19        print(f"- INSERT/IGNORE Channel: {channelIdString}"
+20
+21    def update_song_data(self):
+```
+    
+    
+Error: 
+    
+```
+  File "/Users/alans/workshop/msync-admin-scripts/playlist_loaders/07_update_channels/update_channels
+.py", line 21
+    def update_song_data(self):
+    ^
+SyntaxError: invalid syntax
+
+shell returned 1
+```
+
+---
+
+Error is actually on line 19 where I didn't close the final paren. This: 
+
+```python3
+print(f"- INSERT/IGNORE Channel: {channelIdString}"
+```
+
+Should have been:
+
+```python3
+print(f"- INSERT/IGNORE Channel: {channelIdString}")
+```

@@ -1,0 +1,108 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2021-08-30T18:42:29'
+id: 20eOOFnni5zH
+scrubbed_2021: false
+status: unpublished
+type: post
+title: NextAuth - signin samples
+slug: 20eOOFnni5zH--nextauth--signin-samples
+---
+
+This is a sample set of data coming back form a `signIn` callback from next-auth
+
+
+```javascript
+import NextAuth from "next-auth";
+
+// all the provider stuff
+
+callbacks: {
+    async signIn(user, account, profile) {
+        console.log(user);
+        console.log(account);
+        console.log(profile);
+    }
+}
+```
+
+Produced this when signing into GitHub
+
+```json
+{
+  id: 1234,
+  name: 'Alan Smith',
+  email: null,
+  image: 'https://avatars.githubusercontent.com/u/1234?v=4'
+}
+```
+
+---
+
+```
+{
+  provider: 'github',
+  type: 'oauth',
+  id: 1234,
+  accessToken: 'gho_abcd1234',
+  accessTokenExpires: null,
+  refreshToken: undefined,
+  idToken: undefined,
+  access_token: 'gho_abcd1234',
+  scope: 'user',
+  token_type: 'bearer'
+}
+```
+
+---
+
+```
+{
+  login: 'alanwsmith',
+  id: 1234,
+  node_id: 'abcd1234',
+  avatar_url: 'https://avatars.githubusercontent.com/u/1234?v=4',
+  gravatar_id: '',
+  url: 'https://api.github.com/users/alanwsmith',
+  html_url: 'https://github.com/alanwsmith',
+  followers_url: 'https://api.github.com/users/alanwsmith/followers',
+  following_url: 'https://api.github.com/users/alanwsmith/following{/other_user}',
+  gists_url: 'https://api.github.com/users/alanwsmith/gists{/gist_id}',
+  starred_url: 'https://api.github.com/users/alanwsmith/starred{/owner}{/repo}',
+  subscriptions_url: 'https://api.github.com/users/alanwsmith/subscriptions',
+  organizations_url: 'https://api.github.com/users/alanwsmith/orgs',
+  repos_url: 'https://api.github.com/users/alanwsmith/repos',
+  events_url: 'https://api.github.com/users/alanwsmith/events{/privacy}',
+  received_events_url: 'https://api.github.com/users/alanwsmith/received_events',
+  type: 'User',
+  site_admin: false,
+  name: 'Alan Smith',
+  company: 'alanwsmith.com',
+  blog: 'https://www.alanwsmith.com/',
+  location: 'Sunny Florida, U.S.A.',
+  email: null,
+  hireable: null,
+  bio: "I'm one of those coders who just keeps banging on things until I get them to work and takes lots of notes so it's easier next time.",
+  twitter_username: 'TheIdOfAlan',
+  public_repos: 40,
+  public_gists: 10,
+  followers: 15,
+  following: 19,
+  created_at: '2011-06-12T11:08:56Z',
+  updated_at: '2021-07-30T19:21:03Z',
+  private_gists: 0,
+  total_private_repos: 0,
+  owned_private_repos: 0,
+  disk_usage: 59633,
+  collaborators: 0,
+  two_factor_authentication: true,
+  plan: {
+    name: 'free',
+    space: 12345678,
+    collaborators: 0,
+    private_repos: 10000
+  }
+}
+```

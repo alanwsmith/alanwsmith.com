@@ -1,0 +1,27 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2021-07-17T20:24:02'
+id: 20eOHm9SBoU5
+scrubbed_2021: false
+status: unpublished
+type: post
+title: Send Traffic From Two URLs to One Function
+slug: 20eOHm9SBoU5--send-traffic-from-two-urls-to-one-function
+---
+
+Just put a second decorator above the function with both (or, probably however many) routes like this:
+
+```python
+@app.route('/<snake>/end', methods=['POST'])
+@app.route('/<snake>/move', methods=['POST'])
+def move(snake):
+    if snake == 'bravo_snake':
+        print("Bravo Snake", file=sys.stderr)
+        bs = BravoSnake()
+        move = bs.get_move(move_request=request.get_json())
+        return_data = { 'move': move }
+        print(return_data, file=sys.stderr)
+        return json.dumps(return_data)
+```

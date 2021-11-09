@@ -1,0 +1,20 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2021-06-19T19:48:43'
+id: 20eOBOb2mJN9
+scrubbed_2021: false
+status: unpublished
+type: post
+title: Send Keyboard Keypress
+slug: 20eOBOb2mJN9--send-keyboard-keypress
+---
+
+from pynput.keyboard import Key, Controller
+
+keyboard = Controller()
+
+with keyboard.pressed(Key.alt):
+	keyboard.press('3')
+	keyboard.release('3')%

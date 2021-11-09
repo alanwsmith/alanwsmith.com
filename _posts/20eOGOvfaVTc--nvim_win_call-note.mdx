@@ -1,0 +1,25 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2021-07-08T22:09:02'
+id: 20eOGOvfaVTc
+scrubbed_2021: false
+status: unpublished
+type: post
+title: nvim_win_call Note
+slug: 20eOGOvfaVTc--nvim_win_call-note
+---
+
+Do this:
+
+```lua
+vim.api.nvim_win_call(WINDOW_ID, run_the_thing)
+```
+
+
+Not this (with the parens)
+
+```lua
+vim.api.nvim_win_call(WINDOW_ID, run_the_thing())
+```

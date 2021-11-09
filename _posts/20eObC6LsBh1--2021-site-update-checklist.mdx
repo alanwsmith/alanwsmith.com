@@ -1,0 +1,78 @@
+---
+blurb: My TODO list for finishing up my site migration from Gatsby to NextJS.
+date: '2021-10-30T00:00:00'
+id: 20eObC6LsBh1
+scrubbed_2021: false
+status: published
+type: post
+title: 2021 Site Update Checklist
+slug: 20eObC6LsBh1--2021-site-update-checklist
+---
+
+export const listData = [
+  [1, 'Make a/this checklist for tracking TODOs'],
+  [1, 'Create responsive video player for vimeo'],
+  [1, 'Create responsive video player for youtube'],
+  [1, 'Get social OG images working'],
+  [1, 'Migrate content into grimoire'],
+  [1, 'Backfill grimoire notes that are ready to go'],
+  [1, 'Make a favicon'],
+  [1, 'Get initial styling in place'],
+  [0, 'Add code syntax highlighting'],
+  [0, 'Default to using filenames for titles with the ability to override via `title` in frontmatter if formatting needs to happen'],
+  [0, 'Setup posts to have UUID as slug with arbitrary url behind so you can change text slugs'],
+  [0, "Make a Message component to add messages at the top of the posts with their own format"],
+  [0, 'Make a espanso snippet for making a post frontmatter with a ksuid'],
+  [0, 'Only copy over new/updated files from the grimoire when running the copy process'],
+  [0, 'Figure out what to do about descriptions for OG tags - i.e. can you clip the first paragraph or do you need to make explicit descriptions for each post'],
+  [0, 'Migrate Oh The Places I Goed to monthly'],
+  [0, 'Remove pages/_document.js file and just put css for body in styles/global.css'],
+  [0, 'Setup local build deploy process instead of using netlify build'],
+  [0, 'Auto deploy site after you push a button to copy files'],
+  [0, 'Remove all dead links - write script to find them'],
+  [0, 'Add analitics'],
+  [0, 'Make a custom 404 page'],
+  [0, 'Make a robots.txt file'],
+  [0, 'Figure out what other files like robots.txt are used these days'],
+  [0, 'Make an RSS/Atom feed'],
+  [0, 'Build a process that pulls files that need updates like 10 at a time into Sublime Text'],
+  [0, 'Convert http links to https - run a script to find them'],
+  [0, 'Make the grimoire to site file mover only do files that have changed'],
+  [0, 'Normalize date format across posts'],
+  [0, 'Deal with grimoire notes that do not have all the frontmatter yet'],
+  [0, 'Make custom code fence things somehow'],
+  [0, 'Find all the missing images and post/restore them'],
+  [0, 'Add some type of curation to posts'], 
+  [0, 'Setup to clearedlist domains and auto publish On The Places I Goed - instead of manually editing the blocklist'], 
+  [0, 'Add categoriztion pages'],
+  [0, 'Figure out if there are going to be related links'], 
+  [0, 'Add search to the site'],
+  [0, 'Add responsive images'],
+  [0, 'Add KSUID for unique IDs of posts'],
+  [0, 'Review files from prior site versions to make sure everything migrated'],
+  [0, 'Chage date format to just year and month'],
+  [0, 'Setup to use Cloudinary?'],
+  [0, 'Migrate Oh the places I goed to monthly'],
+]
+
+export function LocalChecklist({ data }) {
+  return (
+    <ul>
+      {data.map((item) => (
+        <li key={item}>
+          <input
+            type="checkbox"
+            id={item[1]}
+            checked={item[0] === 1 ? true : false}
+            readOnly
+          />
+          <label htmlFor={item[1]}>&nbsp;&nbsp;{item[1]}</label>
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+Here is some stuff...
+
+<LocalChecklist data={listData} />

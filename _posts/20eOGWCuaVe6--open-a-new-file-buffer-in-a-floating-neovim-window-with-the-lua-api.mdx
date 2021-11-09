@@ -1,0 +1,32 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2021-07-08T22:29:29'
+id: 20eOGWCuaVe6
+scrubbed_2021: false
+status: unpublished
+type: post
+title: Open A New File Buffer In A Floating Neovim Window With The Lua API
+slug: >-
+  20eOGWCuaVe6--open-a-new-file-buffer-in-a-floating-neovim-window-with-the-lua-api
+---
+
+```lua
+local function open_new_file()
+    vim.api.nvim_command(':e path/to/file.txt')
+end
+
+local open_floating_window = function()
+    local main_window_id = vim.api.nvim_get_current_win()
+    local pop_buffer_1 = vim.api.nvim_create_buf(false, true)
+    local pop_window_1 = vim.api.nvim_open_win(pop_buffer_1, true, {
+            style="minimal", relative='editor',
+            row=3, col=3, width=30, height=6, border='single'
+        }
+    )
+    vim.api.nvim_set_current_win(main_window_id)
+end
+
+local 
+```

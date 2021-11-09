@@ -1,0 +1,22 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2021-06-06T17:20:04'
+id: 20eO4cHtpMMm
+scrubbed_2021: false
+status: unpublished
+type: post
+title: Read And Write To Buffer
+slug: 20eO4cHtpMMm--read-and-write-to-buffer
+---
+
+This reads from a buffer and writes back to it a couple lines down (it's a little weird, but it mostly works
+)
+
+    local_lines = vim.api.nvim_buf_get_lines(0, 0, 1, false)
+    
+And if you want to pull in the first line, do this:
+
+
+    first_line = vim.api.nvim_buf_get_lines(0, 0, 1, false)[1]

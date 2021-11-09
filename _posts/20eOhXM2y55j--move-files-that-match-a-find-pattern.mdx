@@ -1,0 +1,30 @@
+---
+blurb: Using CLI tools to move files around
+categories:
+  - Shell
+date: '2021-11-07T15:21:14'
+id: 20eOhXM2y55j
+scrubbed_2021: false
+status: published
+type: post
+title: Move Files That Match A find Pattern
+slug: 20eOhXM2y55j--move-files-that-match-a-find-pattern
+---
+
+Example:
+
+```
+find /Users/alans/my-files/ -maxdepth 1 -name 'some-name-*' -print0 | xargs -0 -I{} mv {} /Users/alans/my-files/_archive/
+```
+
+Searches the directory:
+    
+    /Users/alans/Dropbox/grimoire/
+
+Finds files who's name starts with:
+
+    some-name-
+
+Moves the files into:
+
+    /Users/alans/my-files/_archive/

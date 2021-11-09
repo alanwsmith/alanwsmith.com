@@ -1,0 +1,219 @@
+---
+blurb: 'For when you want to see the diff, but don''t want to use git'
+categories:
+  - Python
+date: '2021-11-06T15:09:37'
+id: 20eOgecxjDkZ
+scrubbed_2021: false
+status: draft
+type: post
+title: Get The Diff Between Two Files In Python
+slug: 20eOgecxjDkZ--get-the-diff-between-two-files-in-python
+---
+
+This is what I ended up with for real
+
+```python3
+#!/usr/bin/env python3
+
+import difflib
+import normalize_dates
+import unittest
+import filecmp
+import sys
+import io
+
+
+class TestNormalizeDates(unittest.TestCase):
+
+    def test_first_file(self):
+
+        input_dir = "data_for_tests/input"
+        output_dir = "data_for_tests/output"
+        target_dir = "data_for_tests/targets"
+
+        normalize_dates.make_files(
+            input_dir=input_dir,
+            output_dir=output_dir
+        )
+
+        file_list = ['1', '2']
+
+        for file in file_list:
+            a_file = f"{output_dir}/{file}.txt"
+            b_file = f"{target_dir}/{file}.txt"
+            with open(a_file) as _a:
+                a_list = _a.read().splitlines()
+            with open(b_file) as _b:
+                b_list = _b.read().splitlines()
+            self.assertListEqual(
+                a_list, b_list
+            )
+
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+---
+
+The below are for notes to put together later
+
+
+
+NOTE: the filecmp.cmp has problems with newlines in some cases that I can't figure out (like it looks like there shouldn't be a difference but there is)
+
+I think this is the way I'm going to do it for testing (time passes... nope, gonna use difflib below since it's easier to see what's up). TODO: Figure out if there's a way to use the diff itself for the compare instead of filecmp. 
+
+```python3
+#!/usr/bin/env python3 is here
+
+import difflib
+import normalize_dates
+import unittest
+import filecmp
+import sys
+import io
+
+
+class TestNormalizeDates(unittest.TestCase):
+
+    def test_first_file(self):
+
+        input_dir = "data_for_tests/input",
+        output_dir = "data_for_tests/output"
+
+        normalize_dates.make_files(
+            input_dir=input_dir,
+            output_dir=output_dir
+        )
+
+        input_file = "data_for_tests/input/1.txt"
+        output_file = "data_for_tests/output/1.txt"
+
+        with open(input_file) as _in_file:
+            input_lines = _in_file.readlines()
+        with open(output_file) as _out_file:
+            output_lines = _out_file.readlines()
+
+        self.assertListEqual(
+            input_lines,
+            output_lines
+        )
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+
+
+
+---
+
+
+
+This is the way that I like to do it that's very compact. 
+
+```
+import difflib
+import sys
+
+input_file = "/Users/alans/workshop/site_ksuid_migration/02_add_and_normalize_dates_in_frontmatter/data_for_tests/input/1.txt"
+output_file = "/Users/alans/workshop/site_ksuid_migration/02_add_and_normalize_dates_in_frontmatter/data_for_tests/output/1.txt"
+
+with open(input_file) as _in:
+    input_data = _in.readlines()
+    
+with open(output_file) as _out:
+    output_data = _out.readlines()
+
+sys.stdout.writelines(
+    difflib.unified_diff(
+        input_data,
+        output_data, 
+        n=0
+    )
+)
+```
+
+
+Here's the other examples:
+
+```
+sys.stdout.writelines(
+    difflib.unified_diff(
+        input_data,
+        output_data, 
+        'input_file.txt',
+        'output_file.txt'
+    )
+)
+
+# Output
+#
+#--- input_file.txt
+#+++ output_file.txt
+#@@ -1,6 +1,6 @@
+#---
+#category: Miscellaneous
+#-date: '2007-08-29'
+#+date: '2007-08-29T00:00:00'
+#slug: /a-few-more-dave-ramsey-thoughts
+#title: A few more Dave Ramsey thoughts
+#type: post
+
+
+print("\n")
+print("\n")
+
+
+# compact output
+sys.stdout.writelines(
+    difflib.unified_diff(
+        input_data,
+        output_data, 
+        'input_file.txt',
+        'output_file.txt',
+        n=0
+    )
+)
+
+# Output
+# 
+#--- input_file.txt
+#+++ output_file.txt
+#@@ -3 +3 @@
+#-date: '2007-08-29'
+#+date: '2007-08-29T00:00:00'
+
+
+print("\n")
+print("\n")
+
+
+
+# compact output with no file names which looks a little cleaner to me
+# there's no need to pass the file names and by reducing the context
+# it's very clean
+sys.stdout.writelines(
+    difflib.unified_diff(
+        input_data,
+        output_data, 
+        n=0
+    )
+)
+```
+
+TODO: Go thru here are write up more examples:
+
+    https://docs.python.org/3/library/difflib.html#module-difflib
+    
+
+See also this which looks interesting, but not that the `io.open` isn't closed (see comment on that)
+
+```
+41          self.assertListEqual(
+  1             list(io.open(input_file)),
+  2             list(io.open(output_file))
+  3         )
+```

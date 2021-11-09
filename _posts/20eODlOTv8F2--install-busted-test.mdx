@@ -1,0 +1,53 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2021-06-21T20:40:25'
+id: 20eODlOTv8F2
+scrubbed_2021: false
+status: unpublished
+type: post
+title: Install busted Test
+slug: 20eODlOTv8F2--install-busted-test
+---
+
+(might need `lua-term`)
+
+
+You need to have nvim_rocks installed, 
+
+before running it, make sure to do:
+
+```
+export MACOSX_DEPLOYMENT_TARGET=10.15
+```
+
+Then, add this to your init.vim file:
+
+```
+nvim_rocks.ensure_installed('busted')
+```
+
+Like:
+
+  6 lua << EOF
+  5 -- require('telescope').load_extension('coc')
+  4 require('plugins')
+  3
+  2 local nvim_rocks = require'nvim_rocks'
+  1 nvim_rocks.ensure_installed('lua-cjson')
+84  nvim_rocks.ensure_installed('busted')
+  1 EOF
+
+
+Then, just run nvim and it'll try to install 
+
+
+
+
+
+---
+
+First time didn't work, so you uninstalled it from inside nvim with:
+
+    NvimRocksRemove busted

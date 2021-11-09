@@ -1,0 +1,32 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2021-10-27T13:54:43'
+id: 20eOakwAOo9Z
+scrubbed_2021: false
+status: unpublished
+type: post
+title: Add Custom Styles To NextJS
+slug: 20eOakwAOo9Z--add-custom-styles-to-nextjs
+---
+
+Do something like this in your `../styles/global.css` file:
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-2xl;
+  }
+  h2 {
+    @apply text-xl;
+  }
+}
+```
+
+
+via: https://tailwindcss.com/docs/adding-base-styles

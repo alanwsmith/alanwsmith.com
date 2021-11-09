@@ -1,0 +1,22 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2021-09-19T19:13:58'
+id: 20eOTtvUnjLp
+scrubbed_2021: false
+status: unpublished
+type: post
+title: Set Number Column Width To Remove Shifting
+slug: 20eOTtvUnjLp--set-number-column-width-to-remove-shifting
+---
+
+Some of the plugins I use with Neovim add characters to the number column that causes things to jump horizontally. 
+
+I'm adjusting the numberwidth to address this in my `~/.config/nvim/init.vim` config file with:
+
+```
+set numberwidth=5
+```
+
+The other thing that needs to happen is this which puts the "sings" in the number column as well. (That was the real thing that was causing the jump. Edit the above to reflect that)

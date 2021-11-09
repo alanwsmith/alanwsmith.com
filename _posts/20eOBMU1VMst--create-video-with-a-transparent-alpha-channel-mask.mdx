@@ -1,0 +1,68 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2021-06-19T13:50:21'
+id: 20eOBMU1VMst
+scrubbed_2021: false
+status: unpublished
+type: post
+title: Create Video With A Transparent Alpha Channel Mask
+slug: 20eOBMU1VMst--create-video-with-a-transparent-alpha-channel-mask
+---
+
+### Basic thing that works
+
+```bash
+ffmpeg -y -i input.mp4 -vf "movie='mask.png'[a];[in][a]alphamerge" -c:v libvpx-vp9 -pix_fmt yuva420p output.webm
+```
+
+Take out the audio with `-an`:
+
+```bash
+ffmpeg -y -i input.mp4 -vf "movie='mask.png'[a];[in][a]alphamerge" -c:v libvpx-vp9 -pix_fmt yuva420p -an output.webm
+```
+
+Can't figure out how to resize it yet
+
+
+
+
+### With High Quality Encoding - 2 Pass
+
+#### Pass 1 - Just makes a log file
+
+NOTE: You have to delete the log file between each run 
+
+ffmpeg -y -v warning -copyts -i input.mp4 -vf "movie='mask.png'[a];[in][a]alphamerge" -pass 1 -slices 4 -strict -2 -quality best -row-mt 1 -frame-parallel 0 -deadline best -keyint_min 72 -g 72 -cpu-used 0 -sws_dither none -sws_flags lanczos -aq-mode 2 -deadline best -tile-columns 2 -tile-columns 2 -threads 8 -speed 4 -an -c:v libvpx-vp9 -pix_fmt yuva420p -f webm /dev/null 
+
+#### Pass 2 - Makes the actual output
+
+ffmpeg -y -v warning -copyts -i "input.mp4" -vf "movie='mask.png'[a];[in][a]alphamerge" -pass 2 -slices 4 -strict -2 -quality best -row-mt 1 -frame-parallel 0 -deadline best -keyint_min 72 -g 72 -cpu-used 0 -sws_dither none -sws_flags lanczos -aq-mode 2 -deadline best -tile-columns 2 -tile-columns 2 -threads 8 -speed 0 -c:v libvpx-vp9 -pix_fmt yuva420p -f webm output.webm
+
+via: SynDevILOVEPIE in chat
+
+- TODO: Play wiht `-crf` to experiment with quality
+
+See: https://trac.ffmpeg.org/wiki/Encode/VP9/
+
+
+---
+
+
+OLD NOTES:
+
+
+--- 
+
+Working:
+
+ffmpeg -i infile.mkv -filter_complex [0:v:0]split=2[left][right];[left]crop=2048:2048:0:0,<filters for left half here>[left];[right]crop=2048:2048:2048:0,<filters for right half here>[right];[left][right]hstack=2[out] -map [out] …
+
+
+
+
+ffmpeg -i input.mp4 -filter_complex "[0:v:0]crop=in_w/2:in_h:in_w/2:0[b];[0:v:0]crop=in_w/2:in_h:0:in_w/2[a];[a]minterpolate=fps=72[right];[b]minterpolate=fps=72[left];[right][left]hstack=inputs=2[out]" -map "[out]" -c:v libx264 -preset veryfast -y output.mkv
+
+
+via: https://www.reddit.com/r/ffmpeg/comments/f0dj2f/splitting_frames_down_the_middle_applying_filters/

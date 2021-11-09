@@ -1,0 +1,32 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2021-09-21T16:52:09'
+id: 20eOUMiNCqWk
+scrubbed_2021: false
+status: unpublished
+type: post
+title: Credentails File Instead Of .env File
+slug: 20eOUMiNCqWk--credentails-file-instead-of-env-file
+---
+
+I like avoiding putting passwords in cleartext. So, I use my computer's assword manager. 
+
+To keep things simple when dealing with credentials I make a folder at the top of my projected called `credentials` then put in a file called `database.js` that looks something like:
+
+TKTKTKT
+
+I use it in my api pages by putting this at the top:
+
+```
+import { getSession } from 'next-auth/client'
+```
+
+Then using the function like this:
+
+```
+console.log(db_user())
+```
+
+works great

@@ -1,0 +1,297 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2020-10-15T00:00:00'
+id: 20eNMnQLCcpQ
+scrubbed_2021: false
+status: draft
+type: post
+title: Loopback Unexpected Behavior
+slug: 20eNMnQLCcpQ--loopback-unexpected-behavior
+---
+
+_Note: All these were done after a full shut down and reboot_
+
+
+
+```html
+<table>
+	<tr>
+		<td><input type="checkbox"> </td>
+		<td>
+			<table>
+				<tr>
+					<td colspan="2">
+						<b>Initial State</b>
+					</td>
+				</tr>
+				<tr>
+					<td>SoundsSource: Safari</td>
+					<td>No Redirect</td>
+				</tr>
+				<tr>
+					<td>SoundsSource: Output</td>
+					<td>USB DAC</td>
+				</tr>
+				<tr>
+					<td>Sound playing thru DAC</td>
+					<td>Yes</td>
+				</tr>
+				<tr>
+					<td>Sound playing thru Headphones</td>
+					<td>No</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td><input type="checkbox"></td>
+		<td>
+			<table>
+				<tr>
+					<td colspan="2"><b>
+						Make a New Virtual Device - AWS-Test-1
+					</b></td>
+				</tr>
+				<tr>
+					<td>Sound playing thru DAC</td>
+					<td>Yes</td>
+				</tr>
+				<tr>
+					<td>Sound playing thru DAC</td>
+					<td>Yes</td>
+				</tr>
+				<tr>
+					<td>Sound playing thru Headphones</td>
+					<td>No</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td><input type="checkbox"></td>
+		<td>
+			<table>
+				<tr>
+					<td colspan="2"><b>
+						Delete Pass-Thru
+					</b></td>
+				</tr>
+				<tr>
+					<td>Sound playing thru DAC</td>
+					<td>Yes</td>
+				</tr>
+				<tr>
+					<td>Sound playing thru Headphones</td>
+					<td>No</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td><input type="checkbox"></td>
+		<td>
+			<table>
+				<tr>
+					<td colspan="2"><b>
+						Add Source: Safari
+					</b></td>
+				</tr>
+				<tr>
+					<td>Sources - Safari - Toggle</td>
+					<td>On</td>
+				</tr>
+				<tr>
+					<td>Sources - Safari - Mute when capturing</td>
+					<td>Checked</td>
+				</tr>
+				<tr>
+					<td>Sources - Safari - Meters</td>
+					<td>Moving</td>
+				</tr>
+				<tr>
+					<td>Sound playing thru DAC</td>
+					<td>Yes</td>
+				</tr>
+				<tr>
+					<td>Sound playing thru Headphones</td>
+					<td>No</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td><input type="checkbox"></td>
+		<td>
+			<table>
+				<tr>
+					<td colspan="2"><b>
+						Add Monitor: Headphones
+					</b></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>Sound playing thru DAC</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>Sound playing thru Headphones</td>
+					<td></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td><input type="checkbox"></td>
+		<td>
+			<table>
+				<tr>
+					<td colspan="2"><b>
+						zzzzzz
+					</b></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>Sound playing thru DAC</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>Sound playing thru Headphones</td>
+					<td></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td><input type="checkbox"></td>
+		<td>
+			<table>
+				<tr>
+					<td colspan="2"><b>
+						zzzzzz
+					</b></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>Sound playing thru DAC</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>Sound playing thru Headphones</td>
+					<td></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td><input type="checkbox"></td>
+		<td>
+			<table>
+				<tr>
+					<td colspan="2"><b>
+						zzzzzz
+					</b></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>Sound playing thru DAC</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>Sound playing thru Headphones</td>
+					<td></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td><input type="checkbox"></td>
+		<td>
+			<table>
+				<tr>
+					<td colspan="2"><b>
+						zzzzzz
+					</b></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>Sound playing thru DAC</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>Sound playing thru Headphones</td>
+					<td></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+
+---
+
+
+
+
+
+
+
+
+
+
+			</td>
+	</tr>
+	<tr>
+		<td><input type="checkbox"></td>
+		<td>Delete Pass-Thru</td>
+	</tr>
+	<tr>
+		<td><input type="checkbox"></td>
+		<td>
+			Add Source: Safari (Mute when Capturing = checked)
+			<ul>
+				<li>Safari Mute when Capturing = checked</li>
+				<li>Sound playing thru DAC = Yes</li>
+				<li>Sound playing thru Internal Speakers = No</li>
+				<li>Meters for Safari and Output Channels moving</li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td><input type="checkbox"></td>
+		<td>
+			Add Monitor: Internal Speakers
+			<ul>
+				<li>Internal Speakers toggle = On</li>
+				<li>Meters for Safari, Output Channel, and Internal Speakers all moving</li>
+				<li>
+		</td>
+	</tr>
+	<tr>
+		<td><input type="checkbox"></td>
+		<td>
+		</td>
+	</tr>
+	<tr>
+		<td><input type="checkbox"></td>
+		<td>
+		</td>
+	</tr>
+</table>
+
+```

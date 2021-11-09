@@ -1,0 +1,33 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2021-06-16T20:40:21'
+id: 20eO9MjjUFU2
+scrubbed_2021: false
+status: unpublished
+type: post
+title: For Loop In Lua
+slug: 20eO9MjjUFU2--for-loop-in-lua
+---
+
+Basic from a list (tbd on tables)
+
+    buffer_list = vim.api.nvim_list_bufs()
+    for i=1, #buffer_list do
+       io.write(tostring(buffer_list[i]).."\n")
+    end
+    
+    
+As log:
+
+local function log(message)
+    local log_file = io.open("log.log", "a")
+    io.output(log_file)
+    io.write(message.."\n")
+    buffer_list = vim.api.nvim_list_bufs()
+    for i=1, #buffer_list do
+       io.write(tostring(buffer_list[i]).."\n")
+    end
+    io.close(log_file)
+end

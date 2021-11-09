@@ -1,0 +1,68 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2021-10-17T19:09:04'
+id: 20eOZ1ZD83nD
+scrubbed_2021: false
+status: unpublished
+type: post
+title: Render A List With map
+slug: 20eOZ1ZD83nD--render-a-list-with-map
+---
+
+Note that there is no `{` or `}` around the content after the `=>`. Not sure why that is and it throws me, but that seems to be the way of the thing
+
+```javascript
+function NumberList(props) {
+  const numbers = props.numbers;
+  const listItems = numbers.map((number) =>
+    <li key={number.toString()}>
+      {number}
+    </li>
+  );
+  return (
+    <ul>{listItems}</ul>
+  );
+}
+
+const numbers = [1, 2, 3, 4, 5];
+ReactDOM.render(
+  <NumberList numbers={numbers} />,
+  document.getElementById('root')
+);  
+```
+
+
+via: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+
+via: https://reactjs.org/docs/lists-and-keys.html
+
+
+---
+
+It's possible to use the index of the items as a key, but that's only as a last resort since the index of items can change. 
+
+
+const todoItems = todos.map((todo, index) =>
+  // Only do this if items have no stable IDs
+  <li key={index}>
+    {todo.text}
+  </li>
+);
+
+---
+
+You can inline the JSX too:
+
+function NumberList(props) {
+  const numbers = props.numbers;
+  return (
+    <ul>
+      {numbers.map((number) =>
+        <ListItem key={number.toString()}
+                  value={number} />
+      )}
+    </ul>
+  );
+}

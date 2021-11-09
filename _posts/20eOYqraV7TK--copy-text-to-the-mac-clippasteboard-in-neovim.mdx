@@ -1,0 +1,40 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2021-10-17T14:45:55'
+id: 20eOYqraV7TK
+scrubbed_2021: false
+status: unpublished
+type: post
+title: Copy Text To The Mac Clip-Pasteboard In NeoVim
+slug: 20eOYqraV7TK--copy-text-to-the-mac-clippasteboard-in-neovim
+---
+
+```
+"+y6j
+```
+
+will grab the next 6 lines
+
+
+I've got this in my `~/.zshrc` file:
+
+```
+noremap <leader>y "+y
+```
+
+That let's me do:
+
+```
+,y6j
+```
+
+where, `,` is my leader key. 
+
+It only saves one keystroke, but it feels a lot nicer
+
+Note that I haven't been able to figure out how to do a single line. I rarely need it and just copy with the mouse. I'm sure there's a way though. 
+
+
+via: https://vi.stackexchange.com/questions/84/how-can-i-copy-text-to-the-system-clipboard-from-vim

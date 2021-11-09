@@ -1,0 +1,48 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2021-06-05T22:52:52'
+id: 20eO4CEoZxPB
+scrubbed_2021: false
+status: unpublished
+type: post
+title: Lua Plugin Hello World - Something to review
+slug: 20eO4CEoZxPB--lua-plugin-hello-world--something-to-review
+---
+
+This is another example with just two files that doesn't use the autoload
+
+
+
+
+`~/.config/nvim/plugin/example_basic_call.vim`
+
+
+    if exists('g:loaded_example_basic_call') | finish | endif
+    
+    let s:save_cpo = &cpo
+    set cpo&vim
+    
+    command! ExampleBasicCall lua require'example_basic_call'.example_basic_call()
+    
+    let &cpo = s:save_cpo
+    unlet s:save_cpo
+    
+    let g:loaded_example_basic_call = 1
+
+
+### File: ~/.config/nvim/lua/example_basic_call.lua
+
+
+    local function print_here()
+        vim.api.nvim_command(':lua print("HERE")')
+    end
+    
+    local function example_basic_call()
+        print_here()
+    end
+    
+    return {
+      example_basic_call = example_basic_call,
+    }

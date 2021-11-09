@@ -1,0 +1,26 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2021-09-19T23:21:35'
+id: 20eOU2EbN2OX
+scrubbed_2021: false
+status: unpublished
+type: post
+title: Disable Prettier Quickfix
+slug: 20eOU2EbN2OX--disable-prettier-quickfix
+---
+
+Took me a while to find this one
+
+let g:prettier#quickfix_enabled=0
+
+
+trying to use that in `~/.config/nvim/init.vim` so the window doesn't keep popping up with a window that has a prettier error message and then ends with:
+
+```
+[Quickfix List] :setqflist()
+Prettier: failed to parse buffer
+```
+
+with the flag set, you'll still get the `Prettier: failed to parse buffer` message, but it shows up on the line where you enter commands and doesn't block or force you to close the window.

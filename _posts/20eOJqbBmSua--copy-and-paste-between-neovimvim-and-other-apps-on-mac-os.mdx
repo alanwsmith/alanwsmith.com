@@ -1,0 +1,22 @@
+---
+blurb: ''
+categories:
+  - Neovim
+date: '2021-08-09T00:00:00'
+id: 20eOJqbBmSua
+scrubbed_2021: false
+status: published
+type: post
+title: Copy And Paste Between Neovim-Vim And Other Apps On Mac OS
+slug: 20eOJqbBmSua--copy-and-paste-between-neovimvim-and-other-apps-on-mac-os
+---
+
+Add this to your `~/.vimrc` or `~/.config/nvim/init.vim` to copy and paste to and from vim/neovim and other apps:
+
+```
+set clipboard=unnamed
+```
+
+When that's in place, your `y...`, `d...`, and `p` commands work with other apps. (e.g. `yy` will copy the current line which you can paste in another app. and, you can copy something from another app and use `p` to paste it into vim/neovim)
+
+vai: https://vim.fandom.com/wiki/Mac_OS_X_clipboard_sharing

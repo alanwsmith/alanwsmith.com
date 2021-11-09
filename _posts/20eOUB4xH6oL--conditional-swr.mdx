@@ -1,0 +1,26 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2021-09-20T01:05:07'
+id: 20eOUB4xH6oL
+scrubbed_2021: false
+status: unpublished
+type: post
+title: Conditional SWR
+slug: 20eOUB4xH6oL--conditional-swr
+---
+
+https://swr.vercel.app/docs/conditional-fetching
+
+
+Conditional#
+Use null or pass a function as key to conditionally fetch data. If the function throws or returns a falsy value, SWR will not start the request.
+// conditionally fetch
+const { data } = useSWR(shouldFetch ? '/api/data' : null, fetcher)
+
+// ...or return a falsy value
+const { data } = useSWR(() => shouldFetch ? '/api/data' : null, fetcher)
+
+// ...or throw an error when user.id is not defined
+const { data } = useSWR(() => '/api/data?uid=' + user.id, fetcher)

@@ -1,0 +1,318 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2021-06-20T19:38:01'
+id: 20eOBvDDC3V1
+scrubbed_2021: false
+status: unpublished
+type: post
+title: Ideas
+slug: 20eOBvDDC3V1--ideas
+---
+
+Grimoire Ideas 
+==============
+
+Notes from vimwiki
+------------------
+
+- Checkout out how it makes the initial file for you as a way to deal with making files. 
+- Figure out how they do the title transformation to a link in the start of the [intro](https://github.com/vimwiki/vimwiki)
+- Watch how they make new files from existing words
+- Look at how they do backspace to jump back to prior files
+- Look at how they do the thing where if you aren't hovered over a thing it looks like `Title` with an underline, but if you are you see the actual characteres `[[Title]]
+
+
+---
+
+- Look at switching to this: https://github.com/grafi-tt/lunajson
+  - for native processing instead of using jq. 
+
+- If you leave the buffer tab, close the grimoire. 
+
+---
+
+- Setup so that you can use multiple directories (and there sub directories) but searches would just be doing filenames (and this is a note about how you're getting closer to building Telescope or Snap)
+
+
+---
+
+Change opening screen to http://www.figlet.org via nyx in chat. 
+
+---
+
+Check to see if you're streaming and automatically enable streamer mode
+
+
+
+
+
+Important 
+---------
+
+- [x] Display files based on search
+- [x] Select files other than the first search result
+- [x] Save edited files
+- [x] Create New Files
+- [x] Add ability to filter out files
+- [ ] use CTRL+l to get to the search bar
+- [ ] Don't overwrite files if you try to make a new one with the same name as an existing one
+- [ ] Git integration
+- [ ] Deal with directory structure for tens of thousands of notes
+- [ ] Rename files
+- [ ] Delete files
+- [ ] Configuration file (e.g. store streamer mode filter)
+- [ ] Configuration screen
+
+
+
+Definitely Want
+---------------
+
+- [ ] Global process for how to deal with files (e.g. `something.site.mdx`) - Setup so the system is designed for two part extensions. `.something.mdx` and when a file is saved the gimoire runs a thing for that extension. 
+- [x] Remember position of cursors in files
+- [ ] Update search results live when filter is updated
+- [ ] Streamer Mode toggle that applies a pre configured filter
+- [ ] Toggle between two most recent files
+- [ ] Make tabs work in the edit window instead of switching to the different input fields
+- [ ] Executable code blocks
+- [ ] Syntax highlighting
+- [ ] Vim bindings
+- [ ] Ability to view/edit two files side by side
+- [ ] Make a home page for when it first opens with some stuff
+
+
+Nice To Haves
+-------------
+
+- [] Make search engine plugable and/or switch to sqlite if it's fast enough
+- [] Figure out how to embed meilisearch
+- [] Toggle back and forth between the two most recent files (and their searches)
+- [] Automatic markdown underlines for headers with a hotkey
+- [] Automatically keep markdown lists going
+- [] Automatically keep markdown todo style lists going e.g. `- [] sample text`
+- [] Auto-save ever few seconds (don't know if this is really necessary, but wouldn't hurt in case of crashes)
+- [] Add a terminal 
+- [] In addition to standard undo, allow undo back into git history. (maybe a waring that you're about to move to a previous version of the file? probably start without it)
+- [] Setup a way to edit two files site by side. Use something like CTRL+t open and close the second window. When you open it, set the search and the active file to the one from the current window. (And possibly remember state for changed windows for some period of time)
+- 
+
+
+Further Consideration
+---------------------
+
+- [] Line numbers for code blocks?
+- [] Associate different files so you can run more complicated programs? (might be as simple as file naming. Probably don't need to recreate full blow apps?)
+- [] Maybe hide YAML by default and have a hotkey to show/hide it?
+- [] Sandboxes for different languages like your python sandbox and your electron sandbox. 
+- [] Maintain and manage content for site as a kind of CMS - This is mostly about how you would deal with the files themselves and probably won't be direclty part of the app other than some type of potential trigger?
+- [] Hotkeys to open nonce words/searches. Might be interesting, or something like a command pallet to then let you hit 0-9 to open a specific set of searches, but again, it feels like that would only get you so far and you'd still have to search to refine and doing the split would take a mental mode swithc so you're better off just typing
+- [] Figure out how to deal with images
+- [] Restore deleted files
+- [] Perma delete files (i.e. remove them from the git history) maybe?
+- 
+
+Probably Pass On These
+----------------------
+
+- Keep history of files you visited so you can walk thru them easily
+      - Probably pass on this and just have the toggle between the two most recent files
+- Save button
+      - Was thinking this could be used to trigger stuff. Might do it, but probably won't call it a save button maybe have pub/sub so you trigger different things with a trigger of some type (like a save button, but don't want to call it that since all saving should be done automatically). Could also setup to allow commands to be run from the app. 
+- Add line numbers
+      - Since there's a lot of prose (and often prose before code blocks) doesn't really make sense to add line numbers the the entire thing. Might make line numbers for code blocks
+- Maybe show related notes based off a secondary search? (seems weird, maybe?)
+      - Seems like that would take some mental energy to deal with. Having two edit windows should take care of this by allowing folks to simply edit two things and keep them side by side. 
+- In theory you could setup a way to only search in specific tags, but that's already accomplised by just having the tag itself
+
+      
+
+Notes On Ideas
+--------------
+
+
+- Add in ASCII versions of photos/images - via smithmule in chat
+
+
+
+
+- Jupyter notebook type functionality  where you assemble multiple files or have some way of dividing files. (probably the latter?)
+
+
+
+
+- Bake in vim mode/bindings by default?
+- Have an archive- tag that you can use to filter stuff out. 
+- Allow for filters on certain tags to show up in the search results or not. (e.g. `work-`, `archive-`) These will be customizable and then show up in the search config stuff. Setup hotkeys for this so you can turn stuff on and off, maybe.
+- When searching there's will be a page that shows up with options for the way the search is performed. One you start searching, the text of the current top result will show
+- Mimic the same way enter and tab and arrows work on the file selection and creation from nvAlt (make it customizable in settings too in the JSON, but maybe not in the settings GUI)
+- Find the balance for settings that are done in the GUI vs the JSON file
+- Provide hotkeys and buttons for template for new files. Maybe when you start a new one, you have a selection of templates to choose from either by clicking or hitting a number. 1 would always be blank. Escape would also take you to a blank page. 
+- Figure out how to bundle git with the app so versioning works automatically
+
+
+- In addition to multiple tabs, setup so you can have side by side panes. maybe three or four? (probably no more than four). Setup buttons so the can flip between them as well as hot keys.
+- Look at https://orgmode.org for ideas on executable snippets
+- This is another one to look at for executable snippets: https://github.com/dbridges/vim-markdown-runner
+- Maybe have one venv for files by default, but then allow overrides? (probably overkill for the overrides)
+- Look at this page and others to find format ideas for the different parts of the notes: https://en.wikipedia.org/wiki/Org-mode
+- Look at this for querying: https://github.com/blacksmithgu/obsidian-dataview
+
+
+----
+
+Notes from the other note
+
+
+- Incorporate a Git repo for version control. New versions whenever the file looses focus. Good things about Git is that it'll keep explicit track of the times of changes. 
+
+- Unlimited undos for a long as the window is open. 
+
+- https://mermaid-js.github.io/mermaid/#/
+- 
+- Tabs?
+
+- Ability to hit "Escape" a second time to get back into the file that you just escaped out of. 
+
+- Drag and drop images for links.
+
+- Hotkeys for markdown formatting.
+
+- Make sure tab spacing can be set to "2" spaces 
+
+- When doing a highlight and then tab indentation make sure it doesn't mess with the formatting of code blocks. 
+
+- Forward and back navigation buttons to jump through history. 
+
+- Ability to hide notes via a hot key. That way if other folks are around your machine you can make sure they don't see things you'd rather keep private. 
+
+- A diff tool that let's you see what the differences are when other things (like TextForce) freak out and make multiple copies. Could also just indicate if they are exact dupes and let you delete them if you want. 
+
+- Maybe a full time duplicate file detector that just pops up a note when it sees a set of them. 
+
+- Auto re-number ordered list bullet points (probably should be a toggle since there may be times when you don't want it, but it may be easy enough to work around. Start without the config option to try it to see what happens)
+
+- Look at: https://github.com/Jaliborc/CustomSearch-1.0
+- 
+
+- Allow for pygments style highlighting with HTML wrapping.
+
+- If a link is in a code block, don't make it live. 
+
+- Make sure that you can run it on several machines at the same time that all point to the same dropbox folder. (guessing, that will mean that each machine makes its own local database. It may already do that. If so, it may require no work. But in the marketing material it should be an explicit point.)
+
+- Full time markdown tables. 
+
+- ability to flag items as private in YAML so that when you're using the app in public or screen sharing, you don't accidentally show stuff you don't want to. 
+
+- Code highlighting
+
+- Ability to auto copy selections which should be able to be turned on and off with a hotkey.
+
+- If the first line is a shebang for a script (e.g. `#!/usr/bin/env ruby`) treat the entire file as a script and setup a way to execute it from directly inside the app.
+
+- Vim navigation key bindings. 
+
+- Change the font color of YAML so it's not as prominent.
+
+- Ability to turn off word wrapping (which I don't see at all) and with a hot key for bonus
+
+- Option to always produce HTML files so you can have a web site live and setup and running. Should build an index page and some navigation too. 
+
+- Allow a flag that lets the storage of the individual files be controlled automatically and then split them into multiple directories when there are more than 1,000. The idea being to make it easier for things to process (e.g. command line tools)
+
+- Setup a format that can be used to automatically generate Anki style Q&A, (though maybe that's best left to just a format and an external script, but still, maybe a plug in?)
+
+- read only folder. A folder on the file system that the app will show files for (and allow searching on) but that it won't allow the files to be edited/changed in the editor. This will provide a way for other apps to generate content (that they won't have to watch for changes on) that can still be integrated into the grimoire. Basically a way to push sync into the system without having to build two wY sync. 
+
+- Provide a way to diff files. (Useful if a conflict comes up so you can see what the differences are easily)
+
+- Provide a way to merge diffs. And or just choose one file from a conflict to resolve it. 
+
+- Show Line Numbers
+
+- Ability to setup so that bullet entries automatically have a new line between them. (I know that's not a standard markdown thing, but it sure makes it easier to read when the bullets contain strings that wrap to multiple lines)
+
+- Auto formatting the spacing for markdown tables. e.g. the app knows when it's in a markdown table and just adjusts after you stop typing for a second. Would want to watch out for huge tables to make sure those get handed okay. Maybe it's setting a limit, and then having a popup that says, hey, this is huge, auto formatting it turned off. Hit {some hotkey} to apply the formatting and then make that a blocking operation. 
+
+- Could setup templates for new files. Like a default one that has some YAML metadata keys that you frequently use. 
+
+- Other templates could be setup for different types page pages with hotkeys to write them out. 
+
+- Ability to hide meta data at the top of the file while editing it
+
+- maybe use JSON instead of YAML for the front matter metadata. 
+
+- Design in a way that will ensure that other apps can play nicely with it
+
+- Maybe make it scriptable. Like you can write custom plugin type scripts
+
+- Use straight markdown instead of XML like Day One. (Can have two JSON or YAML headers, one that's internal to the app and then one that's editable in the app.) Idea is to make the files editable by other text apps to. That's probably less of a need though. (The reason I'm thinking about it is I'm working on the preface for the Day In The Mind Of collection)
+
+- Decide if it's worthwhile to create an "Edit with another app" feature. (seems unlikely.)
+
+- Make hotkeys (and menu items) that apply formatting (like highlighting a section to turn into a block quote)
+
+- auto download YouTube (and related video service) videos and thumbnails so they can be displayed inline from a local archive. 
+
+- Should definitely have an appearance setting so you can have an evening and dark modes. (#ST comment)
+
+- Automatically convert smart quotes into regular quotes when pasted in from the pasteboard (setting should be configurable)
+
+- Allow for secondary edit windows. They shouldn't provide the full search and listing feature, just the ability to edit instead of having to kick something to an external editor if you want to be able to edit multiple ones at the same time. 
+
+- For the secondary edit windows, if a document is open in one of those, consider graying out and showing an "open in another window" type message if the document is viewed in the primary window. (Or, generally, figure out what the 80/20 best approach is there. Seem like having edit mode in two windows at the same time for the same document is sub-optimal)
+
+- Ability to filter files based on the first word (e.g. if you want to bring up `post-` files but want to avoid pulling other files into the list that have that string somewhere in the file itself) - Should probably be a hotkey that you have to hit before a search. Or, during, maybe. Likely you'd want to make it so that when you go back to the top level search bar again, it doesn't persist. since most of the time the fuller search over everything is more beneficial. 
+
+- Programable hotkeys. Have the ability to setup custom functions that can even call out to the shell and assign them to, say, one of five hot keys. The idea is to keep a catalog of them so you can switch them in and out as necessary. 
+
+- Ability to watch the paste board and automatically paste stuff as soon as it changes. So, you could copy in another app and it just pastes in. 
+
+- For the auto paste, a bonus would be the ability to setup an `sprintf` formatter and when the paste happens it gets applied. 
+
+- Even better would be if you could put multiple entires in the `sprintf` and have the app keep wait until you've made the same number of copies as there are slots and then paste the combined string. 
+
+- Live markdown table switch that auto formats like [this](http://markdowntable.com/), but after every key stroke. 
+
+- JSON Config file that provides access to fiddly switches (eventually stuff that makes sense will be migrated into the preferences panel, the idea is to not add that to start with but to let folks who are willing to fiddle mess with it to see what makes sense before commiting to making it active in the UI)
+
+- Ability to flag lines as headings (H1 or H2) and have the app automatically put the proper number of `=` or `-` under it and keep it in sync. (The idea is to have the app keep track of this itself instead of trying to do anything inside the file that would mess with it. i.e. don't screw with the raw text file, even its metadata...)
+
+- Have the ability to scroll down past the last line. The idea being to be able to get the last line of text up into the middle of the screen without having to add a bunch of white space at the bottom to make that happen. 
+
+- Ability to control word wrap per page/item/entry. (that is, you can set it individually if you'd like to override whatever the default is which should probably be 'on')
+
+- Ability to do a merge of files where one file is appended to the end of another and then the original copy that was merged in gets removed. 
+
+- See if there's a way to do instapaper style pulling of webpages
+
+- Deployer for the site built in
+
+- thumbails and images show on the side when links are there. 
+
+- Look at: https://github.com/kentcdodds/genie
+
+- Look at encrypting the git repo: https://embeddedartistry.com/blog/2018/03/15/safely-storing-secrets-in-git/
+
+- Hot key command to capture a line (chomping white space as an option or a second command)
+
+- History of files you access with something like the last one so it's like a TV remote where you can swap back and forth between two. (Probably mainly used to jump back to one after making a quick note in a second file)
+
+- Hotkey to open history of the last 10 files and then you can hit a number to open it directly
+
+- Setup to adjust numbered lists automatically when you move things
+
+---
+
+Somethings to look at if you decide to make a VSCode version
+
+- https://www.slatejs.org/examples/richtext
+- https://microsoft.github.io/monaco-editor/
+- 
+
+
+---
+
+Mess around with this: https://github.com/cslarsen/jp2a
