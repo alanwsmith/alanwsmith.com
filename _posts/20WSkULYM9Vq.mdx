@@ -1,0 +1,21 @@
+---
+category: Miscellaneous
+date: '2021-10-05T13:30:25'
+id: 20WSkULYM9Vq
+slug: /tbd
+status: wip
+title: ''
+type: post
+---
+
+tell application "Safari"
+    repeat with i from (count of windows) to 1 by -1
+        repeat with j from (count of tabs of window i) to 1 by -1
+            set thistab to tab j of window i
+            set foo to name of thistab
+            if foo is not equal to "bar" then close thistab
+        end repeat
+    end repeat
+  end tell
+  
+via: https://stackoverflow.com/a/2503395/102401

@@ -1,0 +1,301 @@
+---
+created: 1614043633
+date: '2021-02-22T20:27:13'
+id: 20WSjYneEdLF
+slug: pass-one-or-multiple-queries-to-child-components
+title: Pass One Or Multiple Queries To Child Components In Gatsby
+---
+
+TODO: Fix the formatting of this post that got busted during the move to nextjs
+
+---
+
+```
+### src/components/blog-post-v1.js
+
+import { graphql } from 'gatsby';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
+import React from 'react';
+
+export const query = graphql`
+  query($slug: String!) {
+    mdx(frontmatter: { slug: { eq: $slug } }) {
+      frontmatter {
+        title
+        slug
+      }
+      body
+    }
+  }
+`;
+const Post = ({ data: { mdx: post } }) => {
+  const { title } = post.frontmatter;
+  const { body } = post;
+  return (
+    <div>
+        <h1>{title}</h1>
+        <MDXRenderer>{body}</MDXRenderer>
+    </div>
+  );
+};
+export default Post;
+
+
+---
+
+
+### src/components/drafts.js
+
+
+import React from "react"
+
+
+export default function Drafts(props) {
+
+    return (
+        <React.Fragment>
+            {props.theDrafts.map(({ node }) => (
+                <div key={node.id}>
+                    <h3>
+                        {node.frontmatter.title}{" "}
+                    </h3>
+                </div>
+            ))}
+        </React.Fragment>
+
+    )
+}
+
+
+--------------------------------------------------------------------------------
+
+### src/components/posts.js
+
+import React from "react"
+
+
+export default function Drafts(props) {
+
+    return (
+        <React.Fragment>
+            {props.theDrafts.map(({ node }) => (
+                <div key={node.id}>
+                    <h3>
+                        {node.frontmatter.title}{" "}
+                    </h3>
+                </div>
+            ))}
+        </React.Fragment>
+
+    )
+}
+
+
+--------------------------------------------------------------------------------
+
+### src/mdx-pages/file-1, file-2, file-3
+
+---
+title: File 1
+slug: /file-2
+draft: false
+---
+
+This is file 1 which is not a draft
+
+
+
+---
+title: File 2
+slug: /file-2
+draft: true
+---
+
+This is file 2 which is a draft. 
+
+
+
+
+---
+title: File 3
+slug: /file-3
+draft: true
+---
+
+This is file 3 which is a draft. 
+
+
+
+--------------------------------------------------------------------------------
+
+### src/pages/index.js
+
+
+import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import Drafts from "../components/drafts.js"
+import Posts from "../components/posts.js"
+
+export default function Home() {
+
+    const data = useStaticQuery(
+        graphql`query {
+            drafts: allMdx (filter: {frontmatter: {slug: {}, draft: {eq: true}}}) {
+                totalCount
+                edges {
+                    node {
+                    id
+                    frontmatter {
+                        title
+                        slug
+                    }
+                    excerpt
+                    }
+                }
+            }, 
+
+            posts: allMdx (filter: {frontmatter: {slug: {}, draft: {eq: false}}}) {
+                totalCount
+                edges {
+                    node {
+                    id
+                    frontmatter {
+                        title
+                        slug
+                    }
+                    excerpt
+                    }
+                }
+            }, 
+        }`
+    )
+
+    return (
+        <main>
+            <Drafts theDrafts={data.drafts.edges} />
+            <Posts theDrafts={data.posts.edges} />
+        </main>
+    )
+}
+
+
+
+--------------------------------------------------------------------------------
+
+### gatsby-config.js
+
+module.exports = {
+    plugins: [
+        
+
+        // TODO: install: gatsby-plugin-feed
+        // TODO: gatsby-plugin-manifest
+        
+
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                path: `${__dirname}/src/mdx-pages`,
+            },
+        },
+
+        {
+            resolve: `gatsby-plugin-mdx`,
+            options: {
+                extensions: ['.mdx', '.md'],
+                // a workaround to solve mdx-remark plugin compat issue
+                // https://github.com/gatsbyjs/gatsby/issues/15486
+                // plugins: [
+                //     `gatsby-remark-images`,
+                // ],
+                gatsbyRemarkPlugins: [
+
+                    // {
+                    //     resolve: `gatsby-remark-images`,
+                    //     options: {
+                    //         linkImagesToOriginal: false,
+                    //         maxWidth: 800,
+                    //         quality: 82,
+                    //         loading: "eager",
+                    //         disableBgImage: true,
+                    //     },
+                    // },
+
+                    // {
+                    //     resolve: `gatsby-remark-responsive-iframe`,
+                    //     options: {
+                    //         wrapperStyle: `margin-bottom: 1.0725rem`,
+                    //     },
+                    // },
+
+
+                    // {
+                    //     resolve: `gatsby-remark-copy-linked-files`,
+                    // },
+
+                    // {
+                    //     resolve: `gatsby-remark-smartypants`,
+                    // },
+
+                    // {
+                    //     resolve: `gatsby-remark-prismjs`,
+                    //     options: {
+                    //         classPrefix: "language-",
+                    //         inlineCodeMarker: '›',
+                    //         aliases: { sh: "bash" },
+                    //         showLineNumbers: false,
+                    //         noInlineHighlight: false,
+                    //         escapeEntities: {},
+                    //     },
+                    // },
+
+                ],
+            },
+        },
+
+
+        // `gatsby-transformer-sharp`,
+        // `gatsby-plugin-sharp`,
+        // `gatsby-plugin-react-helmet`,
+
+
+    ],
+}
+
+
+
+--------------------------------------------------------------------------------
+
+### gatsby-node.js
+
+exports.createPages = async ({ actions, graphql, reporter }) => {
+  const { createPage } = actions
+  const blogPostV1Layout = require.resolve(`./src/components/blog-post-v1.js`)
+  const result = await graphql(`
+    {
+      allMdx {
+        edges {
+          node {
+            frontmatter {
+              slug
+            }
+          }
+        }
+      }
+    }
+  `)
+  if (result.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`)
+    return
+  }
+  result.data.allMdx.edges.forEach(({ node }) => {
+    createPage({
+      path: node.frontmatter.slug,
+      component: blogPostV1Layout,
+      context: {
+        slug: node.frontmatter.slug,
+      },
+    })
+  })
+}
+```

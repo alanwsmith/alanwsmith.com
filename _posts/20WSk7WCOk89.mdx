@@ -1,0 +1,27 @@
+---
+category: Miscellaneous
+date: '2021-08-24T17:10:18'
+id: 20WSk7WCOk89
+slug: /tbd
+status: wip
+title: ''
+type: post
+---
+
+```html
+import Link from 'next/link'
+
+<Link href={someUrl}>
+    <a target="_blank">Text For The Link</a>
+</Link>
+```
+
+
+
+
+See this answer from here:
+
+
+Simply put your navigation code inside an anchor with _blank as target (i.e: <a herf={`/product-details/${product.id}`} target="_blank">).
+
+Using Link component here provides no performance benefit to the end user since you're requesting a fresh load of your site on a new browser tab.

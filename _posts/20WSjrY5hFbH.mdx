@@ -1,0 +1,37 @@
+---
+category: Miscellaneous
+date: '2021-06-18T12:57:51'
+id: 20WSjrY5hFbH
+slug: /tbd
+status: wip
+title: ''
+type: post
+---
+
+vim.api.nvim_win_close(WINDOW_ID, {}) -- doesn't force close
+
+vim.api.nvim_win_close(WINDOW_ID, { force=true }) -- forces close
+
+(get the id with `vim.api.nvim_set_current_win()`)
+
+
+---
+
+
+nvim_win_close({window}, {force})                           *nvim_win_close()*
+                Closes the window (like |:close| with a |window-ID|).
+
+                Attributes: 
+                    not allowed when |textlock| is active
+
+                Parameters: 
+                    {window}  Window handle, or 0 for current window
+                    {force}   Behave like `:close!` The last window of a
+                              buffer with unwritten changes can be closed. The
+                              buffer will become hidden, even if 'hidden' is
+                              not set.
+                              
+                              
+        
+        
+From the [docs]("https://neovim.io/doc/user/api.html#nvim_win_close()")

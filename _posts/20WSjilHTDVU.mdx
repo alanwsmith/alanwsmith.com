@@ -1,0 +1,21 @@
+---
+category: Miscellaneous
+date: '2021-06-06T20:11:58'
+id: 20WSjilHTDVU
+slug: /tbd
+status: wip
+title: ''
+type: post
+---
+
+attempt to call global 'json_decode'
+
+Tried to call `json_decode` in neovim a few different ways. There were some of the errors I got:
+
+    E5108: Error executing lua .../file.lua:##: attempt to call field 'json_decode' (a nil value)
+    
+    E5108: Error executing lua .../file.lua:##: attempt to call global 'json_decode' (a nil value)
+    
+The solution was to call it with:
+
+    local json_data = vim.fn.json_decode('{"asdf": "erere"}')

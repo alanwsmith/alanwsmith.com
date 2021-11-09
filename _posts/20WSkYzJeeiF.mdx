@@ -1,0 +1,28 @@
+---
+category: Miscellaneous
+date: '2021-10-03T14:56:18'
+id: 20WSkYzJeeiF
+slug: /tbd
+status: wip
+title: ''
+type: post
+---
+
+Need to verify this:
+
+
+```javascript
+import { getSession } from 'next-auth/client'
+
+export default async function handler(req, res) {
+
+const session = await getSession({ req })
+
+if (session) {
+// it's all good
+}
+else {
+// deny here
+}
+
+}

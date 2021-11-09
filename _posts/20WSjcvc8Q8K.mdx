@@ -1,0 +1,224 @@
+---
+category: Programming
+date: '2021-05-03T00:00:00'
+id: 20WSjcvc8Q8K
+slug: /twitchio-examples
+title: TwitchIO Examples
+type: post
+---
+
+Quick update with code that I'm using to respond to message with twitchio (opposed to !commands). The original code is further below, but somehtings not working with it anymore. (This is as of September, 2021)
+
+So, this is what I'm doing now. 
+
+```python
+#!/usr/bin/env python3
+
+import keyring
+
+from twitchio.ext import commands
+
+bot_account = 'MyBotAccountName'
+channel_name = 'ChatChannelName'
+
+oauth_token = keyring.get_password(
+    "oauth_token_key",
+    "local_user"
+)
+
+client_id = keyring.get_password(
+    "clien_id_key",
+    "local_user"
+)
+
+class Bot(commands.Bot):
+
+    def __init__(self):
+        super().__init__(
+            token=oauth_token,
+            client_id=client_id,
+            nick=bot_account,
+            prefix='!',
+            initial_channels=[channel_name]
+        )
+
+    async def event_ready(self):
+        print(f'Ready | {self.nick}')
+
+    async def event_message(self, message):
+        if message.author: 
+            print(f'{message.timestamp} - {message.author.name} -  {message.content}')
+            # Only respond if you can confirm the bot didn't send the mssage
+            if message.author.name.lower() != bot_account.lower():
+                if "some_string" in message.content.lower():
+                    await message.channel.send("bleep bloop. I saw the sign")
+        else:
+            print(f'{message.timestamp} - [Unknown Author] -  {message.content}')
+
+if __name__ == '__main__':
+    bot = Bot()
+    bot.run()
+```
+
+Something about the way this sends messages to chat is weird. Regular messages look like this when printed out by the script.
+
+```
+2021-09-05 23:23:37.041000 - theidofalan -  this is a thing I wrote
+```
+
+Messages from the bot look like:
+
+```
+1970-01-19 21:01:24.217000 - [Unknown Author] -   bleep bloop. I saw the sign
+```
+
+Here are the old notes for reference. Some may work, but others won't.
+
+
+## OLD NOTES - Some Of These Might Not Work
+
+_I updated twitchio and keep getting `_ws` errors like:
+
+```
+AttributeError: 'Bot' object has no attribute '_ws'
+```
+
+Here are three ways to use TwitchIO to respond to commands, respond to messages, and to work without interaction.
+
+(Note: I'm using `os.environ` in these examples, but I use `keyring` in my scripts. It uses the system credential store and is well worth a look if you're not familiar with it.)
+
+
+### Respond To Commands
+
+```python
+#!/usr/bin/env python3
+
+import os
+
+from twitchio.ext import commands
+
+oauth_token = os.environ['YOUR_APP_OAUTH_TOKEN']
+client_id = os.environ['YOUR_APP_CLIENT_ID']
+
+bot_account = 'YOUR_BOT_ACCOUNT_NAME'
+channel_name = 'CHANNEL_TO_CONNECT_TO'
+
+class Bot(commands.Bot):
+
+    def __init__(self):
+        super().__init__(
+            irc_token=oauth_token,
+            client_id=client_id,
+            nick=bot_account,
+            prefix='!',
+            initial_channels=[channel_name]
+        )
+
+    @commands.command(name='ping')
+    async def my_command(self, ctx):
+        print('Caught ping')
+        await ctx.send('pong')
+
+if __name__ == '__main__':
+    bot = Bot()
+    bot.run()
+```
+
+
+### Respond To Messages
+
+This one responds to any message sent to the channel. Make sure to filter out message from the bot like I do here otherwise it'll create a loop talking to itself. That'll send messages as fast as it can which gets the bot timed out for an hour. (Ask me how I know...)
+
+```python
+#!/usr/bin/env python3
+
+import os
+
+from twitchio.ext import commands
+
+oauth_token = os.environ['YOUR_APP_OAUTH_TOKEN']
+client_id = os.environ['YOUR_APP_CLIENT_ID']
+
+bot_account = 'YOUR_BOT_ACCOUNT_NAME'
+channel_name = 'CHANNEL_TO_CONNECT_TO'
+
+class Bot(commands.Bot):
+
+    def __init__(self):
+        super().__init__(
+            irc_token=oauth_token,
+            client_id=client_id,
+            nick=bot_account,
+            prefix='!',
+            initial_channels=[channel_name]
+        )
+
+    async def event_message(self, message):
+        print(f'{message.timestamp}: {message.author.name} - {message.content}')
+
+        if message.author.name.lower() != bot_account.lower():
+            ws = self._ws
+            await ws.send_privmsg(channel_name, "I saw the sign")
+
+
+if __name__ == '__main__':
+
+    bot = Bot()
+    bot.run()
+```
+
+
+
+
+### Non-Interactive
+
+This one posts a message as soon as the bot is connected and ready. No interaction required. 
+
+It also starts a loop that sets a message every 2 seconds (which is about as fast as Twitch allows). Note that the sleep is done with `asyncio.sleep`. Using `time.sleep` would block the script and it would never get out of `event_ready`. With the `asyncio.sleep` call other events can be processed (e.g. `event_message` will run for incoming messages.)
+
+```python
+#!/usr/bin/env python3
+
+import asyncio
+import os
+
+from twitchio.ext import commands
+
+oauth_token = os.environ['YOUR_APP_OAUTH_TOKEN']
+client_id = os.environ['YOUR_APP_CLIENT_ID']
+
+bot_account = 'YOUR_BOT_ACCOUNT_NAME'
+channel_name = 'CHANNEL_TO_CONNECT_TO'
+
+class Bot(commands.Bot):
+
+    def __init__(self):
+        super().__init__(
+            irc_token=oauth_token,
+            client_id=client_id,
+            nick=bot_account,
+            prefix='!',
+            initial_channels=[channel_name]
+        )
+
+
+    async def event_ready(self):
+        print(f'Ready | {self.nick}')
+        ws = self._ws
+        await ws.send_privmsg(
+            channel_name, 
+            f"{self.nick} is now active"
+        )
+
+        for counter in range(0,10):
+            await asyncio.sleep(2)
+            await ws.send_privmsg(
+                channel_name, 
+                f"Counter {counter}"
+            )
+
+
+if __name__ == '__main__':
+    bot = Bot()
+    bot.run()
+```

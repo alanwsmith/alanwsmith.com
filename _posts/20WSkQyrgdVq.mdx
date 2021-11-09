@@ -1,0 +1,81 @@
+---
+category: Miscellaneous
+date: '2021-09-10T20:24:56'
+id: 20WSkQyrgdVq
+slug: /tbd
+status: wip
+title: ''
+type: post
+---
+
+Had a problem with this with NextAuth in Next.Js with `netlify dev`. The error messages are below. 
+
+The solution was to delete these things:
+
+```
+rm -rf node_modules
+rm -rf out
+rm -rf .next/*
+rm package-lock.json
+rm -rf netlify
+```
+
+then run 
+
+```
+npm i
+```
+
+Not sure which of those was the actual fix, but the collection got the error cleared. The error itself would say "Function not found..." on the web page and then this stuff would show up in the console:
+
+
+```
+event - compiled successfully
+ ›   Warning: Missing form submission function handler
+Request from ::1: POST /api/auth/signin/twitch
+Response with status 404 in 1 ms.
+ ›   Warning: Missing form submission function handler
+Request from ::1: POST /api/auth/signin/twitch.html
+Response with status 404 in 0 ms.
+ ›   Warning: Missing form submission function handler
+Request from ::1: POST /api/auth/signin/twitch.htm
+Response with status 404 in 0 ms.
+ ›   Warning: Missing form submission function handler
+Request from ::1: POST /api/auth/signin/twitch/index.html
+Response with status 404 in 0 ms.
+ ›   Warning: Missing form submission function handler
+Request from ::1: POST /api/auth/signin/twitch/index.htm
+Response with status 404 in 0 ms.
+```
+
+And this error when I was testing trying to figure it out. (This one isn't the main one, but puttin it here in case someone has similar)
+
+```ReferenceError: TWITCH_SECRET is not defined
+    at eval (webpack-internal:///./pages/api/auth/[...nextauth].js:24:19)
+    at Object../pages/api/auth/[...nextauth].js (/Users/alans/workshop/msync-scratchpad/.next/server/pages/api/auth/[...nextauth].js:22:1)
+    at __webpack_require__ (/Users/alans/workshop/msync-scratchpad/.next/server/webpack-runtime.js:33:42)
+    at __webpack_exec__ (/Users/alans/workshop/msync-scratchpad/.next/server/pages/api/auth/[...nextauth].js:62:39)
+    at /Users/alans/workshop/msync-scratchpad/.next/server/pages/api/auth/[...nextauth].js:63:28
+    at Object.<anonymous> (/Users/alans/workshop/msync-scratchpad/.next/server/pages/api/auth/[...nextauth].js:66:3)
+    at Module._compile (node:internal/modules/cjs/loader:1095:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1124:10)
+    at Module.load (node:internal/modules/cjs/loader:975:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:816:12)
+ ›   Warning: Missing form submission function handler
+```
+
+If you run into similar, try nuking all the stuff from orbit and starting fresh
+
+
+---
+
+NOTE: I'm not sure if this stuff is related to these warnings or not:
+
+```
+[next-auth][warn][jwt_auto_generated_signing_key] 
+https://next-auth.js.org/warnings#jwt_auto_generated_signing_key
+```
+
+I think that's unrelated, but something that looks like it can be addressed by this:
+
+https://github.com/nextauthjs/next-auth/issues/484#issuecomment-850838412

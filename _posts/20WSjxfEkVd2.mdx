@@ -1,0 +1,89 @@
+---
+category: Miscellaneous
+date: '2021-06-21T21:29:19'
+id: 20WSjxfEkVd2
+slug: /tbd
+status: wip
+tags:
+- lua-
+title: Test Neovim Plugins
+type: post
+---
+
+You'll need to do this to trigger the run:
+
+```shell
+nmap <leader>t :wa<cr><Plug>PlenaryTestFile
+```
+
+While you have a spec file open. but while you're in the directory where the file under test lives. There's probably other ways to do it, but that works.
+
+
+
+--
+
+To test a full directory from the command line do this: 
+
+```shell
+nvim --headless -c "PlenaryBustedDirectory spec/"
+``` 
+
+Note that if you're running that, you probably need to be in a specific directory that has the files you're working on in it 
+
+which will run files like:
+
+```shell
+spec/*_spec.lau
+```
+
+You can also pass a init file with:
+
+
+```shell
+nvim --headless -c "PlenaryBustedDirectory tests/plenary/ {minimal_init = 'tests/minimal_init.vim'}"
+```
+
+see: https://github.com/nvim-lua/plenary.nvim
+
+
+
+----
+
+
+
+
+use: https://github.com/nvim-lua/plenary.nvim
+
+help: https://github.com/nvim-lua/plenary.nvim/blob/master/TESTS_README.md
+
+
+File: ~/.config/nvim/lua/grimoire.lua
+
+```lua
+local state = {}
+state.current_selection = 'asdf2'
+local config = {}
+
+local function grimoire()
+    print("Grimoire In Action")
+    return 4
+end
+
+return {
+    state = state,
+    grimoire = grimoire,
+}
+```
+
+
+File: ~/.config/nvim/lua/spec/grimoire_spec.lua
+
+```lua
+local grimoire = require('grimoire')
+
+describe("Initial Tests", function()
+  it("should have an initial selection", function()
+    assert.equals('asdf', grimoire.state.current_selection)
+  end)
+end)
+```

@@ -1,0 +1,21 @@
+---
+category: Miscellaneous
+date: '2021-10-17T15:06:16'
+id: 20WSkT5MVGln
+slug: /tbd
+status: wip
+title: ''
+type: post
+---
+
+I'm keeping all my custom functions in individual files in a `~/.zsh-functions` directory. I load them in my `~/.zshrc` file with:
+
+```
+if [ -d $HOME/.zsh-functions ] 
+then 
+  for file in $HOME/.zsh-functions/*.zsh
+  do 
+    source "$file"
+  done
+fi 
+```

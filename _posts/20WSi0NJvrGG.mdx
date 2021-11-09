@@ -1,0 +1,252 @@
+---
+blurb: tl;dr - Loved it
+category: Miscellaneous
+date: '2017-07-15T00:00:00'
+id: 20WSi0NJvrGG
+slug: /bullet-points-on-bracelets-a-wonder-woman-review
+tags: []
+thumbnail_full_url: http://res.cloudinary.com/awsimages/image/upload/w_800,h_1366,q_85/i/wonder-woman-bad-ass.jpg
+title: 'Bullet Points on Bracelets or: A Wonder Woman Review'
+type: post
+---
+
+*NOTE: This codes is commented out - TODO: Update to work with MDX*
+
+```html
+<script type="text/javascript">
+var ImageLoaderDevV14 = function() {
+
+};
+
+ImageLoaderDevV14.prototype.url_to_call = function() {
+  return this._url_template.replace('[WIDTH]', this.url_request_width()).replace('[HEIGHT]', this.url_request_height()).replace('[QUALITY]', this._quality).replace('[IMAGE_NAME]', this._image_name) 
+};
+
+ImageLoaderDevV14.prototype.img_tag = function() {
+  return '<img src="' + this.url_to_call() + '" width="' + this.render_width() + '" height="' + this.render_height() + '" />'
+};
+
+ImageLoaderDevV14.prototype.load_params = function(params) {
+  // This is the core funciton that takes all possible inputs.
+  // Convience methods will be used in production, but they will all communicate
+  // load_params. 
+
+  // Required
+  this._image_name = params["image_name"];
+  this._viewport_height = params["viewport_height"];
+  this._viewport_width = params["viewport_width"];
+  this._raw_height = params["raw_height"];
+  this._raw_width = params["raw_width"];
+  this._url_template = params["url_template"];
+
+  // Optional 
+  this._dpr = params["dpr"] ? params["dpr"] : 1;
+  this._max_render_width = params["max_render_width"] ? params["max_render_width"] : params["raw_width"];
+  this._percent_of_viewport_width = params["percent_of_viewport_width"] ? params["percent_of_viewport_width"] : 100;
+  this._quality = params["quality"] ? params["quality"] : 80;
+  
+  // If `percent_of_viewport_height` is called, translate it into `_percent_of_viewport_width`.
+  if("percent_of_viewport_height" in params) {
+    this._percent_of_viewport_width = Math.floor(this._viewport_height * params["percent_of_viewport_height"] * this._raw_width / this._raw_height / this._viewport_width);
+  }
+  
+};
+
+ImageLoaderDevV14.prototype.render_height = function() {
+  return  Math.floor(this._raw_height * this.render_width() / this._raw_width );
+};
+
+ImageLoaderDevV14.prototype.render_width = function() {
+  return Math.floor(Math.min(this._max_render_width, (this._percent_of_viewport_width * .01 * this._viewport_width)));
+};
+
+ImageLoaderDevV14.prototype.url_request_height = function() {
+  return this.render_height() * this._dpr; 
+};
+
+ImageLoaderDevV14.prototype.url_request_width = function() {
+  return this.render_width() * this._dpr; 
+};
+
+var imageLoader = new ImageLoaderDevV14;
+</script>
+```
+
+
+In case it's not obvious from the title...
+
+---
+
+
+__### WARNING: Spoilers for Wonder Woman (2017) Below ###__
+
+---
+
+
+```html
+<div class="photoWrapper" style="text-align: center">
+<script type="text/javascript">
+imageLoader.load_params(
+  {
+    // http://res.cloudinary.com/awsimages/image/upload/i/
+    dpr: window.devicePixelRatio ? window.devicePixelRatio : 1,
+    image_name: "wonder-woman-bad-ass.jpg",
+    max_render_width: 400,
+    quality: 85,
+    raw_height: 1511,
+    raw_width: 884,
+    viewport_height: window.innerHeight,
+    viewport_width: window.innerWidth,
+    url_template: "http://res.cloudinary.com/awsimages/image/upload/w_[WIDTH],h_[HEIGHT],q_[QUALITY]/i/[IMAGE_NAME]"
+  }
+);
+
+document.write(imageLoader.img_tag());
+</script>
+</div>
+```
+
+---
+
+
+- First off, I'm continuing my practice of avoiding trailers. This includes closing my eyes during the inevitable 20 minute gauntlet before a feature presentation starts.<sup>1</sup> This pays off in spades. 
+
+```html
+    For example, instead of seeing it the trailer, I got to experience the sword-in-the-back-of-the-dress reveal in context with the rest of the movie.
+
+    <div class="photoWrapper">
+    <script type="text/javascript">
+    imageLoader.load_params(
+      {
+        // http://res.cloudinary.com/awsimages/image/upload/i/
+        dpr: window.devicePixelRatio ? window.devicePixelRatio : 1,
+        image_name: "wonder-woman-dress-before-sword.jpg",
+        max_render_width: 660,
+        quality: 85,
+        raw_height: 963,
+        raw_width: 2304,
+        viewport_height: window.innerHeight,
+        viewport_width: window.innerWidth,
+        url_template: "http://res.cloudinary.com/awsimages/image/upload/w_[WIDTH],h_[HEIGHT],q_[QUALITY]/i/[IMAGE_NAME]"
+      }
+    );
+    document.write(imageLoader.img_tag());
+    </script>
+    </div>
+
+
+
+    <div class="photoWrapper">
+    <script type="text/javascript">
+    imageLoader.load_params(
+      {
+        // http://res.cloudinary.com/awsimages/image/upload/i/
+        dpr: window.devicePixelRatio ? window.devicePixelRatio : 1,
+        image_name: "wonder-woman-sword-dress.jpg",
+        max_render_width: 660,
+        quality: 85,
+        raw_height: 981,
+        raw_width: 2304,
+        viewport_height: window.innerHeight,
+        viewport_width: window.innerWidth,
+        url_template: "http://res.cloudinary.com/awsimages/image/upload/w_[WIDTH],h_[HEIGHT],q_[QUALITY]/i/[IMAGE_NAME]"
+      }
+    );
+    document.write(imageLoader.img_tag());
+    </script>
+    </div>
+
+
+    It was a delightful, "Ahhhh, yeah. It's about to get real" moment.<sup>2</sup>
+```
+
+
+- It should not have been possible to make a decent Wonder Woman movie in corporate Hollywood today. And yet, they somehow made a great one. One that leaps most movies (comic based or otherwise) in a single bound.
+
+- They walked an incredible balance of making Wonder Woman a powerful, intelligent, beautiful, confident, humane, and oh-yeah-a-god superhero. All while keeping her relatable. 
+
+  Related: Gal Gadot has replaced Daisy Ridley as my #1 Movie Star Crush. (At least, until the next Star Wars movie.)
+
+- The scene with the nude dude (in reverse of the usual random female sexualization scene) was a touch of genius.<sup>3, 4</sup>
+
+```html
+    <div class="photoWrapper">
+    <script type="text/javascript">
+    imageLoader.load_params(
+      {
+        // http://res.cloudinary.com/awsimages/image/upload/i/
+        dpr: window.devicePixelRatio ? window.devicePixelRatio : 1,
+        image_name: "star-trek-underwear-scene.jpg",
+        max_render_width: 660,
+        quality: 85,
+        raw_height: 1003,
+        raw_width: 2301,
+        viewport_height: window.innerHeight,
+        viewport_width: window.innerWidth,
+        url_template: "http://res.cloudinary.com/awsimages/image/upload/w_[WIDTH],h_[HEIGHT],q_[QUALITY]/i/[IMAGE_NAME]"
+      }
+    );
+
+    document.write(imageLoader.img_tag());
+    </script>
+    </div>
+
+
+    <div class="photoWrapper">
+    <script type="text/javascript">
+    imageLoader.load_params(
+      {
+        // http://res.cloudinary.com/awsimages/image/upload/i/
+        dpr: window.devicePixelRatio ? window.devicePixelRatio : 1,
+        image_name: "wonder-woman-nude-dude.jpg",
+        max_render_width: 660,
+        quality: 85,
+        raw_height: 954,
+        raw_width: 2304,
+        viewport_height: window.innerHeight,
+        viewport_width: window.innerWidth,
+        url_template: "http://res.cloudinary.com/awsimages/image/upload/w_[WIDTH],h_[HEIGHT],q_[QUALITY]/i/[IMAGE_NAME]"
+      }
+    );
+
+    document.write(imageLoader.img_tag());
+    </script>
+    </div>
+
+
+    <br />
+```
+
+
+- I can't believe they left in the part with the sniper for the good guys freezing up under fire.
+
+    It wouldn't have been surprising if the superhero was a guy. But, to show that breakdown in direct contrast with an unshakable woman superhero... I'm amazed studio execs didn't force the scene to be cut because they considered it emasculating.
+
+
+- I got choked up a few times thinking about how the little girls of my friends and family will grow up in a world where this film exists.
+
+    And, more to the point, Wonder Woman (form of: Gal Gadot) _will exist in their minds_. Helping them realize they are tougher and more capable than society might otherwise have lead them to believe.
+
+
+- Trend lines have been on my mind a lot recently. Plotting the increased power women have seen since the invention (and increasing commodification) of effective birth control, I had begun thinking the U.S. will become a matriarchy within 75 years. After seeing Wonder Woman, I'm revising my estimate down to within 50 years.
+
+    (By the way, part of my hypothesis is that much of the badness going on in today's society is the final, and naturally desperate, death throes of the traditional rich, white, male patriarchy. Something there's no way past except by going through it. But also, something that can't and won't last long.)
+
+
+So, yeah. Two thumbs up.
+
+
+___
+
+
+_Footnotes_
+
+1. You should totally give closing your eyes during trailers a try. You'll notice trailers are way longer than you realize. And, despite using very few words, how they tend to reveal a half dozen key plot points that were originally designed to be a surprise. 
+
+    I haven't started putting in headphones to try to drown out the audio yet. But, the idea is getting strong consideration. 
+
+2. I fully acknowledge the language in my head was stronger. 
+
+3. I pulled these images from trailers. They don't contain the rest of the Wonder Woman scene showing the much more revealing shot of Chris Pine with nothing but his hands to cover his privates. Otherwise, I would have used that.
+
+4. For those not familiar with "Star Trek - Into Darkness", the sleeve on the right belongs to the same Chris Pine who's naked in the next image.

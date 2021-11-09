@@ -1,0 +1,14 @@
+---
+created: 1613776718
+date: '2021-02-19T18:18:38'
+id: 20WSjZcpkMsn
+slug: /expect-a-flash-of-unstyled-content-fouc-in-dev-with-tailwind-2-and-gatsby
+tags:
+- Tailwind
+- Gatsby
+title: Expect A Flash Of Unstyled Content (FOUC) In Dev With Tailwind 2 and Gatsby
+---
+
+I was seeing a Flash Of Unstyled Content (FOUC) in my Gatsby site after installing Tailwind 2 via the [documentation](https://tailwindcss.com/docs/guides/gatsby). 
+
+Turns out that it does this when you run `gatsby develop`, but when you build the site with `gatsby build` the issue goes away. (Or, at least, it did with my small sample, TBD for larger builds, but it looks promising)

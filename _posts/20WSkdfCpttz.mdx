@@ -1,0 +1,28 @@
+---
+category: Command Line
+date: '2021-10-30T20:54:52'
+id: 20WSkdfCpttz
+slug: /rename-multiple-files-on-the-command-line-with-zmv-in-zsh
+status: published
+title: Rename Multiple Files On The Command Line With zmv In zsh
+type: post
+---
+
+This will rename all the `.mdx` files in the current directory to be `.txt` files
+
+```bash
+autoload zmv
+zmv '(*).mdx' '$1.txt'
+```
+
+one liner:
+
+```
+autoload zmv; zmv '(*).mdx' '$1.txt'
+```
+
+autoload is require because `zmv` isn't loaded by default
+
+
+
+via NyxKrage on twitch

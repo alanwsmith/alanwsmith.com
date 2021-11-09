@@ -1,0 +1,97 @@
+---
+category: Miscellaneous
+date: '2021-06-18T00:00:00'
+id: 20WSjwDj4qFD
+slug: /close-multiple-windows-in-a-neovim-plugin-via-the-api
+status: wip
+title: Close Multiple Windows In A Neovim Plugin Via The API
+type: post
+---
+
+### Overview
+
+Took me some time (and help from folks on the [OnlyDevs](https://www.twitch.tv/team/onlydevs) discord) to figure out how to close multiple floating windows with `:q` in a neovim plugin. The method I landed on is setting up the [WinClosed](https://neovim.io/doc/user/autocmd.html#WinClosed) autocommand to trigger a function that closes the rest of the windows. 
+
+
+### Code 
+
+Here's an example:
+
+__File: ~/.config/nvim/plugin/winclosed_multiple.vim__
+
+```vim
+if exists('g:loaded_winclosed_multiple') | finish | endif
+
+let s:save_cpo = &cpo
+set cpo&vim
+
+command! WinClosedMultiple lua require'winclosed_multiple'.winclosed_multiple()
+
+let &cpo = s:save_cpo
+unlet s:save_cpo
+
+let g:loaded_winclosed_multiple = 1
+```
+
+__File: ~/.config/nvim/lua/winclosed_multiple.lua__
+
+```lua
+local function close_windows()
+    vim.api.nvim_buf_delete(buffer1, {})
+    vim.api.nvim_buf_delete(buffer2, {})
+    vim.api.nvim_buf_delete(buffer3, {})
+    vim.api.nvim_buf_delete(buffer4, {})
+end
+
+local function winclosed_multiple()
+    buffer1 = vim.api.nvim_create_buf(false, true)
+    window1 = vim.api.nvim_open_win(buffer1, true, {
+            style="minimal", relative='editor',
+            row=3, col=3, width=10, height=6, border='single'
+        }
+    )
+    buffer2 = vim.api.nvim_create_buf(false, true)
+    window2 = vim.api.nvim_open_win(buffer2, true, {
+            style="minimal", relative='editor',
+            row=3, col=16, width=10, height=6, border='single'
+        }
+    )
+    buffer3 = vim.api.nvim_create_buf(false, true)
+    window3 = vim.api.nvim_open_win(buffer3, true, {
+            style="minimal", relative='editor',
+            row=3, col=29, width=10, height=6, border='single'
+        }
+    )
+    buffer4 = vim.api.nvim_create_buf(false, true)
+    window4 = vim.api.nvim_open_win(buffer4, true, {
+            style="minimal", relative='editor',
+            row=3, col=42, width=10, height=6, border='single'
+        }
+    )
+    vim.api.nvim_command(
+        'au WinClosed <buffer='..buffer1..'> lua require"winclosed_multiple".close_windows()'
+    )
+    vim.api.nvim_command(
+        'au WinClosed <buffer='..buffer2..'> lua require"winclosed_multiple".close_windows()'
+    )
+    vim.api.nvim_command(
+        'au WinClosed <buffer='..buffer3..'> lua require"winclosed_multiple".close_windows()'
+    )
+    vim.api.nvim_command(
+        'au WinClosed <buffer='..buffer4..'> lua require"winclosed_multiple".close_windows()'
+    )
+end
+
+return {
+    winclosed_multiple = winclosed_multiple,
+    close_windows = close_windows
+}
+```
+
+### Details
+
+- I'm not sure what the right way to install test plugins is, but dropping the files in the locations listed above worked for me
+- Call `:WinClosedMultiple` to run the example. It'll open four small windows that each have their own buffer
+- You can jump around with windows with `CTRL+W` then `W`
+- Closing any one of the small windows will close the remaining windows as well
+- Instead of using [vim.api.nvim_buf_delete()`](https://neovim.io/doc/user/api.html#nvim_buf_delete()) you can also use [vim.api.nvim_win_close()](https://neovim.io/doc/user/api.html#nvim_win_close()) if you want to leave the buffers open

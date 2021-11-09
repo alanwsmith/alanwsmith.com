@@ -1,0 +1,53 @@
+---
+category: Miscellaneous
+date: '2021-06-05T23:06:48'
+id: 20WSjjO82ly3
+slug: /tbd
+status: wip
+title: ''
+type: post
+---
+
+### File: ~/.config/nvim/lua/example_window_basics.lua
+
+    local function open_search_window()
+      sbuf = vim.api.nvim_create_buf(false, true)
+      swin = vim.api.nvim_open_win(sbuf, true ,
+                {style = "minimal",relative='win', row=5, col=5, width=40, height=4}
+            )
+      vim.api.nvim_command('au CursorMoved,CursorMovedI <buffer> :lua vim.api.nvim_buf_set_lines(2, 2, 4, false, {
+    end
+    
+    local function open_results_window()
+      rbuf = vim.api.nvim_create_buf(false, true)
+      vim.api.nvim_open_win(rbuf, false,
+            {style = "minimal",relative='win', row=20, col=5, width=40, height=4}
+        )
+    end
+    
+    
+    local function example_window_basics()
+        open_results_window()
+        open_search_window()
+    end
+    
+    
+    return {
+      example_window_basics = example_window_basics,
+    }
+    
+    
+File: ~/.config/nvim/plugin/example_window_basics.vim
+
+
+        if exists('g:loaded_example_window_basics') | finish | endif
+        
+        let s:save_cpo = &cpo
+        set cpo&vim
+        
+        command! ExampleWindowBasics lua require'example_window_basics'.example_window_basics()
+        
+        let &cpo = s:save_cpo
+        unlet s:save_cpo
+        
+        let g:loaded_example_window_basics = 1

@@ -1,0 +1,41 @@
+---
+category: Miscellaneous
+date: '2008-08-06T00:00:00'
+id: 20WSgf6ZBOiA
+slug: /changing-permalinks-but-it-wont-really-matter
+title: Changing PermaLinks (but it won't really matter)
+type: post
+---
+
+```
+TODO: Figure out why this isn't loading in MDX
+
+So, the theory behind "permalinks" is that they are supposed to
+stay the same. I'm breaking the rules and changing mine. The good
+news is that because of the way Wordpress is built, links to the
+old addresses won't break. Originally, when I set them up, the
+format was: /blog/{year}/{month}/{day}/{post-title}. I'm removing
+the {day} because it's overkill. When looking at a web page
+address, it's nice to see the year and month the page was created,
+but there isn't a whole lot of reason to for the day to be there.
+The developers who built WordPress included a very nice feature
+that handles these changes smoothly. Bacially, if it sees requests
+for the old style address (which would potentially be coming in
+from other sites), it automatically redirects them to the new
+location. So, if an incoming link is pointing to something like
+this:
+[http://www.alanwsmith.com/blog/2008/07/29/no-idea/](http://www.alanwsmith.com/blog/2008/07/29/no-idea/)
+WordPress will see it and automatically change it to remove the now
+extranious "/29" part. This is a great example of a good software
+design. If this wasn't handled and the format for the permalinks
+was changed, any links to the old format would immediately be
+broken. The user of the software shouldn't have to worry about
+stuff like that, and because WordPress developers thought about and
+designed for this, the user doesn't have to. It just works without
+really thinking about it. Another nice example of good software
+design is that if you remove the post-title from the address (e.g.
+[http://www.alanwsmith.com/blog/2008/07/](http://www.alanwsmith.com/blog/2008/07/))
+you'll get a list of all the articles that were posted in the
+corresponding month. Once again, very well thought out. Kudos to
+the WordPress team.
+```

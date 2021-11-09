@@ -1,0 +1,61 @@
+---
+created: 1613617922
+date: '2021-02-17T22:12:02'
+id: 20WSjSSuMI8i
+slug: /get-the-latest-markdown-mdx-file-with-a-specific-tag-in-gatsby
+title: Get The Latest MDX File With A Given Tag In Gatsby
+---
+
+This code:
+
+```javascript
+import React from "react"
+import { useStaticQuery, Link, graphql } from "gatsby"
+
+
+export default function LatestWipForHomePage() {
+
+    const data = useStaticQuery(
+        graphql`query {
+            allMdx (
+                sort: {
+                    fields: [frontmatter___date, frontmatter___title]
+                    order: DESC
+                }, 
+                filter: {frontmatter: {tags: {eq: "WIP"}}}, 
+                limit: 1
+                ) {
+                edges {
+                    node {
+                    id
+                    frontmatter {
+                        title
+                        slug
+                        date
+                        snippet
+                    }
+                    }
+                }
+            }
+        }`
+    )
+
+
+    return (
+        <div>
+            {data.allMdx.edges.map(({ node }) => (
+                <div key={node.id}>
+                    <h3>
+                        <Link to={node.frontmatter.slug}>
+                            {node.frontmatter.title}{" "}
+                        </Link>
+                    </h3>
+                    <p>{node.frontmatter.snippet}</p>
+                </div>
+            ))}
+        </div>
+    )
+}
+```
+
+will find a file

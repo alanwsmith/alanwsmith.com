@@ -1,0 +1,93 @@
+---
+category: Miscellaneous
+date: '2021-06-07T20:33:58'
+id: 20WSjl7w9isC
+slug: /tbd
+status: wip
+title: ''
+type: post
+---
+
+---
+
+This is how to send an alert in an app: 
+
+```osascript
+osascript -e 'tell application (path to frontmost application as text) to display dialog "Beware Zombies Ahead"'
+```
+
+And this removes the cancel button (leaving only OK) and puts an icon on:
+
+```osascript
+osascript -e 'tell application (path to frontmost application as text) to display dialog "Beware Zombies Ahead" buttons {"OK"} with icon stop'
+```
+
+Using this because apps may have Notification Center turned off. It seems these dialogs come through regardless
+
+---
+
+You can also do this which doesn't use a specific app. I think it should pop up on whatever monitor is active
+
+osascript -e 'tell app "System Events" to display dialog "Howdy Doo"'
+
+
+
+
+
+---
+
+NOTE: There is also this for system events:
+
+```osascript
+osascript -e 'tell app "System Events" to display dialog "Howdy Doo"'
+```
+
+
+---
+
+For notification center alerts
+
+
+To setup for a notification, make sure that under System Preferences -> Notification -> Script Editor is set to "Allow Notification", then you can run them with:
+
+osascript -e 'display notification "Basic Text Here" with title "Title Text Here"'
+
+
+---
+
+There is also this, but note that it may not show up on the monitor you're expecting. 
+
+
+  2                 response = subprocess.run([
+  1                     'osascript', '-e',
+489                     'display alert "Channel Update" message "{}"'.format(
+  1                         json_data['event']['title']
+  2                     )
+  3                 ])
+
+
+
+via: https://code-maven.com/display-notification-from-the-mac-command-line
+
+
+
+
+---
+
+
+---
+
+Or:
+
+-- NOTE These don't necessarily bring the finder to the front
+osascript -e 'tell app "Finder" to display dialog "Beware zombies ahead"'
+
+Here's another example:
+
+osascript -e $'tell app "Finder"\rdisplay dialog "Hello, world!"\rend'
+
+
+---
+
+
+via: https://osxdaily.com/2016/09/06/trigger-alert-dialog-mac-via-command-line/

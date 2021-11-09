@@ -1,0 +1,29 @@
+---
+category: Miscellaneous
+date: '2021-10-27T13:54:43'
+id: 20WSkSyS16jn
+slug: /tbd
+status: wip
+title: ''
+type: post
+---
+
+Do something like this in your `../styles/global.css` file:
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-2xl;
+  }
+  h2 {
+    @apply text-xl;
+  }
+}
+```
+
+
+via: https://tailwindcss.com/docs/adding-base-styles

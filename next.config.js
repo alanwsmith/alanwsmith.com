@@ -1,4 +1,5 @@
 module.exports = {
+  /*
   async rewrites() {
     return [
       {
@@ -7,4 +8,5 @@ module.exports = {
       },
     ]
   },
+  */
 }

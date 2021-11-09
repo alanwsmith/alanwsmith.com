@@ -1,0 +1,60 @@
+---
+blurb: I couldn't find good, concise nodes on working with S3 via V3 of the AWS JavaScript
+  SDK so I made my own
+category: JavaScript
+date: '2021-11-03T22:55:38'
+id: 20WSkgIXujVH
+slug: /download-a-file-from-s3-with-node-and-v3-of-the-aws-javascript-sdk
+status: scratch
+title: Download A File From S3 With Node And V3 Of The AWS JavaScript SDK
+type: post
+updated: 2021-11-03T22:55:38-0400
+---
+
+- Working on this in `~/workshop/aws_javascript_sdk_scratchpad/s3_download_file.js`
+
+
+
+Make a project and install the skd:
+
+```
+mkdir some_thing
+cd some_thing
+npm init -i
+# fill stuff out
+yarn add @aws-sdk/client-s3
+```
+
+
+
+echo 'console.log("Hello, World")' > index.js
+
+Notes:
+
+- In boto3 in python, you install a single module and get access to all the services. Here, AWS has setup to split each module to its own thing. 
+
+
+
+- Look at this one for a sample for a test file: https://github.com/aws/aws-sdk-js-v3/issues/1877 - But thinking why not just always do it the same with binary so you don't have to worry about making a switch
+
+https://stackoverflow.com/questions/36942442/how-to-get-response-from-s3-getobject-in-node-js#36944450
+
+https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/welcome.html
+
+https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/index.html
+
+https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/s3-example-photo-album-full.html
+
+https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-s3/classes/getobjectcommand.html
+
+https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/index.html
+
+https://dev.to/ldsrogan/aws-sdk-with-javascript-download-file-from-s3-el2 - this one gets a URL instead of reading it directly
+
+https://docs.aws.amazon.com/AmazonS3/latest/userguide/download-objects.html
+
+https://www.mydatahack.com/uploading-and-downloading-files-in-s3-with-node-js/
+
+https://github.com/aws/aws-sdk-js-v3/issues/1877
+
+https://stackoverflow.com/questions/43799246/s3-getobject-createreadstream-how-to-catch-the-error - see if this is V2 or V3 (I think it's 2)

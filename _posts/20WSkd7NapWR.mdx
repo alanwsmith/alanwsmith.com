@@ -1,0 +1,64 @@
+---
+category: Miscellaneous
+date: '2021-11-02T12:12:07'
+id: 20WSkd7NapWR
+slug: /search-and-replace-in-neovim-and-vim
+status: wip
+title: Search And Replace In Neovim And Vim
+type: post
+---
+
+## Everywhere in the file
+
+```
+:%s/foo/bar/g
+```
+
+
+## On the current line
+
+```
+:s/foo/bar/g
+```
+
+
+## Change on current line and next two lines (+2)
+
+```
+:.,+2s/foo/bar/g
+```
+
+
+Change in each line starting with 'baz'.
+
+```
+:g/^baz/s/foo/bar/g
+```
+
+
+## In all open tabs
+
+```
+:tabdo %s/foo/bar/g  
+``` 
+    
+
+## Change only on specific lines
+
+```
+:5,12s/foo/bar/g
+```
+    
+
+## Change all lines from mark `a` to mark `b` inclusive.
+
+```
+:'a,'bs/foo/bar/g
+```
+
+
+## Change from the current line (.) to the last line ($) inclusive.
+
+```
+:.,$s/foo/bar/g
+```

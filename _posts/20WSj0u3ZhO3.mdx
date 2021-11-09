@@ -1,0 +1,83 @@
+---
+date: '2020-12-21T00:00:00'
+id: 20WSj0u3ZhO3
+tags:
+- Javascript
+title: Sleep in JavaScript
+---
+
+via: https://stackoverflow.com/a/39914235/102401
+
+
+Example with external function:    
+    
+    function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+    
+    async function demo() {
+      console.log('Taking a break...');
+      await sleep(2000);
+      console.log('Two seconds later, showing sleep in a loop...');
+    
+      // Sleep in loop
+      for (let i = 0; i < 5; i++) {
+        if (i === 3)
+          await sleep(2000);
+        console.log(i);
+      }
+    }
+    
+    demo();
+    
+---
+
+
+Example with sleep inside as one-liner
+
+
+        async function clock_updater() {
+            for (let ticker = 0; ticker <= 5;  ticker += 1) {
+                await new Promise(r => setTimeout(r, 2000));
+                document.getElementById('timer').innerHTML = ticker;
+            }
+        }
+
+        clock_updater();
+
+
+---
+
+Also:
+
+
+const { performance } = require('perf_hooks');
+
+const delay = async (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+const testSuite = async (func, arg) => {
+   const t0 = performance.now();
+
+   await func();
+
+   const t1 = performance.now();
+
+   console.log(t1 - t0);
+}
+
+const FuncToTest = async () => {
+   await delay(10000);
+   console.log("FuncToTest");
+}
+
+testSuite(FuncToTest)
+
+
+
+--------------------------------------------------------------------------------
+
+
+
+
+
+- Must be in an async function

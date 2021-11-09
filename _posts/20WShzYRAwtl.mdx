@@ -1,0 +1,161 @@
+---
+blurb: SPOILERS! - I'd skip this one if you haven't seen Rogue One yet.
+category: Miscellaneous
+date: '2016-12-26T00:00:00'
+id: 20WShzYRAwtl
+slug: /thoughts-on-rogue-one
+tags:
+- Reviews
+title: Thoughts on Rogue One
+type: post
+---
+
+*NOTE: This code is disabled to get the page to work with MDX. TODO: Get working with MDX*
+
+```html
+<script type="text/javascript">
+var ImageLoaderDevV3 = function() {
+
+};
+
+ImageLoaderDevV3.prototype.url_to_call = function() {
+  return this._url_template.replace('[WIDTH]', this.url_request_width()).replace('[HEIGHT]', this.url_request_height()).replace('[QUALITY]', this._quality).replace('[IMAGE_NAME]', this._image_name) 
+};
+
+ImageLoaderDevV3.prototype.img_tag = function() {
+  return '<img src="' + this.url_to_call() + '" width="' + this.render_width() + '" height="' + this.render_height() + '" />'
+};
+
+ImageLoaderDevV3.prototype.load_params = function(params) {
+  // This is the core funciton that takes all possible inputs.
+  // Convience methods will be used in production, but they will all communicate
+  // load_params. 
+
+  // Required
+  this._image_name = params["image_name"];
+  this._viewport_height = params["viewport_height"];
+  this._viewport_width = params["viewport_width"];
+  this._raw_height = params["raw_height"];
+  this._raw_width = params["raw_width"];
+  this._url_template = params["url_template"];
+
+  // Optional 
+  this._dpr = params["dpr"] ? params["dpr"] : 1;
+  this._max_render_width = params["max_render_width"] ? params["max_render_width"] : params["raw_width"];
+  this._percent_of_viewport_width = params["percent_of_viewport_width"] ? params["percent_of_viewport_width"] : 100;
+  this._quality = params["quality"] ? params["quality"] : 80;
+  
+  // If `percent_of_viewport_height` is called, translate it into `_percent_of_viewport_width`.
+  if("percent_of_viewport_height" in params) {
+    this._percent_of_viewport_width = Math.floor(this._viewport_height * params["percent_of_viewport_height"] * this._raw_width / this._raw_height / this._viewport_width);
+  }
+  
+};
+
+ImageLoaderDevV3.prototype.render_height = function() {
+  return  Math.floor(this._raw_height * this.render_width() / this._raw_width );
+};
+
+ImageLoaderDevV3.prototype.render_width = function() {
+  return Math.floor(Math.min(this._max_render_width, (this._percent_of_viewport_width * .01 * this._viewport_width)));
+};
+
+ImageLoaderDevV3.prototype.url_request_height = function() {
+  return this.render_height() * this._dpr; 
+};
+
+ImageLoaderDevV3.prototype.url_request_width = function() {
+  return this.render_width() * this._dpr; 
+};
+
+var imageLoader = new ImageLoaderDevV3;
+</script>
+```
+
+I saw _Rogue One_ opening night and thoroughly enjoyed it. Instead of trying to write a single, coherent narrative about it, I'm just going to throw out a bunch of bullet points. Otherwise, this would never get finished.
+
+---
+
+
+__### WARNING: Spoilers for "Rogue One: A Star Wars Story" below. (Obviously) ###__
+
+---
+
+
+- It's pretty strong overall. The last act was masterful. 
+
+- The only thing I wish I'd known going in was that some humans would be CGI<sup>1</sup>. The initial appearance of each briefly pulled me out of the film. Being prepared for the Uncanny Valley<sup>2</sup> would have let me get through it faster. 
+
+- The in-joke references to the original films were well done and not too heavy handed (e.g. while the Blue Milk was there, the camera didn't dwell on it).
+
+- The "I've got a bad feeling..." line getting cut short was a touch of genius and perfectly timed. 
+
+- I got pulled out of the film when the Rebels set off remote explosives killing Stormtroopers. Instead of The (evil) Empire, I just saw them as soldiers in uniform. Perspective flipped, and all I could think about was uniformed U.S. soldiers getting caught in the explosions. (There's more worth thinking about here.)
+
+- I kept thinking, "Why the Hell didn't they iron Orson Krennic's cape?". Maybe it's just really hard to have a white cape like that that looks good on film. I can't imagine the look _wasn't_ intentional. It just didn't read well.
+
+- I managed to avoid all trailers and just about all production stills prior to seeing the film. This paid off several times. For example, take this image from the teaser trailer:
+
+```html
+    <div class="photoWrapper">
+    <script type="text/javascript">
+    imageLoader.load_params(
+      {
+        dpr: 2,
+        image_name: "misc--rogue-one-trailer.jpg",
+        percent_of_viewport_width: 88,
+        max_render_width: 700,
+        quality: 85,
+        raw_height: 714,
+        raw_width: 1708,
+        viewport_height: window.innerHeight,
+        viewport_width: window.innerWidth,
+        url_template: "http://res.cloudinary.com/awsimages/image/upload/w_[WIDTH],h_[HEIGHT],q_[QUALITY]/i/[IMAGE_NAME]"
+      }
+    );
+    
+  
+    document.write(imageLoader.img_tag());
+    </script>
+    </div>
+```
+
+
+Since I never saw the trailers, I had no idea AT-ATs would get involved at the beach. When they first show up, I had a wonderful "Oh, Shit!" moment that would have otherwise been lost. Similar moments occurred throughout. I got to delight is seeing scenes for the first time in their intended context.
+
+- Another thing about skipping the trailers: I wasn't mislead as to why the film is called _Rogue One_. The trailers make it seem like Jyn and crew go off on a sanctioned Rebel mission. When it became apparent they were going against orders, the dissonance would have taken me out of the film. I'm glad that didn't happen.
+
+- The photoshopping on the movie poster makes Jyn Erso look significantly younger. It almost feels like an image from an earlier film. 
+
+- Orson "Mr. White Cape" Krennic felt a bit like an over-the-top villain from the 1970s. Everything in the film had subtleties associated modern films except him.
+
+- In small ways, it felt like the first two acts were edited by a committee. Several folks all making sure their pet idea made it into the film. While it held up, I'd love to see a more refined edit. (No need to touch the last act though.) 
+
+- The quote "Many Bothans died to bring us this information" popped into my head as Rebels started getting gunned down on the beach. This lead to another "Oh, Shit!" Realizing most of them were going to get wiped out<sup>3</sup>. 
+
+- Lots of credit to whoever came up with the lower power, "single reactor" Death Star blast to solve for letting it shoot in _Rogue One_ without conflicting with the test firing on Alderaan in _A New Hope_.
+
+- I'm so glad they didn't kiss at the end<sup>4</sup>.
+
+- It strikes me as weirdly morose to sell toys of characters who are introduced and die in the same film.
+
+- I wonder if Jyn will become a Disney Princess despite the fact that we saw her die. 
+
+- I hope the success of _Rogue One_ opens up more movies from the Star Wars universe. I can't imagine it won't. Disney is a business. Buying the rights to the Star Wars franchise is an investment. They'll do their best to make a good return on it and making new movies is the natural way to go about that<sup>5</sup>. 
+
+
+
+---
+
+
+_Footnotes_
+
+1. Worth pointing out, I wouldn't have wanted to know _who_ was CGI, just that some people would be.
+
+2. [The Uncanny Valley](https://en.wikipedia.org/wiki/Uncanny_valley) is when things are made to look as human as possible but miss and we get weirded out by it. 
+
+3. Yes, I realized later the quote was about the plans for the other Death Star and those weren't Bothans in Rogue One. That doesn't diminish the feeling I had in the moment and the compounded feeling when the shock wave from the Death Star hit.
+
+4. I'm guessing there were lots of meetings with big shots at Disney and tons of pressure to have them kiss. Good on whoever made the final call to keep that from happening.
+
+5. Doing the [Thrawn trilogy](https://en.wikipedia.org/wiki/Thrawn_trilogy) would be awesome, but it sounds like licensing will complicate that matter.

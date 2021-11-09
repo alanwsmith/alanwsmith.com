@@ -39,8 +39,8 @@ export const getAllPosts = () => {
       //   console.log(title)
       // }
 
-      console.log(`Returning: ${slug}`)
-      console.log(`  with title: ${title}`)
+      // console.log(`Returning: ${slug}`)
+      // console.log(`  with title: ${title}`)
 
       return {
         title: title,

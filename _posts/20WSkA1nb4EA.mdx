@@ -1,0 +1,32 @@
+---
+category: React
+date: '2021-08-19T14:02:32'
+id: 20WSkA1nb4EA
+slug: /print-out-an-object-in-react-with-jso-stringify
+status: published
+title: Print Out An Object In React With JSON.stringify
+type: post
+---
+
+TODO: Fix the formatting of this post that got busted during the move to nextjs
+
+---
+
+
+
+```
+If you get this when you're trying to print out an object with something like:
+
+``jsx
+<div>{exampleObject}</div>
+``
+
+Error: Objects are not valid as a React child (found: object with keys {example_keys}). If you meant to render a collection of children, use an array instead.
+
+Use this:
+
+``jsx
+<div>{JSON.stringify(exampleObject)}</div>
+``
+
+```

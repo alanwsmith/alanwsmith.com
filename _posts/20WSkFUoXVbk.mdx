@@ -1,0 +1,84 @@
+---
+category: Miscellaneous
+date: '2021-09-04T13:33:53'
+id: 20WSkFUoXVbk
+slug: /tbd
+status: wip
+title: play
+type: post
+---
+
+long and short of this, I guess your supposed to commit after each insert. I figured I'd batch the commits, but that times out. 
+
+
+
+I've got a process that does several insert statements over time with the python mysql.connector. It's throwing errors like:
+
+```
+Traceback (most recent call last):
+  File "/Users/___/workshop/venv/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 513, in cmd_query
+    self._cmysql.query(query,
+_mysql_connector.MySQLInterfaceError: vttablet: rpc error: code = Aborted desc = transaction 1630645162156458160: ended at 2021-09-04 17:19:14.991 UTC (exceeded timeout: 20s) (CallerID: unsecure_grpc_client)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/___/workshop/03_download_playlistitems_jsons/./timeout_test.py", line 33, in <module>
+    run_test()
+  File "/Users/___/workshop/03_download_playlistitems_jsons/./timeout_test.py", line 24, in run_test
+    cursor.execute(insert_statement, (test_string, test_string))
+  File "/Users/___/workshop/venv/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 269, in execute
+    result = self._cnx.cmd_query(stmt, raw=self._raw,
+  File "/Users/___/workshop/venv/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 518, in cmd_query
+    raise errors.get_mysql_exception(exc.errno, msg=exc.msg,
+mysql.connector.errors.DatabaseError: 1317 (70100): vttablet: rpc error: code = Aborted desc = transaction 1630645162156458160: ended at 2021-09-04 17:19:14.991 UTC (exceeded timeout: 20s) (CallerID: unsecure_grpc_client)
+```
+
+Here's a mocked example (forcing a second between inserts) that I'm seeing the issue with:
+
+```python
+#!/usr/bin/env python3
+
+import keyring
+import mysql.connector
+import time
+import uuid
+
+
+def run_test():
+    connection = mysql.connector.connect(
+        user=keyring.get_password('planetscale-user', 'local_account'),
+        password=keyring.get_password('planetscale-password', 'local_account'),
+        host=keyring.get_password('planetscale-host', 'local_account'),
+        database=keyring.get_password('planetscale-database', 'local_account')
+    )
+
+    cursor = connection.cursor()
+
+    insert_statement = "INSERT INTO genres (primaryKey, genre) VALUES (%s, %s)"
+
+    for num in range(1,100):
+        test_string = str(uuid.uuid4())
+        print(f"Processing: {test_string}")
+        cursor.execute(insert_statement, (test_string, test_string))
+        time.sleep(1)
+
+    connection.commit()
+    cursor.close()
+    connection.close()
+
+
+if __name__ == '__main__':
+    run_test()
+```
+
+I can get around this by doing more frequent commits. 
+
+```
+    for num in range(1,100):
+        test_string = str(uuid.uuid4())
+        print(f"Processing: {test_string}")
+        cursor.execute(insert_statement, (test_string, test_string))
+        connection.commit()
+        time.sleep(1)
+```

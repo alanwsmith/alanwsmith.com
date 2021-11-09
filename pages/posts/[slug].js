@@ -20,7 +20,7 @@ const Post = ({ code, frontmatter }) => {
 export const getStaticProps = async ({ params }) => {
   console.log('-- This is getStaticProps --')
   // const post = await getSinglePost(params.slug)
-  const post = await getSinglePost('QWERQWER')
+  const post = await getSinglePost('20WSeUJYfBd3')
   // const post = {}
   return {
     props: { ...post },

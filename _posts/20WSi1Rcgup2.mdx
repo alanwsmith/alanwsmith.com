@@ -1,0 +1,110 @@
+---
+blurb: 'Beware: XSL Schema''s built in integers don''t protect you from the curse
+  of leading zeros. Here''s how to protect yourself.'
+category: Miscellaneous
+date: '2016-03-10T00:00:00'
+id: 20WSi1Rcgup2
+slug: /xml-schema-definition-for-integer-without-leading-zeros
+tags: []
+title: An XML Schema (XSD) Definition to Prevent Leading Zeros in Integers
+type: post
+---
+
+The XML Schema specification<sup>1</sup> provides several handy data types. For example, _xs:positiveInteger_<sup>2</sup> produces "the standard mathematical concept of the positive integer numbers." 
+
+Well, mostly. 
+
+There's a hidden gotcha in positiveInteger. It allows an anathema. _Leading zeros_. 
+
+For example, given the definition:
+
+```xml{numberLines: true}
+<xs:element name="node">
+  <xs:complexType>
+    <xs:attribute name="number" type="xs:positiveInteger"/>
+  </xs:complexType>
+</xs:element>
+```
+
+These are all valid<sup>3</sup>:
+
+```xml{numberLines: true}
+<node number="1"/>
+<node number="100"/>
+<node number="8675309"/>
+<node number="007"/>
+```
+
+That last one can cause all kinds of havoc. 
+
+When leading zeros are involved in data feeds, they have to be treated as either a string (to maintain the zeros) or converted into an actual integer. Given a system of any size or longevity, the likelihood of different processes making opposing choices approaches 100%. Subtle, super-annoying bugs are born. Ones that take a surprisingly large amount of time to fix<sup>4</sup>.
+
+Thankfully, XML Schema is robust enough that we can define data types that prohibit leading zeros. For example:
+
+```xml{numberLines: true}
+<xs:simpleType name="_positive_integer_without_leading_zeros">
+  <xs:restriction base="xs:positiveInteger">
+    <xs:pattern value="[123456789]\d*"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:element name="node">
+  <xs:complexType>
+    <xs:attribute name="number" type="_positive_integer_without_leading_zeros"/>
+  </xs:complexType>
+</xs:element>
+```
+
+This works by using a Regular Expression<sup>5</sup> to enforce the data format. It's a little easier to understand by breaking pattern's `value` into two parts. First:
+
+    [123456789]
+
+Anything inside square brackets identifies possible values for a single character. So, `[123456789]` at the start of the pattern value means the first character must be either: 1, 2, 3, 4, 5, 6, 7, 8, or 9. The lack of zero means anything starting with a "0" won't match and will therefore be rejected as invalid.
+
+The second part of the pattern is:
+
+    \d*
+
+A `\d` (without the `*`) tells the pattern matcher to look for any single digit. If it was by itself, it would mean there always has to be a second character and that character must be a digit. The `*` modifies `\d` to allow "zero or more" digits. 
+
+If the data being matched is a single character, the `\d*` has no real effect. If there are two or more characters, it enforces the restriction that every character from the second until the end must be a digit. Unlike the earlier `[123456789]`, the `\d` pattern includes all possible digits, including zero. 
+
+Combined, the `[123456789]\d*` pattern produces the desired behavior. These actual integers all pass the validation test:
+
+```xml{numberLines: true}
+<node number="1"/>
+<node number="100"/>
+<node number="8675309"/>
+```
+
+But this one's accurately rejected as invalid:
+
+```xml{numberLines: true}
+<node number="007"/>
+``` 
+
+This little snippet is now safe from those pesky little leading zeros sneaking in.
+
+Count yourself lucky if you've never had to deal with leading zeros. If you want to avoid them in future XML use this type of custom data type instead of _xs:positiveInteger_.
+
+---
+
+
+_Notes_
+
+1. This technique works equally well in XML Schema 1.0 and 1.1. 
+
+2. The `xs:positiveInteger` data type allows "+" at the start of the number (e.g. "+8675309"). The definition above doesn't. I built it to deal with unique IDs from a database. None of which contain the "+". Changing the pattern value to `\+?[123456789]\d*` would accommodate the plus if you need it. Other variations are left as exercises for the reader. 
+
+
+_Footnotes_
+
+1. [Official XML Schema Documentation](https://www.w3.org/standards/xml/schema)
+
+2. [xs:positiveInteger details](https://www.w3.org/TR/2012/REC-xmlschema11-2-20120405/#positiveInteger)
+
+3. While not all validators find the same things, the "007" string was a valid `xs:positiveInteger_` value in Saxon-EE 9.6.0.5, LIBXML, and Xerces running in [oXygen XML Editor](https://www.oxygenxml.com/). Speaking of which, if you do any XML work at all and don't know about oXygen, you should check it out. It's expensive but totally worth it. 
+
+4. This doesn't even begin to get into what happens when everyone agrees that strings are the way to go but you run out of numbers and need to add a new zero to the front.
+
+5. [Regular Expressions](https://en.wikipedia.org/wiki/Regular_expression) - a sequence of characters that define a search pattern - the heart and soul of text processing for an old Perl coder like me.

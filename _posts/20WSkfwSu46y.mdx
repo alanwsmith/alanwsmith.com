@@ -1,0 +1,21 @@
+---
+blurb: An async file write was causing me issues with sharp. fs.writeFileSync got
+  things working as expected.
+category: Miscellaneous
+date: '2021-11-04T17:01:17'
+id: 20WSkfwSu46y
+slug: /nodejs-sharp-error-input-file-contains-unsupported-image-format-might-be-a-race-condition
+status: published
+title: Node.js sharp error - Input file contains unsupported image format might be
+  a race condition
+type: post
+updated: 2021-11-04T17:01:17-0400
+---
+
+Was doing some S3 work where I had `fs.writeFile` that worked locally but not on the server. 
+
+Realized that it was causing a race condition with sharp. 
+
+Fix was to flip over to using `fs.writeFileSync` so the process didn't move on until the file was finished writing
+
+- https://www.geeksforgeeks.org/node-js-fs-writefilesync-method/

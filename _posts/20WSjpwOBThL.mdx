@@ -1,0 +1,29 @@
+---
+category: Neovim
+date: '2021-06-16T13:19:06'
+id: 20WSjpwOBThL
+slug: /customize-your-vim-neovim-status-bar
+status: wip
+title: Customize Your Vim/Neovim Status Bar
+type: post
+---
+
+This is a copy of the example of how to customize your status line [from here](https://www.vi-improved.org/recommendations/)
+
+
+
+```txtx
+set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
+"              | | | | |  |   |      |  |     |    |
+"              | | | | |  |   |      |  |     |    +-- current column
+"              | | | | |  |   |      |  |     +-- current line
+"              | | | | |  |   |      |  +-- current % into file
+"              | | | | |  |   |      +-- current syntax
+"              | | | | |  |   +-- current fileformat
+"              | | | | |  +-- number of lines
+"              | | | | +-- preview flag in square brackets
+"              | | | +-- help flag in square brackets
+"              | | +-- readonly flag in square brackets
+"              | +-- rodified flag in square brackets
+"              +-- full path to file in the buffer
+```

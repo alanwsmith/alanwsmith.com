@@ -1,0 +1,32 @@
+---
+category: Miscellaneous
+date: '2021-10-08T12:03:15'
+id: 20WSkTFokmr4
+slug: /use-sharp-to-process-an-image
+status: wip
+title: Use Sharp To Process An Image
+type: post
+---
+
+```javascript
+const sharp = require("sharp");
+
+sharp("input.jpg")
+  .resize({ width: 1024, height: 768 })
+  .toFile("output.jpg")
+```
+
+More details here: https://sharp.pixelplumbing.com/api-resize
+
+
+---
+
+Installation is done with:
+
+Install with:
+
+```bash
+npm install sharp
+# or
+yarn add sharp
+```

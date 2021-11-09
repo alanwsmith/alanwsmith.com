@@ -1,0 +1,90 @@
+---
+category: Miscellaneous
+date: '2021-10-03T22:14:19'
+id: 20WSkYKsGskq
+slug: /tbd
+status: wip
+title: ''
+type: post
+---
+
+This shows basic handling including how to get the data from the fetch response object
+
+TODO: Clean this up and show the api that sends data back too. 
+
+```javascript
+import { useAuthContext } from '../contexts/auth'
+import { useRouter } from 'next/router'
+import { useState } from 'react'
+
+import Link from 'next/link'
+
+export default function SongAdder() {
+  const { session } = useAuthContext()
+  const { query } = useRouter()
+  const streamerId = query.streamerId
+  const songPrimaryKey = query.songPrimaryKey
+
+  // TODO: Make sure this is passing stuff securely and
+  // only what it needs to, e.g. put streamer into a session
+  // variable
+
+  return (
+    <>
+      <h3>Song Adder</h3>
+      <div>
+        Logged in user: {session.user.name} - {session.user.id}
+      </div>
+      <Form streamerId={streamerId} songPrimaryKey={songPrimaryKey} />
+    </>
+  )
+}
+
+function Form({ streamerId, songPrimaryKey }) {
+  const router = useRouter()
+  const [bits, setBits] = useState(100)
+  const handleBitsChange = (event) => {
+    setBits(event.target.value)
+  }
+  const sendSong = async (event) => {
+    event.preventDefault()
+    const res = await fetch(
+      `/api/add-song-to-queue` +
+        `?streamerId=${streamerId}` +
+        `&songPrimaryKey=${songPrimaryKey}` +
+        `&numberOfBits=${event.target.bits.value}`,
+      {
+        method: 'GET',
+      }
+    ).then(async (res) => {
+      console.log('Got response')
+      if (res.status === 202) {
+        console.log('data was accepted')
+        const data = await res.json()
+        console.log(data)
+        router.push('/add-song-to-queue-succeeded')
+      } else {
+        console.log('data was not accepted')
+        const data = await res.json()
+        console.log(data)
+        router.push('/add-song-to-queue-failed')
+      }
+    })
+  }
+  return (
+    <form onSubmit={sendSong}>
+      <label htmlFor="bits">Bits</label>
+      <input
+        id="bits"
+        name="bits"
+        type="number"
+        size="7"
+        value={bits}
+        onChange={handleBitsChange}
+        required
+      />
+      <button type="submit">Confirm</button>
+    </form>
+  )
+}
+```

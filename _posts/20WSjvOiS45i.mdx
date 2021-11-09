@@ -1,0 +1,23 @@
+---
+category: Miscellaneous
+date: '2021-06-18T17:43:59'
+id: 20WSjvOiS45i
+slug: /tbd
+status: wip
+title: ''
+type: post
+---
+
+nvim_buf_delete({buffer}, {opts})                          *nvim_buf_delete()*
+                Deletes the buffer. See |:bwipeout|
+
+                Attributes: 
+                    not allowed when |textlock| is active
+
+                Parameters: 
+                    {buffer}  Buffer handle, or 0 for current buffer
+                    {opts}    Optional parameters. Keys:
+                              • force: Force deletion and ignore unsaved
+                                changes.
+                              • unload: Unloaded only, do not delete. See
+                                |:bunload|

@@ -1,0 +1,67 @@
+---
+blurb: ExtendScript ToolKit uses "/Volumes" instead of "/" in some cases.
+category: Miscellaneous
+date: '2014-03-02T00:00:00'
+id: 20WShchkjzQj
+slug: /folder-creation-bug-in-extendscript-toolkit
+tags: []
+title: Folder creation bug in Adobe ExtendScript ToolKit
+type: post
+---
+
+*This is the story of an Adobe ExtendScript ToolKit bug. A bug that took two hours to figure out. It's unlikely that anyone else will ever run into the same bug. On the off chance someone does, maybe they'll find this post and it'll save them some time.*
+
+I'm building a JavaScript scaffold for Photoshop automation scripts. Something to help build them with less overhead. It will provide config file parsing, logging and simplified file creation. One aspect is that it will automatically make folders when necessary. This is where the bug popped up. 
+
+The scaffold logs errors when it can't complete a request. To test the error messages when it can't create a directory, I tried to make a folder at the root of the file system. Since that's not a place normal users have the ability to write to, it should have failed. It didn't. 
+
+Running:
+
+```javascript{numberLines: true}
+var testFolder = new Folder("/ExtendScriptTestDir");
+$.writeln("Create should return false. Got: " + testFolder.create());
+$.writeln("Exists should return false. Got: " + testFolder.exists);
+```
+
+Produces this the first time:
+
+```javascript{numberLines: true}
+// Create should return false. Got: true
+// Exists should return false. Got: false
+```
+
+And this on subsequent runs:
+
+```javascript{numberLines: true}
+// Create should return false. Got: true
+// Exists should return false. Got: true
+```
+
+This makes no sense for three reasons:
+
+1. There is no way the script should be able make directories at the top of the file system. 
+2. Checking for it should have given the same result the first time through as the following times. 
+3. When actually looking for it, there is no directory where the script reports there is.
+
+After a lot of fruitless command line exploration and googling, I tracked down what's going on. Instead of making the directory at the top of the file tree (e.g. `/ExtendScriptTestDir`), it's created in the `/Volumes` directory (e.g. `/Volumes/ExtendScriptTestDir`). Then, for some odd reason, the `exists` check doesn't see it immediately but picks it up after a short period of time. 
+
+I can't explain the behavior, but at least it's consistent. More importantly, as log as there is at least one sub directory thing behave as expected:
+
+
+```javascript{numberLines: true}
+var testFolder = new Folder("/ExtendScriptTestDirAlt/subdir");
+$.writeln("Create should return false. Got: " + testFolder.create());
+$.writeln("Exists should return false. Got: " + testFolder.exists);
+
+// Always produces:
+// Create should return false. Got: false
+// Exists should return false. Got: false
+```
+
+
+The moral of the story: don't try to make a folder at the root of the file system. 
+
+---
+
+
+Note: This was all using a Mac running 10.9.2 and the CS6 version of Photoshop and ExtendScript Toolkit. I started to open a bug with adobe, but they don't list ExtendScript Toolkit in their drop down of apps and the login page timed out. I'm putting a note in the scaffold's docs about the bug. Maybe they'll see it there.

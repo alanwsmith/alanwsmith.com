@@ -1,0 +1,24 @@
+---
+category: Miscellaneous
+date: '2021-09-07T21:14:06'
+id: 20WSkR6BXYBu
+slug: /tbd
+status: wip
+title: ''
+type: post
+---
+
+TODO: See if you can just update one item? Or just add a new one? What about removing things, is that just setting to null
+
+
+
+```javascript
+const [activePlaylist, setActivePlaylist] = useState({title: "Old", song: [])
+
+
+setActivePlaylist((previousState) => ({
+    ...previousState,
+    title: 'New',
+    songs: [],
+}))
+```

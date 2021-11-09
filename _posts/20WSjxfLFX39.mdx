@@ -1,0 +1,26 @@
+---
+category: Miscellaneous
+date: '2021-07-15T22:58:45'
+id: 20WSjxfLFX39
+slug: /receive-json-in-a-python-flask-server
+status: wip
+title: Receive JSON In A Python Flask Server
+type: post
+---
+
+use
+
+```python
+request.get_json()
+```
+
+e.g.
+
+```python
+@app.route('/post/data',methods=['GET','POST'])
+def postdata():
+    jsonData = request.get_json()
+    print jsonData['name']
+    print jsonData['age']
+    return "hello world" #or whatever you want to return
+```

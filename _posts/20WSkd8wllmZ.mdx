@@ -1,0 +1,63 @@
+---
+category: Web Development
+date: '2021-10-31T13:39:25'
+id: 20WSkd8wllmZ
+slug: /favicon-sizes-and-code-cheat-sheet-2022-edition
+status: published
+title: Favicon Sizes And Code Cheat Sheet - 2022 Edition
+type: post
+---
+
+### Sizes Of .png Files To Make
+
+- 16x16
+- 32x32
+- 70x70
+- 96x96
+- 128x128
+- 152x152
+- 167x167
+- 180x180
+- 196x196
+- 228x228
+- 270x270
+- 310x310
+
+
+### Link Tags To Place In `<head>`
+
+```html
+<link rel="icon" type="image/png" sizes="16x16" href="/favicons/16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicons/32x32.png" />
+<link rel="icon" type="image/png" sizes="96x96" href="/favicons/96x96.png" />
+<link rel="icon" type="image/png" sizes="128x128" href="/favicons/128x128.png" />
+<link rel="icon" type="image/png" sizes="196x196" href="/favicons/196x196.png" />
+<link rel="icon" type="image/png" sizes="228x228" href="/favicons/228x228.png" />
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="/favicons/152x152.png" />
+<link rel="apple-touch-icon-precomposed" sizes="167x167" href="/favicons/167x167.png" />
+<link rel="apple-touch-icon-precomposed" sizes="180x180" href="/favicons/180x180.png" />
+```
+
+### A `/browserconfig.xml` for Windows
+
+```html
+<?xml version="1.0" encoding="utf-8"?>
+<browserconfig>
+  <msapplication>
+    <tile>
+      <square70x70logo src="/favicons/70x70.png"/>
+      <square70x70logo src="/favicons/270x270.png"/>
+      <square70x70logo src="/favicons/310x310.png"/>
+      <TileColor>#ffffff</TileColor>
+    </tile>
+  </msapplication>
+</browserconfig>
+```
+
+### Notes
+
+- These sizes are from [this page](https://sympli.io/blog/heres-everything-you-need-to-know-about-favicons-in-2020/) but consolidated and with all the prose removed to make it easier to get the full picture. 
+- The examples all use a `/favicons` directory at the root of the site, but any path can be used including external CDNs
+- The `/browserconfig.xml` is listed as being necessary for Windows 10's UI.
+- There's also a 310x150 listed for windows. Not sure where that's for, but I'm sticking with just the square ones myself for the sake of simplicity
+- Yes. I'm posting this in Nov. 2021 but titling it 2022. It's close enough and if car manufacturers can do it, so can I.

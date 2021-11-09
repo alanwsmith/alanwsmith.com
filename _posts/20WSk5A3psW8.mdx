@@ -1,0 +1,20 @@
+---
+category: Miscellaneous
+date: '2021-07-23T13:37:28'
+id: 20WSk5A3psW8
+slug: /tbd
+status: wip
+title: Use A Specific AWS Credentials Profile With boto3.client
+type: post
+---
+
+Use `setup_default_session` to use another profile with a `boto3.client()` call:
+
+
+```python
+import boto3
+
+boto3.setup_default_session(profile_name='demo_cli')
+
+client = boto3.client('s3')
+```

@@ -1,0 +1,242 @@
+---
+categories:
+- Miscellaneous
+- Development
+date: '2013-07-10T00:00:00'
+description: Examples of using Ruby's $0 and __FILE__ in different files being accessed
+  in different ways.
+id: 20WShaRUVYh5
+layout: post
+thumbnail: /image-graphics/thumbnail-of-code.png
+title: Understanding "$0" and "__FILE__" in Ruby
+---
+
+TODO: Put in some examples of where paths change that you might not have expected. For example, running in subdirectories that call siblings. 
+
+TODO: Build a script that will let you run the samples and generate all the command line output.
+
+
+**Overview**
+
+Ruby's "`$0`" and "`__FILE__`" provide useful references to the executed and currently active file, respectively. In an effort to understand exactly how they behave (and where the gotchas are), I built a set of five scripts that run through most of the possible usage permutations. The output from each file is captured below. It's based on running each file one of four different ways: 1) from the command line while at the root of the main test directory, 2) from the command line while one directory above the main test directory, 3) from the command line while one directory below the main test directory, and 4) from Sublime Text 2's "Tools -> Build" option. (For those keeping score, the environment is Mac OS X 10.8.4 using ruby-1.9.3-p392 from RVM.) 
+
+Fair warning, reproducing all these iterations makes for a very long page. 
+
+---
+
+**The Source File Setup**
+
+The five source files are located in the following places:
+
+	/Users/alans/ruby-path-test/a.rb
+	/Users/alans/ruby-path-test/b.rb
+	/Users/alans/ruby-path-test/c.rb
+	/Users/alans/ruby-path-test/sub/d.rb
+	/Users/alans/ruby-path-test/sub/e.rb
+
+Each script produces the same basic output. They show eight examples of using both "`__FILE__`" and "`$0`" to get the file and directory paths/names. For each command line and Sublime Text run, the files are run in a, b, c... order. The "a.rb" file makes no additional calls but the following files each call the one before them. That is, when the "e.rb" file is run, the output from all four prior files is also generated. This provides a clear example of what each file in the chain responds with. 
+
+To jump right into the example outputs, the actual source for each file has been pushed all the way to the bottom of the post. 
+
+---
+
+**Test Directory Command Line Run**
+
+These examples are run from the directory "`/Users/alans/ruby-path-test`". The specific command used to launch the script prefaces each output set.
+
+*ruby a.rb*
+
+	a.rb $0                                       = a.rb
+	a.rb File.dirname($0)                         = .
+	a.rb File.expand_path($0)                     = /Users/alans/ruby-path-test/a.rb
+	a.rb File.expand_path(File.dirname($0))       = /Users/alans/ruby-path-test
+	a.rb __FILE__                                 = a.rb
+	a.rb File.dirname(__FILE__)                   = .
+	a.rb File.expand_path(__FILE__)               = /Users/alans/ruby-path-test/a.rb
+	a.rb File.expand_path(File.dirname(__FILE__)) = /Users/alans/ruby-path-test
+
+
+*ruby b.rb*
+
+	a.rb $0                                       = b.rb
+	a.rb File.dirname($0)                         = .
+	a.rb File.expand_path($0)                     = /Users/alans/ruby-path-test/b.rb
+	a.rb File.expand_path(File.dirname($0))       = /Users/alans/ruby-path-test
+	a.rb __FILE__                                 = /Users/alans/ruby-path-test/a.rb
+	a.rb File.dirname(__FILE__)                   = /Users/alans/ruby-path-test
+	a.rb File.expand_path(__FILE__)               = /Users/alans/ruby-path-test/a.rb
+	a.rb File.expand_path(File.dirname(__FILE__)) = /Users/alans/ruby-path-test
+
+	b.rb  $0                                       = b.rb
+	b.rb  File.dirname($0)                         = .
+	b.rb  File.expand_path($0)                     = /Users/alans/ruby-path-test/b.rb
+	b.rb  File.expand_path(File.dirname($0))       = /Users/alans/ruby-path-test
+	b.rb  __FILE__                                 = b.rb
+	b.rb  File.dirname(__FILE__)                   = .
+	b.rb  File.expand_path(__FILE__)               = /Users/alans/ruby-path-test/b.rb
+	b.rb  File.expand_path(File.dirname(__FILE__)) = /Users/alans/ruby-path-test
+
+
+*ruby c.rb*
+
+	a.rb $0                                       = c.rb
+	a.rb File.dirname($0)                         = .
+	a.rb File.expand_path($0)                     = /Users/alans/ruby-path-test/c.rb
+	a.rb File.expand_path(File.dirname($0))       = /Users/alans/ruby-path-test
+	a.rb __FILE__                                 = /Users/alans/ruby-path-test/a.rb
+	a.rb File.dirname(__FILE__)                   = /Users/alans/ruby-path-test
+	a.rb File.expand_path(__FILE__)               = /Users/alans/ruby-path-test/a.rb
+	a.rb File.expand_path(File.dirname(__FILE__)) = /Users/alans/ruby-path-test
+
+	b.rb  $0                                       = c.rb
+	b.rb  File.dirname($0)                         = .
+	b.rb  File.expand_path($0)                     = /Users/alans/ruby-path-test/c.rb
+	b.rb  File.expand_path(File.dirname($0))       = /Users/alans/ruby-path-test
+	b.rb  __FILE__                                 = /Users/alans/ruby-path-test/b.rb
+	b.rb  File.dirname(__FILE__)                   = /Users/alans/ruby-path-test
+	b.rb  File.expand_path(__FILE__)               = /Users/alans/ruby-path-test/b.rb
+	b.rb  File.expand_path(File.dirname(__FILE__)) = /Users/alans/ruby-path-test
+
+	c.rb  $0                                       = c.rb
+	c.rb  File.dirname($0)                         = .
+	c.rb  File.expand_path($0)                     = /Users/alans/ruby-path-test/c.rb
+	c.rb  File.expand_path(File.dirname($0))       = /Users/alans/ruby-path-test
+	c.rb  __FILE__                                 = c.rb
+	c.rb  File.dirname(__FILE__)                   = .
+	c.rb  File.expand_path(__FILE__)               = /Users/alans/ruby-path-test/c.rb
+	c.rb  File.expand_path(File.dirname(__FILE__)) = /Users/alans/ruby-path-test
+
+
+*ruby sub/d.rb*
+
+	a.rb $0                                       = sub/d.rb
+	a.rb File.dirname($0)                         = sub
+	a.rb File.expand_path($0)                     = /Users/alans/ruby-path-test/sub/d.rb
+	a.rb File.expand_path(File.dirname($0))       = /Users/alans/ruby-path-test/sub
+	a.rb __FILE__                                 = /Users/alans/ruby-path-test/a.rb
+	a.rb File.dirname(__FILE__)                   = /Users/alans/ruby-path-test
+	a.rb File.expand_path(__FILE__)               = /Users/alans/ruby-path-test/a.rb
+	a.rb File.expand_path(File.dirname(__FILE__)) = /Users/alans/ruby-path-test
+
+	b.rb  $0                                       = sub/d.rb
+	b.rb  File.dirname($0)                         = sub
+	b.rb  File.expand_path($0)                     = /Users/alans/ruby-path-test/sub/d.rb
+	b.rb  File.expand_path(File.dirname($0))       = /Users/alans/ruby-path-test/sub
+	b.rb  __FILE__                                 = /Users/alans/ruby-path-test/b.rb
+	b.rb  File.dirname(__FILE__)                   = /Users/alans/ruby-path-test
+	b.rb  File.expand_path(__FILE__)               = /Users/alans/ruby-path-test/b.rb
+	b.rb  File.expand_path(File.dirname(__FILE__)) = /Users/alans/ruby-path-test
+
+	c.rb  $0                                       = sub/d.rb
+	c.rb  File.dirname($0)                         = sub
+	c.rb  File.expand_path($0)                     = /Users/alans/ruby-path-test/sub/d.rb
+	c.rb  File.expand_path(File.dirname($0))       = /Users/alans/ruby-path-test/sub
+	c.rb  __FILE__                                 = /Users/alans/ruby-path-test/c.rb
+	c.rb  File.dirname(__FILE__)                   = /Users/alans/ruby-path-test
+	c.rb  File.expand_path(__FILE__)               = /Users/alans/ruby-path-test/c.rb
+	c.rb  File.expand_path(File.dirname(__FILE__)) = /Users/alans/ruby-path-test
+
+	d.rb  $0                                       = sub/d.rb
+	d.rb  File.dirname($0)                         = sub
+	d.rb  File.expand_path($0)                     = /Users/alans/ruby-path-test/sub/d.rb
+	d.rb  File.expand_path(File.dirname($0))       = /Users/alans/ruby-path-test/sub
+	d.rb  __FILE__                                 = sub/d.rb
+	d.rb  File.dirname(__FILE__)                   = sub
+	d.rb  File.expand_path(__FILE__)               = /Users/alans/ruby-path-test/sub/d.rb
+	d.rb  File.expand_path(File.dirname(__FILE__)) = /Users/alans/ruby-path-test/sub
+
+
+*ruby sub/e.rb*
+
+	a.rb $0                                       = sub/e.rb
+	a.rb File.dirname($0)                         = sub
+	a.rb File.expand_path($0)                     = /Users/alans/ruby-path-test/sub/e.rb
+	a.rb File.expand_path(File.dirname($0))       = /Users/alans/ruby-path-test/sub
+	a.rb __FILE__                                 = /Users/alans/ruby-path-test/a.rb
+	a.rb File.dirname(__FILE__)                   = /Users/alans/ruby-path-test
+	a.rb File.expand_path(__FILE__)               = /Users/alans/ruby-path-test/a.rb
+	a.rb File.expand_path(File.dirname(__FILE__)) = /Users/alans/ruby-path-test
+
+	b.rb  $0                                       = sub/e.rb
+	b.rb  File.dirname($0)                         = sub
+	b.rb  File.expand_path($0)                     = /Users/alans/ruby-path-test/sub/e.rb
+	b.rb  File.expand_path(File.dirname($0))       = /Users/alans/ruby-path-test/sub
+	b.rb  __FILE__                                 = /Users/alans/ruby-path-test/b.rb
+	b.rb  File.dirname(__FILE__)                   = /Users/alans/ruby-path-test
+	b.rb  File.expand_path(__FILE__)               = /Users/alans/ruby-path-test/b.rb
+	b.rb  File.expand_path(File.dirname(__FILE__)) = /Users/alans/ruby-path-test
+
+	c.rb  $0                                       = sub/e.rb
+	c.rb  File.dirname($0)                         = sub
+	c.rb  File.expand_path($0)                     = /Users/alans/ruby-path-test/sub/e.rb
+	c.rb  File.expand_path(File.dirname($0))       = /Users/alans/ruby-path-test/sub
+	c.rb  __FILE__                                 = /Users/alans/ruby-path-test/c.rb
+	c.rb  File.dirname(__FILE__)                   = /Users/alans/ruby-path-test
+	c.rb  File.expand_path(__FILE__)               = /Users/alans/ruby-path-test/c.rb
+	c.rb  File.expand_path(File.dirname(__FILE__)) = /Users/alans/ruby-path-test
+
+	d.rb  $0                                       = sub/e.rb
+	d.rb  File.dirname($0)                         = sub
+	d.rb  File.expand_path($0)                     = /Users/alans/ruby-path-test/sub/e.rb
+	d.rb  File.expand_path(File.dirname($0))       = /Users/alans/ruby-path-test/sub
+	d.rb  __FILE__                                 = /Users/alans/ruby-path-test/sub/d.rb
+	d.rb  File.dirname(__FILE__)                   = /Users/alans/ruby-path-test/sub
+	d.rb  File.expand_path(__FILE__)               = /Users/alans/ruby-path-test/sub/d.rb
+	d.rb  File.expand_path(File.dirname(__FILE__)) = /Users/alans/ruby-path-test/sub
+
+	e.rb  $0                                       = sub/e.rb
+	e.rb  File.dirname($0)                         = sub
+	e.rb  File.expand_path($0)                     = /Users/alans/ruby-path-test/sub/e.rb
+	e.rb  File.expand_path(File.dirname($0))       = /Users/alans/ruby-path-test/sub
+	e.rb  __FILE__                                 = sub/e.rb
+	e.rb  File.dirname(__FILE__)                   = sub
+	e.rb  File.expand_path(__FILE__)               = /Users/alans/ruby-path-test/sub/e.rb
+	e.rb  File.expand_path(File.dirname(__FILE__)) = /Users/alans/ruby-path-test/sub
+
+
+
+**Parent of Test Directory Command Line Run**
+
+These examples are run from the command line while in the directory "`/Users/alans`". The specific command used to launch the script prefaces each output set.
+
+
+
+*ruby ruby-path-test/a.rb*
+
+
+*ruby ruby-path-test/b.rb*
+
+
+*ruby ruby-path-test/c.rb*
+
+	
+*ruby ruby-path-test/sub/d.rb*
+
+	
+*ruby ruby-path-test/sub/e.rb*
+
+
+
+**Sub Directory of Test Directory Command Line Run**
+
+
+
+
+
+
+**Run from Sublime Text 2's Build Option**
+
+
+*Sublime Text 2 Build of a.rb*
+
+*Sublime Text 2 Build of b.rb*
+
+
+*Sublime Text 2 Build: c.rb*
+
+
+*Sublime Text 2 Build: d.rb*
+
+
+
+*Sublime Text 2 Build: e.rb*

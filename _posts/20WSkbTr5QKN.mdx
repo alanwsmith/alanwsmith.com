@@ -1,0 +1,49 @@
+---
+category: Neovim
+date: '2021-11-02T14:54:12'
+id: 20WSkbTr5QKN
+slug: /remove-the-delay-from-the-escape-key-before-hitting-the-leader-key-in-neovim
+status: wip
+title: Remove The Delay From The Escape Key Before Hitting The Leader Key In Neovim
+type: post
+---
+
+This looks like what got the fix in place:
+
+```
+set timeoutlen=1000 ttimeoutlen=10
+```
+
+This is from the main page: https://www.johnhawthorn.com/2012/09/vi-escape-delays/
+
+TODO: Link in the tmux stuff as well. 
+
+
+look at `:help timeout`
+
+
+link to post about tmux setting the timeout there
+
+
+
+
+TODO:
+
+From here: https://zsh.sourceforge.io/Doc/Release/Parameters.html#Parameters-Used-By-The-Shell-1
+
+KEYTIMEOUT
+The time the shell waits, in hundredths of seconds, for another key to be pressed when reading bound multi-character sequences.
+
+Check to see if that has any effect on nvim
+
+---
+
+
+
+References:
+
+- https://www.reddit.com/r/vim/wiki/the_leader_mechanism
+- https://github.com/vim/vim/issues/1498
+- https://zsh.sourceforge.io/Doc/Release/Parameters.html#Parameters-Used-By-The-Shell-1
+- https://www.johnhawthorn.com/2012/09/vi-escape-delays/
+- https://github.com/jbranchaud/til/blob/master/tmux/remove-the-delay-on-the-escape-key.md

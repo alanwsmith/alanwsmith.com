@@ -1,0 +1,73 @@
+---
+category: Miscellaneous
+date: '2021-10-05T20:17:40'
+id: 20WSkSZs0TYO
+slug: /tbd
+status: wip
+title: ''
+type: post
+---
+
+```python3
+#!/usr/bin/env python3 
+
+# To use it, call it with something like:
+
+# sheets = google_services.get_service(
+#               name='sheets', 
+#               version='v4',
+#               token_path=token_path, 
+#               credentials_path=credentials_path
+#        )
+
+
+import os.path
+from googleapiclient.discovery import build
+from google_auth_oauthlib.flow import InstalledAppFlow
+from google.auth.transport.requests import Request
+from google.oauth2.credentials import Credentials
+
+SCOPES = [
+    "https://www.googleapis.com/auth/spreadsheets",
+    "https://www.googleapis.com/auth/youtube.readonly"
+]
+
+def get_service(*, token_path, credentials_path, name, version):
+    creds = None
+    if os.path.exists(token_path):
+        creds = Credentials.from_authorized_user_file(
+            token_path, SCOPES
+        )
+    if not creds or not creds.valid:
+        if creds and creds.expired and creds.refresh_token:
+            creds.refresh(Request())
+        else:
+            flow = InstalledAppFlow.from_client_secrets_file(
+                credentials_path, SCOPES
+            )
+            print("NOTE: Safari has trouble with this.")
+            print("If you're using it, copy the URL by hand to Chrome.")
+            creds = flow.run_local_server(port=0)
+        with open(token_path, 'w') as token:
+            token.write(creds.to_json())
+    service = build(name, version, credentials=creds)
+    return service 
+    
+```
+
+
+# - This is a connector to Google API Services
+# - You need credentails setup as described here:
+#       https://developers.google.com/workspace/guides/create-credentials
+# - The path to the credentials file is define in the script
+#       that uses this file. A token_path is also required. That
+#       file will be created via the auth flow if it doesn't
+#       already exist
+# - The auth flow opens a browser for part of it. That part
+#       doesn't work with Safar as of Oct 2021. The solution
+#       is to copy the URL and paste it manually into Chrome
+#       to complete the flow
+# - Add the scopes you need in the SCOPES list
+
+# You'll need these:
+# pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib

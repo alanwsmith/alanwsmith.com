@@ -1,0 +1,167 @@
+---
+category: Miscellaneous
+date: '2021-08-29T17:01:58'
+id: 20WSkJmDSsPb
+slug: /tbd
+status: wip
+title: My Adventures In Speeding Up Prettier For Neovim
+type: post
+---
+
+TL;DR
+
+Put this in your `call plug#begin("~/.vim/plugged")` section:
+
+```
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+```
+
+Start neovim then run:
+
+```
+:PlugInstall
+```
+
+Restart neovim then run:
+
+```
+:CocInstall coc-prettier
+```
+
+
+TKTKTKTK
+
+
+Then:
+
+
+Set this up in the config to get Prettier to format when you save files:
+
+```json
+{
+  "coc.preferences.formatOnSaveFiletypes": [
+    "markdown",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "json",
+    "graphql",
+    "elixir",
+    "eelixir"
+  ]
+}
+```
+
+that got it formatting on save. 
+
+Links:
+
+- https://prettier.io/docs/en/vim.html - started here, tried to get neoformat working, but i couldn't get it to use prettier. Might be worth looking at again
+- 
+- https://www.npmjs.com/package/prettier
+- https://github.com/ruyadorno/prettierme - didn't actually try this one
+- https://github.com/mattn/efm-langserver - this is what I tried to get running but it kept throwing errors on my system
+
+
+
+
+August 29, 2021
+
+
+Installing prettier per these directions:
+
+
+Added this to `~/.config/nvim/init.vim`
+
+```
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
+```
+
+---
+
+Trying to run this: (not sure if the prettier plugin is needed):
+
+npx -p @fsouza/prettierd prettierd start
+# via: https://blog.fsouza.dev/prettierd-neovim-format-on-save/
+# and: https://github.com/fsouza/prettierd
+
+first time, it'll ask you to install, say yey
+
+scrrenshot of this at 2021-08-29T13:06:55-0400
+
+$ npx -p @fsouza/prettierd prettierd star
+Need to install the following packages:
+  @fsouza/prettierd
+Ok to proceed? (y) y
+
+It writes this file:
+
+```
+~/.prettierd
+```
+
+Added this to the ~/.config/nvim/lua/prettierd.lua file
+
+Note that this doesn't have a built in way to shut down pretterd that was listed. 
+
+
+Installed this: 
+
+```
+brew install efm-langserver
+```
+
+
+Installed: `Plug 'neovim/nvim-lspconfig'`
+
+(running `:PlugInstall` after it's in the init.vim filesa)
+
+
+
+Put this in the lua EOF seciton of .config/nvim/init.vim
+
+```
+require "lspconfig".efm.setup {
+    init_options = {documentFormatting = true},
+    settings = {
+        rootMarkers = {".git/"},
+        languages = {
+            lua = {
+                {formatCommand = "lua-format -i", formatStdin = true}
+            }
+        }
+    }
+}
+```
+
+
+
+
+
+
+---
+
+
+Old notes: Tried to install Neoformat - the install worked, but it wouldn't format anything
+
+
+added this to `~/.config/nvim/init.vim`
+
+```
+Plug 'sbdchd/neoformat'
+" and then outside of plug
+autocmd BufWritePre,TextChanged,InsertLeave *.js Neoformat
+```
+
+Then ran this inside of nvim
+
+```
+:PlugInstall
+```
+
+---
+
+Options are set on a per project level

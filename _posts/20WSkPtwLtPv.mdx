@@ -1,0 +1,23 @@
+---
+category: Miscellaneous
+date: '2021-09-06T20:15:53'
+id: 20WSkPtwLtPv
+slug: /tbd
+status: wip
+title: ''
+type: post
+---
+
+From [the docs](https://nextjs.org/docs/basic-features/data-fetching)
+
+import useSWR from 'swr'
+
+const fetcher = (url) => fetch(url).then((res) => res.json())
+
+function Profile() {
+  const { data, error } = useSWR('/api/user', fetcher)
+
+  if (error) return <div>failed to load</div>
+  if (!data) return <div>loading...</div>
+  return <div>hello {data.name}!</div>
+}

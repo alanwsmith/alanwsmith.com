@@ -1,0 +1,74 @@
+---
+category: Miscellaneous
+date: '2021-09-14T01:26:25'
+id: 20WSkNJ86ulI
+slug: /tbd
+status: wip
+title: ''
+type: post
+---
+
+Ran into errors (see below) after upgrading a lambda function to use Python 3.8. The problem was with psycopg2. The solution was to download a version compiled specifically for lambda for the given python version. 
+
+The solution was to go here and download or clone the project
+
+https://github.com/jkehler/awslambda-psycopg2
+
+Copy the folder for the proper version folder (e.g. psycopg2-3.8) into the same directory as your local lambda function and rename it to `psycopg2` then import it as usual (e.g. `import psycopg2`)
+
+
+Note that this compiled version didn't work on my mac when testing. I had to comment it our during development and then uncomment it when deploying to AWS where it worked as expected. 
+
+
+
+---
+
+Original troubleshooting notes for reference
+
+BELOW doesn't work...
+
+Do this to install a python module for a lambda function so you can wrap it in a zip file and send it:
+
+```
+pip install --target . psycopg2-binary
+```
+
+Do that in the same directory as the `lambda_funciton.py` file
+
+
+
+
+
+
+---
+
+Original Notes
+
+
+mkdir package
+pip install --target ./package MODULENAME
+
+
+e.g. 
+
+pip install --target ./package psycopg2-binary
+
+---
+
+Error Messages:
+
+ModuleNotFoundError: No module named 'psycopg2._psycopg'
+
+ImportError: No module named 'psycopg2._psycopg'
+
+
+
+---
+
+Links from the troubleshooting:
+
+- https://github.com/jkehler/awslambda-psycopg2/issues/51
+- https://stackoverflow.com/questions/36607952/using-psycopg2-with-lambda-to-update-redshift-python
+- https://stackoverflow.com/questions/36103034/importerror-no-module-named-psycopg2-psycopg
+- https://stackoverflow.com/questions/44855531/no-module-named-psycopg2-psycopg-modulenotfounderror-in-aws-lambda?answertab=votes#tab-top
+-

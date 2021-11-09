@@ -1,0 +1,39 @@
+---
+category: Miscellaneous
+date: '2021-09-18T13:12:06'
+id: 20WSkQqez24N
+slug: /tbd
+status: wip
+title: Pretty, One-Line Output For Git Log
+type: post
+---
+
+Not sure where I found this, but it's great output for git log
+
+```bash
+function gl() {
+
+	# Grab the initial output from git log and reverse it.
+	INITIAL_OUTPUT=$(git log --decorate --oneline --abbrev-commit --graph --all --color=always | sed '1!G;h;$!d') 
+
+	# Loop through it line by line
+	while read -r THE_LINE
+	do
+		# Just output it if it's a commit (identifed by a "*")
+		if [[ "$THE_LINE" =~ '\*' ]]; then
+			echo "$THE_LINE"
+		# Otherwise, flip the "/" and "\" characters
+		else
+
+			# Figure out which way to flip
+			if [[ "$THE_LINE" =~ '/' ]]; then
+				echo "$THE_LINE" | sed 's/\//\\/g;'
+			else
+				echo "$THE_LINE" | sed 's/\\/\//g;'
+			fi
+		fi
+
+	done <<< $INITIAL_OUTPUT
+
+}
+```

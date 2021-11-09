@@ -1,0 +1,37 @@
+---
+category: React
+date: '2021-09-07T17:37:52'
+id: 20WSkKpEccmt
+slug: /make-multiple-swr-data-fetch-calls-in-the-same-react-component
+status: published
+title: Make Multiple SWR Data Fetch Calls In The Same React Component
+type: post
+---
+
+This code let's you use multiple swr calls in the same component. The key is to apply a name to each one. 
+
+
+```javascript
+const fetcher = (url) => fetch(url).then((res) => res.json())
+ 
+const { data: playlists, error: playlistsError } = useSWR('/api/the-playlists', fetcher)
+const { data: songs, error: songsError } = useSWR('/api/the-songs', fetcher)
+```
+
+
+Then you can check for each with:
+
+```
+if (playlistsError) return <div>Could not get playlists</div>
+if (!playlists) return <div>Loading playlists...</div>
+// do something with playlists
+
+
+if (songsError) return <div>Could not get songs</div>
+if (!songs) return <div>Loading songs...</div>
+// do something with songs
+```
+
+Messing with that is left as an exercise for the reader
+
+Note that the useSWR can't go inside a basic function inside a component

@@ -1,0 +1,21 @@
+---
+category: Miscellaneous
+date: '2021-10-03T23:25:24'
+id: 20WSkUDeY84A
+slug: /tbd
+status: wip
+title: ''
+type: post
+---
+
+TODO: Vet this and make it more stream lined
+
+```sql
+SELECT songs.displayTitle, queuedSongs.primaryKey, SUM(transactions.numberOfBits) as theBits
+FROM queuedSongs, songs, transactions
+WHERE queuedSongs.streamerId = 125363791
+AND songs.primaryKey = queuedSongs.songPrimaryKey
+AND queuedSongs.primaryKey = transactions.queuedSongPrimaryKey
+GROUP BY songs.displayTitle, queuedSongs.primaryKey
+ORDER BY theBits DESC
+;

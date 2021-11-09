@@ -1,0 +1,19 @@
+---
+category: Miscellaneous
+date: '2021-06-13T15:16:16'
+id: 20WSjluXJAiJ
+slug: /tbd
+status: wip
+title: ''
+type: post
+---
+
+```lua
+local data_to_update_with = vim.api.nvim_buf_get_lines(document_buffer, 0, -1, true)
+
+local data_as_string = ''
+
+for i = 1, #data_to_update_with do
+    data_as_string = data_as_string..data_to_update_with[i].." "
+end
+```

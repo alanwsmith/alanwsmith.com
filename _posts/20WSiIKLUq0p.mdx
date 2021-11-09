@@ -1,0 +1,31 @@
+---
+category: Miscellaneous
+date: '2020-09-26T00:00:00'
+id: 20WSiIKLUq0p
+slug: /fast-forward-stream-deck-hotkey-for-groove
+tags: []
+title: Elgato Stream Deck Fast Forward Hotkey for Microsoft Groove
+type: post
+---
+
+```
+TODO: Figure out why this isn't working in MDX
+
+
+
+There doesn't appear to be a way to setup a Eltago Stream Deck button to fast forward songs playing in the Microsoft Groove app. Here's a quick way to build one yourself. 
+
+1. Install the Super Macro action set from BarRaider. 
+2. Drag a "Super Macro" action onto the button you want to use. 
+3. Click the action to configure it. Set a title and then put this in the "Short-Press Macro" field:
+
+		{{ctrl}{f}}
+
+4. Click on the Groove app to make it the front most (active) application and that's it.
+
+As long as you keep it in front, the Stream Deck button will fast forward to the next song. (If another app because the active app, a `ctrl-f` will get sent to it instead.)
+
+You can go here for [other Groove shortcuts](https://answers.microsoft.com/en-us/musicandvideo/forum/xboxmusic/groove-music-shortcut-keyshotkeys/2643a25f-9b27-4f08-a81a-788002ddb023).
+
+I'm still messing around with a way to setup the button so that it doesn't matter if Groove is in front or not. This will get you started in the mean time.
+```

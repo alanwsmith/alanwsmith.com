@@ -1,0 +1,63 @@
+---
+category: Miscellaneous
+date: '2021-06-21T16:59:37'
+id: 20WSk1qJaH2d
+slug: /tbd
+status: wip
+title: ''
+type: post
+---
+
+I'm using `gatsby-remark-responsive-iframe` to do the vidoes and just embedding the youtube iframes directly. 
+
+This is an example. Should be able to just change the ID
+
+
+```html
+<iframe width="560" height="315" src="https://www.youtube.com/embed/t10aFJRpggU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+```
+
+YouTube provides a privacy enhanced version, but it's not working for me. Might be my ad blockers, which would be ironic
+
+```html
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/t10aFJRpggU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+```
+
+
+
+
+---
+
+OLD NOTES
+
+Put video in with:
+
+
+- gatsby-remark-embed-video
+
+- gatsby-remark-responsive-iframe
+
+
+---  
+
+https://www.gatsbyjs.com/plugins/gatsby-remark-embed-video/?=video
+
+
+---
+
+These work:
+
+```
+video: https://www.youtube.com/embed/2Xc9gXyf2G4
+youtube: https://www.youtube.com/watch?v=2Xc9gXyf2G4
+vimeo: https://vimeo.com/5299404
+```
+
+
+
+These don't, even though the docs say they should:
+
+TODO: Verify this without the tic marks which I think you might have done
+
+`vimeo: 5299404`
+`youtube: 2Xc9gXyf2G4`

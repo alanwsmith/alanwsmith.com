@@ -1,0 +1,39 @@
+---
+category: Programming
+date: '2021-08-07T17:17:07'
+id: 20WSk7TWUgHu
+slug: /make-a-stand-alone-web-page-that-uses-react-babel-and-jsx
+status: published
+title: Make A Stand Alone Web Page That Uses React, Babel, and JSX
+type: post
+---
+
+You can make a single web page that calls external versions of React and Babel from [unpkg.com](unpkg.com) to render JSX
+
+
+For example:
+
+```html
+<html>
+<head>
+    <title>Stand Alone React And Babel</title>  
+    <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    const rootElement = document.getElementById('root')
+    const welcomeElement = <div>Hello, World</div>
+    ReactDOM.render(welcomeElement, rootElement)
+  </script>
+</body>
+</html>
+```
+
+Note that you'll need to set your script type to `text/babel` in addition to calling the external scripts. 
+
+See [unpkg.com](unpkg.com) for details on how to choose versions
+
+You can also get other node modules from there as well

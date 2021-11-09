@@ -1,0 +1,27 @@
+---
+category: Miscellaneous
+date: '2021-06-13T10:54:19'
+id: 20WSjk1rIHZS
+slug: /markdown-syntax-highlighting-for-neovim
+status: wip
+title: Markdown Syntax Highlighting for Neovim with vim-markdown
+type: post
+---
+
+I'm using [vim-markdown](https://github.com/plasticboy/vim-markdown) for syntax highlighting of markdown file code fences in neovim. 
+
+The instillation instructions don't mention `Plug` but this worked for me inside `~/.config/nvim/init.vim`
+
+    call plug#begin("~/.vim/plugged")
+        " ... other plugins
+        Plug 'godlygeek/tabular'
+        Plug 'plasticboy/vim-markdown'
+    call plug#end()
+
+Followed by running this from the command line
+
+    nvim +PlugInstall
+    
+Or, starting nvim and running the command:
+
+    :PlugInstall
