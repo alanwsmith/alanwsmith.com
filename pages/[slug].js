@@ -147,7 +147,7 @@ export const getStaticProps = async ({ params }) => {
     return {
       redirect: {
         destination: theRedirects[params.slug],
-        permanent: false,
+        permanent: true,
       },
     }
   }
@@ -168,7 +168,7 @@ export const getStaticPaths = async () => {
   const paths = getAllPosts().map(({ slug }) => ({ params: { slug } }))
   return {
     paths,
-    fallback: false,
+    fallback: true,
   }
 }
 
