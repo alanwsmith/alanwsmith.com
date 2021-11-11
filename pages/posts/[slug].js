@@ -17,6 +17,17 @@ const Post = ({ code, frontmatter }) => {
 export const getStaticProps = async ({ params }) => {
   console.log('## This is getStaticProps ##')
   const post = await getSinglePost(params.slug)
+
+  console.log(params.slug)
+  // if (params.slug === '20eMe1QFQUMn--the-golden-gate-bridge-turns-76') {
+  //   return {
+  //     redirect: {
+  //       destination: '/posts/20eLG89zSnmm--first-post--yeah-yeah',
+  //       permanent: false,
+  //     },
+  //   }
+  // }
+
   // const post = await getSinglePost('20WSeUJYfBd3')
   // const post = {}
   return {
