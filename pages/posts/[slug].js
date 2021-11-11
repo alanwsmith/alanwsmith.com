@@ -3,9 +3,7 @@ import { getMDXComponent } from 'mdx-bundler/client'
 import { getAllPosts, getSinglePost } from '../../utils/mdx_v2'
 
 const Post = ({ code, frontmatter }) => {
-  return <div>asdf</div>
-
-  /*
+  //return <div>asdf</div>
   const Component = React.useMemo(() => getMDXComponent(code), [code])
   return (
     <>
@@ -14,7 +12,6 @@ const Post = ({ code, frontmatter }) => {
       <Component />
     </>
   )
-  */
 }
 
 export const getStaticProps = async ({ params }) => {
