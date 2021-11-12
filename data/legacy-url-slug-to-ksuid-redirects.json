@@ -1,8 +1,4 @@
-
-import { NextResponse, NextFetchEvent, NextRequest } from 'next/server'
-
-export function middleware(req) {
-  const currentSlugs = {
+{
   "426": "/posts/20eLsPQckG9A--bugs-in-my-chair",
   "2009": "/posts/20eM9UGJJWuk--2009",
   "2015": "/posts/20eLLoIHeWQz--2015",
@@ -1422,12 +1418,4 @@ export function middleware(req) {
   "tailwind-grid-cheatsheet": "/posts/20eNzwZTAX8s--tailwind-grid-cheat-sheet",
   "search-and-replace-in-neovim-and-vim": "/posts/20eOdA8aVwdw--search-and-replace-in-neovim-and-vim",
   "stop-start-and-restart-yabai-tiling-window-manager": "/posts/20eOcyiXqO5w--stop-start-and-restart-the-yabai-tiling-window-manager"
-}
-
-  const pathParts = req.nextUrl.pathname.split('/')
-  if (pathParts.length === 2) {
-    if (currentSlugs[pathParts[1]]) {
-      return NextResponse.redirect(currentSlugs[pathParts[1]])
-    }
-  }
 }
