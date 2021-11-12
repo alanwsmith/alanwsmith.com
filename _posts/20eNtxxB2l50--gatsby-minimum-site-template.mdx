@@ -40,7 +40,7 @@ This is the minimal version with no images or other assets that would otherwise 
 
 It's also possible to create one manually with:
 
-    
+```
     mkdir my-new-gatsby-site
     cd my-new-gatsby-site
     
@@ -53,16 +53,20 @@ It's also possible to create one manually with:
     mkdir src
     cd src
     mkdir pages
+```
     
 Then put this in ./src/pages/index.js
     
-    import React from "react"
+```javascript
+import React from "react"
     
-    export default function Home() {
-      return <h1>Hello Gatsby!</h1>
-    }
+export default function Home() {
+    return <h1>Hello Gatsby!</h1>
+}
+```
 
 Then you're ready to run this from the `my-new-gatsby-site` directory
 
-
-    gatsby develop
+```
+gatsby develop
+```

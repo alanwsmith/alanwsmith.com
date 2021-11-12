@@ -17,9 +17,9 @@ This is a follow up to [Vagrant setup for The Ruby on Rails Tutorial](/vagrant-s
 
 ###Command:
 
-{% highlight ruby %}
+```ruby
 config.vm.box = "ubuntu/trusty64" 
-{% endhighlight %}
+```
 
 ___What it does:___ 
 
@@ -30,9 +30,9 @@ Tells Vagrant to base the virtual machine off the 64-bit version of [Ubuntu 14.0
 
 ###Command:
 
-{% highlight ruby %}
+```ruby
 config.vm.network "forwarded_port", guest: 3000, host: 3000
-{% endhighlight %}
+```
 
 ___What it does:___
 
@@ -43,9 +43,9 @@ Creates a connection between the host and virtual machines so that accessing _ht
 
 ###Command:
 
-{% highlight ruby %}
+```ruby
 config.vm.provision :shell, inline: <<-END_OF_COMMANDS
-{% endhighlight %}
+```
 
 ___What it does:___
 
@@ -55,9 +55,9 @@ Tells Vagrant to run the following set of commands between this and the line wit
 
 ###Command:
 
-{% highlight ruby %}
+```ruby
 echo 'LC_ALL="en_US.UTF-8"' >> /etc/environment
-{% endhighlight %}
+```
 
 ___What it does:___
 
@@ -68,6 +68,7 @@ Sets the locale to prevent this warning when logging in the first time:
      This can affect your user experience significantly, including the
      ability to manage packages. You may install the locales by running:
 
+```
        sudo apt-get install language-pack-utf-8
          or
        sudo locale-gen utf-8
@@ -76,50 +77,46 @@ Sets the locale to prevent this warning when logging in the first time:
        apt-cache search "^language-pack-[a-z][a-z]$"
     To disable this message for all users, run:
        sudo touch /var/lib/cloud/instance/locale-check.skip
-    _____________________________________________________________________
+```
 
-
--------------------------------------------------------------------------------
+---
 
 ###Commands:
 
-{% highlight ruby %}
+```ruby
 apt-get update
 apt-get -y upgrade
-{% endhighlight %}
+```
 
 ___What they do:___
 
 Make sure that all the base software is up to date. Probably not strictly necessary, but it's a good habit to be in to make sure security patches are installed.
 
 
-<!--
+---
 
-TKTKTKTK I think you can kill this
-
--------------------------------------------------------------------------------
+TKTKTKTK I think you can kill this one
 
 ###Command:
 
-{% highlight ruby %}
+```ruby
 apt-get -y install g++
-{% endhighlight %}
+```
 
 ___What it does:___
 
 TKTKTKTKT This should be the solution to the heroku gem not being able to install. 
 
--->
 
 
+---
 
--------------------------------------------------------------------------------
 
 ###Command:
 
-{% highlight ruby %}
+```ruby
 apt-get -y install git
-{% endhighlight %}
+```
 
 ___What it does:___
 
@@ -127,18 +124,19 @@ Installs the [Git](http://git-scm.com) version control software package.
 
 
 
--------------------------------------------------------------------------------
+---
 
 ###Command:
 
-{% highlight ruby %}
+```ruby
 apt-get install zlib1g-dev
-{% endhighlight %}
+```
 
 ___What it does:___
 
 Installs the development library for zlib. This is necessary because the version of Nokogiri used by Rails 4.2 compiles its own version of libxml. Without installing zlib1g-dev, Vagrant chokes when it tries to install Rails and produces this error:
 
+```
     ==> default: Building native extensions.  This could take a while...
     ==> default: /home/vagrant/.rvm/rubies/ruby-2.2.1/bin/ruby -r ./siteconf20150506-4805-9u68er.rb extconf.rb
     ==> default: checking if the C compiler accepts ...
@@ -189,9 +187,11 @@ Installs the development library for zlib. This is necessary because the version
     assumes that this means the command failed. The output for this command
     should be in the log above. Please read the output to determine what
     went wrong.
+```
 
 Note that during the install you'll see a bunch of warnings like:
 
+```
     ==> default: xml_node_set.c: In function ‘dealloc_namespace’:
     ==> default: xml_node_set.c:9:13: warning: cast discards ‘__attribute__((const))’ qualifier from pointer target type [-Wcast-qual]
     ==> default:      xmlFree((xmlChar *)ns->href);
@@ -223,6 +223,7 @@ and
     ==> default:        switch (reparentee->type) {
     ==> default:        ^
     etc....
+```
 
 They can be ignored. As ugly as they are they don't halt the installation or prevent Nokogiri from working properly.
 
@@ -231,9 +232,9 @@ They can be ignored. As ugly as they are they don't halt the installation or pre
 
 ###Command:
 
-{% highlight ruby %}
+```ruby
 apt-get install libsqlite3-dev
-{% endhighlight %}
+```
 
 ___What it does:___
 
@@ -298,11 +299,11 @@ Installs the SQLite libraries necessary to create a new Rails app with the defau
 
 ###Commands:
 
-{% highlight ruby %}
+```ruby
 apt-get -y install postgresql
 apt-get -y install pq
 apt-get -y install libpq-dev
-{% endhighlight %}
+```
 
 ___What they do:___
 
@@ -317,9 +318,9 @@ The "libpq-dev" package is required TKTKTKTKTKT
 
 ###Command:
 
-{% highlight ruby %}
+```ruby
 wget -qO- https://toolbelt.heroku.com/install.sh | sh
-{% endhighlight %}
+```
 
 ___What it does:___
 
@@ -336,9 +337,9 @@ Installs the stand alone heroku client.
 
 ###Command:
 
-{% highlight ruby %}
+```ruby
 sed -i -r "s/127.0.0.1\s+localhost/0.0.0.0  localhost/" /etc/hosts
-{% endhighlight %}
+```
 
 ___What it does:___
 
@@ -350,9 +351,9 @@ Allows the virtual machine to accept incoming traffic from the host machine when
 
 ###Command:
 
-{% highlight ruby %}
+```ruby
 config.vm.provision :shell, privileged: false, inline: <<-END_OF_COMMANDS
-{% endhighlight %}
+```
 
 ___What it does:___
 
@@ -363,10 +364,10 @@ Like the earlier version, this line tells Vagrant to run all the commands betwee
 
 ###Commands:
 
-{% highlight ruby %}
+```ruby
 /bin/bash -lc 'git config --global user.email "vagrant_vm@example.com"'
 /bin/bash -lc 'git config --global user.name "Vagrant VM"' 
-{% endhighlight %}
+```
 
 ___What they do:___
 
@@ -392,9 +393,9 @@ You should set these for real if you plan to publish your versions of the tutori
 
 ###Command:
 
-{% highlight ruby %}
+```ruby
 echo 'gem: --no-document' > ~/.gemrc
-{% endhighlight %}
+```
 
 ___What it does:___
 Creates a .gemrc file in the vagrant user's home directory and sets a flag telling the gem command not to bother building documentation. This speeds up the setup processes a little by making the assumption that you won't need the docs to live on the virtual machine. 
@@ -406,10 +407,10 @@ Creates a .gemrc file in the vagrant user's home directory and sets a flag telli
 
 ###Commands:
 
-{% highlight ruby %}
+```ruby
 gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
 curl -sSL https://get.rvm.io | bash -s stable
-{% endhighlight %}
+```
 
 ___What they do:___
 Installs RVM, the Ruby Version Manager. Using RVM makes it easier to experiment with different versions of ruby. It's not strictly necessary but useful for potential experimentation. 
@@ -420,9 +421,9 @@ The first line fetches a security key necessary to verify the second step. The n
 
 ###Command:
 
-{% highlight ruby %}
+```ruby
 /bin/bash -lc 'rvm mount -r https://rvm.io/binaries/ubuntu/14.04/x86_64/ruby-2.2.1.tar.bz2'
-{% endhighlight %}
+```
 
 ___What it does:___
 Installs version 2.2.1 of Ruby via RVM via a pre-build binary. This means Ruby is installed without having to compile it on the virtual machine. This saves a lot of time. 
@@ -460,9 +461,7 @@ There's no need to worry about checking for updates if all you're doing is runni
 
 ###Command:
 
-{% highlight ruby %}
 
-{% endhighlight %}
 
 ___What it does:___
 
