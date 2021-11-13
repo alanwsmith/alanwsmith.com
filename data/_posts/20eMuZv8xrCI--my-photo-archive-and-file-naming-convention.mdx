@@ -1,0 +1,128 @@
+---
+blurb: Being able to "speak" to computers in a langue they understand is very handy.
+categories:
+  - Photography
+  - Perl
+  - Hacks
+date: '2013-01-01T00:00:00'
+id: 20eMuZv8xrCI
+scrubbed_2021: false
+status: published
+type: post
+title: My Photo Archive and File Naming Convention
+---
+
+I started shooting with digital cameras in 2001. Before that, I scanned a lot of film. For as long as I've been working with digital images, I've been struggling to setup a good system for naming and storing the files (aka a Naming Convention). 
+
+Out of the camera, files are named something like:
+
+	IMG_1237.CR2
+	IMG_1238.CR2
+	IMG_1239.CR2
+
+Seems fine at first glance, but problems pop up quickly. Including:
+
+1. Once you hit your 9,999 image from a camera it starts over. 
+2. If you are shooting with two cameras at the same time, they be on the same number. 
+3. Everybody else's camera is naming files the same. 
+
+All of that means that it's very easy to end up with two files with the same name. That can turn into a huge pain very quickly. Also, the file names themselves have no real meaning. The solution to all of this is to come up with a folder and file naming convention that creates a unique and meaningful name for each file. Over the years, I've tried several different conventions. For example:
+
+	20010721_170857.cr2
+	20040812-0019.cr2
+	20050606_183930a.cr2
+	20080330-aws-some-tag-145744-00004.cr2
+	20100925-aws-23204880.cr2
+	a100-0090_IMG.cr2
+	aws-20080327-some-tag-0002.cr2
+	aws-20100925-23204880-01.cr2
+	aws-20100925-23204880.cr2
+	aws-20100925-img-23204880.cr2
+	aws-20100925x23204880-01.cr2
+	aws-20100925x23204880.cr2
+	aws-20110409-img-1501-01.cr2
+
+There were more, but that'll give you and idea of the history that lead me to where I am now. 
+
+
+
+
+The one remaining piece of the puzzle is how I'm going to handle scanned images. In theory, I could use the exact same convention, but I think I want the file name to let me know at a glance if it's a digitial images stright from a camera or if it's was somethign I sacnned in. I don't do much scanning right now, so it hasn't really come up, but I think I'm going to use:
+
+awscan-YYYYMMDD--hhmm-cc.ext
+
+That way it'll apply pretty closely, but still allow me to keep the scans and the straight out of the camera files separate. 
+
+
+
+---
+
+An important point here is that I make these renmaes right out of the camera and then (assuming I don't change the convention) the file name never changes. I see a lot of demonstrations where photographers rename their images just before giving them to the client. 
+
+This breaks the entire idea of having a unique ID. That ID should stick with the file for as long as the convention that defined it exists. 
+
+Also, note that when you come up with your own convetnion, you should keep it as simple as possible. The goal should be to have to think about it as little as possible. If you have to think about it, that creates a little bit of resistznce in your head. If your conveiton calls on you to name each shoot in a specific way, you'll spend a ton of time trying to come up with the right name. And you'll constatnly run into problems where you have photos that might need to go to multiple clients or that fit in multiple categories. Either way, you'll waset time picking which one is most right and then having to go back and deal with it when the other client/category is in play. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Most software will let you rename stuff, but non of them do it the way that I want. So, I ended up writing my own applicaiton to do it. 
+
+
+
+
+
+
+
+
+
+
+
+I've been struggling to find a good way to store them. 
+
+
+my photo archive information architecture
+
+
+
+
+
+
+ and have been struggling with "the best" way to store files ever since. 
+
+
+
+
+Over the years, I've 
+
+I've made a few attempts and standardizing on a naming convention for my photos. I've been using the same one for some time now that looks like this:
+
+	aws-YYYYMMDD--hhmm-##.ext
+
+Where the YYYY, MM, DD, hh, mm represent Year, Month, Day, Hour and Minute respectively. The last variable "##" is what I call a conflict number that starts at 01 and increments for however many photos were taken in that minute. Real world examples look like:
+
+	aws-20130101--0752-01.cr2
+	aws-20130101--0754-01.cr2
+	aws-20130101--0754-02.cr2
+	etc...
+
+I've been mostly happy with this as it provides a unique name for every photo. It also groups all the files together in a folder (since they all start with "aws") and sorts the chronologically (since the date and time have "leading zeros"). I find this a much better approach than having a ton of "IMG_0992.jpg" files around. 
+
+One thing that this naming convention doesn't really account for is making different versions of an image. For example
+
+
+---
+
+_Links and Notes_
+
+1. [Information architecture](http://en.wikipedia.org/wiki/Information_architecture) - is, according to Wikipedia, "the art and science of organizing and labelling data including: websites, intranets, online communities and software to support usability." Another, more specific term is "[Naming Convention](http://en.wikipedia.org/wiki/Naming_convention)".

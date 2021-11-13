@@ -1,0 +1,32 @@
+---
+blurb: ''
+categories:
+  - React
+date: '2021-08-09T16:06:20'
+id: 20eOKfH75wJL
+scrubbed_2021: false
+status: scratch
+type: post
+title: Pass And Amend Element Props With A React Function
+---
+
+This is with a spread and destructuring  
+
+```javascript
+function Box({className, ...rest}) {
+    return <div className={`box ${className}`} {...rest} />
+}
+const element = (
+    <Box className="blue" style={{fontStyle: 'italic'}}>
+        This is the box
+    </Box>
+)
+```
+
+results in:
+
+```html
+<div class="box blue" style="italic">
+    This is the box
+</div>
+```
