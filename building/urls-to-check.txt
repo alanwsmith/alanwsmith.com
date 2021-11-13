@@ -1,3 +1,9 @@
+# These are the original URLs that were on the site when it was on gatsby, 
+# and probably on hugo, and maybe on jekyll. They are the ones that need 
+# to confirm they redict to the new URLs. As of November 12, 2021, 
+# the spot check of a few worked. At some point in the future it won't
+# be necessary to keep them, but it wouldn't hurt. 
+
     /10-off-at-lowes
     /156-pounds-photo-for-2012-10-28
     /170000
