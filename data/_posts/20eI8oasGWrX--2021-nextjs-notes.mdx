@@ -1,0 +1,27 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2021-11-08T14:07:48'
+id: 20eI8oasGWrX
+status: scratch
+type: post
+title: 2021 NextJs Notes
+---
+
+Site Frontmatter (2021) for the NextJS site and ideally all frameworks after...
+
+
+- blurb - defaults to empty 
+- categories - Array that defaults to a single 'Miscellaneous' item
+- date - ISO 8601 format without timezone in single quotes to avoid problems with the `:`
+- id - Auto generated KSUID trimmed to 12 characters
+- status - defaults to 'scratch'. Other options: 'draft', 'published', and 'archived'. During the migration, there is also an 'unpublished' status for files that need to be checked before moving to the live site. A script can be used to find them
+- type - Defaults to `post`. Thinking two other options might be `pages` and `podcasts` to determine where to push the files. 
+
+Not doing `updated` that will be calculated dynamically off the file modified timestamps (will have to allow for an epoch of starting when the files are first moved in, and then all the files are cleaned)
+
+There's a `scrubbed_2021` key as well. This will only be on files that are moved over in the migration. A script will allow editing those 10 at a time to clean the files. When they are cleaned the key is removed. Once everything is done, the key will simply not be in play any more. This obviates the need to update it when changes are made and having it stick around and needing to be dealt with later. 
+
+
+
