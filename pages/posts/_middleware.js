@@ -1,6 +1,8 @@
 import { NextResponse, NextFetchEvent, NextRequest } from 'next/server'
 
 export function middleware(req) {
+  return new Response('Hello, world!')
+
   console.log(req.nextUrl.pathname)
 
   const currentSlugs = {
