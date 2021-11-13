@@ -25,7 +25,7 @@ const VimeoVideo = ({ id }) => {
             height: '100%',
           }}
           src={`https://player.vimeo.com/video/${id}`}
-          frameborder="0"
+          frameBorder="0"
           webkitAllowFullScreen
           mozAllowFullscreen
           allowFullScreen
@@ -57,9 +57,9 @@ const YouTubeVideo = ({ id }) => {
           }}
           width="560"
           height="315"
-          src="https://www.youtube.com/embed/S_inYj3J0h8?controls=0"
-          title="YouTube video player"
-          frameborder="0"
+          src={`https://www.youtube.com/embed/${id}?controls=0`}
+          title="Video"
+          frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
         ></iframe>
