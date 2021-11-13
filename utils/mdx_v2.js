@@ -3,7 +3,7 @@ import path from 'path'
 import matter from 'gray-matter'
 import { bundleMDX } from 'mdx-bundler'
 
-export const POSTS_PATH = path.join(process.cwd(), '_posts')
+export const POSTS_PATH = path.join(process.cwd(), 'data', '_posts')
 
 export const getSourceOfFile = (fileName) => {
   return fs.readFileSync(path.join(POSTS_PATH, fileName))

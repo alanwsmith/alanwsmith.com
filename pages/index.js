@@ -35,7 +35,7 @@ export default function BlogList({ posts }) {
               <ul>
                 {posts.map((post, index) => (
                   <li key={index}>
-                    <Link href={`/${post.slug}`}>{post.title}</Link>
+                    <Link href={`/posts/${post.slug}`}>{post.title}</Link>
                   </li>
                 ))}
               </ul>

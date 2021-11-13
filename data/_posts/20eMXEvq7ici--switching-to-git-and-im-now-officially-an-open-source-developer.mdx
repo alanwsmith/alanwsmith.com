@@ -1,0 +1,87 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2009-08-21T00:00:00'
+id: 20eMXEvq7ici
+scrubbed_2021: false
+status: published
+type: post
+title: Switching to Git and Im now officially an Open Source Developer
+---
+
+![git-logo.gif](http://www.alanwsmith.com/blog/wp-content/uploads/2009/08/git-logo.gif)
+In the software development world, where I spend a decent amount of
+my time, there exists a very helpful type of tool designed for
+what's called
+[Revision or Version Control](http://en.wikipedia.org/wiki/Version_control_system).
+Among other things, this type of software provides ways for
+multiple people to work safely on the same set of files without
+overwriting each other's work and they provide a way to "roll back"
+to previous versions of files if you find a bug. When you are
+dealing with tens or hundreds of thousand (or more) of lines of
+code, it's very reassuring to know that if you break something you
+can easily jump back to one of the earlier revisions where
+everything was working while you hunt down whatever went wrong. For
+the past few years, the Version Control System I've been using is
+one called [Subversion](http://subversion.tigris.org/). While it's
+much better than it's predecessor
+([CVS](http://en.wikipedia.org/wiki/Concurrent_Versions_System)),
+Subversion is still a bit clunky and some of the day-in/day-out
+tasks require enough thinking that it easy to loose the flow of
+what you are working on when you have to deal with it. The safety
+of having the system behind you makes it worthwhile but it's enough
+of a headache that I started looking for an alternative and after
+some testing have decided to switch to a different system called
+[Git](http://git-scm.com/).
+
+
+* * * * *
+
+As part of the process, I need to remove literally hundreds of
+directories from my projects that were created by Subversion as
+part of the way it manages files. While possible to go though
+everything and delete them individually, it's much easier and safer
+to write a little program to do it automatically.
+In fact, I've written this same basic thing at least three or four
+times before when I needed to do some clean up of older Subversion
+repositories. In the [Perl](http://en.wikipedia.org/wiki/Perl)
+programming language it only takes 5-10 minutes to create and test
+a basic one-off script to do this. Instead of doing that again, I'm
+using this as an opportunity to create my first Open Source
+project.
+
+There are two reasons for this:
+
+1.  Other people who are going though the same thing might not want
+    to have to build the script themselves. So, this might be of some
+    use to someone else out there if they happen to find it.
+2.  I can use it as a chance to try a site/service called GitHub.
+
+[GitHub](https://github.com/) is one of those really excellent
+parts of the internet. Their primary service is to host Git
+repositories (which are what Version Control Systems use to do
+their magic). If you have something that you want to develop just
+for yourself they have various price points for private storage
+depending on what you need. What makes them really shine, though,
+is that if you are developing a piece of
+[Free Open Source Software](http://en.wikipedia.org/wiki/Free_and_open_source_software),
+they let you use their system at no cost.
+
+Not only does GitHub encourage developers to produce code and
+software the rest of the world can use for free, but it also let's
+people like me who are in the very early parts of the learning
+curve have a safe environment to get their feet wet with Git. Once
+I've gained enough confidence with their system to be sure I won't
+completely break things, I'll have the confidence to move my
+mission critical work into my own Git system.
+
+
+* * * * *
+
+If you are interested to see what the site looks like, the GitHub
+home page for the script is
+[here](http://github.com/StimulatingPixels/remove-svn-dirs/tree/master).
+If you would like to see what the Perl code itself looks like, you
+can see that
+[here](http://github.com/StimulatingPixels/remove-svn-dirs/blob/b2c8a38823b053f001bcb1b5b6ad5ebdf485921a/remove-svn-dirs.pl).
