@@ -3,6 +3,7 @@ import { getMDXComponent } from 'mdx-bundler/client'
 import { getAllPosts, getSinglePost } from '../../utils/mdx'
 import Head from 'next/head'
 import LayoutMain from '../../components/LayoutMain.js'
+import HeaderDate from '../../components/HeaderDate.js'
 
 const VimeoVideo = ({ id }) => {
   return (
@@ -61,7 +62,7 @@ const YouTubeVideo = ({ id }) => {
           title="Video"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
+          allowFullScreen
         ></iframe>
       </div>
     </>
@@ -101,7 +102,9 @@ const Post = ({ code, frontmatter }) => {
               pb-4
               mb-4"
             >
-              {frontmatter.date}
+              <div className="pt-1">
+                <HeaderDate date={frontmatter.date} />
+              </div>
             </div>
             <div className="text-blue-200">
               <Component
