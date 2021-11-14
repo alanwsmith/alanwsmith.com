@@ -1,0 +1,44 @@
+---
+blurb: ''
+categories:
+  - Neovim
+date: '2021-05-31T17:20:32'
+id: 20eO3oMS2yaV
+scrubbed_2021: false
+status: scratch
+type: post
+title: Install Neovim Nightly On A Mac
+---
+
+This is what's on the page to get the the latest version:
+
+brew install --HEAD neovim
+
+Not sure if it's actually nighlty, but it seems like it's at least close. 
+
+
+
+
+
+---
+
+OLD NOTES:
+
+NOTE: Not sure if this is the right way to do it. 
+
+NOTE: This will probably have problems with LUA stuff since those dependencies don't seem to be met.
+
+
+Download this:
+
+    https://github.com/neovim/neovim/releases/download/nightly/nvim-macos.tar.gz
+    
+Doubleclick on the `.tar.gz` file in your ~/Downloads folder which will extract/untar the archive into a folder named `nvim-osx64`
+
+
+Then you can copy:
+
+    cp ~/Downlaods/nvim-osx64/bin/nvim /use/local/bin/nvim
+    
+
+Note that there are some other libraries the come down with the archive. No idea if you need to do something with them.

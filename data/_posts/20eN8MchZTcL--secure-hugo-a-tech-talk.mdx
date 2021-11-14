@@ -1,0 +1,82 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2019-11-05T00:00:00'
+id: 20eN8MchZTcL
+scrubbed_2021: false
+status: published
+type: post
+title: Secure Hugo a tech talk
+---
+
+The past couple years have been rough[^1]. Among other things, I haven't posted much. There were two reasons. First, I didn't feel up to it. Second, and more importantly, my site setup has been getting in the way.
+
+I've built this site several ways over the years. Going all the way back, I hand coded it in HTML and then ASP followed by PHP. Moving on to Blogger and Wordpress before finally moving to Jekyll[^2] \(where it's been since 2012). 
+
+Jekyll has been pretty great. It was my first move back to a "static site" since the original hand coding days of the '90s. Unfortunately, it's slow to use, taking 20-30 seconds to rebuild the site every time I make a change. There have been some optimizations that have made that faster, but it's never been speedy. 
+
+Enter Hugo[^3]. It's another static site engine, but it's designed from the ground up for speed. The runs are super fast. An initial build of my 900+ pages takes less than two seconds. 
+
+
+        ---
+---
+---
+---
+---
+---
+---
+---
+---
+
+                           |  EN
+        +---
+---
+---
+---
+---
+---
++---
+---
++
+          Pages            |  922
+          Paginator pages  |  193
+          Non-page files   |  210
+          Static files     |    4
+          Processed images | 1050
+          Aliases          |  883
+          Sitemaps         |    1
+          Cleaned          |    0
+
+        Total in 1513 ms
+        ---
+---
+---
+---
+---
+---
+---
+---
+---
+
+
+
+Even better, when I make changes, it rebuilds in less than half a second and automatically refreshes the preview page in my browser. It's really, really nice. That means I can make pages faster. That means I'll post more. That little bit less friction turns out to make a huge difference. (Of course, so does coming out of depression...)
+
+While moving to Hugo, I made another change. This site is now secured via "HTTPS". That means you'll see the little lock icon in the address bar. I don't have any type of login or sensitive information on my site. In one way, that means it's not a big deal that my site wasn't served securely. However, we should all secure our web sites[^4]. So, now I've done mine. 
+
+I'm super excited about these changes. I expect it'll get me posting more. Time will tell...
+
+---
+
+
+(P.S. There's going to be some broken formatting and missing images. Some of those have been busted since 2012 when I moved to Jekyll. Some will be new. Time will also tell if I go back to clean those up.)
+
+
+[^1]: You know, with having my first manic episode and two years of crippling depression. 
+
+[^2]: [Jekyll](https://jekyllrb.com) is a nice little tool, but it's a little long in the tooth.
+
+[^3]: [Hugo](https://gohugo.io) the new hotness. Blazing fast, a built in theme system, and footnotes included (compared to the way I had to hand code them in Jekyll, this is a real bonus).
+
+[^4]: Direct from the CIO of the U.S. Government: [There is no such thing as non-sensitive web traffic](https://https.cio.gov/everything/). So, we should all make our sites secure.

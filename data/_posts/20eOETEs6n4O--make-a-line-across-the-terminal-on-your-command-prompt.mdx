@@ -1,0 +1,18 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2021-06-23T10:34:53'
+id: 20eOETEs6n4O
+scrubbed_2021: false
+status: scratch
+type: post
+title: Make A Line Across The Terminal On Your Command Prompt
+---
+
+```bash
+NEWLINE=$'\n'
+
+PROMPT="$(printf '─%.0s' {1..$(tput cols)})${NEWLINE}"
+PROMPT="${PROMPT}... the rest of your prompt stuff"
+```

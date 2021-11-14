@@ -1,0 +1,43 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2021-11-02T15:07:21'
+id: 20eOdST4MN62
+scrubbed_2021: false
+status: scratch
+type: post
+title: Get The Current Value Of Environmental Variable Settings In Neovim
+---
+
+Put a `?` at the end of a `:set SETTING` string. For example:
+
+```
+:set timeoutlen?
+```
+
+Will show something like:
+
+
+```
+timeoutlen=1000
+```
+
+If there is no value set, it'll just output the key. For example if `timeout` isn't set, doing:
+
+```
+:set timeout?
+```
+
+will return 
+
+```
+timeout
+```
+
+via: https://stackoverflow.com/a/2078272/102401
+
+
+See also this for a way to get all the env stuff:
+
+- https://vim.fandom.com/wiki/Displaying_the_current_Vim_environment

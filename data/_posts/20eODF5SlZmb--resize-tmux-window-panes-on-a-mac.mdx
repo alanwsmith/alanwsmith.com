@@ -1,0 +1,41 @@
+---
+blurb: ''
+categories:
+  - Command Line
+date: '2021-06-21T13:52:39'
+id: 20eODF5SlZmb
+scrubbed_2021: false
+status: scratch
+type: post
+title: Resize tmux Window Panes On A Mac
+---
+
+
+TLDR
+
+Uses these key sequences to resize tmux window panes on a mac:
+
+
+```
+CTRL+b :resize-p -D 4
+CTRL+b :resize-p -U 4
+CTRL+b :resize-p -L 4
+CTRL+b :resize-p -R 4
+```
+
+
+### Details
+
+
+The `CTRL+b ARROW` (aka `<C-b> + ARROW`) calls don't work on my mac. There are system command that take over and prevent them from working. To resize window panes, I use the tmux command line
+
+- First hit CTRL+b 
+- Then hit `:` to move to the command line
+- Use `resize-p` to change the window pane size with the direction and the amount. For example:
+    
+        :resize-p -D 4
+
+The `-D` stands for down and the "4" is the amount. The other directions are `-U` for up, `-L` for left, and `-R` for right. 
+
+
+via: https://superuser.com/a/863397/85635

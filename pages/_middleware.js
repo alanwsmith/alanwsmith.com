@@ -944,7 +944,7 @@ export function middleware(req) {
   "prep-your-portable-player": "/posts/20eLOboqZwEn--prep-your-portable-player",
   "photo-for-2012-09-03-prepping-for-flight": "/posts/20eMmZjhqklm--prepping-for-flight--photo-for-september-3-2012",
   "pressure": "/posts/20eLeUhK09gB--pressure",
-  "pretty-printing-json-via-javascript-or-extension": "/posts/20eMwXA5xt4X--pretty-printing-json-via-javascript-or-extension",
+  "pretty-printing-json-via-javascript-or-extension": "/posts/20eMwXA5xt4X--pretty-printing-json-via-javascript-or-an-extension",
   "browsing-history-2020-10-31": "/posts/20eNRvqrNVkR--primarily-python-url-processing--oh-the-pages-i-goed--oct-31-2020",
   "printer-error": "/posts/20eMhkaZ9l27--printer-error",
   "process-a-video-of-writing": "/posts/20eNlEm9vZrj--process--a-video-of-writing",

@@ -1,0 +1,34 @@
+---
+blurb: ''
+categories:
+  - Tools
+date: '2021-11-01T13:13:39'
+id: 20eOcyiXqO5w
+scrubbed_2021: false
+status: scratch
+type: post
+title: Stop Start and Restart The Yabai Tiling Window Manager
+---
+
+### Restart
+
+```
+brew services stop yabai && brew services start yabai
+```
+
+It takes a bit (up to a minute or so) for yabai to stop. Using this command joined with `&&` makes sure that the start command waited for the stop command to finish.
+
+Things jump around a lot when it starts back up. Give it a bit to settle down. Also, windows sometimes end up in different places. Don't be surprised if you have to move stuff around after a restart.
+
+
+### Just Stop 
+
+```
+brew services stop yabai
+```
+
+### Just Start
+
+```
+brew services start yabai
+```

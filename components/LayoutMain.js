@@ -1,7 +1,13 @@
 import Link from 'next/link'
 import Head from 'next/head'
+const prism = require('prismjs')
+import React, { useEffect } from 'react'
 
 export default function LayoutMain(props) {
+  useEffect(() => {
+    prism.highlightAll()
+  }, [])
+
   return (
     <>
       <Head>
