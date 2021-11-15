@@ -2,6 +2,8 @@
 import { NextResponse, NextFetchEvent, NextRequest } from 'next/server'
 
 export function middleware(req) {
+  console.log("-- Top level _middleware: Started")
+  console.log("-- Top level _middleware: Initial path: " + req.nextUrl.pathname)
   const currentSlugs = {
   "426": "/posts/20eLsPQckG9A--bugs-in-my-chair",
   "2009": "/posts/20eM9UGJJWuk--2009",
@@ -1426,6 +1428,7 @@ export function middleware(req) {
   const pathParts = req.nextUrl.pathname.split('/')
   if (pathParts.length === 2) {
     if (currentSlugs[pathParts[1]]) {
+      console.log('-- Top level _middleware Redirecting to: ' + currentSlugs[pathParts[1]])
       return NextResponse.redirect(currentSlugs[pathParts[1]])
     }
   }

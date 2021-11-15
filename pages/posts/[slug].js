@@ -6,6 +6,7 @@ import LayoutMain from '../../components/LayoutMain.js'
 import HeaderDate from '../../components/HeaderDate.js'
 import VimeoVideo from '../../components/VimeoVideo.js'
 import YouTubeVideo from '../../components/YouTubeVideo.js'
+import ReadOnlyChecklist from '../../components/ReadOnlyChecklist'
 
 const Post = ({ code, frontmatter }) => {
   const Component = React.useMemo(() => getMDXComponent(code), [code])
@@ -47,6 +48,7 @@ const Post = ({ code, frontmatter }) => {
             <div className="text-blue-200">
               <Component
                 components={{
+                  ReadOnlyChecklist: ReadOnlyChecklist,
                   VimeoVideo: VimeoVideo,
                   YouTubeVideo: YouTubeVideo,
                 }}
