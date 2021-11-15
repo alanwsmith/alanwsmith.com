@@ -1,0 +1,104 @@
+---
+blurb: ''
+categories:
+  - MDX
+date: '2021-11-14T18:46:53'
+id: 20vmowJupZmD
+status: draft
+type: post
+title: Check Markdown In MDX With mdx-embed
+---
+
+
+Does this table work:
+
+
+| h1              | h2             | h3                 |
+|-----------------|----------------|--------------------|
+| data1           | data2          | data3              |
+| this is a thing | something else | another thing here |
+
+
+This is with alignment
+
+
+| h1              | h2             | h3                 |
+|:----------------|:--------------:|-------------------:|
+| data1           | data2          | data3              |
+| this is a thing | something else | another thing here |
+
+
+Code block
+
+```
+this is some code
+```
+
+Code block with language
+
+```javascript
+const thing = new Date()
+```
+
+And now, footnotes. This is the first[^1] one. And the second [^2] one.
+
+[^1]: Footnote number one
+[^2]: Footnote number two
+
+---
+
+# Heading 1
+
+## Heading 2
+
+### Heading 3
+
+#### Heading 4
+
+##### Heading 5
+
+###### Heading 6
+
+---
+
+NOTE: This did not working for assigning a custom ID to a header:
+
+```
+### H3 Heading With Custom Style {#customId}
+```
+
+Check to see if links to internal anchors work 
+
+<a href="#customId">link to custom header</a>
+
+---
+
+First Term
+: This is the definition of the first term.
+
+Second Term
+: This is one definition of the second term.
+: This is another definition of the second term.
+
+--
+
+This is ~~strikethru~~ to make something slashed through.
+
+
+---
+
+This is a task list:
+
+- [x] This is done
+- [ ] This is to do
+- [ ] And another thing that needs to be done
+
+
+
+
+via: https://www.markdownguide.org/extended-syntax/
+
+
+
+
+

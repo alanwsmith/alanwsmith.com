@@ -1012,7 +1012,6 @@ export function middleware(req) {
   "save-10": "/posts/20eLgEs4gXCS--save-10",
   "scanning-film": "/posts/20eM39xYCtq9--scanning-film",
   "scott-love": "/posts/20eLmas4520C--scott-love",
-  "scratchpad": "/posts/20eNrvEjVY8b--scratchpad",
   "secrets-of-your-cable-modem": "/posts/20eMvGPmjvwR--secrets-of-your-cable-modem",
   "secure-gmail": "/posts/20eMPaBFmU0Q--secure-gmail",
   "secure-hugo": "/posts/20eN8MchZTcL--secure-hugo-a-tech-talk",
