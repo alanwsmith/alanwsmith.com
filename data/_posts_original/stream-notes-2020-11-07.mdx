@@ -1,0 +1,69 @@
+---
+category: Live Coding
+date: '2020-11-07'
+slug: /stream-notes-2020-11-07
+tags: []
+title: 'Making Progress on Video Assembler V4 - Stream Notes for November 7, 2020
+  #LiveCoding'
+type: post
+---
+
+
+`youtube: https://www.youtube.com/watch?v=yd_Dd8DQvDs`
+
+### Notes
+
+Working on my Automatic NASA Video Assembler and general messing around.
+
+
+### Links From The Stream
+
+
+- [Alteryx](https://www.alteryx.com/)
+- [2020 Presidential Election Results: Joe Biden Wins - The New York Times](https://www.nytimes.com/interactive/2020/11/03/us/elections/results-president.html?action=click&pgtype=Article&state=default&module=styln-elections-2020&region=TOP_BANNER&context=storyline_menu_recirc)
+- [Can I have an animated GIF with more than 256 colours per frame? - Webmasters...](https://webmasters.stackexchange.com/questions/304/can-i-have-an-animated-gif-with-more-than-256-colours-per-frame)
+- [Easy 6502 by skilldrick](https://skilldrick.github.io/easy6502/)
+- [Federalist Nos. 51-60 - Federalist Papers: Primary Documents in American...](https://guides.loc.gov/federalist-papers/text-51-60#s-lg-box-wrapper-25493427)
+- [Full Text of The Federalist Papers - Federalist Papers: Primary Documents in...](https://guides.loc.gov/federalist-papers/full-text#TheFederalistPapers-51)
+- [GitHub: ffmpeg-python - Python bindings for FFmpeg - with complex filtering...](https://github.com/kkroening/ffmpeg-python)
+- [Google Search: alteryx](https://www.google.com/search?client=safari&rls=en&q=alteryx&ie=UTF-8&oe=UTF-8)
+- [Google Search: alteryx example](https://www.google.com/search?client=safari&rls=en&q=alteryx+example&ie=UTF-8&oe=UTF-8)
+- [Google Search: amendments to the constitution](https://www.google.com/search?client=safari&rls=en&q=amendments+to+the+constitution&ie=UTF-8&oe=UTF-8)
+- [Google Search: biden speech](https://www.google.com/search?client=safari&rls=en&q=biden+speech&ie=UTF-8&oe=UTF-8)
+- [Google Search: code the hidden languate of computers](https://www.google.com/search?client=safari&rls=en&q=code+the+hidden+languate+of+computers&ie=UTF-8&oe=UTF-8)
+- [Google Search: constitutional ammendments](https://www.google.com/search?client=safari&rls=en&q=constitutional+ammendments&ie=UTF-8&oe=UTF-8)
+- [Google Search: discrete math](https://www.google.com/search?client=safari&rls=en&q=discrete+math&ie=UTF-8&oe=UTF-8)
+- [Google Search: election results](https://www.google.com/search?client=safari&rls=en&q=election+results&ie=UTF-8&oe=UTF-8)
+- [Google Search: flow based programming](https://www.google.com/search?client=safari&rls=en&q=flow+based+programming&ie=UTF-8&oe=UTF-8)
+- [Google Search: flow based programming](https://www.google.com/search?q=flow+based+programming&newwindow=1&client=safari&rls=en&source=lnms&tbm=vid&sa=X&ved=2ahUKEwjCrv_px_HsAhUsw1kKHWa-CRYQ_AUoAnoECB4QBA&biw=781&bih=489)
+- [Google Search: fpga](https://www.google.com/search?client=safari&rls=en&q=fpga&ie=UTF-8&oe=UTF-8)
+- [Google Search: gif color pallet](https://www.google.com/search?client=safari&rls=en&q=gif+color+pallet&ie=UTF-8&oe=UTF-8)
+- [Google Search: google certification](https://www.google.com/search?client=safari&rls=en&q=google+certification&ie=UTF-8&oe=UTF-8)
+- [Google Search: jetbrains mps](https://www.google.com/search?client=safari&rls=en&q=jetbrains+mps&ie=UTF-8&oe=UTF-8)
+- [Google Search: k&r c book](https://www.google.com/search?client=safari&rls=en&q=k%26r+c+book&ie=UTF-8&oe=UTF-8)
+- [Google Search: nand gate](https://www.google.com/search?client=safari&rls=en&q=nand+gate&ie=UTF-8&oe=UTF-8)
+- [Google Search: pandas csv](https://www.google.com/search?client=safari&rls=en&q=pandas+csv&ie=UTF-8&oe=UTF-8)
+- [Google Search: python ffmpeg](https://www.google.com/search?client=safari&rls=en&q=python+ffmpeg&ie=UTF-8&oe=UTF-8)
+- [Google Search: shp format](https://www.google.com/search?client=safari&rls=en&q=shp+format&ie=UTF-8&oe=UTF-8)
+- [Google Search: state transition diagram](https://www.google.com/search?client=safari&rls=en&q=state+transition+diagram&ie=UTF-8&oe=UTF-8)
+- [Google Search: top song 1995](https://www.google.com/search?client=safari&rls=en&q=top+song+1995&ie=UTF-8&oe=UTF-8)
+- [Google Search: vhdl](https://www.google.com/search?newwindow=1&client=safari&rls=en&q=vhdl&spell=1&sa=X&ved=2ahUKEwj7oPSi2PHsAhVJwlkKHU3NDVMQBSgAegQICxAp&biw=781&bih=489)
+- [MPS: The Domain-Specific Language Creator by JetBrains](https://www.jetbrains.com/mps/)
+- [pandas.read_csv — pandas 1.1.4 documentation](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html)
+- [Professional Certificate Training Programs - Grow with Google](https://grow.google/certificates/)
+- [State-Transition Diagrams | StickyMinds](https://www.stickyminds.com/article/state-transition-diagrams)
+- [The Constitution | The White House](https://www.whitehouse.gov/about-the-white-house/the-constitution/)
+- [Wikipedia: Billboard Year-End Hot 100 singles of 1995](https://en.wikipedia.org/wiki/Billboard_Year-End_Hot_100_singles_of_1995)
+- [Wikipedia: Code: The Hidden Language of Computer Hardware and Software](https://en.wikipedia.org/wiki/Code:_The_Hidden_Language_of_Computer_Hardware_and_Software)
+- [Wikipedia: Discrete mathematics](https://en.wikipedia.org/wiki/Discrete_mathematics)
+- [Wikipedia: Discrete mathematics](https://en.wikipedia.org/wiki/Discrete_mathematics#Graph_theory)
+- [Wikipedia: Field-programmable gate array](https://en.wikipedia.org/wiki/Field-programmable_gate_array)
+- [Wikipedia: Flow-based programming](https://en.wikipedia.org/wiki/Flow-based_programming)
+- [Wikipedia: NAND gate](https://en.wikipedia.org/wiki/NAND_gate)
+- [Wikipedia: Shapefile](https://en.wikipedia.org/wiki/Shapefile)
+- [Wikipedia: The C Programming Language](https://en.wikipedia.org/wiki/The_C_Programming_Language)
+- [Wikipedia: VHDL](https://en.wikipedia.org/wiki/VHDL)
+- [YouTube: From Workflow Development to Visualization with Alteryx and Tableau](https://www.youtube.com/watch?v=g4iNepsC6t8)
+- [YouTube: Intro to Discrete Math - Welcome to the Course!](https://www.youtube.com/watch?v=rdXw7Ps9vxc)
+- [YouTube: Intro Video of JetBrains MPS](https://www.youtube.com/watch?v=eEUMAx3g6do&feature=youtu.be)
+- [YouTube: What is Flow-based Programming?](https://www.youtube.com/watch?v=tBDjLXJw9Co)

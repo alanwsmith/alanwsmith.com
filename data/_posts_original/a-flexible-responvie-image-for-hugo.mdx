@@ -1,0 +1,121 @@
+---
+category: Miscellaneous
+date: '2019-11-07'
+draft: true
+slug: /a-flexible-responvie-image-for-hugo
+title: A Flexible Responsive Image Solution for Hugo
+type: post
+---
+
+
+While moving my site, I wanted to come up with a better way to handle images. My goal was to design a setup where the images look good on desktops, tablets, and phones. Something that's known as "Responsive Images" in the web industry. The software I moved to doesn't do it out of the box, but with some research, I was able to hack together a solution.
+
+My goals were:
+
+- Store all my images in a single directory
+- Store the images at their full size
+- Setup so devices don't download images larger than they need in order to make pages load faster
+- Automatically resize the image files for different devices to they don't download files that are larger than they need
+- Setup so that smaller images are rendered as big as they can be without up-sizing them.
+- Prevent images larger than the necessary size from being generated or made available
+
+
+The code I came up with is:
+
+```html{numberLines: true}
+{{ $img_src := .Get "src" }}
+{{ $alt_text := .Get "alt"}}
+{{ $caption_text := .Get "caption" }}
+
+{{ with .Site.GetPage "/01-images" }}
+  {{ $src := .Resources.GetMatch $img_src }}
+
+  {{ $raw_image_width := $src.Width }}
+
+  {{ $.Scratch.Set "figure_max_width" $raw_image_width }}
+  {{ if ge ($.Scratch.Get "figure_max_width") 680 }}
+    {{ $.Scratch.Set "figure_max_width" 680 }}
+  {{ end }}
+
+  {{ $raw_resize_string := (printf "%d%s" $raw_image_width "x")  }}
+
+  {{ $original_size := $src.Resize $raw_resize_string }}
+
+  {{ $image_sizes := slice 680 1000 1400 1800 2648 }}
+
+  <div class="image_wrapper">
+    <figure style='max-width: {{ $.Scratch.Get "figure_max_width" }}px;'>
+
+        <img srcset='
+          {{ $original_size.RelPermalink }} {{ $raw_image_width }}w
+          {{ range $image_sizes }}
+            {{ if ge $raw_image_width . }}
+              ,
+              {{ $resized_image := $src.Resize (printf "%d%s" . "x") }}
+              {{ $resized_image.RelPermalink }} {{ (printf "%d%s" . "w") }}
+            {{ end}}
+          {{ end }}
+        '>
+
+      {{ if $caption_text}}
+        <figcaption>
+          {{ $caption_text }}
+        </figcaption>
+      {{ end }}
+
+    </figure>
+  </div>
+{{ end }}
+```
+
+
+
+![This is a 1x image](/APC_0192.jpg)
+
+![small image test](/APC_0322.jpg" caption="Small image test)
+
+![small image test](/APC_0119.jpg" caption="Small image test)
+
+![Storm Trooper protecting fruit](/APC_0078-test.jpg" caption="These are not the apples you're looking for)
+
+![Image: APC_2494-test-2.jpg" caption="hamlet](/APC_2494-test-2.jpg" caption="hamlet)
+
+![Image: aws-20170821--1440-04a-beads.jpg" caption="doen't do it justice](/aws-20170821--1440-04a-beads.jpg" caption="doen't do it justice)
+
+Usage:
+
+- Need the style sheet setup (your using Tale with some modifications, but this should work)
+- First create a folder and associated index file to house all the images (e.g. "content/01-images/index.md" )
+- Store any images inside the folder (e.g. "content/01-images/cat-photo.jpg")
+- Call it with:
+
+
+
+
+
+
+
+
+
+- https://code.luasoftware.com/tutorials/hugo/hugo-scope-variable-in-template/
+
+
+
+
+[^1]: [Hugo](https://gohugo.io)
+
+[^2]: The post I found is [Responsive Images for Hugo](https://dev.to/stereobooster/responsive-images-for-hugo-dn9) by [@stereobooster](https://stereobooster.com/). There's another similar post with the similar title [Responsive Images in Hugo](https://www.adamwills.io/blog/responsive-images-hugo/) by [Adam Wills](https://www.adamwills.io)
+
+
+
+---
+
+
+Other links to examine:
+
+- https://discourse.gohugo.io/t/easy-way-to-serve-responsive-images-with-hugo/16184
+- https://discourse.gohugo.io/t/responsive-images-with-hugo/18483
+- https://laurakalbag.com/processing-responsive-images-with-hugo/
+- https://www.adamwills.io/blog/responsive-images-hugo/
+- https://neuralmarkettrends.com/tutorials/hugo-seo-tutorials/
+- https://dev.to/stereobooster/responsive-images-for-hugo-dn9

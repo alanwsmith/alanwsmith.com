@@ -1,0 +1,16 @@
+---
+category: Miscellaneous
+date: '2007-04-21'
+slug: /domain-bot
+title: Domain Bot
+type: post
+---
+
+
+If you are ever looking to setup a web site and are trying to
+decide on a name, this site might help: http://www.domainsbot.com/
+You put in some words or terms and hit search and it gives you a
+list of recommendations and shows you if they are available or not.
+While it's fairly easy to check on specific domains, it can get
+time consuming quickly. This little bot can at least help get you
+started.

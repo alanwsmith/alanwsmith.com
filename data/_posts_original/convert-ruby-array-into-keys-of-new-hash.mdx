@@ -1,0 +1,56 @@
+---
+blurb: A quick way to setup a hash with keys from an array that point to empty values.
+category: Dev
+date: '2015-12-02'
+slug: /convert-ruby-array-into-keys-of-new-hash
+tags: []
+title: Convert a Ruby Array into the Keys of a New Hash
+type: post
+---
+
+
+The need to migrate an array into a hash crops up on occasion. The simplest approach is to turn each array item into a hash key pointing at an empty value. A situation where the Ruby Array object's `.collect` method works great. For example:
+
+```ruby{numberLines: true}
+hash = Hash[array.collect { |item| [item, ""] } ]
+```
+
+Fleshing it out a bit more, here's a full demo showing it in action:
+
+```ruby{numberLines: true}
+#!/usr/bin/env ruby
+
+require 'pp'
+
+array = %w(cat hat bat mat)
+hash = Hash[array.collect { |item| [item, ""] } ]
+
+pp array
+pp hash
+```
+
+which produces the output showing the original array and then the hash with the desired structure:
+
+```ruby{numberLines: true}
+["cat", "hat", "bat", "mat"]
+{"cat"=>"", "hat"=>"", "bat"=>"", "mat"=>""}
+```
+
+Of course, the processing block can assign values as well. For example, changing the above example to use:
+
+```ruby{numberLines: true}
+hash = Hash[array.collect { |item| [item, item.upcase] } ]
+```
+
+would produce the hash with:
+
+```ruby{numberLines: true}
+{"cat"=>"CAT", "hat"=>"HAT", "bat"=>"BAT", "mat"=>"MAT"}
+```
+
+Good stuff. 
+
+---
+
+
+P.S. Let me know if you have a simpler way to turn `["cat", "hat", "bat", "mat"]` into `{"cat"=>"", "hat"=>"", "bat"=>"", "mat"=>""}`.

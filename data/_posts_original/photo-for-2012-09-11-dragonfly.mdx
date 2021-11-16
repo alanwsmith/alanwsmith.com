@@ -1,0 +1,13 @@
+---
+blurb: Just chillin on a leaf.
+category: Photographs
+date: '2012-09-11'
+slug: /photo-for-2012-09-11-dragonfly
+tags:
+- Project 365 Photos
+title: Dragonfly -- Photo for September 11, 2012
+type: post
+---
+
+
+![Image: aws-20120911--1001-04.jpg](/aws-20120911--1001-04.jpg)

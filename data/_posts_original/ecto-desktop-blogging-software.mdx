@@ -1,0 +1,70 @@
+---
+category: Miscellaneous
+date: '2009-03-07'
+slug: /ecto-desktop-blogging-software
+title: Ecto - Desktop blogging software
+type: post
+---
+
+
+![ecto-logo.png](http://www.alanwsmith.com/blog/wp-content/uploads/2009/03/ecto-logo.png)
+I'm still in the process of deciding what software to use on my
+machine since my transition back to using a Mac. Today, I installed
+"[ecto](http://illuminex.com/ecto/ "ecto blog editor")", a
+desktop/offline blog editor. If you blog and you haven't tried this
+type of software, you really should. As nice as the browser editors
+in blogging software has gotten, the desktop experience for
+creating blog posts is a even better.
+
+A few of the high points:
+
+-   You don't have to be online.  
+    Posts are created and edited "locally" on your computer with no
+    need for an internet connection. While you could do this type of
+    offline editing with a word processor that would mean having to
+    jump through additional hoops later. With software like ecto, you
+    simply hit a "Publish" button when you have a connection and are
+    ready to send the post to your blog.
+-   Software on your computer move faster.  
+    Browser based editors are decently fast but they have to
+    communicate with a remote server which causes latency. These delays
+    are usually minimal, but compared to software that is running
+    directly on your computer it's a dramatic difference.  
+-   Software on your computer behaves better.  
+    The online edit pages for blogs try their best to prevent you from
+    doing stupid things, but they are limited by the the functionality
+    that's built into the browser they are running in. It's all too
+    easy to select and delete text that you can't get back via "Undo"
+    or to navigate away from a page and loose an entire post. The
+    safeguards protecting you from yourself from this kind of behavior
+    are more robust when using local software. They can't entirely
+    prevent you from doing something stupid and loosing a bunch of
+    work, but they are better at preventing it.
+
+While there are other advantages, those are the main ones I've in
+the short time I've been using desktop blogging software.
+
+
+* * * * *
+
+Ecto is the second piece of desktop blogging software I'm trying
+out. The first one was
+"[Mars Edit](http://www.red-sweater.com/marsedit/ "Mars Edit Desktop Blog Editor")".
+The biggest difference right off the back is that ecto has a
+What-You-See-Is-What-You-Get edit window. Mars Edit is a basically
+an HTML editor. While I'm a geek and can easily move around in
+code, when I'm making blog posts I much prefer a W.Y.S.I.W.Y.G.
+editor.
+
+Writing and thinking about code are two different mental modes.
+Even if you are really good at both, having to switch gears imposes
+a state change cost on your mental processing. It's a great way to
+break concentration and kill a thought before you get it out.
+
+Both Ecto and Mars Edit are commercial pieces of software which
+cost $19.95 and $29.95, respectively. While I'm a huge fan of Free
+and Open Source Software, I've got no problem paying a reasonable
+price for good software. Especially when there isn't a viable Open
+Source alternative. Just based on the W.Y.S.I.W.Y.G editor in ecto,
+I'm probably going to purchase it after the trail expires. It's
+well worth $20 to gain the benefits of as desktop blog editor.

@@ -1,0 +1,26 @@
+---
+title: "Create A Lua Table Of Anonymous Functions"
+slug: /create-a-lua-table-of-anonymous-functions
+type: post
+status: wip
+category: Miscellaneous
+date: 2021-07-9T20:12:55-0400
+---
+
+
+```lua
+tests_to_run = {
+    function ()
+        print("HERE")
+    end,
+    function ()
+        print("THERE")
+    end
+}
+
+for i=1, #tests_to_run do
+    tests_to_run[i]()
+end
+```
+
+

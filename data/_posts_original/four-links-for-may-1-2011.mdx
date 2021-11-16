@@ -1,0 +1,18 @@
+---
+category: Miscellaneous
+date: '2011-05-01'
+slug: /four-links-for-may-1-2011
+title: Four Links for May 1, 2011
+type: post
+---
+
+
+The theme for today’s collection of interesting/useful links is: Questions and Answers 
+
+1. [RFC 1855 - Netiquette Guidelines](https://www.ietf.org/rfc/rfc1855.txt) - \*This document provides a minimum set of guidelines for Network Etiquette (Netiquette) which organizations may take and adapt for their own use.\* That's right, there is a full blown RFC for Netiquette. Last updated in 1995. Some of it feels like it too. (Hat tip to Tom at WhoIsHostingThis for pointing out the original version of this link was broken. Here's their take on [how 1855 holds up](http://www.whoishostingthis.com/resources/netiquette/).)
+
+2. [How To Ask Questions The Smart Way](http://www.catb.org/\~esr/faqs/smart-questions.html) - A guide to asking questions on technical forums, but probably applies most places. 
+
+3. [Google Search Tips](http://www.google.com/support/websearch/bin/answer.py?answer=136861) - Increase your GoogleFu. 
+
+4. [Google Advanced Search](http://www.google.com/advanced\_search) - Multiple boxes and selections to make it easier to find what you're looking for.

@@ -1,0 +1,41 @@
+---
+title: "Serve A Local Directory As A Web Site With npx browser-sync"
+slug: /serve-a-local-directory-as-a-web-site-with-npx-browser-sync
+type: post
+status: wip
+category: JavaScript
+date: 2021-08-9T10:39:51-0400
+---
+
+You can serve a local directory as a web site by running this inside it:
+
+```command
+npx browser-sync start --server --files "./*.html" --no-open --no-notify --directory
+```
+
+This will only server html files. Serving different ones is left as an exercise to the reader.
+
+The site is served at both:
+
+```
+http://localhost:3000
+http://YOUR_IP_ADDRESS:3000
+```
+
+Use ngrok if you need to show it to folks externally by running this (doesn't have to be in the same directory):
+
+```command
+ngrok http 3000
+```
+
+There's also a UI that gives you some details at:
+
+```
+http://localhost:3001
+http://YOUR_IP_ADDRESS:3001
+```
+
+You'll need `npx` installed which should come with node. 
+
+It'll install browser-sync the first time you run it if it's not already there. 
+

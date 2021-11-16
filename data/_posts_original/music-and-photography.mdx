@@ -1,0 +1,32 @@
+---
+category: Miscellaneous
+date: '2007-12-19'
+slug: /music-and-photography
+title: Music and Photography
+type: post
+---
+
+
+So, I finally got a new computer put together a little while ago.
+Been so busy at work, I really haven't had time to do much with it
+yet. Till tonight that is. I finally managed to dig into some old
+photos. Mostly, I'm just getting them imported into lightroom.
+2,577 music images so far. It's sooooooo much better with a
+computer that can actually handle it. In the past, it was so slow,
+that it really turned me off from doing much of anything
+photo-wise. While I think there will always be room for
+improvement, I wasn't really waiting on the computer for most
+stuff. That's the major hurtle to get over. Even though I really
+haven't done much messing around with the images yet, it really got
+me thinking about how much I love photography. Now that I don't
+have to dread the computer time, hopefully I'll be more likely to
+shoot some. Of course, this will be after we get our redesign
+launched. But still, it's nice to think about. Incidentally, here's
+an image to celebrate the fact that I can actually work with images
+now without wanting to stab myself in the leg with a fork to
+distract myself from waiting on the machine. It's the drummer from
+The CodeTalkers. Or, at least it was the drummer back in Sept. 2006
+when this shot is from.
+![image](http://www.alanwsmith.com/blog/wp-content/uploads/20060902-230200-01.jpg)
+I've decided to decorate my office with some 11x14s of my music
+images. I'm pretty sure this is going to be one of them.

@@ -1,0 +1,101 @@
+---
+blurb: ''
+categories:
+  - Next.js
+date: '2021-08-26T19:02:18'
+id: 20eONTrG9XV8
+scrubbed_2021: false
+status: published
+type: post
+title: Get URL Query Parameters From A Request In Nextjs
+---
+
+TODO: Fix the formatting of this post that got busted during the move to nextjs
+
+```
+This is how to do it in the front end:
+
+``javascript
+import {useRouter} from "next/router";
+
+export default function Items() {
+  const { query } = useRouter();
+
+  return (
+    <div>
+      <h1>Items page</h1>
+      <p>{query.id}</p>
+      <p>{query.name}</p>
+    </div>
+  );
+}
+``
+
+via: https://reactgo.com/next-get-query-params/
+
+
+---
+
+And this is how to do it in the api pages:
+
+There's a `.query` object the comes down in requests to API routes. Use it like this:
+
+``jsx
+export default function handler(req, res) {
+  const name = req.query["name"];
+  res.status(200).send(`Hello, ${name}`);
+}
+``
+
+Putting that in a file at 
+
+``
+./pages/api/hello.js
+``
+
+sets up so that a call to 
+
+``
+/api/hello?name=carl
+``
+
+returns
+
+``
+Hello, Carl
+``
+
+
+
+---
+
+OLD NOTES
+
+You don't need to do this for requests, but this is still useful if you have a URL in a string
+
+
+Not sure if it needs more stuff, but this is how you're getting query params from a url
+
+``jsx
+const parse_url = new URL(req.url)
+const streamerId = parseInt(parse_url.searchParams.get('streamerId'), 10)
+``
+
+need to look into why that part is `http` and not `https` and just generally get a better idea of how it works. 
+
+
+This is the original thing. This has the host at the end of it, but if the first argument you pass to it has a full url, including the host, the second argument is ignored. 
+
+``
+const parse_url = new URL(req.url, `http://${req.headers.host}`)
+``
+
+--- 
+
+Here's a note about URLs
+
+url
+A USVString or any other object with a stringifier — including, for example, an <a> or <area> element — that represents an absolute or relative URL. If url is a relative URL, base is required, and will be used as the base URL. If url is an absolute URL, a given base will be ignored.
+base Optional
+A USVString representing the base URL to use in cases where url is a relative URL. If not specified, it defaults to undefined.
+```

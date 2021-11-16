@@ -1,0 +1,66 @@
+---
+category: Django
+date: '2020-10-09'
+slug: /stream-notes-2020-10-09
+tags:
+- Live Coding
+- Python
+title: Learning Django By Making A Tutorial - Part 3 - And a Red/Green Output for
+  unittest
+type: post
+---
+
+
+`youtube: https://www.youtube.com/watch?v=Al7PxVscCog`
+
+### [Start: 00:00:00] - Testing Django
+
+I spent most of the stream learning how to do testing inside of Django. Part of that includes jumping over to the Mozilla tutorial which looks worth investigating. 
+
+
+### [Time: 2:06:50] - Building a Red Green Color Module for Python's unittest
+
+I'm constantly frustrated by the fact that Python's unittest output is always colored red. Even when all the tests pass. It means you have to look and find the "OK" which requires turning more of your attention to the text. It would be much better if the color of the results was red on failure and green when everything passes (you know, like the whole Red/Green terminology we use). 
+
+I build some code a while ago that lets me run test inside a script and only perform the main part of the script if the tests pass. I realized I could use that same code to switch the output of unittest to red/green depending on failure/success. By the end of the session, I got it working. Next step is to figure out how to put it into a module and post it to pip. 
+
+
+### Table Of Contents
+
+- [Part 1](/stream-notes-2020-10-06/) - Getting the home page to work
+- [Part 2](/stream-notes-2020-10-08/) - Reviewing the first draft and building a model, view, and url structure for a checklist page
+- [Part 3](/stream-notes-2020-10-09/) - Learning how to test. And, making a python module so that unittest's output is green instead of red when tests pass. 
+- [Part 4](/stream-notes-2020-10-10/) - More progress with testing and getting database content to show up. (Also, updating my local Hugo site to launch into either Sublime Text 2, or Sublime Text 3.)
+- [Part 5](/stream-notes-2020-10-10-2/) - Working with forms and getting a pointer to generic views.
+- [Part 6](/stream-notes-2020-10-11/) - Review run-through and adding URLs. 
+
+
+
+
+
+### Links From The Stream
+
+- [ANSI escape code - Wikipedia](https://en.wikipedia.org/wiki/ANSI_escape_code)
+- [Build your own Command Line with ANSI escape codes](https://www.lihaoyi.com/post/BuildyourownCommandLinewithANSIescapecodes.html)
+- [Calling forward function without .forward() - Stack Overflow](https://stackoverflow.com/questions/54989230/calling-forward-function-without-forward)
+- [can that work? - Stack Overflow](https://stackoverflow.com/questions/11698530/two-python-modules-require-each-others-contents-can-that-work)
+- [Classes — Python 3.9.0 documentation](https://docs.python.org/3/tutorial/classes.html)
+- [Creating Modules in Python 3 | DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-write-modules-in-python-3)
+- [Curses Programming with Python — Python 3.9.0 documentation](https://docs.python.org/3/howto/curses.html)
+- [Don't use plain forward in python · Issue #3 · IgorSusmelj/pytorch-styleguide](https://github.com/IgorSusmelj/pytorch-styleguide/issues/3)
+- [functools — Higher-order functions and operations on callable objects — Python 2.7.18 documentation](https://docs.python.org/2/library/functools.html)
+- [Get __name__ of calling function's module in Python - Stack Overflow](https://stackoverflow.com/questions/1095543/get-name-of-calling-functions-module-in-python)
+- [How to do unit testing of functions writing files using python unittest - Stack Overflow](https://stackoverflow.com/questions/3942820/how-to-do-unit-testing-of-functions-writing-files-using-python-unittest)
+- [How to import other Python files? - Stack Overflow](https://stackoverflow.com/questions/2349991/how-to-import-other-python-files)
+- [How to import other Python files?](https://www.tutorialspoint.com/How-to-import-other-Python-files)
+- [How to print colored text in Python? - Stack Overflow](https://stackoverflow.com/questions/287871/how-to-print-colored-text-in-python)
+- [https://svn.blender.org/svnroot/bf-blender/trunk/blender/build_files/scons/tools/bcolors.py](https://svn.blender.org/svnroot/bf-blender/trunk/blender/build_files/scons/tools/bcolors.py)
+- [importing a module when the module name is in a variable - Stack Overflow](https://stackoverflow.com/questions/13598035/importing-a-module-when-the-module-name-is-in-a-variable)
+- [inspect — Inspect live objects — Python 3.9.0 documentation](https://docs.python.org/3/library/inspect.html)
+- [Modules — Python 3.9.0 documentation](https://docs.python.org/3/tutorial/modules.html)
+- [Object Oriented Programming in Pyth: Class and Instance Variables | DigitalOcean](https://www.digitalocean.com/community/tutorials/understanding-class-and-instance-variables-in-python-3)
+- [Pycharm won't allow to run a file. Shows run unittest option only. - Stack Overflow](https://stackoverflow.com/questions/20835466/pycharm-wont-allow-to-run-a-file-shows-run-unittest-option-only)
+- [redgreenunittests/redgreenunittest at master · stevematney/redgreenunittests](https://github.com/stevematney/redgreenunittests/tree/master/redgreenunittest)
+- [turtle — Turtle graphics — Python 3.9.0 documentation](https://docs.python.org/3/library/turtle.html)
+- [unittest — Unit testing framework — Python 3.9.0 documentation](https://docs.python.org/3/library/unittest.html)
+- [unittest-prettify · PyPI](https://pypi.org/project/unittest-prettify/)

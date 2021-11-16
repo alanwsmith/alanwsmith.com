@@ -1,0 +1,70 @@
+---
+category: Live Coding
+date: '2020-11-23'
+draft: true
+slug: /stream-notes-2020-11-23
+tags: []
+title: 'Stream Notes for November 23, 2020 #LiveCoding'
+type: post
+---
+
+
+*NOTE: TODO: This page needs updates to work with MDX*
+
+
+### Notes
+
+Finishing V2 of the Automatic NASA Music Video Maker
+
+
+### Links From The Stream
+
+
+- [(1) How can I get notified when someone follows my channel? : Twitch](https://www.reddit.com/r/Twitch/comments/8k92a4/how_can_i_get_notified_when_someone_follows_my/)
+- [Add Fade In and Fade Out Effects With FFMPEG! - DEV Community 👩‍💻👨‍💻](https://dev.to/dak425/add-fade-in-and-fade-out-effects-with-ffmpeg-2bj7)
+- [Error: The module...](https://github.com/nodejs/help/issues/3064)
+- [Exercism](https://exercism.io/)
+- [Failed to open page](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwi1zeryxpntAhVJSTABHXsMBeIQFjABegQIBhAC&url=https%3A%2F%2Fnote.nkmk.me%2Fen%2Fpython-pandas-len-shape-size%2F&usg=AOvVaw0uKcwsICVGwL0OzWS2Di6k)
+- [ffmpeg-concat - npm](https://www.npmjs.com/package/ffmpeg-concat)
+- [ffmpeg-concat - Programmer Sought](https://www.programmersought.com/article/17641098746/)
+- [GitHub: ffmpeg-concat - Concats a list of videos together using ffmpeg with...](https://github.com/transitive-bullshit/ffmpeg-concat)
+- [Google Search: ansible](https://www.google.com/search?client=safari&rls=en&q=ansible&ie=UTF-8&oe=UTF-8)
+- [Google Search: Error: The module '/usr/local/lib/node_modules/ffmpeg-...](https://www.google.com/search?client=safari&rls=en&q=Error:+The+module+%27/usr/local/lib/node_modules/ffmpeg-concat/node_modules/gl/build/Release/webgl.node%27+was+compiled+against+a+different+Node.js+version+using+NODE_MODULE_VERSION+72&ie=UTF-8&oe=UTF-8)
+- [Google Search: ffmpeg concat](https://www.google.com/search?client=safari&rls=en&q=ffmpeg+concat&ie=UTF-8&oe=UTF-8)
+- [Google Search: ffmpeg fade in](https://www.google.com/search?client=safari&rls=en&q=ffmpeg+fade+in&ie=UTF-8&oe=UTF-8)
+- [Google Search: ffmpeg-concast](https://www.google.com/search?newwindow=1&client=safari&rls=en&ei=ODy8X7CMAc-K5wL-_ZHIAg&q=ffmpeg-concast&oq=ffmpeg-concast&gs_lcp=CgZwc3ktYWIQAzIHCAAQyQMQDTIECAAQDTIECAAQDTIGCAAQDRAeMgYIABANEB4yBggAEA0QHjIGCAAQDRAeMgYIABANEB4yBggAEA0QHjIGCAAQDRAeOgQIABBHUMrTAVio1wFgkNkBaABwAXgAgAFriAHHAZIBAzEuMZgBAKABAaoBB2d3cy13aXrIAQjAAQE&sclient=psy-ab&ved=0ahUKEwiwiPfu35ntAhVPxVkKHf5-BCkQ4dUDCAw&uact=5)
+- [Google Search: nightbot](https://www.google.com/search?client=safari&rls=en&q=nightbot&ie=UTF-8&oe=UTF-8)
+- [Google Search: node list packages](https://www.google.com/search?newwindow=1&client=safari&rls=en&ei=Bzu8X_WeF4jI5gLbwbPABA&q=node+list+packages&oq=node+list+pa&gs_lcp=CgZwc3ktYWIQAxgAMgUIABDJAzICCAAyBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeOgQIABBHOgQIABBDOgQILhBDOgoIABCxAxDJAxBDOgcIABCxAxBDOgcILhCxAxBDOggIABDJAxCRAjoICAAQsQMQkQI6BQgAELEDUKbsBlih_QZgy44HaABwBHgAgAFriAHmCJIBAzkuM5gBAKABAaoBB2d3cy13aXrIAQjAAQE&sclient=psy-ab)
+- [Google Search: nvalt](https://www.google.com/search?client=safari&rls=en&q=nvalt&ie=UTF-8&oe=UTF-8)
+- [Google Search: pands lenght rows columns](https://www.google.com/search?client=safari&rls=en&q=pands+lenght+rows+columns&ie=UTF-8&oe=UTF-8)
+- [Google Search: py csv pick specific row](https://www.google.com/search?client=safari&rls=en&q=py+csv+pick+specific+row&ie=UTF-8&oe=UTF-8)
+- [Google Search: pychard click to open file](https://www.google.com/search?client=safari&rls=en&q=pychard+click+to+open+file&ie=UTF-8&oe=UTF-8)
+- [Google Search: python next loop iteration](https://www.google.com/search?client=safari&rls=en&q=python+next+loop+iteration&ie=UTF-8&oe=UTF-8)
+- [Google Search: python temp file named](https://www.google.com/search?client=safari&rls=en&q=python+temp+file+named&ie=UTF-8&oe=UTF-8)
+- [Google Search: sanknot](https://www.google.com/search?newwindow=1&client=safari&rls=en&ei=gBe8X6jfKNOqwbkP8oOCiA4&q=sanknot+&oq=sanknot+&gs_lcp=CgZwc3ktYWIQAzoECAAQRzoFCAAQkQI6BAgAEEM6CAguELEDEIMBOgIIADoFCAAQsQM6CwguEMcBEK8BEJECOgYIABAKEEM6BAguEEM6CwguELEDEMcBEKMCOgIILjoECAAQCjoHCC4QsQMQCjoHCAAQsQMQCjoKCC4QxwEQrwEQCjoQCC4QxwEQrwEQyQMQChCTAlDDzwJY6OICYIrqAmgAcAV4AIABuAGIAakIkgEDMC44mAEAoAEBqgEHZ3dzLXdpesgBCMABAQ&sclient=psy-ab&ved=0ahUKEwion_zsvJntAhVTVTABHfKBAOEQ4dUDCAw&uact=5)
+- [Google Search: twitch show when someone follows](https://www.google.com/search?client=safari&rls=en&q=twitch+show+when+someone+follows&ie=UTF-8&oe=UTF-8)
+- [Google Search: upgrade node](https://www.google.com/search?client=safari&rls=en&q=upgrade+node&ie=UTF-8&oe=UTF-8)
+- [Google Search: warming pan](https://www.google.com/search?client=safari&rls=en&q=warming+pan&ie=UTF-8&oe=UTF-8)
+- [Google Search: webflow](https://www.google.com/search?client=safari&rls=en&q=webflow&ie=UTF-8&oe=UTF-8)
+- [Google Web Designer - 'section'](https://webdesigner.withgoogle.com/intl/en-GB_ALL/thankyou?type=mac)
+- [How Ansible Works | Ansible.com](https://www.ansible.com/overview/how-ansible-works)
+- [html/script - Pastebin.com](https://pastebin.com/3rJB1wR6)
+- [Imgur: The magic of the Internet](https://imgur.com/KwvbrJg)
+- [Inktober 2020 | ryanfiller.com](https://5fbaeb402c0b9d00073d08f1--ryanfiller-svelte.netlify.app/blog/inktober-2020/)
+- [Nightbot](https://nightbot.tv/)
+- [NODE_MODULE_VERSION 64. This version of Node.js requires NODE_MODULE_VERSION...](https://github.com/serialport/node-serialport/issues/1910)
+- [nvALT - BrettTerpstra.com](https://brettterpstra.com/projects/nvalt/)
+- [Owen Boreham on Instagram: “Wtf is going on”](https://www.instagram.com/p/CH8sQbTh6Yt/)
+- [Package - ffmpeg-concat](https://developer.aliyun.com/mirror/npm/package/ffmpeg-concat)
+- [Python 3.9.0 Documentation: 4. More Control Flow Tools](https://docs.python.org/3/tutorial/controlflow.html)
+- [Python 3.9.0 Documentation: tempfile — Generate temporary files and directories](https://docs.python.org/3/library/tempfile.html)
+- [Python break, continue and pass Statements - Tutorialspoint](https://www.tutorialspoint.com/python/python_loop_control.htm)
+- [React – A JavaScript library for building user interfaces](https://reactjs.org/)
+- [Responsive web design tool, CMS, and hosting platform | Webflow](https://webflow.com/)
+- [SANKDESIGN - Graphic Design, Web Design, Marketing Creative, and More...](http://sankdesign.com/)
+- [single click to open file from project view – IDEs Support (IntelliJ Platform) | JetBrains](https://intellij-support.jetbrains.com/hc/en-us/community/posts/206379169-single-click-to-open-file-from-project-view)
+- [Stack Overflow: How do I get the row count of a pandas DataFrame?](https://stackoverflow.com/questions/15943769/how-do-i-get-the-row-count-of-a-pandas-dataframe)
+- [Stack Overflow: Print a list of all installed node.js modules](https://stackoverflow.com/questions/13981938/print-a-list-of-all-installed-node-js-modules)
+- [Stack Overflow: Python Select Specific Row and Column](https://stackoverflow.com/questions/25110987/python-select-specific-row-and-column)
+- [Stack Overflow: Why does my login button disappear when this script was added](https://stackoverflow.com/questions/64971816/why-does-my-login-button-disappear-when-this-script-was-added)
+- [Wikipedia: Bed warmer](https://en.wikipedia.org/wiki/Bed_warmer)

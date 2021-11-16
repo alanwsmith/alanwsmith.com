@@ -1,0 +1,15 @@
+---
+category: Miscellaneous
+date: '2006-11-08'
+slug: /explore-linux-drive-on-windows
+title: Explore linux drive on windows
+type: post
+---
+
+
+If you ever have a linux drive that you need to look at on a
+windows machine (say, one that is attached via a USB external
+enclosure, a tool named
+[explore2fs](http://www.chrysocome.net/explore2fs) will get you
+there. It appears to be open source. There is no install, it's just
+an .exe that you launch and you can view linux volumes.

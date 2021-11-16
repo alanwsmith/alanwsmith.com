@@ -1,0 +1,15 @@
+---
+category: Miscellaneous
+date: '2005-12-13'
+slug: /found-new-music-the-earlies
+title: 'Found New Music: The Earlies'
+type: post
+---
+
+
+Last year, South by Southwest release about 1.5 Gigs of MP3s from
+artist that were playing. One just came up on random that I hadn't
+heard before. A song called "Morning Wonder" by
+[The Earlies](http://www.theearlies.com/). In another sign that the
+net is freaking cool, you can
+[check it out for yourself](http://www.theearlies.com/morningwonder-hifi.html).

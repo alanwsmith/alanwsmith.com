@@ -1,0 +1,72 @@
+---
+title: "Installing QR Code Processes In Python"
+blurb: "These are old note that I need to go back and refresh but they might still be useful"
+slug: /installing-qr-code-processes-in-python
+type: post
+status: scratch
+category: Miscellaneous
+date: 2021-11-03T21:56:47-0400
+updated: 2021-11-03T21:56:47-0400
+---
+
+
+---
+
+Strike all the above for now. This section is based off of http://pyqrcode.sourceforge.net
+
+This one provides both encoding and decoding. 
+
+To start, I installed the JCC library with. 
+
+	sudo pip install jcc
+	sudo pip install PIL
+
+Then, I installed the 'pyqrcode' module from source (on Mac 10.7.5) (When you installed on forge, you pulled source from: http://pyqrcode.sourceforge.net/). This was done by extracting the source tar ball to a directory with no spaces (since that can throw things off), the then running:
+
+	make 
+	sudo make install
+	
+This appears to have also build the "egg" for me (not sure what that is). It's also possible that the egg was created from an earlier attempt to install the module with PIP. 
+
+Note that after you installed it, you had to make the update to the file:
+
+	/Library/Python/2.7/site-packages/qrcode-0.2.1-py2.7-macosx-10.7-intel.egg/qrcode/__init__.py 
+
+to comment out line 21:
+
+	#  _qrcode._setExceptionTypes(JavaError, InvalidArgsError)
+
+This was based off this stack overflow answer:
+
+	http://stackoverflow.com/a/12200691/102401
+
+
+
+
+---
+
+These are notes from an earlier try with a different module. It doesn't offer decoding though, so it's not what you are going with:
+
+Things you had to install before installing pyqrcode:
+
+Free Type 2 system library. 
+Python Imaging module. (Free Type 2 was optional, but seemed like a good idea. )
+
+
+You got the code from:
+
+	http://code.google.com/p/pyqrcode/source/checkout
+
+Pulled down with:
+
+	svn checkout http://pyqrcode.googlecode.com/svn/trunk/ pyqrcode-read-only
+
+Then did a cd into the 'pyqrcode-read-only' dir and ran:
+
+	python setup.py build
+	sudo python setup.py install
+
+After that, when you ran the test, it worked.
+
+
+

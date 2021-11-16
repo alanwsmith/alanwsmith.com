@@ -1,0 +1,19 @@
+---
+category: Miscellaneous
+date: '2006-01-08'
+slug: /another-fountainhead-snip
+tags: []
+title: Another Fountainhead Quote
+type: post
+---
+
+
+I like this one a lot. From chapter 6 of Part Four. Howard Roak in Ayn Rand's The Fountainhead: 
+
+> "Look, Gail" Roark got up, reached out, tore a thick branch off a tree, held it in both hands, one fist closed at each end; then, his wrists and knuckles tensed against the resistance, he bent the branch slowly into an arc. 
+> 
+> "Now I can make what I want of it: a bow, a spear, a cane, a railing. That's the meaning of life."
+> 
+> "Your strength?"
+>
+> "Your work." He tossed the branch aside. "The material the earth offers you and what you make of it..."

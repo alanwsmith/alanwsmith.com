@@ -1,0 +1,15 @@
+---
+blurb: The question has to be asked. Do snowy egrets taste like chicken?
+category: Photographs
+date: '2012-10-30'
+slug: /why-did-the-snowy-egret-cross-the-road-photo-for-2012-10-30
+tags:
+- Project 365 Photos
+title: Why Did The Snowy Egret Cross The Road - Photo for October 30, 2012
+type: post
+---
+
+
+![Image: aws-20121030--1032-03a.jpg](/aws-20121030--1032-03a.jpg)
+
+Following in the footsteps of his cousin, Chicken.

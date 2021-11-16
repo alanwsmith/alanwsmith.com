@@ -1,0 +1,57 @@
+---
+category: Miscellaneous
+date: '2008-05-11'
+slug: /reusable-bags
+title: 'Reusable bags '
+type: post
+---
+
+
+[![ACME Workhourse 1500 bag](http://www.alanwsmith.com/blog/wp-content/uploads/2008/05/acme-bag.jpg "ACME Reusable Bag")](http://www.reusablebags.com/store/acme-bags™-workhorse-style-1500-p-1.html)In
+college, I took a seminar course on environmental studies. In
+addition to the overall theoretical education, a fair amount of
+practical advice was provided as well. One key point that always
+stuck with me was that we should reuse bags when we shop instead of
+carrying stuff home in the store provided bags only to thrown them
+away after they are unpacked. The specific recommendation from the
+course was to use one bigger cloth bag, like a small laundry bag,
+for transport. I've tried this a few times and it never really
+worked out. The volume was simply to big for the job at hand. The
+bag could get too heavy very quickly and without some ability to
+separate things, it was inevitable that a 2 liter bottle would
+crush any loafs of bread. Enter
+[reusablebags.com](http://www.reusablebags.com/). I heard about
+these guys a few months back and was excited to check them out.
+They sell a wide variety of bags for reuse. Most of them are geared
+toward women with various designs and images on them, but
+thankfully there is at least one that won't make guys fell
+uncomfortable: the
+[ACME Bags - Workhorse Style 1500](http://www.reusablebags.com/store/acme-bags™-workhorse-style-1500-p-1.html).
+The base price is about $8 per, but if you get 4 or more that price
+drops to $7 per. Also, the have a
+a
+href=-"http://www.reusablebags.com/store/acme-bags%E2%84%A2-workhorse-style-1500-special-p-258.html"\>buy
+3 get one free special right now. The price is a little higher than
+I really like. Especially when I've seen some similar type bags for
+sale in grocery stores for just a few dollars each. What sold me on
+the ACME bags was the fact that they were a little bigger and
+didn't have logos all over them. Since I plan on having these for a
+long time, I'm willing to pay a premium to not have company logos
+and slogans on them. Originally, I got 4 bags, but I'm happy to
+report that after using them for a little while, I'm getting four
+more. Each bag holds probably twice as much as a standard plastic
+shopping bag. I know they will hold four 2-liter soda bottles
+easily. I don't necessarily recommend having them packed like that.
+The bag doesn't have a problem with the weight, but it's a bit
+heavy leaning over to pull them out of the car. I'm pretty sure
+that I'm currently one of a very few people using these type bags
+in my area. Every time I had them to a bagger and explain I want to
+use them in lieu of their standard ones, the have that look like
+they aren't really sure what's going on. It still takes me some
+getting used to as well. I've taken to always throwing them back in
+my car when I unpack them so they are always there. Much easier for
+me than trying to remember to grab them before I make a run to the
+store. I hope that other folks who see me using these bags decided
+to get a set for themselves. I encourage everyone do to the same.
+To add one more note about the cost, the good feeling that I get
+every time I use them makes the price seem even more reasonable.

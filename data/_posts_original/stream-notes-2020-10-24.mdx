@@ -1,0 +1,67 @@
+---
+category: Live Coding
+date: '2020-10-24'
+slug: /stream-notes-2020-10-24
+tags: []
+title: 'Stream Notes for October 24, 2020 #LiveCoding'
+type: post
+---
+
+
+`youtube: https://www.youtube.com/watch?v=kH-r_ifdSZw`
+
+
+### Timestamps
+
+<span class="post-info">__[Start: 00:00:00]__</span><br />
+Trying another Keyboard Maestro technique for resizing windows.
+
+<span class="post-info">__[Time: ~43:00]__</span><br />
+Setting up a local Django website for version 2 of my launchpad tools site. Got command line triggers to Keyboard Maestro hooked up.
+
+
+### Links From The Stream
+
+- [Apparatus Synonyms, Apparatus Antonyms | Thesaurus.com](https://www.thesaurus.com/browse/apparatus?s=t)
+- [Command Synonyms, Command Antonyms | Thesaurus.com](https://www.thesaurus.com/browse/command?s=t)
+- [Deploying Django | Django documentation | Django](https://docs.djangoproject.com/en/3.1/howto/deployment/)
+- [Django shortcut functions | Django documentation | Django](https://docs.djangoproject.com/en/3.1/topics/http/shortcuts/)
+- [Engine Synonyms, Engine Antonyms | Thesaurus.com](https://www.thesaurus.com/browse/engine?s=t)
+- [Example Domain](https://www.example.com/)
+- [Google Search: applescript keyboard maestro command](https://www.google.com/search?client=safari&rls=en&q=applescript+keyboard+maestro+command&ie=UTF-8&oe=UTF-8)
+- [Google Search: define:dynamo](https://www.google.com/search?client=safari&rls=en&q=define:dynamo&ie=UTF-8&oe=UTF-8)
+- [Google Search: deploy django site](https://www.google.com/search?client=safari&rls=en&q=deploy+django+site&ie=UTF-8&oe=UTF-8)
+- [Google Search: django redirect](https://www.google.com/search?client=safari&rls=en&q=django+redirect&ie=UTF-8&oe=UTF-8)
+- [Google Search: javascript array length](https://www.google.com/search?client=safari&rls=en&q=javascript+array+length&ie=UTF-8&oe=UTF-8)
+- [Google Search: javascript for automation console.log](https://www.google.com/search?client=safari&rls=en&q=javascript+for+automation+console.log&ie=UTF-8&oe=UTF-8)
+- [Google Search: javascript length for loop](https://www.google.com/search?client=safari&rls=en&q=javascript+length+for+loop&ie=UTF-8&oe=UTF-8)
+- [Google Search: keyboard maestro trigger from command line](https://www.google.com/search?client=safari&rls=en&q=keyboard+maestro+trigger+from+command+line&ie=UTF-8&oe=UTF-8)
+- [Google Search: keyboard meastro external command trigger](https://www.google.com/search?newwindow=1&client=safari&rls=en&ei=lN-UX5WCFrCC5wKhk7GgBA&q=keyboard+meastro+external+command+trigger&oq=keyboard+meastro+external+command+trigger&gs_lcp=CgZwc3ktYWIQAzIHCCEQChCgAToHCAAQRxCwAzoKCCEQFhAKEB0QHlCqKljDMmD0NmgBcAB4AIAB-AKIAeYJkgEHMC43LjAuMZgBAKABAaoBB2d3cy13aXrIAQjAAQE&sclient=psy-ab&ved=0ahUKEwiVnLaE1s7sAhUwwVkKHaFJDEQQ4dUDCAw&uact=5)
+- [Google Search: let vs var](https://www.google.com/search?client=safari&rls=en&q=let+vs+var&ie=UTF-8&oe=UTF-8)
+- [Google Search: matrix](https://www.google.com/search?newwindow=1&client=safari&rls=en&ei=DMqUX_KFE4WD5wLK5qCoCw&q=matrix+&oq=matrix+&gs_lcp=CgZwc3ktYWIQAzIQCC4QxwEQrwEQyQMQQxCTAjIECAAQQzIECAAQQzIECAAQQzIECAAQQzIECAAQQzIECAAQQzIECAAQQzIHCAAQsQMQQzIECAAQQzoHCAAQRxCwAzoICC4QsQMQgwE6AggAOgsILhCxAxDHARCjAjoICAAQsQMQgwE6BQgAEJECOgQILhBDOgUIABCxAzoICC4QxwEQowI6DQguEMcBEK8BEEMQkwI6DQguELEDEMcBEKMCEAo6BwguELEDEEM6CAgAELEDEMkDOgUILhCxA1C6N1jrQWCyQ2gEcAB4AIABrQGIAdQHkgEDMS43mAEAoAEBqgEHZ3dzLXdpesgBCMABAQ&sclient=psy-ab&ved=0ahUKEwjyu4nAwc7sAhWFwVkKHUozCLUQ4dUDCAw&uact=5)
+- [Google Search: top level domain](https://www.google.com/search?client=safari&rls=en&q=top+level+domain&ie=UTF-8&oe=UTF-8)
+- [https://darkforest.us](https://darkforest.us/)
+- [Keyboard Maestro 6 Documentation: Macro Triggers](https://www.keyboardmaestro.com/documentation/6/triggers.html)
+- [Keyboard Maestro 6 Documentation: Macro Triggers](https://www.keyboardmaestro.com/documentation/6/triggers.html#triggers_script)
+- [Keyboard Maestro 6 Documentation: Scripting](https://www.keyboardmaestro.com/documentation/6/scripting.html)
+- [Keyboard Maestro Discourse: Triggering a macro (with args) from command line?](https://forum.keyboardmaestro.com/t/triggering-a-macro-with-args-from-command-line/7135)
+- [Keyboard Maestro Wiki: action:Execute an AppleScript](https://wiki.keyboardmaestro.com/action/Execute_an_AppleScript)
+- [Keyboard Maestro Wiki: AppleScript](https://wiki.keyboardmaestro.com/AppleScript)
+- [Keyboard Maestro Wiki: trigger:Remote](https://wiki.keyboardmaestro.com/trigger/Remote)
+- [MDN: Array.prototype.length - JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/length)
+- [MDN: Django Tutorial Part 11: Deploying Django to production - Learn web development](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Deployment)
+- [Stack Overflow: For-loop performance: storing array length in a variable](https://stackoverflow.com/questions/17989270/for-loop-performance-storing-array-length-in-a-variable)
+- [Stack Overflow: osx yosemite - How to log to message window in Script Editor...](https://stackoverflow.com/questions/27609455/how-to-log-to-message-window-in-script-editor-using-javascript-for-automation)
+- [Stack Overflow: What's the difference between using "let" and "var"?](https://stackoverflow.com/questions/762011/whats-the-difference-between-using-let-and-var)
+- [Staging Synonyms, Staging Antonyms | Thesaurus.com](https://www.thesaurus.com/browse/staging)
+- [The redirects app | Django documentation | Django](https://docs.djangoproject.com/en/3.1/ref/contrib/redirects/)
+- [Tool Synonyms, Tool Antonyms | Thesaurus.com](https://www.thesaurus.com/browse/tool?s=t)
+- [Toolkit Synonyms, Toolkit Antonyms | Thesaurus.com](https://www.thesaurus.com/misspelling?term=toolkit&s=t)
+- [Tryit Editor v3.6](https://www.w3schools.com/JS/tryit.asp?filename=tryjs_const_array)
+- [URL dispatcher | Django documentation | Django](https://docs.djangoproject.com/en/3.1/topics/http/urls/#using-regular-expressions)
+- [Welcome to mark.vi Software](https://mark.vi/#)
+- [Widget Synonyms, Widget Antonyms | Thesaurus.com](https://www.thesaurus.com/browse/widget?s=t)
+- [Wikipedia: Domain hack](https://en.wikipedia.org/wiki/Domain_hack)
+- [Wikipedia: Dynamo](https://en.wikipedia.org/wiki/Dynamo)
+- [Wikipedia: List of Internet top-level domains](https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains#V)
+- [Wikipedia: Top-level domain](https://en.wikipedia.org/wiki/Top-level_domain)

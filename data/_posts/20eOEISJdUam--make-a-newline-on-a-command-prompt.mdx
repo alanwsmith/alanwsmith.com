@@ -1,0 +1,25 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2021-06-23T10:32:07'
+id: 20eOEISJdUam
+scrubbed_2021: false
+status: scratch
+type: post
+title: Make A Newline On A Command Prompt
+---
+
+Sometimes doing `\n` directly is a pain. 
+
+Another way to do it is to set a variable:
+
+```bash
+NEWLINE=$'\n'
+```
+
+Then use it with something like:
+
+```bash
+PROMPT_LINE="$(printf '─%.0s' {1..$(tput cols)})${NEWLINE}"
+```

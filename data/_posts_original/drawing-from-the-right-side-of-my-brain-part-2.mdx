@@ -1,0 +1,44 @@
+---
+blurb: This is the progress I made in a single week. It's amazing. (And, everyone
+  did the same quality. It's the course, not the people.)
+category: Miscellaneous
+date: '2020-12-19'
+slug: /drawing-from-the-right-side-of-my-brain-part-2
+tags: []
+title: Drawing From the Right Side of My Brain ~ Part 2
+type: post
+---
+
+
+Here, again, is the initial self-portrait from the first day of class. 
+
+![Self portrait sketch that isn't very good](/drawing-on-the-right-side-of-the-brain-initial-portrait.jpg)
+
+<br />
+
+And here, to my amazement, is what I was able to make at the end.
+
+<br />
+
+
+![Self portrait sketch that's pretty good even if I do say so myself](/drawing-on-the-right-side-of-the-brain-final-portrait.jpg)
+
+<br />
+
+
+
+
+As before, everyone in the class produced art of roughly the same quality. Mine was again middle of the pack and again not far from the worst or the best. 
+
+I never thought I could draw. Even more, I told and convinced myself I couldn't. I thought it was magic some folks had that most of us didn't. I couldn't have been more wrong. It's a skill and skills can be taught. I'd always heard that, but never *really* believed it. Now, I absolutely do.
+
+---
+
+
+<br /> 
+
+_P.S. Please forgive the dower expression. The portrait is done looking in a mirror and we were told to keep a neutral expression so we didn't have to hold a smile. Given that it took four hours, that was good advice._
+
+<br />
+
+<a href="/drawing-from-the-right-side-of-my-brain/">Back to part 1</a>

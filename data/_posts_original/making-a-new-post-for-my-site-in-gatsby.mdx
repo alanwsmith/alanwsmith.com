@@ -1,0 +1,44 @@
+---
+title: "Making A New Post For My Site In Gatsby"
+slug: /making-a-new-post-for-my-site-in-gatsby
+type: post
+status: archive
+category: Gatsby
+date: 2021-10-31T00:30:56-0400
+---
+
+This was the start of my process for making posts in Gatsby. As of Nov. 2021, I'm no longer using Gatsby. I'm using NextJS instead. 
+
+
+
+To write a new post:
+
+- Update `/Users/alans/workshop/www.alanwsmith.com--gatsby--v1/.env.development` to change:
+
+        SITE_CONTENT_DIR=/Users/alans/workshop/test-content
+    
+    To:
+    
+        SITE_CONTENT_DIR=/Users/alans/workshop/site-content
+        
+        (Note: `site-content` not `source-content`)
+        
+        
+        
+- Make a new file under:
+
+        /Users/alans/workshop/source-content/YEAR/SLUG/index.md
+        
+- Contents of the file should be:
+
+
+
+```
+---
+category: Miscellaneous
+date: 2021-04-9T17:25:22-0400
+slug: /litmus-test-movies-example
+title: Litmus Test Movies ~ Or, How To Know If We're Gonna Be Friends
+type: post
+---
+```

@@ -1,0 +1,57 @@
+---
+title: "Install The KSUID Command Line Tool On A Mac"
+blurb: "The directions on the github site are a little unclear about the file location. Here's how to get the tool installed on your PATH."
+slug: /install-the-ksuid-command-line-tool-on-a-mac
+type: post
+status: published
+category: Miscellaneous
+date: 2021-11-03T13:49:18-0400
+updated: 2021-11-03T13:49:18-0400
+---
+
+Took me a bit to figure this one out. This is how to get it installed so you can hit it from your command line. (NOTE: I've got `go` installed. I'm not sure if that's necessary or not. Your milage may vary.)
+
+The install command to run is:
+
+```cli
+go install github.com/segmentio/ksuid/cmd/ksuid@latest
+```
+
+That installs the app on your `$GOPATH` which is not a regular environmental variable. It's also not a location that's on your PATH by default. You find it with:
+
+```
+go env GOPATH
+```
+
+That defaults to a `go` directory in your home directory. Wherever it points, the executable is in the `...go/bin` folder. Copy that into `/usr/local/bin` with something like:
+
+```
+cp ~/go/bin/ksuid /usr/local/bin
+```
+
+And, that should do it.
+
+
+References:
+
+- [ksuid from segmentio on github](https://github.com/segmentio/ksuid)
+- [How To Build And Install Go Programs](https://www.digitalocean.com/community/tutorials/how-to-build-and-install-go-programs)
+
+
+
+
+
+
+
+```bash
+go install github.com/segmentio/ksuid/cmd/ksuid@latest
+cp "" "/usr/local/bin/ksuid"
+```
+
+
+
+
+
+
+
+

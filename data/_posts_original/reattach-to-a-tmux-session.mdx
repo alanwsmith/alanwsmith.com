@@ -1,0 +1,26 @@
+---
+title: "Reattach To A tmux Session"
+slug: /reattach-to-a-tmux-session
+type: post
+status: wip
+category: Miscellaneous
+date: 2021-06-21T11:44:38-0400
+---
+
+Attache to a named session:
+
+```command
+tmux attach -t SESSION_NAME
+```
+
+
+To a numbered session:
+
+```command
+tmux attach -t 0
+```
+where "0" is the number you see via `tmux ls`
+
+
+
+Where "SESSION_NAME" is 

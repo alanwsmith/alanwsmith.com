@@ -1,0 +1,15 @@
+---
+blurb: Turns out that backlighting a frog reveals some skeleton.
+category: Photographs
+date: '2012-08-24'
+slug: /photo-for-2012-08-24-tree-frog
+tags:
+- Project 365 Photos
+title: Tree Frog -- Photo for August 24, 2012
+type: post
+---
+
+
+![Image: aws-20120824--1904-01.jpg" caption="Backlit Tree Frog](/aws-20120824--1904-01.jpg" caption="Backlit Tree Frog)
+
+This little guy was hanging out in my driveway. I didn't realize until I saw the shot enlarged that you can see the outline of his humerus. Amazing to think that bones so small work.

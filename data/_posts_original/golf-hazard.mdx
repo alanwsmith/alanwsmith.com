@@ -1,0 +1,14 @@
+---
+category: Miscellaneous
+date: '2006-03-30'
+slug: /golf-hazard
+title: Golf Hazard
+type: post
+---
+
+
+In golf, red stakes mark a water hazard. On the Valley Course at
+Sawgrass yesterday, the hazard on hole 15 took on an additional
+meaning.
+
+![Gator Hazard](http://www.alanwsmith.com/blog/wp-content/uploads/2006/03/20060329_035734a.jpg)
