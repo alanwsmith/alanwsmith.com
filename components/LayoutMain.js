@@ -77,6 +77,10 @@ export default function LayoutMain(props) {
               <Link href="/">
                 <a>Home</a>
               </Link>
+              &nbsp; &nbsp; &nbsp;
+              <Link href="/podcast">
+                <a>Podcast</a>
+              </Link>
             </div>
           </div>
         </nav>

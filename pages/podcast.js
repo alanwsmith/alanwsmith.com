@@ -31,49 +31,49 @@ export default function BlogList({ posts }) {
             </p>
             <p className="pb-4 text-blue-200 max-w-prose">
               I'm still getting the podcast feed setup. In the mean time, here
-              are the episodes on youtube
+              are the episodes on youtube.
             </p>
 
             <div className="max-w-prose pt-4 border-t border-gray-400 text-blue-200">
               <h3>Season 1</h3>
               <ul>
                 <li>
-                  <Link href="/posts/20cqqoNF5mAd--thepodofalan--season-1--episode-1--show-notes">
+                  <Link href="/posts/20cqqoNF5mAd--thepodofalan--season-1--episode-1">
                     <a>Episode 1</a>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/posts/20sMFFslqP9G--thepodofalan--season-1--episode-1--aftershow-notes">
+                  <Link href="/posts/20sMFFslqP9G--thepodofalan--season-1--episode-1-aftershow">
                     <a>Episode 1 - Aftershow</a>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/posts/20sPk2lLN4n2--thepodofalan--season-1--episode-2--show-notes">
+                  <Link href="/posts/20sPk2lLN4n2--thepodofalan--season-1--episode-2">
                     <a>Episode 2</a>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/posts/20sXNIXBhn50--thepodofalan--season-1--episode-2--aftershow-notes">
+                  <Link href="/posts/20sXNIXBhn50--thepodofalan--season-1--episode-2-aftershow">
                     <a>Episode 2 - Aftershow</a>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/posts/20sekPY2uuIb--thepodofalan--season-1--episode-3--show-notes">
+                  <Link href="/posts/20sekPY2uuIb--thepodofalan--season-1--episode-3">
                     <a>Episode 3</a>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/posts/20semafQXMpH--thepodofalan--season-1--episode-3--aftershow-notes">
+                  <Link href="/posts/20semafQXMpH--thepodofalan--season-1--episode-3-aftershow">
                     <a>Episode 3 - Aftershow</a>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/posts/20tXfNxVDkMa--thepodofalan--season-1--episode-4--show-notes">
+                  <Link href="/posts/20tXfNxVDkMa--thepodofalan--season-1--episode-4">
                     <a>Episode 4</a>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/posts/20te45Fsw9I0--thepodofalan--season-1--episode-4--aftershow-notes">
+                  <Link href="/posts/20te45Fsw9I0--thepodofalan--season-1--episode-4-aftershow">
                     <a>Episode 4 - Aftershow</a>
                   </Link>
                 </li>
