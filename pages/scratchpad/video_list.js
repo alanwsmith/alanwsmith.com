@@ -1,91 +1,74 @@
 export const data = `
-0
-11
-2020
 Understanding the V8 JavaScript Engine
-https://www.youtube.com/watch?v=xckH5s3UuX4
-
+0,11,2020,xckH5s3UuX4
 ---
-0
-40
-2020
 Building Your Own Design System with CSS Variables, talk by Scott Tolinski
-https://www.youtube.com/watch?v=LwYZTKxj-do
-
+0,40,2020,LwYZTKxj-do
 ---
-0
-55
-2020
 using curl better - with curl creator Daniel Stenberg
-https://www.youtube.com/watch?v=I6id1Y0YuNk
-
+0,55,2020,I6id1Y0YuNk
 ---
-0
-25
-2020
 Everything You Know About MongoDB is Wrong!
-https://www.youtube.com/watch?v=l2J2_3eS_DA
-
+0,25,2020,l2J2_3eS_DA
 ---
-0
-30
-2020
 How to AVOID Becoming a 10x Engineer - Talk by Ivana Kellyerova
-https://www.youtube.com/watch?v=2uoKT-g0oLs
-
+0,30,2020,2uoKT-g0oLs
 ---
-0
-55
-2020
 Functional Programming with JavaScript - talk by Simon Painter
-https://www.youtube.com/watch?v=ZBf0j-w6uwA
-
+0,55,2020,ZBf0j-w6uwA
 ---
-0
-39
-2018
 Object Oriented Programming is not what I thought - Talk by Anjana Vakil
-https://www.youtube.com/watch?v=TbP2B1ijWr8
-
+0,39,2018,TbP2B1ijWr8
 ---
-0
-25
-2019
 The Basics of Social Engineering (aka How I Break into Casinos and Airports)
-https://www.youtube.com/watch?v=jfXwdH-fkLE
-
+0,25,2019,jfXwdH-fkLE
 ---
-1
-22
-2020
 Level Up With the Fundamentals of Web Development
-https://www.youtube.com/watch?v=3xq96I9IUXw
-
+0,22,2020,3xq96I9IUXw
 ---
-0
-15
-2012
 Juice it or lose it - a talk by Martin Jonasson & Petri Purho
-https://www.youtube.com/watch?v=Fy0aCDmgnxg
-
+0,15,2012,Fy0aCDmgnxg
 ---
-0
-55
-2009
 The Myth of the Genius Programmer
-https://www.youtube.com/watch?v=0SARbwvhupQ
-
+0,55,2009,0SARbwvhupQ
+---
+John Cleese on Creativity In Management
+0,37,?,Pb5oIIPO62g
+---
+The computer revolution hasnt happened yet - Alan Kay at OOPSLA 1997
+0,60,1997,oKg1hTOQXoY
+---
+Linus Torvalds on git
+0,70,2007,4XpnKHJAok8
+---
+Mindfulness with Jon Kabat-Zinn
+0,70,2007,3nwwKbM_vJc
+---
+All the Little Things by Sandi Metz
+0,40,2014,8bZh5LMaSmE
 `
 
 function processItem(item) {
-  const details = item.split('\n')
-  return details[4]
+  const lines = item.split('\n')
+  const details = lines[2].split(',')
+  return (
+    <li>
+      <input
+        type="checkbox"
+        checked={details[0] === '0' ? false : true}
+        readOnly
+      />{' '}
+      <a href={`https://youtu.be/${details[3]}`} target="_blank">
+        {lines[1]}
+      </a>
+      <br />({details[1]}min. {details[2] === '?' ? '' : `- ${details[2]}`})
+    </li>
+  )
 }
 
 export function VideoList({ data }) {
   const items = data.split('---')
-  const listItems = items.map((item) => <li>{processItem(item)}</li>)
-  //return <div>{items.length}</div>
+  const listItems = items.map((item) => processItem(item))
   return <ul>{listItems}</ul>
 }
 
