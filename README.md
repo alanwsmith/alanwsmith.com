@@ -1,5 +1,3 @@
 # alanwsmith.com
 
-My personal web site.
-
----
+Source for my personal website.

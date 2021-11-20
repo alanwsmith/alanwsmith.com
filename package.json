@@ -1,23 +1,23 @@
 {
-  "name": "next-netlify-starter",
-  "version": "0.5.0",
+  "name": "alanwsmith.com",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && cp _redirects .next/",
-    "export": "next export"
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
     "@netlify/plugin-nextjs": "^3.9.2",
-    "mdx-bundler": "^6.0.3",
-    "next": "^12.0.4",
-    "prismjs": "^1.25.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "esbuild": "^0.13.15",
+    "gray-matter": "^4.0.3",
+    "mdx-bundler": "^8.0.0",
+    "next": "12.0.4",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.0",
-    "postcss": "^8.3.11",
-    "tailwindcss": "^2.2.19"
+    "eslint": "7.32.0",
+    "eslint-config-next": "12.0.4"
   }
 }
