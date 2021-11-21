@@ -1,0 +1,27 @@
+---
+blurb: Save five characters for every tab opened.
+categories:
+  - Vim
+  - TIL
+date: '2015-06-02T00:00:00'
+id: 20eN3wSitbBX
+scrubbed_2021: false
+status: published
+type: post
+title: Today I Learned Mapping te to tabedit in Vim
+---
+
+Vim's `:tabedit` command seems long considering how often it's used. Applying logic from [this StackOverflow answer](http://stackoverflow.com/a/7515418/102401) produces this customization:
+
+```bash{numberLines: true}
+cnoreabbrev <expr> te getcmdtype() == ":" && getcmdline() == 'te' ? 'tabedit' : 'te'
+```
+
+It defines a `:te` shortcut which expands to `:tabedit`. Throw it in `~/.vimrc` and save five characters for every tab open.
+
+---
+
+
+_It's worth pointing out that [this accepted StackOverflow answer](http://stackoverflow.com/a/6638381/102401) provides a dangerous alternative. It recommends `ca` (aka `cabbrev`). For example, `ca te tabedit`. The gotcha hidden in this approach is that it expands across the command. Trying to run `:!ls /tmp/te/` will be altered to `:!ls /tmp/tabedit/`. Not so good._
+
+_And, yes, I [added an answer](http://stackoverflow.com/a/30599815/102401) to help out there too._

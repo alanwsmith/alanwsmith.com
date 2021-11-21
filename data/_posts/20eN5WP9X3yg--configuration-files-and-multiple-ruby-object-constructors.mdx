@@ -1,0 +1,141 @@
+---
+blurb: >-
+  A way to remove conditional logic from initialize methods and make testing
+  smoother.
+categories:
+  - Ruby
+date: '2015-10-12T00:00:00'
+id: 20eN5WP9X3yg
+scrubbed_2021: false
+status: published
+type: post
+title: Configuration Files and Multiple Ruby Object Constructors
+---
+
+I mostly write command line apps. Mostly. It's the nature of the gig, even though I work on a relatively big website<sup>1</sup>. There are lots of moving parts, many of which are well suited for automation, that combine to produce the overall site. As someone who likes avoiding hard-coded variables, I use configuration files to tell my various apps/scripts/services/software what to do.
+
+The simplest way to instantiate a Ruby object with parameters (like a config file path) is to send them directly to the `initialize` method. For example<sup>2</sup>:
+
+
+```ruby{numberLines: true}
+class Robot
+
+  attr_reader :config
+
+  def initialize(config_path)
+    @config = parse_config(config_path)
+  end
+  
+  def parse_config(config_path)
+    YAML.load(ERB.new(File.read(config_path)).result)
+  end
+end
+
+robot = Robot.new("~/robot-config.yml"))
+```
+
+
+That approach works but makes testing problematic. Unit tests for individual method can't be run without loading a config file. An undesirable tight coupling is created. If the object validates the config, changes to its format can trigger multiple, otherwise unrelated tests. A strong "Shotgun Surgery" Code Smell<sup>3</sup> indicating a great refactoring opportunity. 
+
+My first attempt at a remedy was to make the config file optional. For example:
+
+```ruby{numberLines: true}
+class Robot
+
+  attr_reader :config
+
+  def initialize(config_path = nil)
+    if config_path
+      @config = parse_config(config_path)
+    else 
+      @config = {}
+    end
+  end
+  
+  def parse_config(config_path)
+    YAML.load(ERB.new(File.read(config_path)).result)
+  end
+end
+
+robot = Robot.new("~/robot-config.yml"))
+
+robot_for_unit_tests = Robot.new
+```
+
+
+That works, but feels rough. Conditional logic has become a red flag ever since attending Sandi Metz's wonderful Practical Object-Oriented Development (POOD) course<sup>4</sup>. Also, having recently kicked around with The Big Nerd Ranch's Objective-C book<sup>5</sup>, I'd just seen examples of using multiple object constructors. After some investigation<sup>6</sup>, experiments, and hacking, I ended up with this approach: 
+
+```ruby{numberLines: true}
+class Robot
+
+  attr_reader :config
+
+  def initialize
+    @config = {} # defaults can be applied here too.
+  end
+  
+  def initialize_with_config config_path
+    initialize
+    @config = parse_config(config_path)
+  end
+  
+  def self.new_with_config config_path
+    forerunner = allocate
+    forerunner.send(:initialize_with_config, config_path)
+    forerunner  
+  end
+  
+  def parse_config(config_path)
+    YAML.load(ERB.new(File.read(config_path)).result)
+  end
+end
+```
+
+The primary way to instantiate objects changes from:
+
+```ruby{numberLines: true}
+robot = Robot.new("~/robot-config.yml"))
+```
+
+To use the newly created class method:
+
+```ruby{numberLines: true}
+robot = Robot.new_with_config("~/robot-config.yml"))
+```
+
+The `.new_with_config` class method bounces to the `.initialize_with_config` object method which in turn calls the default `.initialize` object method before doing its work.
+
+Unit tests can now use the built-in `.new()` without params or worrying about a config file. An added bonus is the nice way this separates setting defaults (and any other initialization requirements) from loading the config.
+
+This approach isn't limited to config files. It works any time there's a need to create objects with different parameters/options from a single class. The few extra extra lines for the class methods are totally worth the clean separation provided by multiple constructors.
+
+
+_If you're interested in more details on how this works, check out [Ruby Constructors](http://www.verygoodindicators.com/blog/2015/03/15/ruby-contructors/) from [@terminalbreaker](https://twitter.com/terminalbreaker)._
+
+---
+
+
+_Footnotes_
+
+1. Well, I really work on a few big sites: [PGATOUR.COM](http://www.pgatour.com), [PresidentsCup.com](http://www.presidentscup.com), and [WorldGolfChampionships.com](http://www.worldgolfchampionships.com) but they are all directly related and powered by the same tools.
+
+2. The examples in this post contain working code with two caveats. First, they need `require 'erb'` and `require 'yaml'`. Those lines were omitted to save a little vertical height. And, of course, a config file sitting at `~/robot-config.yml`. I also used a minimal approach with no error handling to keep the size down. So, while they work, they are only proof-of-concept examples.
+
+3. The [Wikipedia Shotgun Surgery](https://en.wikipedia.org/wiki/Shotgun_surgery) is a pretty formal. The simplified way I've heard it described and think about it is: An update in one place that requires modifying multiple classes/methods/functions in other places.
+
+4. I can't recommend [Sandi's Practical Object-Oriented Design Course](http://www.sandimetz.com/courses) course highly enough. It was mind-expanding. The huge focus on "Practical" is hard to beat. (And yes, that's the back of my head with the WWSMD neck-tattoo.)
+
+5. I haven't read any other Objective-C books. So, I don't have a basis for comparison, but [Objective-C Programming:
+The Big Nerd Ranch Guide](https://www.bignerdranch.com/we-write/objective-c-programming/) seems like a decent intro. More than anything, it makes me want to attend a course at the ranch.
+
+6. This was a rare case where I wasn't able to score a hit on StackOverflow. I found the solution in [Ruby Constructors](http://www.verygoodindicators.com/blog/2015/03/15/ruby-contructors/) and the related [Constructors, Intro to Ruby Classes Part II slides](http://www.slideshare.net/ciscoleal/constructors-28459017). Both by [Juan '@terminalbreaker' Leal](https://twitter.com/terminalbreaker).
+
+
+_P.S. Yes, I know making two calls works just fine. Something like:_
+
+```ruby{numberLines: true}
+robot = Robot.new
+robot.prase_config("~/robot-config.yml"))
+```
+
+_But since production scripts require the config, I prefer to make it happen in one line._

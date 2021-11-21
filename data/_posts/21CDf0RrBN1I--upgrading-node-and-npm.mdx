@@ -1,0 +1,71 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2021-11-20T14:24:34'
+id: 21CDf0RrBN1I
+status: scratch
+type: post
+title: Upgrading Node and npm
+---
+
+As of Nov. 2021, I'm running node through home brew:
+
+Originally doing
+
+```bash
+brew install node
+```
+
+Then, upgrading with:
+
+```bash
+brew upgrade node
+```
+
+That put in version 17.1.0
+
+16.13.0 is the Long Term Support (LTS) version, but brew pushes things to the most recent. 
+
+If you want to get the LTS version instead, go to the node site and pull the download
+
+[https://nodejs.org/en/download/](https://nodejs.org/en/download/)
+
+
+--
+
+Not sure if the notes below still apply but leaving them here for archival purposes. 
+
+
+---
+
+Old Notes
+
+---
+
+This is how the Learning Node book says to upgrade Node itself:
+
+    sudo npm cache clean -f
+    sudo npm install -g
+    sudo n stable
+
+
+You should also look into Node Version Manager (aka "nvm")
+
+---
+
+To upgrade npm itself:
+
+    sudo npm install npm -g
+    
+Be aware, though, that this can cause issues, especially in a team environment. If your team members are using the version of npm that’s installed with Node, and you’ve manually upgraded npm to the newer version, you can have inconsistent build results that may not be easy to discover.
+
+(NOTE: So, sounds like keeping npm version consistent should be part of the testing process)
+
+
+
+
+
+
+
+
