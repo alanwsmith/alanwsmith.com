@@ -1,7 +1,8 @@
 import '../styles/globals.css'
+import 'prismjs/themes/prism-tomorrow.css'
 
-function MyApp({ Component, pageProps }) {
+function Application({ Component, pageProps }) {
   return <Component {...pageProps} />
 }
 
-export default MyApp
+export default Application
