@@ -6,16 +6,16 @@ import { bundleMDX } from 'mdx-bundler'
 export const POSTS_PATH = path.join(process.cwd(), 'data/_posts')
 
 export const getSourceOfFile = (fileName) => {
-  console.log(`-- getSourceOfFile: ${fileName}`)
+  // console.log(`-- getSourceOfFile: ${fileName}`)
   const fullFilePath = path.join(POSTS_PATH, fileName)
-  console.log(`-- Full path: ${fullFilePath}`)
+  // console.log(`-- Full path: ${fullFilePath}`)
   const theData = fs.readFileSync(fullFilePath, 'utf8')
   // console.log(theData)
   return theData
 }
 
 export const getAllPosts = () => {
-  console.log('-- getAllPosts')
+  // console.log('-- getAllPosts')
   return fs
     .readdirSync(POSTS_PATH)
     .filter((path) => /\.mdx?$/.test(path))
@@ -32,7 +32,7 @@ export const getAllPosts = () => {
 }
 
 export const getSinglePost = async (slug) => {
-  console.log(`-- getSinglePost: ${slug}`)
+  // console.log(`-- getSinglePost: ${slug}`)
   const fileSource = getSourceOfFile(slug + '.mdx')
 
   const result = await bundleMDX({
