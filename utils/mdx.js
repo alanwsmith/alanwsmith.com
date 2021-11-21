@@ -35,9 +35,7 @@ export const getSinglePost = async (slug) => {
   // console.log(`-- getSinglePost: ${slug}`)
   const fileSource = getSourceOfFile(slug + '.mdx')
 
-  const result = await bundleMDX({
-    source: fileSource,
-  })
+  const result = await bundleMDX(fileSource)
   const { code, frontmatter } = result
 
   return {
