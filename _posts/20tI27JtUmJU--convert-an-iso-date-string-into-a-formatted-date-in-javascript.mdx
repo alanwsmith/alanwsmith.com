@@ -1,0 +1,66 @@
+---
+blurb: ''
+categories:
+  - JavaScript
+date: '2021-11-13T21:34:05'
+id: 20tI27JtUmJU
+status: scratch
+type: post
+title: Convert an ISO Date String Into A Formatted Date In JavaScript
+---
+
+```javascript
+#!/usr/bin/env node
+
+const months = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
+]
+
+const dateString = '2021-11-12T02:03:03-04:00'
+const dateObject = new Date(dateString)
+
+console.log(`${months[dateObject.getMonth()]} ${dateObject.getFullYear()}`)
+```
+
+Produces:
+
+```
+November 2021
+```
+
+---
+
+```
+#!/usr/bin/env node
+
+const months = [
+  'Jan.',
+  'Feb.',
+  'Mar.',
+  'Apr.',
+  'May',
+  'Jun.',
+  'Jul.',
+  'Aug.',
+  'Sept.',
+  'Oct.',
+  'Nov.',
+  'Dec.',
+]
+
+const dateString = '2021-11-12T02:03:03-04:00'
+const dateObject = new Date(dateString)
+
+console.log(`${months[dateObject.getMonth()]} ${dateObject.getFullYear()}`)
+```

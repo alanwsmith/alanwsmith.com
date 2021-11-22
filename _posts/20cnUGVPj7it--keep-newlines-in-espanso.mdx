@@ -1,0 +1,32 @@
+---
+blurb: The default behavior is to remove empty newlines. Here's how to keep them.
+categories:
+  - Miscellaneous
+date: '2021-11-08T01:25:57'
+id: 20cnUGVPj7it
+scrubbed_2021: true
+status: scratch
+type: post
+title: Keep Newlines In Espanso
+---
+
+This is an example of allowing extra newlines at the end of a espanso expansion script by turning off `trim`
+
+
+```yaml
+# Grimoire Post Template
+- trigger: "post;"
+  replace: "{{output}}"
+  vars:
+    - name: output
+      type: script 
+      params:
+        args:
+          - bash
+          - "%CONFIG%/scripts/post.espanso"
+        trim: false
+```
+
+via: https://newreleases.io/project/github/federico-terzi/espanso/release/v0.4.1
+
+
