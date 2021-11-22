@@ -1,0 +1,31 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2021-11-22T14:39:38'
+id: 21HtjsJA3xJr
+status: scratch
+type: post
+title: 2021 - Next.js Build Notes
+---
+
+These notes start from the point when I moved off mdx-bundler
+
+---
+
+Initial setup
+
+```
+mkdir alanwsmith.com
+cd alanwsmith.com
+npx create-next-app .
+npm i next-mdx-remote gray-matter
+npm i @netlify/plugin-nextjs
+```
+
+That got everything ready to go based off the work done on https://next-mdx-remote-blog-example.netlify.app/
+
+---
+
+Moved all components into their own files since next-mdx-remote doesn't work with them inside of files. 
+
