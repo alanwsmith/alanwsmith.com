@@ -8,6 +8,7 @@ import Link from 'next/link'
 const CONTENT_DIR = '_posts'
 
 import ExampleComponent from '../../components/ExampleComponent'
+import Checklist from '../../components/Checklist'
 
 export default function Post({ source, frontmatter }) {
   return (
@@ -18,7 +19,7 @@ export default function Post({ source, frontmatter }) {
         </Link>
       </div>
       <h1>{frontmatter.title}</h1>
-      <MDXRemote {...source} components={{ ExampleComponent }} />
+      <MDXRemote {...source} components={{ ExampleComponent, Checklist }} />
     </>
   )
 }
