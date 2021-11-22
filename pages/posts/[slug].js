@@ -5,9 +5,9 @@ import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote } from 'next-mdx-remote'
 import Link from 'next/link'
 
-import ExampleComponent from '../../components/ExampleComponent'
+const CONTENT_DIR = '_posts'
 
-const components = { ExampleComponent }
+import ExampleComponent from '../../components/ExampleComponent'
 
 export default function Post({ source, frontmatter }) {
   return (
@@ -18,22 +18,22 @@ export default function Post({ source, frontmatter }) {
         </Link>
       </div>
       <h1>{frontmatter.title}</h1>
-      <MDXRemote {...source} components={components} />
+      <MDXRemote {...source} components={{ ExampleComponent }} />
     </>
   )
 }
 
 export async function getStaticProps({ params }) {
-  const filePath = path.join(process.cwd(), `_posts/${params.slug}.mdx`)
-  const fileContents = fs.readFileSync(filePath)
-  const { content, data } = matter(fileContents)
+  const { content, data } = matter(
+    fs.readFileSync(path.join(CONTENT_DIR, `${params.slug}.mdx`))
+  )
   const mdxSource = await serialize(content)
   return { props: { source: mdxSource, frontmatter: data } }
 }
 
 export async function getStaticPaths() {
   const paths = fs
-    .readdirSync(path.join(process.cwd(), '_posts'))
+    .readdirSync(CONTENT_DIR)
     .filter((path) => /\.mdx?$/.test(path))
     .map((fileName) => fileName.replace(/\.mdx$/, ''))
     .map((slug) => ({ params: { slug: slug } }))
