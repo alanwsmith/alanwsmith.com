@@ -5,7 +5,7 @@ import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote } from 'next-mdx-remote'
 import Link from 'next/link'
 
-const CONTENT_DIR = '_posts'
+const CONTENT_DIR = path.join(process.cwd(), '_posts')
 
 import Checklist from '../../components/Checklist'
 import ReadOnlyChecklist from '../../components/ReadOnlyChecklist'
