@@ -23,20 +23,19 @@ export default function HomePage({ posts }) {
 export async function getStaticProps({ params }) {
   const contentDir = path.join(process.cwd(), '_posts')
 
-  const filePaths = fs
+  const posts = fs
     .readdirSync(contentDir)
     .filter((filePath) => /\.mdx?$/.test(filePath))
-
-  const posts = filePaths.map((filePath) => {
-    const slug = filePath.replace(/\.mdx$/, '')
-    const fullFilePath = path.join(contentDir, filePath)
-    const fileContents = fs.readFileSync(fullFilePath)
-    const { content, data } = matter(fileContents)
-    return {
-      title: data.title,
-      slug: slug,
-    }
-  })
+    .map((filePath) => {
+      const slug = filePath.replace(/\.mdx$/, '')
+      const { content, data } = matter(
+        fs.readFileSync(path.join(contentDir, filePath))
+      )
+      return {
+        title: data.title,
+        slug: slug,
+      }
+    })
 
   return {
     props: {
