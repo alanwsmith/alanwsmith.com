@@ -22,7 +22,7 @@ export default function HomePage({ posts }) {
 }
 
 export async function getStaticProps({ params }) {
-  const contentDir = '_posts'
+  const contentDir = path.join(process.cwd(), '_posts')
 
   const posts = fs
     .readdirSync(contentDir)
