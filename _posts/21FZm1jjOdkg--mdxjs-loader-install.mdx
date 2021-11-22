@@ -1,0 +1,129 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2021-11-21T18:55:50'
+id: 21FZm1jjOdkg
+status: scratch
+type: post
+title: mdx-js loader install
+---
+
+TL;DR: I couldn't get `@mdx-js/loader@next` to work without showing frontmatter. So, I'm moving to `next-mdx-remote`
+
+
+TL;DR: It's not that hard to get the basic loader running, but it shows the yaml frontmatter. I'm still trying to figure out a way to get around that. I've tried the `compile` but can't figure out how to get it to show back up (I keep getting errors when I try `run` or `runSync`)
+
+I think the way to go is to make a new version of loader that skips the frontmatter at that point.  
+
+Another option would be to remove the frontmatter with a pre-processing step (e.g. the one that copies the files from my grimoire into the processing directory). Could also setup at that step to convert the yaml frontmatter into exported variables. That feels a little fraught thouth
+
+---
+
+This isn't all my notes, just a few things. 
+
+
+```
+npx create-next-app .
+npm install @mdx-js/loader@next
+```
+
+Setup `next.config.js` with:
+
+```javascript
+module.exports = {
+  reactStrictMode: true,
+  webpack: (config, options) => {
+    config.module.rules.push({
+      test: /\.mdx/,
+      use: '@mdx-js/loader',
+    })
+    return config
+  },
+}
+```
+
+
+---
+
+@mdx-js/loader@next works, but it doesn't deal with frontmatter. 
+
+---
+
+Did:
+
+```
+npm i @mdx-js/mdx@next
+```
+
+and remove the webpack loader from next.config.js
+
+also did
+
+```
+npm install remark-frontmatter
+```
+
+---
+
+add the webpack stuff back in 
+
+---
+
+This is the state of the file now, trying to do the import dynamically of the file that gets created, but that seems to only be able to be done async and the main component can't be async so it can't wait.
+
+
+```javascript
+import fs from 'fs'
+import Document from '../index-content.mdx'
+import matter from 'gray-matter'
+
+// let Document2 = null
+
+export async function loadDocument2() {
+  try {
+    const Document2 = await import('../index-content.mdx')
+    console.log(Document2)
+  } catch (err) {
+    console.error('import failed')
+  }
+}
+
+export default function Home() {
+  async function loadModule() {}
+
+  // // loadDocument2()
+  // return `${import('../index-content.mdx').then((obj) => {
+  //   return obj
+  // })}`
+
+  console.log('here3')
+  return <div>here</div>
+  // return <Document2 />
+}
+
+export async function getStaticProps() {
+  const fileContents = fs.readFileSync('./index.mdx')
+  const { content, data } = matter(fileContents)
+  fs.writeFileSync('./index-content.mdx', content)
+
+  try {
+    var Document2 = await import('../index-content.mdx')
+    return {
+      props: {
+        // doc: Document2,
+      },
+    }
+  } catch (err) {
+    console.error('import failed')
+  }
+
+  return {
+    props: {},
+  }
+}
+```
+
+
+
+
