@@ -7,6 +7,7 @@ export default function HomePage({ posts }) {
   return (
     <>
       <h1>This is the home page</h1>
+      <p>Stuff broke... I fix</p>
       <ul>
         {posts.map((post) => (
           <li key={post.slug}>
