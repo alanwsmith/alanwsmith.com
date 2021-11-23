@@ -1,4 +1,11 @@
+const prism = require('prismjs')
+import { useEffect } from 'react'
+
 export default function LayoutMain(props) {
+  useEffect(() => {
+    prism.highlightAll()
+  }, [])
+
   return (
     <>
       <div className="bg-gray-800 min-h-screen">
