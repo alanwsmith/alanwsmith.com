@@ -222,11 +222,6 @@ export async function getStaticPaths() {
 ```
 
 
-
-
-
-
-
 ---
 
 Installed prismjs with:
@@ -235,10 +230,53 @@ Installed prismjs with:
 npm i prismjs
 ```
 
+Added `import 'prismjs/themes/prism-tomorrow.css'` to _app.js so it looks like this:
 
+```javascript
+import '../styles/globals.css'
+import 'prismjs/themes/prism-tomorrow.css'
 
+function MyApp({ Component, pageProps }) {
+  return <Component {...pageProps} />
+}
 
+export default MyApp
+```
 
+And then updated ./components/LayoutMain.js so it looks like this:
+
+```javascript
+const prism = require('prismjs')
+import { useEffect } from 'react'
+
+export default function LayoutMain(props) {
+  useEffect(() => {
+    prism.highlightAll()
+  }, [])
+
+  return (
+    <>
+      <div className="bg-gray-800 min-h-screen">
+        <main className="pb-16 mx-auto container pt-4 px-6 max-w-screen-md">
+          {props.content}
+        </main>
+      </div>
+    </>
+  )
+}
+```
+
+That gets the syntax highlighting in place so that code fences like:
+
+    ```javascript
+    const someThing = 'An example'
+    ```
+
+Render as:
+
+```javascript
+const someThing = 'An example'
+```
 
 
 
