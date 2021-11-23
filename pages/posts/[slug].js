@@ -7,6 +7,7 @@ import Link from 'next/link'
 
 const CONTENT_DIR = path.join(process.cwd(), '_posts')
 
+import LayoutMain from '../../components/LayoutMain'
 import Checklist from '../../components/Checklist'
 import ReadOnlyChecklist from '../../components/ReadOnlyChecklist'
 import YouTubeVideo from '../../components/YouTubeVideo'
@@ -20,10 +21,21 @@ export default function Post({ source, frontmatter }) {
           <a>Home Page</a>
         </Link>
       </div>
-      <h1>{frontmatter.title}</h1>
-      <MDXRemote
-        {...source}
-        components={{ Checklist, ReadOnlyChecklist, YouTubeVideo, VimeoVideo }}
+      <LayoutMain
+        content={
+          <>
+            <h1>{frontmatter.title}</h1>
+            <MDXRemote
+              {...source}
+              components={{
+                Checklist,
+                ReadOnlyChecklist,
+                YouTubeVideo,
+                VimeoVideo,
+              }}
+            />
+          </>
+        }
       />
     </>
   )

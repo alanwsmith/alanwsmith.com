@@ -2,21 +2,28 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import Link from 'next/link'
+import LayoutMain from '../components/LayoutMain'
 
 export default function HomePage({ posts }) {
   return (
     <>
-      <h1>This is the home page</h1>
-      <p>Stuff broke... I fix</p>
-      <ul>
-        {posts.map((post) => (
-          <li key={post.slug}>
-            <Link href={`/posts/${post.slug}`}>
-              <a>{post.title}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <LayoutMain
+        content={
+          <>
+            <h1>This is the home page</h1>
+            <p>Stuff broke... I fix</p>
+            <ul>
+              {posts.map((post) => (
+                <li key={post.slug}>
+                  <Link href={`/posts/${post.slug}`}>
+                    <a>{post.title}</a>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </>
+        }
+      />
     </>
   )
 }

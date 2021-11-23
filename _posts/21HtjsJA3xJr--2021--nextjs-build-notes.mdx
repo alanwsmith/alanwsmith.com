@@ -9,7 +9,7 @@ type: post
 title: 2021 - Next.js Build Notes
 ---
 
-These notes start from the point when I moved off mdx-bundler
+These notes start from the point when I moved off mdx-bundler and onto next-mdx-remote. I started from scratch.
 
 ---
 
@@ -28,4 +28,217 @@ That got everything ready to go based off the work done on https://next-mdx-remo
 ---
 
 Moved all components into their own files since next-mdx-remote doesn't work with them inside of files. 
+
+The data has to be added directly in the component as well, like this:
+
+```jsx
+<Checklist data={`
+Start Monster Cat Audio
+Set Monster Cat Audio to Shuffle
+Mute headphones
+Switch OBS to main scene and check that music and vocals are working
+`} />
+```
+
+---
+
+Installed Tailwind from these instructions: via: https://tailwindcss.com/docs/guides/nextjs
+
+Starting with
+
+```
+npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
+```
+
+Then ran this 
+ 
+```
+npx tailwindcss init -p
+```
+
+which created `tailwind.config.js` and `postcss.config.js`
+
+The next step was to put this in `tailwind.config.js`
+
+```
+purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+```
+
+Then replaced the contents of ./styles/global.css with:
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+That gets the basic framework in place. 
+
+---
+
+Setup to use a basic LayoutMain file that has tailwind in it:
+
+file: ./components/LayoutMain.js
+
+```javascript
+export default function LayoutMain(props) {
+  return (
+    <>
+      <div className="bg-gray-800 min-h-screen">
+        <main className="pb-16 mx-auto container pt-4 px-6 max-w-screen-md">
+          {props.content}
+        </main>
+      </div>
+    </>
+  )
+}
+```
+
+Then updated the index.js and [slug].js file to use it with:
+
+file: ./pages/index.js
+
+```javascript
+import fs from 'fs'
+import path from 'path'
+import matter from 'gray-matter'
+import Link from 'next/link'
+import LayoutMain from '../components/LayoutMain'
+
+export default function HomePage({ posts }) {
+  return (
+    <>
+      <LayoutMain
+        content={
+          <>
+            <h1>This is the home page</h1>
+            <p>Stuff broke... I fix</p>
+            <ul>
+              {posts.map((post) => (
+                <li key={post.slug}>
+                  <Link href={`/posts/${post.slug}`}>
+                    <a>{post.title}</a>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </>
+        }
+      />
+    </>
+  )
+}
+
+export async function getStaticProps({ params }) {
+  const contentDir = path.join(process.cwd(), '_posts')
+
+  const posts = fs
+    .readdirSync(contentDir)
+    .filter((filePath) => /\.mdx?$/.test(filePath))
+    .map((filePath) => {
+      const slug = filePath.replace(/\.mdx$/, '')
+      const { content, data } = matter(
+        fs.readFileSync(path.join(contentDir, filePath))
+      )
+      return {
+        title: data.title,
+        slug: slug,
+      }
+    })
+
+  return {
+    props: {
+      posts: posts,
+    },
+  }
+}
+```
+
+file: ./pages/posts/[slug].js
+
+```javascript
+import fs from 'fs'
+import path from 'path'
+import matter from 'gray-matter'
+import { serialize } from 'next-mdx-remote/serialize'
+import { MDXRemote } from 'next-mdx-remote'
+import Link from 'next/link'
+
+const CONTENT_DIR = path.join(process.cwd(), '_posts')
+
+import LayoutMain from '../../components/LayoutMain'
+import Checklist from '../../components/Checklist'
+import ReadOnlyChecklist from '../../components/ReadOnlyChecklist'
+import YouTubeVideo from '../../components/YouTubeVideo'
+import VimeoVideo from '../../components/VimeoVideo'
+
+export default function Post({ source, frontmatter }) {
+  return (
+    <>
+      <div>
+        <Link href="/">
+          <a>Home Page</a>
+        </Link>
+      </div>
+      <LayoutMain
+        content={
+          <>
+            <h1>{frontmatter.title}</h1>
+            <MDXRemote
+              {...source}
+              components={{
+                Checklist,
+                ReadOnlyChecklist,
+                YouTubeVideo,
+                VimeoVideo,
+              }}
+            />
+          </>
+        }
+      />
+    </>
+  )
+}
+
+export async function getStaticProps({ params }) {
+  const { content, data } = matter(
+    fs.readFileSync(path.join(CONTENT_DIR, `${params.slug}.mdx`))
+  )
+  const mdxSource = await serialize(content)
+  return { props: { source: mdxSource, frontmatter: data } }
+}
+
+export async function getStaticPaths() {
+  const paths = fs
+    .readdirSync(CONTENT_DIR)
+    .filter((path) => /\.mdx?$/.test(path))
+    .map((fileName) => fileName.replace(/\.mdx$/, ''))
+    .map((slug) => ({ params: { slug: slug } }))
+  return {
+    paths: paths,
+    fallback: false,
+  }
+}
+```
+
+
+
+
+
+
+
+---
+
+Installed prismjs with:
+
+```
+npm i prismjs
+```
+
+
+
+
+
+
+
 
