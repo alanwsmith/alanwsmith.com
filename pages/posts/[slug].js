@@ -37,21 +37,23 @@ export default function Post({ source, frontmatter }) {
       <LayoutMain
         content={
           <div className="max-w-prose">
-            <h1 className="text-blue-300 text-3xl ">{frontmatter.title}</h1>
             <div
               className="
-              border-b 
-              border-gray-400 
+              border-b
+              border-gray-600 
               text-gray-600 
               text-xs 
-              pb-4
+              pb-2
               mb-4"
             >
+              <h1 className="text-blue-300 text-3xl pt-6">
+                {frontmatter.title}
+              </h1>
               <div className="pt-1">
                 <HeaderDate date={frontmatter.date} />
               </div>
             </div>
-            <div className="text-blue-200">
+            <div className="text-blue-200 pr-14">
               <MDXRemote
                 {...source}
                 components={{
