@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && cp _redirects .next/",
+    "build": "next build && cp _data/_redirects .next/",
     "start": "next start",
     "lint": "next lint"
   },
