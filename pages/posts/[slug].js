@@ -8,8 +8,9 @@ import Link from 'next/link'
 
 const CONTENT_DIR = path.join(process.cwd(), '_posts')
 
-import LayoutMain from '../../components/LayoutMain'
 import Checklist from '../../components/Checklist'
+import HeaderDate from '../../components/HeaderDate'
+import LayoutMain from '../../components/LayoutMain'
 import ReadOnlyChecklist from '../../components/ReadOnlyChecklist'
 import YouTubeVideo from '../../components/YouTubeVideo'
 import VimeoVideo from '../../components/VimeoVideo'
@@ -46,7 +47,9 @@ export default function Post({ source, frontmatter }) {
               pb-4
               mb-4"
             >
-              <div className="pt-1">todo: put date here</div>
+              <div className="pt-1">
+                <HeaderDate date={frontmatter.date} />
+              </div>
             </div>
             <div className="text-blue-200">
               <MDXRemote
