@@ -283,6 +283,77 @@ const someThing = 'An example'
 Added in favicons and header stuff and nav. see the github for details. 
 
 
+---
+
+Using next/image requires importing the images directly to get the benefits of local functionality. Unfortunately next-mdx-remote doesn't handle that. So, I ended up created a `components/Img.js` file with:
+
+```javascript
+import Image from 'next/image'
+
+import black_widow_20051026_230734a1 from '../_images/black_widow_20051026_230734a1.jpg'
+
+const imgMap = {
+  black_widow_20051026_230734a1: black_widow_20051026_230734a1,
+}
+
+export default function Img({ src, alt = 'image alt text unavailable' }) {
+  return <Image src={imgMap[src]} alt={alt} />
+}
+```
+
+That gets included in the `[slug].js` file with the other components (via: `import Img from '../../components/Img'`) and passed to `MDXRemote` like this:
+
+```javascript
+<MDXRemote
+  {...source}
+  components={{
+    Checklist,
+    Img,
+    ReadOnlyChecklist,
+    YouTubeVideo,
+    VimeoVideo,
+  }}
+/>
+```
+
+Then, for every image that's going to be called I create an import like:
+
+```javascript
+import black_widow_20051026_230734a1 from '../_images/black_widow_20051026_230734a1.jpg'
+```
+
+and a reference in a mapping object so I can access it like this:
+
+```javascript
+const imgMap = {
+  black_widow_20051026_230734a1: black_widow_20051026_230734a1,
+  // other images here
+}
+```
+
+I make sure the image filenames work as variable names so I can keep the same name in place across the board. 
+
+Then, to use the image, I call it like this in the MDX source files:
+
+```html
+<Img
+    src="black_widow_20051026_230734a1"
+    alt="A dead black widow spider showing the red hour-glass shape on the belly"
+/>
+```
+
+I build the `Img.js` file with a script before I publish that grabs all the images in the `_images` directory and makes an entry for each one. That way, all I need to do is drop in an image with a valid name and then use it in the `<Img>` tag. The rest of the work is automated. 
+
+I'd prefer to keep the images in sub-directories by year but that's more than I want to tackle at the moment. Getting the images in place in generally was the key. I can optimize later if that becomes necessary.
+
+Something that's cool about this is that it will let me customize image calls further if I want since there's a layer of abstraction between the content and the `<Image>` call. For example, instead of just sending a style tag I could send an attribute that adds extra divs and puts in captions, etc... In fact, now that I think about it, that's exactly what I'm going to do. 
+
+It's a bit of a hack, but it works. 
+
+
+
+TODO: Figure out if this impacts the performance of the site as the number of images goes up since they are all being imported.
+
 
 
 
