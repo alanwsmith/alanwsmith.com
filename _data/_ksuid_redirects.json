@@ -8600,6 +8600,14 @@
     "21APPycAk9SJ": {
       "current_slug": "/posts/21APPycAk9SJ--get-video-details-from-the-youtube-api-using-python",
       "slugs_to_redirect": []
+    },
+    "21N7VdZTXEBO": {
+      "current_slug": "/posts/21N7VdZTXEBO--safely-develop-aws-lambdas-in-localstack-that-talk-to-s3",
+      "slugs_to_redirect": []
+    },
+    "21NFySoi7X2p": {
+      "current_slug": "/posts/21NFySoi7X2p--ordered-and-unordered-lists-in-tailwind",
+      "slugs_to_redirect": []
     }
   }
 }
