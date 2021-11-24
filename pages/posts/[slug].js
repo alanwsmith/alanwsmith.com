@@ -10,6 +10,7 @@ const CONTENT_DIR = path.join(process.cwd(), '_posts')
 
 import Checklist from '../../components/Checklist'
 import HeaderDate from '../../components/HeaderDate'
+import Img from '../../components/Img'
 import LayoutMain from '../../components/LayoutMain'
 import ReadOnlyChecklist from '../../components/ReadOnlyChecklist'
 import YouTubeVideo from '../../components/YouTubeVideo'
@@ -58,6 +59,7 @@ export default function Post({ source, frontmatter }) {
                 {...source}
                 components={{
                   Checklist,
+                  Img,
                   ReadOnlyChecklist,
                   YouTubeVideo,
                   VimeoVideo,
