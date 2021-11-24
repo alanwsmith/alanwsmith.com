@@ -36,7 +36,7 @@ export default function BlogList({ posts }) {
             <div className="max-w-prose pt-4 border-t border-gray-400 text-blue-200">
               <ul>
                 {posts.map((post, index) => (
-                  <li key={index}>
+                  <li key={index} className="pb-0">
                     <Link href={`/posts/${post.slug}`}>{post.title}</Link>
                   </li>
                 ))}
