@@ -72,14 +72,14 @@ export default function LayoutMain(props) {
      px-6 max-w-screen-md
     "
         >
-          <div className="border-b border-gray-400 max-w-prose">
+          <div className="border-b border-gray-700 max-w-prose">
             <div className="pt-2 pb-1 text-gray-500">
               <Link href="/">
-                <a>Home</a>
+                <a className="text-gray-500">Home</a>
               </Link>
               &nbsp; &nbsp; &nbsp;
               <Link href="/podcast">
-                <a>Podcast</a>
+                <a className="text-gray-500">Podcast</a>
               </Link>
             </div>
           </div>
