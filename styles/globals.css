@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-lg;
+  }
+  a {
+    @apply text-blue-300;
+    @apply hover:underline;
+  }
+  h3 {
+    @apply text-xl;
+    @apply font-bold;
+    @apply pb-1;
+    @apply pt-4;
+  }
+  ul {
+    @apply list-disc;
+    @apply pl-5;
+    @apply pb-5;
+  }
+  p {
+    @apply pb-5;
+  }
+  hr {
+    @apply py-1;
+  }
+}

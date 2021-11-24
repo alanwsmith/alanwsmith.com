@@ -69,11 +69,11 @@ export default function LayoutMain(props) {
     m-0 mx-auto 
     text-blue-200 container 
     pt-2 
-    px-6 max-w-screen-md
+     px-6 max-w-screen-md
     "
         >
           <div className="border-b border-gray-400 max-w-prose">
-            <div className="pb-2 text-gray-500">
+            <div className="pt-2 pb-1 text-gray-500">
               <Link href="/">
                 <a>Home</a>
               </Link>
@@ -84,7 +84,7 @@ export default function LayoutMain(props) {
             </div>
           </div>
         </nav>
-        <main className="pb-16 mx-auto container pt-4 px-6 max-w-screen-md">
+        <main className="pb-16 mx-auto container pt-3 px-6 max-w-screen-md">
           {props.content}
         </main>
       </div>
