@@ -1,0 +1,32 @@
+---
+blurb: ''
+categories:
+  - Postgres
+date: '2021-11-26T11:23:01'
+id: 21SoJy0tRFyh
+status: published
+type: post
+title: Create A Primary Key In Postgreg
+---
+
+Use `SERIAL` with `PRIMARY KEY` to create a unique primary key for a table. For example, here's the SQL to make a table with an `id` column as the primary key: 
+
+```sql
+CREATE TABLE schema_name.table_name (
+    id SERIAL PRIMARY KEY,
+    another_column INT
+);
+```
+
+### Notes
+
+- Using `SERIAL` provides an auto incrementing number up to 2,147,483,647 that takes 4 bytes per row
+- There's also `SMALLSERIAL` and `BIGSERIAL` which go up to 32,767 with 2 bytes and 9,223,372,036,854,775,807 with 8 bytes, respectively
+
+###  Further Reading
+
+- You don't need to bother with it unless you're interested in the details, but the different versions of `SERIAL` aren't really types. They're a "notational convenience". Check out [the docs](https://www.postgresql.org/docs/current/datatype-numeric.html#DATATYPE-SERIAL) if you're interested in the specifics. Otherwise, you can just ignore it.
+- Another thing you probably won't have to mess with is an alternate method by making an IDENTITY column. You can't link to it directly but search for `GENERATED { ALWAYS | BY DEFAULT } AS IDENTITY [ ( sequence_options ) ]` on [this page](https://www.postgresql.org/docs/current/sql-createtable.html) for details that also tie into [CREATE SEQUENCE](https://www.postgresql.org/docs/current/sql-createsequence.html)
+
+
+

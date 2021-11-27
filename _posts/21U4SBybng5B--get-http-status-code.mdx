@@ -1,0 +1,32 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2021-11-26T22:05:29'
+id: 21U4SBybng5B
+status: scratch
+type: post
+title: Get HTTP Status Code
+---
+
+Get the http status code with `-I`. For example:
+
+```
+curl -I https://www.pgatour.com/leaderboard
+```
+
+Returns:
+
+```
+HTTP/1.1 301 Moved Permanently
+Content-Type: text/html; charset=iso-8859-1
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Location: http://www.pgatour.com/leaderboard.html
+Content-Length: 0
+Date: Sat, 27 Nov 2021 03:06:20 GMT
+Connection: keep-alive
+Set-Cookie: PGAT_Country=US
+Set-Cookie: PGAT_City=JACKSONVILLE
+Set-Cookie: PGAT_State=FL
+```

@@ -1,0 +1,116 @@
+---
+blurb: ''
+categories:
+  - Postgres
+date: '2021-11-25T22:09:51'
+id: 21RFrVFjFFOm
+status: draft
+type: post
+title: Create A User (aka Role) In Postgres
+---
+
+There aren't "Users" in Postgres. Only "Roles". Create a power role that can create databases by logging in with the root postgres role:
+
+```
+psql -u postgres
+```
+
+Then create the new role with:
+
+```
+CREATE ROLE new_role_name CREATEDB LOGIN ENCRYPTED PASSWORD 'some strong password';
+```
+
+Which will return `CREATE ROLE` as the response. 
+
+Note that the `psql` command defaults to connecting to a database with the same name as the role name, but creating a role does not create a database. So, if you immediately try to do `psql -U new_role_name` it will fail with something like:
+
+```
+psql: error: connection to server on socket "/tmp/.s.PGSQL.5432" failed: FATAL:  database "new_role_name" does not exist
+```
+
+You can either create a new database with the same name (TODO: Add directions or a link to create the user database), or you can log into the default postgres database with:
+
+```
+psql -d postgres -U new_role_name
+```
+
+Once you're logged in, you can create new database, then log out and log back in to the new database to work with it. 
+
+If you create a role and database with the same name as your local user account you can log in with just `psql` I use this for basic database storage for my local tools. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Create a Roll for TDD Tests
+---------------------------
+
+
+    sudo -u postgres psql -c "CREATE ROLE tdd_connections CREATEDB NOINHERIT;"
+
+
+
+
+
+Steps from initial install via `psql`
+-------------------------------------
+
+This is the core of what's happening. The convenience commands are above are better for general usage.
+
+- [] Start `psql` as the user `postgres`:
+    
+        sudo -u postgres psql
+
+- [] Create the role (e.g. `aws_test_1`) with:
+
+        CREATE ROLE role_name LOGIN;
+
+
+Exit `psql` with `\q` if you're done with it.
+
+
+- Only roles that have the LOGIN attribute can be used as the initial role name for a database connection. A role with the LOGIN attribute can be considered the same as a "database user". To create a role with login privilege, use either:
+
+
+
+Notes
+-----
+
+- As above: Database roles are global across a database cluster installation (and not per individual database).
+
+- In order to bootstrap the database system, a freshly initialized system always contains one predefined role. This role is always a "superuser", and by default (unless altered when running initdb) it will have the same name as the operating system user that initialized the database cluster. Customarily, this role will be named postgres. In order to create more roles you first have to connect as this initial role.
+
+
+Links
+-----
+
+- Docs: https://www.postgresql.org/docs/9.5/static/database-roles.html
+
+
+
+
+
+Create a role with `createuser`
+-------------------------------
+
+Even though Postgres calls them `roles` instead of `users`, the convenience command is:
+
+    sudo -u postgres createuser some_role_name
+
+This works with a Ubuntu 16_04 server where postgresql is installed. (The `postgres` user is installed at the same time). With the rest of the permissions stuff, it looks like logging in and setting stuff is more useful overall than `createuser`. So, planning to go that way for the most part. 
+
+
+
+### Important Note
+
+Database roles not confined to a particular database. They are global across the entire cluster

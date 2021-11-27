@@ -1,0 +1,25 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2021-11-25T21:55:01'
+id: 21RE3er23t2Y
+status: scratch
+type: post
+title: Create A Postgres Database
+---
+
+Log in to the server with user that has create database privileges via:
+
+```
+psql -U user_name
+```
+
+Run:
+
+```
+CREATE DATABASE your_database_name;
+```
+
+The database is made from a clone of the `template1` database. So, any changes made there will show up in your new database. 
+

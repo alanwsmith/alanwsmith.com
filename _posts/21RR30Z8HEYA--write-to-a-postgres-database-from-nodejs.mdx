@@ -1,0 +1,66 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2021-11-25T23:41:49'
+id: 21RR30Z8HEYA
+status: scratch
+type: post
+title: Write To A Postgres Database From Node.js
+---
+
+NOTE: This stuff is async so keep that in mind if you do something like truncate. 
+
+TODO: show the async way to make sure stuff happens in the right order. 
+
+TODO: Put in `pool.end()` where appropriate. should just go after the query but need to verify. Note that if there are other calls inside (e.g. writing back) then there might be issues. need to check that out.
+
+
+This is a basic one:
+
+```
+const credentails = require('/Users/alans/configs/postgres_users/alans.json')
+const { Pool } = require('pg')
+
+const pool = new Pool(credentails)
+
+pool.query(
+  'INSERT INTO site_links_2021.links (file_id) VALUES ($1)',
+  ['asdf'],
+  (err, res) => {
+    if (err) {
+      throw err
+    }
+
+    console.log(res)
+    // console.log('user:', res.rows[0])
+  }
+)
+
+console.log('here')
+```
+
+Where `/Users/alans/configs/postgres_users/alans.json` looks like:
+
+```
+{
+  "user": "alans",
+  "host": "localhost",
+  "database": "alans",
+  "password": "blahblahblah",
+  "port": 5432
+}
+```
+
+TODO: fill this out more
+
+---
+
+https://node-postgres.com/features/pooling
+
+Look at this section: Single query
+
+If you don't need a transaction or you just need to run a single query, the pool has a convenience method to run a query on any available client in the pool. This is the preferred way to query with node-postgres if you can as it removes the risk of leaking a client.
+
+---
+

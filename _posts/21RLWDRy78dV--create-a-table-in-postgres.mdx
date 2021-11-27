@@ -1,0 +1,35 @@
+---
+blurb: ''
+categories:
+  - Postgres
+date: '2021-11-25T22:56:22'
+id: 21RLWDRy78dV
+status: draft
+type: post
+title: Create A Table In Postgres
+---
+
+
+TODO: put in link to how to setup privilidges
+
+---
+
+login with:
+
+```
+psql -d database_name -U role_name
+```
+
+
+Example:
+
+```
+CREATE TABLE schema_name.new_table_name (
+    code        char(5) CONSTRAINT firstkey PRIMARY KEY,
+    title       varchar(40) NOT NULL,
+    did         integer NOT NULL,
+    date_prod   date,
+    kind        varchar(10)
+);
+```
+

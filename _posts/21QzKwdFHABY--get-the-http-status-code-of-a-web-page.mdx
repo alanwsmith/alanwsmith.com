@@ -1,0 +1,33 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2021-11-25T19:53:58'
+id: 21QzKwdFHABY
+status: scratch
+type: post
+title: Get The HTTP Status Code Of A Web Page
+---
+
+HTTP and HTTPS are called via different modules 
+
+
+```javascript
+const https = require('https')
+
+https.get('https://www.alanwsmith.com/', (res) => {
+  console.log('statusCode:', res.statusCode)
+  console.log('headers:', res.headers)
+})
+```
+
+
+```javascript
+const http = require('http')
+
+http.get('http://www.alanwsmith.com/', (res) => {
+  console.log('statusCode:', res.statusCode)
+  console.log('headers:', res.headers)
+})
+```
+

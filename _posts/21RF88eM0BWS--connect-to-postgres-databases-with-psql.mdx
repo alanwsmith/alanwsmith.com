@@ -1,0 +1,26 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2021-11-25T22:03:50'
+id: 21RF88eM0BWS
+status: scratch
+type: post
+title: Connect to Postgres Databases With psql
+---
+
+To connect to a specific database as a specific user (aka role), use:
+
+
+```
+psql -U user_name -d database_name
+```    
+        
+        
+To connect to the root database with the root user, do this:
+
+```
+psql -U postgres 
+```
+
+

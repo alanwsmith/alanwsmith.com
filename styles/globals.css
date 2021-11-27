@@ -13,7 +13,7 @@
   h3 {
     @apply text-xl;
     @apply font-bold;
-    @apply pb-1;
+    @apply pb-2;
     @apply pt-4;
   }
   ul {
@@ -33,6 +33,32 @@
     @apply pb-5;
   }
   hr {
-    @apply py-1;
+    @apply py-3;
+  }
+  table {
+    @apply mb-8;
+    @apply pb-14;
+    @apply pt-10;
+  }
+  th {
+    @apply border-gray-400;
+    @apply border-b;
+    @apply border-t;
+    @apply px-4;
+  }
+  td {
+    @apply border-gray-500;
+    @apply border;
+    @apply pr-10;
+    @apply pl-3;
+  }
+  td:first-child {
+    @apply border-l-0;
+  }
+  td:last-child {
+    @apply border-r-0;
+  }
+  tr {
+    @apply mb-2;
   }
 }

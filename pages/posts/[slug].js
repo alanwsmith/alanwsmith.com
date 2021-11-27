@@ -58,6 +58,7 @@ export default function Post({ source, frontmatter }) {
               <MDXRemote
                 {...source}
                 components={{
+                  Link,
                   Checklist,
                   Img,
                   ReadOnlyChecklist,
