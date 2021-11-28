@@ -1,8 +1,12 @@
 import Image from 'next/image'
 
+import acme_bag_2008_05 from '../_images/acme_bag_2008_05.jpg'
+import bama_schedule_sp_20090821_misc_112136 from '../_images/bama_schedule_sp_20090821_misc_112136.png'
 import black_widow_20051026_230734a1 from '../_images/black_widow_20051026_230734a1.jpg'
 import broken_sunpak_tripod_20090829_misc_110949 from '../_images/broken_sunpak_tripod_20090829_misc_110949.jpg'
 import command_line_ls_2009_04 from '../_images/command_line_ls_2009_04.png'
+import euthanasia_20080629_snapshots_0003 from '../_images/euthanasia_20080629_snapshots_0003.jpg'
+import fire_eyes_1 from '../_images/fire_eyes_1.jpg'
 import iphone_3gs_test_photo_2009_06 from '../_images/iphone_3gs_test_photo_2009_06.jpg'
 import mile_200000_20080402_snaps_0039 from '../_images/mile_200000_20080402_snaps_0039.jpg'
 import movies_cropped_2006_02 from '../_images/movies_cropped_2006_02.jpg'
@@ -17,9 +21,13 @@ import wobble_wedge_2009_02 from '../_images/wobble_wedge_2009_02.jpg'
 import youtube_logo_2009_01 from '../_images/youtube_logo_2009_01.gif'
 
 const imgMap = {
+  acme_bag_2008_05: acme_bag_2008_05,
+  bama_schedule_sp_20090821_misc_112136: bama_schedule_sp_20090821_misc_112136,
   black_widow_20051026_230734a1: black_widow_20051026_230734a1,
   broken_sunpak_tripod_20090829_misc_110949: broken_sunpak_tripod_20090829_misc_110949,
   command_line_ls_2009_04: command_line_ls_2009_04,
+  euthanasia_20080629_snapshots_0003: euthanasia_20080629_snapshots_0003,
+  fire_eyes_1: fire_eyes_1,
   iphone_3gs_test_photo_2009_06: iphone_3gs_test_photo_2009_06,
   mile_200000_20080402_snaps_0039: mile_200000_20080402_snaps_0039,
   movies_cropped_2006_02: movies_cropped_2006_02,
