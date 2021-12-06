@@ -1,0 +1,144 @@
+---
+blurb: ''
+categories:
+  - Python
+date: '2021-12-05T20:43:56'
+id: 21tkehok83wr
+status: published
+type: post
+title: Clean Filenames with Lowercase Letters and Dashes
+---
+
+
+This is my method for scrubbing filenames to strings that won't break things. This top version uses underscores.  
+
+
+```python
+import unittest
+import re
+
+def clean_filename(file_name):
+    '''
+    This method updates file names so the contain
+    only lowercase letters, numbers, underscores, and dots.
+    Accent marks are preserved. Multiple underscores
+    are reduced to a single one. Underscores are also
+    removed from the front and end of end of the file and
+    from surrounding any dot character.
+
+    Assuming a string with at least one character is
+    provided, then the minimum return is a single character.
+    Either an underscore, or whatever was passed in. It's not
+    possible to have an empty return value.
+
+    It's not the responsibility of this method to prevent
+    you from overwriting something.
+    '''
+    file_name = file_name.lower()
+    file_name = re.sub('[^\w\.]', '-', file_name)
+    file_name = re.sub('-', '_', file_name)
+    file_name = re.sub('_+', '_', file_name)
+    file_name = re.sub('^_+', '', file_name)
+    file_name = re.sub('_+$', '', file_name)
+    file_name = re.sub('_?\._?', '.', file_name)
+    return file_name
+```
+
+
+---
+
+Older notes to clean up:
+
+The original does dashes instead of underscrores. Pull those back out. 
+
+
+
+This method cleans filenames. It lower cases names and replaces spaces and non word type characters with dashes. (Characters with accent marks are left alone). If the cleaning process completely erases the filename, it is replaced with one based off the timestamp and a uuid to prevent collisions. 
+
+This method only processes one filename at a time and *does not* take on any responsibility for avoiding name collisions. 
+
+
+The code:
+
+---
+
+
+   import re
+   
+   def clean_filename(*, file_name):
+       '''
+       This method updates file names so the contain
+       only lowercase letters, numbers, dashes, and dots.
+       Accent marks are preserved. Multiple dashes
+       are reduced to a single one. Dashes are also
+       removed from the front and end of end of the file and
+       from surrounding any dot character.
+   
+       Assuming a string with at least one character is
+       provided, then the minimum return is a single character.
+       Either a dash, or whatever was passed in. It's not
+       possible to have an empty return value.
+   
+       It's not the responsibility of this method to prevent
+       you from overwriting something.
+       '''
+       file_name = file_name.lower()
+       file_name = re.sub('[^\w\.]', '-', file_name)
+       file_name = re.sub('_', '-', file_name)
+       file_name = re.sub('-+', '-', file_name)
+       file_name = re.sub('^-+', '', file_name)
+       file_name = re.sub('-+$', '', file_name)
+       file_name = re.sub('-?\.-?', '.', file_name)
+       return file_name
+   
+
+
+---
+
+Old vesion
+
+This sets up a filename for cleaned up usage. 
+
+--------------------------------------------------------------------------------
+
+```
+#!/usr/bin/env python3
+
+import re
+import unittest
+
+def clean_filename(filename):
+    """ 
+    Return a filename that's just letters,
+    numbers, underscores, and dots. Leading,
+    trailing, and consecutive dashes are 
+    also removed.
+    """
+    filename = re.sub(r"(?!\.)\W", '-', filename)
+    filename = re.sub(r"_", '-', filename)
+    filename = re.sub(r"-+", '-', filename)
+    filename = re.sub(r"^-+", '', filename)
+    filename = re.sub(r"-+$", '', filename)
+    filename = re.sub(r"-+\.", '.', filename)
+    filename = re.sub(r"\.-+", '.', filename)
+    filename = filename.lower()
+    return filename
+```
+
+# TKTKTKTK split out to separate tests for better examples
+
+```
+class TestFileNameCleaner(unittest.TestCase):
+    
+    def test_name_one(self):
+        pattern = ' The   , (Quick) - "Brown$ Fox 9000 jumps_over. CSV '
+        target = 'the-quick-brown-fox-9000-jumps-over.csv'
+        result = clean_filename(pattern)
+        self.assertEqual(result, target)
+        
+if __name__ == '__main__':
+    unittest.main()
+```
+
+
+

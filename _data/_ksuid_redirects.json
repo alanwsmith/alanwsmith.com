@@ -8103,9 +8103,10 @@
       ]
     },
     "20eOhEzFbRJ0": {
-      "current_slug": "/posts/20eOhEzFbRJ0--podcast-production-checklist",
+      "current_slug": "/posts/20eOhEzFbRJ0--podcast-production-runbook",
       "slugs_to_redirect": [
-        "/podcast-production-checklist"
+        "/podcast-production-checklist",
+        "/posts/20eOhEzFbRJ0--podcast-production-checklist"
       ]
     },
     "20eOhNeaSYNR": {
@@ -8243,36 +8244,46 @@
       "slugs_to_redirect": []
     },
     "20tan0rGtERn": {
-      "current_slug": "/posts/20tan0rGtERn--podcast-ideas",
-      "slugs_to_redirect": []
+      "current_slug": "/posts/20tan0rGtERn--ideas-and-topics-for-the-podcast",
+      "slugs_to_redirect": [
+        "/posts/20tan0rGtERn--podcast-ideas"
+      ]
     },
     "20sMFFslqP9G": {
-      "current_slug": "/posts/20sMFFslqP9G--thepodofalan--season-1--episode-1-aftershow",
-      "slugs_to_redirect": []
+      "current_slug": "/posts/20sMFFslqP9G--thepodofalan--season-1--episode-1--aftershow",
+      "slugs_to_redirect": [
+        "/posts/20sMFFslqP9G--thepodofalan--season-1--episode-1-aftershow"
+      ]
     },
     "20cqqoNF5mAd": {
       "current_slug": "/posts/20cqqoNF5mAd--thepodofalan--season-1--episode-1",
       "slugs_to_redirect": []
     },
     "20sXNIXBhn50": {
-      "current_slug": "/posts/20sXNIXBhn50--thepodofalan--season-1--episode-2-aftershow",
-      "slugs_to_redirect": []
+      "current_slug": "/posts/20sXNIXBhn50--thepodofalan--season-1--episode-2--aftershow",
+      "slugs_to_redirect": [
+        "/posts/20sXNIXBhn50--thepodofalan--season-1--episode-2-aftershow"
+      ]
     },
     "20sPk2lLN4n2": {
       "current_slug": "/posts/20sPk2lLN4n2--thepodofalan--season-1--episode-2",
       "slugs_to_redirect": []
     },
     "20semafQXMpH": {
-      "current_slug": "/posts/20semafQXMpH--thepodofalan--season-1--episode-3-aftershow",
-      "slugs_to_redirect": []
+      "current_slug": "/posts/20semafQXMpH--thepodofalan--season-1--episode-3--aftershow",
+      "slugs_to_redirect": [
+        "/posts/20semafQXMpH--thepodofalan--season-1--episode-3-aftershow"
+      ]
     },
     "20sekPY2uuIb": {
       "current_slug": "/posts/20sekPY2uuIb--thepodofalan--season-1--episode-3",
       "slugs_to_redirect": []
     },
     "20te45Fsw9I0": {
-      "current_slug": "/posts/20te45Fsw9I0--thepodofalan--season-1--episode-4-aftershow",
-      "slugs_to_redirect": []
+      "current_slug": "/posts/20te45Fsw9I0--thepodofalan--season-1--episode-4--aftershow",
+      "slugs_to_redirect": [
+        "/posts/20te45Fsw9I0--thepodofalan--season-1--episode-4-aftershow"
+      ]
     },
     "20tXfNxVDkMa": {
       "current_slug": "/posts/20tXfNxVDkMa--thepodofalan--season-1--episode-4",
@@ -8684,6 +8695,58 @@
     },
     "21vylpw90k5s": {
       "current_slug": "/posts/21vylpw90k5s--the-quick-and-the-dead-examining-fifteen-years-of-links",
+      "slugs_to_redirect": []
+    },
+    "21t3fmh1plyq": {
+      "current_slug": "/posts/21t3fmh1plyq--thepodofalan--season-1--episode-10--aftershow",
+      "slugs_to_redirect": []
+    },
+    "21t3ejxzjb62": {
+      "current_slug": "/posts/21t3ejxzjb62--thepodofalan--season-1--episode-10",
+      "slugs_to_redirect": []
+    },
+    "21ssrm1d2net": {
+      "current_slug": "/posts/21ssrm1d2net--thepodofalan--season-1--episode-5--aftershow",
+      "slugs_to_redirect": []
+    },
+    "21t2txmznbmi": {
+      "current_slug": "/posts/21t2txmznbmi--thepodofalan--season-1--episode-6--aftershow",
+      "slugs_to_redirect": []
+    },
+    "21t2mwixhrxf": {
+      "current_slug": "/posts/21t2mwixhrxf--thepodofalan--season-1--episode-6",
+      "slugs_to_redirect": []
+    },
+    "21t33smeyjfs": {
+      "current_slug": "/posts/21t33smeyjfs--thepodofalan--season-1--episode-7--aftershow",
+      "slugs_to_redirect": []
+    },
+    "21t30avjb3ic": {
+      "current_slug": "/posts/21t30avjb3ic--thepodofalan--season-1--episode-7",
+      "slugs_to_redirect": []
+    },
+    "21t361ttroya": {
+      "current_slug": "/posts/21t361ttroya--thepodofalan--season-1--episode-8--aftershow",
+      "slugs_to_redirect": []
+    },
+    "21t34qemwdhc": {
+      "current_slug": "/posts/21t34qemwdhc--thepodofalan--season-1--episode-8",
+      "slugs_to_redirect": []
+    },
+    "21t3dslstnl5": {
+      "current_slug": "/posts/21t3dslstnl5--thepodofalan--season-1--episode-9--aftershow",
+      "slugs_to_redirect": []
+    },
+    "21t3cl0nm029": {
+      "current_slug": "/posts/21t3cl0nm029--thepodofalan--season-1--episode-9",
+      "slugs_to_redirect": []
+    },
+    "21zn0vwmxx1i": {
+      "current_slug": "/posts/21zn0vwmxx1i--add-transitions-with-a-custom-duration-to-multiple-clips",
+      "slugs_to_redirect": []
+    },
+    "21tkehok83wr": {
+      "current_slug": "/posts/21tkehok83wr--clean-filenames-with-lowercase-letters-and-dashes",
       "slugs_to_redirect": []
     }
   }
