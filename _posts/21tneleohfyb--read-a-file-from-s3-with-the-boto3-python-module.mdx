@@ -1,0 +1,45 @@
+---
+blurb: ''
+categories:
+  - Python
+date: '2021-12-05T21:08:40'
+id: 21tneleohfyb
+status: published
+type: post
+title: Read A File From S3 With The boto3 Python Module
+---
+
+Here's how to read an S3 file with either a `.client` or `.resource` object:
+
+### boto3.client('s3')
+
+```python
+#!/usr/bin/env python3
+
+import boto3
+
+s3 = boto3.client('s3')
+data = s3.get_object(
+    Bucket="bucket_name",
+    Key="key_path_name"
+)
+text_contents = data['Body'].read().decode('utf-8')
+
+print(text_contents)
+```
+
+### boto3.resource('s3')
+
+```python
+#!/usr/bin/env python3
+
+import boto3
+
+s3 = boto3.resource('s3')
+s3_object = s3.Object('bucket_name', 'key_path_name')
+text_content = s3_object.get()['Body'].read().decode('utf-8')
+
+print(text_content)
+```
+
+

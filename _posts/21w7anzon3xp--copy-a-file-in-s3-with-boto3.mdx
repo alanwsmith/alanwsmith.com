@@ -1,0 +1,100 @@
+---
+blurb: ''
+categories:
+  - Python
+  - boto3
+date: '2021-12-06T20:25:57'
+id: 21w7anzon3xp
+status: draft
+type: post
+title: Copy A File In S3 With boto3
+---
+
+Most of the examples I see are for `boto3.resource()`. But this one uses `boto3.client()` which is what I have loaded most of the time these days. (TODO: put a .resource example  in here too.) 
+
+Here are some examples:
+
+TODO: Figure out which one of these to make the main one. probably the first one. 
+
+```python
+import boto3
+
+s3 = boto3.client('s3')
+
+if s3.copy_object(
+    Bucket='destination-bucket',
+    CopySource={
+        'Bucket': 'source-bucket', 
+        'Key': 'source/file/path'
+    },
+    Key='destination/file/path'
+)['ResponseMetadata']['HTTPStatusCode'] == 200:
+    print("It worked")
+else:
+    print("It failed")
+```
+
+
+
+```python
+import boto3
+
+s3 = boto3.client('s3')
+
+if s3.copy_object(
+    Bucket='destination-bucket',
+    CopySource={
+        'Bucket': 'source-bucket', 
+        'Key': 'source/file/path'
+    },
+    Key='destination/file/path'
+)['ResponseMetadata']['HTTPStatusCode'] == 200:
+    print("It worked")
+else:
+    print("It failed")
+```
+
+
+
+```python
+import boto3
+
+s3 = boto3.client('s3')
+
+s3.copy_object(
+    Bucket='destination-bucket',
+    CopySource={
+        'Bucket': 'source-bucket', 
+        'Key': 'source/file/path'
+    },
+    Key='destination/file/path',
+)
+```
+
+Note that this will move the file between buckets. If you want to make a copy in the same bucket, then set both `destination-bucket` and `source-bucket` in the example to the same bucket.
+
+This example assumes everything will work. You can also look for an HTTP status code of 200 with this to verify things worked:
+
+```python
+import boto3
+
+s3 = boto3.client('s3')
+
+response = s3.copy_object(
+    Bucket='email-ingestion-test',
+    CopySource={'Bucket': 'email-ingestion-test', 'Key': 'inbox/dqbdkb9srrb2ldtkk5q0ijefnle1q0p72knbp0g1', },
+    Key='inbox/new_file',
+)
+
+return_status_code = response['ResponseMetadata']['HTTPStatusCode']
+
+print(return_status_code)
+```
+
+Link:
+
+https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.copy
+
+
+
+
