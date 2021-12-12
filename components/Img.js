@@ -20,6 +20,7 @@ import last_sunday_at_reimers_img_0293 from '../_images/last_sunday_at_reimers_i
 import mile_200000_20080402_snaps_0039 from '../_images/mile_200000_20080402_snaps_0039.jpg'
 import movies_cropped_2006_02 from '../_images/movies_cropped_2006_02.jpg'
 import play_button_2009_01 from '../_images/play_button_2009_01.gif'
+import shuttle_patch_150x166 from '../_images/shuttle_patch_150x166.png'
 import sunset_in_key_weat_20060211_191750a from '../_images/sunset_in_key_weat_20060211_191750a.jpg'
 import superfad_reel_grab_2009_01 from '../_images/superfad_reel_grab_2009_01.png'
 import target_with_bullet_holes_20060923_124436_01 from '../_images/target_with_bullet_holes_20060923_124436_01.jpg'
@@ -52,6 +53,7 @@ const imgMap = {
   mile_200000_20080402_snaps_0039: mile_200000_20080402_snaps_0039,
   movies_cropped_2006_02: movies_cropped_2006_02,
   play_button_2009_01: play_button_2009_01,
+  shuttle_patch_150x166: shuttle_patch_150x166,
   sunset_in_key_weat_20060211_191750a: sunset_in_key_weat_20060211_191750a,
   superfad_reel_grab_2009_01: superfad_reel_grab_2009_01,
   target_with_bullet_holes_20060923_124436_01: target_with_bullet_holes_20060923_124436_01,
