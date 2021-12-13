@@ -31,7 +31,7 @@ export default function BlogList({ posts }) {
             </p>
             <p className="pb-4 text-blue-200 max-w-prose">
               I&apos;m still getting the podcast feed setup. In the mean time,
-              here are the episodes on youtube.
+              you can listent to the episodes here.
             </p>
 
             <div className="max-w-prose pt-4 border-t border-gray-400 text-blue-200">
