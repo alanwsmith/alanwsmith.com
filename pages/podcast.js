@@ -128,6 +128,20 @@ export default function BlogList({ posts }) {
                     podcast.
                   </audio>
                 </li>
+
+                <li>
+                  <Link href="/posts/20te45fsw9i0--practice-in-isolation-aftershow--the-pod-of-alan">
+                    <a>S1:E4 - Aftershow</a>
+                  </Link>
+                  <audio controls>
+                    <source
+                      src="https://cdn.simplecast.com/audio/f900955e-9fdd-4695-bf12-22eeee2f4d9e/episodes/f9c150e5-9261-487b-baf9-181d46d53eb9/audio/a51ebfb5-456b-4c72-9f0b-d999ccac05d3/default_tc.mp3"
+                      type="audio/mpeg"
+                    />
+                    Unfortunately, your browser does not support embedding the
+                    podcast.
+                  </audio>
+                </li>
               </ul>
             </div>
           </>
