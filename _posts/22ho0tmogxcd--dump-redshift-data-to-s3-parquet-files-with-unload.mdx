@@ -1,0 +1,21 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2021-12-14T12:40:53'
+id: 22ho0tmogxcd
+status: scratch
+type: post
+title: Dump Redshift Data To S3 Parquet Files With UNLOAD
+---
+
+
+```sql
+UNLOAD ('SELECT * FROM schema_name.table_name WHERE year=2018 and month=5')
+TO 's3://bucket-name/path/to/storage/folder/with/trailing/slash/' 
+IAM_ROLE 'arn:aws:iam::123412341234:role/RoleName'
+MANIFEST VERBOSE FORMAT AS PARQUET;
+```
+
+
+

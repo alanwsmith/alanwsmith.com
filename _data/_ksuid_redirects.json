@@ -8916,6 +8916,18 @@
     "22flmtgr030p": {
       "current_slug": "/posts/22flmtgr030p--get-a-web-page-with-node-",
       "slugs_to_redirect": []
+    },
+    "22ho0tmogxcd": {
+      "current_slug": "/posts/22ho0tmogxcd--dump-redshift-data-to-s3-parquet-files-with-unload",
+      "slugs_to_redirect": []
+    },
+    "22gmlb4rmzgr": {
+      "current_slug": "/posts/22gmlb4rmzgr--generate-a-random-hex-color-in-javascript",
+      "slugs_to_redirect": []
+    },
+    "22hgbirh8epm": {
+      "current_slug": "/posts/22hgbirh8epm--tint-an-image-with-the-node-sharp-module",
+      "slugs_to_redirect": []
     }
   }
 }

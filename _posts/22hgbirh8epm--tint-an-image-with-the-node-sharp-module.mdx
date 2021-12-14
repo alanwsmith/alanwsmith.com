@@ -1,0 +1,67 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2021-12-14T11:36:29'
+id: 22hgbirh8epm
+status: scratch
+type: post
+title: Tint An Image With The Node Sharp Module
+---
+
+Install sharp with:
+
+```
+npm i sharp
+```
+
+Then do something like:
+
+```javascript
+const sharp = require('sharp')
+
+async function tintImage() {
+  const inputPath = 'source.jpg'
+  const color = '#372831'
+  const outputPath = 'output.jpg'
+  await sharp(inputPath).tint(color).toFile(outputPath)
+}
+
+tintImage()
+```
+
+---
+
+Here's the one that I use to make random color show art for my podcast. It checks to make sure the file doesn't exist before making one with a random color. That way I can delete any I don't like and rerun the process to make new ones without messing with the existing ones I do like. 
+
+```javascript
+#!/usr/bin/env node
+
+const sharp = require('sharp')
+const fs = require('fs')
+
+async function makeImage(indx, show) {
+  const outputPath =
+    show === 'a'
+      ? `output/ThePodOfAlan--S1-E${indx}a--MainShow--ShowArt.jpg`
+      : `output/ThePodOfAlan--S1-E${indx}b--AfterShow--ShowArt.jpg`
+  try {
+    if (!fs.existsSync(outputPath)) {
+      const color = `#${Math.floor(Math.random() * 16777215)
+        .toString(16)
+        .padStart(6, '0')}`
+      console.log(`Using ${color} for: ${outputPath}`)
+      await sharp('source.jpg').tint(color).toFile(outputPath)
+    }
+  } catch (err) {
+    console.error(err)
+  }
+}
+
+for (let i = 1; i < 17; i++) {
+  makeImage(i, 'a')
+  makeImage(i, 'b')
+}
+```
+
+

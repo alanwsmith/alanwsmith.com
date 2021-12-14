@@ -20,7 +20,7 @@ export default function BlogList({ posts }) {
         />
         <meta
           property="og:image"
-          content={`https://res.cloudinary.com/awsimages/image/upload/c_fit,l_text:Arial_68_bold:ThePodOfAlan,w_720/fl_layer_apply,g_north_west,x_480,y_68/og-image-v3_eka6dz.png`}
+          content={`https://res.cloudinary.com/awsimages/image/upload/c_fit,l_text:Arial_68_bold:ThePodOfAlan,w_720/fl_layer_apply,g_north_west,x_480,y_68/og-image-v3_eka6dz.jpg`}
         />
       </Head>
       <LayoutMain
