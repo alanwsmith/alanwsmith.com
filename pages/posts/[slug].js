@@ -34,6 +34,7 @@ export default function Post({ source, frontmatter }) {
             frontmatter.title
           )},w_720/fl_layer_apply,g_north_west,x_480,y_68/og-image-v3_eka6dz.png`}
         />
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <LayoutMain
         content={
