@@ -7,12 +7,12 @@ export default function BlogList({ posts }) {
     <>
       <Head>
         <meta charSet="utf-8" />
-        <meta property="og:title" content="alanwsmith.com" />
+        <meta property="og:title" content="The Pod Of Alan" />
         <meta property="og:type" content="website" />
         <meta name="twitter:creator" content="@theidofalan" />
         <meta
           property="og:description"
-          content="ThePodOfAlan - The podcast of Alan W. Smith"
+          content="The Pod Of Alan - The podcast of Alan W. Smith"
         />
         <meta
           property="og:url"
@@ -22,6 +22,7 @@ export default function BlogList({ posts }) {
           property="og:image"
           content={`https://res.cloudinary.com/awsimages/image/upload/w_1200,h_630/c_fit,l_text:Arial_68_bold:Keep%20Newlines%20In%20Espanso,w_720/fl_layer_apply,g_north_west,x_480,y_68/og-image-v3_eka6dz.png`}
         />
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <LayoutMain
         content={
