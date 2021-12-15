@@ -29,6 +29,7 @@ import shuttle_patch_150x166 from '../_images/shuttle_patch_150x166.png'
 import sunset_in_key_weat_20060211_191750a from '../_images/sunset_in_key_weat_20060211_191750a.jpg'
 import superfad_reel_grab_2009_01 from '../_images/superfad_reel_grab_2009_01.png'
 import target_with_bullet_holes_20060923_124436_01 from '../_images/target_with_bullet_holes_20060923_124436_01.jpg'
+import thepodofalan_ogimage_v1 from '../_images/thepodofalan_ogimage_v1.png'
 import unprocessed_file_20060125_010408a from '../_images/unprocessed_file_20060125_010408a.jpg'
 import vivitar_285_hack_20060710_212242_01 from '../_images/vivitar_285_hack_20060710_212242_01.jpg'
 import vivitar_285_hack_2_20060710_212406_01 from '../_images/vivitar_285_hack_2_20060710_212406_01.jpg'
@@ -67,6 +68,7 @@ const imgMap = {
   sunset_in_key_weat_20060211_191750a: sunset_in_key_weat_20060211_191750a,
   superfad_reel_grab_2009_01: superfad_reel_grab_2009_01,
   target_with_bullet_holes_20060923_124436_01: target_with_bullet_holes_20060923_124436_01,
+  thepodofalan_ogimage_v1: thepodofalan_ogimage_v1,
   unprocessed_file_20060125_010408a: unprocessed_file_20060125_010408a,
   vivitar_285_hack_20060710_212242_01: vivitar_285_hack_20060710_212242_01,
   vivitar_285_hack_2_20060710_212406_01: vivitar_285_hack_2_20060710_212406_01,
