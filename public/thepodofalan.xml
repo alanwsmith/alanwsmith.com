@@ -9,7 +9,7 @@
     <copyright>2021 - Alan W. Smith</copyright>
     <language>en</language>
     <pubDate>Mon, 15 Nov 2021 07:00:00 +0000</pubDate>
-    <lastBuildDate>Thu, 16 Dec 2021 01:56:16 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 16 Dec 2021 02:08:18 +0000</lastBuildDate>
     <image>
       <link>https://www.alanwsmith.com</link>
       <title>The Pod Of Alan</title>
@@ -56,7 +56,6 @@
       <itunes:keywords>bipolar disorder, metacognition, mental health, mania, procrastination</itunes:keywords>
       <itunes:explicit>yes</itunes:explicit>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:episode>10</itunes:episode>
     </item>
     <item>
       <guid isPermaLink="false">949bca66-4767-4add-bbe6-a10d508ac505</guid>
@@ -78,7 +77,6 @@
       <itunes:keywords>depression, vulnerability in public</itunes:keywords>
       <itunes:explicit>yes</itunes:explicit>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:episode>9</itunes:episode>
     </item>
     <item>
       <guid isPermaLink="false">38c57147-d73f-4649-999c-d254b6839571</guid>
@@ -100,7 +98,6 @@
       <itunes:keywords>experience ownership, link rot, vendor lock in</itunes:keywords>
       <itunes:explicit>yes</itunes:explicit>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:episode>8</itunes:episode>
     </item>
     <item>
       <guid isPermaLink="false">591b293e-9376-4ab9-af71-4a5c2ef5c669</guid>
@@ -122,7 +119,6 @@
       <itunes:keywords>anne lamott, mental health, practice, podcasts, isolation, silver bullets, stephen king, on writing</itunes:keywords>
       <itunes:explicit>yes</itunes:explicit>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:episode>7</itunes:episode>
     </item>
     <item>
       <guid isPermaLink="false">3cac4cc9-1a22-46c0-82c4-9a34e288688c</guid>
@@ -144,7 +140,6 @@
       <itunes:keywords>repetition</itunes:keywords>
       <itunes:explicit>yes</itunes:explicit>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:episode>6</itunes:episode>
     </item>
     <item>
       <guid isPermaLink="false">355b9826-8e77-4e23-9494-62deee77864e</guid>
@@ -166,7 +161,6 @@
       <itunes:keywords>learning, bipolar disorder, teaching, viral, mania, mental capacity, depression</itunes:keywords>
       <itunes:explicit>yes</itunes:explicit>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:episode>5</itunes:episode>
     </item>
     <item>
       <guid isPermaLink="false">a445edd1-62e7-4cea-95d3-8a0dd74cf963</guid>
@@ -188,7 +182,6 @@
       <itunes:keywords>time travel, monetization, chronology, river song, doctor who</itunes:keywords>
       <itunes:explicit>yes</itunes:explicit>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:episode>4</itunes:episode>
     </item>
     <item>
       <guid isPermaLink="false">3b2e2c0b-6e52-4738-ad18-de214e4b84d2</guid>
@@ -210,7 +203,6 @@
       <itunes:keywords>workshop, digital garden, sign language, band, woodshed</itunes:keywords>
       <itunes:explicit>yes</itunes:explicit>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:episode>3</itunes:episode>
     </item>
     <item>
       <guid isPermaLink="false">294824f8-0744-4fe4-baa1-155ce7492a2d</guid>
@@ -232,7 +224,6 @@
       <itunes:keywords>bipolar disorder, rubber ducking, mental health, playing, language</itunes:keywords>
       <itunes:explicit>yes</itunes:explicit>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:episode>2</itunes:episode>
     </item>
     <item>
       <guid isPermaLink="false">5b3a3e9b-5a7c-404e-923a-44623d88ac0a</guid>
@@ -254,7 +245,6 @@
       <itunes:keywords>working in public, first episode, introductions, movie trailers</itunes:keywords>
       <itunes:explicit>no</itunes:explicit>
       <itunes:episodeType>full</itunes:episodeType>
-      <itunes:episode>1</itunes:episode>
     </item>
   </channel>
 </rss>
