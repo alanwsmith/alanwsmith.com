@@ -23,6 +23,13 @@ export default function BlogList({ posts }) {
           content={`https://res.cloudinary.com/awsimages/image/upload/w_1200,h_630/thepodofalan_ogimage_v1_psb9u3.png`}
         />
         <meta name="twitter:card" content="summary_large_image" />
+        <link href="" />
+        <link
+          type="application/rss+xml"
+          rel="alternate"
+          title="The Pod Of Alan - The Podcast Of Alan W. Smith"
+          href="https://www.alanwsmith.com/thepodofalan.xml"
+        />
       </Head>
       <LayoutMain
         content={
@@ -30,9 +37,18 @@ export default function BlogList({ posts }) {
             <p className="pb-4 text-blue-200 max-w-prose">
               Welcome to ThePodOfAlan!
             </p>
+            <p>
+              The podcast RSS feed{' '}
+              <Link href="/thepodofalan.xml">
+                <a>is here</a>
+              </Link>
+            </p>
+            <p>
+              Distribution to Apple Podcasts, Google Podcasts, Spotify, and
+              Amazon Music is in progress
+            </p>
             <p className="pb-4 text-blue-200 max-w-prose">
-              I&apos;m still getting the podcast feed setup. In the mean time,
-              you can listen to the episodes here.
+              You can also listen to the episodes here.
             </p>
 
             <div className="max-w-prose pt-4 border-t border-gray-400 text-blue-200">
