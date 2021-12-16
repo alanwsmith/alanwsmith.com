@@ -32,7 +32,7 @@ export default function BlogList({ posts }) {
             </p>
             <p className="pb-4 text-blue-200 max-w-prose">
               I&apos;m still getting the podcast feed setup. In the mean time,
-              you can listent to the episodes here.
+              you can listen to the episodes here.
             </p>
 
             <div className="max-w-prose pt-4 border-t border-gray-400 text-blue-200">
@@ -137,6 +137,34 @@ export default function BlogList({ posts }) {
                   <audio controls>
                     <source
                       src="https://cdn.simplecast.com/audio/f900955e-9fdd-4695-bf12-22eeee2f4d9e/episodes/f9c150e5-9261-487b-baf9-181d46d53eb9/audio/a51ebfb5-456b-4c72-9f0b-d999ccac05d3/default_tc.mp3"
+                      type="audio/mpeg"
+                    />
+                    Unfortunately, your browser does not support embedding the
+                    podcast.
+                  </audio>
+                </li>
+
+                <li>
+                  <Link href="/posts/20zddkn5lmoe--in-which-i-almost-lose-my-house--the-pod-of-alan--s1e5">
+                    <a>S1:E5 - In Which I Almost Lose My House</a>
+                  </Link>
+                  <audio controls>
+                    <source
+                      src="https://cdn.simplecast.com/audio/f900955e-9fdd-4695-bf12-22eeee2f4d9e/episodes/96d260b6-0a17-484e-bf96-4523127576f6/audio/61f66ada-9dba-49c6-abfa-28ef3af87109/default_tc.mp3"
+                      type="audio/mpeg"
+                    />
+                    Unfortunately, your browser does not support embedding the
+                    podcast.
+                  </audio>
+                </li>
+
+                <li>
+                  <Link href="/posts/21ssrm1d2net--in-which-i-almost-lose-my-house-aftershow--the-pod-of-alan">
+                    <a>S1:E5 - Aftershow </a>
+                  </Link>
+                  <audio controls>
+                    <source
+                      src="https://cdn.simplecast.com/audio/f900955e-9fdd-4695-bf12-22eeee2f4d9e/episodes/8c0d1169-a9ac-4bc9-a053-84e6d4c128c4/audio/ae646eee-0f05-446e-98d4-886fa1560b13/default_tc.mp3"
                       type="audio/mpeg"
                     />
                     Unfortunately, your browser does not support embedding the
