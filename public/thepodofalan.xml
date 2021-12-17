@@ -4,18 +4,20 @@
     <atom:link href="https://www.alanwsmith.com/thepodofalan.xml" rel="self" title="MP3 Audio" type="application/atom+xml"/>
     
     
+    
+    
     <title>The Pod Of Alan</title>
     <description>Riffing on working in public, making stuff, creativity, art, design, education, learning, language, mental health, movies, music, and more.</description>
     <copyright>2021 - Alan W. Smith</copyright>
     <language>en</language>
     <pubDate>Wed, 17 Nov 2021 07:00:00 +0000</pubDate>
-    <lastBuildDate>Fri, 17 Dec 2021 03:18:07 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 17 Dec 2021 20:30:07 +0000</lastBuildDate>
     <image>
-      <link>https://www.alanwsmith.com/thepodofalan</link>
+      <link>https://www.alanwsmith.com/the-pod-of-alan</link>
       <title>The Pod Of Alan</title>
       <url>https://image.simplecastcdn.com/images/2daf3d40-6747-42aa-9457-6a8bb17c00a0/67070ce2-c749-4505-a370-8f9e92fb0784/3000x3000/cover-art-fire-eyes.jpg?aid=rss_feed</url>
     </image>
-    <link>https://www.alanwsmith.com/thepodofalan</link>
+    <link>https://www.alanwsmith.com/the-pod-of-alan</link>
     <itunes:type>episodic</itunes:type>
     <itunes:summary>Riffing on working in public, making stuff, creativity, art, design, education, learning, language, mental health, movies, music, and more.</itunes:summary>
     <itunes:author>Alan W. Smith</itunes:author>
