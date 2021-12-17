@@ -78,8 +78,8 @@ export default function LayoutMain(props) {
                 <a className="text-gray-500">Home</a>
               </Link>
               &nbsp; &nbsp; &nbsp;
-              <Link href="/podcast">
-                <a className="text-gray-500">Podcast</a>
+              <Link href="/the-pod-of-alan">
+                <a className="text-gray-500">The Pod Of Alan</a>
               </Link>
             </div>
           </div>

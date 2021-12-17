@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import LayoutMain from '../components/LayoutMain.js'
+import Img from '../components/Img.js'
 
 export default function BlogList({ posts }) {
   return (
@@ -34,14 +35,21 @@ export default function BlogList({ posts }) {
       <LayoutMain
         content={
           <>
+            <h1 className="pb-4 text-blue-200 max-w-prose">
+              Welcome To The Pod Of Alan Podcast!
+            </h1>
             <p className="pb-4 text-blue-200 max-w-prose">
-              Welcome to ThePodOfAlan!
+              This is my podcast riffing on working in public, making stuff,
+              creativity, art, design, education, learning, language, mental
+              health, movies, music, and more.
             </p>
-            <p>You can listen to it on:</p>
+            <p className="pb-4 text-blue-200 max-w-prose">
+              You can listent to it on:
+            </p>
             <ul>
               <li>
                 <a href="https://music.amazon.com/podcasts/6c935bd2-31ed-4c97-a179-8ac70f76a7c3/the-pod-of-alan">
-                  Amazon
+                  Amazon Music Podcasts
                 </a>
               </li>
               <li>
@@ -57,8 +65,8 @@ export default function BlogList({ posts }) {
               </li>
             </ul>
 
-            <p>
-              The raw feed is here podcast RSS feed{' '}
+            <p className="pb-4 text-blue-200 max-w-prose">
+              The raw feed{' '}
               <Link href="/thepodofalan.xml">
                 <a>is here</a>
               </Link>
@@ -86,7 +94,7 @@ export default function BlogList({ posts }) {
                 </li>
                 <li>
                   <Link href="/posts/20smffslqp9g--obligatory-intro-meta-talk-aftershow--the-pod-of-alan">
-                    <a>S1:E1 - Aftershow</a>
+                    <a>S1:E1 (Aftershow)</a>
                   </Link>
                   <audio controls>
                     <source
@@ -112,7 +120,7 @@ export default function BlogList({ posts }) {
                 </li>
                 <li>
                   <Link href="/posts/20sxnixbhn50--changing-the-intro-aftershow--the-pod-of-alan">
-                    <a>S1:E2 - Aftershow</a>
+                    <a>S1:E2 (Aftershow)</a>
                   </Link>
                   <audio controls>
                     <source
@@ -138,7 +146,7 @@ export default function BlogList({ posts }) {
                 </li>
                 <li>
                   <Link href="/posts/20semafqxmph--my-three-brains-aftershow--the-pod-of-alan">
-                    <a>S1:E3 - Aftershow</a>
+                    <a>S1:E3 (Aftershow)</a>
                   </Link>
                   <audio controls>
                     <source
@@ -165,7 +173,7 @@ export default function BlogList({ posts }) {
 
                 <li>
                   <Link href="/posts/20te45fsw9i0--practice-in-isolation-aftershow--the-pod-of-alan">
-                    <a>S1:E4 - Aftershow</a>
+                    <a>S1:E4 (Aftershow)</a>
                   </Link>
                   <audio controls>
                     <source
@@ -193,7 +201,7 @@ export default function BlogList({ posts }) {
 
                 <li>
                   <Link href="/posts/21ssrm1d2net--in-which-i-almost-lose-my-house-aftershow--the-pod-of-alan">
-                    <a>S1:E5 - Aftershow </a>
+                    <a>S1:E5 (Aftershow) </a>
                   </Link>
                   <audio controls>
                     <source
@@ -221,7 +229,7 @@ export default function BlogList({ posts }) {
 
                 <li>
                   <Link href="/posts/21t2txmznbmi--meta-editing-aftershow--the-pod-of-alan">
-                    <a>S1:E6 - Aftershow </a>
+                    <a>S1:E6 (Aftershow) </a>
                   </Link>
                   <audio controls>
                     <source

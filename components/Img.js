@@ -25,6 +25,7 @@ import movies_cropped_2006_02 from '../_images/movies_cropped_2006_02.jpg'
 import play_button_2009_01 from '../_images/play_button_2009_01.gif'
 import plr_sample_finish from '../_images/plr_sample_finish.jpg'
 import plr_sample_start from '../_images/plr_sample_start.jpg'
+import podcast_amazon_music_button from '../_images/podcast_amazon_music_button.png'
 import shuttle_patch_150x166 from '../_images/shuttle_patch_150x166.png'
 import sunset_in_key_weat_20060211_191750a from '../_images/sunset_in_key_weat_20060211_191750a.jpg'
 import superfad_reel_grab_2009_01 from '../_images/superfad_reel_grab_2009_01.png'
@@ -64,6 +65,7 @@ const imgMap = {
   play_button_2009_01: play_button_2009_01,
   plr_sample_finish: plr_sample_finish,
   plr_sample_start: plr_sample_start,
+  podcast_amazon_music_button: podcast_amazon_music_button,
   shuttle_patch_150x166: shuttle_patch_150x166,
   sunset_in_key_weat_20060211_191750a: sunset_in_key_weat_20060211_191750a,
   superfad_reel_grab_2009_01: superfad_reel_grab_2009_01,
