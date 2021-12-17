@@ -37,18 +37,35 @@ export default function BlogList({ posts }) {
             <p className="pb-4 text-blue-200 max-w-prose">
               Welcome to ThePodOfAlan!
             </p>
+            <p>You can listen to it on:</p>
+            <ul>
+              <li>
+                <a href="https://music.amazon.com/podcasts/6c935bd2-31ed-4c97-a179-8ac70f76a7c3/the-pod-of-alan">
+                  Amazon
+                </a>
+              </li>
+              <li>
+                <a href="https://podcasts.apple.com/us/podcast/the-pod-of-alan/id1600597473">
+                  Apple Podcasts
+                </a>
+              </li>
+              <li>(Google is coming soon)</li>
+              <li>
+                <a href="https://open.spotify.com/show/1dVQS0gZGpN6AJryeJTv5d?si=934487f6f48d476d">
+                  Spotify
+                </a>
+              </li>
+            </ul>
+
             <p>
-              The podcast RSS feed{' '}
+              The raw feed is here podcast RSS feed{' '}
               <Link href="/thepodofalan.xml">
                 <a>is here</a>
               </Link>
             </p>
-            <p>
-              Distribution to Apple Podcasts, Google Podcasts, Spotify, and
-              Amazon Music is in progress
-            </p>
+
             <p className="pb-4 text-blue-200 max-w-prose">
-              You can also listen to the episodes here.
+              You can also listen to the episodes right here
             </p>
 
             <div className="max-w-prose pt-4 border-t border-gray-400 text-blue-200">
@@ -181,6 +198,34 @@ export default function BlogList({ posts }) {
                   <audio controls>
                     <source
                       src="https://cdn.simplecast.com/audio/f900955e-9fdd-4695-bf12-22eeee2f4d9e/episodes/8c0d1169-a9ac-4bc9-a053-84e6d4c128c4/audio/ae646eee-0f05-446e-98d4-886fa1560b13/default_tc.mp3"
+                      type="audio/mpeg"
+                    />
+                    Unfortunately, your browser does not support embedding the
+                    podcast.
+                  </audio>
+                </li>
+
+                <li>
+                  <Link href="/posts/21t2mwixhrxf--meta-editing--the-pod-of-alan--s1e6">
+                    <a>S1:E6 - Meta Editing</a>
+                  </Link>
+                  <audio controls>
+                    <source
+                      src="https://cdn.simplecast.com/audio/f900955e-9fdd-4695-bf12-22eeee2f4d9e/episodes/289550f9-96f8-46d0-b31d-9011f12c0770/audio/8f23feb9-ddae-4e83-8cd9-7e9c22bcd731/default_tc.mp3"
+                      type="audio/mpeg"
+                    />
+                    Unfortunately, your browser does not support embedding the
+                    podcast.
+                  </audio>
+                </li>
+
+                <li>
+                  <Link href="/posts/21t2txmznbmi--meta-editing-aftershow--the-pod-of-alan">
+                    <a>S1:E6 - Aftershow </a>
+                  </Link>
+                  <audio controls>
+                    <source
+                      src="https://cdn.simplecast.com/audio/f900955e-9fdd-4695-bf12-22eeee2f4d9e/episodes/3627603f-39a5-4622-9d51-c117429982b9/audio/cd856010-5309-404d-8a19-169992e52d53/default_tc.mp3"
                       type="audio/mpeg"
                     />
                     Unfortunately, your browser does not support embedding the
