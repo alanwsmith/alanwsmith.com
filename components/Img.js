@@ -1,6 +1,7 @@
 import Image from 'next/image'
 
 import acme_bag_2008_05 from '../_images/acme_bag_2008_05.jpg'
+import alligator_on_the_golf_course from '../_images/alligator_on_the_golf_course.jpg'
 import aws_20080426_glamor_camp_0073 from '../_images/aws_20080426_glamor_camp_0073.jpg'
 import bama_schedule_sp_20090821_misc_112136 from '../_images/bama_schedule_sp_20090821_misc_112136.png'
 import black_widow_20051026_230734a1 from '../_images/black_widow_20051026_230734a1.jpg'
@@ -12,6 +13,8 @@ import dot_matrix_sky_writing from '../_images/dot_matrix_sky_writing.jpg'
 import euthanasia_20080629_snapshots_0003 from '../_images/euthanasia_20080629_snapshots_0003.jpg'
 import fire_escape_plaque_img_0306 from '../_images/fire_escape_plaque_img_0306.jpg'
 import fire_eyes_1 from '../_images/fire_eyes_1.jpg'
+import frog_legs_jumping_20080402_snaps_0007 from '../_images/frog_legs_jumping_20080402_snaps_0007.jpg'
+import frog_portrait_20080402_snaps_0008 from '../_images/frog_portrait_20080402_snaps_0008.jpg'
 import glock_20060923_114208_01 from '../_images/glock_20060923_114208_01.jpg'
 import home_and_garden_skull_2009_03 from '../_images/home_and_garden_skull_2009_03.png'
 import iphone_3gs_test_photo_2009_06 from '../_images/iphone_3gs_test_photo_2009_06.jpg'
@@ -31,6 +34,7 @@ import sunset_in_key_weat_20060211_191750a from '../_images/sunset_in_key_weat_2
 import superfad_reel_grab_2009_01 from '../_images/superfad_reel_grab_2009_01.png'
 import target_with_bullet_holes_20060923_124436_01 from '../_images/target_with_bullet_holes_20060923_124436_01.jpg'
 import thepodofalan_ogimage_v1 from '../_images/thepodofalan_ogimage_v1.png'
+import tree_at_sawgrass_20060329_041114a from '../_images/tree_at_sawgrass_20060329_041114a.jpg'
 import unprocessed_file_20060125_010408a from '../_images/unprocessed_file_20060125_010408a.jpg'
 import vivitar_285_hack_20060710_212242_01 from '../_images/vivitar_285_hack_20060710_212242_01.jpg'
 import vivitar_285_hack_2_20060710_212406_01 from '../_images/vivitar_285_hack_2_20060710_212406_01.jpg'
@@ -41,6 +45,7 @@ import youtube_logo_2009_01 from '../_images/youtube_logo_2009_01.gif'
 
 const imgMap = {
   acme_bag_2008_05: acme_bag_2008_05,
+  alligator_on_the_golf_course: alligator_on_the_golf_course,
   aws_20080426_glamor_camp_0073: aws_20080426_glamor_camp_0073,
   bama_schedule_sp_20090821_misc_112136: bama_schedule_sp_20090821_misc_112136,
   black_widow_20051026_230734a1: black_widow_20051026_230734a1,
@@ -52,6 +57,8 @@ const imgMap = {
   euthanasia_20080629_snapshots_0003: euthanasia_20080629_snapshots_0003,
   fire_escape_plaque_img_0306: fire_escape_plaque_img_0306,
   fire_eyes_1: fire_eyes_1,
+  frog_legs_jumping_20080402_snaps_0007: frog_legs_jumping_20080402_snaps_0007,
+  frog_portrait_20080402_snaps_0008: frog_portrait_20080402_snaps_0008,
   glock_20060923_114208_01: glock_20060923_114208_01,
   home_and_garden_skull_2009_03: home_and_garden_skull_2009_03,
   iphone_3gs_test_photo_2009_06: iphone_3gs_test_photo_2009_06,
@@ -71,6 +78,7 @@ const imgMap = {
   superfad_reel_grab_2009_01: superfad_reel_grab_2009_01,
   target_with_bullet_holes_20060923_124436_01: target_with_bullet_holes_20060923_124436_01,
   thepodofalan_ogimage_v1: thepodofalan_ogimage_v1,
+  tree_at_sawgrass_20060329_041114a: tree_at_sawgrass_20060329_041114a,
   unprocessed_file_20060125_010408a: unprocessed_file_20060125_010408a,
   vivitar_285_hack_20060710_212242_01: vivitar_285_hack_20060710_212242_01,
   vivitar_285_hack_2_20060710_212406_01: vivitar_285_hack_2_20060710_212406_01,

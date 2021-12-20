@@ -57,6 +57,11 @@ export default function BlogList({ posts }) {
                   Apple Podcasts
                 </a>
               </li>
+              <li>
+                <a href="https://www.audible.com/pd/Podcast/B08K56HFPB">
+                  Audible
+                </a>
+              </li>
               <li>(Google is coming soon)</li>
               <li>
                 <a href="https://open.spotify.com/show/1dVQS0gZGpN6AJryeJTv5d?si=934487f6f48d476d">
@@ -72,11 +77,10 @@ export default function BlogList({ posts }) {
               </Link>
             </p>
 
-            <p className="pb-4 text-blue-200 max-w-prose">
-              You can also listen to the episodes right here
-            </p>
-
             <div className="max-w-prose pt-4 border-t border-gray-400 text-blue-200">
+              <p className="pb-4 text-blue-200 max-w-prose">
+                You can also listen to the episodes right here
+              </p>
               <h3>Season 1</h3>
               <ul>
                 <li>
@@ -241,6 +245,13 @@ export default function BlogList({ posts }) {
                   </audio>
                 </li>
               </ul>
+              <p className="pb-4 text-blue-200 max-w-prose border-t border-gray-400 pt-8">
+                You can ignore this, but I need{' '}
+                <Link href="/thepodofalan-google.xml">
+                  <a>this link</a>
+                </Link>{' '}
+                because google won&apos;t use the main feed for some reason.
+              </p>
             </div>
           </>
         }
