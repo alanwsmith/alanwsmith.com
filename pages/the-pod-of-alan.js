@@ -3,6 +3,7 @@ import Link from 'next/link'
 import LayoutMain from '../components/LayoutMain.js'
 import Img from '../components/Img.js'
 import PodcastPlayer from '../components/PodcastPlayer'
+import PodcastLinks from '../components/PodcastLinks'
 
 export default function BlogList({ posts }) {
   return (
@@ -42,49 +43,18 @@ export default function BlogList({ posts }) {
               creativity, art, design, education, learning, language, mental
               health, movies, and music.
             </p>
-            <p className="pb-4 text-blue-200 max-w-prose">
-              You can get it on{' '}
-              <a href="https://music.amazon.com/podcasts/6c935bd2-31ed-4c97-a179-8ac70f76a7c3/the-pod-of-alan">
-                Amazon
-              </a>
-              ,{' '}
-              <a href="https://podcasts.apple.com/us/podcast/the-pod-of-alan/id1600597473">
-                Apple
-              </a>
-              ,{' '}
-              <a href="https://www.audible.com/pd/Podcast/B08K56HFPB">
-                Audible
-              </a>
-              ,{' '}
-              <a href="https://podcasts.google.com/feed/aHR0cHM6Ly93d3cuYWxhbndzbWl0aC5jb20vdGhlcG9kb2ZhbGFuLnhtbA">
-                Google
-              </a>
-              ,{' '}
-              <a href="https://open.spotify.com/show/1dVQS0gZGpN6AJryeJTv5d?si=934487f6f48d476d">
-                Spotify
-              </a>
-              , and pretty much any other podcast app. (Please let me know if
-              you find one where the show isn&apos;t available)
-            </p>
+            <div className="pb-4 text-blue-200 max-w-prose">
+              <PodcastLinks />
+            </div>
 
-            <p className="pb-4 text-blue-200 max-w-prose">
-              The raw feed{' '}
-              <Link href="/thepodofalan.xml">
-                <a>is here</a>
-              </Link>{' '}
-              if you&apos;re into that kind of thing.
-            </p>
-
-            <div className="max-w-prose pt-4 border-t border-gray-400 text-blue-200">
+            <div className="max-w-prose pt-4  text-blue-200">
               <p className="pb-4 text-blue-200 max-w-prose">
-                And here are the web versions of the episodes if you prefer to
-                listen that way. Show notes and transcripts are available by
-                clicking the links.
+                Show notes and transcripts are available by clicking the links.
               </p>
               <h3>Season 1</h3>
               <ul>
                 <li>
-                  <Link href="/posts/20cqqonf5mad--obligatory-intro-meta-talk--the-pod-of-alan--s1e1">
+                  <Link href="/posts/20cqqonf5mad">
                     <a>S1:E1 - Obligatory Intro Meta Talk</a>
                   </Link>
                   <audio controls>
@@ -97,7 +67,7 @@ export default function BlogList({ posts }) {
                   </audio>
                 </li>
                 <li>
-                  <Link href="/posts/20smffslqp9g--obligatory-intro-meta-talk-aftershow--the-pod-of-alan">
+                  <Link href="/posts/20smffslqp9g">
                     <a>S1:E1 (Aftershow)</a>
                   </Link>
                   <audio controls>
@@ -110,7 +80,7 @@ export default function BlogList({ posts }) {
                   </audio>
                 </li>
                 <li>
-                  <Link href="/posts/20spk2lln4n2--changing-the-intro--the-pod-of-alan--s1e2">
+                  <Link href="/posts/20spk2lln4n2">
                     <a>S1:E2 - Changing The Intro</a>
                   </Link>
                   <audio controls>
@@ -123,7 +93,7 @@ export default function BlogList({ posts }) {
                   </audio>
                 </li>
                 <li>
-                  <Link href="/posts/20sxnixbhn50--changing-the-intro-aftershow--the-pod-of-alan">
+                  <Link href="/posts/20sxnixbhn50">
                     <a>S1:E2 (Aftershow)</a>
                   </Link>
                   <audio controls>
@@ -136,7 +106,7 @@ export default function BlogList({ posts }) {
                   </audio>
                 </li>
                 <li>
-                  <Link href="/posts/20sekpy2uuib--my-three-brains--the-pod-of-alan--s1e3">
+                  <Link href="/posts/20sekpy2uuib">
                     <a>S1:E3 - My Three Brains</a>
                   </Link>
                   <audio controls>
@@ -149,7 +119,7 @@ export default function BlogList({ posts }) {
                   </audio>
                 </li>
                 <li>
-                  <Link href="/posts/20semafqxmph--my-three-brains-aftershow--the-pod-of-alan">
+                  <Link href="/posts/20semafqxmph">
                     <a>S1:E3 (Aftershow)</a>
                   </Link>
                   <audio controls>
@@ -162,7 +132,7 @@ export default function BlogList({ posts }) {
                   </audio>
                 </li>
                 <li>
-                  <Link href="/posts/20txfnxvdkma--practice-in-isolation--the-pod-of-alan--s1e4">
+                  <Link href="/posts/20txfnxvdkma">
                     <a>S1:E4 - Practice In Isolation</a>
                   </Link>
                   <audio controls>
@@ -176,7 +146,7 @@ export default function BlogList({ posts }) {
                 </li>
 
                 <li>
-                  <Link href="/posts/20te45fsw9i0--practice-in-isolation-aftershow--the-pod-of-alan">
+                  <Link href="/posts/20te45fsw9i0">
                     <a>S1:E4 (Aftershow)</a>
                   </Link>
                   <audio controls>
@@ -190,7 +160,7 @@ export default function BlogList({ posts }) {
                 </li>
 
                 <li>
-                  <Link href="/posts/20zddkn5lmoe--in-which-i-almost-lose-my-house--the-pod-of-alan--s1e5">
+                  <Link href="/posts/20zddkn5lmoe">
                     <a>S1:E5 - In Which I Almost Lose My House</a>
                   </Link>
                   <audio controls>
@@ -204,7 +174,7 @@ export default function BlogList({ posts }) {
                 </li>
 
                 <li>
-                  <Link href="/posts/21ssrm1d2net--in-which-i-almost-lose-my-house-aftershow--the-pod-of-alan">
+                  <Link href="/posts/21ssrm1d2net">
                     <a>S1:E5 (Aftershow) </a>
                   </Link>
                   <audio controls>
@@ -218,7 +188,7 @@ export default function BlogList({ posts }) {
                 </li>
 
                 <li>
-                  <Link href="/posts/21t2mwixhrxf--meta-editing--the-pod-of-alan--s1e6">
+                  <Link href="/posts/21t2mwixhrxf">
                     <a>S1:E6 - Meta Editing</a>
                   </Link>
                   <audio controls>
@@ -232,7 +202,7 @@ export default function BlogList({ posts }) {
                 </li>
 
                 <li>
-                  <Link href="/posts/21t2txmznbmi--meta-editing-aftershow--the-pod-of-alan">
+                  <Link href="/posts/21t2txmznbmi">
                     <a>S1:E6 (Aftershow) </a>
                   </Link>
                   <audio controls>
@@ -264,6 +234,34 @@ export default function BlogList({ posts }) {
                   <audio controls>
                     <source
                       src="https://cdn.simplecast.com/audio/f900955e-9fdd-4695-bf12-22eeee2f4d9e/episodes/44b7eb80-6209-45a5-ad83-329d1c43e403/audio/0837913b-b917-4e49-bd85-fd284720c081/default_tc.mp3"
+                      type="audio/mpeg"
+                    />
+                    Unfortunately, your browser does not support embedding the
+                    podcast.
+                  </audio>
+                </li>
+
+                <li>
+                  <Link href="/posts/21t34qemwdhc">
+                    <a>S1:E8 - I&apos;m A Tik Toker Now</a>
+                  </Link>
+                  <audio controls>
+                    <source
+                      src="https://cdn.simplecast.com/audio/f900955e-9fdd-4695-bf12-22eeee2f4d9e/episodes/f201d4b8-b427-4fa5-857f-7b0ba46233ba/audio/e8f5a1c8-8506-4a92-a2f8-5a30700ee142/default_tc.mp3"
+                      type="audio/mpeg"
+                    />
+                    Unfortunately, your browser does not support embedding the
+                    podcast.
+                  </audio>
+                </li>
+
+                <li>
+                  <Link href="/posts/21t361ttroya">
+                    <a>S1:E8 (Aftershow)</a>
+                  </Link>
+                  <audio controls>
+                    <source
+                      src="https://cdn.simplecast.com/audio/f900955e-9fdd-4695-bf12-22eeee2f4d9e/episodes/17002338-91e1-4647-bbaf-71d76078fcce/audio/f59cf3dc-3cba-4320-b7e8-072e675a6c91/default_tc.mp3"
                       type="audio/mpeg"
                     />
                     Unfortunately, your browser does not support embedding the
