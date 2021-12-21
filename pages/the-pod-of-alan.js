@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import LayoutMain from '../components/LayoutMain.js'
 import Img from '../components/Img.js'
+import PodcastPlayer from '../components/PodcastPlayer'
 
 export default function BlogList({ posts }) {
   return (
@@ -35,51 +36,50 @@ export default function BlogList({ posts }) {
       <LayoutMain
         content={
           <>
-            <h1 className="pb-4 text-blue-200 max-w-prose">
-              Welcome To The Pod Of Alan Podcast!
-            </h1>
+            <h1 className="pb-4 text-blue-200 max-w-prose">The Pod Of Alan</h1>
             <p className="pb-4 text-blue-200 max-w-prose">
-              This is my podcast riffing on working in public, making stuff,
+              Welcome to my podcast riffing on working in public, making stuff,
               creativity, art, design, education, learning, language, mental
-              health, movies, music, and more.
+              health, movies, and music.
             </p>
             <p className="pb-4 text-blue-200 max-w-prose">
-              You can listent to it on:
+              You can get it on{' '}
+              <a href="https://music.amazon.com/podcasts/6c935bd2-31ed-4c97-a179-8ac70f76a7c3/the-pod-of-alan">
+                Amazon
+              </a>
+              ,{' '}
+              <a href="https://podcasts.apple.com/us/podcast/the-pod-of-alan/id1600597473">
+                Apple
+              </a>
+              ,{' '}
+              <a href="https://www.audible.com/pd/Podcast/B08K56HFPB">
+                Audible
+              </a>
+              ,{' '}
+              <a href="https://podcasts.google.com/feed/aHR0cHM6Ly93d3cuYWxhbndzbWl0aC5jb20vdGhlcG9kb2ZhbGFuLnhtbA">
+                Google
+              </a>
+              ,{' '}
+              <a href="https://open.spotify.com/show/1dVQS0gZGpN6AJryeJTv5d?si=934487f6f48d476d">
+                Spotify
+              </a>
+              , and pretty much any other podcast app. (Please let me know if
+              you find one where the show isn&apos;t available)
             </p>
-            <ul>
-              <li>
-                <a href="https://music.amazon.com/podcasts/6c935bd2-31ed-4c97-a179-8ac70f76a7c3/the-pod-of-alan">
-                  Amazon Music Podcasts
-                </a>
-              </li>
-              <li>
-                <a href="https://podcasts.apple.com/us/podcast/the-pod-of-alan/id1600597473">
-                  Apple Podcasts
-                </a>
-              </li>
-              <li>
-                <a href="https://www.audible.com/pd/Podcast/B08K56HFPB">
-                  Audible
-                </a>
-              </li>
-              <li>(Google is coming soon)</li>
-              <li>
-                <a href="https://open.spotify.com/show/1dVQS0gZGpN6AJryeJTv5d?si=934487f6f48d476d">
-                  Spotify
-                </a>
-              </li>
-            </ul>
 
             <p className="pb-4 text-blue-200 max-w-prose">
               The raw feed{' '}
               <Link href="/thepodofalan.xml">
                 <a>is here</a>
-              </Link>
+              </Link>{' '}
+              if you&apos;re into that kind of thing.
             </p>
 
             <div className="max-w-prose pt-4 border-t border-gray-400 text-blue-200">
               <p className="pb-4 text-blue-200 max-w-prose">
-                You can also listen to the episodes right here
+                And here are the web versions of the episodes if you prefer to
+                listen that way. Show notes and transcripts are available by
+                clicking the links.
               </p>
               <h3>Season 1</h3>
               <ul>
@@ -244,14 +244,42 @@ export default function BlogList({ posts }) {
                     podcast.
                   </audio>
                 </li>
+                <li>
+                  <Link href="/posts/21t30avjb3ic">
+                    <a>S1:E7 - The Songs That Saved My Life</a>
+                  </Link>
+                  <audio controls>
+                    <source
+                      src="https://cdn.simplecast.com/audio/f900955e-9fdd-4695-bf12-22eeee2f4d9e/episodes/3abe5313-e8f4-4070-804e-d9a62a77eb97/audio/37e9ed07-91ef-4a83-9e12-b1865c9dc068/default_tc.mp3"
+                      type="audio/mpeg"
+                    />
+                    Unfortunately, your browser does not support embedding the
+                    podcast.
+                  </audio>
+                </li>
+                <li>
+                  <Link href="/posts/21t33smeyjfs">
+                    <a>S1:E7 (Aftershow)</a>
+                  </Link>
+                  <audio controls>
+                    <source
+                      src="https://cdn.simplecast.com/audio/f900955e-9fdd-4695-bf12-22eeee2f4d9e/episodes/44b7eb80-6209-45a5-ad83-329d1c43e403/audio/0837913b-b917-4e49-bd85-fd284720c081/default_tc.mp3"
+                      type="audio/mpeg"
+                    />
+                    Unfortunately, your browser does not support embedding the
+                    podcast.
+                  </audio>
+                </li>
               </ul>
-              <p className="pb-4 text-blue-200 max-w-prose border-t border-gray-400 pt-8">
-                You can ignore this, but I need{' '}
-                <Link href="/thepodofalan-google.xml">
-                  <a>this link</a>
-                </Link>{' '}
-                because google won&apos;t use the main feed for some reason.
-              </p>
+
+              {/* <p className="pb-4 text-blue-200 max-w-prose border-t border-gray-400 pt-8"> */}
+              {/*   You can ignore this, but I need{' '} */}
+              {/*   <Link href="/thepodofalan-google.xml"> */}
+              {/*     <a>this link</a> */}
+              {/*   </Link>{' '} */}
+              {/*   to get google to work because they won&apos;t use the main feed */}
+              {/*   for some reason. */}
+              {/* </p> */}
             </div>
           </>
         }

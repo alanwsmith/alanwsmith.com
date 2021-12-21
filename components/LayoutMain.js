@@ -79,7 +79,7 @@ export default function LayoutMain(props) {
               </Link>
               &nbsp; &nbsp; &nbsp;
               <Link href="/the-pod-of-alan">
-                <a className="text-gray-500">The Pod Of Alan Podcast</a>
+                <a className="text-gray-500">Podcast</a>
               </Link>
             </div>
           </div>

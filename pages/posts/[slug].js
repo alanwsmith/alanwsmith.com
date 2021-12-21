@@ -12,6 +12,8 @@ import Checklist from '../../components/Checklist'
 import HeaderDate from '../../components/HeaderDate'
 import Img from '../../components/Img'
 import LayoutMain from '../../components/LayoutMain'
+import PodcastLinks from '../../components/PodcastLinks'
+import PodcastPlayer from '../../components/PodcastPlayer'
 import ReadOnlyChecklist from '../../components/ReadOnlyChecklist'
 import YouTubeVideo from '../../components/YouTubeVideo'
 import VimeoVideo from '../../components/VimeoVideo'
@@ -62,6 +64,8 @@ export default function Post({ source, frontmatter }) {
                   Link,
                   Checklist,
                   Img,
+                  PodcastLinks,
+                  PodcastPlayer,
                   ReadOnlyChecklist,
                   YouTubeVideo,
                   VimeoVideo,

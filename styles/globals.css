@@ -10,6 +10,12 @@
     @apply text-blue-300;
     @apply hover:underline;
   }
+  h1 {
+    @apply text-2xl;
+    @apply font-bold;
+    @apply pb-2;
+    @apply pt-4;
+  }
   h3 {
     @apply text-xl;
     @apply font-bold;
