@@ -19,7 +19,7 @@ export default function BlogList({ posts }) {
         />
         <meta
           property="og:url"
-          content={`https://www.alanwsmith.com/podcast`}
+          content={`https://www.alanwsmith.com/the-pod-of-alan`}
         />
         <meta
           property="og:image"
