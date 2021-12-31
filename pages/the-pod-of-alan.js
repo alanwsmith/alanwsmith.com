@@ -268,6 +268,62 @@ export default function BlogList({ posts }) {
                     podcast.
                   </audio>
                 </li>
+
+                <li>
+                  <Link href="/posts/21t3cl0nm029">
+                    <a>S1:E9 - Umms In The Audio</a>
+                  </Link>
+                  <audio controls>
+                    <source
+                      src="https://cdn.simplecast.com/audio/f900955e-9fdd-4695-bf12-22eeee2f4d9e/episodes/76ebc627-ed69-450f-855f-5e0eefb5d7a8/audio/08350b4a-0962-4ad5-9860-ea0f6acb458f/default_tc.mp3"
+                      type="audio/mpeg"
+                    />
+                    Unfortunately, your browser does not support embedding the
+                    podcast.
+                  </audio>
+                </li>
+
+                <li>
+                  <Link href="/posts/21t3dslstnl5">
+                    <a>S1:E9 (Aftershow)</a>
+                  </Link>
+                  <audio controls>
+                    <source
+                      src="https://cdn.simplecast.com/audio/f900955e-9fdd-4695-bf12-22eeee2f4d9e/episodes/f50932be-9129-49ee-98d1-145f7630019b/audio/8ebebdf2-7f3b-480a-b60b-f142113092d6/default_tc.mp3"
+                      type="audio/mpeg"
+                    />
+                    Unfortunately, your browser does not support embedding the
+                    podcast.
+                  </audio>
+                </li>
+
+                <li>
+                  <Link href="/posts/21t3ejxzjb62">
+                    <a>S1:E10 What Was I Talking About?</a>
+                  </Link>
+                  <audio controls>
+                    <source
+                      src="https://cdn.simplecast.com/audio/f900955e-9fdd-4695-bf12-22eeee2f4d9e/episodes/8761ef11-cd39-4525-a937-88f3ee0c4d83/audio/7567b870-4de6-4321-99f4-29af0afe7e0f/default_tc.mp3"
+                      type="audio/mpeg"
+                    />
+                    Unfortunately, your browser does not support embedding the
+                    podcast.
+                  </audio>
+                </li>
+
+                <li>
+                  <Link href="/posts/21t3fmh1plyq">
+                    <a>S1:E10 (Aftershow)</a>
+                  </Link>
+                  <audio controls>
+                    <source
+                      src="https://cdn.simplecast.com/audio/f900955e-9fdd-4695-bf12-22eeee2f4d9e/episodes/b9791247-a0a2-436d-9b7f-9cbe3a9b08c9/audio/f86d63d9-ca98-4be6-87b1-1e56a8af2bcb/default_tc.mp3"
+                      type="audio/mpeg"
+                    />
+                    Unfortunately, your browser does not support embedding the
+                    podcast.
+                  </audio>
+                </li>
               </ul>
 
               {/* <p className="pb-4 text-blue-200 max-w-prose border-t border-gray-400 pt-8"> */}
