@@ -8975,8 +8975,10 @@
       "slugs_to_redirect": []
     },
     "233pn9bgmfej": {
-      "current_slug": "/posts/233pn9bgmfej--example-unites-states-names-and-abbreviations-for-programming",
-      "slugs_to_redirect": []
+      "current_slug": "/posts/233pn9bgmfej--example-data--unites-states-names-and-abbreviations",
+      "slugs_to_redirect": [
+        "/posts/233pn9bgmfej--example-unites-states-names-and-abbreviations-for-programming"
+      ]
     },
     "231dewrmtyut": {
       "current_slug": "/posts/231dewrmtyut--get-query-string-param-from-url",
