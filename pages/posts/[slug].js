@@ -69,6 +69,9 @@ export default function Post({ source, frontmatter }) {
                   ReadOnlyChecklist,
                   YouTubeVideo,
                   VimeoVideo,
+                  pre: (props) => (
+                    <pre className="line-numbers">{props.children}</pre>
+                  ),
                 }}
               />
             </div>

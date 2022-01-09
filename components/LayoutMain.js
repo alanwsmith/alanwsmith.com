@@ -1,11 +1,17 @@
 import Link from 'next/link'
 import Head from 'next/head'
-const prism = require('prismjs')
+import Prism from 'prismjs'
 import React, { useEffect } from 'react'
+
+import 'prismjs/themes/prism-okaidia.css'
+import 'prismjs/components/prism-jsx.js'
+import 'prismjs/components/prism-bash.js'
+import 'prismjs/plugins/line-numbers/prism-line-numbers.js'
+import 'prismjs/plugins/line-numbers/prism-line-numbers.css'
 
 export default function LayoutMain(props) {
   useEffect(() => {
-    prism.highlightAll()
+    Prism.highlightAll()
   }, [])
 
   return (
@@ -69,7 +75,7 @@ export default function LayoutMain(props) {
     m-0 mx-auto 
     text-blue-200 container 
     pt-2 
-     px-6 max-w-screen-md
+     px-6 max-w-prose
     "
         >
           <div className="border-b border-gray-700 max-w-prose">
@@ -84,7 +90,7 @@ export default function LayoutMain(props) {
             </div>
           </div>
         </nav>
-        <main className="pb-16 mx-auto container pt-3 px-6 max-w-screen-md">
+        <main className="pb-16 mx-auto container pt-3 px-6 max-w-prose">
           {props.content}
         </main>
       </div>

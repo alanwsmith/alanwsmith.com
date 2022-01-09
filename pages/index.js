@@ -18,6 +18,7 @@ export default function BlogList({ posts }) {
           content="The personal website of Alan W. Smith"
         />
         <meta property="og:url" content={`https://www.alanwsmith.com`} />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta
           property="og:image"
           content={`https://res.cloudinary.com/awsimages/image/upload/c_fit,l_text:Arial_68_bold:TheSiteOfAlan,w_720/fl_layer_apply,g_north_west,x_480,y_68/og-image-v3_eka6dz.png`}

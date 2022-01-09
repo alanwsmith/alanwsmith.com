@@ -1,19 +1,19 @@
 ---
 blurb: ''
 categories:
-  - Miscellaneous
+  - CSS
+  - Tailwind
 date: '2021-12-30T13:53:27'
 id: 2318oceuqjmx
-status: scratch
+status: draft
 type: post
 title: Install Tailwind CSS In NextJS
 ---
 
-Go through this
+Go through this:
 
 ```
-npm install -D tailwindcss postcss autoprefixer
-npx tailwindcss init -p
+npm install -D tailwindcss postcss autoprefixer && npx tailwindcss init -p
 ```
 
 Update `tailwind.config.js` with:
@@ -33,9 +33,21 @@ Setup `styles/global.css` with just this:
 @tailwind utilities;
 
 @layer base {
+  body {
+    @apply bg-gray-900;
+    @apply text-gray-300;
+  }
   h1 {
+    @apply text-3xl;
+    @apply font-bold;
+  }
+  h2 {
+    @apply text-2xl;
+    @apply font-bold;
+  }
+  h3 {
     @apply text-xl;
+    @apply font-bold;
   }
 }
-
 ```

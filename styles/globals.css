@@ -4,7 +4,6 @@
 
 @layer base {
   body {
-    @apply text-lg;
   }
   a {
     @apply text-blue-300;
@@ -16,8 +15,14 @@
     @apply pb-2;
     @apply pt-4;
   }
-  h3 {
+  h2 {
     @apply text-xl;
+    @apply font-bold;
+    @apply pb-2;
+    @apply pt-4;
+  }
+  h3 {
+    @apply text-lg;
     @apply font-bold;
     @apply pb-2;
     @apply pt-4;
@@ -33,12 +38,13 @@
     @apply pb-2;
   }
   li {
-    @apply pb-5;
+    @apply pb-3;
   }
   p {
     @apply pb-5;
   }
   hr {
+    @apply mt-8;
     @apply py-3;
   }
   table {
@@ -66,5 +72,9 @@
   }
   tr {
     @apply mb-2;
+  }
+  pre {
+    @apply border;
+    @apply border-black;
   }
 }
