@@ -87,6 +87,13 @@ export default function LayoutMain(props) {
               <Link href="/the-pod-of-alan">
                 <a className="text-gray-500">Podcast</a>
               </Link>
+              &nbsp; &nbsp; &nbsp;
+              <a
+                className="text-gray-500"
+                href="https://twitter.com/TheIdOfAlan"
+              >
+                Twitter
+              </a>
             </div>
           </div>
         </nav>
