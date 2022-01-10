@@ -9053,8 +9053,10 @@
       "slugs_to_redirect": []
     },
     "23qrlwhb8tam": {
-      "current_slug": "/posts/23qrlwhb8tam--install-prism-syntax-highlighting-in-nextjs-with-line-numbers",
-      "slugs_to_redirect": []
+      "current_slug": "/posts/23qrlwhb8tam--add-line-numbers-to-prismjs-code-blocks-in-a-nextjs-project",
+      "slugs_to_redirect": [
+        "/posts/23qrlwhb8tam--install-prism-syntax-highlighting-in-nextjs-with-line-numbers"
+      ]
     },
     "23ofrngohupu": {
       "current_slug": "/posts/23ofrngohupu--replace-a-character-or-substring-in-a-python-string",
@@ -9078,6 +9080,10 @@
     },
     "23rwa4rxitjd": {
       "current_slug": "/posts/23rwa4rxitjd--add-linenumbers-to-pre-tags-with-nextmdxremote",
+      "slugs_to_redirect": []
+    },
+    "23rglavtdnio": {
+      "current_slug": "/posts/23rglavtdnio--create-an-array-with-the-letters-of-the-alphabet",
       "slugs_to_redirect": []
     }
   }

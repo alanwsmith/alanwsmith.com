@@ -4,6 +4,7 @@ import matter from 'gray-matter'
 import Link from 'next/link'
 import Head from 'next/head'
 import LayoutMain from '../components/LayoutMain'
+import capitalize from 'capitalize'
 
 export default function BlogList({ posts }) {
   return (
@@ -38,7 +39,9 @@ export default function BlogList({ posts }) {
               <ul>
                 {posts.map((post, index) => (
                   <li key={index} className="pb-0">
-                    <Link href={`/posts/${post.slug}`}>{post.title}</Link>
+                    <Link href={`/posts/${post.slug}`}>
+                      {capitalize.words(post.title)}
+                    </Link>
                   </li>
                 ))}
               </ul>
