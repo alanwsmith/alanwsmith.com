@@ -13,6 +13,7 @@ import camry_odometer_aws_20080701_snapshots_0003 from '../_images/camry_odomete
 import cfl_bulb_2008_05 from '../_images/cfl_bulb_2008_05.jpg'
 import command_line_ls_2009_04 from '../_images/command_line_ls_2009_04.png'
 import dot_matrix_sky_writing from '../_images/dot_matrix_sky_writing.jpg'
+import eneloop_2008_05 from '../_images/eneloop_2008_05.jpg'
 import euthanasia_20080629_snapshots_0003 from '../_images/euthanasia_20080629_snapshots_0003.jpg'
 import fire_escape_plaque_img_0306 from '../_images/fire_escape_plaque_img_0306.jpg'
 import fire_eyes_1 from '../_images/fire_eyes_1.jpg'
@@ -55,14 +56,18 @@ const imgMap = {
   armored_bug_20060923_105004_01: armored_bug_20060923_105004_01,
   aws_20080426_glamor_camp_0073: aws_20080426_glamor_camp_0073,
   bama_schedule_sp_20090821_misc_112136: bama_schedule_sp_20090821_misc_112136,
-  big_ass_grasshopper_20070721_183012_01: big_ass_grasshopper_20070721_183012_01,
+  big_ass_grasshopper_20070721_183012_01:
+    big_ass_grasshopper_20070721_183012_01,
   black_widow_20051026_230734a1: black_widow_20051026_230734a1,
   bottle_of_change_20060313_150636a: bottle_of_change_20060313_150636a,
-  broken_sunpak_tripod_20090829_misc_110949: broken_sunpak_tripod_20090829_misc_110949,
-  camry_odometer_aws_20080701_snapshots_0003: camry_odometer_aws_20080701_snapshots_0003,
+  broken_sunpak_tripod_20090829_misc_110949:
+    broken_sunpak_tripod_20090829_misc_110949,
+  camry_odometer_aws_20080701_snapshots_0003:
+    camry_odometer_aws_20080701_snapshots_0003,
   cfl_bulb_2008_05: cfl_bulb_2008_05,
   command_line_ls_2009_04: command_line_ls_2009_04,
   dot_matrix_sky_writing: dot_matrix_sky_writing,
+  eneloop_2008_05: eneloop_2008_05,
   euthanasia_20080629_snapshots_0003: euthanasia_20080629_snapshots_0003,
   fire_escape_plaque_img_0306: fire_escape_plaque_img_0306,
   fire_eyes_1: fire_eyes_1,
@@ -70,7 +75,8 @@ const imgMap = {
   frog_portrait_20080402_snaps_0008: frog_portrait_20080402_snaps_0008,
   glock_20060923_114208_01: glock_20060923_114208_01,
   home_and_garden_skull_2009_03: home_and_garden_skull_2009_03,
-  honda_accord_aws_20080630_snapshots_0006: honda_accord_aws_20080630_snapshots_0006,
+  honda_accord_aws_20080630_snapshots_0006:
+    honda_accord_aws_20080630_snapshots_0006,
   iphone_3gs_test_photo_2009_06: iphone_3gs_test_photo_2009_06,
   ir_band_photo_20060805_011554_01: ir_band_photo_20060805_011554_01,
   ir_band_photo_20060805_011816_01: ir_band_photo_20060805_011816_01,
@@ -88,7 +94,8 @@ const imgMap = {
   snow_in_atlanta_dscf0874: snow_in_atlanta_dscf0874,
   sunset_in_key_weat_20060211_191750a: sunset_in_key_weat_20060211_191750a,
   superfad_reel_grab_2009_01: superfad_reel_grab_2009_01,
-  target_with_bullet_holes_20060923_124436_01: target_with_bullet_holes_20060923_124436_01,
+  target_with_bullet_holes_20060923_124436_01:
+    target_with_bullet_holes_20060923_124436_01,
   thepodofalan_ogimage_v1: thepodofalan_ogimage_v1,
   tree_at_sawgrass_20060329_041114a: tree_at_sawgrass_20060329_041114a,
   unprocessed_file_20060125_010408a: unprocessed_file_20060125_010408a,
@@ -100,6 +107,8 @@ const imgMap = {
   youtube_logo_2009_01: youtube_logo_2009_01,
 }
 
-export default function Img({ src, alt = 'image alt text unavailable' }) { 
- return <Image src={imgMap[src]} alt={alt} /> 
+export default function Img({ src, alt = 'image alt text unavailable' }) {
+  const fileNameParts = src.split('.')
+  return <Image src={imgMap[fileNameParts[0]]} alt={alt} />
 }
+
