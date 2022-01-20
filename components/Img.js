@@ -19,6 +19,7 @@ import fire_escape_plaque_img_0306 from '../_images/fire_escape_plaque_img_0306.
 import fire_eyes_1 from '../_images/fire_eyes_1.jpg'
 import frog_legs_jumping_20080402_snaps_0007 from '../_images/frog_legs_jumping_20080402_snaps_0007.jpg'
 import frog_portrait_20080402_snaps_0008 from '../_images/frog_portrait_20080402_snaps_0008.jpg'
+import git_logo_2009_08 from '../_images/git_logo_2009_08.gif'
 import glock_20060923_114208_01 from '../_images/glock_20060923_114208_01.jpg'
 import home_and_garden_skull_2009_03 from '../_images/home_and_garden_skull_2009_03.png'
 import honda_accord_aws_20080630_snapshots_0006 from '../_images/honda_accord_aws_20080630_snapshots_0006.jpg'
@@ -73,6 +74,7 @@ const imgMap = {
   fire_eyes_1: fire_eyes_1,
   frog_legs_jumping_20080402_snaps_0007: frog_legs_jumping_20080402_snaps_0007,
   frog_portrait_20080402_snaps_0008: frog_portrait_20080402_snaps_0008,
+  git_logo_2009_08: git_logo_2009_08,
   glock_20060923_114208_01: glock_20060923_114208_01,
   home_and_garden_skull_2009_03: home_and_garden_skull_2009_03,
   honda_accord_aws_20080630_snapshots_0006:
@@ -108,7 +110,7 @@ const imgMap = {
 }
 
 export default function Img({ src, alt = 'image alt text unavailable' }) {
-  const fileNameParts = src.split('.')
-  return <Image src={imgMap[fileNameParts[0]]} alt={alt} />
+  const fileParts = src.split('.')
+  return <Image src={imgMap[fileParts[0]]} alt={alt} />
 }
 
