@@ -1,0 +1,72 @@
+---
+blurb: ''
+categories:
+  - Next.js
+  - React
+date: '2022-01-11T20:01:41'
+id: 23zl4soxrnrh
+status: scratch
+type: post
+title: Adding Open Graph meta tags to the head without react-helmet
+slug: >-
+  /posts/23zl4soxrnrh--adding-open-graph-meta-tags-to-the-head-without-reacthelmet
+---
+
+Looking to add metatags to my next.js site, everything I found pointed to react-helmet, but that was throwing the error TKTKTKTKT. There are some work arounds, but I figured there was an easier way. 
+
+I ended up using the default `import Head from 'next/head'` and `<Head></Head>`
+
+The way I did it was to make a new component file at `components/MetaData.js` with the content:
+
+```jsx
+import Head from 'next/head'
+
+export default function MetaData({ description, image, title, type, url }) {
+  return (
+    <Head>
+      <meta charSet="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <title>{title}</title>
+      <meta name="description" content={description} />
+
+      <meta property="og:description" content={description} />
+      <meta property="og:image" content={image} />
+      <meta property="og:title" content={title} />
+      <meta property="og:type" content={type} />
+      <meta property="og:url" content={url} />
+
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:creator" content="@theidofalan" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:image" content={image} />
+    </Head>
+  )
+}
+```
+
+Then use it in the `pages/index.js` style pages:
+
+```jsx
+  return (
+    <>
+      <MetaData
+        description="A game of decryption"
+        image="https://monocrack.alanwsmith.com/og-images/monocrack-open-graph-v1.png"
+        title="monocrack"
+        type="website"
+        url="https://monocrack.alanwsmith.com"
+      />
+      <main>
+       <div>Content Goes Here</div>
+      </main>
+    </>
+  )
+}
+```
+
+
+TOOD: Look at the other post about your full set of metadata tags
+
+
+

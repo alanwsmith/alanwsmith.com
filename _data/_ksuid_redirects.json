@@ -9085,6 +9085,66 @@
     "23rglavtdnio": {
       "current_slug": "/posts/23rglavtdnio--create-an-array-with-the-letters-of-the-alphabet",
       "slugs_to_redirect": []
+    },
+    "23wb2q8xhusl": {
+      "current_slug": "/posts/23wb2q8xhusl--trigger-a-fargate-task-from-aws-lambda",
+      "slugs_to_redirect": []
+    },
+    "23znxwh7ck8k": {
+      "current_slug": "/posts/23znxwh7ck8k--pause-a-long-running-process-with-ctrl-z",
+      "slugs_to_redirect": []
+    },
+    "23gcz3kcl07h": {
+      "current_slug": "/posts/23gcz3kcl07h--fix-issues-with-docker-build-problem",
+      "slugs_to_redirect": []
+    },
+    "23q29ygxa4ie": {
+      "current_slug": "/posts/23q29ygxa4ie--dates-to-use-for-examples",
+      "slugs_to_redirect": []
+    },
+    "23vfh6l4dt1g": {
+      "current_slug": "/posts/23vfh6l4dt1g--create-thumbnails-from-a-video-with-ffmpeg",
+      "slugs_to_redirect": []
+    },
+    "23kyddxj9n9u": {
+      "current_slug": "/posts/23kyddxj9n9u--backtick-html-entities",
+      "slugs_to_redirect": []
+    },
+    "23pz2bligc61": {
+      "current_slug": "/posts/23pz2bligc61--get-an-epoch-timestamp-in-javascript",
+      "slugs_to_redirect": []
+    },
+    "23yct7ahlbg3": {
+      "current_slug": "/posts/23yct7ahlbg3--howto-use-jest-to-test-vanilla-javascript-files-without-a-framework",
+      "slugs_to_redirect": []
+    },
+    "23zl4soxrnrh": {
+      "current_slug": "/posts/23zl4soxrnrh--adding-open-graph-meta-tags-to-the-head-without-reacthelmet",
+      "slugs_to_redirect": []
+    },
+    "23kgnkctxukx": {
+      "current_slug": "/posts/23kgnkctxukx--output-the-contents-of-a-local-file-on-a-nextjs-page",
+      "slugs_to_redirect": []
+    },
+    "23zi8onrmpdi": {
+      "current_slug": "/posts/23zi8onrmpdi--use-a-nonbreaking-space",
+      "slugs_to_redirect": []
+    },
+    "23kunw6h0usi": {
+      "current_slug": "/posts/23kunw6h0usi--reduce-font-size-of-prismjs",
+      "slugs_to_redirect": []
+    },
+    "23sgjhffsfi0": {
+      "current_slug": "/posts/23sgjhffsfi0--append-data-to-a-tuple-in-python",
+      "slugs_to_redirect": []
+    },
+    "23sas8ky4yvq": {
+      "current_slug": "/posts/23sas8ky4yvq--change-csv-delimiter-to-tab-in-python",
+      "slugs_to_redirect": []
+    },
+    "23shatajbugt": {
+      "current_slug": "/posts/23shatajbugt--process-data-line-by-line",
+      "slugs_to_redirect": []
     }
   }
 }

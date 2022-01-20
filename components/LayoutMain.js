@@ -9,6 +9,8 @@ import 'prismjs/components/prism-bash.js'
 import 'prismjs/plugins/line-numbers/prism-line-numbers.js'
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css'
 
+// TODO: Switch over to using components/MetaData
+
 export default function LayoutMain(props) {
   useEffect(() => {
     Prism.highlightAll()

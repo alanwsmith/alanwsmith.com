@@ -1,0 +1,182 @@
+---
+blurb: ''
+categories:
+  - ffmpeg
+date: '2022-01-19T10:39:29'
+id: 23vfh6l4dt1g
+status: draft
+type: post
+title: Create Thumbnails From A Video With ffmpeg
+slug: /posts/23vfh6l4dt1g--create-thumbnails-from-a-video-with-ffmpeg
+---
+
+
+Create Thumbs for a Full Movie
+------------------------------
+
+Example:
+
+    mkdir thumbs
+    ffmpeg -i input.m4v -vf fps=1 thumbs/frame-%d.png
+
+
+    Can also try this for a single frame:
+    
+        ffmpeg -i "input.mp4" -ss 1 -t 1 -vf fps=1 "output.png"
+    
+
+
+
+Notes on times:
+
+- The Matrix
+    
+    - Command:           `time ffmpeg -i input.m4v -vf fps=1 frames/frames-%d.png`
+    - Time Report:       793.27s user 24.66s system 279% cpu 4:52.12 total
+    - Time:              13min. 13sec. 
+    - Source File Size:  1,455,652,078 bytes (1.46 GB on disk)
+    - Source Dimensions: 839x352 (via MacOS Finder Get Info)
+    - Total PNGs:        8182
+    - Total Size:        2.2GB
+    - Duration:          2:16:21
+
+
+    
+
+
+
+
+
+Frame Per Second Thumbnails
+---------------------------
+
+- 1 frame/second at whatever size the video is:
+
+        ffmpeg -i input.mkv -vf fps=1 thumbnail-%d.png
+
+- TODO:
+    
+    - Verify that the size really is just native out of the box. (Pretty sure that's the case.)
+
+    - Figure out the proper way to set the output to `.jpg`. Right now it throws a warning and the first run look like it might have been more compressed than desirable. 
+        
+
+
+
+Work In Progress - Scene Changes
+----------------------------------
+
+via: http://www.bogotobogo.com/FFMpeg/ffmpeg_thumbnails_select_scene_iframe.php
+
+
+
+WIP Timestamps
+---------------
+
+    ffmpeg -i http://admin:Stupidpassword1@10.12.10.40/Streaming/channels/1/picture -vframes 1 -f image2 -strftime 1 "%Y-%m-%d_%H-%M-%S_doorbell.jpg"
+
+
+
+This will do the timestamp of when it was output (not the timestamp of the film)
+
+    
+    ffmpeg -i input.mkv -f image2 -strftime 1 "%Y-%m-%d_%H-%M-%S_doorbell.jpg"
+    # Nice try, but no... this is the timestamp of when
+    # the conversion is done. Not the timestamp in the video.
+
+
+
+
+
+
+----
+
+
+
+
+
+
+
+Option 2 - Resized
+------------------
+
+
+- This one sets a size based on one dimension and then automatically scales the other one.
+
+        ffmpeg -i input.mkv -vf fps=1 -filter:v scale="640:-1" thumbnail-%d.png
+
+- NOTE: Currently this one makes way more than 1 per second. 
+
+- NOTE: It looks like it makes one per frame of video which would be handy for fine tuning the picks
+
+- TODO: Figure out how to get this to be 1 frame per seconds
+
+- TODO: Figure out how to make 1 thumbnail per frame without the resize `scale` stuff. 
+
+
+
+Notes
+-----
+
+- The `thumbnail-%d.png` can use `sprintf` type formatting (e.g. `%04d` to add leading zeros to four digits)
+
+
+
+        
+
+
+
+
+--------------------------------------------------------------------------------
+
+
+NOTE: The items below were copied pretty much directly from: 
+
+
+        https://trac.ffmpeg.org/wiki/Create%20a%20thumbnail%20image%20every%20X%20seconds%20of%20the%20video
+
+
+Using -vframes option
+---------------------
+
+- Output a single frame from the video into an image file
+
+    ffmpeg -i input.flv -ss 00:00:14.435 -vframes 1 out.png
+
+
+This example will seek to the position of 0h:0m:14sec:435msec and output one frame (-vframes 1) from that position into a PNG file.
+
+
+fps video filter 
+----------------
+
+Output one image every second, named out1.png, out2.png, out3.png, etc.
+
+    ffmpeg -i input.flv -vf fps=1 out%d.png
+
+Output one image every minute, named img001.jpg, img002.jpg, img003.jpg, etc. The %03d dictates that the ordinal number of each output image will be formatted using 3 digits.
+
+    ffmpeg -i myvideo.avi -vf fps=1/60 img%03d.jpg
+    
+Output one image every ten minutes:
+
+    ffmpeg -i test.flv -vf fps=1/600 thumb%04d.bmp
+
+
+select video filter
+-------------------
+
+Output one image for every I-frame:
+
+    ffmpeg -i input.flv -vf "select='eq(pict_type,PICT_TYPE_I)'" -vsync vfr thumb%04d.png
+
+
+
+--------------------------------------------------------------------------------
+
+
+        ffmpeg -i beck-loser.mkv -vf fps=1 thumbnail-%04d.jpg
+    
+
+        ffmpeg -i beck-loser.mkv -vf "select='eq(pict_type,PICT_TYPE_I)'" -vsync vfr thumb%04d.png
+

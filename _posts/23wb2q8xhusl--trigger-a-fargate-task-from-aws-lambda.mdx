@@ -1,0 +1,65 @@
+---
+blurb: ''
+categories:
+  - AWS
+  - Python
+  - Lambda
+date: '2022-01-19T18:31:04'
+id: 23wb2q8xhusl
+status: published
+type: post
+title: Trigger A Fargate Task From AWS Lambda
+slug: /posts/23wb2q8xhusl--trigger-a-fargate-task-from-aws-lambda
+---
+
+This lambda function will trigger a Fargate task. I've got one setup to watch for an incoming file in S3 that then kicks off an imaging process that can last longer than the default lambda time out. 
+
+
+```python
+#!/usr/bin/env python3
+
+import boto3
+import json
+
+# Config - Can also be set in env vars
+cluster = 'your-cluster-name'
+
+# define the task using `:#` to identify the version
+# It might be possible to not include that and just
+# get the latest, but I haven't tested that yet.
+taskDefinition = 'your-task-name:1'
+
+subnets = ['subnet-123123123']
+securityGroups = ['sg-123123123']
+
+def lambda_handler(event, context):
+    print("Firing off the Fargate headshot engine v2 process")
+    client = boto3.client('ecs', region_name='us-east-1')
+    response = client.run_task(
+        taskDefinition='headshot-test-3:2',
+        launchType='FARGATE',
+        cluster='headshot-engine-v2-processor-sandbox',
+        platformVersion='LATEST',
+        count=1,
+        networkConfiguration={
+            'awsvpcConfiguration': {
+                'subnets': subnets,
+                'assignPublicIp': 'ENABLED',
+                'securityGroups': securityGroups 
+            }
+        }
+    )
+    print(json.dumps(response, indent=4, default=str))
+
+    return {
+        'statusCode': 200,
+        'body': json.dumps('Process complete')
+    }
+```
+
+I gave the lambda function full ECS rights. You can probably get away with less, but the ecsTaskRunner (that's not the right name) role didn't seem to work. Though, there may have been something else going on. 
+
+I'm not sure if 'assignPublicIp' needs to be enabled or if it can be set to 'DISABLED'. I switched it on during troubleshooting and haven't tried it turned off yet. 
+
+I've seen another example that doesn't have the security group. So, that may be an option depending on what you're trying to do
+

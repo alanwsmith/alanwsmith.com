@@ -1,0 +1,60 @@
+---
+blurb: ''
+categories:
+  - JavaScript
+date: '2022-01-17T13:53:25'
+id: 23pz2bligc61
+status: published
+type: post
+title: Get An Epoch Timestamp In JavaScript
+slug: /posts/23pz2bligc61--get-an-epoch-timestamp-in-javascript
+---
+
+Epoch timestamps in JavaScript are the number of milliseconds that have elapsed since midnight on Jan. 1, 1970 UTC. I like using them because they are integers and are the same for any given time regardless of time zone. They're also handy since they are what's returned from `.now()` and `.getTime()` on a `Date`.
+
+The epoch in millisecond for current time is available with:
+
+```javascript
+const epochTime = Date.now()
+```
+
+``` bash
+// Outputs something like
+1642449085896
+```
+
+Epoch in milliseconds for a specific time are obtained with:
+
+```javascript
+const backToTheFuture = new Date('Oct 21, 2015 07:28:00 GMT+05:00').getTime()
+```
+
+```bash
+// Outputs:
+1445394480000
+```
+
+To pull the epoch based timestamp back into a string do something like:
+
+```javascript
+const backToTheFutureString = new Date(backToTheFuture).toString()
+```
+
+---
+
+
+Note: Mac/Linux/Unix system use seconds instead of millisecond for their epoch times. If you need to coordinate with one of them, use this for the current time:
+
+```javascript
+const epochTimeUnix = Math.round(Date.now() / 1000)
+```
+
+And this for a specific datetime:
+
+```javascript
+const backToTheFutureUnix = Math.round(new Date('Oct 21, 2015 07:28:00 GMT+05:00').getTime() / 1000)
+```
+
+TODO: Add stuff about `.pasre()`
+
+
