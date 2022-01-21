@@ -30,8 +30,11 @@ npm install -g jest
 
 ```javascript
 const config = {
-    verbose: true,
+  verbose: true,
+  testEnvironment: 'jsdom',
 }
+
+module.exports = config
 ```
 
 3. Create a `tests` directory in your working directory
@@ -64,7 +67,7 @@ module.exports.sum = sum
 5. Run jest from the command line with:
 
 ```bash
-jest
+jest --watch
 ```
 
 When you fire that off, you'll get the output from jest that looks something like this: 
@@ -80,11 +83,16 @@ Time:        0.593 s
 Ran all test suites.
 ```
 
+The process stays open and runs tests as you make changes. Press `q` to exit it. 
+
+
 ## The Notes
 
-- You only need to do the first setp (where you install jest globally) once
+- You only need to do the first step (where you install jest globally) once
 - The `jest` command hangs if you try to run it without a configuration (e.g. `jest.config.js`) file
+- Jest uses a Node environment by default. The `testEnvironment: 'jsdom'` line in the `jest.config.js` file switches to JSDOM which allows you to use things like `document.addEventListener('DOMContentLoaded', function () {}`
 - More details on the configuration options [are here](https://jestjs.io/docs/configuration)
+- Use `jest` instead of `jest --watch` to do a single run instead of watching files
 - The [examples on the jest site](https://jestjs.io/docs/getting-started) only export one function per file. With the code above, you can test multiple functions in a single file (e.g. you could add a function called `minus`, export it with `module.exports.minus = minus`, and test it with `expect(functions.minus(2, 1)).toBe(1)`)
 
 
