@@ -14,14 +14,6 @@ slug: >-
   /posts/23yct7ahlbg3--howto-use-jest-to-test-vanilla-javascript-files-without-a-framework
 ---
 
-## WARNING
-
-I discovered an issue with this approach. The browser throws the following error:
-
-```bash
-Uncaught ReferenceError: module is not defined
-```
-
 I'm working to figure out a solution for that. So considering this a work in progress
 
 
@@ -69,16 +61,18 @@ test('addition works', () => {
 
 ```javascript
 function sum(a, b) {
-    return a + b
+  return a + b + a
 }
 
-module.exports.sum = sum
+if (typeof module !== 'undefined') {
+  module.exports.sum = sum
+}
 ```
 
 5. Run jest from the command line with:
 
 ```bash
-jest --watch
+jest --watchAll
 ```
 
 When you fire that off, you'll get the output from jest that looks something like this: 
@@ -103,7 +97,9 @@ The process stays open and runs tests as you make changes. Press `q` to exit it.
 - The `jest` command hangs if you try to run it without a configuration (e.g. `jest.config.js`) file
 - Jest uses a Node environment by default. The `testEnvironment: 'jsdom'` line in the `jest.config.js` file switches to JSDOM which allows you to use things like `document.addEventListener('DOMContentLoaded', function () {}`
 - More details on the configuration options [are here](https://jestjs.io/docs/configuration)
-- Use `jest` instead of `jest --watch` to do a single run instead of watching files
+- The `if (typeof module !== 'undefined')` check is to prevent a `Uncaught ReferenceError: module is not defined` error when the file is used in the browser
+- Use `jest` instead of `jest --watchAll` to do a single run instead of watching files
+- If you're in a git repo, you can also do `jest --watch` instead of `jest --watchAll` to focus on files that are in the repo
 - The [examples on the jest site](https://jestjs.io/docs/getting-started) only export one function per file. With the code above, you can test multiple functions in a single file (e.g. you could add a function called `minus`, export it with `module.exports.minus = minus`, and test it with `expect(functions.minus(2, 1)).toBe(1)`)
 
 
