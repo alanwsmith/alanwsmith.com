@@ -14,6 +14,17 @@ slug: >-
   /posts/23yct7ahlbg3--howto-use-jest-to-test-vanilla-javascript-files-without-a-framework
 ---
 
+## WARNING
+
+I discovered an issue with this approach. The browser throws the following error:
+
+```bash
+Uncaught ReferenceError: module is not defined
+```
+
+I'm working to figure out a solution for that. So considering this a work in progress
+
+
 ## The Issue
 
 I'm building a plain old html and vanilla javascript site. I decided I wanted to setup a test suite and picked [Jest](https://jestjs.io/) since it was the first search result. The Jest page says "It works with projects using: Babel, TypeScript, Node, React, Angular, Vue, and more!" It took a little hunting to figure out how to run it without using any of those frameworks. Here's what I ended up with. It provides `jest` on the command line for vanilla javascript testing.
