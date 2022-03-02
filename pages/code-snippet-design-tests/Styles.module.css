@@ -1,0 +1,60 @@
+.code_1_line {
+  @apply table-row;
+}
+
+.code_1_first_line {
+  @apply pt-3;
+  @apply rounded-tl-md;
+}
+
+.code_1_line_content {
+  @apply table-cell;
+  @apply pl-4;
+}
+
+.code_1_line_number {
+  @apply table-cell;
+  @apply text-right;
+  @apply select-none;
+  @apply pl-4;
+  @apply pr-3;
+  @apply text-gray-500;
+  @apply bg-gray-900;
+}
+
+.code_1_line_number_blank {
+  @apply table-cell;
+  @apply text-right;
+  @apply select-none;
+  @apply bg-gray-900;
+  @apply pl-4;
+  @apply pr-3;
+  @apply text-gray-700;
+  @apply pb-4;
+}
+
+.code_1_line_number_output {
+  @apply table-cell;
+  @apply text-right;
+  @apply select-none;
+  @apply pl-4;
+  @apply pr-3;
+  @apply text-gray-500;
+  @apply bg-gray-900;
+}
+
+.code_1_output_line {
+  @apply py-1;
+  @apply bg-gray-900;
+  @apply rounded-b-md;
+}
+
+.code_1_last_line {
+  @apply pb-2;
+}
+
+.code_1_background {
+  @apply border-none;
+  @apply bg-gray-700;
+  @apply rounded-md;
+}
