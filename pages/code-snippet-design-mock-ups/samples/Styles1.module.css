@@ -41,12 +41,10 @@
   @apply pr-3;
   @apply text-gray-500;
   @apply bg-gray-900;
+  @apply rounded-bl-md;
 }
 
 .sample_1_output_line {
-  @apply py-1;
-  @apply bg-gray-900;
-  @apply rounded-b-md;
 }
 
 .sample_1_last_line {
