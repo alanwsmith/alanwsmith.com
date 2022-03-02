@@ -14,19 +14,19 @@ export default function Page() {
         </p>
 
         <h3>Sample 1</h3>
-        <pre className={`${styles.code_1_background}`}>
-          <div className={`${styles.code_1_line}`}>
+        <pre className={`${styles.sample_1_background}`}>
+          <div className={`${styles.sample_1_line}`}>
             <span
               className={`
-              ${styles.code_1_line_number} 
-              ${styles.code_1_first_line}
+              ${styles.sample_1_line_number} 
+              ${styles.sample_1_first_line}
               `}
             >
               1
             </span>
             <span
               className="
-              code_1_line_content
+              sample_1_line_content
               table-cell
               pl-4
               "
@@ -42,9 +42,9 @@ export default function Page() {
               <span className="token plain"></span>
             </span>
           </div>
-          <div className={`${styles.code_1_line}`}>
-            <span className={`${styles.code_1_line_number}`}>2</span>
-            <span className={`${styles.code_1_line_content}`}>
+          <div className={`${styles.sample_1_line}`}>
+            <span className={`${styles.sample_1_line_number}`}>2</span>
+            <span className={`${styles.sample_1_line_content}`}>
               <span className="token plain">&nbsp;&nbsp;&nbsp;&nbsp;</span>
               <span className="token keyword">return</span>
               <span className="token plain"> Math</span>
@@ -53,9 +53,9 @@ export default function Page() {
               <span className="token punctuation">(</span>
             </span>
           </div>
-          <div className={`${styles.code_1_line}`}>
-            <span className={`${styles.code_1_line_number}`}>3</span>
-            <span className={`${styles.code_1_line_content}`}>
+          <div className={`${styles.sample_1_line}`}>
+            <span className={`${styles.sample_1_line_number}`}>3</span>
+            <span className={`${styles.sample_1_line_content}`}>
               <span className="token plain">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               </span>
@@ -75,33 +75,33 @@ export default function Page() {
               <span className="token number">1</span>
             </span>
           </div>
-          <div className={`${styles.code_1_line}`}>
-            <span className={`${styles.code_1_line_number}`}>4</span>
-            <span className={`${styles.code_1_line_content}`}>
+          <div className={`${styles.sample_1_line}`}>
+            <span className={`${styles.sample_1_line_number}`}>4</span>
+            <span className={`${styles.sample_1_line_content}`}>
               <span className="token plain">&nbsp;&nbsp;&nbsp;&nbsp;</span>
               <span className="token punctuation">)</span>
             </span>
           </div>
-          <div className={`${styles.code_1_line}`}>
-            <span className={`${styles.code_1_line_number}`}>5</span>
-            <span className={`${styles.code_1_line_content}`}>
+          <div className={`${styles.sample_1_line}`}>
+            <span className={`${styles.sample_1_line_number}`}>5</span>
+            <span className={`${styles.sample_1_line_content}`}>
               <span className="token plain"></span>
               <span className="token punctuation">{'}'}</span>
             </span>
           </div>
 
-          <div className={`${styles.code_1_line}`}>
-            <span className={`${styles.code_1_line_number}`}>6</span>
-            <span className={`${styles.code_1_line_content}`}></span>
+          <div className={`${styles.sample_1_line}`}>
+            <span className={`${styles.sample_1_line_number}`}>6</span>
+            <span className={`${styles.sample_1_line_content}`}></span>
           </div>
 
-          <div className={`${styles.code_1_line}`}>
+          <div className={`${styles.sample_1_line}`}>
             <span
-              className={`${styles.code_1_line_number} ${styles.code_1_last_line}`}
+              className={`${styles.sample_1_line_number} ${styles.sample_1_last_line}`}
             >
               7
             </span>
-            <span className={`${styles.code_1_line_content}`}>
+            <span className={`${styles.sample_1_line_content}`}>
               <span className="token plain">console</span>
               <span className="token punctuation">.</span>
               <span className="token function">log</span>
@@ -113,9 +113,11 @@ export default function Page() {
               <span className="token punctuation">)</span>
             </span>
           </div>
-          <div className={`${styles.code_1_output_line}`}>
-            <span className={`${styles.code_1_line_number_output}`}>&gt;</span>
-            <span className={`${styles.code_1_line_content}`}>27</span>
+          <div className={`${styles.sample_1_output_line}`}>
+            <span className={`${styles.sample_1_line_number_output}`}>
+              &gt;
+            </span>
+            <span className={`${styles.sample_1_line_content}`}>27</span>
           </div>
         </pre>
       </ContentWrapper>
