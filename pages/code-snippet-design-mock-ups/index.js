@@ -1,7 +1,5 @@
 import HeaderMain from '../../components/HeaderMain'
 import ContentWrapper from '../../components/ContentWrapper'
-// import styles from './Styles.module.css'
-
 import Sample1 from './samples/sample-1'
 
 export default function Page() {
@@ -15,9 +13,8 @@ export default function Page() {
           site. These are the samples I&apos;m working with.
         </p>
 
-        <Sample1 />
-
         <h3>Sample 1</h3>
+        <Sample1 />
       </ContentWrapper>
     </>
   )

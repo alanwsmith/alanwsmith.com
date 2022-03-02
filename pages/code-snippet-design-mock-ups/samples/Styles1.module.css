@@ -1,18 +1,18 @@
-.sample_1_row {
+.row {
   @apply table-row;
 }
 
-.sample_1_top_line {
+.top_line {
   @apply pt-3;
   @apply rounded-tl-md;
 }
 
-.sample_1_line_content {
+.line_content {
   @apply table-cell;
   @apply pl-4;
 }
 
-.sample_1_line_number {
+.line_number {
   @apply table-cell;
   @apply text-right;
   @apply select-none;
@@ -22,7 +22,7 @@
   @apply bg-gray-900;
 }
 
-.sample_1_line_number_blank {
+.line_number_blank {
   @apply table-cell;
   @apply text-right;
   @apply select-none;
@@ -33,7 +33,7 @@
   @apply pb-4;
 }
 
-.sample_1_line_number_output {
+.line_number_output {
   @apply table-cell;
   @apply text-right;
   @apply select-none;
@@ -42,16 +42,17 @@
   @apply text-gray-500;
   @apply bg-gray-900;
   @apply rounded-bl-md;
+  @apply pb-3;
 }
 
-.sample_1_output_line {
+.output_line {
 }
 
-.sample_1_last_line {
+.last_line {
   @apply pb-2;
 }
 
-.sample_1_background {
+.background {
   @apply border-none;
   @apply bg-gray-700;
   @apply rounded-md;
