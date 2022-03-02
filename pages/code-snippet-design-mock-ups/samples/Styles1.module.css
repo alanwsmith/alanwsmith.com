@@ -1,3 +1,22 @@
+.background {
+  @apply border border-black;
+  @apply bg-gray-700;
+  @apply rounded-md;
+  @apply relative;
+}
+
+.copy_button {
+  @apply bg-gray-600;
+  @apply hover:bg-gray-700;
+  @apply text-gray-400;
+  @apply px-2;
+  @apply rounded;
+  @apply text-base;
+  @apply absolute;
+  @apply top-0;
+  @apply right-0;
+}
+
 .row {
   @apply table-row;
 }
@@ -50,10 +69,4 @@
 
 .last_line {
   @apply pb-2;
-}
-
-.background {
-  @apply border-none;
-  @apply bg-gray-700;
-  @apply rounded-md;
 }
