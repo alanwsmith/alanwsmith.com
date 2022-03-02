@@ -1,8 +1,8 @@
-.sample_1_line {
+.sample_1_row {
   @apply table-row;
 }
 
-.sample_1_first_line {
+.sample_1_top_line {
   @apply pt-3;
   @apply rounded-tl-md;
 }
