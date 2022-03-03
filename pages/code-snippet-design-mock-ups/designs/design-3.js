@@ -74,7 +74,7 @@ export default function Sample() {
         </div>
 
         <div className={styles.row}>
-          <span className={styles.line_content}>
+          <span className={`${styles.line_content} ${styles.last_line}`}>
             <span className="token plain">console</span>
             <span className="token punctuation">.</span>
             <span className="token function">log</span>
@@ -87,12 +87,16 @@ export default function Sample() {
           </span>
         </div>
 
-        <div className={styles.row}>
-          <span className={styles.line_content}>&nbsp;</span>
-        </div>
+        <button className={styles.copy_button}>Copy</button>
+      </pre>
 
+      <br />
+
+      <pre className={styles.background}>
         <div className={styles.row}>
-          <span className={styles.line_content}>{`// Output:`}</span>
+          <span className={`${styles.line_content} ${styles.first_line}`}>
+            {`// Output:`}
+          </span>
         </div>
 
         <div className={styles.output_line}>
@@ -100,13 +104,11 @@ export default function Sample() {
             // 27
           </span>
         </div>
-
-        <button className={styles.copy_button}>Copy</button>
       </pre>
 
       <ul className="mt-8">
-        <li>Baseline sample</li>
-        <li>No line numbers or output seperation</li>
+        <li>No line numbers</li>
+        <li>Output split out to it&apos;s own area</li>
       </ul>
     </div>
   )
