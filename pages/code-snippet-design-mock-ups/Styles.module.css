@@ -1,0 +1,9 @@
+.buttonStrip button {
+  @apply bg-gray-500;
+  @apply hover:bg-gray-700;
+  @apply text-white;
+  @apply py-1;
+  @apply px-4;
+  @apply mx-1;
+  @apply rounded;
+}

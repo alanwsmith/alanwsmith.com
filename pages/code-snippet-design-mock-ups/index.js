@@ -3,19 +3,22 @@ import HeaderMain from '../../components/HeaderMain'
 import ContentWrapper from '../../components/ContentWrapper'
 import Design1 from './designs/design-1'
 import Design2 from './designs/design-2'
+import Design3 from './designs/design-3'
+import style from './Styles.module.css'
 
 export default function Page() {
-  const [activeSample, setActiveSample] = useState(1)
+  const [activeDesign, setActiveDesign] = useState(1)
 
-  const samples = [
+  const designs = [
     <div key="s0">placeholder</div>,
     <Design1 key="s1" />,
     <Design2 key="s2" />,
+    <Design3 key="s3" />,
   ]
 
-  const switchToSample = (sampleIndex) => {
-    setActiveSample(sampleIndex)
-    console.log(sampleIndex)
+  const switchToSample = (designIndex) => {
+    setActiveDesign(designIndex)
+    console.log(designIndex)
   }
 
   return (
@@ -39,11 +42,14 @@ export default function Page() {
           mock-ups.)
         </p>
 
-        <button onClick={() => switchToSample(1)}>1</button>
-        <button onClick={() => switchToSample(2)}>2</button>
+        <div className={style.buttonStrip}>
+          <button onClick={() => switchToSample(1)}>1</button>
+          <button onClick={() => switchToSample(2)}>2</button>
+          <button onClick={() => switchToSample(3)}>3</button>
+        </div>
 
-        <h3>Design {activeSample}</h3>
-        {samples[activeSample]}
+        <h3>Design {activeDesign}</h3>
+        {designs[activeDesign]}
       </ContentWrapper>
     </>
   )
