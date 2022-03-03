@@ -21,14 +21,14 @@
   @apply table-row;
 }
 
-.first_line {
-  @apply pt-4;
+.top_line {
+  @apply pt-3;
   @apply rounded-tl-md;
 }
 
 .line_content {
   @apply table-cell;
-  @apply pl-5;
+  @apply pl-4;
 }
 
 .line_number {
@@ -68,5 +68,5 @@
 }
 
 .last_line {
-  @apply pb-4;
+  @apply pb-2;
 }
