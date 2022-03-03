@@ -4,6 +4,7 @@ import ContentWrapper from '../../components/ContentWrapper'
 import Design1 from './designs/design-1'
 import Design2 from './designs/design-2'
 import Design3 from './designs/design-3'
+import Design4 from './designs/design-4'
 import style from './Styles.module.css'
 
 export default function Page() {
@@ -14,6 +15,7 @@ export default function Page() {
     <Design1 key="s1" />,
     <Design2 key="s2" />,
     <Design3 key="s3" />,
+    <Design4 key="s4" />,
   ]
 
   const switchToSample = (designIndex) => {
@@ -46,6 +48,7 @@ export default function Page() {
           <button onClick={() => switchToSample(1)}>1</button>
           <button onClick={() => switchToSample(2)}>2</button>
           <button onClick={() => switchToSample(3)}>3</button>
+          <button onClick={() => switchToSample(4)}>4</button>
         </div>
 
         <h3>Design {activeDesign}</h3>
