@@ -1,0 +1,134 @@
+.background {
+  @apply border border-gray-600;
+  @apply bg-gray-700;
+  @apply relative;
+}
+
+.background_output {
+  @apply border-none;
+  @apply relative;
+}
+
+.background_console {
+  @apply border-none;
+  @apply bg-gray-700;
+  @apply relative;
+}
+.copy_button {
+  @apply bg-gray-600;
+  @apply hover:bg-gray-700;
+  @apply text-gray-400;
+  @apply px-2;
+  @apply text-base;
+  @apply absolute;
+  @apply top-0;
+  @apply right-0;
+}
+
+.code_green {
+  @apply text-green-500;
+}
+
+.row {
+  @apply table-row;
+}
+
+.row_output {
+  @apply table-row;
+  @apply bg-gray-800;
+  @apply block;
+  @apply border-b;
+  @apply border-l;
+  @apply border-r;
+  @apply border-gray-600;
+}
+
+/* .row_console { */
+/*   @apply table-row; */
+/*   @apply bg-gray-700; */
+/*   @apply block; */
+/*   @apply border-l; */
+/*   @apply border-r; */
+/*   @apply border-gray-600; */
+/* } */
+
+.row_console_output {
+  @apply table-row;
+  @apply bg-gray-900;
+  @apply block;
+}
+
+.first_line {
+  @apply pt-2;
+}
+
+.line_content {
+  @apply table-cell;
+  @apply pl-4;
+}
+
+.line_content_console {
+  @apply table-cell;
+  @apply pl-4;
+  @apply border-r;
+  @apply border-gray-600;
+  width: 100%;
+}
+
+.line_number {
+  @apply table-cell;
+  @apply text-right;
+  @apply select-none;
+  @apply pl-4;
+  @apply pr-3;
+  @apply text-gray-500;
+  @apply bg-gray-900;
+}
+
+.line_number_console {
+  @apply table-cell;
+  @apply text-right;
+  @apply select-none;
+  @apply pl-4;
+  @apply pr-3;
+  @apply text-gray-500;
+  @apply bg-gray-900;
+  @apply border-l;
+  @apply border-gray-600;
+}
+
+.line_number_blank {
+  @apply table-cell;
+  @apply text-right;
+  @apply select-none;
+  @apply bg-gray-900;
+  @apply pl-4;
+  @apply pr-3;
+  @apply text-gray-700;
+  @apply pb-4;
+}
+
+.line_number_output {
+  @apply table-cell;
+  @apply text-right;
+  @apply select-none;
+  @apply pl-4;
+  @apply pr-3;
+  @apply text-gray-500;
+  @apply bg-gray-900;
+  @apply pb-3;
+}
+
+.last_line {
+  @apply pb-2;
+}
+
+.border_bottom {
+  @apply border-b;
+  @apply border-gray-600;
+}
+
+.border_top {
+  @apply border-t;
+  @apply border-gray-600;
+}

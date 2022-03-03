@@ -6,6 +6,11 @@ import Design2 from './designs/design-2'
 import Design3 from './designs/design-3'
 import Design4 from './designs/design-4'
 import Design5 from './designs/design-5'
+import Design6 from './designs/design-6'
+import Design7 from './designs/design-7'
+import Design8 from './designs/design-8'
+import Design9 from './designs/design-9'
+import Design10 from './designs/design-10'
 import style from './Styles.module.css'
 
 export default function Page() {
@@ -18,6 +23,11 @@ export default function Page() {
     <Design3 key="s3" />,
     <Design4 key="s4" />,
     <Design5 key="s5" />,
+    <Design6 key="s6" />,
+    <Design7 key="s7" />,
+    <Design8 key="s8" />,
+    <Design9 key="s9" />,
+    <Design10 key="s10" />,
   ]
 
   const switchToSample = (designIndex) => {
@@ -52,6 +62,11 @@ export default function Page() {
           <button onClick={() => switchToSample(3)}>3</button>
           <button onClick={() => switchToSample(4)}>4</button>
           <button onClick={() => switchToSample(5)}>5</button>
+          <button onClick={() => switchToSample(6)}>6</button>
+          <button onClick={() => switchToSample(7)}>7</button>
+          <button onClick={() => switchToSample(8)}>8</button>
+          <button onClick={() => switchToSample(9)}>9</button>
+          <button onClick={() => switchToSample(10)}>10</button>
         </div>
 
         <h3>Design {activeDesign}</h3>
