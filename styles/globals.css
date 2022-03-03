@@ -78,7 +78,5 @@
     @apply mb-2;
   }
   pre {
-    @apply border;
-    @apply border-black;
   }
 }
