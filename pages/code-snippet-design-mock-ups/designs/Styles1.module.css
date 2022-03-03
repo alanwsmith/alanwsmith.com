@@ -22,13 +22,13 @@
 }
 
 .first_line {
-  @apply pt-4;
+  @apply pt-5;
   @apply rounded-tl-md;
 }
 
 .line_content {
   @apply table-cell;
-  @apply pl-5;
+  @apply pl-7;
 }
 
 .line_number {
@@ -65,5 +65,5 @@
 }
 
 .last_line {
-  @apply pb-4;
+  @apply pb-5;
 }
