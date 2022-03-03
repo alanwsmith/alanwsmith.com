@@ -1,11 +1,13 @@
-import styles from './Styles2.module.css'
+import styles from './Styles5.module.css'
 
-export default function Sample2() {
+export default function Design() {
   return (
     <>
       <pre className={styles.background}>
         <div className={styles.row}>
-          <span className={`${styles.line_number} ${styles.top_line}`}>1</span>
+          <span className={`${styles.line_number} ${styles.first_line}`}>
+            1
+          </span>
           <span className={styles.line_content}>
             <span className="token keyword">function</span>
             <span className="token plain"> </span>
@@ -96,17 +98,20 @@ export default function Sample2() {
 
       <pre className={styles.background}>
         <div className={styles.row}>
-          <span className={`${styles.line_number} ${styles.top_line}`}>
-            &nbsp;
+          <span
+            className={`${styles.line_number} ${styles.first_line} ${styles.last_line}`}
+          >
+            &gt;
           </span>
-          <span className={styles.line_content}>{`// output`}</span>
-        </div>
-
-        <div className={styles.output_line}>
-          <span className={styles.line_number_output}>&gt;</span>
           <span className={styles.line_content}>27</span>
         </div>
       </pre>
+
+      <ul className="mt-8">
+        <li>Output split to it&apos;s own section</li>
+        <li>Just showing the output without an additional comment</li>
+        <li>Using greater than sign to help seperate output from code</li>
+      </ul>
     </>
   )
 }

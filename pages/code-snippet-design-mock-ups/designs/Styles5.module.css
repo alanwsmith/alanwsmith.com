@@ -21,7 +21,7 @@
   @apply table-row;
 }
 
-.top_line {
+.first_line {
   @apply pt-3;
   @apply rounded-tl-md;
 }
@@ -62,9 +62,6 @@
   @apply bg-gray-900;
   @apply rounded-bl-md;
   @apply pb-3;
-}
-
-.output_line {
 }
 
 .last_line {
