@@ -2,6 +2,7 @@ import styles from './Styles1.module.css'
 
 export default function Sample1() {
   return (
+    <div>
     <pre className={styles.background}>
       <div className={styles.row}>
         <span className={`${styles.line_number} ${styles.top_line}`}>1</span>
@@ -109,5 +110,15 @@ export default function Sample1() {
       </div>
       <button className={styles.copy_button}>Copy</button>
     </pre>
+
+        <ul>
+          <li>Pretty much a baseline sample</li>
+          <li>Only showing ling numbers by the code.</li>
+          <li>
+            Using a pointer for the output line, but it&apos;s still in the main
+            content box
+          </li>
+        </ul>
+    </div>
   )
 }
