@@ -1,11 +1,12 @@
-import styles from './Styles1.module.css'
+import styles from './Styles2.module.css'
 
-export default function Sample1() {
+export default function Sample2() {
   return (
     <div>
       <pre className={styles.background}>
         <div className={styles.row}>
-          <span className={`${styles.line_content} ${styles.first_line}`}>
+          <span className={`${styles.line_number} ${styles.top_line}`}>1</span>
+          <span className={styles.line_content}>
             <span className="token keyword">function</span>
             <span className="token plain"> </span>
             <span className="token function">get_random_number</span>
@@ -19,6 +20,7 @@ export default function Sample1() {
         </div>
 
         <div className={styles.row}>
+          <span className={styles.line_number}>2</span>
           <span className={styles.line_content}>
             <span className="token plain">&nbsp;&nbsp;&nbsp;&nbsp;</span>
             <span className="token keyword">return</span>
@@ -30,6 +32,7 @@ export default function Sample1() {
         </div>
 
         <div className={styles.row}>
+          <span className={styles.line_number}>3</span>
           <span className={styles.line_content}>
             <span className="token plain">
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -52,6 +55,7 @@ export default function Sample1() {
         </div>
 
         <div className={styles.row}>
+          <span className={styles.line_number}>4</span>
           <span className={styles.line_content}>
             <span className="token plain">&nbsp;&nbsp;&nbsp;&nbsp;</span>
             <span className="token punctuation">)</span>
@@ -59,6 +63,7 @@ export default function Sample1() {
         </div>
 
         <div className={styles.row}>
+          <span className={styles.line_number}>5</span>
           <span className={styles.line_content}>
             <span className="token plain"></span>
             <span className="token punctuation">{'}'}</span>
@@ -66,14 +71,12 @@ export default function Sample1() {
         </div>
 
         <div className={styles.row}>
+          <span className={styles.line_number}>6</span>
           <span className={styles.line_content}></span>
         </div>
 
         <div className={styles.row}>
-          <span className={styles.line_content}>&nbsp;</span>
-        </div>
-
-        <div className={styles.row}>
+          <span className={styles.line_number}>7</span>
           <span className={styles.line_content}>
             <span className="token plain">console</span>
             <span className="token punctuation">.</span>
@@ -88,25 +91,25 @@ export default function Sample1() {
         </div>
 
         <div className={styles.row}>
+          <span className={styles.line_number}>8</span>
           <span className={styles.line_content}>&nbsp;</span>
         </div>
 
         <div className={styles.row}>
-          <span className={styles.line_content}>{`// Output:`}</span>
+          <span className={styles.line_number}>9</span>
+          <span className={styles.line_content}>{`// output`}</span>
         </div>
 
-        <div className={styles.output_line}>
-          <span className={`${styles.line_content} ${styles.last_line}`}>
-            // 27
-          </span>
+        <div className={styles.row}>
+          <span className={styles.line_number}>10</span>
+          <span className={styles.line_content}>// 27</span>
         </div>
-
         <button className={styles.copy_button}>Copy</button>
       </pre>
 
       <ul className="mt-8">
-        <li>Baseline sample</li>
-        <li>No line numbers or output seperation</li>
+        <li>Baseline with line numbers</li>
+        <li>Ouput is shown in the code block</li>
       </ul>
     </div>
   )

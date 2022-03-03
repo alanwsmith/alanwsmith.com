@@ -2,7 +2,7 @@ import { useState } from 'react'
 import HeaderMain from '../../components/HeaderMain'
 import ContentWrapper from '../../components/ContentWrapper'
 import Sample1 from './samples/sample-1'
-// import Sample2 from './samples/sample-2'
+import Sample2 from './samples/sample-2'
 
 export default function Page() {
   const [activeSample, setActiveSample] = useState(1)
@@ -10,7 +10,7 @@ export default function Page() {
   const samples = [
     <div key="s0">placeholder</div>,
     <Sample1 key="s1" />,
-    //  <Sample2 key="s2" />,
+    <Sample2 key="s2" />,
   ]
 
   const switchToSample = (sampleIndex) => {
