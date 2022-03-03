@@ -1,6 +1,6 @@
 .background {
   @apply border border-black;
-  @apply bg-gray-700;
+  @apply bg-gray-600;
   @apply rounded-md;
   @apply relative;
 }
@@ -22,13 +22,13 @@
 }
 
 .first_line {
-  @apply pt-4;
+  @apply pt-2;
   @apply rounded-tl-md;
 }
 
 .line_content {
   @apply table-cell;
-  @apply pl-7;
+  @apply pl-4;
 }
 
 .line_number {
@@ -65,5 +65,5 @@
 }
 
 .last_line {
-  @apply pb-4;
+  @apply pb-2;
 }

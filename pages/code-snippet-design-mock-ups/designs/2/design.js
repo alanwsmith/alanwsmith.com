@@ -1,14 +1,11 @@
-import styles from './Styles8.module.css'
+import styles from './Styles.module.css'
 
 export default function Design() {
   return (
-    <>
+    <div>
       <pre className={styles.background}>
         <div className={styles.row}>
-          <span className={`${styles.line_number} ${styles.first_line}`}>
-            1
-          </span>
-          <span className={styles.line_content}>
+          <span className={`${styles.line_content} ${styles.first_line}`}>
             <span className="token keyword">function</span>
             <span className="token plain"> </span>
             <span className="token function">get_random_number</span>
@@ -22,7 +19,6 @@ export default function Design() {
         </div>
 
         <div className={styles.row}>
-          <span className={styles.line_number}>2</span>
           <span className={styles.line_content}>
             <span className="token plain">&nbsp;&nbsp;&nbsp;&nbsp;</span>
             <span className="token keyword">return</span>
@@ -34,7 +30,6 @@ export default function Design() {
         </div>
 
         <div className={styles.row}>
-          <span className={styles.line_number}>3</span>
           <span className={styles.line_content}>
             <span className="token plain">
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -57,7 +52,6 @@ export default function Design() {
         </div>
 
         <div className={styles.row}>
-          <span className={styles.line_number}>4</span>
           <span className={styles.line_content}>
             <span className="token plain">&nbsp;&nbsp;&nbsp;&nbsp;</span>
             <span className="token punctuation">)</span>
@@ -65,22 +59,22 @@ export default function Design() {
         </div>
 
         <div className={styles.row}>
-          <span className={`${styles.line_number} ${styles.last_line}`}>5</span>
           <span className={styles.line_content}>
             <span className="token plain"></span>
             <span className="token punctuation">{'}'}</span>
           </span>
         </div>
 
-        <button className={styles.copy_button}>Copy</button>
-      </pre>
+        <div className={styles.row}>
+          <span className={styles.line_content}></span>
+        </div>
 
-      <pre className={styles.background_console}>
-        <div className={styles.row_console}>
-          <span className={`pt-1 pb-1 border-t ${styles.line_number_console}`}>
-            &nbsp;
-          </span>
-          <span className={styles.line_content_console}>
+        <div className={styles.row}>
+          <span className={styles.line_content}>&nbsp;</span>
+        </div>
+
+        <div className={styles.row}>
+          <span className={`${styles.line_content} ${styles.last_line}`}>
             <span className="token plain">console</span>
             <span className="token punctuation">.</span>
             <span className="token function">log</span>
@@ -92,18 +86,30 @@ export default function Design() {
             <span className="token punctuation">)</span>
           </span>
         </div>
+
+        <button className={styles.copy_button}>Copy</button>
       </pre>
 
-      <pre className={styles.background_output}>
-        <div className={`${styles.row} ${styles.row_output}`}>
-          <span className={`${styles.line_number_output}`}>&gt;</span>
-          <span className="text-green-500 table-cell pl-4 py-1">27</span>
+      <div className="text-xs">&nbsp;</div>
+
+      <pre className={styles.background}>
+        <div className={styles.row}>
+          <span className={`${styles.line_content} ${styles.first_line}`}>
+            {`// Output:`}
+          </span>
+        </div>
+
+        <div className={styles.row}>
+          <span className={`${styles.line_content} ${styles.last_line}`}>
+            // 27
+          </span>
         </div>
       </pre>
 
       <ul className="mt-8">
-        <li>TKTKTKT</li>
+        <li>No line numbers</li>
+        <li>Output split out to it&apos;s own area</li>
       </ul>
-    </>
+    </div>
   )
 }

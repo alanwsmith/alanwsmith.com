@@ -1,11 +1,13 @@
-import styles from './Styles2.module.css'
+import styles from './Styles.module.css'
 
-export default function Sample2() {
+export default function Design() {
   return (
-    <div>
-      <pre className={styles.background}>
+    <>
+      <pre className={`rounded-tl-md rounded-tr-md ${styles.background}`}>
         <div className={styles.row}>
-          <span className={`${styles.line_number} ${styles.first_line}`}>
+          <span
+            className={`rounded-tl-md ${styles.line_number} ${styles.first_line}`}
+          >
             1
           </span>
           <span className={styles.line_content}>
@@ -65,21 +67,22 @@ export default function Sample2() {
         </div>
 
         <div className={styles.row}>
-          <span className={styles.line_number}>5</span>
+          <span className={`${styles.line_number} ${styles.last_line}`}>5</span>
           <span className={styles.line_content}>
             <span className="token plain"></span>
             <span className="token punctuation">{'}'}</span>
           </span>
         </div>
 
-        <div className={styles.row}>
-          <span className={styles.line_number}>6</span>
-          <span className={styles.line_content}></span>
-        </div>
+        <button className={`rounded-tr-md ${styles.copy_button}`}>Copy</button>
+      </pre>
 
-        <div className={styles.row}>
-          <span className={styles.line_number}>7</span>
-          <span className={styles.line_content}>
+      <pre className={styles.background_console}>
+        <div className={styles.row_console}>
+          <span className={`pt-1 pb-1 border-t ${styles.line_number_console}`}>
+            &nbsp;
+          </span>
+          <span className={styles.line_content_console}>
             <span className="token plain">console</span>
             <span className="token punctuation">.</span>
             <span className="token function">log</span>
@@ -91,30 +94,24 @@ export default function Sample2() {
             <span className="token punctuation">)</span>
           </span>
         </div>
+      </pre>
 
-        <div className={styles.row}>
-          <span className={styles.line_number}>8</span>
-          <span className={styles.line_content}>&nbsp;</span>
-        </div>
-
-        <div className={styles.row}>
-          <span className={styles.line_number}>9</span>
-          <span className={styles.line_content}>{`// output`}</span>
-        </div>
-
-        <div className={styles.row}>
-          <span className={`${styles.line_number} ${styles.last_line}`}>
-            10
+      <pre
+        className={`rounded-br-md rounded-bl-md ${styles.background_output}`}
+      >
+        <div
+          className={` rounded-br-md rounded-bl-md ${styles.row} ${styles.row_output}`}
+        >
+          <span className={`rounded-bl-md ${styles.line_number_output}`}>
+            &gt;
           </span>
-          <span className={styles.line_content}>// 27</span>
+          <span className="text-gray-400 table-cell pl-4 py-1">27</span>
         </div>
-        <button className={styles.copy_button}>Copy</button>
       </pre>
 
       <ul className="mt-8">
-        <li>Baseline with line numbers</li>
-        <li>Ouput is shown in the code block</li>
+        <li>TKTKTKT</li>
       </ul>
-    </div>
+    </>
   )
 }

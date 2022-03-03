@@ -1,4 +1,4 @@
-import styles from './Styles7.module.css'
+import styles from './Styles.module.css'
 
 export default function Design() {
   return (

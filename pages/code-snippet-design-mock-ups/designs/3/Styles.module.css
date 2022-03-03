@@ -1,6 +1,7 @@
 .background {
-  @apply border border-black;
-  @apply bg-gray-700;
+  @apply border;
+  @apply border-gray-600;
+  @apply bg-gray-600;
   @apply rounded-md;
   @apply relative;
 }
@@ -22,7 +23,7 @@
 }
 
 .first_line {
-  @apply pt-4;
+  @apply pt-2;
   @apply rounded-tl-md;
 }
 
@@ -35,7 +36,7 @@
   @apply table-cell;
   @apply text-right;
   @apply select-none;
-  @apply pl-4;
+  @apply pl-3;
   @apply pr-3;
   @apply text-gray-500;
   @apply bg-gray-900;
@@ -56,7 +57,7 @@
   @apply table-cell;
   @apply text-right;
   @apply select-none;
-  @apply pl-4;
+  @apply pl-2;
   @apply pr-3;
   @apply text-gray-500;
   @apply bg-gray-900;
@@ -65,5 +66,5 @@
 }
 
 .last_line {
-  @apply pb-4;
+  @apply pb-2;
 }

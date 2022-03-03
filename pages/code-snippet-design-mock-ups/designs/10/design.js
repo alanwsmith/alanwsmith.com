@@ -1,11 +1,13 @@
-import styles from './Styles10.module.css'
+import styles from './Styles.module.css'
 
 export default function Design() {
   return (
     <>
-      <pre className={styles.background}>
+      <pre className={`rounded-tl-md rounded-tr-md ${styles.background}`}>
         <div className={styles.row}>
-          <span className={`${styles.line_number} ${styles.first_line}`}>
+          <span
+            className={`rounded-tl-md ${styles.line_number} ${styles.first_line}`}
+          >
             1
           </span>
           <span className={styles.line_content}>
@@ -72,40 +74,38 @@ export default function Design() {
           </span>
         </div>
 
-        <button className={styles.copy_button}>Copy</button>
+        <button className={`rounded-tr-md ${styles.copy_button}`}>Copy</button>
       </pre>
 
-      <br />
       <pre className={styles.background_console}>
         <div className={styles.row_console}>
-          <span
-            className={`pb-2 ${styles.line_number_console} ${styles.border_top} ${styles.first_line}`}
-          >
+          <span className={`pt-1 pb-1 ${styles.line_number_console}`}>
             &nbsp;
           </span>
-          <span
-            className={`${styles.line_content_console} ${styles.border_top}`}
-          >
+          <span className={styles.line_content_console}>
+            <span className="token plain">console</span>
+            <span className="token punctuation">.</span>
+            <span className="token function">log</span>
+            <span className="token punctuation">(</span>
             <span className="token function">get_random_number</span>
             <span className="token punctuation">(</span>
             <span className="token number">100</span>
             <span className="token punctuation">)</span>
+            <span className="token punctuation">)</span>
           </span>
         </div>
+      </pre>
 
-        <div className={styles.row_console_output}>
-          <span
-            className={`pt-2 ${styles.line_number_console} ${styles.border_bottom} ${styles.last_line}`}
-          >
-            &gt;
+      <pre
+        className={`rounded-br-md rounded-bl-md ${styles.background_output}`}
+      >
+        <div
+          className={` rounded-br-md rounded-bl-md ${styles.row} ${styles.row_output}`}
+        >
+          <span className={`rounded-bl-md ${styles.line_number_output}`}>
+            &nbsp;
           </span>
-          <span
-            className={`
-          ${styles.line_content_console}
-          ${styles.border_bottom}`}
-          >
-            <span className={styles.code_green}>27</span>
-          </span>
+          <span className="text-gray-400 table-cell pl-4 py-1">27</span>
         </div>
       </pre>
 

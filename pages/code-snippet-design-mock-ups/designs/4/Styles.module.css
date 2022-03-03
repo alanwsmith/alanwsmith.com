@@ -1,7 +1,7 @@
 .background {
-  @apply border border-black;
-  @apply bg-gray-700;
+  @apply bg-gray-600;
   @apply rounded-md;
+  @apply border border-black;
   @apply relative;
 }
 
@@ -22,7 +22,7 @@
 }
 
 .first_line {
-  @apply pt-4;
+  @apply pt-2;
   @apply rounded-tl-md;
 }
 
@@ -65,5 +65,6 @@
 }
 
 .last_line {
-  @apply pb-4;
+  @apply pb-2;
+  @apply rounded-bl-md;
 }
