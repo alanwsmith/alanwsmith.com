@@ -5,7 +5,9 @@ export default function Design() {
     <div>
       <pre className={styles.background}>
         <div className={styles.row}>
-          <span className={`${styles.line_number} ${styles.top_line}`}>1</span>
+          <span className={`${styles.line_number} ${styles.first_line}`}>
+            1
+          </span>
           <span className={styles.line_content}>
             <span className="token keyword">function</span>
             <span className="token plain"> </span>
@@ -96,7 +98,7 @@ export default function Design() {
 
       <pre className={styles.background}>
         <div className={styles.row}>
-          <span className={`${styles.line_number} ${styles.top_line}`}>
+          <span className={`${styles.line_number} ${styles.first_line}`}>
             &nbsp;
           </span>
           <span className={styles.line_content}>{`// output`}</span>

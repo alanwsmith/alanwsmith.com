@@ -22,7 +22,7 @@
 }
 
 .first_line {
-  @apply pt-5;
+  @apply pt-4;
   @apply rounded-tl-md;
 }
 
@@ -65,5 +65,5 @@
 }
 
 .last_line {
-  @apply pb-5;
+  @apply pb-4;
 }
