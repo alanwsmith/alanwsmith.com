@@ -64,9 +64,6 @@
   @apply pb-3;
 }
 
-.output_line {
-}
-
 .last_line {
   @apply pb-2;
   @apply rounded-bl-md;

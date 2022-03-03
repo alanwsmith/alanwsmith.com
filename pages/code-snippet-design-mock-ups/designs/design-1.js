@@ -95,7 +95,7 @@ export default function Sample1() {
           <span className={styles.line_content}>{`// Output:`}</span>
         </div>
 
-        <div className={styles.output_line}>
+        <div className={styles.row}>
           <span className={`${styles.line_content} ${styles.last_line}`}>
             // 27
           </span>
