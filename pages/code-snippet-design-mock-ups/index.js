@@ -1,9 +1,19 @@
+import { useState } from 'react'
 import HeaderMain from '../../components/HeaderMain'
 import ContentWrapper from '../../components/ContentWrapper'
 import Sample1 from './samples/sample-1'
 import Sample2 from './samples/sample-2'
 
 export default function Page() {
+  const [activeSample, setActiveSample] = useState(0)
+
+  const samples = [<Sample1 key="s1" />, <Sample2 key="s2" />]
+
+  const switchToSample = (sampleIndex) => {
+    setActiveSample(sampleIndex)
+    console.log(sampleIndex)
+  }
+
   return (
     <>
       <style jsx>
@@ -32,6 +42,9 @@ export default function Page() {
           </li>
         </ul>
 
+        <button onClick={() => switchToSample(0)}>1</button>
+        <button onClick={() => switchToSample(1)}>2</button>
+
         <h3>Sample 1</h3>
         <ul>
           <li>Pretty much a baseline sample</li>
@@ -41,7 +54,7 @@ export default function Page() {
             content box
           </li>
         </ul>
-        <Sample1 />
+        {samples[activeSample]}
 
         <h3>Sample 2</h3>
         <ul>
