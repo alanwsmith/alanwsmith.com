@@ -28,7 +28,7 @@
 
 .line_content {
   @apply table-cell;
-  @apply pl-5;
+  @apply pl-7;
 }
 
 .line_number {
