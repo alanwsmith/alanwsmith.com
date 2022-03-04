@@ -1,7 +1,7 @@
 .background {
+  @apply bg-black;
   @apply border-2;
-  @apply border-gray-500;
-  @apply bg-gray-600;
+  @apply border-gray-600;
   @apply rounded-md;
   @apply relative;
 }

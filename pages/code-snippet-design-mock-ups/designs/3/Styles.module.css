@@ -1,7 +1,7 @@
 .background {
-  @apply border;
+  @apply bg-black;
+  @apply border-2;
   @apply border-gray-600;
-  @apply bg-gray-600;
   @apply rounded-md;
   @apply relative;
 }
@@ -24,7 +24,7 @@
 
 .first_line {
   @apply pt-2;
-  @apply rounded-tl-md;
+  @apply rounded-tl;
 }
 
 .line_content {
@@ -38,8 +38,8 @@
   @apply select-none;
   @apply pl-3;
   @apply pr-3;
-  @apply text-gray-500;
-  @apply bg-gray-900;
+  @apply text-gray-400;
+  @apply bg-gray-700;
 }
 
 .line_number_blank {

@@ -1,6 +1,7 @@
 .background {
-  @apply border border-gray-500;
-  @apply bg-gray-600;
+  @apply border-2;
+  @apply border-gray-600;
+  @apply bg-black;
   @apply rounded-md;
   @apply relative;
 }
@@ -22,7 +23,7 @@
 }
 
 .first_line {
-  @apply pt-4;
+  @apply pt-2;
   @apply rounded-tl-md;
 }
 
@@ -31,14 +32,21 @@
   @apply pl-4;
 }
 
+.line_content_output_string {
+  @apply table-cell;
+  @apply pl-4;
+  @apply bg-gray-700;
+  width: 100%;
+}
+
 .line_number {
   @apply table-cell;
   @apply text-right;
   @apply select-none;
   @apply pl-4;
   @apply pr-3;
-  @apply text-gray-500;
-  @apply bg-gray-900;
+  @apply text-gray-400;
+  @apply bg-gray-700;
 }
 
 .line_number_blank {
@@ -65,6 +73,5 @@
 }
 
 .last_line {
-  @apply pb-4;
-  @apply rounded-bl-md;
+  @apply pb-2;
 }

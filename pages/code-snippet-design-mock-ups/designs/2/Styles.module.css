@@ -1,8 +1,8 @@
 .background {
-  @apply bg-gray-600;
+  @apply bg-black;
+  @apply border-2;
   @apply border-gray-600;
   @apply rounded-md;
-  @apply border;
   @apply relative;
 }
 

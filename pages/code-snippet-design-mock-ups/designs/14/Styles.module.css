@@ -23,7 +23,7 @@
 }
 
 .first_line {
-  @apply pt-3;
+  @apply pt-4;
   @apply rounded-tl;
 }
 
@@ -38,18 +38,18 @@
   @apply select-none;
   @apply pl-4;
   @apply pr-3;
-  @apply text-gray-400;
-  @apply bg-gray-700;
+  @apply text-gray-500;
+  @apply bg-gray-900;
 }
 
 .line_number_blank {
   @apply table-cell;
   @apply text-right;
   @apply select-none;
+  @apply bg-gray-900;
   @apply pl-4;
   @apply pr-3;
-  @apply text-gray-400;
-  @apply bg-gray-700;
+  @apply text-gray-700;
   @apply pb-4;
 }
 
@@ -61,11 +61,11 @@
   @apply pr-3;
   @apply text-gray-500;
   @apply bg-gray-900;
-  @apply rounded-bl;
+  @apply rounded-bl-md;
   @apply pb-3;
 }
 
 .last_line {
-  @apply pb-3;
-  @apply rounded-bl-md;
+  @apply pb-4;
+  @apply rounded-bl;
 }

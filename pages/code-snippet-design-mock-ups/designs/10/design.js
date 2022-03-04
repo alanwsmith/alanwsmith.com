@@ -3,11 +3,9 @@ import styles from './Styles.module.css'
 export default function Design() {
   return (
     <>
-      <pre className={`rounded-tl-md rounded-tr-md ${styles.background}`}>
+      <pre className={styles.background}>
         <div className={styles.row}>
-          <span
-            className={`rounded-tl-md ${styles.line_number} ${styles.first_line}`}
-          >
+          <span className={`${styles.line_number} ${styles.first_line}`}>
             1
           </span>
           <span className={styles.line_content}>
@@ -67,22 +65,21 @@ export default function Design() {
         </div>
 
         <div className={styles.row}>
-          <span className={`${styles.line_number} ${styles.last_line}`}>5</span>
+          <span className={styles.line_number}>5</span>
           <span className={styles.line_content}>
             <span className="token plain"></span>
             <span className="token punctuation">{'}'}</span>
           </span>
         </div>
 
-        <button className={`rounded-tr-md ${styles.copy_button}`}>Copy</button>
-      </pre>
+        <div className={styles.row}>
+          <span className={styles.line_number}>6</span>
+          <span className={styles.line_content}></span>
+        </div>
 
-      <pre className={styles.background_console}>
-        <div className={styles.row_console}>
-          <span className={`pt-1 pb-1 ${styles.line_number_console}`}>
-            &nbsp;
-          </span>
-          <span className={styles.line_content_console}>
+        <div className={styles.row}>
+          <span className={`${styles.line_number} ${styles.last_line}`}>7</span>
+          <span className={styles.line_content}>
             <span className="token plain">console</span>
             <span className="token punctuation">.</span>
             <span className="token function">log</span>
@@ -94,23 +91,25 @@ export default function Design() {
             <span className="token punctuation">)</span>
           </span>
         </div>
-      </pre>
 
-      <pre
-        className={`rounded-br-md rounded-bl-md ${styles.background_output}`}
-      >
-        <div
-          className={` rounded-br-md rounded-bl-md ${styles.row} ${styles.row_output}`}
-        >
-          <span className={`rounded-bl-md ${styles.line_number_output}`}>
+        <div className={styles.row}>
+          <span className={`pt-2 ${styles.line_number}`}>&nbsp;</span>
+          <span className={styles.line_content_output_string}>Output:</span>
+        </div>
+        <div className={styles.row}>
+          <span className={`pt-2 pb-1 rounded-bl ${styles.line_number} `}>
             &nbsp;
           </span>
-          <span className="text-gray-400 table-cell pl-4 py-1">27</span>
+          <span className={styles.line_content_output_string}>27</span>
         </div>
+
+        <button className={styles.copy_button}>Copy</button>
       </pre>
 
       <ul className="mt-8">
-        <li>TKTKTKT</li>
+        <li>Output split to it&apos;s own section</li>
+        <li>Just showing the output without an additional comment</li>
+        <li>Using greater than sign to help seperate output from code</li>
       </ul>
     </>
   )

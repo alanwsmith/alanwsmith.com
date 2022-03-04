@@ -1,6 +1,7 @@
 .background {
-  @apply border border-black;
-  @apply bg-gray-600;
+  @apply border-2;
+  @apply border-gray-600;
+  @apply bg-black;
   @apply rounded-md;
   @apply relative;
 }
@@ -23,7 +24,7 @@
 
 .first_line {
   @apply pt-2;
-  @apply rounded-tl-md;
+  @apply rounded-tl;
 }
 
 .line_content {
@@ -37,8 +38,8 @@
   @apply select-none;
   @apply pl-4;
   @apply pr-3;
-  @apply text-gray-500;
-  @apply bg-gray-900;
+  @apply text-gray-400;
+  @apply bg-gray-700;
 }
 
 .line_number_blank {
@@ -60,7 +61,7 @@
   @apply pr-3;
   @apply text-gray-500;
   @apply bg-gray-900;
-  @apply rounded-bl-md;
+  @apply rounded-bl;
   @apply pb-3;
 }
 
