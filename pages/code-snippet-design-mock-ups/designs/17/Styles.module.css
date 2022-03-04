@@ -1,7 +1,8 @@
 .background {
-  border-top: 1px solid gray;
-  border-left: 1px solid gray;
-  border-right: 1px solid gray;
+  @apply border-l;
+  @apply border-r;
+  @apply border-t;
+  @apply border-gray-500;
   @apply bg-gray-600;
   @apply relative;
 }
@@ -35,19 +36,20 @@
   @apply table-row;
   @apply bg-gray-900;
   @apply block;
-  border-bottom: 1px solid gray;
-  border-left: 1px solid gray;
-  border-right: 1px solid gray;
+  @apply border-b;
+  @apply border-l;
+  @apply border-r;
+  @apply border-gray-500;
 }
 
-.row_console {
-  @apply table-row;
-  @apply bg-gray-600;
-  @apply block;
-  border-top: 1px solid gray;
-  border-left: 1px solid gray;
-  border-right: 1px solid gray;
-}
+/* .row_console { */
+/*   @apply table-row; */
+/*   @apply bg-gray-700; */
+/*   @apply block; */
+/*   @apply border-l; */
+/*   @apply border-r; */
+/*   @apply border-gray-600; */
+/* } */
 
 .first_line {
   @apply pt-3;
@@ -61,6 +63,9 @@
 .line_content_console {
   @apply table-cell;
   @apply pl-4;
+  @apply border-r;
+  @apply border-t;
+  @apply border-gray-500;
   width: 100%;
 }
 
@@ -82,6 +87,8 @@
   @apply pr-3;
   @apply text-gray-500;
   @apply bg-gray-900;
+  @apply border-l;
+  @apply border-gray-500;
 }
 
 .line_number_blank {

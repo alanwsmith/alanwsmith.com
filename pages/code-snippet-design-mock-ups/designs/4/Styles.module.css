@@ -1,8 +1,8 @@
 .background {
   @apply bg-black;
-  @apply rounded-md;
   @apply border-2;
   @apply border-gray-600;
+  @apply rounded-md;
   @apply relative;
 }
 
@@ -36,7 +36,7 @@
   @apply table-cell;
   @apply text-right;
   @apply select-none;
-  @apply pl-4;
+  @apply pl-3;
   @apply pr-3;
   @apply text-gray-400;
   @apply bg-gray-700;
@@ -57,15 +57,14 @@
   @apply table-cell;
   @apply text-right;
   @apply select-none;
-  @apply pl-4;
+  @apply pl-2;
   @apply pr-3;
   @apply text-gray-500;
   @apply bg-gray-900;
-  @apply rounded-bl;
+  @apply rounded-bl-md;
   @apply pb-3;
 }
 
 .last_line {
   @apply pb-2;
-  @apply rounded-bl-md;
 }

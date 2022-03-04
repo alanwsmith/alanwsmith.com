@@ -1,8 +1,18 @@
 .background {
   @apply bg-black;
+  @apply border-t-2;
+  @apply border-l-2;
+  @apply border-r-2;
+  @apply border-gray-600;
+  @apply rounded-t-md;
+  @apply relative;
+}
+
+.background_output {
+  @apply bg-black;
   @apply border-2;
   @apply border-gray-600;
-  @apply rounded-md;
+  @apply rounded-b-md;
   @apply relative;
 }
 
@@ -67,5 +77,4 @@
 
 .last_line {
   @apply pb-4;
-  @apply rounded-bl-md;
 }

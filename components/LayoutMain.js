@@ -71,7 +71,7 @@ export default function LayoutMain(props) {
           href="/favicons/180x180.png"
         />
       </Head>
-      <div className="bg-gray-800 min-h-screen">
+      <div className="min-h-screen">
         <nav
           className="
     m-0 mx-auto 

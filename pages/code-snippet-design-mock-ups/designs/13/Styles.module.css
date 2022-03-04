@@ -23,13 +23,20 @@
 }
 
 .first_line {
-  @apply pt-3;
+  @apply pt-2;
   @apply rounded-tl;
 }
 
 .line_content {
   @apply table-cell;
   @apply pl-4;
+}
+
+.line_content_output_string {
+  @apply table-cell;
+  @apply pl-4;
+  @apply bg-gray-700;
+  width: 100%;
 }
 
 .line_number {
@@ -46,10 +53,10 @@
   @apply table-cell;
   @apply text-right;
   @apply select-none;
+  @apply bg-gray-900;
   @apply pl-4;
   @apply pr-3;
-  @apply text-gray-400;
-  @apply bg-gray-700;
+  @apply text-gray-700;
   @apply pb-4;
 }
 
@@ -67,5 +74,4 @@
 
 .last_line {
   @apply pb-3;
-  @apply rounded-bl-md;
 }

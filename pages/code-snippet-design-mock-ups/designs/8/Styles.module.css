@@ -24,7 +24,7 @@
 
 .first_line {
   @apply pt-2;
-  @apply rounded-tl-md;
+  @apply rounded-tl;
 }
 
 .line_content {
@@ -37,6 +37,15 @@
   @apply pl-4;
   @apply bg-gray-700;
   width: 100%;
+}
+
+.line_content_output_text {
+  @apply table-cell;
+  @apply pl-4;
+  @apply bg-black;
+  width: 100%;
+  @apply rounded-tl-md;
+  @apply rounded-br-md;
 }
 
 .line_number {

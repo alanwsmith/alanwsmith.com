@@ -101,7 +101,7 @@ export default function Design() {
           <span
             className={`${styles.line_number} ${styles.first_line} ${styles.last_line}`}
           >
-            &gt;
+            &nbsp;
           </span>
           <span className={styles.line_content}>27</span>
         </div>

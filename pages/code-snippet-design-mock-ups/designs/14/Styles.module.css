@@ -1,5 +1,19 @@
 .background {
-  @apply border-2;
+  @apply border-t-2;
+  @apply border-l-2;
+  @apply border-r-2;
+  @apply border-b-2;
+  @apply border-gray-600;
+  @apply bg-black;
+  @apply rounded-md;
+  @apply relative;
+}
+
+.background_output {
+  @apply border-t;
+  @apply border-l-2;
+  @apply border-r-2;
+  @apply border-b-2;
   @apply border-gray-600;
   @apply bg-black;
   @apply rounded-md;
@@ -32,6 +46,13 @@
   @apply pl-4;
 }
 
+.line_content_output {
+  @apply table-cell;
+  @apply pl-4;
+  @apply bg-gray-700;
+  width: 100%;
+}
+
 .line_number {
   @apply table-cell;
   @apply text-right;
@@ -46,10 +67,10 @@
   @apply table-cell;
   @apply text-right;
   @apply select-none;
-  @apply bg-gray-900;
   @apply pl-4;
   @apply pr-3;
-  @apply text-gray-700;
+  @apply text-gray-400;
+  @apply bg-gray-700;
   @apply pb-4;
 }
 
@@ -61,7 +82,7 @@
   @apply pr-3;
   @apply text-gray-500;
   @apply bg-gray-900;
-  @apply rounded-bl-md;
+  @apply rounded-bl;
   @apply pb-3;
 }
 

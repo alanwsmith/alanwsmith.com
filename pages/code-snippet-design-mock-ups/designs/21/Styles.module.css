@@ -2,7 +2,6 @@
   @apply border border-gray-600;
   @apply bg-gray-700;
   @apply relative;
-  @apply rounded-md;
 }
 
 .background_output {
@@ -24,6 +23,10 @@
   @apply absolute;
   @apply top-0;
   @apply right-0;
+}
+
+.code_green {
+  @apply text-green-500;
 }
 
 .row {
@@ -49,6 +52,12 @@
 /*   @apply border-gray-600; */
 /* } */
 
+.row_console_output {
+  @apply table-row;
+  @apply bg-gray-900;
+  @apply block;
+}
+
 .first_line {
   @apply pt-2;
 }
@@ -62,7 +71,6 @@
   @apply table-cell;
   @apply pl-4;
   @apply border-r;
-  @apply border-t;
   @apply border-gray-600;
   width: 100%;
 }
@@ -86,7 +94,6 @@
   @apply text-gray-500;
   @apply bg-gray-900;
   @apply border-l;
-  @apply border-t;
   @apply border-gray-600;
 }
 
@@ -114,4 +121,14 @@
 
 .last_line {
   @apply pb-2;
+}
+
+.border_bottom {
+  @apply border-b;
+  @apply border-gray-600;
+}
+
+.border_top {
+  @apply border-t;
+  @apply border-gray-600;
 }

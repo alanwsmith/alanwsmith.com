@@ -79,7 +79,7 @@ export default function Design() {
 
       <pre className={styles.background_console}>
         <div className={styles.row_console}>
-          <span className={`pt-1 pb-1 ${styles.line_number_console}`}>
+          <span className={`pt-1 pb-1 border-t ${styles.line_number_console}`}>
             &nbsp;
           </span>
           <span className={styles.line_content_console}>
@@ -103,7 +103,7 @@ export default function Design() {
           className={` rounded-br-md rounded-bl-md ${styles.row} ${styles.row_output}`}
         >
           <span className={`rounded-bl-md ${styles.line_number_output}`}>
-            &nbsp;
+            &gt;
           </span>
           <span className="text-gray-400 table-cell pl-4 py-1">27</span>
         </div>

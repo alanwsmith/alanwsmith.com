@@ -51,8 +51,11 @@ export default function Page() {
 
   return (
     <>
-      <style jsx>
+      <style jsx global>
         {`
+          body {
+            background-color: #051407;
+          }
           h3 {
             margin-top: 20px;
           }
