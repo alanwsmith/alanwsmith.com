@@ -98,11 +98,7 @@ export default function Design() {
 
       <pre className={styles.background}>
         <div className={styles.row}>
-          <span
-            className={`${styles.line_number} ${styles.first_line} ${styles.last_line}`}
-          >
-            &nbsp;
-          </span>
+          <span className={`pt-1 pb-1 ${styles.line_number}`}>&nbsp;</span>
           <span className={styles.line_content}>27</span>
         </div>
       </pre>

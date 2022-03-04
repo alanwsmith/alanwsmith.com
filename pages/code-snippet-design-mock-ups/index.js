@@ -24,7 +24,6 @@ import Design18 from './designs/18/design'
 import Design19 from './designs/19/design'
 import Design20 from './designs/20/design'
 import Design21 from './designs/21/design'
-import Design22 from './designs/22/design'
 
 export default function Page() {
   const [activeDesign, setActiveDesign] = useState(1)
@@ -52,7 +51,6 @@ export default function Page() {
     <Design19 key="s19" />,
     <Design20 key="s20" />,
     <Design21 key="s21" />,
-    <Design22 key="s22" />,
   ]
 
   const switchToSample = (designIndex) => {
@@ -106,7 +104,6 @@ export default function Page() {
           <button onClick={() => switchToSample(19)}>19</button>
           <button onClick={() => switchToSample(20)}>20</button>
           <button onClick={() => switchToSample(21)}>21</button>
-          <button onClick={() => switchToSample(22)}>22</button>
         </div>
 
         <h3>Design {activeDesign}</h3>

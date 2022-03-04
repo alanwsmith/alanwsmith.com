@@ -112,10 +112,12 @@ export default function Design() {
         <div
           className={`rounded-bl-md rounded-br-md ${styles.row} ${styles.row_output}`}
         >
-          <span className={`rounded-bl-md pt-1 pb-1 ${styles.line_number}`}>
-            &gt;
+          <span
+            className={`rounded-bl-md pt-1 pb-1 ${styles.line_number_output}`}
+          >
+            &nbsp;
           </span>
-          <span className={styles.line_content}>27</span>
+          <span className={styles.line_content_output}>27</span>
         </div>
       </pre>
 

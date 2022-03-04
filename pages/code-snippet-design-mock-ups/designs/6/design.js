@@ -97,7 +97,7 @@ export default function Design() {
       <pre className={styles.background_output}>
         <div className={styles.row}>
           <span className={`pt-2 ${styles.line_number} `}>&nbsp;</span>
-          <span className={styles.line_content}>{`// Output`}</span>
+          <span className={styles.line_content_output}>{`// Output`}</span>
         </div>
 
         <div className={styles.row}>

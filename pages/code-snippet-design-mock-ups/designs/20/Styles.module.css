@@ -1,6 +1,7 @@
 .background {
-  @apply border border-gray-600;
-  @apply bg-gray-700;
+  @apply border-2;
+  @apply border-gray-600;
+  @apply bg-black;
   @apply relative;
   @apply rounded-md;
 }
@@ -12,7 +13,7 @@
 
 .background_console {
   @apply border-none;
-  @apply bg-gray-700;
+  @apply bg-black;
   @apply relative;
 }
 .copy_button {
@@ -32,7 +33,6 @@
 
 .row_output {
   @apply table-row;
-  @apply bg-gray-800;
   @apply block;
   @apply border-b;
   @apply border-l;
@@ -50,7 +50,7 @@
 /* } */
 
 .first_line {
-  @apply pt-2;
+  @apply pt-3;
 }
 
 .line_content {
@@ -67,14 +67,22 @@
   width: 100%;
 }
 
+.line_content_output {
+  @apply table-cell;
+  @apply pl-4;
+  @apply bg-gray-600;
+  @apply rounded-tl-md;
+  width: 100%;
+}
+
 .line_number {
   @apply table-cell;
   @apply text-right;
   @apply select-none;
   @apply pl-4;
   @apply pr-3;
-  @apply text-gray-500;
-  @apply bg-gray-900;
+  @apply text-gray-300;
+  @apply bg-gray-700;
 }
 
 .line_number_console {
@@ -83,8 +91,8 @@
   @apply select-none;
   @apply pl-4;
   @apply pr-3;
-  @apply text-gray-500;
-  @apply bg-gray-900;
+  @apply text-gray-400;
+  @apply bg-black;
   @apply border-l;
   @apply border-t;
   @apply border-gray-600;
@@ -94,7 +102,7 @@
   @apply table-cell;
   @apply text-right;
   @apply select-none;
-  @apply bg-gray-900;
+  @apply bg-gray-600;
   @apply pl-4;
   @apply pr-3;
   @apply text-gray-700;
@@ -108,8 +116,8 @@
   @apply pl-4;
   @apply pr-3;
   @apply text-gray-500;
-  @apply bg-gray-900;
-  @apply pb-3;
+  @apply bg-black;
+  @apply pb-1;
 }
 
 .last_line {

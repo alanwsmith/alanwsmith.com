@@ -9,9 +9,9 @@
 .copy_button {
   @apply bg-gray-600;
   @apply hover:bg-gray-700;
-  @apply text-gray-400;
+  @apply text-gray-300;
   @apply px-2;
-  @apply rounded;
+  @apply rounded-bl-md;
   @apply text-base;
   @apply absolute;
   @apply top-0;

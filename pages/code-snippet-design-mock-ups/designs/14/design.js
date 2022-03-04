@@ -93,7 +93,7 @@ export default function Design() {
         </div>
 
         <div className={styles.row}>
-          <span className={`pt-1 pb-1 ${styles.line_number}`}>&nbsp;</span>
+          <span className={`${styles.line_number}`}>&nbsp;</span>
           <span className={styles.line_content_output_string}>Output:</span>
         </div>
         <div className={styles.row}>
