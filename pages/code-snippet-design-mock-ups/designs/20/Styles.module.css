@@ -18,7 +18,7 @@
 .copy_button {
   @apply bg-gray-600;
   @apply hover:bg-gray-700;
-  @apply text-gray-400;
+  @apply text-gray-300;
   @apply px-2;
   @apply text-base;
   @apply absolute;
