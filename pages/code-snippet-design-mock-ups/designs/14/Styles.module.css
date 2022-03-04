@@ -1,19 +1,5 @@
 .background {
-  @apply border-t-2;
-  @apply border-l-2;
-  @apply border-r-2;
-  @apply border-b-2;
-  @apply border-gray-600;
-  @apply bg-black;
-  @apply rounded-md;
-  @apply relative;
-}
-
-.background_output {
-  @apply border-t;
-  @apply border-l-2;
-  @apply border-r-2;
-  @apply border-b-2;
+  @apply border-2;
   @apply border-gray-600;
   @apply bg-black;
   @apply rounded-md;
@@ -37,7 +23,7 @@
 }
 
 .first_line {
-  @apply pt-3;
+  @apply pt-2;
   @apply rounded-tl;
 }
 
@@ -46,7 +32,7 @@
   @apply pl-4;
 }
 
-.line_content_output {
+.line_content_output_string {
   @apply table-cell;
   @apply pl-4;
   @apply bg-gray-700;
@@ -67,10 +53,10 @@
   @apply table-cell;
   @apply text-right;
   @apply select-none;
+  @apply bg-gray-900;
   @apply pl-4;
   @apply pr-3;
-  @apply text-gray-400;
-  @apply bg-gray-700;
+  @apply text-gray-700;
   @apply pb-4;
 }
 
@@ -88,5 +74,4 @@
 
 .last_line {
   @apply pb-3;
-  @apply rounded-bl;
 }

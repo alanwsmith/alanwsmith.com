@@ -96,16 +96,14 @@ export default function Design() {
 
       <div className="text-xs">&nbsp;</div>
 
-      <pre className={`bg-gray-700 border-2 rounded-md border-gray-600`}>
+      <pre className={styles.background}>
         <div className={styles.row}>
-          <span className={`rounded-tl ${styles.line_number}`}>&nbsp;</span>
-          <span className={styles.line_content_output_string}>Output:</span>
-        </div>
-        <div className={styles.row}>
-          <span className={`pb-1 rounded-bl pt-1 ${styles.line_number} `}>
-            &gt;
+          <span
+            className={`${styles.line_number} ${styles.first_line} ${styles.last_line}`}
+          >
+            &nbsp;
           </span>
-          <span className={`${styles.line_content_output_text}`}>27</span>
+          <span className={styles.line_content}>27</span>
         </div>
       </pre>
 

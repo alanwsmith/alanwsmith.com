@@ -3,7 +3,7 @@
 import os
 import shutil
 
-number_to_bump = 1
+number_to_bump = 12
 
 source_dir = 'designs'
 dir_list = [int(d) for d in os.listdir(source_dir) if d[0] != '.']

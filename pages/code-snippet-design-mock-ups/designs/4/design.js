@@ -104,7 +104,7 @@ export default function Design() {
 
         <div className={styles.row}>
           <span
-            className={`rounded-bl-md ${styles.line_number} ${styles.last_line}`}
+            className={`rounded-bl ${styles.line_number} ${styles.last_line}`}
           >
             10
           </span>

@@ -78,8 +78,8 @@ export default function Design() {
         </div>
 
         <div className={styles.row}>
-          <span className={styles.line_number}>7</span>
-          <span className={`${styles.line_content} ${styles.last_line}`}>
+          <span className={`${styles.line_number} ${styles.last_line}`}>7</span>
+          <span className={`${styles.line_content}`}>
             <span className="token plain">console</span>
             <span className="token punctuation">.</span>
             <span className="token function">log</span>

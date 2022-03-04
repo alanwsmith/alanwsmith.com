@@ -96,7 +96,7 @@ export default function Design() {
 
       <pre className={styles.background_output}>
         <div className={styles.row}>
-          <span className={`pt-2 ${styles.line_content}`}>{`// Output:`}</span>
+          <span className={`pt-3 ${styles.line_content}`}>{`// Output:`}</span>
         </div>
 
         <div className={styles.row}>

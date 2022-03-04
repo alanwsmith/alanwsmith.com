@@ -5,10 +5,12 @@ export default function Design() {
     <>
       <pre className={styles.background}>
         <div className={styles.row}>
-          <span className={`${styles.line_number} ${styles.first_line}`}>
+          <span
+            className={`rounded-tl-md ${styles.line_number} ${styles.first_line}`}
+          >
             1
           </span>
-          <span className={styles.line_content}>
+          <span className={`rounded-tr-md ${styles.line_content}`}>
             <span className="token keyword">function</span>
             <span className="token plain"> </span>
             <span className="token function">get_random_number</span>
@@ -65,47 +67,55 @@ export default function Design() {
         </div>
 
         <div className={styles.row}>
-          <span className={`${styles.line_number} ${styles.last_line}`}>5</span>
+          <span
+            className={`rounded-bl-md ${styles.line_number} ${styles.last_line}`}
+          >
+            5
+          </span>
           <span className={styles.line_content}>
             <span className="token plain"></span>
             <span className="token punctuation">{'}'}</span>
           </span>
         </div>
 
-        <button className={styles.copy_button}>Copy</button>
+        <button className={`rounded-tr-md ${styles.copy_button}`}>Copy</button>
       </pre>
 
-      <br />
-      <pre className={styles.background_console}>
+      <div className="text-xs">&nbsp;</div>
+
+      <pre
+        className={`rounded-tl-md rounded-tr-md ${styles.background_console}`}
+      >
         <div className={styles.row_console}>
           <span
-            className={`pb-2 ${styles.line_number_console} ${styles.border_top} ${styles.first_line}`}
+            className={`rounded-tl-md pt-1 pb-1 ${styles.line_number_console}`}
           >
             &nbsp;
           </span>
-          <span
-            className={`${styles.line_content_console} ${styles.border_top}`}
-          >
+          <span className={`rounded-tr-md ${styles.line_content_console} `}>
+            <span className="token plain">console</span>
+            <span className="token punctuation">.</span>
+            <span className="token function">log</span>
+            <span className="token punctuation">(</span>
             <span className="token function">get_random_number</span>
             <span className="token punctuation">(</span>
             <span className="token number">100</span>
             <span className="token punctuation">)</span>
+            <span className="token punctuation">)</span>
           </span>
         </div>
+      </pre>
 
-        <div className={styles.row_console_output}>
-          <span
-            className={`pt-2 ${styles.line_number_console} ${styles.border_bottom} ${styles.last_line}`}
-          >
+      <pre
+        className={`rounded-bl-md rounded-br-md ${styles.background_output}`}
+      >
+        <div
+          className={`rounded-bl-md rounded-br-md ${styles.row} ${styles.row_output}`}
+        >
+          <span className={`rounded-bl-md pt-1 pb-1 ${styles.line_number}`}>
             &gt;
           </span>
-          <span
-            className={`
-          ${styles.line_content_console}
-          ${styles.border_bottom}`}
-          >
-            <span className={styles.code_green}>27</span>
-          </span>
+          <span className={styles.line_content}>27</span>
         </div>
       </pre>
 

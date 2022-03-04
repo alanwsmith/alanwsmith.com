@@ -1,8 +1,10 @@
 .background {
-  @apply border border-gray-600;
-  @apply bg-gray-700;
+  @apply border-l;
+  @apply border-r;
+  @apply border-t;
+  @apply border-gray-500;
+  @apply bg-gray-600;
   @apply relative;
-  @apply rounded-md;
 }
 
 .background_output {
@@ -12,7 +14,7 @@
 
 .background_console {
   @apply border-none;
-  @apply bg-gray-700;
+  @apply bg-gray-600;
   @apply relative;
 }
 .copy_button {
@@ -32,12 +34,12 @@
 
 .row_output {
   @apply table-row;
-  @apply bg-gray-800;
+  @apply bg-gray-900;
   @apply block;
   @apply border-b;
   @apply border-l;
   @apply border-r;
-  @apply border-gray-600;
+  @apply border-gray-500;
 }
 
 /* .row_console { */
@@ -50,7 +52,7 @@
 /* } */
 
 .first_line {
-  @apply pt-2;
+  @apply pt-3;
 }
 
 .line_content {
@@ -63,7 +65,7 @@
   @apply pl-4;
   @apply border-r;
   @apply border-t;
-  @apply border-gray-600;
+  @apply border-gray-500;
   width: 100%;
 }
 
@@ -86,8 +88,7 @@
   @apply text-gray-500;
   @apply bg-gray-900;
   @apply border-l;
-  @apply border-t;
-  @apply border-gray-600;
+  @apply border-gray-500;
 }
 
 .line_number_blank {
@@ -109,9 +110,9 @@
   @apply pr-3;
   @apply text-gray-500;
   @apply bg-gray-900;
-  @apply pb-3;
+  @apply pb-1;
 }
 
 .last_line {
-  @apply pb-2;
+  @apply pb-3;
 }

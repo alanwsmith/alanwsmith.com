@@ -67,5 +67,5 @@
 
 .last_line {
   @apply pb-2;
-  @apply rounded-bl-md;
+  @apply rounded-bl;
 }

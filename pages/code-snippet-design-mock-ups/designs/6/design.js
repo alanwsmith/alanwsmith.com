@@ -2,7 +2,7 @@ import styles from './Styles.module.css'
 
 export default function Design() {
   return (
-    <>
+    <div>
       <pre className={styles.background}>
         <div className={styles.row}>
           <span className={`${styles.line_number} ${styles.first_line}`}>
@@ -78,8 +78,8 @@ export default function Design() {
         </div>
 
         <div className={styles.row}>
-          <span className={`${styles.line_number} ${styles.last_line}`}>7</span>
-          <span className={styles.line_content}>
+          <span className={styles.line_number}>7</span>
+          <span className={`${styles.line_content} ${styles.last_line}`}>
             <span className="token plain">console</span>
             <span className="token punctuation">.</span>
             <span className="token function">log</span>
@@ -94,24 +94,26 @@ export default function Design() {
         <button className={styles.copy_button}>Copy</button>
       </pre>
 
-      <div className="text-xs">&nbsp;</div>
-
-      <pre className={styles.background}>
+      <pre className={styles.background_output}>
         <div className={styles.row}>
-          <span
-            className={`${styles.line_number} ${styles.first_line} ${styles.last_line}`}
-          >
+          <span className={`pt-2 ${styles.line_number} `}>&nbsp;</span>
+          <span className={styles.line_content}>{`// Output`}</span>
+        </div>
+
+        <div className={styles.row}>
+          <span className={`pb-2 rounded-bl ${styles.line_number}`}>
             &nbsp;
           </span>
-          <span className={styles.line_content}>27</span>
+          <span className={styles.line_content}>// 27</span>
         </div>
       </pre>
 
       <ul className="mt-8">
-        <li>Output split to it&apos;s own section</li>
-        <li>Just showing the output without an additional comment</li>
-        <li>Using greater than sign to help seperate output from code</li>
+        <li>Code section has line numbers</li>
+        <li>
+          Split output to it&apos;s own section with gutter but no line numbers
+        </li>
       </ul>
-    </>
+    </div>
   )
 }
