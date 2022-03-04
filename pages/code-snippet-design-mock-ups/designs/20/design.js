@@ -65,51 +65,52 @@ export default function Design() {
         </div>
 
         <div className={styles.row}>
-          <span className={styles.line_number}>5</span>
+          <span className={`${styles.line_number} ${styles.last_line}`}>5</span>
           <span className={styles.line_content}>
             <span className="token plain"></span>
             <span className="token punctuation">{'}'}</span>
           </span>
         </div>
 
-        <div className={styles.row}>
-          <span className={styles.line_number}>6</span>
-          <span className={styles.line_content}></span>
-        </div>
+        <button className={styles.copy_button}>Copy</button>
+      </pre>
 
-        <div className={styles.row}>
-          <span className={`${styles.line_number} ${styles.last_line}`}>7</span>
-          <span className={styles.line_content}>
-            <span className="token plain">console</span>
-            <span className="token punctuation">.</span>
-            <span className="token function">log</span>
-            <span className="token punctuation">(</span>
+      <br />
+      <pre className={styles.background_console}>
+        <div className={styles.row_console}>
+          <span
+            className={`pb-2 ${styles.line_number_console} ${styles.border_top} ${styles.first_line}`}
+          >
+            &nbsp;
+          </span>
+          <span
+            className={`${styles.line_content_console} ${styles.border_top}`}
+          >
             <span className="token function">get_random_number</span>
             <span className="token punctuation">(</span>
             <span className="token number">100</span>
             <span className="token punctuation">)</span>
-            <span className="token punctuation">)</span>
           </span>
         </div>
 
-        <div className={styles.row}>
-          <span className={`${styles.line_number}`}>&nbsp;</span>
-          <span className={styles.line_content_output_string}>Output:</span>
-        </div>
-        <div className={styles.row}>
-          <span className={`pt-2 pb-1 rounded-bl ${styles.line_number} `}>
-            &nbsp;
+        <div className={styles.row_console_output}>
+          <span
+            className={`pt-2 ${styles.line_number_console} ${styles.border_bottom} ${styles.last_line}`}
+          >
+            &gt;
           </span>
-          <span className={styles.line_content}>27</span>
+          <span
+            className={`
+          ${styles.line_content_console}
+          ${styles.border_bottom}`}
+          >
+            <span className={styles.code_green}>27</span>
+          </span>
         </div>
-
-        <button className={styles.copy_button}>Copy</button>
       </pre>
 
       <ul className="mt-8">
-        <li>Output split to it&apos;s own section</li>
-        <li>Just showing the output without an additional comment</li>
-        <li>Using greater than sign to help seperate output from code</li>
+        <li>TKTKTKT</li>
       </ul>
     </>
   )

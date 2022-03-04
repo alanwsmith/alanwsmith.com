@@ -94,7 +94,7 @@ export default function Design() {
         <button className={styles.copy_button}>Copy</button>
       </pre>
 
-      <div className="text-sm">&nbsp;</div>
+      <div className="text-xs">&nbsp;</div>
 
       <pre className={styles.background}>
         <div className={styles.row}>

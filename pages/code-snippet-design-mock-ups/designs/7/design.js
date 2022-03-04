@@ -94,18 +94,18 @@ export default function Design() {
         <button className={styles.copy_button}>Copy</button>
       </pre>
 
-      <div className="text-sm">&nbsp;</div>
+      <div className="text-xs">&nbsp;</div>
 
       <pre className={styles.background}>
         <div className={styles.row}>
-          <span className={`pt-1 pb-1 rounded-tl ${styles.line_number}`}>
-            &nbsp;
+          <span className={`rounded-tl ${styles.line_number}`}>&nbsp;</span>
+          <span className={`${styles.line_content_output_string}`}>
+            Output:
           </span>
-          <span className={styles.line_content_output_string}>Output:</span>
         </div>
         <div className={styles.row}>
           <span className={`pb-1 rounded-bl pt-1 ${styles.line_number} `}>
-            &gt;
+            &nbsp;
           </span>
           <span className={styles.line_content}>27</span>
         </div>

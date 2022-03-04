@@ -96,7 +96,9 @@ export default function Design() {
         </div>
 
         <div className={styles.row}>
-          <span className={`pb-2 rounded-bl ${styles.line_number}`}>&gt;</span>
+          <span className={`pb-2 rounded-bl ${styles.line_number}`}>
+            &nbsp;
+          </span>
           <span className={styles.line_content}>27</span>
         </div>
       </pre>

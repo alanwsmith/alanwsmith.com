@@ -91,19 +91,22 @@ export default function Design() {
             <span className="token punctuation">)</span>
           </span>
         </div>
+        <button className={styles.copy_button}>Copy</button>
+      </pre>
 
+      <div className="text-xs">&nbsp;</div>
+
+      <pre className={styles.background}>
         <div className={styles.row}>
-          <span className={`pt-1 pb-1 ${styles.line_number}`}>&nbsp;</span>
+          <span className={`rounded-tl ${styles.line_number}`}>&nbsp;</span>
           <span className={styles.line_content_output_string}>Output:</span>
         </div>
         <div className={styles.row}>
           <span className={`pb-1 rounded-bl pt-1 ${styles.line_number} `}>
-            &nbsp;
+            &gt;
           </span>
           <span className={styles.line_content}>27</span>
         </div>
-
-        <button className={styles.copy_button}>Copy</button>
       </pre>
 
       <ul className="mt-8">
