@@ -99,11 +99,13 @@ export default function Design() {
       <pre className={`bg-gray-700 border-2 rounded-md border-gray-600`}>
         <div className={styles.row}>
           <span className={`rounded-tl ${styles.line_number}`}>&nbsp;</span>
-          <span className={styles.line_content_output_string}>Output:</span>
+          <span className={`${styles.line_content_output_string}`}>
+            Output:
+          </span>
         </div>
-        <div className={styles.row}>
-          <span className={`pb-1 rounded-bl pt-1 ${styles.line_number} `}>
-            &gt;
+        <div className={`${styles.row}`}>
+          <span className={`pb-1 rounded-bl pt-1 ${styles.line_number}`}>
+            &nbsp;
           </span>
           <span className={`${styles.line_content_output_text}`}>27</span>
         </div>

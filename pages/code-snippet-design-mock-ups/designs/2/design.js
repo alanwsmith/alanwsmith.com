@@ -87,7 +87,7 @@ export default function Design() {
           </span>
         </div>
 
-        <div className={styles.row}>
+        <div className="text-xs">
           <span className={styles.line_content}>&nbsp;</span>
         </div>
 

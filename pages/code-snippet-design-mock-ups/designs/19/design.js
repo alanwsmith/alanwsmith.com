@@ -79,10 +79,12 @@ export default function Design() {
 
       <pre className={styles.background_console}>
         <div className={styles.row_console}>
-          <span className={`pt-1 pb-1 border-t ${styles.line_number_console}`}>
+          <span className={`pt-1 pb-1 ${styles.line_number_console}`}>
             &nbsp;
           </span>
-          <span className={styles.line_content_console}>
+          <span
+            className={`bg-black rounded-bl-md ${styles.line_content_console}`}
+          >
             <span className="token plain">console</span>
             <span className="token punctuation">.</span>
             <span className="token function">log</span>

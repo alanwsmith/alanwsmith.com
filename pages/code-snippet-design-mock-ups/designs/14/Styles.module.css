@@ -24,7 +24,7 @@
 
 .first_line {
   @apply pt-2;
-  @apply rounded-tl;
+  @apply rounded-tl-md;
 }
 
 .line_content {
@@ -68,10 +68,10 @@
   @apply pr-3;
   @apply text-gray-500;
   @apply bg-gray-900;
-  @apply rounded-bl;
+  @apply rounded-bl-md;
   @apply pb-3;
 }
 
 .last_line {
-  @apply pb-3;
+  @apply pb-2;
 }

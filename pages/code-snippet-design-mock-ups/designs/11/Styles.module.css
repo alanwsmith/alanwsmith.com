@@ -1,15 +1,28 @@
 .background {
-  @apply border-2;
+  @apply border-t-2;
+  @apply border-l-2;
+  @apply border-r-2;
   @apply border-gray-600;
   @apply bg-black;
-  @apply rounded-md;
+  @apply rounded-t-md;
+  @apply relative;
+}
+
+.background_output {
+  @apply border-t;
+  @apply border-b-2;
+  @apply border-l-2;
+  @apply border-r-2;
+  @apply border-gray-600;
+  @apply bg-black;
+  @apply rounded-b-md;
   @apply relative;
 }
 
 .copy_button {
   @apply bg-gray-600;
   @apply hover:bg-gray-700;
-  @apply text-gray-400;
+  @apply text-gray-300;
   @apply px-2;
   @apply rounded;
   @apply text-base;
@@ -23,7 +36,7 @@
 }
 
 .first_line {
-  @apply pt-2;
+  @apply pt-4;
   @apply rounded-tl;
 }
 
@@ -32,29 +45,13 @@
   @apply pl-4;
 }
 
-.line_content_output_string {
-  @apply table-cell;
-  @apply pl-4;
-  @apply bg-gray-700;
-  width: 100%;
-}
-
-.line_content_output_text {
-  @apply table-cell;
-  @apply pl-4;
-  @apply bg-black;
-  width: 100%;
-  @apply rounded-tl-md;
-  @apply rounded-br-md;
-}
-
 .line_number {
   @apply table-cell;
   @apply text-right;
   @apply select-none;
   @apply pl-4;
   @apply pr-3;
-  @apply text-gray-400;
+  @apply text-gray-300;
   @apply bg-gray-700;
 }
 
@@ -65,7 +62,7 @@
   @apply bg-gray-900;
   @apply pl-4;
   @apply pr-3;
-  @apply text-gray-700;
+  @apply text-gray-600;
   @apply pb-4;
 }
 

@@ -23,7 +23,7 @@
 }
 
 .first_line {
-  @apply pt-4;
+  @apply pt-3;
   @apply rounded-tl;
 }
 
@@ -38,8 +38,8 @@
   @apply select-none;
   @apply pl-4;
   @apply pr-3;
-  @apply text-gray-500;
-  @apply bg-gray-900;
+  @apply text-gray-400;
+  @apply bg-gray-700;
 }
 
 .line_number_blank {
@@ -66,6 +66,6 @@
 }
 
 .last_line {
-  @apply pb-4;
+  @apply pb-3;
   @apply rounded-bl;
 }

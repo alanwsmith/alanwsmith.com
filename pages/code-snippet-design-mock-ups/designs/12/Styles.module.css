@@ -24,7 +24,7 @@
 
 .first_line {
   @apply pt-2;
-  @apply rounded-tl-md;
+  @apply rounded-tl;
 }
 
 .line_content {

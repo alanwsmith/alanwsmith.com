@@ -113,7 +113,7 @@ export default function Design() {
           className={`rounded-bl-md rounded-br-md ${styles.row} ${styles.row_output}`}
         >
           <span className={`rounded-bl-md pt-1 pb-1 ${styles.line_number}`}>
-            &gt;
+            &nbsp;
           </span>
           <span className={styles.line_content}>27</span>
         </div>

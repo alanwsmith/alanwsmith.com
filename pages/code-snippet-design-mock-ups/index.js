@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import HeaderMain from '../../components/HeaderMain'
 import ContentWrapper from '../../components/ContentWrapper'
+import style from './Styles.module.css'
+
 import Design1 from './designs/1/design'
 import Design2 from './designs/2/design'
 import Design3 from './designs/3/design'
@@ -18,7 +20,11 @@ import Design14 from './designs/14/design'
 import Design15 from './designs/15/design'
 import Design16 from './designs/16/design'
 import Design17 from './designs/17/design'
-import style from './Styles.module.css'
+import Design18 from './designs/18/design'
+import Design19 from './designs/19/design'
+import Design20 from './designs/20/design'
+import Design21 from './designs/21/design'
+import Design22 from './designs/22/design'
 
 export default function Page() {
   const [activeDesign, setActiveDesign] = useState(1)
@@ -42,6 +48,11 @@ export default function Page() {
     <Design15 key="s15" />,
     <Design16 key="s16" />,
     <Design17 key="s17" />,
+    <Design18 key="s18" />,
+    <Design19 key="s19" />,
+    <Design20 key="s20" />,
+    <Design21 key="s21" />,
+    <Design22 key="s22" />,
   ]
 
   const switchToSample = (designIndex) => {
@@ -91,6 +102,11 @@ export default function Page() {
           <button onClick={() => switchToSample(15)}>15</button>
           <button onClick={() => switchToSample(16)}>16</button>
           <button onClick={() => switchToSample(17)}>17</button>
+          <button onClick={() => switchToSample(18)}>18</button>
+          <button onClick={() => switchToSample(19)}>19</button>
+          <button onClick={() => switchToSample(20)}>20</button>
+          <button onClick={() => switchToSample(21)}>21</button>
+          <button onClick={() => switchToSample(22)}>22</button>
         </div>
 
         <h3>Design {activeDesign}</h3>
