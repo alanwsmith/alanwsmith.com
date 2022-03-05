@@ -1,8 +1,18 @@
 .background {
   @apply bg-black;
+  @apply border-t-2;
+  @apply border-l-2;
+  @apply border-r-2;
+  @apply border-gray-600;
+  @apply rounded-t-md;
+  @apply relative;
+}
+
+.background_output {
+  @apply bg-black;
   @apply border-2;
   @apply border-gray-600;
-  @apply rounded-md;
+  @apply rounded-b-md;
   @apply relative;
 }
 
@@ -20,6 +30,7 @@
 
 .row {
   @apply table-row;
+  width: 100%;
 }
 
 .first_line {
@@ -30,6 +41,13 @@
 .line_content {
   @apply table-cell;
   @apply pl-4;
+}
+
+.line_content_output {
+  @apply table-cell;
+  @apply pl-4;
+  @apply bg-gray-700;
+  width: 100%;
 }
 
 .line_number {
@@ -67,5 +85,4 @@
 
 .last_line {
   @apply pb-4;
-  @apply rounded-bl-md;
 }

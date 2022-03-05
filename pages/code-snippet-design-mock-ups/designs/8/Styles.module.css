@@ -1,8 +1,20 @@
 .background {
-  @apply border-2;
-  @apply border-gray-600;
   @apply bg-black;
-  @apply rounded-md;
+  @apply rounded-t-md;
+  @apply border-t-2;
+  @apply border-l-2;
+  @apply border-r-2;
+  @apply border-gray-600;
+  @apply relative;
+}
+
+.background_output {
+  @apply bg-black;
+  @apply rounded-b-md;
+  @apply border-l-2;
+  @apply border-r-2;
+  @apply border-b-2;
+  @apply border-gray-600;
   @apply relative;
 }
 
@@ -32,10 +44,11 @@
   @apply pl-4;
 }
 
-.line_content_output_string {
+.line_content_output {
   @apply table-cell;
   @apply pl-4;
-  @apply bg-gray-700;
+  @apply border-t-2;
+  @apply border-gray-700;
   width: 100%;
 }
 
@@ -73,5 +86,6 @@
 }
 
 .last_line {
-  @apply pb-3;
+  @apply pb-2;
+  @apply rounded-bl-md;
 }

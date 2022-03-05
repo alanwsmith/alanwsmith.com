@@ -1,20 +1,8 @@
 .background {
-  @apply border-t-2;
-  @apply border-l-2;
-  @apply border-r-2;
+  @apply border-2;
   @apply border-gray-600;
-  @apply bg-gray-700;
-  @apply rounded-t-md;
-  @apply relative;
-}
-
-.background_output {
-  @apply border-l-2;
-  @apply border-r-2;
-  @apply border-b-2;
-  @apply border-gray-600;
-  @apply bg-gray-700;
-  @apply rounded-b-md;
+  @apply bg-black;
+  @apply rounded-md;
   @apply relative;
 }
 
@@ -23,7 +11,7 @@
   @apply hover:bg-gray-700;
   @apply text-gray-300;
   @apply px-2;
-  @apply rounded;
+  @apply rounded-bl-md;
   @apply text-base;
   @apply absolute;
   @apply top-0;
@@ -36,13 +24,12 @@
 
 .first_line {
   @apply pt-2;
-  @apply rounded-tl;
+  @apply rounded-tl-md;
 }
 
 .line_content {
   @apply table-cell;
   @apply pl-4;
-  @apply bg-black;
 }
 
 .line_content_output_string {
@@ -56,8 +43,9 @@
   @apply table-cell;
   @apply pl-4;
   @apply bg-black;
-  @apply rounded-tl-md;
   width: 100%;
+  @apply rounded-tl-md;
+  @apply rounded-br-md;
 }
 
 .line_number {
@@ -89,18 +77,10 @@
   @apply pr-3;
   @apply text-gray-500;
   @apply bg-gray-900;
-  @apply rounded-bl;
+  @apply rounded-bl-md;
   @apply pb-3;
 }
 
 .last_line {
   @apply pb-2;
-}
-
-.last_line_content {
-  @apply table-cell;
-  @apply pl-4;
-  @apply bg-black;
-  width: 100%;
-  @apply rounded-bl-md;
 }

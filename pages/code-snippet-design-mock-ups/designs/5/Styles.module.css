@@ -1,8 +1,8 @@
 .background {
   @apply bg-black;
-  @apply rounded-md;
   @apply border-2;
   @apply border-gray-600;
+  @apply rounded-md;
   @apply relative;
 }
 
@@ -23,8 +23,8 @@
 }
 
 .first_line {
-  @apply pt-2;
-  @apply rounded-tl;
+  @apply pt-4;
+  @apply rounded-tl-md;
 }
 
 .line_content {
@@ -38,8 +38,8 @@
   @apply select-none;
   @apply pl-4;
   @apply pr-3;
-  @apply text-gray-300;
-  @apply bg-gray-700;
+  @apply text-gray-500;
+  @apply bg-gray-900;
 }
 
 .line_number_blank {
@@ -61,11 +61,11 @@
   @apply pr-3;
   @apply text-gray-500;
   @apply bg-gray-900;
-  @apply rounded-bl;
+  @apply rounded-bl-md;
   @apply pb-3;
 }
 
 .last_line {
-  @apply pb-2;
-  @apply rounded-bl;
+  @apply pb-4;
+  @apply rounded-bl-md;
 }

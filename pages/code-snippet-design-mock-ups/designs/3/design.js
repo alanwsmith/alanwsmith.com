@@ -74,7 +74,7 @@ export default function Design() {
         </div>
 
         <div className={styles.row}>
-          <span className={`${styles.line_content} ${styles.last_line}`}>
+          <span className={styles.line_content}>
             <span className="token plain">console</span>
             <span className="token punctuation">.</span>
             <span className="token function">log</span>
@@ -87,24 +87,26 @@ export default function Design() {
           </span>
         </div>
 
+        <div className="text-xs">
+          <span className={styles.line_content}>&nbsp;</span>
+        </div>
+
         <button className={styles.copy_button}>Copy</button>
       </pre>
 
-      <div className="text-xs">&nbsp;</div>
-
-      <pre className={styles.background}>
-        <div className={styles.row}>
-          <span className={`pt-3 ${styles.line_content}`}>{`// Output:`}</span>
+      <pre className={styles.background_output}>
+        <div className="pt-1 pb-1 pl-4 bg-gray-700">
+          <span className={``}>{`Output:`}</span>
         </div>
 
-        <div className={styles.row}>
-          <span className={`pb-3 ${styles.line_content}`}>// 27</span>
+        <div className="pt-1 pb-1">
+          <span className="pl-4">27</span>
         </div>
       </pre>
 
       <ul className="mt-8">
-        <li>No line numbers</li>
-        <li>Output split out to it&apos;s own area</li>
+        <li>Baseline sample</li>
+        <li>No line numbers or output seperation</li>
       </ul>
     </div>
   )

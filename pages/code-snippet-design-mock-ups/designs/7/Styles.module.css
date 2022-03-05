@@ -1,8 +1,8 @@
 .background {
-  @apply border-2;
-  @apply border-gray-600;
   @apply bg-black;
   @apply rounded-md;
+  @apply border-2;
+  @apply border-gray-600;
   @apply relative;
 }
 
@@ -30,13 +30,6 @@
 .line_content {
   @apply table-cell;
   @apply pl-4;
-}
-
-.line_content_output_string {
-  @apply table-cell;
-  @apply pl-4;
-  @apply bg-gray-700;
-  width: 100%;
 }
 
 .line_number {
@@ -73,5 +66,6 @@
 }
 
 .last_line {
-  @apply pb-3;
+  @apply pb-2;
+  @apply rounded-bl;
 }

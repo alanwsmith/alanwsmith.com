@@ -1,21 +1,8 @@
 .background {
-  @apply border-t-2;
-  @apply border-l-2;
-  @apply border-r-2;
+  @apply border-2;
   @apply border-gray-600;
   @apply bg-black;
-  @apply rounded-t-md;
-  @apply relative;
-}
-
-.background_output {
-  @apply border-t-2;
-  @apply border-b-2;
-  @apply border-l-2;
-  @apply border-r-2;
-  @apply border-gray-600;
-  @apply bg-black;
-  @apply rounded-b-md;
+  @apply rounded-md;
   @apply relative;
 }
 
@@ -62,7 +49,7 @@
   @apply bg-gray-900;
   @apply pl-4;
   @apply pr-3;
-  @apply text-gray-600;
+  @apply text-gray-700;
   @apply pb-4;
 }
 
@@ -74,11 +61,10 @@
   @apply pr-3;
   @apply text-gray-500;
   @apply bg-gray-900;
-  @apply rounded-bl-md;
+  @apply rounded-bl;
   @apply pb-3;
 }
 
 .last_line {
-  @apply pb-1;
-  @apply rounded-bl;
+  @apply pb-2;
 }

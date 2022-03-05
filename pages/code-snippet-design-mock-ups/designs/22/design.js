@@ -5,10 +5,12 @@ export default function Design() {
     <>
       <pre className={styles.background}>
         <div className={styles.row}>
-          <span className={`${styles.line_number} ${styles.first_line}`}>
+          <span
+            className={`rounded-tl-md ${styles.line_number} ${styles.first_line}`}
+          >
             1
           </span>
-          <span className={styles.line_content}>
+          <span className={`rounded-tr-md ${styles.line_content}`}>
             <span className="token keyword">function</span>
             <span className="token plain"> </span>
             <span className="token function">get_random_number</span>
@@ -65,21 +67,32 @@ export default function Design() {
         </div>
 
         <div className={styles.row}>
-          <span className={styles.line_number}>5</span>
+          <span
+            className={`rounded-bl-md ${styles.line_number} ${styles.last_line}`}
+          >
+            5
+          </span>
           <span className={styles.line_content}>
             <span className="token plain"></span>
             <span className="token punctuation">{'}'}</span>
           </span>
         </div>
 
-        <div className={styles.row}>
-          <span className={styles.line_number}>6</span>
-          <span className={styles.line_content}></span>
-        </div>
+        <button className={`rounded-tr-md ${styles.copy_button}`}>Copy</button>
+      </pre>
 
-        <div className={styles.row}>
-          <span className={`${styles.line_number} ${styles.last_line}`}>7</span>
-          <span className={styles.line_content}>
+      <div className="text-xs">&nbsp;</div>
+
+      <pre
+        className={`rounded-tl-md rounded-tr-md ${styles.background_console}`}
+      >
+        <div className={styles.row_console}>
+          <span
+            className={`rounded-tl-md pt-1 pb-1 ${styles.line_number_console}`}
+          >
+            &nbsp;
+          </span>
+          <span className={`rounded-tr-md ${styles.line_content_console} `}>
             <span className="token plain">console</span>
             <span className="token punctuation">.</span>
             <span className="token function">log</span>
@@ -91,30 +104,25 @@ export default function Design() {
             <span className="token punctuation">)</span>
           </span>
         </div>
-        <button className={styles.copy_button}>Copy</button>
       </pre>
 
-      <div className="text-xs">&nbsp;</div>
-
-      <pre className={`bg-gray-700 border-2 rounded-md border-gray-600`}>
-        <div className={styles.row}>
-          <span className={`rounded-tl ${styles.line_number}`}>&nbsp;</span>
-          <span className={`${styles.line_content_output_string}`}>
-            Output:
-          </span>
-        </div>
-        <div className={`${styles.row}`}>
-          <span className={`pb-1 rounded-bl pt-1 ${styles.line_number}`}>
+      <pre
+        className={`rounded-bl-md rounded-br-md ${styles.background_output}`}
+      >
+        <div
+          className={`rounded-bl-md rounded-br-md ${styles.row} ${styles.row_output}`}
+        >
+          <span
+            className={`rounded-bl-md pt-1 pb-1 ${styles.line_number_output}`}
+          >
             &nbsp;
           </span>
-          <span className={`${styles.line_content_output_text}`}>27</span>
+          <span className={styles.line_content_output}>27</span>
         </div>
       </pre>
 
       <ul className="mt-8">
-        <li>Output split to it&apos;s own section</li>
-        <li>Just showing the output without an additional comment</li>
-        <li>Using greater than sign to help seperate output from code</li>
+        <li>TKTKTKT</li>
       </ul>
     </>
   )

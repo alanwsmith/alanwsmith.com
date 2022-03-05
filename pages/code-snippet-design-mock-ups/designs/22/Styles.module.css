@@ -1,29 +1,26 @@
 .background {
-  @apply border-t-2;
-  @apply border-l-2;
-  @apply border-r-2;
+  @apply border-2;
   @apply border-gray-600;
   @apply bg-black;
-  @apply rounded-t-md;
   @apply relative;
+  @apply rounded-md;
 }
 
 .background_output {
-  @apply bg-gray-700;
-  @apply border-l-2;
-  @apply border-r-2;
-  @apply border-b-2;
-  @apply border-gray-600;
-  @apply rounded-b-md;
+  @apply border-none;
   @apply relative;
 }
 
+.background_console {
+  @apply border-none;
+  @apply bg-black;
+  @apply relative;
+}
 .copy_button {
   @apply bg-gray-600;
   @apply hover:bg-gray-700;
   @apply text-gray-300;
   @apply px-2;
-  @apply rounded;
   @apply text-base;
   @apply absolute;
   @apply top-0;
@@ -34,9 +31,26 @@
   @apply table-row;
 }
 
+.row_output {
+  @apply table-row;
+  @apply block;
+  @apply border-b;
+  @apply border-l;
+  @apply border-r;
+  @apply border-gray-600;
+}
+
+/* .row_console { */
+/*   @apply table-row; */
+/*   @apply bg-gray-700; */
+/*   @apply block; */
+/*   @apply border-l; */
+/*   @apply border-r; */
+/*   @apply border-gray-600; */
+/* } */
+
 .first_line {
   @apply pt-3;
-  @apply rounded-tl;
 }
 
 .line_content {
@@ -47,16 +61,17 @@
 .line_content_console {
   @apply table-cell;
   @apply pl-4;
-  @apply bg-black;
-  @apply rounded-bl-md;
+  @apply border-r;
   @apply border-t;
-  @apply border-gray-500;
+  @apply border-gray-600;
+  width: 100%;
 }
 
 .line_content_output {
   @apply table-cell;
   @apply pl-4;
-  @apply bg-gray-700;
+  @apply bg-gray-600;
+  @apply rounded-tl-md;
   width: 100%;
 }
 
@@ -70,14 +85,27 @@
   @apply bg-gray-700;
 }
 
-.line_number_blank {
+.line_number_console {
   @apply table-cell;
   @apply text-right;
   @apply select-none;
   @apply pl-4;
   @apply pr-3;
-  @apply text-gray-300;
-  @apply bg-gray-700;
+  @apply text-gray-400;
+  @apply bg-black;
+  @apply border-l;
+  @apply border-t;
+  @apply border-gray-600;
+}
+
+.line_number_blank {
+  @apply table-cell;
+  @apply text-right;
+  @apply select-none;
+  @apply bg-gray-600;
+  @apply pl-4;
+  @apply pr-3;
+  @apply text-gray-700;
   @apply pb-4;
 }
 
@@ -88,11 +116,10 @@
   @apply pl-4;
   @apply pr-3;
   @apply text-gray-500;
-  @apply bg-gray-900;
-  @apply rounded-bl;
-  @apply pb-3;
+  @apply bg-black;
+  @apply pb-1;
 }
 
 .last_line {
-  @apply pb-3;
+  @apply pb-2;
 }

@@ -65,24 +65,21 @@ export default function Design() {
         </div>
 
         <div className={styles.row}>
-          <span className={`${styles.line_number} ${styles.last_line}`}>5</span>
+          <span className={`${styles.line_number}`}>5</span>
           <span className={styles.line_content}>
             <span className="token plain"></span>
             <span className="token punctuation">{'}'}</span>
           </span>
         </div>
 
-        <button className={styles.copy_button}>Copy</button>
-      </pre>
-
-      <div className="text-xs">&nbsp;</div>
-
-      <pre className={styles.background}>
         <div className={styles.row}>
-          <span className={`pt-2 rounded-tl ${styles.line_number}`}>
-            &nbsp;
-          </span>
-          <span className={styles.line_content}>
+          <span className={styles.line_number}>6</span>
+          <span className={styles.line_content}></span>
+        </div>
+
+        <div className={styles.row}>
+          <span className={`pt-1 pb-1 ${styles.line_number}`}>7</span>
+          <span className={styles.line_content_console}>
             <span className="token plain">console</span>
             <span className="token punctuation">.</span>
             <span className="token function">log</span>
@@ -96,9 +93,13 @@ export default function Design() {
         </div>
 
         <div className={styles.row}>
-          <span className={`pb-2 rounded-bl ${styles.line_number}`}>&gt;</span>
-          <span className={styles.line_content}>27</span>
+          <span className={`pt-1 pb-1 rounded-bl ${styles.line_number}`}>
+            &gt;
+          </span>
+          <span className={styles.line_content_output}>27</span>
         </div>
+
+        <button className={styles.copy_button}>Copy</button>
       </pre>
 
       <ul className="mt-8">

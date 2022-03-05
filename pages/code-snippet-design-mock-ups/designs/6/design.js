@@ -79,7 +79,7 @@ export default function Design() {
 
         <div className={styles.row}>
           <span className={styles.line_number}>7</span>
-          <span className={`${styles.line_content} ${styles.last_line}`}>
+          <span className={styles.line_content}>
             <span className="token plain">console</span>
             <span className="token punctuation">.</span>
             <span className="token function">log</span>
@@ -91,28 +91,31 @@ export default function Design() {
             <span className="token punctuation">)</span>
           </span>
         </div>
-        <button className={styles.copy_button}>Copy</button>
-      </pre>
 
-      <pre className={styles.background_output}>
         <div className={styles.row}>
-          <span className={`pt-2 ${styles.line_number} `}>&nbsp;</span>
-          <span className={styles.line_content_output}>{`// Output`}</span>
+          <span className={styles.line_number}>8</span>
+          <span className={styles.line_content}>&nbsp;</span>
         </div>
 
         <div className={styles.row}>
-          <span className={`pb-2 rounded-bl ${styles.line_number}`}>
-            &nbsp;
+          <span className={styles.line_number}>9</span>
+          <span className={styles.line_content}>{`// Output`}</span>
+        </div>
+
+        <div className={styles.row}>
+          <span
+            className={`rounded-bl ${styles.line_number} ${styles.last_line}`}
+          >
+            10
           </span>
           <span className={styles.line_content}>// 27</span>
         </div>
+        <button className={styles.copy_button}>Copy</button>
       </pre>
 
       <ul className="mt-8">
-        <li>Code section has line numbers</li>
-        <li>
-          Split output to it&apos;s own section with gutter but no line numbers
-        </li>
+        <li>Baseline with line numbers</li>
+        <li>Ouput is shown in the code block</li>
       </ul>
     </div>
   )

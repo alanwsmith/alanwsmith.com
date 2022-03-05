@@ -32,6 +32,13 @@
   @apply pl-4;
 }
 
+.line_content_output_string {
+  @apply table-cell;
+  @apply pl-4;
+  @apply bg-gray-700;
+  width: 100%;
+}
+
 .line_number {
   @apply table-cell;
   @apply text-right;
@@ -66,5 +73,5 @@
 }
 
 .last_line {
-  @apply pb-2;
+  @apply pb-3;
 }
