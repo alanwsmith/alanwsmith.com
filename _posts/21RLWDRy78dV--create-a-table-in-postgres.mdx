@@ -25,12 +25,18 @@ psql -d database_name -U role_name
 Example:
 
 ```
-CREATE TABLE schema_name.new_table_name (
+CREATE TABLE IF NOT EXISTS schema_name.new_table_name (
     code        char(5) CONSTRAINT firstkey PRIMARY KEY,
     title       varchar(40) NOT NULL,
     did         integer NOT NULL,
     date_prod   date,
     kind        varchar(10)
 );
+```
+
+Do row level security (e.g. on supabase) with:
+
+```sql
+ALTER TABLE schema_name.new_table_name ENABLE ROW LEVEL SECURITY;
 ```
 

@@ -1,0 +1,98 @@
+.background {
+  @apply border-t-2;
+  @apply border-b-2;
+  @apply border-l-2;
+  @apply border-r-2;
+  @apply border-gray-600;
+  @apply rounded-md;
+  @apply relative;
+  @apply bg-gray-700;
+}
+
+.background_output {
+  @apply bg-gray-700;
+  @apply border-l-2;
+  @apply border-r-2;
+  @apply border-b-2;
+  @apply border-gray-600;
+  @apply rounded-b-md;
+  @apply relative;
+}
+
+.copy_button {
+  @apply bg-gray-600;
+  @apply hover:bg-gray-700;
+  @apply text-gray-300;
+  @apply px-2;
+  @apply rounded;
+  @apply text-base;
+  @apply absolute;
+  @apply top-0;
+  @apply right-0;
+}
+
+.row {
+  @apply table-row;
+}
+
+.first_line {
+  @apply pt-2;
+  @apply rounded-tl;
+}
+
+.line_content {
+  @apply table-cell;
+  @apply pl-4;
+  @apply bg-black;
+}
+
+.line_content_console {
+  @apply table-cell;
+  @apply pl-4;
+  @apply bg-black;
+  @apply rounded-bl-md;
+}
+
+.line_content_output {
+  @apply table-cell;
+  @apply pl-4;
+  @apply bg-gray-700;
+  width: 100%;
+}
+
+.line_number {
+  @apply table-cell;
+  @apply text-right;
+  @apply select-none;
+  @apply pl-4;
+  @apply pr-3;
+  @apply text-gray-300;
+  @apply bg-gray-700;
+}
+
+.line_number_blank {
+  @apply table-cell;
+  @apply text-right;
+  @apply select-none;
+  @apply pl-4;
+  @apply pr-3;
+  @apply text-gray-300;
+  @apply bg-gray-700;
+  @apply pb-4;
+}
+
+.line_number_output {
+  @apply table-cell;
+  @apply text-right;
+  @apply select-none;
+  @apply pl-4;
+  @apply pr-3;
+  @apply text-gray-500;
+  @apply bg-gray-900;
+  @apply rounded-bl;
+  @apply pb-3;
+}
+
+.last_line {
+  @apply pb-3;
+}

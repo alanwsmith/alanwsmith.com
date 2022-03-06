@@ -8600,8 +8600,10 @@
       "slugs_to_redirect": []
     },
     "20en7v9wldkk": {
-      "current_slug": "/posts/20en7v9wldkk--get-a-list-of-files-from-directories-with-python",
-      "slugs_to_redirect": []
+      "current_slug": "/posts/20en7v9wldkk--get-a-list-of-files-from-a-directory-with-python",
+      "slugs_to_redirect": [
+        "/posts/20en7v9wldkk--get-a-list-of-files-from-directories-with-python"
+      ]
     },
     "20l65wag5tsj": {
       "current_slug": "/posts/20l65wag5tsj--get-command-line-arguments-in-python",
@@ -9144,6 +9146,38 @@
     },
     "23shatajbugt": {
       "current_slug": "/posts/23shatajbugt--process-data-line-by-line",
+      "slugs_to_redirect": []
+    },
+    "24a6w40orwim": {
+      "current_slug": "/posts/24a6w40orwim--stl-errors",
+      "slugs_to_redirect": []
+    },
+    "241iah4gqxlo": {
+      "current_slug": "/posts/241iah4gqxlo--set-font-to-monospace",
+      "slugs_to_redirect": []
+    },
+    "24dtcoc3w5ue": {
+      "current_slug": "/posts/24dtcoc3w5ue--download-a-git-repo",
+      "slugs_to_redirect": []
+    },
+    "24dle0psm8xz": {
+      "current_slug": "/posts/24dle0psm8xz--idea-floating-bookmark-site",
+      "slugs_to_redirect": []
+    },
+    "24dlzhmzkluu": {
+      "current_slug": "/posts/24dlzhmzkluu--serve-a-text-file-from-the-nextjs-api",
+      "slugs_to_redirect": []
+    },
+    "24460d1mr4sk": {
+      "current_slug": "/posts/24460d1mr4sk--disable-or-toggle-text-search-result-highlights-in-vim-and-neovim",
+      "slugs_to_redirect": []
+    },
+    "24f3weeolaup": {
+      "current_slug": "/posts/24f3weeolaup--run-an-external-command-from-a-python-script",
+      "slugs_to_redirect": []
+    },
+    "249ql4m6zecx": {
+      "current_slug": "/posts/249ql4m6zecx--catch-all-errors-and-and-exceptions",
       "slugs_to_redirect": []
     }
   }

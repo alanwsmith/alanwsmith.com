@@ -36,6 +36,26 @@ SELECT * FROM pg_catalog.pg_namespace;
 ```
 
 
+--
+
+One you have the tables you can look at the structure with:
+
+```sql
+SELECT *
+FROM information_schema.columns
+WHERE table_name = 'example_table';
+```
+
+
+
+
+If you're using the `psql` client on the command line, you can also do:
+
+```
+\c example_table
+```
+
+
 
 
     

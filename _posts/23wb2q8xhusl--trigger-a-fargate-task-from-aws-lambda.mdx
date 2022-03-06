@@ -33,12 +33,12 @@ subnets = ['subnet-123123123']
 securityGroups = ['sg-123123123']
 
 def lambda_handler(event, context):
-    print("Firing off the Fargate headshot engine v2 process")
+    print("Triggering the process from lambda")
     client = boto3.client('ecs', region_name='us-east-1')
     response = client.run_task(
-        taskDefinition='headshot-test-3:2',
+        taskDefinition=taskDefinition,
         launchType='FARGATE',
-        cluster='headshot-engine-v2-processor-sandbox',
+        cluster=cluster,
         platformVersion='LATEST',
         count=1,
         networkConfiguration={
@@ -61,5 +61,5 @@ I gave the lambda function full ECS rights. You can probably get away with less,
 
 I'm not sure if 'assignPublicIp' needs to be enabled or if it can be set to 'DISABLED'. I switched it on during troubleshooting and haven't tried it turned off yet. 
 
-I've seen another example that doesn't have the security group. So, that may be an option depending on what you're trying to do
+I've seen another example that doesn't have the security group. So, that may be an option depending on what you're trying to do.
 
