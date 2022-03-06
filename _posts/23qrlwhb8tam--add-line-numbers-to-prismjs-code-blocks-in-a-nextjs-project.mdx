@@ -13,6 +13,21 @@ slug: >-
   /posts/23qrlwhb8tam--add-line-numbers-to-prismjs-code-blocks-in-a-nextjs-project
 ---
 
+### NOTE - This may not be the best way to do this
+
+I'm having problems with line highlighting with errors like:
+
+```
+Warning: Prop `className` did not match. Server: "line-numbers language-jsx" Client: "line-numbers"
+```
+
+I'm now looking at this:
+
+https://github.com/FormidableLabs/prism-react-renderer
+
+
+---
+
 (_An important note I often forget is that addind <code>className="language-jsx"</code> to the `<code>...</code>` block is required to get highlighting to work. Putting that up here on the top as a reminder_)
 
 None of the posts I found on the [Prism syntax highlighter](https://prismjs.com/) show how to turn on line numbers in a [Next.js](https://nextjs.org/) project. 

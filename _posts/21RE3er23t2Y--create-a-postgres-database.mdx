@@ -10,11 +10,14 @@ title: Create A Postgres Database
 slug: /posts/21re3er23t2y--create-a-postgres-database
 ---
 
-Log in to the server with user that has create database privileges via:
+Connect to the main `postgres` database with a user that has create database privileges via:
 
 ```
-psql -U user_name
+psql -U user_name -d postgres
 ```
+
+(Or, `psql postgres` if your setup for that)
+
 
 Run:
 
@@ -23,4 +26,12 @@ CREATE DATABASE your_database_name;
 ```
 
 The database is made from a clone of the `template1` database. So, any changes made there will show up in your new database. 
+
+
+
+---
+
+NOTES:
+
+You can check what permissions users have with `\du` when logged into the database
 

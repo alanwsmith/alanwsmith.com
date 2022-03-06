@@ -97,7 +97,7 @@ export default function Design() {
 
         <div className={styles.row}>
           <span className={`${styles.line_content} ${styles.last_line}`}>
-            // 27
+            {'// 27'}
           </span>
         </div>
 

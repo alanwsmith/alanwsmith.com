@@ -108,7 +108,11 @@ export default function Design() {
           <span className={`${styles.line_number} ${styles.last_line}`}>
             &nbsp;
           </span>
-          <span className={styles.line_content}>// 27</span>
+          <span className={styles.line_content}>
+
+            {'// 27'}
+
+          </span>
         </div>
       </pre>
 

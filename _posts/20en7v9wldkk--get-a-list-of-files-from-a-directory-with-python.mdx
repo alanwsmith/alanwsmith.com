@@ -5,8 +5,10 @@ id: 20eN7v9WLDkK
 scrubbed_2021: false
 status: published
 type: post
-title: Get A List Of Files From Directories With Python
-slug: /posts/20en7v9wldkk--get-a-list-of-files-from-directories-with-python
+title: Get A List Of Files From A Directory With Python
+keywords:
+  - read
+slug: /posts/20en7v9wldkk--get-a-list-of-files-from-a-directory-with-python
 ---
 
 This works to get a list of files recursively: 
@@ -79,7 +81,21 @@ file_list = [f for f in listdir(source_dir) if isfile(join(source_dir, f))]
     
 This returns the list of filenames including the extension but without the directory path.
     
-    
+~~~
+
+Directories ignoring hidden files:
+
+```python
+#!/usr/bin/env python3
+
+from os import listdir
+
+source_dir = 'designs'
+dir_list = [d for d in listdir(source_dir) if d[0] != '.']
+print(dir_list)
+```
+
+
     
 ---
 

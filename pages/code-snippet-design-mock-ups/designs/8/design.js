@@ -104,7 +104,7 @@ export default function Design() {
           <span className={`pb-2 rounded-bl ${styles.line_number}`}>
             &nbsp;
           </span>
-          <span className={styles.line_content}>// 27</span>
+          <span className={styles.line_content}>{'// 27'}</span>
         </div>
       </pre>
 

@@ -13,12 +13,40 @@ slug: /posts/23kgnkctxukx--output-the-contents-of-a-local-file-on-a-nextjs-page
 
 This is how to pull the contents of a local file out to show it on the site itself:
 
+
+```jsx
+export async function getStaticProps(context) {
+  function loadFileAsString(path) {
+    try {
+      const fileText = fs.readFileSync(path, `utf8`)
+      return fileText
+    } catch (err) {
+      return `Could not load: ${path}`
+    }
+  }
+
+  return {
+    props: {
+      fileAsString: loadFileAsString(
+        // Note that the file path is from the root or the project
+        `./public/scripts/fetch-a-remote-json/content.html`
+      ),
+    },
+  }
+}
+```
+
+
+
+old version:
+
+
 ```jsx
 import fs from 'fs'
 
 export default function Page(props) {
   return (
-    <pre><code>props.fileContents}</code></pre>
+    <pre><code>{props.fileAsString}</code></pre>
   )
 }
 

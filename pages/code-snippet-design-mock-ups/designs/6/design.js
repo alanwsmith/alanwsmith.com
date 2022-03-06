@@ -108,7 +108,9 @@ export default function Design() {
           >
             10
           </span>
-          <span className={styles.line_content}>// 27</span>
+          <span className={styles.line_content}>
+            {'// 27'}
+          </span>
         </div>
         <button className={styles.copy_button}>Copy</button>
       </pre>
