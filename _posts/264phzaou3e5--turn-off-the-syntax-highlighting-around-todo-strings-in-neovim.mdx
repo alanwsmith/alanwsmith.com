@@ -1,0 +1,28 @@
+---
+blurb: I already know I've got TODOs. I don't need them to yell at me.
+categories:
+  - Neovim
+date: '2022-03-07T17:40:32'
+id: 264phzaou3e5
+status: published
+type: post
+title: Turn Off The Syntax Highlighting Around TODO Strings in Neovim
+slug: >-
+  /posts/264phzaou3e5--turn-off-the-syntax-highlighting-around-todo-strings-in-neovim
+---
+
+
+I use this in my `~/.config/nvim/init.vim` file
+
+```
+hi clear TODO
+hi link Todo Comment
+```
+
+It removes the highlight around the word `TODO` and makes it look like other comments. 
+
+The first line removes all syntax highlighting so turns the text to its base color. The second line applies the syntax highlighting of comments to TODOs so it looks the same. Since my TODOs are all in comments, this works great. (Though, there might be a case where I have TODO in a string somewhere, but that'll be fine too)
+
+This came from combining the two answers on [this page](https://vi.stackexchange.com/q/14996/15011)
+
+
