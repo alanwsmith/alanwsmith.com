@@ -26,6 +26,7 @@ import git_logo_2009_08 from '../_images/git_logo_2009_08.gif'
 import glock_20060923_114208_01 from '../_images/glock_20060923_114208_01.jpg'
 import home_and_garden_skull_2009_03 from '../_images/home_and_garden_skull_2009_03.png'
 import honda_accord_aws_20080630_snapshots_0006 from '../_images/honda_accord_aws_20080630_snapshots_0006.jpg'
+import horse_in_motion_1878 from '../_images/horse_in_motion_1878.jpg'
 import iphone_3gs_test_photo_2009_06 from '../_images/iphone_3gs_test_photo_2009_06.jpg'
 import ir_band_photo_20060805_011554_01 from '../_images/ir_band_photo_20060805_011554_01.jpg'
 import ir_band_photo_20060805_011816_01 from '../_images/ir_band_photo_20060805_011816_01.jpg'
@@ -81,6 +82,7 @@ const imgMap = {
   glock_20060923_114208_01: glock_20060923_114208_01,
   home_and_garden_skull_2009_03: home_and_garden_skull_2009_03,
   honda_accord_aws_20080630_snapshots_0006: honda_accord_aws_20080630_snapshots_0006,
+  horse_in_motion_1878: horse_in_motion_1878,
   iphone_3gs_test_photo_2009_06: iphone_3gs_test_photo_2009_06,
   ir_band_photo_20060805_011554_01: ir_band_photo_20060805_011554_01,
   ir_band_photo_20060805_011816_01: ir_band_photo_20060805_011816_01,

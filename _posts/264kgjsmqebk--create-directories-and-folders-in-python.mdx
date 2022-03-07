@@ -1,0 +1,74 @@
+---
+blurb: ''
+categories:
+  - Python
+date: '2020-11-01T13:22:00'
+id: 264kgjsmqebk
+status: scratch
+type: post
+title: Create Directories And Folders In Python
+slug: /posts/264kgjsmqebk--create-directories-and-folders-in-python
+---
+
+
+Basic mkdir:
+
+
+```python
+from pathlib import Path 
+
+dir_path = 'path/to/new/directory'
+
+Path(dir_path).mkdir(parents=True, exist_ok=True)
+```
+
+TODO: Confirms this works on windows
+
+
+
+
+Make a directory for a file path so it's ready to go. That is, you send a file path and it makes the parent directory for that file if it doesn't already exist. Possibly overkill? Should also probably move the  `file_path = Path(file_path)` into the function. And maybe keep it as a single argument function without named parameters. 
+
+
+```python
+    import os
+    from pathlib import Path
+    
+    def mkdir_p_for_file(*, file_path):
+        dir_path = os.path.dirname(file_path)
+        Path(dir_path).mkdir(parents=True, exist_ok=True)
+    
+            
+    file_path = '/Users/alans/Desktop/kill_dir/level2/test_file.txt'
+    file_path = Path(file_path)
+    
+    mkdir_p_for_file(file_path=file_path)
+```
+
+
+
+
+
+
+
+
+
+
+Make a directory for a given filepath. Includes a touch feather if you want to touch the file which doesn't make a lot of sense, but still. (Make another one without that. )
+
+```
+import os
+from pathlib import Path
+
+def mkdir_p_for_file(*, file_path, touch=False):
+    dir_path = os.path.dirname(file_path)
+    Path(dir_path).mkdir(parents=True, exist_ok=True)
+    if touch:
+        Path(file_path).touch()
+        
+file_path = '/Users/alans/Desktop/kill_dir/level2/test_file.txt'
+# Optionally make it a path
+file_path = Path(file_path)
+
+mkdir_p_for_file(file_path=file_path, touch=True)
+```
