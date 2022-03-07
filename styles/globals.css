@@ -13,19 +13,19 @@
     @apply hover:underline;
   }
   h1 {
-    @apply text-2xl;
+    @apply text-3xl;
     @apply font-bold;
     @apply pb-2;
     @apply pt-4;
   }
   h2 {
-    @apply text-xl;
+    @apply text-2xl;
     @apply font-bold;
     @apply pb-2;
     @apply pt-4;
   }
   h3 {
-    @apply text-lg;
+    @apply text-xl;
     @apply font-bold;
     @apply pb-2;
     @apply pt-4;
@@ -77,5 +77,6 @@
     @apply mb-2;
   }
   pre {
+    @apply pb-10;
   }
 }

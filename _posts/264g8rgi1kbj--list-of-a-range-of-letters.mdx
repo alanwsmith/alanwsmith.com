@@ -1,0 +1,56 @@
+---
+blurb: 'For those times when you need some letters, but not all of them'
+categories:
+  - Python
+date: '2022-03-07T12:48:08'
+id: 264g8rgi1kbj
+status: draft
+type: post
+title: List of a range of letters
+slug: /posts/264g8rgi1kbj--list-of-a-range-of-letters
+---
+
+
+
+## Lowercase Letters
+
+This code can be used when you only need a sub-set of letters (e.g "a" thru "e"):
+
+
+```python
+letters_lowercase = [chr(c) for c in range(ord('a'), ord('a') + 5 )]
+
+print(letters_lowercase)
+```
+
+Outputs:
+
+```
+['a', 'b', 'c', 'd', 'e']
+```
+
+## Uppercase Letters
+
+```python
+letters_lowercase = [chr(c) for c in range(ord('A'), ord('A') + 5 )]
+
+print(letters_lowercase)
+```
+
+Which outputs:
+
+```
+['A', 'B', 'C', 'D', 'E']
+```
+
+
+### How It Works - 
+
+
+Beyond List Comprehensions (which I'm still getting my head around), there are two keys to making this work:
+
+1. `ord()` which turns a character into a number, and
+2. `chr()` which turns a number into a character
+
+TKTKTKT
+

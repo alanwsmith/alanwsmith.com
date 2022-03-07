@@ -8007,9 +8007,10 @@
       ]
     },
     "20eoe9bo4lnu": {
-      "current_slug": "/posts/20eoe9bo4lnu--install-the-ksuid-command-line-tool-on-a-mac",
+      "current_slug": "/posts/20eoe9bo4lnu--howto-install-the-ksuid-command-line-tool-on-a-mac",
       "slugs_to_redirect": [
-        "/install-the-ksuid-command-line-tool-on-a-mac"
+        "/install-the-ksuid-command-line-tool-on-a-mac",
+        "/posts/20eoe9bo4lnu--install-the-ksuid-command-line-tool-on-a-mac"
       ]
     },
     "20eoeijmxoyl": {
@@ -9178,6 +9179,26 @@
     },
     "249ql4m6zecx": {
       "current_slug": "/posts/249ql4m6zecx--catch-all-errors-and-and-exceptions",
+      "slugs_to_redirect": []
+    },
+    "26463oc0lcny": {
+      "current_slug": "/posts/26463oc0lcny--host-multiple-domains-in-one-monorepo-on-netlify",
+      "slugs_to_redirect": []
+    },
+    "262a1cxdqc63": {
+      "current_slug": "/posts/262a1cxdqc63--hoist-metadata-into-a-layoutmain-wrapper",
+      "slugs_to_redirect": []
+    },
+    "264g8rgi1kbj": {
+      "current_slug": "/posts/264g8rgi1kbj--list-of-a-range-of-letters",
+      "slugs_to_redirect": []
+    },
+    "2648u0uramjp": {
+      "current_slug": "/posts/2648u0uramjp--automatically-generate-a-list-with-the-english-alphabet-in-python",
+      "slugs_to_redirect": []
+    },
+    "262eeixlikyd": {
+      "current_slug": "/posts/262eeixlikyd--instead-of-this-play-with-saying-that",
       "slugs_to_redirect": []
     }
   }

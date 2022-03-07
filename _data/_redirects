@@ -2604,8 +2604,9 @@
 /2021-ksuid-site-url-structure-setup-and-frontmatter-normalization    /posts/20eodvcmnrbw--2021-ksuid-site-url-structure-setup-and-frontmatter-normalization    301
 /posts/20eoe5ei4a5t    /posts/20eoe5ei4a5t--the-various-statuses-i-use-for-posts-on-my-site--digital-garden-style    301
 /the-various-statuses-i-use-for-posts-on-my-site-digital-garden-style    /posts/20eoe5ei4a5t--the-various-statuses-i-use-for-posts-on-my-site--digital-garden-style    301
-/posts/20eoe9bo4lnu    /posts/20eoe9bo4lnu--install-the-ksuid-command-line-tool-on-a-mac    301
-/install-the-ksuid-command-line-tool-on-a-mac    /posts/20eoe9bo4lnu--install-the-ksuid-command-line-tool-on-a-mac    301
+/posts/20eoe9bo4lnu    /posts/20eoe9bo4lnu--howto-install-the-ksuid-command-line-tool-on-a-mac    301
+/install-the-ksuid-command-line-tool-on-a-mac    /posts/20eoe9bo4lnu--howto-install-the-ksuid-command-line-tool-on-a-mac    301
+/posts/20eoe9bo4lnu--install-the-ksuid-command-line-tool-on-a-mac    /posts/20eoe9bo4lnu--howto-install-the-ksuid-command-line-tool-on-a-mac    301
 /posts/20eoeijmxoyl    /posts/20eoeijmxoyl--use-pyenv-for-virtual-environments    301
 /use-pyenv-for-virtual-environments    /posts/20eoeijmxoyl--use-pyenv-for-virtual-environments    301
 /posts/20eoeslnhgah    /posts/20eoeslnhgah--setting-up-nextjs-auth    301
@@ -2995,3 +2996,8 @@
 /posts/24460d1mr4sk    /posts/24460d1mr4sk--disable-or-toggle-text-search-result-highlights-in-vim-and-neovim    301
 /posts/24f3weeolaup    /posts/24f3weeolaup--run-an-external-command-from-a-python-script    301
 /posts/249ql4m6zecx    /posts/249ql4m6zecx--catch-all-errors-and-and-exceptions    301
+/posts/26463oc0lcny    /posts/26463oc0lcny--host-multiple-domains-in-one-monorepo-on-netlify    301
+/posts/262a1cxdqc63    /posts/262a1cxdqc63--hoist-metadata-into-a-layoutmain-wrapper    301
+/posts/264g8rgi1kbj    /posts/264g8rgi1kbj--list-of-a-range-of-letters    301
+/posts/2648u0uramjp    /posts/2648u0uramjp--automatically-generate-a-list-with-the-english-alphabet-in-python    301
+/posts/262eeixlikyd    /posts/262eeixlikyd--instead-of-this-play-with-saying-that    301

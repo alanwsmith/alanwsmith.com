@@ -1,0 +1,45 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2022-03-07T11:25:14'
+id: 26463oc0lcny
+status: scratch
+type: post
+title: Host Multiple Domains In One Monorepo On Netlify
+slug: /posts/26463oc0lcny--host-multiple-domains-in-one-monorepo-on-netlify
+---
+
+## TL;DR
+
+Go through the standard process but use the GUI to set the "Basic build setting -> Base directory" to point to the individual site roots. (You can also use the CLI, but I don't know how to do that yet)
+
+
+
+
+I'm building an example set of domains for a blog post. One domain for each letter of the alphabet. While I could make individual repos for each domain that would make a noisy mess in my github account. Instead, I'm putting the source for every domain in a sub-directory of a single repo and deploying from there. 
+
+For this example, I'm using a single vanilla HTML page for each site. The directory tree looks like this:
+
+```bash
+.
+├── letter_sites
+│   ├── a
+│   │   └── index.html
+│   ├── b
+│   │   └── index.html
+│   ├── c
+│   │   └── index.html
+│   ├── d
+│   │   └── index.html
+│   └── e
+│       └── index.html
+└── main_site
+    └── index.html
+```
+
+To deploy the main site, I setup a New Site in Netlify, pointed it at the repo and then manually set "Basic build setting -> Base directory" to "main_site". Doing that auto populated the "Publish directory" with "main_site/"
+
+when the publish was done, I set the domain, the enforced https. 
+
+
