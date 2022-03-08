@@ -6,8 +6,8 @@ import React, { useEffect } from 'react'
 import 'prismjs/themes/prism-okaidia.css'
 import 'prismjs/components/prism-jsx.js'
 import 'prismjs/components/prism-bash.js'
-import 'prismjs/plugins/line-numbers/prism-line-numbers.js'
-import 'prismjs/plugins/line-numbers/prism-line-numbers.css'
+// import 'prismjs/plugins/line-numbers/prism-line-numbers.js'
+// import 'prismjs/plugins/line-numbers/prism-line-numbers.css'
 
 // TODO: Switch over to using components/MetaData
 
