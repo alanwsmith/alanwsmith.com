@@ -9212,6 +9212,16 @@
     "264phzaou3e5": {
       "current_slug": "/posts/264phzaou3e5--turn-off-the-syntax-highlighting-around-todo-strings-in-neovim",
       "slugs_to_redirect": []
+    },
+    "264tqbslmcih": {
+      "current_slug": "/posts/264tqbslmcih--join-strings-to-make-a-path-in-python",
+      "slugs_to_redirect": []
+    },
+    "264vshbhorsi": {
+      "current_slug": "/posts/264vshbhorsi--use-pythons-builtin-template-strings-to-generate-output",
+      "slugs_to_redirect": [
+        "/posts/264vshbhorsi--use-pythons-builtin-string-template-to-create-output"
+      ]
     }
   }
 }
