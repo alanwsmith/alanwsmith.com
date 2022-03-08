@@ -17,9 +17,9 @@ Python ships with built-in functionality for generating output from templates th
 ```python
 from string import Template
 
-template = Template('Name: $name - Color: $color')
+skeleton = Template('Name: $name - Color: $color')
 
-output = template.substitute(
+output = skeleton.substitute(
             name="Karl", 
             color="Green"
         )
@@ -49,8 +49,8 @@ Then this:
 from string import Template
 
 with open('template.txt') as _tmpl:
-	strcuture = Template(_tmpl.read())
-	output = strcuture.substitute(
+	skeleton = Template(_tmpl.read())
+	output = skeleton.substitute(
 	   name="Karl",
 	   color="Green"
     )
