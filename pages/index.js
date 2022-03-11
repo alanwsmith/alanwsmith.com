@@ -7,6 +7,8 @@ import LayoutMain from '../components/LayoutMain'
 import capitalize from 'capitalize'
 
 export default function BlogList({ posts }) {
+  posts.sort((a, b) => (a.title > b.title ? 1 : -1))
+
   return (
     <>
       <Head>
@@ -31,9 +33,10 @@ export default function BlogList({ posts }) {
             <p className="pb-4 text-blue-200 max-w-prose">
               Hey, folks. I&apos;m Alan. Welcome to my site. I&apos;m in the
               process of moving it. So, a bunch of stuff is broken. That&apos;s
-              all part of the idea of building in public. I&apos;ll make
-              progress over time. For now, here&apos; an alphabetical list of
-              posts on the site.
+              all part of the process of working and building in public.
+              I&apos;ll make progress over time. For now, here&apos;s an
+              alphabetical list of posts on the site. Click around and see if
+              you find something you like.
             </p>
             <div className="max-w-prose pt-4 border-t border-gray-400 text-blue-200">
               <ul>

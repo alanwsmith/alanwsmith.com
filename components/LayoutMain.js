@@ -77,10 +77,10 @@ export default function LayoutMain(props) {
     m-0 mx-auto 
     text-blue-200 container 
     pt-2 
-     px-6 max-w-prose
+     px-6 max-w-screen-md
     "
         >
-          <div className="border-b border-gray-700 max-w-prose">
+          <div className="border-b border-gray-700 max-w-screen-md">
             <div className="pt-2 pb-1 text-gray-500">
               <Link href="/">
                 <a className="text-gray-500">Home</a>
@@ -99,7 +99,7 @@ export default function LayoutMain(props) {
             </div>
           </div>
         </nav>
-        <main className="pb-16 mx-auto container pt-3 px-6 max-w-prose">
+        <main className="pb-16 mx-auto container pt-3 px-6 max-w-screen-md">
           {props.content}
         </main>
       </div>

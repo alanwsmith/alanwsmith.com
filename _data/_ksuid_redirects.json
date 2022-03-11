@@ -9238,6 +9238,54 @@
     "266k61lafiz9": {
       "current_slug": "/posts/266k61lafiz9--the-circular-saw-and-the-car-door",
       "slugs_to_redirect": []
+    },
+    "26aiqg92lugn": {
+      "current_slug": "/posts/26aiqg92lugn--postgres-example-data--us-state-names-and-abbreviations",
+      "slugs_to_redirect": []
+    },
+    "26agehx32abs": {
+      "current_slug": "/posts/26agehx32abs--python-example-data--us-state-abbreviations-as-a-list",
+      "slugs_to_redirect": []
+    },
+    "26fcjvw6d8xg": {
+      "current_slug": "/posts/26fcjvw6d8xg--idea-code-dojo--a-desktop-tutorial-app-for-learning-to-code",
+      "slugs_to_redirect": []
+    },
+    "26aysoojal5v": {
+      "current_slug": "/posts/26aysoojal5v--install-tailwindelements",
+      "slugs_to_redirect": []
+    },
+    "267u9kwznawi": {
+      "current_slug": "/posts/267u9kwznawi--codyhouse-install",
+      "slugs_to_redirect": []
+    },
+    "26ahb1guunpv": {
+      "current_slug": "/posts/26ahb1guunpv--use-on-conflict-do-nothing-in-postgres-like-insert-or-ignore-in-other-databases",
+      "slugs_to_redirect": []
+    },
+    "26ak09t2esgq": {
+      "current_slug": "/posts/26ak09t2esgq--exec_bind_message-error",
+      "slugs_to_redirect": []
+    },
+    "26dqnwfvyb3w": {
+      "current_slug": "/posts/26dqnwfvyb3w--list-visible-and-hidden-subdirectories-nonrecursively-in-python",
+      "slugs_to_redirect": []
+    },
+    "26drxzxyev0t": {
+      "current_slug": "/posts/26drxzxyev0t--list-subdirectories-excluding-hidden-ones-nonrecursively-in-python",
+      "slugs_to_redirect": []
+    },
+    "26eak6imcrpj": {
+      "current_slug": "/posts/26eak6imcrpj--convert-a-dictionary-into-a-sorted-list-in-python",
+      "slugs_to_redirect": []
+    },
+    "267nbmvsk8zu": {
+      "current_slug": "/posts/267nbmvsk8zu--url-structure-2022",
+      "slugs_to_redirect": []
+    },
+    "26abdgvjg84c": {
+      "current_slug": "/posts/26abdgvjg84c--connect-directly-to-a-supabase-database-from-dbeaver-or-other-database-clients",
+      "slugs_to_redirect": []
     }
   }
 }

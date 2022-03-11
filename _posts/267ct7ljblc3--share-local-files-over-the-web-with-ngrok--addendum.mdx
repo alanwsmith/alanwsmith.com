@@ -84,5 +84,14 @@ Another approach I'm considering is keeping one directory around with an index.h
 
 - Figure out if there's any issue with not having signed up, or what signing up gets you. 
 
+- I used to use `python3 -m http.server` and then connect ngrok to it, but this way means you don't have to use the python server. 
+
+- ngrok will also launch a local admin dashboard. You can see it at: http://127.0.0.1:4040/
+
+- The local dashboard data can be reached via api as well at: http://127.0.0.1:4040/api - documentation on that is here: https://ngrok.com/docs#client-api
+
+- Add in `--oauth=google` + `--oauth-allow-email=username@example.com` authentication example.
+
+
 
 

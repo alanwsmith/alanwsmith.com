@@ -1,0 +1,26 @@
+---
+blurb: ''
+categories:
+  - SQL
+  - Supabase
+date: '2022-03-09T15:09:58'
+id: 26abdgvjg84c
+status: scratch
+type: post
+title: Connect Directly To A Supabase Database From DBeaver Or Other Database Clients
+slug: >-
+  /posts/26abdgvjg84c--connect-directly-to-a-supabase-database-from-dbeaver-or-other-database-clients
+---
+
+It wasn't super obvious to me how to connect directly to a Supabase database from a client like DBeaver. This is how.
+
+After you make a database, go to Settings in the nav (the little gear icon in the lower left at the time of this writing)
+
+Under Project Settings, choose Database
+
+That will reveal a Connection Info section. That's the data to use for connecting with DBeaver and other postgres SQL clients (e.g. from the psql postgres command line tool)
+
+To use SSL, download the certificate from the "SSL Connection" section on the sage page. 
+
+Place that file somewhere convienent and then in DBeaver go to the "SSL" tab in the connection configuration (which is what you get when you first create a connection) and check the `Use SSL` to turn it on and then put the path to the certificate file in the `CA Certificate` field. 
+

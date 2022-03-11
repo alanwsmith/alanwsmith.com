@@ -1,0 +1,61 @@
+---
+blurb: Let's take a run at building a new way to teach folks how to code
+categories:
+  - Programming
+  - Ideas
+  - Education
+date: '2022-03-11T13:21:53'
+id: 26fcjvw6d8xg
+status: draft
+type: post
+title: 'Idea: Code Dojo - A Desktop Tutorial App For Learning To Code'
+slug: >-
+  /posts/26fcjvw6d8xg--idea-code-dojo--a-desktop-tutorial-app-for-learning-to-code
+---
+
+_Note: This app doesn't exist yet. It's a vision made in style of an AWS [future press release](https://the-amazon-way.com/future-press-release/) which is written as if the project is being announced on completion._
+
+## Code Dojo 
+
+Code Dojo is a new application aimed at providing an improved tutorial experience to teach programming languages, techniques, and frameworks. The core focus is to make learning as easy as possible for beginners. Each aspect of the application is designed to reduce mental friction so more energy can be used for learning the tools, techniques, and concepts. 
+
+## Features
+
+- A open-source desktop application built in $SOME_FRAMEWORK
+- No setup is required other than a single app store download
+- Designed to leverage the power of local development and tooling while providing the functionality of coding on a website that provides interactivity
+- Modular system designed to allow any number of tutorials to be loaded
+- The application provides a basic code editor designed to provide core functionality without overwhelming new learners 
+- Tutorials are step by step guides
+- Tutorials are GitHub repos
+- Anyone can create tutorials
+- To act as a tutorial a repo only need to confirm to a basic structure of chapters, pages, and source code associated with each page for verification
+- At each step in the process the learner's source code is checked against the target source code and any differences are highlighted
+- Checking source code extends to checking to make sure all the files are in the right place and providing notes when they aren't
+- Tutorials can have additional functionality built in as well (e.g. load a web framework in an environment)
+- Tutorials do all the setup necessary for the working environment (e.g. installing frameworks, spinning up servers, etc...)
+- Root project directories are defined for each tutorial and the app saves all files in them so there is less to worry about in terms of making sure files are in the right place
+- Error messages are matched against a known set of existing errors and explanations of how to read the message and what went wrong are provided 
+- A core directory of tutorials is maintained for automatic listing and immediate selection for downloading in the app
+- A fundamental "Getting Starting Coding" tutorial is provided for the initial experience of anyone that needs it before moving on to other more specific tutorials
+- Additional tutorial can be downloaded via their GitHub URL
+- The application contains different components that can be used. For example, a command line console module that would be on in some tutorials but not in others
+- The application can also run test suites against the code in the code window (or across saved files)
+- Tutorials can contain FAQs for each page that help with supplemental information and answers to possible ways things go wrong
+- Tutorials maintain their place across app launches
+- Tutorials maintain their place when switching between tutorials 
+- No network connection will be required for a tutorial after it has been downloaded (Specifically, videos will be download by default (based of available drive space) to allow for offline work)
+
+
+## Notes
+
+- Yes. Something like this probably already exists. Would love to see examples if you have them.
+- There's no form input to make quizzes. It's possible to make sections of tutorials where folks write source code to answer questions, but explicitly asking questions and getting answers is not what this is about.  
+- For web page tutorials, it's possible to interact with a browser built into the app, but the general guideline is to use the system's browser so folks see they are making web pages and that they control the entire thing
+- Possible future enhancement is an interface to star/favorite tutorials if they have a GitHub account and then use those star counts as help identifying the tutorials folks find the most beneficial. (Noting that the likelihood of the tutorials in the earlier parts of the learning journey will be less likely to have stars because it's less likely that folks will have GitHub accounts at that point)
+- There is explicitly no version control built into the app. A tutorial could build that in, but it's not part of the core framework. The idea here is to focus on learning one thing and for beginning learners adding version control to the mix burns off some of the mental energy available for learning. 
+
+
+
+
+

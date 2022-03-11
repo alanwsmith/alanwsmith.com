@@ -1,0 +1,35 @@
+---
+blurb: ''
+categories:
+  - Python
+date: '2022-03-11T01:01:51'
+id: 26eak6imcrpj
+status: scratch
+type: post
+title: Convert A Dictionary Into A Sorted List In Python
+slug: /posts/26eak6imcrpj--convert-a-dictionary-into-a-sorted-list-in-python
+---
+
+
+
+genres = {
+	"Junk": [1],
+	"Chill": [2],
+	"Dance": [3],
+	"Jass": [4], 
+	"A": [7],
+	"B": [1],
+	'a': [3],
+	'c': [2], 
+	"Adf": [],
+	"Aeee": [],
+	"aeeed": [],
+	"Aerer": []
+}
+
+items = [{"id": f, "data": genres[f]} for f in sorted(genres.keys(), key=lambda x: x.lower())]
+
+print(items)
+
+
+
