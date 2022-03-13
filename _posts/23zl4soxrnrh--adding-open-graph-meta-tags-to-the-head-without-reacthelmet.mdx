@@ -12,6 +12,10 @@ slug: >-
   /posts/23zl4soxrnrh--adding-open-graph-meta-tags-to-the-head-without-reacthelmet
 ---
 
+NOTE: This info may be out of date. Run a few tests before putting it in production. I tried  [this appraoch](/posts/262a1cxdqc63), but that has a problem with the fact that the page gets delivered with default metadata then updated via script. The result being that the customized OG social card stuff doesn't show up.
+
+
+
 Looking to add metatags to my next.js site, everything I found pointed to react-helmet, but that was throwing the error TKTKTKTKT. There are some work arounds, but I figured there was an easier way. 
 
 I ended up using the default `import Head from 'next/head'` and `<Head></Head>`
