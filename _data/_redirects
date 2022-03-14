@@ -2804,7 +2804,8 @@
 /posts/20l65wag5tsj    /posts/20l65wag5tsj--get-command-line-arguments-in-python    301
 /posts/20envn9vbs9r    /posts/20envn9vbs9r--iso-datetimes-with-timezones-in-python    301
 /posts/20enk2wyg45m    /posts/20enk2wyg45m--snippet-get-web-page-in-python    301
-/posts/20engvd2vwgs    /posts/20engvd2vwgs--store-your-credentials-in-macs-keychain-access-with-python    301
+/posts/20engvd2vwgs    /posts/20engvd2vwgs--store-password-credentials-with-python-and-gpg    301
+/posts/20engvd2vwgs--store-your-credentials-in-macs-keychain-access-with-python    /posts/20engvd2vwgs--store-password-credentials-with-python-and-gpg    301
 /posts/21htjsja3xjr    /posts/21htjsja3xjr--2021--nextjs-build-notes    301
 /posts/20ei8oasgwrx    /posts/20ei8oasgwrx--2021-nextjs-notes    301
 /posts/21cvhxnmwyyw    /posts/21cvhxnmwyyw--build-errors    301
@@ -3026,3 +3027,5 @@
 /posts/26kqaz3fqw8t    /posts/26kqaz3fqw8t--create-a-new-react-app    301
 /posts/26itqrfinsyv    /posts/26itqrfinsyv--start-an-app-on-a-different-port    301
 /posts/26gi38s4wg7b    /posts/26gi38s4wg7b--start-a-local-server    301
+/posts/26mqi8ovvtka    /posts/26mqi8ovvtka--google-fonts-that-are-available-for-use-in-cloudinary-transformations    301
+/posts/26mqi8ovvtka--list-of-google-fonts-that-are-available-for-use-in-cloudinary-transformations    /posts/26mqi8ovvtka--google-fonts-that-are-available-for-use-in-cloudinary-transformations    301
