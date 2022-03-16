@@ -17,6 +17,8 @@ import capline from '../_images/capline.png'
 import cfl_bulb_2008_05 from '../_images/cfl_bulb_2008_05.jpg'
 import command_line_ls_2009_04 from '../_images/command_line_ls_2009_04.png'
 import dot_matrix_sky_writing from '../_images/dot_matrix_sky_writing.jpg'
+import drawing_on_the_right_side_of_the_brain_final_portrait from '../_images/drawing_on_the_right_side_of_the_brain_final_portrait.jpg'
+import drawing_on_the_right_side_of_the_brain_initial_portrait from '../_images/drawing_on_the_right_side_of_the_brain_initial_portrait.jpg'
 import ecto_logo_2009_03 from '../_images/ecto_logo_2009_03.png'
 import eneloop_2008_05 from '../_images/eneloop_2008_05.jpg'
 import euthanasia_20080629_snapshots_0003 from '../_images/euthanasia_20080629_snapshots_0003.jpg'
@@ -84,6 +86,8 @@ const imgMap = {
   cfl_bulb_2008_05: cfl_bulb_2008_05,
   command_line_ls_2009_04: command_line_ls_2009_04,
   dot_matrix_sky_writing: dot_matrix_sky_writing,
+  drawing_on_the_right_side_of_the_brain_final_portrait: drawing_on_the_right_side_of_the_brain_final_portrait,
+  drawing_on_the_right_side_of_the_brain_initial_portrait: drawing_on_the_right_side_of_the_brain_initial_portrait,
   ecto_logo_2009_03: ecto_logo_2009_03,
   eneloop_2008_05: eneloop_2008_05,
   euthanasia_20080629_snapshots_0003: euthanasia_20080629_snapshots_0003,
