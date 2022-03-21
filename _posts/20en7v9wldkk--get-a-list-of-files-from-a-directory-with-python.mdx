@@ -11,6 +11,13 @@ keywords:
 slug: /posts/20en7v9wldkk--get-a-list-of-files-from-a-directory-with-python
 ---
 
+
+
+
+
+
+
+
 This works to get a list of files recursively: 
 
 
@@ -80,6 +87,10 @@ file_list = [f for f in listdir(source_dir) if isfile(join(source_dir, f))]
 ```
     
 This returns the list of filenames including the extension but without the directory path.
+    
+This does include files that start with a `.`
+    
+    
     
 ~~~
 

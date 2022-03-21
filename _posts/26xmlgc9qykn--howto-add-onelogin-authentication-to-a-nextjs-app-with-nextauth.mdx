@@ -1,0 +1,254 @@
+---
+blurb: >-
+  Details on how to make the connection to OneLogin happen from Next.js with
+  NextAuth
+categories:
+  - Next.js
+date: '2022-03-17T21:03:39'
+id: 26xmlgc9qykn
+status: draft
+type: post
+title: How-To Add OneLogin Authentication To A Next.js App With NextAuth
+slug: >-
+  /posts/26xmlgc9qykn--howto-add-onelogin-authentication-to-a-nextjs-app-with-nextauth
+---
+
+I've got a Next.js app that I'm using OneLogin for the authentication on. The docs on OneLogin site talk about how to setup with React, but not Next.js specifically. Took me a bit to figure out the steps so I figured I'd write them up. 
+
+You'll want to get your OneLogin account stuff setup before going through this so your next.js app has something to talk to. Once you've got that setup, this is the process starting from scratch on a localhost environment (your milage may vary on windows) 
+
+
+#### Step 1 
+
+Create an app (e.g. named 'onelogin-app') with:
+
+```
+npx create-next-app@latest onelogin-app
+```
+
+
+#### Step 2
+
+Move into the newly created `onelogin-app` app directory and install NextAuth with:
+
+```
+npm install next-auth
+```
+
+
+#### Step 3
+
+Create a `.env.local` file and fill in these variables:
+
+```txt
+ONELOGIN_CLIENT_ID=YOUR_CLIENT_ID
+ONELOGIN_CLIENT_SECRET=YOUR_CLIENT_SECRET
+ONELOGIN_ISSUER=https://YOUR_SUBDOMAIN.onelogin.com
+NEXTAUTH_URL=http://localhost:3000/
+NEXTAUTH_SECRET=SOME_VERY_LONG_RANDOM_SECRET
+```
+
+
+#### Step 4
+
+Make a directory named `auth` under `pages/api` so you end up with:
+
+```
+pages/api/auth
+```
+
+
+#### Step 5
+
+Create a file named `[...nextauth].js` in the `pages/api/auth` you just created. So, the full path is:
+
+```
+pages/api/auth/[...nextauth].js
+```
+
+Paste this into the file:
+
+```jsx
+import NextAuth from 'next-auth'
+import OneLoginProvider from 'next-auth/providers/onelogin'
+
+export default NextAuth({
+  providers: [
+    OneLoginProvider({
+      clientId: process.env.ONELOGIN_CLIENT_ID,
+      clientSecret: process.env.ONELOGIN_CLIENT_SECRET,
+      issuer: process.env.ONELOGIN_ISSUER,
+    }),
+  ],
+})
+```
+
+#### Step 6
+
+Add the next-auth stuff to the _app.js. Open:
+
+```txt
+pages/_app.js
+``` 
+
+delete the contents and replace them with this:
+
+```jsx
+import '../styles/globals.css'
+import { SessionProvider } from 'next-auth/react'
+
+export default function App({
+  Component,
+  pageProps: { session, ...pageProps },
+}) {
+  return (
+    <SessionProvider session={session}>
+      <Component {...pageProps} />
+    </SessionProvider>
+  )
+}
+```
+
+#### Step 7
+
+This step shows how to check if the user is signed in on the front end. The check is done via the `session` variable. It shows if the user is singed in by showing their email address and a sign-out button if they are. If there is no user signed in, a sign-in button is displayed instead. 
+
+Open the file:
+
+```txt
+page/index.js
+```
+
+Delete the contents and replace them with this:
+
+```jsx
+import { useSession, signIn, signOut } from "next-auth/react"
+
+export default function Component() {
+  const { data: session } = useSession()
+  if (session) {
+    return (
+      <>
+        Signed in as {session.user.email} <br />
+        <button onClick={() => signOut()}>Sign out</button>
+      </>
+    )
+  }
+  return (
+    <>
+      Not signed in <br />
+      <button onClick={() => signIn()}>Sign in</button>
+    </>
+  )
+}
+```
+
+
+#### Step 8 
+
+This step adds the authentication check to an api endpoint. 
+
+Open the file:
+
+```txt
+pages/api/hello.js
+```
+
+Delete its contents and replace this with:
+
+
+```jsx
+import { getSession } from 'next-auth/react'
+
+export default async (req, res) => {
+  const session = await getSession({ req })
+  if (session) {
+    res.status(200).json({ status: `signed in as: ${session.user.email}` })
+  } else {
+    res.status(401).json({ status: `not signed in` })
+  }
+}
+```
+
+
+#### Testing
+
+That's it for the setup. You can test everything is working with:
+
+```bash
+npm run dev
+```
+
+#### Next Steps
+
+
+[this needs editing...]
+
+
+By default, the only stuff available in the session on the front end are:
+
+```
+{
+  user: {
+    name: 'some name',
+    email: 'name@example.com',
+    image: 'image_uri'
+  },
+  expires: '2022-04-17T03:32:54.523Z'
+}
+```
+
+That really only tells you if someone is logged in or not and doesn't provide access to information from the profile that can be used to make display changes based off group access. (Note, this is only about display stuff and should not be considered secure for locking down access to things.)
+
+To pass profile data based on the results of the sign in you have to pass from signIn -> jwt -> session. 
+
+
+TODO: write this up:
+
+import NextAuth from 'next-auth'
+import OneLoginProvider from 'next-auth/providers/onelogin'
+
+export default NextAuth({
+  providers: [
+    OneLoginProvider({
+      clientId: process.env.ONELOGIN_CLIENT_ID,
+      clientSecret: process.env.ONELOGIN_CLIENT_SECRET,
+      issuer: process.env.ONELOGIN_ISSUER,
+    }),
+  ],
+
+  callbacks: {
+    async signIn({ user, account, profile, email, credentials }) {
+      user.custom_data = 'HEREREHERE'
+      return true
+    },
+
+    async session({ session, user, token }) {
+      session.custom_data = token.custom_data
+      return session
+    },
+
+    async jwt({ token, user, account, profile, isNewUser }) {
+      if (user !== undefined) {
+        token.custom_data = user.custom_data
+      }
+      return token
+    },
+  },
+})
+
+
+Also point out that you can use profile from jwt without having to start at signIn
+
+
+TODO Check API stuff for what's there for dealing with request like that as well. 
+
+
+
+
+
+
+
+
+
+

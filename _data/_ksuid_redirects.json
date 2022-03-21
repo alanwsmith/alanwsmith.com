@@ -7629,9 +7629,10 @@
       ]
     },
     "20eok6p2exey": {
-      "current_slug": "/posts/20eok6p2exey--serve-a-local-directory-as-a-web-site-with-npx-browsersync",
+      "current_slug": "/posts/20eok6p2exey--serve-a-local-directory-as-a-web-site-with-autoreload-via-browsersync",
       "slugs_to_redirect": [
-        "/serve-a-local-directory-as-a-web-site-with-npx-browser-sync"
+        "/serve-a-local-directory-as-a-web-site-with-npx-browser-sync",
+        "/posts/20eok6p2exey--serve-a-local-directory-as-a-web-site-with-npx-browsersync"
       ]
     },
     "20eoki1meofb": {
@@ -9318,6 +9319,50 @@
     },
     "26p8miodk9cd": {
       "current_slug": "/posts/26p8miodk9cd--copy-a-text-input-field-to-the-clipboard",
+      "slugs_to_redirect": []
+    },
+    "26d2ywgvzg5v": {
+      "current_slug": "/posts/26d2ywgvzg5v--letters-of-the-alphabet",
+      "slugs_to_redirect": []
+    },
+    "26cwkg1qsedm": {
+      "current_slug": "/posts/26cwkg1qsedm--javascript-example-data--us-state-names-and-abbreviations",
+      "slugs_to_redirect": []
+    },
+    "26iq6c7ybn3r": {
+      "current_slug": "/posts/26iq6c7ybn3r--a-new-way-to-think-about-getting-a-list-of-files-in-a-directory-in-javascript",
+      "slugs_to_redirect": []
+    },
+    "26gowxumowhq": {
+      "current_slug": "/posts/26gowxumowhq--react-infinitescroll-example",
+      "slugs_to_redirect": []
+    },
+    "26ht5lg9yvh8": {
+      "current_slug": "/posts/26ht5lg9yvh8--responsive-images-without-layout-shift",
+      "slugs_to_redirect": []
+    },
+    "26xmlgc9qykn": {
+      "current_slug": "/posts/26xmlgc9qykn--howto-add-onelogin-authentication-to-a-nextjs-app-with-nextauth",
+      "slugs_to_redirect": []
+    },
+    "26f5gzpooec9": {
+      "current_slug": "/posts/26f5gzpooec9--use-a-ksuid",
+      "slugs_to_redirect": []
+    },
+    "26cr2esjxqeq": {
+      "current_slug": "/posts/26cr2esjxqeq--lazy-initializer-for-usestate",
+      "slugs_to_redirect": []
+    },
+    "26uecfydfcas": {
+      "current_slug": "/posts/26uecfydfcas--initial-notes",
+      "slugs_to_redirect": []
+    },
+    "26u5xmsieeim": {
+      "current_slug": "/posts/26u5xmsieeim--setup-and-deploy-a-sveltekit-app-on-netlify",
+      "slugs_to_redirect": []
+    },
+    "26zfxxpcizpx": {
+      "current_slug": "/posts/26zfxxpcizpx--get-the-list-of-open-app-windows-in-yabai",
       "slugs_to_redirect": []
     }
   }

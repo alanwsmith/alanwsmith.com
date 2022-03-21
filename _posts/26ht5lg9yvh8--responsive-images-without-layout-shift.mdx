@@ -1,0 +1,24 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2022-03-21T10:57:13'
+id: 26ht5lg9yvh8
+status: scratch
+type: post
+title: Responsive images without layout shift
+slug: /posts/26ht5lg9yvh8--responsive-images-without-layout-shift
+---
+
+- Could call image with explicit width and height, but that wouldn't be responsive
+- Could call image directly in a div w where image is set to be 100%, but that would call on that's not optimized. 
+- Could call image inside a div where image has srcset and sizes but you'd have to come up with the calculation for the sizes for each image and that's based of pixels or viewport width with gets tricky fast
+- 
+
+---
+
+
+- Goal is to be able to just call an image and not have to think about it
+- Solution: use div with explicit or implicit width and aspect ratio to set the layout then load the image in it with a srcset and the sizes set by pulling the width from the computed size of the div
+
+

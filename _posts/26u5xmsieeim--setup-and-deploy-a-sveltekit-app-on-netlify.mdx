@@ -1,0 +1,73 @@
+---
+blurb: ''
+categories:
+  - Svelte
+date: '2022-03-16T17:16:02'
+id: 26u5xmsieeim
+status: draft
+type: post
+title: Setup And Deploy A SvelteKit App On Netlify
+slug: /posts/26u5xmsieeim--setup-and-deploy-a-sveltekit-app-on-netlify
+---
+
+
+This is for making a sveltekit app that's one directory off the root. I like doing that so I can put docs and assets in the repo without out them being in the svelte dir. After cloning down a repo and moving into it I do this:
+
+
+First, I make this netlify.toml file in the root
+
+
+```toml
+[build]
+  base = "/site/"
+  publish = "build"
+  command = "npm run build"
+```
+
+
+Then I make a `site` sub-directory and initialize svelte in it:
+
+
+```bash
+mkdir site
+cd site
+npm init svelte@next .
+```
+
+(If you've never run the command before, you'll probably be asked if you want to install `create-...???` something which you'll need to do to continue.)
+
+
+
+That brings up the install wizard: 
+
+Choose: "Skeleton project"
+Set TypeScript, ESLint, Prettier, Playwright as you see fit
+
+
+Then, I run:
+
+```bash
+npm install -D @sveltejs/adapter-netlify@next
+```
+
+Config directions [are here](https://docs.netlify.com/configure-builds/common-configurations/sveltekit/). It's a little unclear, but it looks like the `import adapter from '@sveltejs/adapter-auto';` that comes in the file is replaced by: `import adapter from '@sveltejs/adapter-netlify';`. The file format that comes from svelte is a little different than the netlify docs. Doesn't look like that matters, but I'm using this for the full contents of the file:
+
+```javascript
+import adapter from '@sveltejs/adapter-netlify';
+
+/** @type {import('@sveltejs/kit').Config} */
+const config = {
+	kit: {
+		adapter: adapter()
+	}
+};
+
+export default config;
+```
+
+
+NOTE:
+
+- The Netlify docs say to add a `target: '#svelte'` in, but when trying to run the app, it says: `config.kit.target is no longer required, and should be removed` so I removed it.
+
+

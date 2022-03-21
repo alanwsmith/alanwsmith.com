@@ -1,0 +1,23 @@
+---
+blurb: Making it easier to see how to manipulate app windows with yabai
+categories:
+  - Command Line
+date: '2022-03-18T16:44:38'
+id: 26zfxxpcizpx
+status: published
+type: post
+title: Get The List Of Open App Windows In Yabai
+slug: /posts/26zfxxpcizpx--get-the-list-of-open-app-windows-in-yabai
+---
+
+If you have `jq` installed do this:
+
+```bash
+yabai -m query --windows | jq '.[] | { app: .app, title: .title }'
+```
+
+Otherwise, just run the yabai command itself:
+
+```bash
+yabai -m query --windows
+```

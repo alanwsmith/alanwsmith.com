@@ -2478,8 +2478,9 @@
 /copy-and-paste-between-neovim-vim-and-other-apps-on-mac-ox    /posts/20eojqbbmsua--copy-and-paste-between-neovimvim-and-other-apps-on-mac-os    301
 /posts/20eojxzlyaeb    /posts/20eojxzlyaeb--morning-kickoff--journal-for-august-9-2021    301
 /morning-kickoff-journal-for-august-9-2021    /posts/20eojxzlyaeb--morning-kickoff--journal-for-august-9-2021    301
-/posts/20eok6p2exey    /posts/20eok6p2exey--serve-a-local-directory-as-a-web-site-with-npx-browsersync    301
-/serve-a-local-directory-as-a-web-site-with-npx-browser-sync    /posts/20eok6p2exey--serve-a-local-directory-as-a-web-site-with-npx-browsersync    301
+/posts/20eok6p2exey    /posts/20eok6p2exey--serve-a-local-directory-as-a-web-site-with-autoreload-via-browsersync    301
+/serve-a-local-directory-as-a-web-site-with-npx-browser-sync    /posts/20eok6p2exey--serve-a-local-directory-as-a-web-site-with-autoreload-via-browsersync    301
+/posts/20eok6p2exey--serve-a-local-directory-as-a-web-site-with-npx-browsersync    /posts/20eok6p2exey--serve-a-local-directory-as-a-web-site-with-autoreload-via-browsersync    301
 /posts/20eoki1meofb    /posts/20eoki1meofb--add-a-css-class-to-a-react-element    301
 /add-a-css-class-to-a-react-element    /posts/20eoki1meofb--add-a-css-class-to-a-react-element    301
 /posts/20eokvyjffqh    /posts/20eokvyjffqh--add-inline-css-to-a-react-element    301
@@ -3033,3 +3034,14 @@
 /posts/26piucsnlrpj    /posts/26piucsnlrpj--generate-an-md5-hash-from-a-string-on-the-command-line    301
 /posts/26po27bbhqmn    /posts/26po27bbhqmn--convert-a-string-to-base64    301
 /posts/26p8miodk9cd    /posts/26p8miodk9cd--copy-a-text-input-field-to-the-clipboard    301
+/posts/26d2ywgvzg5v    /posts/26d2ywgvzg5v--letters-of-the-alphabet    301
+/posts/26cwkg1qsedm    /posts/26cwkg1qsedm--javascript-example-data--us-state-names-and-abbreviations    301
+/posts/26iq6c7ybn3r    /posts/26iq6c7ybn3r--a-new-way-to-think-about-getting-a-list-of-files-in-a-directory-in-javascript    301
+/posts/26gowxumowhq    /posts/26gowxumowhq--react-infinitescroll-example    301
+/posts/26ht5lg9yvh8    /posts/26ht5lg9yvh8--responsive-images-without-layout-shift    301
+/posts/26xmlgc9qykn    /posts/26xmlgc9qykn--howto-add-onelogin-authentication-to-a-nextjs-app-with-nextauth    301
+/posts/26f5gzpooec9    /posts/26f5gzpooec9--use-a-ksuid    301
+/posts/26cr2esjxqeq    /posts/26cr2esjxqeq--lazy-initializer-for-usestate    301
+/posts/26uecfydfcas    /posts/26uecfydfcas--initial-notes    301
+/posts/26u5xmsieeim    /posts/26u5xmsieeim--setup-and-deploy-a-sveltekit-app-on-netlify    301
+/posts/26zfxxpcizpx    /posts/26zfxxpcizpx--get-the-list-of-open-app-windows-in-yabai    301

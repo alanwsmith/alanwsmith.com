@@ -1,0 +1,126 @@
+---
+blurb: May I never have to look up how to read a directory ever again
+categories:
+  - JavaScript
+date: '2022-03-21T19:02:28'
+id: 26iq6c7ybn3r
+status: scratch
+type: post
+title: A New Way To Think About Getting A List Of Files In A Directory In JavaScript
+slug: >-
+  /posts/26iq6c7ybn3r--a-new-way-to-think-about-getting-a-list-of-files-in-a-directory-in-javascript
+---
+
+
+## The Problem
+
+Maybe it's just me, but getting a list of files in a directory is always feels like it's more of a pain than it should be. Especially when recursion is involved. Also, if I want to do anything with the sub directories. 
+
+## The Theory
+
+I've come to realize that the problem isn't as much with how I'm getting the list of files, but what I'm returning. Namely, an array of files names or paths. 
+
+The problem isn't the array, it's what's in it. Instead of a single text field, I've started returning an array of arrays. Each file gets it's own with three value in it:
+
+- Absolute path to the root directory queried
+- The relative path for any sub-directories
+- The file name itself 
+
+
+## The Code
+
+The JavaScript function looks like this:
+
+```javascript
+#!/usr/bin/env node
+
+const fs = require('fs')
+const path = require('path')
+
+const listDir = function (
+  rootDir,
+  isRecursive = true,
+  hiddenFiles = false,
+  subDir = '',
+  fileList = []
+) {
+  if (rootDir.charAt(0) !== '/') {
+    rootDir = path.resolve(rootDir)
+  }
+
+  const subDirExpanded = path.join(rootDir, subDir)
+
+  fileNames = fs.readdirSync(subDirExpanded)
+  fileNames.forEach((fileName) => {
+    filePath = path.join(subDirExpanded, fileName)
+    subDirPath = path.join(subDir, fileName)
+    if (fs.statSync(filePath).isDirectory()) {
+      if (isRecursive) {
+        fileList = listDir(
+          rootDir,
+          isRecursive,
+          hiddenFiles,
+          subDirPath,
+          fileList
+        )
+      }
+    } else {
+      if (hiddenFiles === true) {
+        fileList.push([rootDir, subDir, fileName])
+      } else if (fileName.charAt(0) !== '.') {
+        fileList.push([rootDir, subDir, fileName])
+      }
+    }
+  })
+
+  return fileList
+}
+```
+
+Usage looks like the:
+
+```javascript
+const files = listDir('/Users/alan/Desktop/start_here')
+
+files.forEach((file) => {
+  console.log(file)
+})
+```
+
+
+## Example Output
+
+Give a tree like this on my desktop:
+
+```txt
+.
+├── start_here
+│   ├── 1.png
+│   ├── 2.png
+│   └── sub1
+│       ├── 3.png
+│       └── sub2
+│           └── 4.png
+```
+
+The code produces 
+
+```txt
+[ '/Users/alan/Desktop/start_here', '', '1.png' ]
+[ '/Users/alan/Desktop/start_here', '', '2.png' ]
+[ '/Users/alan/Desktop/start_here', 'sub1', '3.png' ]
+[ '/Users/alan/Desktop/start_here', 'sub1/sub2', '4.png' ]
+```
+
+
+That setup lets me operate on the files in whatever way I need by joining the paths. A big example for me is making a new directory in another location with the same structure. Joining the new root to the sub directories lets me make the new structure and then update files as necessary by joining the names on as well. 
+
+
+## Options
+
+There are two optional flags you can pass. The first one is if the listing should be recursive or not (it defaults to true). The second is if hidden files that start with a '.' should be included (which defaults to false). 
+
+## And, Done
+
+I don't know how many times I've looked up how to get a directory listing based on what I was trying to do. Feels like I can just reach for this get at least an 80/20 out of it. (I'll probably end up with a version that filters by extension too, but I'll cross that bridge when I come to it.)
+
