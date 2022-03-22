@@ -22,7 +22,7 @@ You'll want to get your OneLogin account stuff setup before going through this s
 
 Create an app (e.g. named 'onelogin-app') with:
 
-```
+```bash
 npx create-next-app@latest onelogin-app
 ```
 
@@ -31,7 +31,7 @@ npx create-next-app@latest onelogin-app
 
 Move into the newly created `onelogin-app` app directory and install NextAuth with:
 
-```
+```bash
 npm install next-auth
 ```
 
@@ -205,6 +205,7 @@ To pass profile data based on the results of the sign in you have to pass from s
 
 TODO: write this up:
 
+```
 import NextAuth from 'next-auth'
 import OneLoginProvider from 'next-auth/providers/onelogin'
 
@@ -236,6 +237,7 @@ export default NextAuth({
     },
   },
 })
+```
 
 
 Also point out that you can use profile from jwt without having to start at signIn
