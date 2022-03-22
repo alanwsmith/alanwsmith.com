@@ -25,13 +25,13 @@ I've come to realize that the problem isn't as much how I'm getting the list of 
 
 The problem isn't the array, it's the strings. 
 
-Instead of a single text field, I've started returning an array of arrays. Each file gets it's own with five value in it:
+Instead of a single text field, I've started returning an array of objects. Each file gets it's own with five value in it:
 
-- Absolute path to the root directory queried
-- The relative path for any sub-directories
-- The file name itself (including the extension)
-- The name of the file without the extension 
-- The extension by itself
+- initial_root - the bsolute path to the root directory queried
+- sub_dir - the relative path for any sub-directories
+- name - The file name itself (including the extension)
+- name_only - the name of the file without the extension 
+- extension - the extension by itself
 
 
 ## Example Output
@@ -52,18 +52,44 @@ Given a tree like this on my desktop:
 The code produces 
 
 ```txt
-[ '/Users/alan/Desktop/start_here', '', '1.png', '1', '.png' ]
-[ '/Users/alan/Desktop/start_here', '', '2.png', '2', '.png' ]
-[ '/Users/alan/Desktop/start_here', 'sub1', '3.png', '3', '.png' ]
-[ '/Users/alan/Desktop/start_here', 'sub1/sub2', '4.png', '4', '.png' ]
+[
+    {
+      initial_root: '/Users/alan/Desktop/start_here',
+      sub_dir: '',
+      name: '1.png',
+      name_only: '1',
+      extension: '.png'
+    },
+    {
+      initial_root: '/Users/alan/Desktop/start_here',
+      sub_dir: '',
+      name: '2.png',
+      name_only: '2',
+      extension: '.png'
+    },
+    {
+      initial_root: '/Users/alan/Desktop/start_here',
+      sub_dir: 'sub1',
+      name: '3.png',
+      name_only: '3',
+      extension: '.png'
+    },
+    {
+      initial_root: '/Users/alan/Desktop/start_here',
+      sub_dir: 'sub1/sub2',
+      name: '4.png',
+      name_only: '4',
+      extension: '.png'
+    }
+]
 ```
 
 
-That setup lets me operate on the files in whatever way I need by joining the paths. 
+That setup lets me operate on the files in whatever way I need by assembling the paths. 
 
-A big example for me is making a new directory in another location with the same structure. Joining the new root to the sub directories lets me make the new structure and then update files as necessary by joining the names on as well. 
+A big example for me is making a new directory in another location with the same structure. Applying the new root to the sub directories lets me make the new structure and then update files as necessary by adding the names on as well. 
 
-Using the part of the filename without the extension lets me convert image files to another format without having to further parse the names. 
+Using the filename without the extension lets me convert image files to another format without having to further parse the names. 
 
 Two optional parameters determine if the listing is recursive and if it should return hidden files. These values default to true and false, respectively.
 
@@ -106,13 +132,13 @@ const listDir = function (
         )
       }
     } else {
-      const fileDetails = [
-        rootDir,
-        subDir,
-        fileName,
-        path.parse(fileName).name,
-        path.parse(fileName).ext,
-      ]
+      const fileDetails = {
+        initial_root: rootDir,
+        sub_dir: subDir,
+        name: fileName,
+        name_only: path.parse(fileName).name,
+        extension: path.parse(fileName).ext,
+      }
 
       if (hiddenFiles === true) {
         fileList.push(fileDetails)
@@ -142,6 +168,14 @@ const files = listDir(
     false, 
     true
 )
+```
+
+Then you can loop through the results doing whatever you need
+
+```javascript
+files.forEach((file) => {
+  console.log(file)
+})
 ```
 
 
