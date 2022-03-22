@@ -9330,8 +9330,10 @@
       "slugs_to_redirect": []
     },
     "26iq6c7ybn3r": {
-      "current_slug": "/posts/26iq6c7ybn3r--a-new-way-to-think-about-getting-a-list-of-files-in-a-directory-in-javascript",
-      "slugs_to_redirect": []
+      "current_slug": "/posts/26iq6c7ybn3r--a-new-way-to-think-about-getting-a-list-of-files-in-a-directory",
+      "slugs_to_redirect": [
+        "/posts/26iq6c7ybn3r--a-new-way-to-think-about-getting-a-list-of-files-in-a-directory-in-javascript"
+      ]
     },
     "26gowxumowhq": {
       "current_slug": "/posts/26gowxumowhq--react-infinitescroll-example",
