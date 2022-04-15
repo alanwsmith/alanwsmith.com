@@ -1,0 +1,37 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2022-04-06T17:58:18'
+id: 27rugklbmt7c
+status: scratch
+type: post
+title: Expand a list by adding slots between each index
+slug: /posts/27rugklbmt7c--expand-a-list-by-adding-slots-between-each-index
+---
+
+
+```python
+my_list = [1, 2, 3, 4]
+slot = 0
+
+while(slot <= len(my_list)):
+	print(my_list)
+	my_list.insert(slot, '.')
+	slot += 2
+
+print(my_list)
+```
+
+Output:
+
+```
+[1, 2, 3, 4]
+['.', 1, 2, 3, 4]
+['.', 1, '.', 2, 3, 4]
+['.', 1, '.', 2, '.', 3, 4]
+['.', 1, '.', 2, '.', 3, '.', 4]
+['.', 1, '.', 2, '.', 3, '.', 4, '.']
+```
+
+

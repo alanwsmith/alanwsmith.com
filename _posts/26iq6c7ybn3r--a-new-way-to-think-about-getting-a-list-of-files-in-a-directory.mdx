@@ -96,15 +96,13 @@ Two optional parameters determine if the listing is recursive and if it should r
 
 ## The Code
 
-The JavaScript version of the code looks like this:
+The JavaScript version of the code looks like this. (it should go in it's own file called `listDir.js`)
 
 ```javascript
-#!/usr/bin/env node
-
 const fs = require('fs')
 const path = require('path')
 
-const listDir = function (
+function listDir(
   rootDir,
   isRecursive = true,
   hiddenFiles = false,
@@ -132,12 +130,30 @@ const listDir = function (
         )
       }
     } else {
+      let sub_dirs = subDir.split('/')
+      if (sub_dirs[0] === '') {
+        sub_dirs = []
+      }
+
+      let extension = path.parse(fileName).ext
+      if (extension !== '') {
+        extension = extension.split('.')[1]
+      }
+
       const fileDetails = {
+        full_path: path.join(
+          rootDir,
+          path.join(...sub_dirs),
+          fileName
+        ),
         initial_root: rootDir,
-        sub_dir: subDir,
+        sub_dirs: sub_dirs,
         name: fileName,
+        name_lower_case: fileName.toLowerCase(),
         name_only: path.parse(fileName).name,
-        extension: path.parse(fileName).ext,
+        name_only_lower_case: path.parse(fileName).name.toLowerCase(),
+        extension: extension,
+        extension_lower_case: extension.toLowerCase(),
       }
 
       if (hiddenFiles === true) {
@@ -150,25 +166,52 @@ const listDir = function (
 
   return fileList
 }
+
+module.exports = { listDir: listDir }
 ```
 
-Usage looks like the:
+Require the file and use it like
 
 ```javascript
+const { listDir } = ('./listDir')
+
 const files = listDir(
     '/Users/alan/Desktop/start_here'
 )
+
 ```
 
 And with the optional parameters:
 
 ```javascript
+const { listDir } = ('./listDir')
+
 const files = listDir(
     '/Users/alan/Desktop/start_here', 
     false, 
     true
 )
 ```
+
+Each result looks like:
+
+```json
+  {
+    full_path: '/full/path/to/a/FileName.TXT',
+    initial_root: '/full/path',
+    sub_dirs: [ 'to', 'a' ],
+    name: 'FileName.TXT',
+    name_lower_case: 'filename.txt',
+    name_only: 'FileName',
+    name_only_lower_case: 'filename',
+    extension: 'TXT',
+    extension_lower_case: 'txt'
+  }
+```
+
+
+
+
 
 Then you can loop through the results doing whatever you need
 
@@ -182,4 +225,10 @@ files.forEach((file) => {
 ## And, Done
 
 I don't know how many times I've looked up how to get a directory listing based on what I was trying to do. Feels like I can just reach for this and get at least an 80/20 out of it.
+
+## Note you can use sub_dirs in a path.join by expanding the data like this:
+
+```javascript
+const output_dir = path.join(dest_dir, ...file.sub_dirs,  file.name_only)
+```
 

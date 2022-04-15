@@ -51,8 +51,8 @@ Then this:
 from string import Template
 
 with open('template.txt') as _tmpl:
-	skeleton = Template(_tmpl.read())
-	output = skeleton.substitute(
+	frame = Template(_tmpl.read())
+	output = frame.substitute(
 	   name="Karl",
 	   color="Green"
     )

@@ -1,0 +1,40 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2022-03-26T22:03:24'
+id: 26wtih0ndujm
+status: scratch
+type: post
+title: ExifReader
+slug: /posts/26wtih0ndujm--exifreader
+---
+
+This shows how to get all the tags, and then pull the description out (which is where Lightroom Classic stores it)
+
+
+```javascript
+#!/usr/bin/env node
+
+const ExifReader = require('exifreader')
+const input_file = '/Users/alan/Photos/web-exports/aws-2022-0315-1507-0001.jpg'
+
+async function runIt() {
+  const tags = await ExifReader.load(input_file)
+  console.dir(tags)
+}
+
+runIt()
+```
+
+
+
+
+Using ExifReader to process photos
+
+https://github.com/mattiasw/ExifReader
+
+```
+npm install exifreader
+```
+

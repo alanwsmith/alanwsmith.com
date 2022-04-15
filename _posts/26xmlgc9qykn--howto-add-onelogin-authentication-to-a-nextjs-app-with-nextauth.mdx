@@ -215,6 +215,8 @@ export default NextAuth({
       clientId: process.env.ONELOGIN_CLIENT_ID,
       clientSecret: process.env.ONELOGIN_CLIENT_SECRET,
       issuer: process.env.ONELOGIN_ISSUER,
+      // this line is required to override the defaults and get groups
+      authorization: { params: { scope: 'openid profile email groups' } },
     }),
   ],
 

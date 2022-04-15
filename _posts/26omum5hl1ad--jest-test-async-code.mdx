@@ -1,0 +1,43 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2022-03-23T21:31:39'
+id: 26omum5hl1ad
+status: scratch
+type: post
+title: jest test async code
+slug: /posts/26omum5hl1ad--jest-test-async-code
+---
+
+### Notes
+
+- Add `async` to the function that gets passed to the test
+- Use `await` when calling the function under test
+- Make the function under test `async`
+- Add `await` as necessary in the function under test
+
+
+### Test file
+
+```javascript
+const sum = require('./sum')
+
+test('adds 1 + 2 to equal 3', async () => {
+  const result = await sum(1, 2)
+  expect(result).toBe(3)
+})
+```
+
+
+### File under test
+
+```javascript
+async function sum(a, b) {
+  // do some 'await' stuff here
+  return a + b
+}
+
+module.exports = sum
+```
+
