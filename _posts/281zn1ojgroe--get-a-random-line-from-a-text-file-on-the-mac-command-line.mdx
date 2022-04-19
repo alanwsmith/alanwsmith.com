@@ -1,0 +1,34 @@
+---
+blurb: Whose Quote Is It Anyway
+categories:
+  - Command Line
+date: '2022-04-19T16:07:15'
+id: 281zn1ojgroe
+status: published
+type: post
+title: Get A Random Line From A Text File On The Mac Command Line
+slug: >-
+  /posts/281zn1ojgroe--get-a-random-line-from-a-text-file-on-the-mac-command-line
+---
+
+I'm working on a little command to display a random quote every time I open a new terminal window. I setup a file with a bunch of quotes. Each one is on its own line. 
+
+To pull a random quote/line, I'm using:
+
+```bash
+sort -R quotes.txt | head -1
+```
+
+### Details
+
+- The `sort -R` creates a randomized set of lines from the file
+- Then `head -1` cuts it down to just the first line.  It works great 
+
+
+### Notes:
+
+- Lots of notes on the web say to use `shuf -n 1`, but that's not installed by default on my machine running macOS 12.x Monterey.
+- The `sort` and `head` commands were available on my machine without having to install anything. That said, it's possible that something else that I installed with homebrew also installed them. Your milage may vary.
+
+
+
