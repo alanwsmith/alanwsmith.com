@@ -3,6 +3,7 @@ import Image from 'next/image'
 import absolute_sandman from '../_images/absolute_sandman.jpeg'
 import acme_bag_2008_05 from '../_images/acme_bag_2008_05.jpg'
 import alligator_on_the_golf_course from '../_images/alligator_on_the_golf_course.jpg'
+import amy_20070919_0009 from '../_images/amy_20070919_0009.jpg'
 import armored_bug_20060923_105004_01 from '../_images/armored_bug_20060923_105004_01.jpg'
 import aws_20080426_glamor_camp_0073 from '../_images/aws_20080426_glamor_camp_0073.jpg'
 import bama_schedule_sp_20090821_misc_112136 from '../_images/bama_schedule_sp_20090821_misc_112136.png'
@@ -37,11 +38,13 @@ import ir_band_photo_20060805_011816_01 from '../_images/ir_band_photo_20060805_
 import kexp_song_of_the_day_2009_06 from '../_images/kexp_song_of_the_day_2009_06.jpg'
 import last_sunday_at_reimers_img_0289 from '../_images/last_sunday_at_reimers_img_0289.jpg'
 import last_sunday_at_reimers_img_0293 from '../_images/last_sunday_at_reimers_img_0293.jpg'
+import light_bulb_1_150x150 from '../_images/light_bulb_1_150x150.png'
 import logo_sample from '../_images/logo_sample.gif'
 import macbook_pro_2009_01 from '../_images/macbook_pro_2009_01.jpg'
 import max_logo from '../_images/max_logo.gif'
 import mile_200000_20080402_snaps_0039 from '../_images/mile_200000_20080402_snaps_0039.jpg'
 import movies_cropped_2006_02 from '../_images/movies_cropped_2006_02.jpg'
+import nuge_20070919_223902_01 from '../_images/nuge_20070919_223902_01.jpg'
 import perl_camel from '../_images/perl_camel.png'
 import play_button_2009_01 from '../_images/play_button_2009_01.gif'
 import plr_sample_finish from '../_images/plr_sample_finish.jpg'
@@ -63,6 +66,7 @@ import unprocessed_file_20060125_010408a from '../_images/unprocessed_file_20060
 import vivitar_285_hack_20060710_212242_01 from '../_images/vivitar_285_hack_20060710_212242_01.jpg'
 import vivitar_285_hack_2_20060710_212406_01 from '../_images/vivitar_285_hack_2_20060710_212406_01.jpg'
 import wedding_dance_20080301_0965 from '../_images/wedding_dance_20080301_0965.jpg'
+import wheels_20060227_093946a from '../_images/wheels_20060227_093946a.jpg'
 import wire_on_the_bottom_of_my_chair_20060921_131744_01 from '../_images/wire_on_the_bottom_of_my_chair_20060921_131744_01.jpg'
 import wireless_flash_mod_20060430_234118a from '../_images/wireless_flash_mod_20060430_234118a.jpg'
 import wobble_wedge_2009_02 from '../_images/wobble_wedge_2009_02.jpg'
@@ -72,6 +76,7 @@ const imgMap = {
   absolute_sandman: absolute_sandman,
   acme_bag_2008_05: acme_bag_2008_05,
   alligator_on_the_golf_course: alligator_on_the_golf_course,
+  amy_20070919_0009: amy_20070919_0009,
   armored_bug_20060923_105004_01: armored_bug_20060923_105004_01,
   aws_20080426_glamor_camp_0073: aws_20080426_glamor_camp_0073,
   bama_schedule_sp_20090821_misc_112136: bama_schedule_sp_20090821_misc_112136,
@@ -106,11 +111,13 @@ const imgMap = {
   kexp_song_of_the_day_2009_06: kexp_song_of_the_day_2009_06,
   last_sunday_at_reimers_img_0289: last_sunday_at_reimers_img_0289,
   last_sunday_at_reimers_img_0293: last_sunday_at_reimers_img_0293,
+  light_bulb_1_150x150: light_bulb_1_150x150,
   logo_sample: logo_sample,
   macbook_pro_2009_01: macbook_pro_2009_01,
   max_logo: max_logo,
   mile_200000_20080402_snaps_0039: mile_200000_20080402_snaps_0039,
   movies_cropped_2006_02: movies_cropped_2006_02,
+  nuge_20070919_223902_01: nuge_20070919_223902_01,
   perl_camel: perl_camel,
   play_button_2009_01: play_button_2009_01,
   plr_sample_finish: plr_sample_finish,
@@ -132,6 +139,7 @@ const imgMap = {
   vivitar_285_hack_20060710_212242_01: vivitar_285_hack_20060710_212242_01,
   vivitar_285_hack_2_20060710_212406_01: vivitar_285_hack_2_20060710_212406_01,
   wedding_dance_20080301_0965: wedding_dance_20080301_0965,
+  wheels_20060227_093946a: wheels_20060227_093946a,
   wire_on_the_bottom_of_my_chair_20060921_131744_01: wire_on_the_bottom_of_my_chair_20060921_131744_01,
   wireless_flash_mod_20060430_234118a: wireless_flash_mod_20060430_234118a,
   wobble_wedge_2009_02: wobble_wedge_2009_02,
