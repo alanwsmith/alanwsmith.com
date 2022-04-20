@@ -1,0 +1,25 @@
+---
+blurb: ''
+categories:
+  - Miscellaneous
+date: '2022-04-20T18:39:52'
+id: 28573mxe32oj
+status: scratch
+type: post
+title: How To Setup A Command To Open Sublime Text From The Terminal On A Mac
+slug: >-
+  /posts/28573mxe32oj--how-to-setup-a-command-to-open-sublime-text-from-the-terminal-on-a-mac
+---
+
+I setup my Mac (running macOS 12.x) to launch Sublime Text from the command line by making a symbolic link like this:
+
+```bash
+ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" "/usr/local/bin/st"
+```
+
+That lets me type `st` to open Sublime Text. I can also do `st file.txt` or `st file1.txt file2.txt` to open files. 
+
+The approach from the [official documentation](https://www.sublimetext.com/docs/command_line.html) is to update the PATH that gets used to look for command line tools to point to the `/Applications/Sublime Text.app/Contents/SharedSupport/bin` directory. That sets up to use the binary named `subl`. 
+
+The reason I use the symbolic links is so I can use the command `st` instead of `subl` since it's shorter and easier to type.
+
