@@ -6681,9 +6681,10 @@
       "slugs_to_redirect": []
     },
     "20enni3uqnik": {
-      "current_slug": "/posts/20enni3uqnik--my-streaming-startup-checklist-aka-runbook",
+      "current_slug": "/posts/20enni3uqnik--my-streaming-startup-runbook-aka-checklist",
       "slugs_to_redirect": [
-        "/my-streaming-startup-checklist-aka-runbook"
+        "/my-streaming-startup-checklist-aka-runbook",
+        "/posts/20enni3uqnik--my-streaming-startup-checklist-aka-runbook"
       ]
     },
     "20enntlb6yts": {
@@ -9449,6 +9450,22 @@
     },
     "28lpecaqywyb": {
       "current_slug": "/posts/28lpecaqywyb--ideas-for-scratch-kitchen-projects",
+      "slugs_to_redirect": []
+    },
+    "28xxilwqk8uh": {
+      "current_slug": "/posts/28xxilwqk8uh--instructions-for-router-basis-setup",
+      "slugs_to_redirect": []
+    },
+    "28ttkebpma64": {
+      "current_slug": "/posts/28ttkebpma64--use-generatebeams-in-vexflow",
+      "slugs_to_redirect": []
+    },
+    "28x2gqpnnkzj": {
+      "current_slug": "/posts/28x2gqpnnkzj--basic-nextjs-usage",
+      "slugs_to_redirect": []
+    },
+    "28dakarfdsyq": {
+      "current_slug": "/posts/28dakarfdsyq--how-to-grow-your-digital-garden-with-subdomains",
       "slugs_to_redirect": []
     }
   }

@@ -1,5 +1,5 @@
 ---
-blurb: ''
+blurb: This is how I get my stream going
 categories:
   - Streaming
 date: '2021-01-01T00:00:00'
@@ -7,13 +7,14 @@ id: 20eNnI3UQniK
 scrubbed_2021: false
 status: published
 type: post
-title: My Streaming Startup Checklist aka Runbook
-slug: /posts/20enni3uqnik--my-streaming-startup-checklist-aka-runbook
+title: My Streaming Startup Runbook (aka Checklist)
+slug: /posts/20enni3uqnik--my-streaming-startup-runbook-aka-checklist
 ---
 
 ### Part 1
 
 <Checklist data={`
+Switch Keyboard to Windows Machine
 Turn on lights
 Restart facecam
 Start SnapCam
@@ -33,10 +34,20 @@ Put mic in place
 <Checklist data={`
 Start Monster Cat Audio in Chrome
 Set Monster Cat Audio to Shuffle (which automatically repeats)
-Move Desktop Audio in OBS to -7.4db (TODO: Check VOD to see how this sounds)
+Move Desktop Audio in OBS to -5.3db (TODO: Check VOD to see how this sounds)
 Switch To Earbuds so you can raid easier
 Switch OBS to main scene and check that music and vocals are working
 `} />
+
+### Windows Desktop
+
+<Checklist data={`
+Launch Stream Manager
+Verify snapcam bot is running - D:/Twitch_Stuff/snap_cam_channel_points/02 (might have to run 01...py first)
+Verify snapcam close down bot script is running - D:/Twitch_Stuff/snap_cam_channel_points - camera_shutdown_timer.py
+Minimize everything except stream manager and OBS
+`} />
+
 
 ### Misc
 
@@ -49,41 +60,12 @@ Verify youre logged out of AWS
 Turn down brightness on monitors
 `} />
 
-### Windows Desktop
-
-<Checklist data={`
-Launch Stream Manager
-SKIP - looking at moving to mac - Open your stream page
-Verify snapcam bot is running - D:/Twitch_Stuff/snap_cam_channel_points/02 (might have to run 01...py first)
-Verify snapcam close down bot script is running - D:/Twitch_Stuff/snap_cam_channel_points - camera_shutdown_timer.py
-Minimize everything except stream manager and OBS
-Break out OBS audio meters so you can see them
-`} />
-
-
-### Live Captions 
-
-Currently not running since the accuracy is so low
-
-<Checklist data={`
-Verify captions are running - D:/Twitch_Stuff/obs_live_captions/obs_live_captions.py
-Open the Chrome Browser page to the localhost for Live Captions
-Refresh the OBS source for Captions - Full...
-`} />
-
-### TODO
-
-<Checklist data={`
-Get Start binary clock running
-Setup Stream Notes again?
-Build script to close apps that aren't on a clear list
-`} />
-
 
 
 ### Mac Stuff
 
 <Checklist data={`
+Switch keyboard to mac
 Set 4K60 Pro MK.2 Resolution to &quot;Scaled - Looks Like 1920x1080&quot;
 Set 4K60 Pro MK.2 Refresh Rate to 30 Hertz
 Set Sublime Text font size to 30
@@ -107,6 +89,7 @@ Close Finder Windows by clicking "Window" in the menu bar then selecting them to
 ### Twitch
 
 <Checklist data={`
+Update !today command
 Start tmux for bots if necessary 'tmux new -s bots', new pane with 'Ctrl+b', switch panes with 'Ctrl+b <arrow>'
 Verify chatbot is running (tmux a -t bots: ~/Users/alans/workshop/thebotofalan_mac/start-thebotofalan.bash)
 TODO: Look at event bot to see whats up with it
@@ -126,15 +109,19 @@ Make a pitstop
 Refill water bottle
 Raise Mac Monitor
 Prep Link on twitter: 'https://www.twitch.tv/theidofalan'
-Open Discord so you can post the twitter link
+Prep link for discords: 'https://www.twitch.tv/theidofalan'
+Open Discord so you can post links
 Switch OBS to Starting Soon scene
-Say Roll Tide to reset the Live Captions text
 Clear terminal 
 Set nvAlt to some starting page
 Start streaming in OBS
-SKIP - testing looking at stream on mac for now - Mute Twitch on Windows Machine (otherwise it echos)
+Open twitch stream in safari on the mac
+Mute twitch stream in safari on the mac
+Switch back to Stream Manager is safari on stream manager
 Post link on twitter
-Post twitter link in discords
+Post twitch link in Party Corgi Discord: Creation - videos-and-streaming
+Post twitch link in The Claw Discord: Work and Projects - Advertise 
+Post twitter link in Jamstack (TODO: see if there bot can post) - Creators - content-creation
 Close discord
 Switch to main OBS scene and go
 `} />
