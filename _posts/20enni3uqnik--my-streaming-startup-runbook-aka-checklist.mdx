@@ -13,7 +13,10 @@ slug: /posts/20enni3uqnik--my-streaming-startup-runbook-aka-checklist
 
 ### Part 1
 
+
 <Checklist data={`
+Set Mac display resolution to 1920x1080
+Connect Mac to Elgato capture card 
 Switch Keyboard to Windows Machine
 Turn on lights
 Restart facecam
@@ -34,15 +37,15 @@ Put mic in place
 <Checklist data={`
 Start Monster Cat Audio in Chrome
 Set Monster Cat Audio to Shuffle (which automatically repeats)
+Mute headphones on the Windows machine
 Move Desktop Audio in OBS to -5.3db (TODO: Check VOD to see how this sounds)
-Switch To Earbuds so you can raid easier
 Switch OBS to main scene and check that music and vocals are working
 `} />
 
 ### Windows Desktop
 
 <Checklist data={`
-Launch Stream Manager
+Launch Creator Dashboard in Chrome
 Verify snapcam bot is running - D:/Twitch_Stuff/snap_cam_channel_points/02 (might have to run 01...py first)
 Verify snapcam close down bot script is running - D:/Twitch_Stuff/snap_cam_channel_points - camera_shutdown_timer.py
 Minimize everything except stream manager and OBS
@@ -79,23 +82,22 @@ Start Keychain Access on second monitor to prevent accidentally flashing it
 Start password manager on second monitor to prevent flashing it
 Flip aws credentials to personal profile
 Review Open apps
-TODO: Make a script that lists apps showing which ones to close
-Close browser tabs
-TODO: (Bring back online)Start Event Bot
-TODO: (Bring back online) Start TheBotOfAlan chat bot
+Close Bowser Tabs (check for extra windows via to menu)
+Use the Window Menu item to find extra finder windows
+Use the Window Menu item to find extra sublime text windows
 Close Finder Windows by clicking "Window" in the menu bar then selecting them to move to the space (the normal hotkey doesn't work)
 `} />
 
 ### Twitch
 
 <Checklist data={`
-Update !today command
+Update !today bot command via: _today.txt
 Start tmux for bots if necessary 'tmux new -s bots', new pane with 'Ctrl+b', switch panes with 'Ctrl+b <arrow>'
 Verify chatbot is running (tmux a -t bots: ~/Users/alans/workshop/thebotofalan_mac/start-thebotofalan.bash)
-TODO: Look at event bot to see whats up with it
-Verify event bot is running (tmux a -t bots ~/Users/alans/workshop/thebotofalan_mac/start-eventbot.bash)
 Start your music over the speakers
 Open Stream Manager in Safari
+Run the !today command to make sure the bot is working
+Send a channel point redemption to make sure snap cam works
 Update stream title and info
 Set stream tags as appropriate: English - Python - JavaScript - Web Development - Programming - IRL - Creative - AMA
 Run the yabai resizer 1080_stream_setup.py script
@@ -109,7 +111,8 @@ Make a pitstop
 Refill water bottle
 Raise Mac Monitor
 Prep Link on twitter: 'https://www.twitch.tv/theidofalan'
-Prep link for discords: 'https://www.twitch.tv/theidofalan'
+Prep Link for discords: 'https://www.twitch.tv/theidofalan'
+Prep Link for Pachyderm: https://hachyderm.io/web/home
 Open Discord so you can post links
 Switch OBS to Starting Soon scene
 Clear terminal 
@@ -119,6 +122,7 @@ Open twitch stream in safari on the mac
 Mute twitch stream in safari on the mac
 Switch back to Stream Manager is safari on stream manager
 Post link on twitter
+Post link on https://hachyderm.io/web/home
 Post twitch link in Party Corgi Discord: Creation - videos-and-streaming
 Post twitch link in The Claw Discord: Work and Projects - Advertise 
 Post twitter link in Jamstack (TODO: see if there bot can post) - Creators - content-creation

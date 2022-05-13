@@ -1,0 +1,95 @@
+---
+blurb: Basic How To for Using a Checkbox on a React or Next.js site
+categories:
+  - Next.JS
+  - React
+date: '2022-05-13T11:15:49'
+id: 297ctk42ntpa
+status: scratch
+type: post
+title: How To Use A Checkbox On A Next.js Or React Site
+slug: /posts/297ctk42ntpa--how-to-use-a-checkbox-on-a-nextjs-or-react-site
+---
+
+I couldn't find a simple example showing how to use a checkbox with an onClick handler to change state in Next.js / React. Putting this here for reference. 
+
+This is a basic example with the handler only affecting the component itself (in this case just printing to the console)
+
+
+```jsx
+export default function ExampleCheckbox() {
+  const handleClick = (event) => {
+    if (event.target.checked === true) {
+      console.log("Checked")
+    } else {
+      console.log("Not Checked")
+    }
+  }
+
+  return (
+    <>
+      <label htmlFor="example_checkbox">Example Checkbox</label>
+      <input
+        type="checkbox"
+        id="example_checkbox"
+        onClick={(event) => handleClick(event)}
+      />
+    </>
+  )
+}
+```
+
+And this example shows another component including the checkbox and passing it a function from `useState` to update the parent component. 
+
+_Parent Component_
+
+```jsx
+import { useState } from 'react'
+import CheckboxSetState from './CheckboxSetState'
+
+function CheckboxSetStateWrapper() {
+  const [currentState, setCurrentState] = useState('Unchecked')
+
+  return (
+    <>
+      <div>Current State Is: {currentState}</div>
+      <CheckboxSetState setCurrentState={setCurrentState} />
+    </>
+  )
+}
+
+export default CheckboxSetStateWrapper
+```
+
+_Checkbox Component (CheckboxSetState.js)_
+
+```jsx
+function CheckboxSetState({ setCurrentState }) {
+  const handleClick = (event) => {
+    if (event.target.checked === true) {
+      setCurrentState('Checked')
+    } else {
+      setCurrentState('Unchecked')
+    }
+  }
+
+  return (
+    <>
+      <label htmlFor="example_checkbox">Set state to: </label>
+      <input
+        type="checkbox"
+        id="example_checkbox"
+        onClick={(event) => handleClick(event)}
+      />
+    </>
+  )
+}
+
+export default CheckboxSetState
+```
+
+
+
+
+
+

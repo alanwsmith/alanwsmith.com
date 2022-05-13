@@ -9453,8 +9453,10 @@
       "slugs_to_redirect": []
     },
     "28xxilwqk8uh": {
-      "current_slug": "/posts/28xxilwqk8uh--instructions-for-router-basis-setup",
-      "slugs_to_redirect": []
+      "current_slug": "/posts/28xxilwqk8uh--how-to-create-a-basic-react-app-with-react-router-v6",
+      "slugs_to_redirect": [
+        "/posts/28xxilwqk8uh--instructions-for-router-basis-setup"
+      ]
     },
     "28ttkebpma64": {
       "current_slug": "/posts/28ttkebpma64--use-generatebeams-in-vexflow",
@@ -9466,6 +9468,34 @@
     },
     "28dakarfdsyq": {
       "current_slug": "/posts/28dakarfdsyq--how-to-grow-your-digital-garden-with-subdomains",
+      "slugs_to_redirect": []
+    },
+    "28ilitazkg6y": {
+      "current_slug": "/posts/28ilitazkg6y--on-returning-to-photography",
+      "slugs_to_redirect": []
+    },
+    "28lcucegjab0": {
+      "current_slug": "/posts/28lcucegjab0--add-a-random-quote-every-time-you-open-a-terminal-window",
+      "slugs_to_redirect": []
+    },
+    "28leisdj6kdf": {
+      "current_slug": "/posts/28leisdj6kdf--disable-message-of-the-day-motd-when-opening-a-new-terminal-window-on-a-mac",
+      "slugs_to_redirect": []
+    },
+    "297ctk42ntpa": {
+      "current_slug": "/posts/297ctk42ntpa--how-to-use-a-checkbox-on-a-nextjs-or-react-site",
+      "slugs_to_redirect": []
+    },
+    "2955bjlydbdv": {
+      "current_slug": "/posts/2955bjlydbdv--embed-tableau",
+      "slugs_to_redirect": []
+    },
+    "28u6jeq5jddg": {
+      "current_slug": "/posts/28u6jeq5jddg--prevent-command-r-from-resetting-the-terminal-screen-in-iterm2",
+      "slugs_to_redirect": []
+    },
+    "28kwnag503kp": {
+      "current_slug": "/posts/28kwnag503kp--form-basics-value-update-on-change",
       "slugs_to_redirect": []
     }
   }

@@ -1,0 +1,21 @@
+---
+blurb: ''
+categories:
+  - Command Line
+date: '2022-05-08T19:54:12'
+id: 28u6jeq5jddg
+status: scratch
+type: post
+title: Prevent Command R from Resetting The Terminal Screen in iTerm2
+slug: >-
+  /posts/28u6jeq5jddg--prevent-command-r-from-resetting-the-terminal-screen-in-iterm2
+---
+
+The command+R hotkey in iTerm2 is bound to "Reset" the terminal window in the top level menu. 
+
+I kept hitting it when I thought I was in my browser and was trying to refresh it. The result is it kept clearing nvim which was a pain. 
+
+Luckily, this can be disabled. The fix I used was to go into System Preferences > Keyboard > Shortcuts and then add iTerm2 as an application with a remap of "Reset" to command+8. That overwrites the ability to jump directly to the 8th tab. For some reason neither it or the reset work, but I'm fine with that. 
+
+I just wanted to prevent the reset which is what it does with this in place. 
+

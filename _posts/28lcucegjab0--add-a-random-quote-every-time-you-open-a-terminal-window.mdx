@@ -1,0 +1,67 @@
+---
+blurb: See what folks said on your terminal
+categories:
+  - Command Line
+date: '2022-05-05T16:16:38'
+id: 28lcucegjab0
+status: scratch
+type: post
+title: Add A Random Quote Every time You Open A Terminal Window
+slug: /posts/28lcucegjab0--add-a-random-quote-every-time-you-open-a-terminal-window
+---
+
+This is the code I put into my `~/.zshrc` file to pull a random quote at the top of my terminal each time I open a new one.
+
+
+```bash
+if [ "$(tput cols)" -gt 65 ]; then
+    sort -R "/path/to/quotes.txt" | \
+    head -1 | \
+    sed 's/--/\n    --/' | \
+    sed 's/$/\n/' | \
+    fold -w 64 -s
+else
+    sort -R "/path/to/quotes.txt" | \
+    head -1 | \
+    sed 's/--/\n    --/' | \
+    sed 's/$/\n/'                         
+fi
+```
+
+
+### Details
+
+`sort -R FILENAME` randomized the lines in the file and sends them to STDOUT which pipes to:
+
+
+`head -1` which grabs the first line from the randomized set which pipes to
+
+
+the `sed` things which split the line out to separate the quote from the author and then add extra line spacing
+
+And then if there are more than 65 columns (as determine by `if [ "$(tput cols)" -gt 65 ]`) then things are piped to:
+
+`fold -w 64 -s`
+
+which wraps lines at 64 characters
+
+---
+
+The other thing I do is drop an empty file at `~/.hushlogin` which prevents the message of the day from showing up. That way the only thing that shows in the quote. 
+
+---
+
+Quotes are in the format:
+
+```txt
+Curiouser and curiouser! -- Alice
+The death of an old person is like the burning of a library.  -- Traditional
+Thank you for your patience during this emergency. -- Tech Support
+```
+
+
+
+
+
+
+

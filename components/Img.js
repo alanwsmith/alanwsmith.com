@@ -25,6 +25,7 @@ import eneloop_2008_05 from '../_images/eneloop_2008_05.jpg'
 import euthanasia_20080629_snapshots_0003 from '../_images/euthanasia_20080629_snapshots_0003.jpg'
 import fire_escape_plaque_img_0306 from '../_images/fire_escape_plaque_img_0306.jpg'
 import fire_eyes_1 from '../_images/fire_eyes_1.jpg'
+import first_frame_aws_2022_0315_1507_0001 from '../_images/first_frame_aws_2022_0315_1507_0001.jpg'
 import frog_legs_jumping_20080402_snaps_0007 from '../_images/frog_legs_jumping_20080402_snaps_0007.jpg'
 import frog_portrait_20080402_snaps_0008 from '../_images/frog_portrait_20080402_snaps_0008.jpg'
 import git_logo_2009_08 from '../_images/git_logo_2009_08.gif'
@@ -98,6 +99,7 @@ const imgMap = {
   euthanasia_20080629_snapshots_0003: euthanasia_20080629_snapshots_0003,
   fire_escape_plaque_img_0306: fire_escape_plaque_img_0306,
   fire_eyes_1: fire_eyes_1,
+  first_frame_aws_2022_0315_1507_0001: first_frame_aws_2022_0315_1507_0001,
   frog_legs_jumping_20080402_snaps_0007: frog_legs_jumping_20080402_snaps_0007,
   frog_portrait_20080402_snaps_0008: frog_portrait_20080402_snaps_0008,
   git_logo_2009_08: git_logo_2009_08,
