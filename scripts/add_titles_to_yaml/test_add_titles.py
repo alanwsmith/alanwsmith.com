@@ -2,7 +2,6 @@
 
 import unittest
 
-from add_titles import add_titles
 from add_titles import update_yaml
 
 class AddTitleTest(unittest.TestCase):
