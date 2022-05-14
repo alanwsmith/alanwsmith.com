@@ -13,16 +13,10 @@ it('should add the slug to the list', () => {
 
   const slug = 'this-is-new--29ajjouaaaaa'
 
-  // When
-  let result = {
-    redirect_data: {
-      '29ajjouaaaaa': {
-        redirect_from: ['/posts/29ajjouaaaaa', 'this-is-new--29ajjouaaaaa'],
-      },
-    },
-  }
-
-  result = add_slug_to_redirect_storage({ json_data: json_data, slug: slug })
+  const result = add_slug_to_redirect_storage({
+    json_data: json_data,
+    slug: slug,
+  })
 
   // Then
   assert.equal(
