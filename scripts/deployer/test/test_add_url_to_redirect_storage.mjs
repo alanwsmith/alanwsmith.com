@@ -22,5 +22,5 @@ it('should add the url to the list', () => {
   // Then
   assert.equal(result.redirect_data['29ajjouaaaaa'].redirect_from[1], url)
 
-  // assert.equal(result.redirect_data['29ajjouaaaaa'].redirect_to, url)
+  assert.equal(result.redirect_data['29ajjouaaaaa'].redirect_to, url)
 })

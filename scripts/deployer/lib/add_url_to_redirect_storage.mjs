@@ -3,6 +3,7 @@ function add_url_to_redirect_storage({ json_data, url }) {
   const url_id = url_parts.pop()
 
   json_data.redirect_data[url_id].redirect_from.push(url)
+  json_data.redirect_data[url_id].redirect_to = url
 
   return json_data
 }
