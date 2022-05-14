@@ -1,0 +1,21 @@
+---
+blurb: ""
+categories:
+- Python 
+date: '2022-05-14T13:41:32'
+id: 29ajjouaaaaa
+status: published 
+type: post
+title: Do Something - In Python
+---
+
+This is a thing for some python data. 
+
+```python
+print('hello world')
+```
+
+---
+
+And some more prose here. 
+
