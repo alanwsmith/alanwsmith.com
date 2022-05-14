@@ -15,4 +15,7 @@ it('should get a slug', () => {
 
   // Then
   assert.equal(result.slug, expected)
+
+  // Also
+  assert.equal(result.id, '20eLy6aaaaaa')
 })
