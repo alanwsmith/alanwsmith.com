@@ -7,6 +7,7 @@ const main = ({ input_posts_dir, output_posts_dir }) => {
   // TODO: Only process files that have an
   // ID in the yaml front matter
   //
+  // TODO: Only process .txt files.
 
   const file_list = list_dir(input_posts_dir)
 
