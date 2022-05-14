@@ -1,0 +1,11 @@
+{
+  "name": "deployer",
+  "main": "deploy.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "moca": "^0.4.3",
+    "yaml": "^2.0.1"
+  }
+}
