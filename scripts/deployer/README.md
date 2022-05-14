@@ -10,9 +10,12 @@ instead of the beginning
 
 Things to do:
 
-- Move files to `_posts` directory
-- Rename files appropraitely
-- Add `slug` to the frontmatter of each file
-- Build the redirects file
-- Manage redirects when titles/slugs change
-- Do any image moves necessary
+- [x] Move files to `_posts` directory
+- [x] Rename files appropraitely
+- [ ] Only publish if status is "archive|scratch|draft|published"
+- [x] Add `slug` to the frontmatter of each file
+- [ ] Build the redirects file
+- [ ] Manage redirects when titles/slugs change
+- [ ] Do any image moves necessary and make the Img.js file
+- [ ] Make podcast feeds?
+- [ ] Make site map
