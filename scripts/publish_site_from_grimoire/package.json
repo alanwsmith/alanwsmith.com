@@ -1,0 +1,13 @@
+{
+  "name": "publish_site_from_grimoire",
+  "version": "0.1.0",
+  "description": "Personal Site Publisher",
+  "main": "publish.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "license": "None",
+  "devDependencies": {
+    "jest": "^28.1.0"
+  }
+}
