@@ -15,3 +15,4 @@ Things to do:
 - Add `slug` to the frontmatter of each file
 - Build the redirects file
 - Manage redirects when titles/slugs change
+- Do any image moves necessary
