@@ -12,7 +12,7 @@ it('makes the output file', () => {
     try {
       fs.unlinkSync(file_path)
     } catch (err) {
-      console.log(err)
+      // console.log(err)
     }
   })
 
