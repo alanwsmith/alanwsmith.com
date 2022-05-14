@@ -11,7 +11,7 @@ function make_slug(frontmatter) {
     .replace(dash_replace, '-')
     .toLowerCase()
 
-  let slug = `${data['id']}--${base_title}`
+  let slug = `${base_title}--${data['id']}`
 
   console.log(slug)
 

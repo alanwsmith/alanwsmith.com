@@ -12,5 +12,5 @@ title: Open Source - Test Thing
 type: post`
 
   const return_value = make_slug(yaml_data)
-  assert.equal(return_value, '20eLy6aaaaaa--open-source-test-thing')
+  assert.equal(return_value, 'open-source-test-thing--20eLy6aaaaaa')
 })
