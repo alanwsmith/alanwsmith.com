@@ -18,7 +18,7 @@ it('makes the output file', () => {
 
   // When
   main({
-    input_dir: 'test/_input/samples_a',
+    input_posts_dir: 'test/_input/samples_a/posts',
     output_posts_dir: 'test/_output/a/posts',
   })
 
