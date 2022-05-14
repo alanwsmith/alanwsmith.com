@@ -1,22 +1,16 @@
-function build_redirects({ json_data, slugs }) {
-  // TODO: Deal with KSUID when it's the first time
-  // through and the key doesn't already exist in
-  // the storage.
+function build_redirects({ json_data }) {
+  let results = []
 
-  const results = []
-
-  slugs.forEach((slug) => {
-    const slug_parts = slug.split('--')
-    const slug_id = slug_parts.pop()
-
-    json_data.redirect_data[slug_id].redirects.forEach((from_key) => {
-      results.push({
-        from: from_key,
-        to: slug,
-      })
+  for (const post_id in json_data.redirect_data) {
+    json_data.redirect_data[post_id].redirect_from.forEach((from_location) => {
+      if (from_location !== json_data.redirect_data[post_id].redirect_to) {
+        results.push({
+          from: from_location,
+          to: json_data.redirect_data[post_id].redirect_to,
+        })
+      }
     })
-  })
-
+  }
   return results
 }
 
