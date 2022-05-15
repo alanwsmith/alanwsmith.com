@@ -17,10 +17,7 @@ const main = ({
   const file_list = list_dir(input_posts_dir)
 
   file_list.forEach((file) => {
-    const file_data = fs.readFileSync(
-      `${input_posts_dir}/py- Some Thing - Here.txt`,
-      'utf-8'
-    )
+    const file_data = fs.readFileSync(file.full_path, 'utf-8')
 
     const file_parts = file_data.split('---')
     let frontmatter = parse(file_parts[1])
