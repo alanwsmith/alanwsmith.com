@@ -5,13 +5,13 @@ import list_dir from './list_dir.mjs'
 import { add_url_to_redirect_storage } from './add_url_to_redirect_storage.mjs'
 import make_redirects_array from './make_redirects_array.mjs'
 
-const main = ({
+function main({
   input_posts_dir,
   output_posts_dir,
   redirect_storage_input,
   redirect_storage_output,
   redirect_file_path,
-}) => {
+}) {
   // TODO: Only process files that have an
   // ID in the yaml front matter
   // TODO: Only process .txt files.
@@ -66,4 +66,4 @@ ${stringify(frontmatter)}`
   fs.writeFileSync(redirect_file_path, redirect_string)
 }
 
-export default main
+export { main }
