@@ -1,13 +1,15 @@
 import fs from 'fs'
 import path from 'path'
 
-function list_dir(
+function list_dir({
   rootDir,
   isRecursive = true,
   hiddenFiles = false,
   subDir = '',
-  fileList = []
-) {
+  fileListInitial = [],
+}) {
+  let localFileList = fileListInitial
+
   if (rootDir.charAt(0) !== '/') {
     rootDir = path.resolve(rootDir)
   }
@@ -20,13 +22,13 @@ function list_dir(
     let subDirPath = path.join(subDir, fileName)
     if (fs.statSync(filePath).isDirectory()) {
       if (isRecursive) {
-        fileList = listDir(
+        localFileList = list_dir({
           rootDir,
           isRecursive,
           hiddenFiles,
           subDirPath,
-          fileList
-        )
+          localFileList,
+        })
       }
     } else {
       let sub_dirs = subDir.split('/')
@@ -52,14 +54,14 @@ function list_dir(
       }
 
       if (hiddenFiles === true) {
-        fileList.push(fileDetails)
+        localFileList.push(fileDetails)
       } else if (fileName.charAt(0) !== '.') {
-        fileList.push(fileDetails)
+        localFileList.push(fileDetails)
       }
     }
   })
 
-  return fileList
+  return localFileList
 }
 
 export default list_dir
