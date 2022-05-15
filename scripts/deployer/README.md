@@ -8,7 +8,6 @@ beginning
 
 ### Things to do
 
-- [ ] Migrate previous redirects in
 - [x] Move files to `_posts` directory
 - [x] Rename files appropraitely
 - [x] Make sure slugs have only valid characters
@@ -18,10 +17,11 @@ beginning
 - [x] Add KSUIDs to the redirects for new files
 - [x] Clear the output directory before each run
 - [x] Manage redirects when titles/slugs change via redirects
+- [x] Make `/{KSUID}` redirects for all files
+- [ ] Redirect posts that have been removed to the home page
 - [ ] Do any image moves necessary and make the Img.js file
 - [ ] Make podcast feeds?
 - [ ] Make site map (might be a nextjs thing?)
-- [x] Make `/{KSUID}` redirects for all files
 
 ### Notes
 
@@ -33,3 +33,8 @@ beginning
 
 - Each file starts off with a redirect from the root
   with it's KSUID (e.g. `/26u4qqzwaaaa`)
+
+- The KSUIDs in the source grimoire files are mixed
+  case. The are converted to lowercase for the url
+  slugs in the deployment process to make the urls
+  look nicer
