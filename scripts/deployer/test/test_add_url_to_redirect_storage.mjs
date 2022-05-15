@@ -1,9 +1,7 @@
 import assert from 'assert'
 import { add_url_to_redirect_storage } from '../lib/add_url_to_redirect_storage.mjs'
 
-// TODO: Deal with new files with new KSUIDs
-
-it('should add the url to the list', () => {
+it('should add the url to the list for an existing ksuid', () => {
   // Given
   const json_data = {
     redirect_data: {
@@ -26,18 +24,21 @@ it('should add the url to the list', () => {
   assert.equal(result.redirect_data['29ajjouaaaaa'].redirect_to, url)
 })
 
-// it('should add a new item if it does not already exist', () => {
-//   // Given
-//   const json_data = {
-//     redirect_data: {},
-//   }
+it('should add a new item if it does not already exist', () => {
+  // Given
+  const json_data = {
+    redirect_data: {},
+  }
 
-//   const url = '/post/some-new-thing--29ajjoubbbbb'
+  const url = '/post/some-new-thing--29ajjoubbbbb'
 
-//   const result = add_url_to_redirect_storage({
-//     json_data: json_data,
-//     url: url,
-//   })
+  // When
+  const result = add_url_to_redirect_storage({
+    json_data: json_data,
+    url: url,
+  })
 
-//   assert.equal(result.redirect_data['29ajjoubbbbb'].redirect_to, url)
-// })
+  // Then
+  assert.equal(result.redirect_data['29ajjoubbbbb'].redirect_to, url)
+  assert.equal(result.redirect_data['29ajjoubbbbb'].redirect_from.length, 0)
+})
