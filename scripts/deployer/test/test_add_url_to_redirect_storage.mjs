@@ -4,7 +4,7 @@ import { add_url_to_redirect_storage } from '../lib/add_url_to_redirect_storage.
 it('should add the url to the list for an existing ksuid', () => {
   // Given
   const json_data = {
-    redirect_data: {
+    ksuid_redirects: {
       '29ajjouaaaaa': {
         redirect_from: ['/posts/29ajjouaaaaa'],
         redirect_to: 'xxxxx',
@@ -20,14 +20,14 @@ it('should add the url to the list for an existing ksuid', () => {
   })
 
   // Then
-  assert.equal(result.redirect_data['29ajjouaaaaa'].redirect_from[1], url)
-  assert.equal(result.redirect_data['29ajjouaaaaa'].redirect_to, url)
+  assert.equal(result.ksuid_redirects['29ajjouaaaaa'].redirect_from[1], url)
+  assert.equal(result.ksuid_redirects['29ajjouaaaaa'].redirect_to, url)
 })
 
 it('should add a new item if it does not already exist', () => {
   // Given
   const json_data = {
-    redirect_data: {},
+    ksuid_redirects: {},
   }
 
   const url = '/post/some-new-thing--29ajjoubbbbb'
@@ -39,9 +39,9 @@ it('should add a new item if it does not already exist', () => {
   })
 
   // Then
-  assert.equal(result.redirect_data['29ajjoubbbbb'].redirect_to, url)
+  assert.equal(result.ksuid_redirects['29ajjoubbbbb'].redirect_to, url)
   assert.equal(
-    result.redirect_data['29ajjoubbbbb'].redirect_from[0],
+    result.ksuid_redirects['29ajjoubbbbb'].redirect_from[0],
     '/29ajjoubbbbb'
   )
 })
