@@ -7,7 +7,7 @@ function add_slug_to_frontmatter_object(frontmatter) {
     .replace(/-+$/, '')
     .toLowerCase()
 
-  let slug = `${slug_title}--${frontmatter.id}`
+  let slug = `${slug_title}--${frontmatter.id.toLowerCase()}`
 
   return { ...frontmatter, slug }
 }
