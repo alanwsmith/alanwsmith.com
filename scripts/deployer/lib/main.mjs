@@ -29,7 +29,8 @@ const main = ({
     file_parts[1] = `
 ${stringify(frontmatter)}`
 
-    const output_file_path = `test/_output/a/posts/${frontmatter.slug}.mdx`
+    // let output_file_path = `test/_output/a/posts/${frontmatter.slug}.mdx`
+    const output_file_path = `${output_posts_dir}/${frontmatter.slug}.mdx`
     const url = `/posts/${frontmatter.slug}`
 
     fs.writeFileSync(output_file_path, file_parts.join('---'))
@@ -43,7 +44,6 @@ ${stringify(frontmatter)}`
       json_data: redirect_data,
       url: url,
     })
-
     fs.writeFileSync(
       redirect_storage_output,
       JSON.stringify(redirect_data, null, 2)
