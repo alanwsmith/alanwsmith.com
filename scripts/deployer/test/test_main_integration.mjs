@@ -35,12 +35,12 @@ it('makes the output file', () => {
 
 it('does not crash if there is no front matter', () => {
   // When
-  main_dev({
+  main({
     input_posts_dir: 'test/_input/samples_b/posts',
-    output_posts_dir: 'should not matter for this test',
+    output_posts_dir: 'test/_output/b/posts',
     redirect_storage_input: 'test/_input/samples_b/data/redirect_storage.json',
-    redirect_storage_output: 'should not matter for this test',
-    redirect_file_path: 'should not matter for this test',
+    redirect_storage_output: 'test/_output/b/data/redirect_storage.json',
+    redirect_file_path: 'test/_output/b/data/_redirects',
   })
 
   // This just makes sure that the process gets here.

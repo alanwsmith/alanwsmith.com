@@ -12,6 +12,14 @@ function main({
   redirect_storage_output,
   redirect_file_path,
 }) {
+  return main_dev({
+    input_posts_dir,
+    output_posts_dir,
+    redirect_storage_input,
+    redirect_storage_output,
+    redirect_file_path,
+  })
+
   // TODO: Only process files that have an
   // ID in the yaml front matter
   // TODO: Only process .txt files.
