@@ -8,4 +8,4 @@ function add_url_to_redirect_storage({ json_data, url }) {
   return json_data
 }
 
-export default add_url_to_redirect_storage
+export { add_url_to_redirect_storage }

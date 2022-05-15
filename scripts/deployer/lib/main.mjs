@@ -2,7 +2,7 @@ import fs from 'fs'
 import { parse, stringify } from 'yaml'
 import add_slug_to_frontmatter_object from './add_slug_to_frontmatter_object.mjs'
 import list_dir from './list_dir.mjs'
-import add_url_to_redirect_storage from './add_url_to_redirect_storage.mjs'
+import { add_url_to_redirect_storage } from './add_url_to_redirect_storage.mjs'
 import make_redirects_array from './make_redirects_array.mjs'
 
 const main = ({
