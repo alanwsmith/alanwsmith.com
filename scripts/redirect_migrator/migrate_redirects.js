@@ -51,6 +51,6 @@ redirectLines.forEach((line) => {
 })
 
 fs.writeFileSync(
-  'output/redirect_stroage.json',
+  'output/redirect_storage.json',
   JSON.stringify(output, null, 2)
 )
