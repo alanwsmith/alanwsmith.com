@@ -1,7 +1,16 @@
-the \_ksuid_redirects_legacy_with_upper_case.json
+The '_to_delete' directory contains files used
+during the migration. 
 
-file contains the orignal set of data where the ksuids
-were upper case.
+The `_redirects` file is generated from the 
+`scripts/deployer/deploy.mjs` script. 
 
-Once a solid version of the lower case is setup
-this one will be removed
+The `redirects_storage.json` is used to 
+maintain the redirects. It's updated by the 
+deploy.mjs script, but it can also be updated
+manually for adding redirects as necessary. 
+
+Right now, the only redirects that are made
+are in the `ksuid_redirects` section. If you
+need other things, the deploy script will
+need to be udpated. 
+
