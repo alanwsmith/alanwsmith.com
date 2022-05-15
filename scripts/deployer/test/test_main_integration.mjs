@@ -1,7 +1,7 @@
 import assert from 'assert'
 import fs from 'fs'
 import { main } from '../lib/main.mjs'
-import { main_dev } from '../lib/main.mjs'
+// import { main_dev } from '../lib/main.mjs'
 
 it('makes the output file', () => {
   // Given
