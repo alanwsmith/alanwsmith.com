@@ -27,27 +27,3 @@ describe('Test 1', () => {
     assert.equal(results[0].from, '/posts/29ajjouaaaaa')
   })
 })
-
-// describe('Test 2', () => {
-//   it('Redirect missing pages to home page', () => {
-//     // Given
-//     const json_data = {
-//       redirect_data: {
-//         '29ajjouaaaaa': {
-//           redirect_from: [
-//             '/posts/29ajjouaaaaa',
-//             '/posts/this-is-new--29ajjouaaaaa',
-//           ],
-//           redirect_to: '',
-//         },
-//       },
-//     }
-
-//     // When
-//     const results = make_redirects_array({ json_data: json_data })
-
-//     // Then
-//     assert.equal(results.length, 2)
-//     assert.equal(results[0].to, '/')
-//   })
-// })
