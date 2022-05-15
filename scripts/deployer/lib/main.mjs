@@ -3,18 +3,25 @@ import { parse, stringify } from 'yaml'
 import add_slug_to_frontmatter_object from './add_slug_to_frontmatter_object.mjs'
 import list_dir from './list_dir.mjs'
 import add_url_to_redirect_storage from './add_url_to_redirect_storage.mjs'
+import make_redirects_array from './make_redirects_array.mjs'
 
 const main = ({
   input_posts_dir,
   output_posts_dir,
   redirect_storage_input,
   redirect_storage_output,
+  redirect_file_path,
 }) => {
   // TODO: Only process files that have an
   // ID in the yaml front matter
   // TODO: Only process .txt files.
 
   const file_list = list_dir(input_posts_dir)
+
+  // Load redirect_storage json
+  let redirect_data = JSON.parse(
+    fs.readFileSync(redirect_storage_input, 'utf-8')
+  )
 
   file_list.forEach((file) => {
     const file_data = fs.readFileSync(file.full_path, 'utf-8')
@@ -35,20 +42,28 @@ ${stringify(frontmatter)}`
 
     fs.writeFileSync(output_file_path, file_parts.join('---'))
 
-    // Do redirect
-    // Load the redirect_strorage json
-    let redirect_data = JSON.parse(
-      fs.readFileSync(redirect_storage_input, 'utf-8')
-    )
+    // Update redirects_stroage.json
     redirect_data = add_url_to_redirect_storage({
       json_data: redirect_data,
       url: url,
     })
-    fs.writeFileSync(
-      redirect_storage_output,
-      JSON.stringify(redirect_data, null, 2)
-    )
   })
+
+  // output updated redirect_storage json
+  fs.writeFileSync(
+    redirect_storage_output,
+    JSON.stringify(redirect_data, null, 2)
+  )
+
+  // create _redirects file
+  const redirects_array = make_redirects_array({ json_data: redirect_data })
+  const tmp_redirect_data = []
+  redirects_array.forEach((item) => {
+    tmp_redirect_data.push(`${item.from}    ${item.to}    301`)
+  })
+  const redirect_string = tmp_redirect_data.join('\n')
+  console.log(redirect_string)
+  fs.writeFileSync(redirect_file_path, redirect_string)
 }
 
 export default main

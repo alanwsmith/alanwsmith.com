@@ -22,6 +22,7 @@ it('makes the output file', () => {
     output_posts_dir: 'test/_output/a/posts',
     redirect_storage_input: 'test/_input/samples_a/data/redirect_storage.json',
     redirect_storage_output: 'test/_output/a/data/redirect_storage.json',
+    redirect_file_path: 'test/_output/a/data/_redirects',
   })
 
   // Then
