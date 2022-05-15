@@ -5,7 +5,7 @@ function add_url_to_redirect_storage({ json_data, url }) {
   if (json_data.redirect_data[url_id] === undefined) {
     json_data.redirect_data[url_id] = {
       redirect_to: url,
-      redirect_from: [],
+      redirect_from: [`/${url_id}`],
     }
   } else {
     json_data.redirect_data[url_id].redirect_from.push(url)

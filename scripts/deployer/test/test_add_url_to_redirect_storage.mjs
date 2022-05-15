@@ -40,5 +40,8 @@ it('should add a new item if it does not already exist', () => {
 
   // Then
   assert.equal(result.redirect_data['29ajjoubbbbb'].redirect_to, url)
-  assert.equal(result.redirect_data['29ajjoubbbbb'].redirect_from.length, 0)
+  assert.equal(
+    result.redirect_data['29ajjoubbbbb'].redirect_from[0],
+    '/29ajjoubbbbb'
+  )
 })
