@@ -20,6 +20,8 @@ beginning
 - [x] Make `/{KSUID}` redirects for all files
 - [ ] Redirect posts that have been removed to the home page
 - [ ] Do any image moves necessary and make the Img.js file
+- [ ] Publish stream notes
+- [ ] Publish browsing history
 - [ ] Make podcast feeds?
 - [ ] Make site map (might be a nextjs thing?)
 
