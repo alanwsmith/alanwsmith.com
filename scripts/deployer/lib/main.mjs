@@ -31,27 +31,34 @@ function main({
 
       const file_parts = file_data.split('---')
 
+      // Make sure there's a section that can contain front matter
       if (file_parts.length > 1) {
-        let frontmatter = parse(file_parts[1])
-        // slug is assigned here
-        frontmatter = add_slug_to_frontmatter_object(frontmatter)
+        // make sure there's an id and a title (this is not currently in a test)
+        if (
+          file_parts[1].indexOf('id: ') > -1 &&
+          file_parts[1].indexOf('title: ') > -1
+        ) {
+          let frontmatter = parse(file_parts[1])
+          // slug is assigned here
+          frontmatter = add_slug_to_frontmatter_object(frontmatter)
 
-        // This is to deal with adding a space
-        // before the first '---' set
-        file_parts[1] = `
+          // This is to deal with adding a space
+          // before the first '---' set
+          file_parts[1] = `
 ${stringify(frontmatter)}`
 
-        // let output_file_path = `test/_output/a/posts/${frontmatter.slug}.mdx`
-        const output_file_path = `${output_posts_dir}/${frontmatter.slug}.mdx`
-        const url = `/posts/${frontmatter.slug}`
+          // let output_file_path = `test/_output/a/posts/${frontmatter.slug}.mdx`
+          const output_file_path = `${output_posts_dir}/${frontmatter.slug}.mdx`
+          const url = `/posts/${frontmatter.slug}`
 
-        fs.writeFileSync(output_file_path, file_parts.join('---'))
+          fs.writeFileSync(output_file_path, file_parts.join('---'))
 
-        // Update redirects_stroage.json
-        redirect_data = add_url_to_redirect_storage({
-          json_data: redirect_data,
-          url: url,
-        })
+          // Update redirects_stroage.json
+          redirect_data = add_url_to_redirect_storage({
+            json_data: redirect_data,
+            url: url,
+          })
+        }
       }
     }
   })
