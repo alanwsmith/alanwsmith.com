@@ -14,6 +14,16 @@ function main({
 }) {
   const valid_statuses = ['scratch', 'draft', 'published', 'archived']
 
+  // Clear out existing files (not currently in a test case)
+  const files_to_delete_list = list_dir({
+    rootDir: output_posts_dir,
+    isRecursive: false,
+  })
+  files_to_delete_list.forEach((file) => {
+    console.log(`Deleting: ${file.full_path}`)
+    fs.unlinkSync(file.full_path)
+  })
+
   const file_list = list_dir({ rootDir: input_posts_dir, isRecursive: false })
 
   // Load redirect_storage json

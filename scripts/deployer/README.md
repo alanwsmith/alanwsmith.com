@@ -8,14 +8,15 @@ beginning
 
 ### Things to do
 
+- [ ] Migrate previous redirects in
 - [x] Move files to `_posts` directory
 - [x] Rename files appropraitely
 - [x] Make sure slugs have only valid characters
-- [ ] Only publish if status is "archive|scratch|draft|published"
+- [x] Only publish if status is "archive|scratch|draft|published"
 - [x] Add `slug` to the frontmatter of each file
 - [x] Build the redirects file
 - [x] Add KSUIDs to the redirects for new files
-- [ ] Clear the output directory before each run
+- [x] Clear the output directory before each run
 - [x] Manage redirects when titles/slugs change via redirects
 - [ ] Do any image moves necessary and make the Img.js file
 - [ ] Make podcast feeds?
