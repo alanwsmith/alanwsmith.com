@@ -1,4 +1,4 @@
-function build_redirects({ json_data }) {
+function make_redirects_array({ json_data }) {
   let results = []
 
   for (const post_id in json_data.redirect_data) {
@@ -14,4 +14,4 @@ function build_redirects({ json_data }) {
   return results
 }
 
-export default build_redirects
+export default make_redirects_array

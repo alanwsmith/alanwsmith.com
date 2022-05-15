@@ -1,5 +1,5 @@
 import assert from 'assert'
-import build_redirects from '../lib/build_redirects.mjs'
+import make_redirects_array from '../lib/make_redirects_array.mjs'
 
 // This tests the array of arrays that's
 // used to generate the redirect file
@@ -19,7 +19,7 @@ it('make a basic redirect with one file', () => {
   }
 
   // When
-  const results = build_redirects({ json_data: json_data })
+  const results = make_redirects_array({ json_data: json_data })
 
   // Then
   assert.equal(results.length, 1)
