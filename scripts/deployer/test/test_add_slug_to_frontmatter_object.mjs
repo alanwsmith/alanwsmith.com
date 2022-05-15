@@ -1,6 +1,5 @@
 import assert from 'assert'
 import { add_slug_to_frontmatter_object } from '../lib/add_slug_to_frontmatter_object.mjs'
-// import { add_slug_to_frontmatter_object_dev } from '../lib/add_slug_to_frontmatter_object.mjs'
 
 it('should get a slug', () => {
   // Given
