@@ -9,7 +9,7 @@ function deploy_site() {
     output_posts_dir:
       '/Users/alan/workshop/alanwsmith.com/scripts/deployer/test/_output/_prod_test/posts',
     redirect_storage_input:
-      '/Users/alan/workshop/alanwsmith.com/scripts/deployer/test/_input/samples_a/data/redirect_storage.json',
+      '/Users/alan/workshop/alanwsmith.com/scripts/deployer/test/_input/_prod_test/data/redirect_storage.json',
     redirect_storage_output:
       '/Users/alan/workshop/alanwsmith.com/scripts/deployer/test/_output/_prod_test/data/redirect_storage.json',
     redirect_file_path:
