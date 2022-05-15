@@ -3,7 +3,7 @@
 const fs = require('fs')
 
 const output = {
-  redirect_data: {},
+  ksuid_redirects: {},
 }
 
 let fileData = JSON.parse(
@@ -13,17 +13,17 @@ let fileData = JSON.parse(
 for (const [key, value] of Object.entries(fileData.ksuid_redirects)) {
   console.log(key)
   console.log(value)
-  output.redirect_data[key] = {
+  output.ksuid_redirects[key] = {
     redirect_from: [],
     redirect_to: '',
   }
 
-  output.redirect_data[key].redirect_from.push(value.current_slug)
-  output.redirect_data[key].redirect_from.push(`/${key}`)
-  output.redirect_data[key].redirect_from.push(`/posts/${key}`)
+  output.ksuid_redirects[key].redirect_from.push(value.current_slug)
+  output.ksuid_redirects[key].redirect_from.push(`/${key}`)
+  output.ksuid_redirects[key].redirect_from.push(`/posts/${key}`)
 
   value.slugs_to_redirect.forEach((slug) => {
-    output.redirect_data[key].redirect_from.push(slug)
+    output.ksuid_redirects[key].redirect_from.push(slug)
   })
 }
 
@@ -43,18 +43,18 @@ redirectLines.forEach((line) => {
     console.log(key)
 
     // make the key if it doesn't exist
-    if (output.redirect_data[key] === undefined) {
-      output.redirect_data[key] = {
+    if (output.ksuid_redirects[key] === undefined) {
+      output.ksuid_redirects[key] = {
         redirect_from: [],
         redirect_to: '',
       }
     }
 
-    if (output.redirect_data[key].redirect_from.indexOf(lineParts[0]) === -1) {
-      output.redirect_data[key].redirect_from.push(lineParts[0])
+    if (output.ksuid_redirects[key].redirect_from.indexOf(lineParts[0]) === -1) {
+      output.ksuid_redirects[key].redirect_from.push(lineParts[0])
     }
-    if (output.redirect_data[key].redirect_from.indexOf(lineParts[1]) === -1) {
-      output.redirect_data[key].redirect_from.push(lineParts[1])
+    if (output.ksuid_redirects[key].redirect_from.indexOf(lineParts[1]) === -1) {
+      output.ksuid_redirects[key].redirect_from.push(lineParts[1])
     }
   }
 })
