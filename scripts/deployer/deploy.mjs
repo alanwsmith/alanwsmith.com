@@ -32,4 +32,4 @@ function deploy_site(env) {
   main(config[env])
 }
 
-deploy_site('dev')
+deploy_site('prod')
