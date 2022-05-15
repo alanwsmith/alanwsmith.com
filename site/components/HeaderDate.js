@@ -15,6 +15,5 @@ export default function HeaderDate({ date }) {
   ]
 
   const dateObject = new Date(date)
-
   return `${months[dateObject.getMonth()]} - ${dateObject.getFullYear()}`
 }
