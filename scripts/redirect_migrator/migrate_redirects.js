@@ -15,7 +15,7 @@ for (const [key, value] of Object.entries(fileData.ksuid_redirects)) {
   console.log(value)
   output.ksuid_redirects[key] = {
     redirect_from: [],
-    redirect_to: '',
+    redirect_to: '/',
   }
 
   output.ksuid_redirects[key].redirect_from.push(value.current_slug)
@@ -46,14 +46,18 @@ redirectLines.forEach((line) => {
     if (output.ksuid_redirects[key] === undefined) {
       output.ksuid_redirects[key] = {
         redirect_from: [],
-        redirect_to: '',
+        redirect_to: '/',
       }
     }
 
-    if (output.ksuid_redirects[key].redirect_from.indexOf(lineParts[0]) === -1) {
+    if (
+      output.ksuid_redirects[key].redirect_from.indexOf(lineParts[0]) === -1
+    ) {
       output.ksuid_redirects[key].redirect_from.push(lineParts[0])
     }
-    if (output.ksuid_redirects[key].redirect_from.indexOf(lineParts[1]) === -1) {
+    if (
+      output.ksuid_redirects[key].redirect_from.indexOf(lineParts[1]) === -1
+    ) {
       output.ksuid_redirects[key].redirect_from.push(lineParts[1])
     }
   }
