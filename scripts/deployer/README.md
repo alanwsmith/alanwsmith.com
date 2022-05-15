@@ -27,6 +27,7 @@ Things to do:
 - [ ] Do any image moves necessary and make the Img.js file
 - [ ] Make podcast feeds?
 - [ ] Make site map
+- [ ] Make `/post/{KSUID}` redirects for all files
 
 ### Notes
 
