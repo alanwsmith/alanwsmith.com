@@ -1,0 +1,190 @@
+---
+blurb: This is how I get my stream going
+categories:
+  - Streaming
+date: 2021-01-01T00:00:00
+id: 20eNnI3UQniK
+scrubbed_2021: false
+status: published
+type: post
+title: My Streaming Startup Runbook (aka Checklist)
+slug: my-streaming-startup-runbook-aka-checklist--20enni3uqnik
+---
+
+### Part 1
+
+
+<Checklist data={`
+Set Mac display resolution to 1920x1080
+Run the yabai resizer 1080_stream_setup.py script
+Connect Mac to Elgato capture card 
+Switch Keyboard to Windows Machine
+Turn on lights
+Restart facecam
+Start SnapCam
+Start Virtual Cable
+Start Audition
+Set Audition Dynamics - Noise Gate to 48.8dB (35.2 when not streaming)
+Open OBS
+Verify StreamDeck is running
+Verify keyboard cam is in place and shutter is open
+Put mic in place
+`} />
+
+
+### Windows Audio
+
+<Checklist data={`
+Start Monster Cat Audio in Chrome
+Set Monster Cat Audio to Shuffle (which automatically repeats)
+Mute headphones on the Windows machine
+Move Desktop Audio in OBS to -5.3db (TODO: Check VOD to see how this sounds)
+Switch OBS to main scene and check that music and vocals are working
+`} />
+
+### Windows Desktop
+
+<Checklist data={`
+Launch Creator Dashboard in Chrome
+Verify snapcam bot is running - D:/Twitch_Stuff/snap_cam_channel_points/02 (might have to run 01...py first)
+Verify snapcam close down bot script is running - D:/Twitch_Stuff/snap_cam_channel_points - camera_shutdown_timer.py
+Minimize everything except stream manager and OBS
+`} />
+
+
+### Mac Stuff
+
+<Checklist data={`
+Switch keyboard to mac
+Move stuff out of Grimoire with scripts "/Users/alan/workshop/grimoire-stream-setup"
+Verify work stuff is out of grimoire
+Move Github Desktop to working project
+Verify youre logged out of work email
+Verify youre logged out of AWS
+Turn down brightness on monitors
+Set Sublime Text font size to 30
+Set nvAlt Font size to 30
+Set Code Runner Font size to 30
+Set VSCode window zoom to 4 (leave font at 15)
+Set iTerm2 default profile to Stream Profile
+Set Chrome font zoom to 150%
+Start Keychain Access on second monitor to prevent accidentally flashing it
+Start password manager on second monitor to prevent flashing it
+Flip aws credentials to personal profile
+Review Open apps
+Close Bowser Tabs (check for extra windows via to menu)
+Use the Window Menu item to find extra finder windows
+Use the Window Menu item to find extra sublime text windows
+Close Finder Windows by clicking "Window" in the menu bar then selecting them to move to the space (the normal hotkey doesn't work)
+`} />
+
+### Twitch
+
+<Checklist data={`
+Update !today bot command via: `~/workshop/thebotofalan_mac`
+Start tmux for bots if necessary 'tmux new -s bots', new pane with 'Ctrl+b', switch panes with 'Ctrl+b <arrow>'
+Verify chatbot is running (tmux a -t bots: ~/Users/alans/workshop/thebotofalan_mac/start-thebotofalan.bash)
+Start your music over the speakers
+Open Stream Manager in Safari
+Run the !today command to make sure the bot is working
+Send a channel point redemption to make sure snap cam works
+Update stream title and info
+Set stream tags as appropriate: English - Python - JavaScript - Web Development - Programming - IRL - Creative - AMA
+`} />
+
+### Misc 2
+
+<Checklist data={`
+Turn on fan
+Make a pitstop
+Refill water bottle
+Raise Mac Monitor
+Prep Link on twitter: 'https://www.twitch.tv/theidofalan'
+Prep Link for discords: 'https://www.twitch.tv/theidofalan'
+Prep Link for hachyderm: https://hachyderm.io/web/home
+Switch OBS to Starting Soon scene
+Clear terminal 
+Set nvAlt to some starting page
+Start streaming in OBS
+Open twitch stream in safari on the mac
+Mute twitch stream in safari on the mac
+Switch back to Stream Manager is safari on stream manager
+Post link on twitter
+Post link on https://hachyderm.io/web/home
+Post twitch link in Party Corgi Discord: Creation - videos-and-streaming
+Post twitch link in The Claw Discord: Work and Projects - Advertise 
+Post twitter link in Jamstack (TODO: see if there bot can post) - Creators - content-creation
+Close discord
+Switch to main OBS scene and go
+`} />
+
+
+---
+
+
+### TODO:
+
+Move this to a post stream checklist page:
+
+```
+  {
+    title: 'Post-Stream',
+    items: [
+      'System Preferences -> Display -> Scaled -> Looks like 2560x1440',
+      'nvAlt Font Size: JetBrains Mono 14',
+      'iTerm2: Non-Stream-V2',
+      'Safari Zoom 100%',
+    ],
+  },
+```
+
+
+
+
+### TL;DR
+
+Checklists (aka Runbooks) are awesome.
+
+Profoundly simple. Profoundly effective.
+
+There's generally way more steps than you realize to deal with with any given thing. For example, you'd think starting up a stream would be trivial. Take a look at my stream startup checklist for an example of how that's not the case.
+
+### Notes
+
+It's easy to think you can remember all the steps for any given process. It's harder than you think. Ask yourself if you've ever goofed? Sure, most of the time you get it right, but the fact that you don't all the time is the reason to spend some time making a checklist.
+
+There's a tendency to see using a checklist is a crutch. That it's something that only folks who aren't good at their job would use. Computers can do the same thing, exactly, the same way forever. We humans aren't like that. We get tired, bored, distracted, and sometimes just flat out goof. That's where checklists come in. To provide a backstop.
+
+This is the checklist I use when I start a stream:
+
+-- see above --
+
+Like this digital garden, it's a living thing. It's settled down a lot, but when I first started it I was constantly adding things. Some were obvious, like changing font sizes. Somethings were not. Like, moving the mic in front of my face. That item went on the list because I forgot once. I figured I'd remember it from that point forward but put it on the list anyway. It's saved me half a dozen times since.
+
+This list also used to be way longer. I've migrated a bunch of stuff into that first "Run Keyboard Maestro Stream Prep" step. It's a checklist of its own, but one that's handled by the computer (as long as I remember to press the button which I always do because it's on the list).
+
+### Making A List
+
+There's 7.3 billion apps out there for checklists. I'm not interested in any of them. I built a little web page that I used as my new tab window that contains a bunch of links to various resources. One link is to this checklist which is itself just a local HTML page sitting on my machine. The list is a simple unordered list (`&lt;ul&rt;`). Easy-peasy.
+
+I love this approach. When I open the page, all the checkboxes are un-ticked. I just go down the list marking things off as I do them then close the page when I'm done. Next time I open it, it's ready to go again. I don't need to track anything about usage. So, there's no need to communicate with a server.
+
+You can actually see how it works directly on this page. Tick away. Refresh if you want to start over. The approach also gets bonus points for the ability to put links in that open windows to other pages I need to update like my Twitch stream title.
+
+Super simple. Very effective. Highly recommended.
+
+### Check It Once
+
+So, yeah. I'm a fan of checklists. Sometimes they seem tedious. But, here's the thing. All the things that are on it are there for a reason and need to be done. It would be just as tedious to do them without the list.
+
+The biggest thing to remember is that they change a lot at the start and can change over time. Don't worry about getting everything on one initially. You won't. You figure them out as you go.
+
+Give it a shot and you'll find you save yourself some grief.
+
+-a
+
+---
+
+P.S. If I didn't sell you on the idea, check out [The Checklist Manifesto](https://www.amazon.com/Checklist-Manifesto-How-Things-Right/dp/0312430000/) to learn about how doctors and pilots use them too.
+
+P.P.S. One of these days I'm totally gonna update to use labels so I can click on the text instead of just the checkbox.

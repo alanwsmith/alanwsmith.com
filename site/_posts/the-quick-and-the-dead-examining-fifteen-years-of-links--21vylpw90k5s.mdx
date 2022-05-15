@@ -1,0 +1,87 @@
+---
+blurb: ""
+categories:
+  - Web Development
+date: 2021-11-27T14:18:22
+id: 21vylpw90k5s
+status: draft
+type: post
+title: "The Quick And The Dead: Examining Fifteen Years Of Links"
+slug: the-quick-and-the-dead-examining-fifteen-years-of-links--21vylpw90k5s
+---
+
+I'm migrating my site to a new framework (Next.js) and content storage system (MDX files in my Grimoire). I wrote some scripts to find dead links. Figured I'd use the opportunity to pull some stats as well. 
+
+### The Breakdown
+
+- Site Page: 1367
+- External Links: 4117
+
+### Links Per Year
+
+| Year  | Links | Live  | Dead | % Dead |
+|-------|-------|-------|------|--------|
+| 2005  | 72    | 54    | 18   | 25%    |
+| 2006  | 139   | 99    | 40   | 29%    |
+| 2007  | 106   | 79    | 27   | 25%    |
+| 2008  | 158   | 129   | 29   | 18%    |
+| 2009  | 169   | 130   | 39   | 23%    |
+| 2011  | 65    | 49    | 16   | 25%    |
+| 2012  | 60    | 51    | 9    | 15%    |
+| 2013  | 179   | 148   | 31   | 17%    |
+| 2014  | 91    | 77    | 14   | 15%    |
+| 2015  | 72    | 55    | 17   | 23%    |
+| 2016  | 15    | 14    | 1    | 7%     |
+| 2017  | 8     | 8     | 0    | -      |
+| 2019  | 17    | 17    | 0    | -      |
+| 2020  | 2,385 | 2,260 | 125  | 5%     |
+| 2021  | 581   | 515   | 66   | 11%    |
+| Total | 4,117 | 3,685 | 432  | 12%    |
+
+
+In 2020, I started automatically pulling in the links I visit each day which is where there's such a bump. There are actually a bunch more, but I've taken them out for time being. 
+
+I'm surprised by the number of dead links in 2021, and, really 2020. Want to look at that more to figure out if some's up with my methodology or if those numbers are really legit. 
+
+
+
+### Status Codes 
+
+
+| Code | Status                        | Before Redirects | After Redirects |
+|------|-------------------------------|------------------|-----------------|
+| N/A  | Unreachable                   | 69               | 83              |
+| 200  | OK                            | 2,774            | 3,685           |
+| 204  | No Content                    | 10               | 10              |
+| 301  | Moved Permanently             | 880              | -               |
+| 302  | Found                         | 139              | -               |
+| 303  | See Other                     | 5                | -               |
+| 307  | Temporary Redirect            | 12               | -               |
+| 308  | Permanent Redirect            | 24               | -               |
+| 400  | Bad Request                   | 23               | 23              |
+| 401  | Unauthorized                  | 1                | 1               |
+| 403  | Forbidden                     | 80               | 96              |
+| 404  | Not Found                     | 90               | 198             |
+| 410  | Gone                          | 2                | 4               |
+| 451  | Unavailable For Legal Reasons | -                | 1               |
+| 500  | Internal Server Error         | 3                | 6               |
+| 503  | Service Unavailable           | 5                | 9               |
+| 525  | SSL Handshake Failed          | -                | 1               |
+
+
+
+### Other Things To Look At
+
+- Add the number of posts per year
+- Add number of pages with links per year
+- List the number of distinct domains showing the top ten
+- Show number of original http and https links pear year
+
+
+### Wrapping Up
+
+The scripts I used to find, scrub, and pull the link details are [here](https://github.com/alanwsmith/alanwsmith.com-dead-link-finder)
+
+And, yeah. It's actually sixteen years of links, but fifteen sounds better in the title.
+
+

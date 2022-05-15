@@ -1,0 +1,40 @@
+---
+blurb: ""
+categories:
+  - Miscellaneous
+date: 2022-01-14T06:20:22
+id: 23gcz3kcl07h
+status: scratch
+title: Fix issues with Docker build problem
+type: post
+slug: fix-issues-with-docker-build-problem--23gcz3kcl07h
+---
+
+Had this problem:
+
+```
+$ docker build -t my-container-name .
+[+] Building 0.3s (3/3) FINISHED
+ => [internal] load build definition from Dockerfile                                   0.0s
+ => => transferring dockerfile: 37B                                                    0.0s
+ => [internal] load .dockerignore                                                      0.0s
+ => => transferring context: 2B                                                        0.0s
+ => ERROR [internal] load metadata for public.ecr.aws/lambda/python:3.8                0.1s
+------
+ > [internal] load metadata for public.ecr.aws/lambda/python:3.8:
+------
+failed to solve with frontend dockerfile.v0: failed to create LLB definition: unexpected status code [manifests 3.8]: 400 Bad Request
+```
+
+Based on this answer: https://stackoverflow.com/a/66993669/102401
+
+I figured I'd troubleshoot with this:
+
+
+```
+DOCKER_BUILDKIT=0  docker build .
+```
+
+That command was successful and then I could run my original command and it worked. not sure what happened there, but that cleared whatever it was. 
+
+

@@ -1,0 +1,32 @@
+---
+blurb: ""
+date: 2020-12-25T00:00:00
+id: 20eNlZi8dq9s
+scrubbed_2021: false
+status: published
+title: Get Sub Directories Working
+type: post
+slug: get-sub-directories-working--20enlzi8dq9s
+---
+
+For a hugo site with directory like this:
+
+        automating-handbrake
+        ├── _index.md
+        ├── output-maker-for-customs
+        │   ├── custom_run.bash
+        │   ├── encoder-presets.md
+        │   ├── get_encoder_preset.py
+        │   ├── _index.md
+        │   └── make_custom_script.py
+        └── output-maker-for-presets
+            ├── make_preset_commands.py
+            ├── preset_list.txt
+            └── preset_run.bash
+    
+    
+You have to use `_index.md` instead of `index.md` to get the lower level directories to work. 
+
+By default `_index.md` will do a `list.html` template. but you can override that with e.g. `layout: single`
+
+In order to get `encoder-presets.md`, `output-maker-for-customs/_index.md` can't be `output-maker-for-customs/index.md`. Note that you can flip it over with a `layout: single` too to show content instead of a list.

@@ -1,0 +1,283 @@
+---
+blurb: ""
+date: 2021-02-10T17:26:19
+id: 20eNuodyPgTl
+scrubbed_2021: false
+status: published
+title: Gatsby Site Build With Markdown and Responsive Images
+type: post
+slug: gatsby-site-build-with-markdown-and-responsive-images--20enuodypgtl
+---
+
+### Modules
+
+```bash
+npm install gatsby-source-filesystem 
+npm install gatsby-plugin-mdx 
+npm install @mdx-js/mdx 
+npm install @mdx-js/react
+npm install gatsby-remark-images 
+npm install gatsby-remark-responsive-iframe
+npm install gatsby-remark-copy-linked-files
+npm install gatsby-remark-smartypants
+npm install gatsby-remark-prismjs
+npm install gatsby-transformer-sharp
+npm install gatsby-plugin-sharp
+npm install gatsby-plugin-react-helmet
+```
+
+
+
+--------------------------------------------------------------------------------
+
+### gatsby-browser.js
+
+```javascript
+require("prismjs/themes/prism-solarizedlight.css")
+require("prismjs/plugins/line-numbers/prism-line-numbers.css")
+```
+
+
+
+--------------------------------------------------------------------------------
+
+### gatsby-config.js
+
+```javascript
+module.exports = {
+    plugins: [
+        
+
+        // TODO: install: gatsby-plugin-feed
+        // TODO: gatsby-plugin-manifest
+        
+
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                path: `${__dirname}/src/mdx-pages`,
+            },
+        },
+
+        {
+            resolve: `gatsby-plugin-mdx`,
+            options: {
+                extensions: ['.mdx', '.md'],
+                // a workaround to solve mdx-remark plugin compat issue
+                // https://github.com/gatsbyjs/gatsby/issues/15486
+                plugins: [
+                    `gatsby-remark-images`,
+                ],
+                gatsbyRemarkPlugins: [
+
+                    {
+                        resolve: `gatsby-remark-images`,
+                        options: {
+                            linkImagesToOriginal: false,
+                            maxWidth: 800,
+                            quality: 82,
+                            loading: "eager",
+                            disableBgImage: true,
+                        },
+                    },
+
+                    {
+                        resolve: `gatsby-remark-responsive-iframe`,
+                        options: {
+                            wrapperStyle: `margin-bottom: 1.0725rem`,
+                        },
+                    },
+
+
+                    {
+                        resolve: `gatsby-remark-copy-linked-files`,
+                    },
+
+                    {
+                        resolve: `gatsby-remark-smartypants`,
+                    },
+
+                    {
+                        resolve: `gatsby-remark-prismjs`,
+                        options: {
+                            classPrefix: "language-",
+                            inlineCodeMarker: '›',
+                            aliases: { sh: "bash" },
+                            showLineNumbers: false,
+                            noInlineHighlight: false,
+                            escapeEntities: {},
+                        },
+                    },
+
+                ],
+            },
+        },
+
+
+        `gatsby-transformer-sharp`,
+        `gatsby-plugin-sharp`,
+        `gatsby-plugin-react-helmet`,
+
+
+    ],
+}
+```
+
+
+
+--------------------------------------------------------------------------------
+
+### gatsby-node.js
+
+```javascript
+exports.createPages = async ({ actions, graphql, reporter }) => {
+  const { createPage } = actions
+  const blogPostV1Layout = require.resolve(`./src/components/blog-post-v1.js`)
+  const result = await graphql(`
+    {
+      allMdx {
+        edges {
+          node {
+            frontmatter {
+              slug
+            }
+          }
+        }
+      }
+    }
+  `)
+  if (result.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`)
+    return
+  }
+  result.data.allMdx.edges.forEach(({ node }) => {
+    createPage({
+      path: node.frontmatter.slug,
+      component: blogPostV1Layout,
+      context: {
+        slug: node.frontmatter.slug,
+      },
+    })
+  })
+}
+```
+
+
+
+--------------------------------------------------------------------------------
+
+### src/components/blog-post-v1.js
+
+```javascript
+import { graphql } from 'gatsby';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
+import React from 'react';
+
+export const query = graphql`
+  query($slug: String!) {
+    mdx(frontmatter: { slug: { eq: $slug } }) {
+      frontmatter {
+        title
+        slug
+      }
+      body
+    }
+  }
+`;
+const Post = ({ data: { mdx: post } }) => {
+  const { title } = post.frontmatter;
+  const { body } = post;
+  return (
+    <div>
+        <h1>{title}</h1>
+        <MDXRenderer>{body}</MDXRenderer>
+    </div>
+  );
+};
+export default Post;
+```
+
+--------------------------------------------------------------------------------
+
+### src/mdx-pages/hw.mdx
+
+
+```markdown
+---
+title: Hey, MDX
+date: February 15, 2021
+slug: /hello-world
+---
+
+This is the `hello-world.mdx` file.
+
+
+Here's some new test text in quote: "this is a test"
+
+THis is some quotes in a block quote:
+
+> This is the "block quote test". Aren't it cool?
+
+And a spacer-line
+
+
+```javascript
+const test = "asdf"
+```
+
+
+![Random Sample Image](https://picsum.photos/1200/1300)
+
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/qTUnDV3MgVQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+```
+
+
+--------------------------------------------------------------------------------
+
+### src/index.js
+
+```javascript
+import React from "react"
+import { useStaticQuery, Link, graphql } from "gatsby"
+
+
+export default function Home() {
+
+    const data = useStaticQuery(
+        graphql`query {
+            allMdx {
+            totalCount
+            edges {
+                node {
+                id
+                frontmatter {
+                    title
+                    slug
+                }
+                excerpt
+                }
+            }
+            }
+        }`
+    )
+
+    return (
+        <main>
+            <div>
+                <h4>{data.allMdx.totalCount} Posts</h4>
+                {data.allMdx.edges.map(({ node }) => (
+                    <div key={node.id}>
+                        <h3>
+                            <Link to={node.frontmatter.slug}>
+                                {node.frontmatter.title}{" "}
+                            </Link>
+                        </h3>
+                        <p>{node.excerpt}</p>
+                    </div>
+                ))}
+            </div>
+        </main>
+    )
+}
+```

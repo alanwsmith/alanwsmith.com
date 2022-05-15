@@ -1,0 +1,25 @@
+---
+blurb: ""
+categories:
+  - Miscellaneous
+date: 2021-10-07T21:16:39
+id: 20eOXz7Cc6Ua
+scrubbed_2021: false
+status: scratch
+title: Convert An Image To base64 On The Command Line
+type: post
+slug: convert-an-image-to-base64-on-the-command-line--20eoxz7cc6ua
+---
+
+Use the `base64` command with the `> filename` operator to convert an image to base64 and save the string in a file:
+
+```bash
+base64 IMAGE_FILE.jpg > OUTPUT.txt
+```
+
+You can also export it into an environmental variable for use in other scripts
+
+```bash
+export IMAGE_STRING=$(base64 IMAGE_FILE.jpg)
+echo $IMAGE_STRING
+```

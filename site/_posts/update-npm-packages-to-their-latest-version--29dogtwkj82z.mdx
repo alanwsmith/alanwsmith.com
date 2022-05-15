@@ -1,0 +1,39 @@
+---
+blurb: ""
+categories:
+  - Miscellaneous
+date: 2022-05-15T19:22:00
+id: 29dogtwkj82z
+status: scratch
+type: post
+title: Update npm Packages To Their Latest Version
+slug: update-npm-packages-to-their-latest-version--29dogtwkj82z
+---
+
+
+
+The yolo way to do it is:
+
+```bash
+npx npm-check-updates -u
+npm i
+```
+
+the `npx npm-check-updates -u` updates the `package.json` file with all the latest versions (including major version changes)
+
+then, running `npm i` does the install of all those latest modules from the `package.json` file
+
+
+---
+
+
+If you just want to do a single package, do:
+
+```
+npm install PACKAGE_NAME@latest
+```
+
+
+
+
+

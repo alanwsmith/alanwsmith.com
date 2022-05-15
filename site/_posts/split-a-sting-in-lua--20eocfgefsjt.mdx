@@ -1,0 +1,56 @@
+---
+blurb: ""
+categories:
+  - Miscellaneous
+date: 2021-06-20T19:58:06
+id: 20eOCFGeFSJt
+scrubbed_2021: false
+status: scratch
+title: Split A Sting In Lua
+type: post
+slug: split-a-sting-in-lua--20eocfgefsjt
+---
+
+```lua
+local example = "an example string"
+for i in string.gmatch(example, "%S+") do
+   print(i)
+end
+```
+
+
+via: http://lua-users.org/wiki/SplitJoin
+
+
+
+
+
+---
+
+
+Another approach 
+
+```lua
+function mysplit (inputstr, sep)
+        if sep == nil then
+                sep = "%s"
+        end
+        local t={}
+        for str in string.gmatch(inputstr, "([^"..sep.."]+)") do
+                table.insert(t, str)
+        end
+        return t
+end
+
+input_string = 'this is it'
+
+base_table = mysplit(input_string, " ")
+
+for i=2, #base_table do
+        print(base_table[i])
+end 
+```
+
+
+
+via: https://stackoverflow.com/a/7615129/102401

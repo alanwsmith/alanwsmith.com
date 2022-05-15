@@ -1,0 +1,41 @@
+---
+blurb: ""
+categories:
+  - Miscellaneous
+date: 2022-01-06T23:04:34
+id: 23lzhzwbxe1k
+status: scratch
+title: Shuffle An Array
+type: post
+slug: shuffle-an-array--23lzhzwbxe1k
+---
+
+NOTE: This mutates the original array
+
+
+Shuffle a JavaScript array with:
+
+```javascript
+function shuffle(array) {
+  let currentIndex = array.length
+  let randomIndex
+
+  while (currentIndex != 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--
+    ;[array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], 
+        array[currentIndex]
+      ]
+  }
+
+  return array;
+}
+
+// Then
+var arr = ['a', 'b', 'c', 'd', 'e', 'f',', 'g'];
+shuffle(arr);
+console.log(arr);
+```
+
+via: https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array

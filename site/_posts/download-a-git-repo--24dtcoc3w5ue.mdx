@@ -1,0 +1,30 @@
+---
+blurb: ""
+categories:
+  - Miscellaneous
+date: 2022-01-25T21:30:34
+id: 24dtcoc3w5ue
+status: scratch
+title: Download A Git Repo
+type: post
+slug: download-a-git-repo--24dtcoc3w5ue
+---
+
+This is a bit of a hack, but to download a git repo into your current directory you can do:
+
+```
+git init 
+git remote add origin https://github.com/alanwsmith/ideas.alanwsmith.com
+git fetch 
+git checkout main
+rm -rf .git
+```
+
+The reason you might want to use this over `git clone` is because you can do it in your current directory. The `git clone` command clones the repo down into a sub directory. 
+
+credit to [this post](https://www.quora.com/Why-would-you-download-a-git-repository-rather-than-clone-it-Is-this-a-sign-of-inexperience/answer/Oli-Us) for the technique 
+
+
+
+
+

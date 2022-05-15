@@ -1,0 +1,63 @@
+---
+blurb: ""
+categories:
+  - Postgres
+date: 2021-11-25T22:56:22
+id: 21RLWDRy78dV
+status: draft
+title: Create A Table In Postgres
+type: post
+slug: create-a-table-in-postgres--21rlwdry78dv
+---
+
+The basic SQL statement to build a table in postgres
+
+```sql
+CREATE TABLE IF NOT EXISTS public.states (
+    db_id SERIAL PRIMARY KEY,
+    abbreviation VARCHAR(2) NOT NULL UNIQUE,
+    full_name VARCHAR(30)
+);
+
+ALTER TABLE public.states ENABLE ROW LEVEL SECURITY;
+```
+
+The `ALTER TABLE public.states ENABLE ROW LEVEL SECURITY;` is important for things like supabase. Without, anonymous connections to read from and write to the table
+
+--
+
+
+
+
+These are the old notes that I don't think are right. it may be an alternate way to do it, but that need to be investigated.
+
+
+TODO: put in link to how to setup privilidges
+
+---
+
+login with:
+
+```
+psql -d database_name -U role_name
+```
+
+
+Example:
+
+```
+CREATE TABLE IF NOT EXISTS schema_name.new_table_name (
+    code        char(5) CONSTRAINT firstkey PRIMARY KEY,
+    title       varchar(40) NOT NULL,
+    did         integer NOT NULL,
+    date_prod   date,
+    kind        varchar(10)
+);
+```
+
+Do row level security (e.g. on supabase) with:
+
+```sql
+ALTER TABLE schema_name.new_table_name ENABLE ROW LEVEL SECURITY;
+```
+

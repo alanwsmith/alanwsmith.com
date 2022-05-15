@@ -1,0 +1,68 @@
+---
+blurb: The directions on the github site are a little unclear about the file
+  location. Here's how to get the KSUID command line tool up and running.
+categories:
+  - Command Line Tools
+date: 2021-11-03T13:49:18
+id: 20eOe9bo4LNU
+scrubbed_2021: false
+status: published
+type: post
+title: How-To Install The KSUID Command Line Tool On A Mac
+slug: how-to-install-the-ksuid-command-line-tool-on-a-mac--20eoe9bo4lnu
+---
+
+TODO: Add note that scripts in things like Expans likely won't see the go/bin path, the way around that is to copy the binary to the /usr/local/bin path
+
+
+
+I'm using [KSUIDs](https://github.com/segmentio/ksuid) (K-Sortable Unique IDentifiers) instead of UUIDs for my globally unique identifier needs these days. They're shorter than UUIDs and they sort naturally by creation time which is handy for using them as blog post ids.  
+
+The directions for installing the command line tool didn't quite get me there. This is the process I used to get up and running. 
+
+First thing: you have to have Go installed. Directions for that are here: [go.dev/doc/install](https://go.dev/doc/install)
+
+Once you've got Go, run the commands from the [install section](https://github.com/segmentio/ksuid). At the time of writing this (early 2022), they are:
+
+```bash
+go get -u github.com/segmentio/ksuid
+
+go install github.com/segmentio/ksuid/cmd/ksuid@latest
+```
+
+(Note: I had to add `@latest` to get the install to work. I got an error without it.)
+
+Those commands install the tool on your `$GOPATH` which is not a regular environmental variable. It also wasn't on my path by default so the `ksuid` command didn't work when I tried to run it. 
+
+I fixed this by looking up the $GOPATH with:
+
+```
+go env GOPATH
+```
+
+That pointed me to a newly created `go` directory in my home directory (i.e. `/Users/alan/go`). The `ksuid` executable was in a `bin` subdirectory (i.e. `/Users/alan/go/bin/ksuid). 
+
+I added that path to my PATH by adding this line to the bottom of my `~/.zshrc` file (which would be `~/.bash_profile` or `~/.bashrc` if you're using `bash` instead of `zsh`)
+
+```bash
+export PATH="/Users/alan/go/bin:$PATH"
+```
+
+After that, running `ksuid` from the command line worked like a champ.
+
+
+References:
+
+- [ksuid from segmentio on github](https://github.com/segmentio/ksuid)
+- [How To Build And Install Go Programs](https://www.digitalocean.com/community/tutorials/how-to-build-and-install-go-programs)
+
+
+
+
+
+
+
+```bash
+go install github.com/segmentio/ksuid/cmd/ksuid@latest
+cp "" "/usr/local/bin/ksuid"
+```

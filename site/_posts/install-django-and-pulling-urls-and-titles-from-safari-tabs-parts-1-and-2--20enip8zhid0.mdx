@@ -1,0 +1,214 @@
+---
+blurb: ""
+categories:
+  - Live Coding
+date: 2020-10-03T00:00:00
+id: 20eNIp8zhId0
+scrubbed_2021: false
+status: published
+title: Install Django and Pulling URLs and Titles from Safari Tabs - Parts 1 and 2
+type: post
+slug: install-django-and-pulling-urls-and-titles-from-safari-tabs-parts-1-and-2--20enip8zhid0
+---
+
+`youtube: https://www.youtube.com/watch?v=WoAD9nUEQJA`
+
+`youtube: https://www.youtube.com/watch?v=pDlonZSL6q4`
+
+
+### [Time: 00:00:00] TextExpander ISO 8601 Snippet Fix
+
+Started off the stream with a quick fix for an old post. I wrote [this TextExpander snippet](https://www.alanwsmith.com/iso-8601-time-stamp-snippet-for-textexpander/) back in 2015. It outputs an ISO 8601 timestamp (e.g. 2020-10-04T16:09:34-0400). It's been super handy over the years. The one in my TextExpander works fine, but the one in the post had a bug. I didn't know about it until I got [this tweet](https://twitter.com/pulamusic/status/1312477489051004928) from [@pulamusic](https://twitter.com/pulamusic).
+
+I took a look at the source code for the page and it looked fine (though, I realized when reviewing the stream it wasn't). So, I sshed into my server and fixed it that way. I had to do that because the link was actually to the old instance of my site. It's still live at `http://alanwsmith.com` as compared to the new production version of my site which is `https://www.alanwsmith.com`. (It's on my list to get everything setup so the non secure, non-www version redirects. Just gotta get to it.)
+
+### [Time: 00:19:00] Installing <strike>Drupal</strike> I mean Django 
+
+I've decided to use Django to replace my local `launchpad` website that's just a bunch of PHP files. (Django, not Drupal, which I confuse the name of every time.) Someone asked why I was going with Django instead of sticking with PHP. My thinking:
+
+- When I write code these days, it's mostly python and that's what Django uses
+- I want to use a framework instead of just writing a bunch of code myself. (I've made my own frameworks. I'm happy to not have to do that anymore.)
+- I'm not religious about any framework or language stuff so it just works for me
+
+Once I figured out that I was after Django instead of Drupal, I did the quick install then spent about an hour going through the tutorial. Half the time was me getting frustrated with it. I'd looked at Django a few years back and remember the same frustrations. It's not broken. The code works, but there is so much room for improvement. I added "Make a Better Django Tutorial" to my list. 
+
+If it wasn't so frustrating, I would have spent more time on it. But, I was beat, so I bailed. I'll get back to it on another stream.
+
+
+### [Time: 01:26:00] Getting Browser Tab URLs
+
+This is a new one that occurred to me when writing up earlier stream notes. I spent a lot of time going back and forth between my text editor and my browser copying URLs and then typing in the titles and notes for the various links I used. My goal was to create a script to automate that process as much as possible. 
+
+What's awesome is that most of the work was already done for me. I found [this AppleScript](https://theconsultant.net/2017/06/capture-all-tabs-in-safari-as-urls-to-the-clipboard/) that grabs titles and URLs from all the tabs in all the windows of Safari and copies them to the clipboard. One quick edit to put the output in Markdown format and I could have stopped there, but I wanted a little more. 
+
+The first thing I was after was a way to fire off the AppleScript from a PHP page on my local launchpad tools site. I'd done some `osascript` calls to fire AppleScript over the past week so I was optimistic I could get it to work. 
+
+I couldn't. 
+
+I spent some decent time on it and kept seeing behavior that looked like it should have worked, but didn't. I have some more ideas to try, but given that I'm moving to Django it wasn't worth spending more time on it. Instead, I moved over to using a plain old python script. The reason for that instead of just using the working AppleScript is because I wanted to capture meta tag descriptions of the pages as well. 
+
+It might be possible to pull down a web page and parse it with AppleScript, but I have no desire to try. Hence, python. I started using Selenium to do the parsing but ran into some aggravating issues with getting the title of the page (which I didn't need it was just what I was using a tone test). 
+
+Seems that for every element on a page, Selenium uses:
+
+```python
+    element = driver.find_element_by_tag_name("title")
+    print(element.text)
+```
+
+
+Every element except for the title that is. You have to get the title with `driver.title`. Here's an example:
+
+```python{numberLines: true}
+#!/usr/bin/env python3
+
+from selenium import webdriver
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.firefox.options import Options
+
+def get_details(url):
+    options = Options()
+    options.headless = True
+    driver = webdriver.Firefox(options=options)
+    driver.get(url)
+    wait = WebDriverWait(driver, 10)
+    page_title = driver.title
+    driver.quit()
+    return page_title
+
+print(get_details("https://www.alanwsmith.com/"))
+```
+
+Once I got that figured out, I moved on to getting the description. This is around the time I ran out of steam in the first stream and picked up in the second one. In that second stream, the code got complicated enough that I moved over from just a little script to a more structured one that included tests. I made a lot of progress on that, but haven't finished it up yet. I'll do that in the next stream. 
+
+### Miscellaneous 
+
+Random stuff from the stream.
+
+---
+
+
+Python snippet that calls an external command and returns the STDOUT results into a variable
+
+```python
+command_response = subprocess.run(['osascript', 'tab-parser.scpt'], stdout=subprocess.PIPE).stdout.decode('utf-8')
+```
+
+---
+
+
+These PHP calls to `osascript` fired and got Safari to active and bring itself to the front window.
+
+```php
+shell_exec("osascript -e 'tell application \"Safari\" to activate'");
+
+shell_exec("osascript -l JavaScript -e 'var Safari = new Application(\"/Applications/Safari.app\"); Safari.activate();'");
+```
+
+But, when I tried to run the AppleScript file, I couldn't get it to work. 
+
+```php
+// no go
+echo(shell_exec('osascript tab-parser.scpt'));
+```
+
+I tried this and about a thousand variations. I expect there's a security thing involved. There's probably a way to do it, but it wasn't worth more effort for me. 
+    
+---
+
+
+I discovered that when you use python's `urllib.request.urlopen(url)`, you need to wrap it in a `try`. Otherwise, your script will explode if it hits something like a 403 error. (And since we're talking about it, you also need to decode the `.read()` call to utf-8). Here's a sample:
+
+```python{numberLines: true}
+#!/usr/bin/env python3
+
+import urllib.request
+
+def get_web_page(url):
+    try:
+        with urllib.request.urlopen(url) as response:
+            return response.read().decode("utf-8")
+    except:
+        return ""
+
+if __name__ == "__main__":
+    html_doc = get_web_page("https://www.alanwsmith.com/")
+    print(html_doc)
+```
+
+
+
+---
+
+
+### Links From The Stream
+
+Here's some of the various links from the stream.
+
+
+- [AppleScript - How to execute a multi line applescript from Terminal – MacOS X Software – Forum](https://www.tweaking4all.com/forum/macos-x-software/applescript-how-to-execute-a-multi-line-applescript-from-terminal/)
+- [Beautiful Soup 4.9.0 documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+- [Beautiful Soup Finding if a tag exists - Stack Overflow](https://stackoverflow.com/questions/47741815/beautiful-soup-finding-if-a-tag-exists)
+- [beautifulsoup4 · PyPI](https://pypi.org/project/beautifulsoup4/)
+- [Built-in Types — Python 3.8.6 documentation](https://docs.python.org/3/library/stdtypes.html#set)
+- [Call a function from another file? - Stack Overflow](https://stackoverflow.com/questions/20309456/call-a-function-from-another-file)
+- [Capture all tabs in Safari as URLs to the clipboard – theconsultant.net](https://theconsultant.net/2017/06/capture-all-tabs-in-safari-as-urls-to-the-clipboard/)
+- [Code inspections - Help | IntelliJ IDEA](https://www.jetbrains.com/help/idea/code-inspection.html#access-inspections-and-settings)
+- [Convert bytes to a string - Stack Overflow](https://stackoverflow.com/questions/606191/convert-bytes-to-a-string)
+- [Converting to one line AppleScript - Stack Overflow](https://stackoverflow.com/questions/5288161/converting-to-one-line-applescript)
+- [Daring Fireball](https://daringfireball.net/)
+- [Data Types — Python 3.8.6 documentation](https://docs.python.org/3/library/datatypes.html)
+- [Errors and Exceptions — Python 3.8.6 documentation](https://docs.python.org/3/tutorial/errors.html)
+- [Extract title with BeautifulSoup - Stack Overflow](https://stackoverflow.com/questions/35956045/extract-title-with-beautifulsoup)
+- [ForLoop - Python Wiki](https://wiki.python.org/moin/ForLoop)
+- [Get data from webpage using applescript - Stack Overflow](https://stackoverflow.com/questions/25333964/get-data-from-webpage-using-applescript)
+- [Get meta tag content property with BeautifulSoup and Python - Stack Overflow](https://stackoverflow.com/questions/36768068/get-meta-tag-content-property-with-beautifulsoup-and-python)
+- [Get page title with Selenium WebDriver using Java - Stack Overflow](https://stackoverflow.com/questions/8506489/get-page-title-with-selenium-webdriver-using-java/39103929)
+- [Get webpage contents with Python? - Stack Overflow](https://stackoverflow.com/questions/1843422/get-webpage-contents-with-python)
+- [get_attribute() element method - Selenium Python - GeeksforGeeks](https://www.geeksforgeeks.org/get_attribute-element-method-selenium-python/)
+- [GetTitle](https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/remote/server/handler/GetTitle.html)
+- [Glossary — Python 3.8.6 documentation](https://docs.python.org/3/glossary.html#term-context-manager)
+- [How do I open a generic URL from AppleScript? - Ask Different](https://apple.stackexchange.com/questions/293777/how-do-i-open-a-generic-url-from-applescript)
+- [How do you start an application in Javascript via osascript? - Stack Overflow](https://stackoverflow.com/questions/29408703/how-do-you-start-an-application-in-javascript-via-osascript)
+- [How to call an external command? - Stack Overflow](https://stackoverflow.com/questions/89228/how-to-call-an-external-command)
+- [How to disable auto show hints in JetBrains IDEs (IntelliJ IDEA, PyCharm, WebStorm) on mouse over - Stack Overflow](https://stackoverflow.com/questions/19244913/how-to-disable-auto-show-hints-in-jetbrains-ides-intellij-idea-pycharm-websto)
+- [How to log to message window in Script Editor using JavaScript for Automation - Stack Overflow](https://stackoverflow.com/questions/27609455/how-to-log-to-message-window-in-script-editor-using-javascript-for-automation)
+- [How to use string.replace() in python 3.x - Stack Overflow](https://stackoverflow.com/questions/9452108/how-to-use-string-replace-in-python-3-x/9452122#9452122)
+- [How to write applescript to print TextEdi… - Apple Community](https://discussions.apple.com/thread/7743420)
+- [How to write to standard data out using JavaScript or AppleScript multiple times? - Stack Overflow](https://stackoverflow.com/questions/48199694/how-to-write-to-standard-data-out-using-javascript-or-applescript-multiple-times)
+- [HTTP error 403 in Python 3 Web Scraping - Stack Overflow](https://stackoverflow.com/questions/16627227/http-error-403-in-python-3-web-scraping)
+- [Is there a built-in function to print all the current properties and values of an object? - Stack Overflow](https://stackoverflow.com/questions/192109/is-there-a-built-in-function-to-print-all-the-current-properties-and-values-of-a)
+- [Linux see directory tree structure using tree command - nixCraft](https://www.cyberciti.biz/faq/linux-show-directory-structure-command-line/)
+- [Locating Elements — Selenium Python Bindings 2 documentation](https://selenium-python.readthedocs.io/locating-elements.html#locating-elements-by-tag-name)
+- [Meta tags and BeautifulSoup](https://gist.github.com/krmaxwell/3756577)
+- [Model field reference | Django documentation | Django](https://docs.djangoproject.com/en/3.1/ref/models/fields/#django.db.models.DateTimeField)
+- [More Control Flow Tools — Python 3.8.6 documentation](https://docs.python.org/3/tutorial/controlflow.html)
+- [Ned Batchelder: Keep data out of your variable names](https://nedbatchelder.com/blog/201112/keep_data_out_of_your_variable_names.html)
+- [PHP | shell_exec() vs exec() Function - GeeksforGeeks](https://www.geeksforgeeks.org/php-shell_exec-vs-exec-function/)
+- [PHP: shell_exec - Manual](https://www.php.net/manual/en/function.shell-exec.php)
+- [Print to Stdout with applescript - Stack Overflow](https://stackoverflow.com/questions/15605288/print-to-stdout-with-applescript/19974031#19974031)
+- [Pythex: a Python regular expression editor](https://pythex.org/)
+- [Python BeautifulSoup check if find returns Null object | Edureka Community](https://www.edureka.co/community/45740/python-beautifulsoup-check-if-find-returns-null-object)
+- [Python Data Types](https://www.w3schools.com/python/python_datatypes.asp)
+- [Python: Assign split value to multiple variables - Stack Overflow](https://stackoverflow.com/questions/13471746/python-assign-split-value-to-multiple-variables)
+- [Running shell command and capturing the output - Stack Overflow](https://stackoverflow.com/questions/4760215/running-shell-command-and-capturing-the-output/4760517#4760517)
+- [Scraping Data on the Web with BeautifulSoup](https://hackersandslackers.com/scraping-urls-with-beautifulsoup/)
+- [Scraping metadata with beautifulsoup : learnpython](https://www.reddit.com/r/learnpython/comments/1luyuk/scraping_metadata_with_beautifulsoup/cc30c13/)
+- [selenium - getTitle() returning current URL instead of page title - Software Quality Assurance & Testing Stack Exchange](https://sqa.stackexchange.com/questions/12874/gettitle-returning-current-url-instead-of-page-title)
+- [Selenium How To Get Title Text? - Stack Overflow](https://stackoverflow.com/questions/47948352/selenium-how-to-get-title-text)
+- [Set up a Git repository - Help | PyCharm](https://www.jetbrains.com/help/pycharm/set-up-a-git-repository.html#add-remote)
+- [sets — Unordered collections of unique elements — Python 2.7.18 documentation](https://docs.python.org/2/library/sets.html)
+- [Settings | Django documentation | Django](https://docs.djangoproject.com/en/3.1/ref/settings/#std:setting-TIME_ZONE)
+- [Sorting a set of values - Stack Overflow](https://stackoverflow.com/questions/17457793/sorting-a-set-of-values)
+- [Sorting HOW TO — Python 3.3.7 documentation](https://docs.python.org/3.3/howto/sorting.html)
+- [Split and Count a Python String - Stack Overflow](https://stackoverflow.com/questions/22101086/split-and-count-a-python-string)
+- [Test if children tag exists in beautifulsoup - Stack Overflow](https://stackoverflow.com/questions/33238091/test-if-children-tag-exists-in-beautifulsoup/33262945)
+- [The try statement](https://docs.python.org/2.0/ref/try.html)
+- [Time Zone Abbreviations - Time Zones in North America](https://www.timeanddate.com/time/zones/na)
+- [Time Zone Abbreviations - Worldwide List](https://www.timeanddate.com/time/zones/)
+- [Time Zones in New York, United States](https://www.timeanddate.com/time/zone/usa/new-york-state)
+- [urllib.request — Extensible library for opening URLs — Python 3.8.6 documentation](https://docs.python.org/3/library/urllib.request.html)
+- [webdriver - Question about the Selenium getTitle() Method - Software Quality Assurance & Testing Stack Exchange](https://sqa.stackexchange.com/questions/7887/question-about-the-selenium-gettitle-method)
+- [WebDriver API — Selenium Python Bindings 2 documentation](https://selenium-python.readthedocs.io/api.html)
+- [What is close() and quit() commands in Selenium Webdriver? | Zyxware Technologies](https://www.zyxware.com/articles/5552/what-is-close-and-quit-commands-in-selenium-webdriver)
+- [Writing your first Django app, part 3 | Django documentation | Django](https://docs.djangoproject.com/en/3.1/intro/tutorial03/)

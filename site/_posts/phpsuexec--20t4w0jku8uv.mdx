@@ -1,0 +1,23 @@
+---
+blurb: ""
+categories:
+  - PHP
+date: 2005-10-04T00:00:00
+id: 20t4w0jkU8Uv
+status: published
+title: phpsuexec
+type: post
+slug: phpsuexec--20t4w0jku8uv
+---
+
+(originally posted on: http://alancode.blogspot.com/)
+
+
+The server I am now hosting alanwsmith.com on uses phpsuexec. This is a change of pace for me. I like it because it should offer more security but it takes a little getting used to.
+
+One big difference is that you can't put
+php_value
+calls inside an .htaccess file to control a directory. Doing so causes a Internal Server Error (500).
+
+The way around this is to create a "php.ini" file inside a directory and assign the variables from there. So far, I have only tried this with "include_path". One downside is that it doesn't recurse to children directories. Oh, well.
+

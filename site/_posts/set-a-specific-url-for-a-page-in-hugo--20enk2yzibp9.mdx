@@ -1,0 +1,33 @@
+---
+blurb: ""
+categories:
+  - Hugo
+date: 2020-12-21T00:00:00
+id: 20eNk2yziBP9
+scrubbed_2021: false
+status: published
+title: Set A Specific URL For A Page In Hugo
+type: post
+slug: set-a-specific-url-for-a-page-in-hugo--20enk2yzibp9
+---
+
+Use `url` in the frontmatter to set a URL regardless of where it is in the file structure.
+
+For example, if you have a file with the path:
+
+    content/storage/2020/alpha.md
+
+With the front matter:
+
+    ---
+    title: Example File Move
+    url: /omega
+    ---
+    
+It will end up at:
+
+    https://www.example.com/omega/
+    
+Note that it must start with a `/`. 
+
+TKTKTK: Figure out if trailing slash mattersi

@@ -1,0 +1,102 @@
+---
+blurb: Jest is built primarily to test JavaScript in different frameworks. This
+  is how to use it for vanilla scripts without a framework
+categories:
+  - JavaScript
+  - TDD
+date: 2022-01-20T11:42:24
+id: 23yct7ahlbg3
+status: published
+type: post
+title: How-To Use Jest To Test Vanilla JavaScript Files Without A Framework
+slug: how-to-use-jest-to-test-vanilla-javascript-files-without-a-framework--23yct7ahlbg3
+---
+
+
+## The Issue
+
+I'm building a plain old html and vanilla javascript site. I decided I wanted to setup a test suite and picked [Jest](https://jestjs.io/) since it was the first search result. The Jest page says "It works with projects using: Babel, TypeScript, Node, React, Angular, Vue, and more!" It took a little hunting to figure out how to run it without using any of those frameworks. Here's what I ended up with. It provides `jest` on the command line for vanilla javascript testing.
+
+## The Process
+
+1. Install jest globally
+
+```bash    
+npm install -g jest
+```
+
+2. Create a jest.config.js file in your working directory with:
+
+```javascript
+const config = {
+  verbose: true,
+  testEnvironment: 'jsdom',
+}
+
+module.exports = config
+```
+
+3. Create a `tests` directory in your working directory
+
+```bash
+mkdir tests
+```
+
+
+4. Create a test file in your `tests` directory (e.g. `tests/functions.test.js`)
+
+```javascript
+const functions = require('../functions')
+
+test('addition works', () => {
+  expect(functions.sum(1, 2)).toBe(3)
+})
+```
+
+4. Create the file to be tested in your working directory (e.g. `functions.js`)
+
+```javascript
+function sum(a, b) {
+  return a + b + a
+}
+
+if (typeof module !== 'undefined') {
+  module.exports.sum = sum
+}
+```
+
+5. Run jest from the command line with:
+
+```bash
+jest --watchAll
+```
+
+When you fire that off, you'll get the output from jest that looks something like this: 
+
+```bash
+ PASS  ./functions.test.js
+  ✓ addition works (2 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       1 passed, 1 total
+Snapshots:   0 total
+Time:        0.593 s
+Ran all test suites.
+```
+
+The process stays open and runs tests as you make changes. Press `q` to exit it. 
+
+
+## The Notes
+
+- You only need to do the first step (where you install jest globally) once
+- The `jest` command hangs if you try to run it without a configuration (e.g. `jest.config.js`) file
+- Jest uses a Node environment by default. The `testEnvironment: 'jsdom'` line in the `jest.config.js` file switches to JSDOM which allows you to use things like `document.addEventListener('DOMContentLoaded', function () {}`
+- More details on the configuration options [are here](https://jestjs.io/docs/configuration)
+- The `if (typeof module !== 'undefined')` check is to prevent a `Uncaught ReferenceError: module is not defined` error when the file is used in the browser
+- Use `jest` instead of `jest --watchAll` to do a single run instead of watching files
+- If you're in a git repo, you can also do `jest --watch` instead of `jest --watchAll` to focus on files that are in the repo
+- The [examples on the jest site](https://jestjs.io/docs/getting-started) only export one function per file. With the code above, you can test multiple functions in a single file (e.g. you could add a function called `minus`, export it with `module.exports.minus = minus`, and test it with `expect(functions.minus(2, 1)).toBe(1)`)
+
+
+        

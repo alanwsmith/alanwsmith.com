@@ -1,0 +1,423 @@
+---
+blurb: ""
+categories:
+  - Miscellaneous
+date: 2022-04-30T20:10:22
+id: 28xxilwqk8uh
+status: scratch
+type: post
+title: How To Create A Basic React App With React Router (v6)
+slug: how-to-create-a-basic-react-app-with-react-router-v6--28xxilwqk8uh
+---
+
+The basic React and React Router tutorials were a confusing for me. So, here's mine. It shows only the contents require for each file without all the cruft. 
+
+NOTE: This sets up so that URLs are available to be used client-side but doesn't address server-side rendering. That means that if you bookmark a URL other than the site root (e.g. `https://www.example.com/about`) the server will send a its version of a 404 page not found response. See [this post](https://stackoverflow.com/a/36623117/102401) for more details.
+
+NOTE: Right now, I'm not going through step by step showing the pieces, this is just my copy showing me what the end states of each file are. 
+
+NOTE: I use Prettier for formatting that removes ending semi-colons. If you're code has them, that's likely the difference
+
+This tutorial shows you step by step what to do with full copies of each file that's edited for reference after each step. It makes the page long, but I find it's the easiest way to keep track of what's going on. 
+
+I also break things as I go forward. It's a bit like TDD where I intentionally do things like calling files/components before we make them. This helps get used to error messages and makes sure we know the changes we're making line up with what we expect to happen
+
+I call the imports in the order we use them. I'd organize them a little differently in production, but I find this is easier to track for a tutorial
+
+## Installation   
+
+Start by running
+
+```bash
+npx create-react-app site
+cd site
+npm install react-router-dom@6
+npm start
+```
+
+That'll get the router installed and spin up the dev version of the site. 
+
+## Removing reportWebVitals
+
+I generally don't use `reportWebVitals` so I remove these lines from index.js. 
+
+```jsx
+import reportWebVitals from './reportWebVitals'
+```
+
+```jsx
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals()
+```
+
+So the index.js file looks like this:
+
+```jsx
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import './index.css'
+import App from './App'
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+)
+```
+
+## Clear out the App.js file
+
+To provide a clean slate, remove all the initial placeholder code from the `App.js` file so it looks like this. 
+
+We'll also add in an `<Outlet />` and it's import which will let other pages show up further below. (We'll also include the import statement for the `Link` which will use further below as well)
+
+```jsx
+import { Outlet, Link } from 'react-router-dom'
+
+function App() {
+  return (
+    <div>
+      <h1>My App</h1>
+      <Outlet />
+    </div>
+  )
+}
+
+export default App
+```
+
+
+
+
+## Add Browser Router
+
+Make these adjustments to `index.js` (Nothing visible will change with these alterations. They just get us set up for the rest of the changes)
+
+Add the import 
+
+```jsx
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+```
+
+And change this:
+
+```jsx
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+```
+
+To this:
+
+```jsx
+  <React.StrictMode>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />}>
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  </React.StrictMode>
+```
+
+So the file looks like:
+
+```jsx
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import './index.css'
+import App from './App'
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />}>
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  </React.StrictMode>
+)
+```
+
+
+## Add a home page component
+
+This step calls a HomePage component we haven't created yet which results in an error that we expect to see. The call is done by adding an import call to the HomePage component 
+
+```jsx
+import HomePage './HomePage'
+```
+
+And then this route:
+
+```jsx
+<Route index element={<HomePage />} />
+```
+
+So the `index.js` file looks like this:
+
+```jsx
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import './index.css'
+import App from './App'
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
+import HomePage from './HomePage'
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />}>
+          <Route index element={<HomePage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  </React.StrictMode>
+)
+```
+
+The error will see starts out with this followed by a bunch of other stuff
+
+```txt
+Compiled with problems:X
+
+ERROR in ./src/index.js
+
+Module build failed... 
+```
+
+## Add the HomePage.js file
+
+To fix the error, create a `HomePage.js` file next to the `App.js` and `index.js` files with this content:
+
+
+```jsx
+function HomePage() {
+  return (
+    <div>
+      <h2>Home Page</h2>
+    </div>
+  )
+}
+
+export default HomePage
+```
+
+That will get the Home Page header showing up below the "Hello, world" from the `<App />` component. 
+
+The way this works is that the `<Outlet />` in the `<App />` file outputs the contents of the `<HomePage />` component. 
+
+This happens because the `<Route ... />` for the HomePage is inside the one for the App. 
+
+Because the HomePage `<Route ... />` contains the work `index` it means that it shows up when there is nothing paste the last `/` in the URL. 
+
+
+## Add link to content page
+
+TODO: Fill out details - there's also a link to the home page that just takes us back to the same page to get us ready for later
+
+Clicking the link doesn't show anything 
+
+```jsx
+import { Outlet, Link } from 'react-router-dom'
+
+function App() {
+  return (
+    <div>
+      <h1>My App</h1>
+      <div>
+        <Link to="/">Home Page</Link>
+      </div>
+      <div>
+        <Link to="/content">Content Home Page</Link>
+      </div>
+      <div>
+        <Link to="/content/1">Content Page 1</Link>
+      </div>
+      <Outlet />
+    </div>
+  )
+}
+
+export default App
+```
+
+## Add content route
+
+This will break things since it doesn't exist yet. TODO: put in note at the end about how you can add a wrapper for the content too by adding an element to the `<Route path="content" />`
+
+
+```jsx
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import './index.css'
+import App from './App'
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
+import HomePage from './HomePage'
+import ContentHomePage from './ContentHomePage'
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />}>
+          <Route index element={<HomePage />} />
+          <Route path="content"}>
+            <Route index element={<ContentHomePage />}></Route>
+          </Route>
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  </React.StrictMode>
+)
+```
+
+## Make the Content element
+
+
+file: `ContentHomePage.js`
+
+
+```jsx
+function ContentHomePage() {
+  return (
+    <div>
+      <h2>Content Home Page</h2>
+    </div>
+  )
+}
+
+export default ContentHomePage
+```
+
+At this point you can click the links back and forth. 
+
+
+## Add dynamic pages
+
+this will break
+
+Add
+
+```jsx
+<Route path=":contentId" element={<ContentPage />} />
+```
+
+To get:
+
+```jsx
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import './index.css'
+import App from './App'
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
+import HomePage from './HomePage'
+import ContentHomePage from './ContentHomePage'
+import ContentPage from './ContentPage'
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />}>
+          <Route index element={<HomePage />} />
+          <Route path="content">
+            <Route index element={<ContentHomePage />}></Route>
+            <Route path=":contentId" element={<ContentPage />} />
+          </Route>
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  </React.StrictMode>
+)
+```
+
+## Create the initial content page
+
+
+```jsx
+function ContentPage() {
+  return (
+
+      <h2>Content Page</h2>
+    </div>
+  )
+}
+
+export default ContentPage
+```
+
+Then add the dynamic stuff to it:
+
+```jsx
+import { useParams } from 'react-router-dom'
+
+function ContentPage() {
+  let params = useParams()
+  return (
+    <div>
+        <h2>This is content page: {params.contentId}</h2>
+    </div>
+   )
+}
+
+export default ContentPage
+```
+
+
+## Add 404 page:
+
+```
+<Route path="*" element={<div>404 goes here</div>} />
+```
+
+```jsx
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import './index.css'
+import App from './App'
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
+import HomePage from './HomePage'
+import ContentHomePage from './ContentHomePage'
+import ContentPage from './ContentPage'
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />}>
+          <Route index element={<HomePage />} />
+          <Route path="content">
+            <Route index element={<ContentHomePage />}></Route>
+            <Route path=":contentId" element={<ContentPage />} />
+          </Route>
+          <Route path="*" element={<div>TODO: 404 goes here</div>} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  </React.StrictMode>
+)
+```
+
+
+

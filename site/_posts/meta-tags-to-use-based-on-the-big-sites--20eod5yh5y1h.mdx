@@ -1,0 +1,1707 @@
+---
+blurb: ""
+categories:
+  - Web Development
+date: 2021-11-01T14:18:08
+id: 20eOd5yH5y1h
+scrubbed_2021: false
+status: scratch
+title: Meta Tags To Use Based On The Big Sites
+type: post
+slug: meta-tags-to-use-based-on-the-big-sites--20eod5yh5y1h
+---
+
+This is a work in progress. Like, really early in the process....
+
+I'm deciding what I want to do for meta data for my site. Below is a collection of samples from a few of the bigger sites. For the raw data, there are two samples per page. The first is from the "Sources" tab of the chrome developer console. The second is from the "Elements" tab.
+
+
+---
+
+TODO:
+
+- Get the links from your other post
+- Add in the checker pages like: https://cards-dev.twitter.com/validator
+- https://developers.facebook.com/docs/sharing/webmasters/images/
+- Combine this with the Open Graph Image And Metadata Cheat Sheet post
+- https://developers.google.com/search/docs/advanced/crawling/special-tags
+- https://developers.google.com/search/docs/advanced/structured-data
+- https://developers.google.com/search/docs/advanced/robots/robots_meta_tag#directives
+---
+
+
+
+
+
+This is what I have so far:
+
+```html
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>The Site of Alan W. Smith</title>
+<meta name="description" content="The personal website/blog/digital garden of Alan W. Smith">
+<meta name="keywords" content="Python">
+<link rel="canonical" href="https://www.alanwsmith.com/">
+```
+
+Here's my thinking:
+
+- `<!DOCTYPE html>` 
+
+
+see also: https://dev.to/reedbarger/easily-generate-meta-tags-for-your-react-app-15gd for the google stuff to look into.
+
+
+
+Here's some notes while I figure things out:
+
+- These are copies of the `<head>` section/data from the various pages. 
+- I removed `<script>` and `<style>` tags. I also removed `<link>` tags for `text/css`. Everything else has been left in place. (Oh, yeah, I also removed `<link>` calls for fonts.)
+- Twitter really doesn't have a `<head>` tag or a `<title>` tag in the source. It also doesn't have a closing `</body>` tag in the source file. All of these show up under the "Elements" tab though.
+- Note if you're using react, you need to do `charSet` with a capital `S` instead of `charset` where it's lowercase. 
+- It's funny to me that google starts with lowercase `<!doctype html>` instead of `<!DOCTYPE html>`. I thought it was supposed to always be uppercase. I wonder what the reason for the lowercase is. 
+- While I shortened and obfuscated some values, no attributes were removed.
+- I've not seen the thing that YouTube Video Pages are doing where there's a `<div>` in the head that has meta tags wrapping the `http://schema.org/VideoObject` stuff. Especially weird since it has `<span>` elements in it.
+- There were a ton of `rel="preload" as="script"` tags in the Facebook Elements. I just kept one for reference.
+- It surprises me that there's not explicit meta tags for open graph content in the amazon pages.
+- My understanding is that the Star Wars site is a Wordpress site. Including it since there's a huge number of those out there (understanding that it almost certainly has a bunch of customiztion)
+- Twitter title for the star wars content page has the `<em>` element in it. Seems like not the best idea.
+- The `msapplication-` stuff on the star wars page is commented out. Makes me wonder if there's a technical reason for that.
+- Star Wars has all the old `if lt IE 7` stuff. I'm guessing that's more legacy code hanging around than for a specific target to that browser. 
+- I've heard both that keywords don't matter and that Bing might actually treat them like a signal for spam. For now, I'm going to use a single keyword with the category of the page when it's available.
+- Note that the Star Wars page uses multiple `twitter:` and `og:` calls for the same subtag (e.g there are multiple `og:image` calls). Need to look that up.
+- The Star Wars site uses `<meta property="og:type" content="article" />` for posts and `<meta property="og:type" content="website">` which is how I setup too.
+- Facebook uses only a `<link rel="shortcut icon" href="https://static.xx.fbcdn.net/rsrc.php/yb/r/hLRGG_y0J.ico" />` instead of individual files. Maybe see about moving over to a single .ico file or at least compare the options a little more.
+
+
+Related links:
+
+- [Facebook sharing for webmasters](https://developers.facebook.com/docs/sharing/webmasters/)
+- https://developers.facebook.com/tools/debug/
+- [Twitter card validator](https://cards-dev.twitter.com/validator)
+- [opengraph.xyz](https://www.opengraph.xyz/url/https%3A%2F%2Fwww.alanwsmith.com%2F/)
+- [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/)
+- [Tags Google Understands](https://developers.google.com/search/docs/advanced/crawling/special-tags)
+- [MDN Meta Data](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta)
+- [char set stack overflow answer](https://stackoverflow.com/a/4696517/102401)
+- [canonical urls](https://developers.google.com/search/docs/advanced/crawling/consolidate-duplicate-urls)
+- [All meta tags that Google understands](https://developers.google.com/search/docs/advanced/crawling/special-tags)
+- [X-DNS-Prefetch-Control from MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-DNS-Prefetch-Control)
+- [Character Encoding - MDN](https://developer.mozilla.org/en-US/docs/Glossary/character_encoding)
+- [schema.org - WebPage](https://schema.org/WebPage)
+- [schema.org](https://schema.org/)
+- [Favicon](https://en.wikipedia.org/wiki/Favicon)
+- <a href="https://en.wikipedia.org/wiki/ICO_(file_format)">.ico format</a>
+
+
+
+TODO:
+
+- Get details on `dir="ltr"` for `<html>`
+- Get details on `itemscope="" itemtype="http://schema.org/WebPage"` for `<html>`
+- Get details on `<meta name="robots" content="noindex,nofollow">` from [here](https://developers.google.com/search/docs/advanced/crawling/special-tags)
+- Go through [this](https://developers.google.com/search/docs/advanced/crawling/special-tags)
+- Get details on `<meta name="google" content="nositelinkssearchbox">`
+- Figure out if there are google services I need to use using `<meta name="google-site-verification" content="9v...c4">`
+- Look at `<meta property="fb:app_id" content="16...62">`. Can probably make a good guess, but will get the details.
+- Examine: `<head prefix="fb: http://ogp.me/ns/fb# og: http://ogp.me/ns#">`
+- Look at `data-rh="treu"` in `<meta content="Home / Twitter" property="og:title" data-rh="true">`
+- Look at `<meta name="msvalidate.01" content="3C...F3" />`. Guessing Bing related, but we'll see.
+- Get details on `<link rel="preload" as="script" crossorigin="anonymous" href="https://images-na..." />` type tags
+- Get details on `<html lang="en-us" class="..." data-19ax5a9jf="dingo" data-aui-build-date="3.21.7-2021-10-25">` to see if that's something internal or something in a spec.
+- Get details on `<meta name="referrer" content="origin-when-crossorigin" id="meta_referrer" />`
+- Get details on `<link rel="manifest" href="/data/manifest/" crossorigin="use-credentials" />`
+- See about adding `id` to `<title>` like `<title id="pageTitle">Dune Movie - Home | Facebook</title>`
+- Get details on `<link rel="alternate" media="handheld" href="https://m.facebook.com/dune/" />`
+- Get details on `<link rel="alternate" media="handheld" href="https://m.facebook.com/dune/" />`
+- Compare .ico files vs individual .png files
+
+
+
+Full set of `<meta name="twitter:...` tags from all sources:
+
+- twitter:card
+- twitter:site:id
+- twitter:site
+- twitter:app:name:iphone
+- twitter:app:id:iphone
+- twitter:app:url:iphone
+- twitter:creator
+- twitter:title
+- twitter:description
+- twitter:image
+- twitter:url
+- twitter:app:name:ipad
+- twitter:app:id:ipad
+- twitter:app:url:ipad
+- twitter:app:name:googleplay
+- twitter:app:id:googleplay
+- twitter:app:url:googleplay
+- twitter:player
+- twitter:player:width
+- twitter:player:height
+
+Full set of `og:` tags from all sources:
+
+- og:image
+- og:description
+- og:title
+- og:url
+- og:site_name
+- og:type
+- og:locale
+- og:image:width
+- og:image:height
+- og:video:url
+- og:video:secure_url
+- og:video:type
+- og:video:width
+- og:video:height
+- og:video:tag
+
+
+
+This is the collection of tags to figure out:
+
+```
+<html itemscope="" itemtype="http://schema.org/WebPage" lang="en">
+
+<meta property="al:android:app_name" content="Facebook" />
+<meta property="al:android:package" content="com.facebook.katana" />
+<meta property="al:android:url" content="fb://page/101611144857507?referrer=app_link" />
+<meta property="al:ios:app_name" content="Facebook" />
+<meta property="al:ios:app_store_id" content="284882215" />
+<meta property="al:ios:url" content="fb://page/?id=101611144857507" />
+
+<meta content="dark" name="color-scheme">
+<meta content="origin" name="referrer">
+<meta content="/images/branding/googleg/1x/googleg_standard_color_128dp.png" itemprop="image">
+
+<link href="/manifest?pwa=webhp" crossorigin="use-credentials" rel="manifest">
+
+<meta content="An...X0=" http-equiv="origin-trial">
+
+<html itemscope="" itemtype="http://schema.org/SearchResultsPage" lang="en">
+
+<link rel="preconnect" href="https://www.googleadservices.com/">
+
+<head prefix="fb: http://ogp.me/ns/fb# og: http://ogp.me/ns#">
+
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+
+<meta name="apple-mobile-web-app-title" content="Star Wars">
+
+<link rel="apple-touch-icon" href="https://lumiere-a.akamaihd.net/v1/images/b-boba-favicon-sw-512x512_e7aeaa0b.png?region=0%2C0%2C512%2C512">
+<link rel="icon" sizes="196x196" href="https://lumiere-a.akamaihd.net/v1/images/b-boba-favicon-sw-512x512_e7aeaa0b.png?region=0%2C0%2C512%2C512">
+<link rel="shortcut icon" href="https://lumiere-a.akamaihd.net/v1/images/b-boba-favicon-sw-512x512_e7aeaa0b.png?region=0%2C0%2C512%2C512">
+
+<meta name="apple-itunes-app" content="app-id=960108075">
+
+<meta name="no_follow" content="false">
+<meta name="no_index" content="false">
+
+<meta property="context" content="http://schema.org">
+
+<meta http-equiv="origin-trial" content="A6d...0In0=">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<meta name="HandheldFriendly" content="True">
+
+<meta name="MobileOptimized" content="320">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<meta name="apple-mobile-web-app-title" content="Star Wars">
+
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" sizes="196x196" href="/apple-touch-icon.png">
+
+<meta property="fb:pages" content="169299103121699">
+
+
+<link rel="alternate" type="application/rss+xml" title="StarWars.com &raquo; Feed" href="https://www.starwars.com/feed" />
+
+<link rel="alternate" type="application/rss+xml" title="StarWars.com &raquo; Comments Feed" href="https://www.starwars.com/comments/feed" />
+
+<link rel='https://api.w.org/' href='https://www.starwars.com/news/wp-json/' />
+
+<link rel="alternate" type="application/json+oembed" href="https://www.starwars.com/news/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.starwars.com%2Fnews%2Fstar-wars-insider-206-kuiil" />
+
+<link rel="alternate" type="text/xml+oembed" href="https://www.starwars.com/news/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.starwars.com%2Fnews%2Fstar-wars-insider-206-kuiil&#038;format=xml" />
+
+<meta name="generator" content="WPML ver:3.9.4 stt:1,3,65,44;" />
+
+<meta property="article:published_time" content="2021-11-01T15:00:47+00:00" />
+<meta property="article:modified_time" content="2021-10-26T16:11:45+00:00" />
+<meta property="article:author" content="https://www.starwars.com/news/contributor/starwarsblog" />
+<meta property="article:section" content="Books + Comics" />
+<meta property="article:tag" content="The Mandalorian" />
+<meta property="article:tag" content="Kuiil" />
+<meta property="article:tag" content="Star Wars Insider" />
+
+<link rel="apple-touch-icon-precomposed" href="https://starwarsblog.starwars.com/wp-content/uploads/2021/11/cropped-B-Boba-Favicon-SW-512x512-180x180.png" />
+<meta name="msapplication-TileImage" content="https://starwarsblog.starwars.com/wp-content/uploads/2021/11/cropped-B-Boba-Favicon-SW-512x512-270x270.png" />
+
+
+<!-- 
+<meta name="msapplication-TileColor" content="#f01d4f">
+<meta name="msapplication-TileImage" content="https://www.starwars.com/wp-content/themes/starwars-theme/library/images/win8-tile-icon.png">
+-->
+
+<link rel="https://api.w.org/" href="https://www.starwars.com/news/wp-json/">
+
+<link rel="shortlink" href="https://www.starwars.com/?p=178553">
+<link rel="shortlinkUrl" href="https://youtu.be/8g18jFHCLXk">
+
+<meta class="foundation-data-attribute-namespace">
+<meta class="foundation-mq-xxlarge">
+<meta class="foundation-mq-xlarge-only">
+<meta class="foundation-mq-xlarge">
+<meta class="foundation-mq-large-only">
+<meta class="foundation-mq-large">
+<meta class="foundation-mq-medium-only">
+<meta class="foundation-mq-medium">
+<meta class="foundation-mq-small-only">
+<meta class="foundation-mq-small">
+<meta class="foundation-mq-topbar">
+
+<meta name="theme-color" content="rgba(33, 33, 33, 0.98)">
+
+<link rel="search" type="application/opensearchdescription+xml" href="https://www.youtube.com/opensearch?locale=en_US" title="YouTube">
+<link rel="manifest" href="/manifest.webmanifest" crossorigin="use-credentials">
+
+<link rel="alternate" href="android-app://com.google.android.youtube/http/www.youtube.com/">
+<link rel="alternate" href="ios-app://54...64/vnd.youtube/www.youtube.com/">
+
+<link rel="alternate" media="handheld" href="https://m.youtube.com/watch?v=8g18jFHCLXk">
+<link rel="alternate" media="only screen and (max-width: 640px)" href="https://m.youtube.com/watch?v=8g18jFHCLXk">
+
+<link rel="image_src" href="https://i.ytimg.com/vi/8g18jFHCLXk/maxresdefault.jpg">
+
+
+<meta property="al:android:app_name" content="YouTube">
+<meta property="al:android:package" content="com.google.android.youtube">
+
+<meta name="referrer" content="origin-when-cross-origin">
+
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-title" content="Twitter" />
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<meta name="theme-color" content="#ffffff" />
+
+<meta http-equiv="origin-trial" content="Apir4c...VlfQ==" />
+
+<meta name="google-site-verification" content="ac...V0">
+<meta name="facebook-domain-verification" content="x6...t1">
+
+
+<link rel="alternate" hreflang="x-default" href="https://twitter.com/">
+
+
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="Twitter">
+
+<link rel="mask-icon" sizes="any" href="https://abs.twimg.com/responsive-web/client-web/icon-svg.16d5.svg" color="#1da1f2">
+
+<link href="https://twitter.com/home" rel="canonical" data-rh="true">
+
+<link rel="apple-touch-icon" sizes="192x192" href="https://abs.twimg.com/responsive-web/client-web/icon-ios.b5.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Twitter">
+<meta name="apple-mobile-web-app-status-bar-style" content="white">
+
+<link href="https://twitter.com/TheIdOfAlan/status/1302648818060726273" rel="canonical" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273" hreflang="x-default" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=ar" hreflang="ar" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=ar-x-fm" hreflang="ar-x-fm" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=bg" hreflang="bg" rel="alternate" data-rh="true">
+<!-- etc... -->
+
+<meta content="333903271" property="al:ios:app_store_id" data-rh="true">
+
+<meta content="Twitter" property="al:ios:app_name" data-rh="true">
+
+<meta content="twitter://status?id=1302648818060726273" property="al:android:url" data-rh="true">
+<meta content="com.twitter.android" property="al:android:package" data-rh="true">
+<meta content="Twitter" property="al:android:app_name" data-rh="true">
+
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.38.0-wmf.6"/>
+<meta name="referrer" content="origin"/>
+<meta name="referrer" content="origin-when-crossorigin"/>
+<meta name="referrer" content="origin-when-cross-origin"/>
+
+<meta name="format-detection" content="telephone=no"/>
+
+<link rel="alternate" media="only screen and (max-width: 720px)" href="//en.m.wikipedia.org/wiki/Main_Page"/>
+
+<link rel="alternate" type="application/atom+xml" title="Wikipedia picture of the day feed" href="/w/api.php?action=featuredfeed&amp;feed=potd&amp;feedformat=atom"/>
+
+<link rel="EditURI" type="application/rsd+xml" href="//en.wikipedia.org/w/api.php?action=rsd"/>
+
+<link rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/"/>
+
+<meta name="ResourceLoaderDynamicStyles" content="">
+```
+
+
+TODO - Make a note on all the:
+
+```
+<!--[if lt IE 9]><html class="no-js no-media-query"><![endif]-->
+<!--[if (gte IE 9)|(!IE)]><!-->
+<html class="no-js" version="HTML+RDFa 1.1" lang="en">
+<!--<![endif]-->
+```
+
+and
+
+```
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en-US"> <!--<![endif]-->
+```
+
+Look at this section from the YouTube page. 
+
+```
+<div id="watch7-content" class="watch-main-col" itemscope itemid="" itemtype="http://schema.org/VideoObject">
+<link itemprop="url" href="https://www.youtube.com/watch?v=8g18jFHCLXk">
+<meta itemprop="name" content="Dune | Official Main Trailer">
+<meta itemprop="description" content="IT’S TIME. #DuneMovie coming October 22.-----------------https://www.instagram.com/dunemovie/https://www.facebook.com/dunehttps://twitter.com/dunemovie https...">
+<meta itemprop="paid" content="False">
+<meta itemprop="channelId" content="UCjmJDM5pRKbUlVIzDYYWb6g">
+<meta itemprop="videoId" content="8g18jFHCLXk">
+<meta itemprop="duration" content="PT3M28S">
+<meta itemprop="unlisted" content="False">
+<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+<link itemprop="url" href="http://www.youtube.com/user/WarnerBrosPictures">
+<link itemprop="name" content="Warner Bros. Pictures">
+</span>
+<link itemprop="thumbnailUrl" href="https://i.ytimg.com/vi/8g18jFHCLXk/maxresdefault.jpg">
+<span itemprop="thumbnail" itemscope itemtype="http://schema.org/ImageObject">
+<link itemprop="url" href="https://i.ytimg.com/vi/8g18jFHCLXk/maxresdefault.jpg">
+<meta itemprop="width" content="1280">
+<meta itemprop="height" content="720">
+</span>
+<link itemprop="embedUrl" href="https://www.youtube.com/embed/8g18jFHCLXk">
+<meta itemprop="playerType" content="HTML5 Flash">
+<meta itemprop="width" content="1280">
+<meta itemprop="height" content="720">
+<meta itemprop="isFamilyFriendly" content="true">
+<meta itemprop="regionsAllowed" content="AD,AE,AF,AG,AI,AL,AM,AO,AQ,AR,AS,AT,AU,AW,AX,AZ,BA,BB,BD,BE,BF,BG,BH,BI,BJ,BL,BM,BN,BO,BQ,BR,BS,BT,BV,BW,BY,BZ,CA,CC,CD,CF,CG,CH,CI,CK,CL,CM,CN,CO,CR,CU,CV,CW,CX,CY,CZ,DE,DJ,DK,DM,DO,DZ,EC,EE,EG,EH,ER,ES,ET,FI,FJ,FK,FM,FO,FR,GA,GB,GD,GE,GF,GG,GH,GI,GL,GM,GN,GP,GQ,GR,GS,GT,GU,GW,GY,HK,HM,HN,HR,HT,HU,ID,IE,IL,IM,IN,IO,IQ,IR,IS,IT,JE,JM,JO,JP,KE,KG,KH,KI,KM,KN,KP,KR,KW,KY,KZ,LA,LB,LC,LI,LK,LR,LS,LT,LU,LV,LY,MA,MC,MD,ME,MF,MG,MH,MK,ML,MM,MN,MO,MP,MQ,MR,MS,MT,MU,MV,MW,MX,MY,MZ,NA,NC,NE,NF,NG,NI,NL,NO,NP,NR,NU,NZ,OM,PA,PE,PF,PG,PH,PK,PL,PM,PN,PR,PS,PT,PW,PY,QA,RE,RO,RS,RU,RW,SA,SB,SC,SD,SE,SG,SH,SI,SJ,SK,SL,SM,SN,SO,SR,SS,ST,SV,SX,SY,SZ,TC,TD,TF,TG,TH,TJ,TK,TL,TM,TN,TO,TR,TT,TV,TW,TZ,UA,UG,UM,US,UY,UZ,VA,VC,VE,VG,VI,VN,VU,WF,WS,YE,YT,ZA,ZM,ZW">
+<meta itemprop="interactionCount" content="26228093">
+<meta itemprop="datePublished" content="2021-07-22">
+<meta itemprop="uploadDate" content="2021-07-22">
+<meta itemprop="genre" content="Film &amp; Animation">
+</div>
+```
+
+
+
+Notes:
+
+- Going with lowercase for `<meta charset="utf-8">` based on [MDN](https://developer.mozilla.org/en-US/docs/Glossary/character_encoding)
+- Prefetching note from [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-DNS-Prefetch-Control) for `x-dns-prefetch-control`. Sounds like it's not really necessary, but that's a bit unclear and it doesn't seems like it would hurt.
+- I don't really need the canonical since my pages shouldn't be duplicated, but I like the link being there regardless. (e.g. `<link rel="canonical" href="https://www.alanwsmith.com/">`)
+- According to [this stackoverflow answer](https://stackoverflow.com/a/4696517/102401), `<meta charset="utf-8"/>` and `<meta http-equiv="content-type" content="text/html; charset=UTF-8">` are equivalent for HTML5. Since that's what I'm going for, I'll be using the shorter one. 
+
+
+
+Things I'm skipping for now:
+
+```html
+<meta http-equiv="x-dns-prefetch-control" content="on">
+<link rel="dns-prefetch" href="https://www.mozilla.org/contribute/">
+<link rel="dns-prefetch" href="//www.mozilla.org/contribute/">
+```
+
+- Everything is on my domain right now but I'll add these in if there's stuff I need to pull from other domains. Details on [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-DNS-Prefetch-Control)
+
+---
+
+
+This is the raw data samples
+
+
+---
+
+
+### Amazon - Home Page - Source
+
+[source](https://www.amazon.com/)
+
+```html
+<!doctype html>
+<html lang="en-us" class="a-no-js" data-19jf="dingo">
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv='x-dns-prefetch-control' content='on'>
+<link rel="dns-prefetch" href="https://images-na.ssl-images-amazon.com">
+<link rel="dns-prefetch" href="https://m.media-amazon.com">
+<link rel="dns-prefetch" href="https://completion.amazon.com">
+<title>Amazon.com. Spend less. Smile more.</title>
+<meta name="description" content="Free shipping on millions of items. Get the best of Shopping and Entertainment with Prime. Enjoy low prices and great deals on the largest selection of everyday essentials and other products, including fashion, home, beauty, electronics, Alexa Devices, sporting goods, toys, automotive, pets, baby, books, video games, musical instruments, office supplies, and more.">
+<meta name="keywords" content="Amazon, Amazon.com, Books, Online Shopping, Book Store, Magazine, Subscription, Music, CDs, DVDs, Videos, Electronics, Video Games, Computers, Cell Phones, Toys, Games, Apparel, Accessories, Shoes, Jewelry, Watches, Office Products, Sports & Outdoors, Sporting Goods, Baby Products, Health, Personal Care, Beauty, Home, Garden, Bed & Bath, Furniture, Tools, Hardware, Vacuums, Outdoor Living, Automotive Parts, Pet Supplies, Broadband, DSL">
+<meta name="google" content="nositelinkssearchbox">
+<meta name="google-site-verification" content="9v...c4">
+<link rel="canonical" href="https://www.amazon.com/">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta property="fb:app_id" content="164734381262">
+<meta name="twitter:card" value="summary">
+<meta name="twitter:site:id" value="20793816">
+<meta property="og:image" content="http://g-ec2.images-amazon.com/images/G/01/social/api-share/amazon_logo_500500._V323939215_.png" xmlns:og="http://opengraphprotocol.org/schema/">
+<meta property="og:description" content="Free shipping on millions of items. Get the best of Shopping and Entertainment with Prime. Enjoy low prices and great deals on the largest selection of everyday essentials and other products, including fashion, home, beauty, electronics, Alexa Devices, sporting goods, toys, automotive, pets, baby, books, video games, musical instruments, office supplies, and more." xmlns:og="http://opengraphprotocol.org/schema/">
+<meta name="msvalidate.01" content="3C...F3" />
+```
+
+---
+
+### Amazon - Home Page - Elements
+
+[source](https://www.amazon.com/)
+
+```html
+<!DOCTYPE html>
+<html lang="en-us" class=" a-js a-audio a-video a-canvas a-svg a-drag-drop a-geolocation a-history a-webworker a-autofocus a-input-placeholder a-textarea-placeholder a-local-storage a-gradients a-hires a-transform3d a-touch-scrolling a-text-shadow a-text-stroke a-box-shadow a-border-radius a-border-image a-opacity a-transform a-transition a-ember" data-19ax5a9jf="dingo" data-aui-build-date="3.21.7-2021-10-25" data-useragent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36" data-platform="MacIntel">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-dns-prefetch-control" content="on">
+<link rel="dns-prefetch" href="https://images-na.ssl-images-amazon.com">
+<link rel="dns-prefetch" href="https://m.media-amazon.com">
+<link rel="dns-prefetch" href="https://completion.amazon.com">
+<title>Amazon.com. Spend less. Smile more.</title>
+<meta name="description" content="Free shipping on millions of items. Get the best of Shopping and Entertainment with Prime. Enjoy low prices and great deals on the largest selection of everyday essentials and other products, including fashion, home, beauty, electronics, Alexa Devices, sporting goods, toys, automotive, pets, baby, books, video games, musical instruments, office supplies, and more.">
+<meta name="keywords" content="Amazon, Amazon.com, Books, Online Shopping, Book Store, Magazine, Subscription, Music, CDs, DVDs, Videos, Electronics, Video Games, Computers, Cell Phones, Toys, Games, Apparel, Accessories, Shoes, Jewelry, Watches, Office Products, Sports &amp; Outdoors, Sporting Goods, Baby Products, Health, Personal Care, Beauty, Home, Garden, Bed &amp; Bath, Furniture, Tools, Hardware, Vacuums, Outdoor Living, Automotive Parts, Pet Supplies, Broadband, DSL">
+<meta name="google" content="nositelinkssearchbox">
+<meta name="google-site-verification" content="9vpzZueNucS8hPqoGpZ5r10Nr2_sLMRG3AnDtNlucc4">
+<link rel="canonical" href="https://www.amazon.com/">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta property="fb:app_id" content="164734381262">
+<meta name="twitter:card" value="summary">
+<meta name="twitter:site:id" value="20793816">
+<meta property="og:image" content="http://g-ec2.images-amazon.com/images/G/01/social/api-share/amazon_logo_500500._V323939215_.png" xmlns:og="http://opengraphprotocol.org/schema/">
+<meta property="og:description" content="Free shipping on millions of items. Get the best of Shopping and Entertainment with Prime. Enjoy low prices and great deals on the largest selection of everyday essentials and other products, including fashion, home, beauty, electronics, Alexa Devices, sporting goods, toys, automotive, pets, baby, books, video games, musical instruments, office supplies, and more." xmlns:og="http://opengraphprotocol.org/schema/">
+<meta name="msvalidate.01" content="3C...F3">
+```
+
+---
+
+
+### Amazon - Product Page - Source
+
+[source](https://www.amazon.com/Coding-Games-Scratch-Step-Step/dp/1465477330)
+
+```html
+<!doctype html>
+<html lang="en-us" class="a-no-js" data-19af="dingo">
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv='x-dns-prefetch-control' content='on'>
+<link rel="dns-prefetch" href="https://images-na.ssl-images-amazon.com">
+<link rel="dns-prefetch" href="https://m.media-amazon.com">
+<link rel="dns-prefetch" href="https://completion.amazon.com">
+<link rel="preload" as="script" crossorigin="anonymous" href="https://images-na.ssl-images-amazon.com/images/I/61XKxrBtDVL.js?AUIClients/AmazonUIjQuery" />
+<link rel="preload" as="script" crossorigin="anonymous" href="https://images-na.ssl-images-amazon.com/images/I/11Y+5x+kkTL._RC|51106gSDnJL.js,11UEXQOFCsL.js,11giXtZCwVL.js,01+z+uIeJ-L.js,01VRMV3FBdL.js,21SDJtBU-PL.js,11rRjDLdAVL.js,51H19hJRYrL.js,11kWu3cNjYL.js,11g2BPXNlrL.js,11OREnu1epL.js,11wcWdhrnDL.js,21r53SJg7LL.js,0190vxtlzcL.js,511VNbag2QL.js,31NShmNbJyL.js,01Gf12ogmOL.js,01ezj5Rkz1L.js,11+RxVdhNcL.js,31o2NGTXThL.js,01rpauTep4L.js,01rvjRKHRNL.js_.js?AUIClients/AmazonUI&gOUTNJqP#page_type-Detail.372963-T1.354901-T1.351411-T1" />
+<link rel="preload" as="script" crossorigin="anonymous" href="https://images-na.ssl-images-amazon.com/images/I/51xaFbd-18L.js?AUIClients/CardJsRuntimeBuzzCopyBuild" />
+```
+
+---
+
+### Amazon - Product Page - Elements
+
+[source](https://www.amazon.com/Coding-Games-Scratch-Step-Step/dp/1465477330)
+
+```html
+<!DOCTYPE html>
+<html lang="en-us" class=" a-js a-audio a-video a-canvas a-svg a-drag-drop a-geolocation a-history a-webworker a-autofocus a-input-placeholder a-textarea-placeholder a-local-storage a-gradients a-hires a-transform3d -scrolling a-text-shadow a-text-stroke a-box-shadow a-border-radius a-border-image a-opacity a-transform a-transition a-ember" data-19ax5a9jf="dingo" data-aui-build-date="3.21.7-2021-10-25">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-dns-prefetch-control" content="on">
+<link rel="dns-prefetch" href="https://images-na.ssl-images-amazon.com">
+<link rel="dns-prefetch" href="https://m.media-amazon.com">
+<link rel="dns-prefetch" href="https://completion.amazon.com">
+<link rel="preload" as="script" crossorigin="anonymous" href="https://images-na.ssl-images-amazon.com/images/I/61XKxrBtDVL.js?AUIClients/AmazonUIjQuery">
+<link rel="preload" as="script" crossorigin="anonymous" href="https://images-na.ssl-images-amazon.com/images/I/11Y+5x+kkTL._RC|51106gSDnJL.js,11UEXQOFCsL.js,11giXtZCwVL.js,01+z+uIeJ-L.js,01VRMV3FBdL.js,21SDJtBU-PL.js,11rRjDLdAVL.js,51H19hJRYrL.js,11kWu3cNjYL.js,11g2BPXNlrL.js,11OREnu1epL.js,11wcWdhrnDL.js,21r53SJg7LL.js,0190vxtlzcL.js,511VNbag2QL.js,31NShmNbJyL.js,01Gf12ogmOL.js,01ezj5Rkz1L.js,11+RxVdhNcL.js,31o2NGTXThL.js,01rpauTep4L.js,01rvjRKHRNL.js_.js?AUIClients/AmazonUI&amp;gOUTNJqP#page_type-Detail.372963-T1.354901-T1.351411-T1">
+<link rel="preload" as="script" crossorigin="anonymous" href="https://images-na.ssl-images-amazon.com/images/I/51xaFbd-18L.js?AUIClients/CardJsRuntimeBuzzCopyBuild">
+```
+
+---
+
+
+### Facebook - Movie Page - Source
+
+[source](https://www.facebook.com/dune/)
+
+```html
+<!DOCTYPE html>
+<html lang="en" id="facebook" class="no_js">
+<head>
+<meta charset="utf-8" />
+<meta name="referrer" content="origin-when-crossorigin" id="meta_referrer" />
+<link rel="manifest" href="/data/manifest/" crossorigin="use-credentials" />
+<title id="pageTitle">Dune Movie - Home | Facebook</title>
+<link rel="alternate" media="only screen and (max-width: 640px)" href="https://m.facebook.com/dune/" />
+<link rel="alternate" media="handheld" href="https://m.facebook.com/dune/" />
+<link rel="alternate" hreflang="x-default" href="https://www.facebook.com/dune/" />
+<link rel="alternate" hreflang="en" href="https://www.facebook.com/dune/" />
+<meta property="al:android:app_name" content="Facebook" />
+<meta property="al:android:package" content="com.facebook.katana" />
+<meta property="al:android:url" content="fb://page/101611144857507?referrer=app_link" />
+<meta property="al:ios:app_name" content="Facebook" />
+<meta property="al:ios:app_store_id" content="284882215" />
+<meta property="al:ios:url" content="fb://page/?id=101611144857507" />
+<meta name="description" content="Dune Movie. 81,845 likes &#xb7; 66,730 talking about this. Oscar nominee Denis Villeneuve (&#x201c;Arrival,&#x201d; &#x201c;Blade Runner 2049&#x201d;) directs Warner Bros. Pictures and..." />
+<link rel="canonical" href="https://www.facebook.com/dune/" />
+<meta property="og:title" content="Dune Movie" />
+<meta property="og:description" content="Dune Movie. 81,845 likes &#xb7; 66,730 talking about this. Oscar nominee Denis Villeneuve (&#x201c;Arrival,&#x201d; &#x201c;Blade Runner 2049&#x201d;) directs Warner Bros. Pictures and Legendary Pictures&#x2019; &#x201c;Dune,&#x201d; the big-screen..." />
+<meta property="og:image" content="https://scontent-atl3-1.xx.fbcdn.net/v/t1.6435-1/p200x200/247720128_427888415563110_6193931324334113087_n.jpg?_nc_cat=1&amp;ccb=1-5&amp;_nc_sid=dbb9e7&amp;_nc_ohc=k-Sq66c5kB0AX__VDRO&amp;_nc_ht=scontent-atl3-1.xx&amp;oh=09f28d5aebe45c04d24fcd7bcb9acc69&amp;oe=61A7288F" />
+<meta property="og:url" content="https://www.facebook.com/dune/" />
+<link rel="shortcut icon" href="https://static.xx.fbcdn.net/rsrc.php/yb/r/hLRGG_y0J.ico" />
+```
+
+---
+
+
+### Facebook - Movie Page - Elements
+
+[source](https://www.facebook.com/dune/)
+
+
+```html
+<!DOCTYPE html>
+<html lang="en" id="facebook" class="tinyViewport tinyHeight">
+<head>
+<meta charset="utf-8">
+<meta name="referrer" content="origin-when-crossorigin" id="meta_referrer">
+<link rel="manifest" href="/data/manifest/" crossorigin="use-credentials">
+<title id="pageTitle">Dune Movie - Home | Facebook</title>
+<link rel="alternate" media="only screen and (max-width: 640px)" href="https://m.facebook.com/dune/">
+<link rel="alternate" media="handheld" href="https://m.facebook.com/dune/">
+<link rel="alternate" hreflang="x-default" href="https://www.facebook.com/dune/">
+<link rel="alternate" hreflang="en" href="https://www.facebook.com/dune/">
+<meta property="al:android:app_name" content="Facebook">
+<meta property="al:android:package" content="com.facebook.katana">
+<meta property="al:android:url" content="fb://page/101611144857507?referrer=app_link">
+<meta property="al:ios:app_name" content="Facebook">
+<meta property="al:ios:app_store_id" content="284882215">
+<meta property="al:ios:url" content="fb://page/?id=101611144857507">
+<meta name="description" content="Dune Movie. 81,845 likes · 66,730 talking about this. Oscar nominee Denis Villeneuve (“Arrival,” “Blade Runner 2049”) directs Warner Bros. Pictures and...">
+<link rel="canonical" href="https://www.facebook.com/dune/">
+<meta property="og:title" content="Dune Movie">
+<meta property="og:description" content="Dune Movie. 81,845 likes · 66,730 talking about this. Oscar nominee Denis Villeneuve (“Arrival,” “Blade Runner 2049”) directs Warner Bros. Pictures and Legendary Pictures’ “Dune,” the big-screen...">
+<meta property="og:image" content="https://scontent-atl3-1.xx.fbcdn.net/v/t1.6435-1/p200x200/247720128_427888415563110_6193931324334113087_n.jpg?_nc_cat=1&amp;ccb=1-5&amp;_nc_sid=dbb9e7&amp;_nc_ohc=k-Sq66c5kB0AX__VDRO&amp;_nc_ht=scontent-atl3-1.xx&amp;oh=09f28d5aebe45c04d24fcd7bcb9acc69&amp;oe=61A7288F">
+<meta property="og:url" content="https://www.facebook.com/dune/">
+<link rel="shortcut icon" href="https://static.xx.fbcdn.net/rsrc.php/yb/r/hLG_y0J.ico">
+<link href="https://static.xx.fbcdn.net/rsrc.php/v3/yU/r/IB7Ce3Vxnr4.js?_nc_x=Ij3Wp8lg5Kz" rel="preload" as="script" crossorigin="anonymous">
+```
+
+---
+
+### Google - Home Page - Source
+
+[source](https://www.google.com/)
+
+```html
+<!doctype html>
+<html itemscope="" itemtype="http://schema.org/WebPage" lang="en">
+<head>
+<meta charset="UTF-8">
+<meta content="dark" name="color-scheme">
+<meta content="origin" name="referrer">
+<meta content="/images/branding/googleg/1x/googleg_standard_color_128dp.png" itemprop="image">
+<link href="/manifest?pwa=webhp" crossorigin="use-credentials" rel="manifest">
+<title>Google</title>
+```
+
+---
+
+### Google - Home Page - Elements
+
+[source](https://www.google.com/)
+
+```html
+<!DOCTYPE html>
+<html itemscope="" itemtype="http://schema.org/WebPage" lang="en">
+<head>
+<meta charset="UTF-8">
+<meta content="dark" name="color-scheme">
+<meta content="origin" name="referrer">
+<meta content="/images/branding/googleg/1x/googleg_standard_color_128dp.png" itemprop="image">
+<link href="/manifest?pwa=webhp" crossorigin="use-credentials" rel="manifest">
+<title>Google</title>
+```
+
+---
+
+### Google - Search Results Page - Source
+
+[source](https://www.google.com/search?q=dune)
+
+```html
+<!doctype html>
+<html itemscope="" itemtype="http://schema.org/SearchResultsPage" lang="en">
+<head>
+<meta charset="UTF-8">
+<meta content="dark" name="color-scheme">
+<meta content="origin" name="referrer">
+<meta content="An...X0=" http-equiv="origin-trial">
+<meta content="/images/branding/googleg/1x/googleg_standard_color_128dp.png" itemprop="image">
+<title>website - Google Search</title>
+```
+
+---
+
+
+### Google - Search Results Page - Elements
+
+[source](https://www.google.com/search?q=dune)
+
+```html
+<!DOCTYPE html>
+<html itemscope="" itemtype="http://schema.org/SearchResultsPage" lang="en">
+<head>
+<meta charset="UTF-8">
+<meta content="dark" name="color-scheme">
+<meta content="origin" name="referrer">
+<meta content="Anb...1ZX0=" http-equiv="origin-trial">
+<meta content="/images/branding/googleg/1x/googleg_standard_color_128dp.png" itemprop="image">
+<title>website - Google Search</title>
+<link rel="preconnect" href="https://www.googleadservices.com/">
+```
+
+---
+
+
+### Star Wars - Home Page - Source
+
+[source](https://www.starwars.com/)
+
+```html
+<!DOCTYPE html>
+<!--
+
+    "May the Source be with you"
+    
+-->
+<!--[if lt IE 9]><html class="no-js no-media-query"><![endif]-->
+<!--[if (gte IE 9)|(!IE)]><!-->
+<html class="no-js" version="HTML+RDFa 1.1" lang="en">
+<!--<![endif]-->
+<head prefix="fb: http://ogp.me/ns/fb# og: http://ogp.me/ns#">
+<title>StarWars.com | The Official Star Wars Website</title>
+<link rel="canonical" href="https://www.starwars.com/">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="apple-mobile-web-app-title" content="Star Wars">
+<link rel="apple-touch-icon" href="https://lumiere-a.akamaihd.net/v1/images/b-boba-favicon-sw-512x512_e7aeaa0b.png?region=0%2C0%2C512%2C512">
+<link rel="icon" sizes="196x196" href="https://lumiere-a.akamaihd.net/v1/images/b-boba-favicon-sw-512x512_e7aeaa0b.png?region=0%2C0%2C512%2C512">
+<link rel="shortcut icon" href="https://lumiere-a.akamaihd.net/v1/images/b-boba-favicon-sw-512x512_e7aeaa0b.png?region=0%2C0%2C512%2C512">
+<meta http-equiv="content-language" content="en">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@starwars">
+<meta name="msvalidate.01" content="B6..74">
+<meta name="google-site-verification" content="vc..Q4">
+<meta name="twitter:app:name:iphone" content="Star Wars">
+<meta name="twitter:app:id:iphone" content="960108075">
+<meta name="twitter:app:url:iphone" content="starwars://dashboard/">
+<meta name="apple-itunes-app" content="app-id=960108075">
+<meta name="description" content="The official site for Star Wars, featuring the latest news on Star Wars movies, series, video games, books, and more.">
+<meta name="no_follow" content="false">
+<meta name="no_index" content="false">
+<meta property="fb:app_id" content="25..19">
+<meta property="og:title" content="StarWars.com | The Official Star Wars Website">
+<meta property="og:description" content="The official site for Star Wars, featuring the latest on Star Wars: The Rise of Skywalker and The Mandalorian, as well as Star Wars series, video games, books, and more.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="StarWars.com">
+<meta property="og:url" content="https://www.starwars.com/">
+<meta property="og:image" content="https://lumiere-a.akamaihd.net/v1/images/og-generic_02031d2b.png?region=0%2C0%2C1200%2C1200">
+<meta property="context" content="http://schema.org">
+```
+
+---
+
+### Star Wars - Home Page - Elements
+
+
+[source](https://www.starwars.com/)
+
+
+```html
+<!DOCTYPE html>
+<!--
+
+    "May the Source be with you"
+    
+-->
+<!--[if lt IE 9]><html class="no-js no-media-query"><![endif]-->
+<!--[if (gte IE 9)|(!IE)]><!-->
+<html class=" js canvas no-touch geolocation borderradius csstransitions fontface generatedcontent video audio localstorage svg svgclippaths no-mobile no-flash no-ios no-android no-kindle scrolling_text filereader" version="HTML+RDFa 1.1" lang="en" style="">
+<!--<![endif]-->
+<head prefix="fb: http://ogp.me/ns/fb# og: http://ogp.me/ns#">
+<title>StarWars.com | The Official Star Wars Website</title>
+<link rel="canonical" href="https://www.starwars.com/">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="apple-mobile-web-app-title" content="Star Wars">
+<link rel="apple-touch-icon" href="https://lumiere-a.akamaihd.net/v1/images/b-boba-favicon-sw-512x512_e7aeaa0b.png?region=0%2C0%2C512%2C512">
+<link rel="icon" sizes="196x196" href="https://lumiere-a.akamaihd.net/v1/images/b-boba-favicon-sw-512x512_e7aeaa0b.png?region=0%2C0%2C512%2C512">
+<link rel="shortcut icon" href="https://lumiere-a.akamaihd.net/v1/images/b-boba-favicon-sw-512x512_e7aeaa0b.png?region=0%2C0%2C512%2C512">
+<meta http-equiv="content-language" content="en">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@starwars">
+<meta name="msvalidate.01" content="B6..74">
+<meta name="google-site-verification" content="vc..Q4">
+<meta name="twitter:app:name:iphone" content="Star Wars">
+<meta name="twitter:app:id:iphone" content="960108075">
+<meta name="twitter:app:url:iphone" content="starwars://dashboard/">
+<meta name="apple-itunes-app" content="app-id=960108075">
+<meta name="description" content="The official site for Star Wars, featuring the latest news on Star Wars movies, series, video games, books, and more.">
+<meta name="no_follow" content="false">
+<meta name="no_index" content="false">
+<meta property="fb:app_id" content="251829831684619">
+<meta property="og:title" content="StarWars.com | The Official Star Wars Website">
+<meta property="og:description" content="The official site for Star Wars, featuring the latest on Star Wars: The Rise of Skywalker and The Mandalorian, as well as Star Wars series, video games, books, and more.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="StarWars.com">
+<meta property="og:url" content="https://www.starwars.com/">
+<meta property="og:image" content="https://lumiere-a.akamaihd.net/v1/images/og-generic_02031d2b.png?region=0%2C0%2C1200%2C1200">
+<meta property="context" content="http://schema.org">
+<meta http-equiv="origin-trial" content="A6d...0In0=">
+<meta http-equiv="origin-trial" content="A6d...0In0=">
+```
+
+---
+
+
+### Star Wars - Content Page - Source 
+
+[source](https://www.starwars.com/news/star-wars-insider-206-kuiil)
+
+```html
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en-US"> <!--<![endif]-->
+<head>
+<meta charset="utf-8">        
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="apple-mobile-web-app-title" content="Star Wars">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" sizes="196x196" href="/apple-touch-icon.png">
+<link rel="shortcut icon" href="//a.dilcdn.com/sw/favicon-44660648232d.ico">
+<meta property="fb:pages" content="169299103121699">
+<meta property="fb:pages" content="99502471185">
+<meta property="fb:pages" content="180356405454324">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@starwars">
+<meta name="twitter:site" content="@starwars">
+<meta name="twitter:title" content="From the Pages of &lt;em&gt;Star Wars Insider&lt;/em&gt;: Going in for the Kuiil &#8211; Exclusive Excerpt">
+<meta name="twitter:description" content="While many characters from The Mandalorian have resonated with Star Wars fans, Kuiil remains particularly beloved. The wise Ugnaught risked everything so that Grogu might live, proving to be as honora">
+<meta name="twitter:image" content="https://starwarsblog.starwars.com/wp-content/uploads/2021/10/star-wars-insider-206-the-mandalorian-behind-the-scenes_TALL-2.jpg">
+<title>Going in for the Kuiil - Star Wars Insider 206 Excerpt | StarWars.com</title>
+<meta name="description" content="In this excerpt from Star Wars Insider #206, performance artist Misty Rosas talks about bringing The Mandalorian’s Kuiil to life."/>
+<link rel="canonical" href="https://www.starwars.com/news/star-wars-insider-206-kuiil" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="In this excerpt from issue #206, performance artist Misty Rosas talks about bringing The Mandalorian’s fan-favorite Ugnaught to life." />
+<meta name="twitter:title" content="From the Pages of Star Wars Insider: Going in for the Kuiil - Exclusive Excerpt | StarWars.com" />
+<meta name="twitter:image" content="https://starwarsblog.starwars.com/wp-content/uploads/2021/10/star-wars-insider-206-the-mandalorian-behind-the-scenes_TALL-2.jpg" />
+<link rel="dns-prefetch" href="//connect.facebook.net" />
+<link rel='dns-prefetch' href='//connect.facebook.net' />
+<link rel='dns-prefetch' href='//www.starwars.com' />
+<link rel='dns-prefetch' href='//native.sharethrough.com' />
+<link rel='dns-prefetch' href='//starwarsblog.starwars.com' />
+<link rel='dns-prefetch' href='//a.dilcdn.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="StarWars.com &raquo; Feed" href="https://www.starwars.com/feed" />
+<link rel="alternate" type="application/rss+xml" title="StarWars.com &raquo; Comments Feed" href="https://www.starwars.com/comments/feed" />
+<link rel='https://api.w.org/' href='https://www.starwars.com/news/wp-json/' />
+<link rel='shortlink' href='https://www.starwars.com/?p=178553' />
+<link rel="alternate" type="application/json+oembed" href="https://www.starwars.com/news/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.starwars.com%2Fnews%2Fstar-wars-insider-206-kuiil" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.starwars.com/news/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.starwars.com%2Fnews%2Fstar-wars-insider-206-kuiil&#038;format=xml" />
+<meta name="generator" content="WPML ver:3.9.4 stt:1,3,65,44;" />
+<meta property="og:site_name" content="StarWars.com" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_US" />
+<meta property="fb:app_id" content="251829831684619" />
+<meta property="og:url" content="https://www.starwars.com/news/star-wars-insider-206-kuiil" />
+<meta property="og:title" content="From the Pages of Star Wars Insider: Going in for the Kuiil - Exclusive Excerpt | StarWars.com" />
+<meta property="og:description" content="In this excerpt from issue #206, performance artist Misty Rosas talks about bringing The Mandalorian’s fan-favorite Ugnaught to life." />
+<meta property="og:image" content="https://starwarsblog.starwars.com/wp-content/uploads/2021/10/star-wars-insider-206-the-mandalorian-behind-the-scenes_TALL-2.jpg" />
+<meta property="og:image:width" content="1536" />
+<meta property="og:image:height" content="864" />
+<meta property="og:image" content="https://starwarsblog.starwars.com/wp-content/uploads/2021/10/star-wars-insider-206-exclusive.jpg" />
+<meta property="og:image:width" content="723" />
+<meta property="og:image:height" content="1000" />
+<meta property="og:image" content="https://starwarsblog.starwars.com/wp-content/uploads/2021/10/star-wars-insider-206-kuiil-the-mandalorian-behind-the-scenes.jpg" />
+<meta property="og:image:width" content="1280" />
+<meta property="og:image:height" content="853" />
+<meta property="article:published_time" content="2021-11-01T15:00:47+00:00" />
+<meta property="article:modified_time" content="2021-10-26T16:11:45+00:00" />
+<meta property="article:author" content="https://www.starwars.com/news/contributor/starwarsblog" />
+<meta property="article:section" content="Books + Comics" />
+<meta property="article:tag" content="The Mandalorian" />
+<meta property="article:tag" content="Kuiil" />
+<meta property="article:tag" content="Star Wars Insider" />
+<link rel="icon" href="https://starwarsblog.starwars.com/wp-content/uploads/2021/11/cropped-B-Boba-Favicon-SW-512x512-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://starwarsblog.starwars.com/wp-content/uploads/2021/11/cropped-B-Boba-Favicon-SW-512x512-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="https://starwarsblog.starwars.com/wp-content/uploads/2021/11/cropped-B-Boba-Favicon-SW-512x512-180x180.png" />
+<meta name="msapplication-TileImage" content="https://starwarsblog.starwars.com/wp-content/uploads/2021/11/cropped-B-Boba-Favicon-SW-512x512-270x270.png" />
+```
+
+---
+
+### Star Wars - Content Page - Elements
+
+[source](https://www.starwars.com/news/star-wars-insider-206-kuiil)
+
+```html
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html lang="en-US" style="" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache no-svg no-inlinesvg no-smil no-svgclippaths js canvas no-touch geolocation borderradius csstransitions fontface generatedcontent video audio localstorage svg svgclippaths no-mobile no-flash no-ios no-android no-kindle scrolling_text filereader">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="apple-mobile-web-app-title" content="Star Wars">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" sizes="196x196" href="/apple-touch-icon.png">
+<link rel="shortcut icon" href="//a.dilcdn.com/sw/favicon-44660648232d.ico">
+<meta property="fb:pages" content="169299103121699">
+<meta property="fb:pages" content="99502471185">
+<meta property="fb:pages" content="180356405454324">
+<!-- 
+<meta name="msapplication-TileColor" content="#f01d4f">
+<meta name="msapplication-TileImage" content="https://www.starwars.com/wp-content/themes/starwars-theme/library/images/win8-tile-icon.png">
+-->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@starwars">
+<meta name="twitter:site" content="@starwars">
+<meta name="twitter:title" content="From the Pages of <em>Star Wars Insider</em>: Going in for the Kuiil – Exclusive Excerpt">
+<meta name="twitter:description" content="While many characters from The Mandalorian have resonated with Star Wars fans, Kuiil remains particularly beloved. The wise Ugnaught risked everything so that Grogu might live, proving to be as honora">
+<meta name="twitter:image" content="https://starwarsblog.starwars.com/wp-content/uploads/2021/10/star-wars-insider-206-the-mandalorian-behind-the-scenes_TALL-2.jpg">
+<title>Going in for the Kuiil - Star Wars Insider 206 Excerpt | StarWars.com</title>
+<meta name="description" content="In this excerpt from Star Wars Insider #206, performance artist Misty Rosas talks about bringing The Mandalorian’s Kuiil to life.">
+<link rel="canonical" href="https://www.starwars.com/news/star-wars-insider-206-kuiil">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="In this excerpt from issue #206, performance artist Misty Rosas talks about bringing The Mandalorian’s fan-favorite Ugnaught to life.">
+<meta name="twitter:title" content="From the Pages of Star Wars Insider: Going in for the Kuiil - Exclusive Excerpt | StarWars.com">
+<meta name="twitter:image" content="https://starwarsblog.starwars.com/wp-content/uploads/2021/10/star-wars-insider-206-the-mandalorian-behind-the-scenes_TALL-2.jpg">
+<link rel="dns-prefetch" href="//connect.facebook.net">
+<link rel="dns-prefetch" href="//connect.facebook.net">
+<link rel="dns-prefetch" href="//www.starwars.com">
+<link rel="dns-prefetch" href="//native.sharethrough.com">
+<link rel="dns-prefetch" href="//starwarsblog.starwars.com">
+<link rel="dns-prefetch" href="//a.dilcdn.com">
+<link rel="dns-prefetch" href="//s.w.org">
+<link rel="alternate" type="application/rss+xml" title="StarWars.com » Feed" href="https://www.starwars.com/feed">
+<link rel="alternate" type="application/rss+xml" title="StarWars.com » Comments Feed" href="https://www.starwars.com/comments/feed">
+<link rel="https://api.w.org/" href="https://www.starwars.com/news/wp-json/">
+<link rel="shortlink" href="https://www.starwars.com/?p=178553">
+<link rel="alternate" type="application/json+oembed" href="https://www.starwars.com/news/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.starwars.com%2Fnews%2Fstar-wars-insider-206-kuiil">
+<link rel="alternate" type="text/xml+oembed" href="https://www.starwars.com/news/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.starwars.com%2Fnews%2Fstar-wars-insider-206-kuiil&amp;format=xml">
+<meta name="generator" content="WPML ver:3.9.4 stt:1,3,65,44;">
+<meta property="og:site_name" content="StarWars.com">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="fb:app_id" content="251829831684619">
+<meta property="og:url" content="https://www.starwars.com/news/star-wars-insider-206-kuiil">
+<meta property="og:title" content="From the Pages of Star Wars Insider: Going in for the Kuiil - Exclusive Excerpt | StarWars.com">
+<meta property="og:description" content="In this excerpt from issue #206, performance artist Misty Rosas talks about bringing The Mandalorian’s fan-favorite Ugnaught to life.">
+<meta property="og:image" content="https://starwarsblog.starwars.com/wp-content/uploads/2021/10/star-wars-insider-206-the-mandalorian-behind-the-scenes_TALL-2.jpg">
+<meta property="og:image:width" content="1536">
+<meta property="og:image:height" content="864">
+<meta property="og:image" content="https://starwarsblog.starwars.com/wp-content/uploads/2021/10/star-wars-insider-206-exclusive.jpg">
+<meta property="og:image:width" content="723">
+<meta property="og:image:height" content="1000">
+<meta property="og:image" content="https://starwarsblog.starwars.com/wp-content/uploads/2021/10/star-wars-insider-206-kuiil-the-mandalorian-behind-the-scenes.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="853">
+<meta property="article:published_time" content="2021-11-01T15:00:47+00:00">
+<meta property="article:modified_time" content="2021-10-26T16:11:45+00:00">
+<meta property="article:author" content="https://www.starwars.com/news/contributor/starwarsblog">
+<meta property="article:section" content="Books + Comics">
+<meta property="article:tag" content="The Mandalorian">
+<meta property="article:tag" content="Kuiil">
+<meta property="article:tag" content="Star Wars Insider">
+<link rel="icon" href="https://starwarsblog.starwars.com/wp-content/uploads/2021/11/cropped-B-Boba-Favicon-SW-512x512-32x32.png" sizes="32x32">
+<link rel="icon" href="https://starwarsblog.starwars.com/wp-content/uploads/2021/11/cropped-B-Boba-Favicon-SW-512x512-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon-precomposed" href="https://starwarsblog.starwars.com/wp-content/uploads/2021/11/cropped-B-Boba-Favicon-SW-512x512-180x180.png">
+<meta name="msapplication-TileImage" content="https://starwarsblog.starwars.com/wp-content/uploads/2021/11/cropped-B-Boba-Favicon-SW-512x512-270x270.png">
+<meta class="foundation-data-attribute-namespace">
+<meta class="foundation-mq-xxlarge">
+<meta class="foundation-mq-xlarge-only">
+<meta class="foundation-mq-xlarge">
+<meta class="foundation-mq-large-only">
+<meta class="foundation-mq-large">
+<meta class="foundation-mq-medium-only">
+<meta class="foundation-mq-medium">
+<meta class="foundation-mq-small-only">
+<meta class="foundation-mq-small">
+<meta class="foundation-mq-topbar">
+```
+
+---
+
+
+### YouTube - Home Page - Source
+
+[source](https://www.youtube.com/)
+
+```html
+<!DOCTYPE html>
+<html style="font-size: 10px;font-family: Roboto, Arial, sans-serif;" lang="en" dark system-icons typography typography-spacing>
+<head>
+<link rel="shortcut icon" href="https://www.youtube.com/s/desktop/b33a/img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="https://www.youtube.com/s/desktop/b33a/img/favicon_32x32.png" sizes="32x32">
+<link rel="icon" href="https://www.youtube.com/s/desktop/b33a/img/favicon_48x48.png" sizes="48x48">
+<link rel="icon" href="https://www.youtube.com/s/desktop/b33a/img/favicon_96x96.png" sizes="96x96">
+<link rel="icon" href="https://www.youtube.com/s/desktop/b33a/img/favicon_144x144.png" sizes="144x144">
+<title>YouTube</title>
+<link rel="canonical" href="https://www.youtube.com/">
+<link rel="alternate" media="handheld" href="https://m.youtube.com/">
+<link rel="alternate" media="only screen and (max-width: 640px)" href="https://m.youtube.com/">
+<meta property="og:image" content="https://www.youtube.com/img/desktop/yt_1200.png">
+<meta property="fb:app_id" content="87...05">
+<link rel="publisher" href="https://plus.google.com/11...78">
+<link rel="alternate" href="android-app://com.google.android.youtube/http/www.youtube.com/">
+<link rel="alternate" href="ios-app://544007664/vnd.youtube/www.youtube.com/">
+<meta name="description" content="Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube.">
+<meta name="keywords" content="video, sharing, camera phone, video phone, free, upload">
+<link rel="preload" href="https://i.ytimg.com/generate_204" as="fetch">
+<link as="script" rel="preload" href="https://www.youtube.com/s/desktop/b33a/jsbin/desktop_polymer.vflset/desktop_polymer.js" nonce="Rc...ig">
+<meta name="theme-color" content="rgba(33, 33, 33, 0.98)">
+<link rel="search" type="application/opensearchdescription+xml" href="https://www.youtube.com/opensearch?locale=en_US" title="YouTube">
+<link rel="manifest" href="/manifest.webmanifest" crossorigin="use-credentials">
+```
+
+---
+
+### YouTube - Home Page - Elements
+
+[source](https://www.youtube.com/)
+
+
+```html
+<!DOCTYPE html>
+<html style="font-size: 10px;font-family: Roboto, Arial, sans-serif;" lang="en" dark="true" system-icons="" typography="" typography-spacing="" standardized-themed-scrollbar="">
+<head>
+<link rel="shortcut icon" href="https://www.youtube.com/s/desktop/ba/img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="https://www.youtube.com/s/desktop/ba/img/favicon_32x32.png" sizes="32x32">
+<link rel="icon" href="https://www.youtube.com/s/desktop/ba/img/favicon_48x48.png" sizes="48x48">
+<link rel="icon" href="https://www.youtube.com/s/desktop/ba/img/favicon_96x96.png" sizes="96x96">
+<link rel="icon" href="https://www.youtube.com/s/desktop/ba/img/favicon_144x144.png" sizes="144x144">
+<title>YouTube</title>
+<link rel="canonical" href="https://www.youtube.com/">
+<link rel="alternate" media="handheld" href="https://m.youtube.com/">
+<link rel="alternate" media="only screen and (max-width: 640px)" href="https://m.youtube.com/">
+<meta property="og:image" content="https://www.youtube.com/img/desktop/yt_1200.png">
+<meta property="fb:app_id" content="87...05">
+<link rel="publisher" href="https://plus.google.com/11...78">
+<link rel="alternate" href="android-app://com.google.android.youtube/http/www.youtube.com/">
+<link rel="alternate" href="ios-app://54...64/vnd.youtube/www.youtube.com/">
+<meta name="description" content="Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube.">
+<meta name="keywords" content="video, sharing, camera phone, video phone, free, upload">
+<link rel="preload" href="https://i.ytimg.com/generate_204" as="fetch">
+<link as="script" rel="preload" href="https://www.youtube.com/s/desktop/ba/jsbin/desktop_polymer.vflset/desktop_polymer.js" nonce="Rc...ig">
+<meta name="theme-color" content="rgba(33,33,33,0.98)">
+<link rel="search" type="application/opensearchdescription+xml" href="https://www.youtube.com/opensearch?locale=en_US" title="YouTube">
+<link rel="manifest" href="/manifest.webmanifest" crossorigin="use-credentials">
+```
+
+---
+
+### YouTube - Search Results Page - Source
+
+[source](https://www.youtube.com/results?search_query=dune+trailer+2021)
+
+```html
+<!DOCTYPE html>
+<html style="font-size: 10px;font-family: Roboto, Arial, sans-serif;" lang="en" dark system-icons typography typography-spacing>
+<head>
+<link rel="shortcut icon" href="https://www.youtube.com/s/desktop/b349a03a/img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="https://www.youtube.com/s/desktop/ba/img/favicon_32x32.png" sizes="32x32">
+<link rel="icon" href="https://www.youtube.com/s/desktop/ba/img/favicon_48x48.png" sizes="48x48">
+<link rel="icon" href="https://www.youtube.com/s/desktop/ba/img/favicon_96x96.png" sizes="96x96">
+<link rel="icon" href="https://www.youtube.com/s/desktop/ba/img/favicon_144x144.png" sizes="144x144">
+<link rel="preload" href="https://i.ytimg.com/generate_204" as="fetch">
+<link as="script" rel="preload" href="https://www.youtube.com/s/desktop/ba/jsbin/desktop_polymer.vflset/desktop_polymer.js" nonce="mE...xQ">
+<meta name="theme-color" content="rgba(33, 33, 33, 0.98)">
+<link rel="search" type="application/opensearchdescription+xml" href="https://www.youtube.com/opensearch?locale=en_US" title="YouTube">
+<link rel="manifest" href="/manifest.webmanifest" crossorigin="use-credentials">
+</head>
+```
+
+---
+
+### YouTube - Search Results Page - Elements
+
+[source](https://www.youtube.com/results?search_query=dune+trailer+2021)
+
+```html
+<!DOCTYPE html>
+<html style="font-size: 10px;font-family: Roboto, Arial, sans-serif;" lang="en" dark="true" system-icons="" typography="" typography-spacing="" standardized-themed-scrollbar="">
+<head>
+<link rel="shortcut icon" href="https://www.youtube.com/s/desktop/b349a03a/img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="https://www.youtube.com/s/desktop/ba/img/favicon_32x32.png" sizes="32x32">
+<link rel="icon" href="https://www.youtube.com/s/desktop/ba/img/favicon_48x48.png" sizes="48x48">
+<link rel="icon" href="https://www.youtube.com/s/desktop/ba/img/favicon_96x96.png" sizes="96x96">
+<link rel="icon" href="https://www.youtube.com/s/desktop/ba/img/favicon_144x144.png" sizes="144x144">
+<link rel="preload" href="https://i.ytimg.com/generate_204" as="fetch">
+<link as="script" rel="preload" href="https://www.youtube.com/s/desktop/ba/jsbin/desktop_polymer.vflset/desktop_polymer.js" nonce="mE...dQ">
+<meta name="theme-color" content="rgba(33,33,33,0.98)">
+<link rel="search" type="application/opensearchdescription+xml" href="https://www.youtube.com/opensearch?locale=en_US" title="YouTube">
+<link rel="manifest" href="/manifest.webmanifest" crossorigin="use-credentials">
+<title>dune trailer 2021 - YouTube</title>
+```
+
+---
+
+### YouTube - Video Page - Source
+
+[source](https://www.youtube.com/watch?v=8g18jFHCLXk)
+
+```html
+<!DOCTYPE html>
+<html style="font-size: 10px;font-family: Roboto, Arial, sans-serif;" lang="en" dark system-icons typography typography-spacing>
+<head>
+<link rel="shortcut icon" href="https://www.youtube.com/s/desktop/ba/img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="https://www.youtube.com/s/desktop/ba/img/favicon_32x32.png" sizes="32x32">
+<link rel="icon" href="https://www.youtube.com/s/desktop/ba/img/favicon_48x48.png" sizes="48x48">
+<link rel="icon" href="https://www.youtube.com/s/desktop/ba/img/favicon_96x96.png" sizes="96x96">
+<link rel="icon" href="https://www.youtube.com/s/desktop/ba/img/favicon_144x144.png" sizes="144x144">
+<link rel="preload" href="https://i.ytimg.com/generate_204" as="fetch">
+<meta name="theme-color" content="rgba(33, 33, 33, 0.98)">
+<link rel="search" type="application/opensearchdescription+xml" href="https://www.youtube.com/opensearch?locale=en_US" title="YouTube">
+<link rel="manifest" href="/manifest.webmanifest" crossorigin="use-credentials">
+<link rel="preload" href="https://r5---sn-hp57kn6r.googlevideo.com/generate_204" as="fetch">
+<link rel="preload" href="https://r5---sn-hp57kn6r.googlevideo.com/generate_204?conn2" as="fetch">
+<link rel="canonical" href="https://www.youtube.com/watch?v=8g18jFHCLXk">
+<link rel="alternate" media="handheld" href="https://m.youtube.com/watch?v=8g18jFHCLXk">
+<link rel="alternate" media="only screen and (max-width: 640px)" href="https://m.youtube.com/watch?v=8g18jFHCLXk">
+<title>Dune | Official Main Trailer - YouTube</title>
+<meta name="title" content="Dune | Official Main Trailer">
+<meta name="description" content="IT’S TIME. #DuneMovie coming October 22.-----------------https://www.instagram.com/dunemovie/https://www.facebook.com/dunehttps://twitter.com/dunemovie https...">
+<meta name="keywords" content="Action, Arrakis, Arrival, Atreides, Bene Gesserit, Blade Runner 2049, Coming Soon, Denis Villeneuve, Duke Leto Atreides, Duncan Idaho, Dune, Enemy, Film, Film Trailer, Film Warner, Frank Herbert, Fremen, Harkonnen, Jason Momoa, Javier Bardem, Josh Brolin, Movie, Official Trailer, Oscar Isaac, Paul Atreides, Rebecca Ferguson, Sandworm, Sci-Fi, Stellan Skarsgard, Timothee Chalamet, Trailer, Trailer 2019, WB, Warner, Warner Bros, Warner Brothers, Warner Media, Zendaya">
+<link rel="shortlinkUrl" href="https://youtu.be/8g18jFHCLXk">
+<link rel="alternate" href="android-app://com.google.android.youtube/http/www.youtube.com/watch?v=8g18jFHCLXk">
+<link rel="alternate" href="ios-app://544007664/vnd.youtube/www.youtube.com/watch?v=8g18jFHCLXk">
+<link rel="alternate" type="application/json+oembed" href="https://www.youtube.com/oembed?format=json&amp;url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D8g18jFHCLXk" title="Dune | Official Main Trailer">
+<link rel="alternate" type="text/xml+oembed" href="https://www.youtube.com/oembed?format=xml&amp;url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D8g18jFHCLXk" title="Dune | Official Main Trailer">
+<link rel="image_src" href="https://i.ytimg.com/vi/8g18jFHCLXk/maxresdefault.jpg">
+<meta property="og:site_name" content="YouTube">
+<meta property="og:url" content="https://www.youtube.com/watch?v=8g18jFHCLXk">
+<meta property="og:title" content="Dune | Official Main Trailer">
+<meta property="og:image" content="https://i.ytimg.com/vi/8g18jFHCLXk/maxresdefault.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta property="og:description" content="IT’S TIME. #DuneMovie coming October 22.-----------------https://www.instagram.com/dunemovie/https://www.facebook.com/dunehttps://twitter.com/dunemovie https...">
+<meta property="al:ios:app_store_id" content="544007664">
+<meta property="al:ios:app_name" content="YouTube">
+<meta property="al:ios:url" content="vnd.youtube://www.youtube.com/watch?v=8g18jFHCLXk&amp;feature=applinks">
+<meta property="al:android:url" content="vnd.youtube://www.youtube.com/watch?v=8g18jFHCLXk&amp;feature=applinks">
+<meta property="al:web:url" content="http://www.youtube.com/watch?v=8g18jFHCLXk&amp;feature=applinks">
+<meta property="og:type" content="video.other">
+<meta property="og:video:url" content="https://www.youtube.com/embed/8g18jFHCLXk">
+<meta property="og:video:secure_url" content="https://www.youtube.com/embed/8g18jFHCLXk">
+<meta property="og:video:type" content="text/html">
+<meta property="og:video:width" content="1280">
+<meta property="og:video:height" content="720">
+<meta property="al:android:app_name" content="YouTube">
+<meta property="al:android:package" content="com.google.android.youtube">
+<meta property="og:video:tag" content="Action">
+<meta property="og:video:tag" content="Arrakis">
+<meta property="og:video:tag" content="Arrival">
+<meta property="og:video:tag" content="Atreides">
+<meta property="og:video:tag" content="Bene Gesserit">
+<meta property="og:video:tag" content="Blade Runner 2049">
+<meta property="og:video:tag" content="Coming Soon">
+<meta property="og:video:tag" content="Denis Villeneuve">
+<meta property="og:video:tag" content="Duke Leto Atreides">
+<meta property="og:video:tag" content="Duncan Idaho">
+<meta property="og:video:tag" content="Dune">
+<meta property="og:video:tag" content="Enemy">
+<meta property="og:video:tag" content="Film">
+<meta property="og:video:tag" content="Film Trailer">
+<meta property="og:video:tag" content="Film Warner">
+<meta property="og:video:tag" content="Frank Herbert">
+<meta property="og:video:tag" content="Fremen">
+<meta property="og:video:tag" content="Harkonnen">
+<meta property="og:video:tag" content="Jason Momoa">
+<meta property="og:video:tag" content="Javier Bardem">
+<meta property="og:video:tag" content="Josh Brolin">
+<meta property="og:video:tag" content="Movie">
+<meta property="og:video:tag" content="Official Trailer">
+<meta property="og:video:tag" content="Oscar Isaac">
+<meta property="og:video:tag" content="Paul Atreides">
+<meta property="og:video:tag" content="Rebecca Ferguson">
+<meta property="og:video:tag" content="Sandworm">
+<meta property="og:video:tag" content="Sci-Fi">
+<meta property="og:video:tag" content="Stellan Skarsgard">
+<meta property="og:video:tag" content="Timothee Chalamet">
+<meta property="og:video:tag" content="Trailer">
+<meta property="og:video:tag" content="Trailer 2019">
+<meta property="og:video:tag" content="WB">
+<meta property="og:video:tag" content="Warner">
+<meta property="og:video:tag" content="Warner Bros">
+<meta property="og:video:tag" content="Warner Brothers">
+<meta property="og:video:tag" content="Warner Media">
+<meta property="og:video:tag" content="Zendaya">
+<meta property="fb:app_id" content="87...05">
+<meta name="twitter:card" content="player">
+<meta name="twitter:site" content="@youtube">
+<meta name="twitter:url" content="https://www.youtube.com/watch?v=8g18jFHCLXk">
+<meta name="twitter:title" content="Dune | Official Main Trailer">
+<meta name="twitter:description" content="IT’S TIME. #DuneMovie coming October 22.-----------------https://www.instagram.com/dunemovie/https://www.facebook.com/dunehttps://twitter.com/dunemovie https...">
+<meta name="twitter:image" content="https://i.ytimg.com/vi/8g18jFHCLXk/maxresdefault.jpg">
+<meta name="twitter:app:name:iphone" content="YouTube">
+<meta name="twitter:app:id:iphone" content="544007664">
+<meta name="twitter:app:name:ipad" content="YouTube">
+<meta name="twitter:app:id:ipad" content="544007664">
+<meta name="twitter:app:url:iphone" content="vnd.youtube://www.youtube.com/watch?v=8g18jFHCLXk&amp;feature=applinks">
+<meta name="twitter:app:url:ipad" content="vnd.youtube://www.youtube.com/watch?v=8g18jFHCLXk&amp;feature=applinks">
+<meta name="twitter:app:name:googleplay" content="YouTube">
+<meta name="twitter:app:id:googleplay" content="com.google.android.youtube">
+<meta name="twitter:app:url:googleplay" content="https://www.youtube.com/watch?v=8g18jFHCLXk">
+<meta name="twitter:player" content="https://www.youtube.com/embed/8g18jFHCLXk">
+<meta name="twitter:player:width" content="1280">
+<meta name="twitter:player:height" content="720">
+<div id="watch7-content" class="watch-main-col" itemscope itemid="" itemtype="http://schema.org/VideoObject">
+<link itemprop="url" href="https://www.youtube.com/watch?v=8g18jFHCLXk">
+<meta itemprop="name" content="Dune | Official Main Trailer">
+<meta itemprop="description" content="IT’S TIME. #DuneMovie coming October 22.-----------------https://www.instagram.com/dunemovie/https://www.facebook.com/dunehttps://twitter.com/dunemovie https...">
+<meta itemprop="paid" content="False">
+<meta itemprop="channelId" content="UCjmJDM5pRKbUlVIzDYYWb6g">
+<meta itemprop="videoId" content="8g18jFHCLXk">
+<meta itemprop="duration" content="PT3M28S">
+<meta itemprop="unlisted" content="False">
+<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+<link itemprop="url" href="http://www.youtube.com/user/WarnerBrosPictures">
+<link itemprop="name" content="Warner Bros. Pictures">
+</span>
+<link itemprop="thumbnailUrl" href="https://i.ytimg.com/vi/8g18jFHCLXk/maxresdefault.jpg">
+<span itemprop="thumbnail" itemscope itemtype="http://schema.org/ImageObject">
+<link itemprop="url" href="https://i.ytimg.com/vi/8g18jFHCLXk/maxresdefault.jpg">
+<meta itemprop="width" content="1280">
+<meta itemprop="height" content="720">
+</span>
+<link itemprop="embedUrl" href="https://www.youtube.com/embed/8g18jFHCLXk">
+<meta itemprop="playerType" content="HTML5 Flash">
+<meta itemprop="width" content="1280">
+<meta itemprop="height" content="720">
+<meta itemprop="isFamilyFriendly" content="true">
+<meta itemprop="regionsAllowed" content="AD,AE,AF,AG,AI,AL,AM,AO,AQ,AR,AS,AT,AU,AW,AX,AZ,BA,BB,BD,BE,BF,BG,BH,BI,BJ,BL,BM,BN,BO,BQ,BR,BS,BT,BV,BW,BY,BZ,CA,CC,CD,CF,CG,CH,CI,CK,CL,CM,CN,CO,CR,CU,CV,CW,CX,CY,CZ,DE,DJ,DK,DM,DO,DZ,EC,EE,EG,EH,ER,ES,ET,FI,FJ,FK,FM,FO,FR,GA,GB,GD,GE,GF,GG,GH,GI,GL,GM,GN,GP,GQ,GR,GS,GT,GU,GW,GY,HK,HM,HN,HR,HT,HU,ID,IE,IL,IM,IN,IO,IQ,IR,IS,IT,JE,JM,JO,JP,KE,KG,KH,KI,KM,KN,KP,KR,KW,KY,KZ,LA,LB,LC,LI,LK,LR,LS,LT,LU,LV,LY,MA,MC,MD,ME,MF,MG,MH,MK,ML,MM,MN,MO,MP,MQ,MR,MS,MT,MU,MV,MW,MX,MY,MZ,NA,NC,NE,NF,NG,NI,NL,NO,NP,NR,NU,NZ,OM,PA,PE,PF,PG,PH,PK,PL,PM,PN,PR,PS,PT,PW,PY,QA,RE,RO,RS,RU,RW,SA,SB,SC,SD,SE,SG,SH,SI,SJ,SK,SL,SM,SN,SO,SR,SS,ST,SV,SX,SY,SZ,TC,TD,TF,TG,TH,TJ,TK,TL,TM,TN,TO,TR,TT,TV,TW,TZ,UA,UG,UM,US,UY,UZ,VA,VC,VE,VG,VI,VN,VU,WF,WS,YE,YT,ZA,ZM,ZW">
+<meta itemprop="interactionCount" content="26228093">
+<meta itemprop="datePublished" content="2021-07-22">
+<meta itemprop="uploadDate" content="2021-07-22">
+<meta itemprop="genre" content="Film &amp; Animation">
+</div>
+```
+
+---
+
+
+### YouTube - Video Page - Elements
+
+[source](https://www.youtube.com/watch?v=8g18jFHCLXk)
+
+
+```html
+<!DOCTYPE html>
+<html style="font-size: 10px;font-family: Roboto, Arial, sans-serif;" lang="en" dark="true" system-icons="" typography="" typography-spacing="" standardized-themed-scrollbar="">
+<head>
+<link rel="shortcut icon" href="https://www.youtube.com/s/desktop/b3/img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="https://www.youtube.com/s/desktop/b3/img/favicon_32x32.png" sizes="32x32">
+<link rel="icon" href="https://www.youtube.com/s/desktop/b3/img/favicon_48x48.png" sizes="48x48">
+<link rel="icon" href="https://www.youtube.com/s/desktop/b3/img/favicon_96x96.png" sizes="96x96">
+<link rel="icon" href="https://www.youtube.com/s/desktop/b3/img/favicon_144x144.png" sizes="144x144">
+<link rel="preload" href="https://i.ytimg.com/generate_204" as="fetch">
+<meta name="theme-color" content="rgba(33,33,33,0.98)">
+<link rel="search" type="application/opensearchdescription+xml" href="https://www.youtube.com/opensearch?locale=en_US" title="YouTube">
+<link rel="manifest" href="/manifest.webmanifest" crossorigin="use-credentials">
+<link rel="preload" href="https://r5---sn-hp57kn6r.googlevideo.com/generate_204" as="fetch">
+<link rel="preload" href="https://r5---sn-hp57kn6r.googlevideo.com/generate_204?conn2" as="fetch">
+<link rel="canonical" href="https://www.youtube.com/watch?v=8g18jFHCLXk">
+<link rel="alternate" media="handheld" href="https://m.youtube.com/watch?v=8g18jFHCLXk">
+<link rel="alternate" media="only screen and (max-width: 640px)" href="https://m.youtube.com/watch?v=8g18jFHCLXk">
+<title>Dune | Official Main Trailer - YouTube
+</title>
+<meta name="title" content="Dune | Official Main Trailer">
+<meta name="description" content="IT’S TIME. #DuneMovie coming October 22.-----------------https://www.instagram.com/dunemovie/https://www.facebook.com/dunehttps://twitter.com/dunemovie https...">
+<meta name="keywords" content="Action, Arrakis, Arrival, Atreides, Bene Gesserit, Blade Runner 2049, Coming Soon, Denis Villeneuve, Duke Leto Atreides, Duncan Idaho, Dune, Enemy, Film, Film Trailer, Film Warner, Frank Herbert, Fremen, Harkonnen, Jason Momoa, Javier Bardem, Josh Brolin, Movie, Official Trailer, Oscar Isaac, Paul Atreides, Rebecca Ferguson, Sandworm, Sci-Fi, Stellan Skarsgard, Timothee Chalamet, Trailer, Trailer 2019, WB, Warner, Warner Bros, Warner Brothers, Warner Media, Zendaya">
+<link rel="shortlinkUrl" href="https://youtu.be/8g18jFHCLXk">
+<link rel="alternate" href="android-app://com.google.android.youtube/http/www.youtube.com/watch?v=8g18jFHCLXk">
+<link rel="alternate" href="ios-app://544007664/vnd.youtube/www.youtube.com/watch?v=8g18jFHCLXk">
+<link rel="alternate" type="application/json+oembed" href="https://www.youtube.com/oembed?format=json&amp;url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D8g18jFHCLXk" title="Dune | Official Main Trailer">
+<link rel="alternate" type="text/xml+oembed" href="https://www.youtube.com/oembed?format=xml&amp;url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D8g18jFHCLXk" title="Dune | Official Main Trailer">
+<link rel="image_src" href="https://i.ytimg.com/vi/8g18jFHCLXk/maxresdefault.jpg">
+<meta property="og:site_name" content="YouTube">
+<meta property="og:url" content="https://www.youtube.com/watch?v=8g18jFHCLXk">
+<meta property="og:title" content="Dune | Official Main Trailer">
+<meta property="og:image" content="https://i.ytimg.com/vi/8g18jFHCLXk/maxresdefault.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta property="og:description" content="IT’S TIME. #DuneMovie coming October 22.-----------------https://www.instagram.com/dunemovie/https://www.facebook.com/dunehttps://twitter.com/dunemovie https...">
+<meta property="al:ios:app_store_id" content="544007664">
+<meta property="al:ios:app_name" content="YouTube">
+<meta property="al:ios:url" content="vnd.youtube://www.youtube.com/watch?v=8g18jFHCLXk&amp;feature=applinks">
+<meta property="al:android:url" content="vnd.youtube://www.youtube.com/watch?v=8g18jFHCLXk&amp;feature=applinks">
+<meta property="al:web:url" content="http://www.youtube.com/watch?v=8g18jFHCLXk&amp;feature=applinks">
+<meta property="og:type" content="video.other">
+<meta property="og:video:url" content="https://www.youtube.com/embed/8g18jFHCLXk">
+<meta property="og:video:secure_url" content="https://www.youtube.com/embed/8g18jFHCLXk">
+<meta property="og:video:type" content="text/html">
+<meta property="og:video:width" content="1280">
+<meta property="og:video:height" content="720">
+<meta property="al:android:app_name" content="YouTube">
+<meta property="al:android:package" content="com.google.android.youtube">
+<meta property="og:video:tag" content="Action">
+<meta property="og:video:tag" content="Arrakis">
+<meta property="og:video:tag" content="Arrival">
+<meta property="og:video:tag" content="Atreides">
+<meta property="og:video:tag" content="Bene Gesserit">
+<meta property="og:video:tag" content="Blade Runner 2049">
+<meta property="og:video:tag" content="Coming Soon">
+<meta property="og:video:tag" content="Denis Villeneuve">
+<meta property="og:video:tag" content="Duke Leto Atreides">
+<meta property="og:video:tag" content="Duncan Idaho">
+<meta property="og:video:tag" content="Dune">
+<meta property="og:video:tag" content="Enemy">
+<meta property="og:video:tag" content="Film">
+<meta property="og:video:tag" content="Film Trailer">
+<meta property="og:video:tag" content="Film Warner">
+<meta property="og:video:tag" content="Frank Herbert">
+<meta property="og:video:tag" content="Fremen">
+<meta property="og:video:tag" content="Harkonnen">
+<meta property="og:video:tag" content="Jason Momoa">
+<meta property="og:video:tag" content="Javier Bardem">
+<meta property="og:video:tag" content="Josh Brolin">
+<meta property="og:video:tag" content="Movie">
+<meta property="og:video:tag" content="Official Trailer">
+<meta property="og:video:tag" content="Oscar Isaac">
+<meta property="og:video:tag" content="Paul Atreides">
+<meta property="og:video:tag" content="Rebecca Ferguson">
+<meta property="og:video:tag" content="Sandworm">
+<meta property="og:video:tag" content="Sci-Fi">
+<meta property="og:video:tag" content="Stellan Skarsgard">
+<meta property="og:video:tag" content="Timothee Chalamet">
+<meta property="og:video:tag" content="Trailer">
+<meta property="og:video:tag" content="Trailer 2019">
+<meta property="og:video:tag" content="WB">
+<meta property="og:video:tag" content="Warner">
+<meta property="og:video:tag" content="Warner Bros">
+<meta property="og:video:tag" content="Warner Brothers">
+<meta property="og:video:tag" content="Warner Media">
+<meta property="og:video:tag" content="Zendaya">
+<meta property="fb:app_id" content="87741124305">
+<meta name="twitter:card" content="player">
+<meta name="twitter:site" content="@youtube">
+<meta name="twitter:url" content="https://www.youtube.com/watch?v=8g18jFHCLXk">
+<meta name="twitter:title" content="Dune | Official Main Trailer">
+<meta name="twitter:description" content="IT’S TIME. #DuneMovie coming October 22.-----------------https://www.instagram.com/dunemovie/https://www.facebook.com/dunehttps://twitter.com/dunemovie https...">
+<meta name="twitter:image" content="https://i.ytimg.com/vi/8g18jFHCLXk/maxresdefault.jpg">
+<meta name="twitter:app:name:iphone" content="YouTube">
+<meta name="twitter:app:id:iphone" content="544007664">
+<meta name="twitter:app:name:ipad" content="YouTube">
+<meta name="twitter:app:id:ipad" content="544007664">
+<meta name="twitter:app:url:iphone" content="vnd.youtube://www.youtube.com/watch?v=8g18jFHCLXk&amp;feature=applinks">
+<meta name="twitter:app:url:ipad" content="vnd.youtube://www.youtube.com/watch?v=8g18jFHCLXk&amp;feature=applinks">
+<meta name="twitter:app:name:googleplay" content="YouTube">
+<meta name="twitter:app:id:googleplay" content="com.google.android.youtube">
+<meta name="twitter:app:url:googleplay" content="https://www.youtube.com/watch?v=8g18jFHCLXk">
+<meta name="twitter:player" content="https://www.youtube.com/embed/8g18jFHCLXk">
+<meta name="twitter:player:width" content="1280">
+<meta name="twitter:player:height" content="720">
+<meta name="referrer" content="origin-when-cross-origin">
+```
+
+---
+
+
+### Twitter - Home Page - Source
+
+[source](https://twitter.com/home)
+
+```html
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover" />
+<link rel="preconnect" href="//abs.twimg.com" />
+<link rel="dns-prefetch" href="//abs.twimg.com" />
+<link rel="preconnect" href="//api.twitter.com" />
+<link rel="dns-prefetch" href="//api.twitter.com" />
+<link rel="preconnect" href="//pbs.twimg.com" />
+<link rel="dns-prefetch" href="//pbs.twimg.com" />
+<link rel="preconnect" href="//t.co" />
+<link rel="dns-prefetch" href="//t.co" />
+<link rel="preconnect" href="//video.twimg.com" />
+<link rel="dns-prefetch" href="//video.twimg.com" />
+<link rel="preload" as="script" crossorigin="anonymous" href="https://abs.twimg.com/responsive-web/client-web/polyfills.1001d875.js" nonce="OD...hk" />
+<link rel="preload" as="script" crossorigin="anonymous" href="https://abs.twimg.com/responsive-web/client-web/vendors~main.66c5.js" nonce="ODB...hk" />
+<link rel="preload" as="script" crossorigin="anonymous" href="https://abs.twimg.com/responsive-web/client-web/i18n/en.355.js" nonce="ODB...Thk" />
+<link rel="preload" as="script" crossorigin="anonymous" href="https://abs.twimg.com/responsive-web/client-web/main.7265.js" nonce="ODB...NThk" />
+<meta property="fb:app_id" content="22...43" />
+<meta property="og:site_name" content="Twitter" />
+<meta name="google-site-verification" content="acY...CV0" />
+<meta name="facebook-domain-verification" content="x6...t1" />
+<link rel="manifest" href="/manifest.json" crossOrigin="use-credentials" />
+<link rel="alternate" hreflang="x-default" href="https://twitter.com/" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="Twitter">
+<link rel="mask-icon" sizes="any" href="https://abs.twimg.com/responsive-web/client-web/icon-svg.165.svg" color="#1da1f2">
+<link rel="shortcut icon" href="//abs.twimg.com/favicons/twitter.ico" type="image/x-icon">
+<link rel="apple-touch-icon" sizes="192x192" href="https://abs.twimg.com/responsive-web/client-web/icon-ios.b75.png" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-title" content="Twitter" />
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<meta name="theme-color" content="#ffffff" />
+<meta http-equiv="origin-trial" content="Apir4c...VlfQ==" />
+```
+
+---
+
+### Twitter - Home Page - Elements
+
+[source](https://twitter.com/home)
+
+```html
+<!DOCTYPE html>
+<html dir="ltr" lang="en" style="overflow: auto scroll; overscroll-behavior-y: none; font-size: 15px;">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
+<link rel="preconnect" href="//abs.twimg.com">
+<link rel="dns-prefetch" href="//abs.twimg.com">
+<link rel="preconnect" href="//api.twitter.com">
+<link rel="dns-prefetch" href="//api.twitter.com">
+<link rel="preconnect" href="//pbs.twimg.com">
+<link rel="dns-prefetch" href="//pbs.twimg.com">
+<link rel="preconnect" href="//t.co">
+<link rel="dns-prefetch" href="//t.co">
+<link rel="preconnect" href="//video.twimg.com">
+<link rel="dns-prefetch" href="//video.twimg.com">
+<link rel="preload" as="script" crossorigin="anonymous" href="https://abs.twimg.com/responsive-web/client-web/polyfills.15.js" nonce="">
+<link rel="preload" as="script" crossorigin="anonymous" href="https://abs.twimg.com/responsive-web/client-web/vendors~main.65.js" nonce="">
+<link rel="preload" as="script" crossorigin="anonymous" href="https://abs.twimg.com/responsive-web/client-web/i18n/en.35.js" nonce="">
+<link rel="preload" as="script" crossorigin="anonymous" href="https://abs.twimg.com/responsive-web/client-web/main.75.js" nonce="">
+<meta property="fb:app_id" content="22...43">
+<meta property="og:site_name" content="Twitter">
+<meta name="google-site-verification" content="ac...V0">
+<meta name="facebook-domain-verification" content="x6...t1">
+<link rel="manifest" href="/manifest.json" crossorigin="use-credentials">
+<link rel="alternate" hreflang="x-default" href="https://twitter.com/">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="Twitter">
+<link rel="mask-icon" sizes="any" href="https://abs.twimg.com/responsive-web/client-web/icon-svg.16d5.svg" color="#1da1f2">
+<link rel="shortcut icon" href="https://abs.twimg.com/favicons/twitter-pip.ico" type="image/x-icon">
+<link rel="apple-touch-icon" sizes="192x192" href="https://abs.twimg.com/responsive-web/client-web/icon-ios.b175.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Twitter">
+<meta name="apple-mobile-web-app-status-bar-style" content="white">
+<meta name="theme-color" content="#000000">
+<meta http-equiv="origin-trial" content="Ap...fQ==">
+<title>Home / Twitter</title>
+<link href="https://twitter.com/home" rel="canonical" data-rh="true">
+<meta content="Home / Twitter" property="og:title" data-rh="true">
+```
+
+---
+
+
+### Twitter - Individual Tweet - Source
+
+[source](https://twitter.com/TheIdOfAlan/status/1302648818060726273)
+
+```html
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover" />
+<link rel="preconnect" href="//abs.twimg.com" />
+<link rel="dns-prefetch" href="//abs.twimg.com" />
+<link rel="preconnect" href="//api.twitter.com" />
+<link rel="dns-prefetch" href="//api.twitter.com" />
+<link rel="preconnect" href="//pbs.twimg.com" />
+<link rel="dns-prefetch" href="//pbs.twimg.com" />
+<link rel="preconnect" href="//t.co" />
+<link rel="dns-prefetch" href="//t.co" />
+<link rel="preconnect" href="//video.twimg.com" />
+<link rel="dns-prefetch" href="//video.twimg.com" />
+<link rel="preload" as="script" crossorigin="anonymous" href="https://abs.twimg.com/responsive-web/client-web/polyfills.15.js" nonce="YW...Q0" />
+<link rel="preload" as="script" crossorigin="anonymous" href="https://abs.twimg.com/responsive-web/client-web/vendors~main.65.js" nonce="YW...I0" />
+<link rel="preload" as="script" crossorigin="anonymous" href="https://abs.twimg.com/responsive-web/client-web/i18n/en.35.js" nonce="YW...I0" />
+<link rel="preload" as="script" crossorigin="anonymous" href="https://abs.twimg.com/responsive-web/client-web/main.75.js" nonce="YW...I0" />
+<meta property="fb:app_id" content="2...3" />
+<meta property="og:site_name" content="Twitter" />
+<meta name="google-site-verification" content="ac...V0" />
+<meta name="facebook-domain-verification" content="x6...t1" />
+<link rel="manifest" href="/manifest.json" crossOrigin="use-credentials" />
+<link rel="alternate" hreflang="x-default" href="https://twitter.com/home" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="Twitter">
+<link rel="mask-icon" sizes="any" href="https://abs.twimg.com/responsive-web/client-web/icon-svg.15.svg" color="#1da1f2">
+<link rel="shortcut icon" href="//abs.twimg.com/favicons/twitter.ico" type="image/x-icon">
+<link rel="apple-touch-icon" sizes="192x192" href="https://abs.twimg.com/responsive-web/client-web/icon-ios.b5.png" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-title" content="Twitter" />
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<meta name="theme-color" content="#ffffff" />
+<meta http-equiv="origin-trial" content="Ap...fQ==" />
+```
+
+---
+
+### Twitter - Individual Tweet - Elements
+
+[source](https://twitter.com/TheIdOfAlan/status/1302648818060726273)
+
+```html
+<!DOCTYPE html>
+<html dir="ltr" lang="en" style="overflow-y: scroll; overscroll-behavior-y: none; font-size: 15px;">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
+<link rel="preconnect" href="//abs.twimg.com">
+<link rel="dns-prefetch" href="//abs.twimg.com">
+<link rel="preconnect" href="//api.twitter.com">
+<link rel="dns-prefetch" href="//api.twitter.com">
+<link rel="preconnect" href="//pbs.twimg.com">
+<link rel="dns-prefetch" href="//pbs.twimg.com">
+<link rel="preconnect" href="//t.co">
+<link rel="dns-prefetch" href="//t.co">
+<link rel="preconnect" href="//video.twimg.com">
+<link rel="dns-prefetch" href="//video.twimg.com">
+<link rel="preload" as="script" crossorigin="anonymous" href="https://abs.twimg.com/responsive-web/client-web/polyfills.15.js" nonce="">
+<link rel="preload" as="script" crossorigin="anonymous" href="https://abs.twimg.com/responsive-web/client-web/vendors~main.65.js" nonce="">
+<link rel="preload" as="script" crossorigin="anonymous" href="https://abs.twimg.com/responsive-web/client-web/i18n/en.35.js" nonce="">
+<link rel="preload" as="script" crossorigin="anonymous" href="https://abs.twimg.com/responsive-web/client-web/main.75.js" nonce="">
+<meta property="fb:app_id" content="2243">
+<meta property="og:site_name" content="Twitter">
+<meta name="google-site-verification" content="ac...V0">
+<meta name="facebook-domain-verification" content="x6...t1">
+<link rel="manifest" href="/manifest.json" crossorigin="use-credentials">
+<link rel="alternate" hreflang="x-default" href="https://twitter.com/theidofalan/status/1302648818060726273">
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="Twitter">
+<link rel="mask-icon" sizes="any" href="https://abs.twimg.com/responsive-web/client-web/icon-svg.15.svg" color="#1da1f2">
+<link rel="shortcut icon" href="//abs.twimg.com/favicons/twitter.ico" type="image/x-icon">
+<link rel="apple-touch-icon" sizes="192x192" href="https://abs.twimg.com/responsive-web/client-web/icon-ios.b5.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Twitter">
+<meta name="apple-mobile-web-app-status-bar-style" content="white">
+<meta name="theme-color" content="#000000">
+<meta http-equiv="origin-trial" content="Ap...fQ==">
+<title>Id with an i on Twitter: "So, yeah... I've started playing walk-up music going into my therapy sessions" / Twitter
+</title>
+<link href="https://twitter.com/TheIdOfAlan/status/1302648818060726273" rel="canonical" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273" hreflang="x-default" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=ar" hreflang="ar" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=ar-x-fm" hreflang="ar-x-fm" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=bg" hreflang="bg" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=bn" hreflang="bn" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=ca" hreflang="ca" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=cs" hreflang="cs" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=da" hreflang="da" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=de" hreflang="de" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=el" hreflang="el" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=en" hreflang="en" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=en-GB" hreflang="en-GB" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=es" hreflang="es" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=eu" hreflang="eu" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=fa" hreflang="fa" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=fi" hreflang="fi" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=tl" hreflang="tl" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=fr" hreflang="fr" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=ga" hreflang="ga" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=gl" hreflang="gl" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=gu" hreflang="gu" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=he" hreflang="he" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=hi" hreflang="hi" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=hr" hreflang="hr" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=hu" hreflang="hu" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=id" hreflang="id" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=it" hreflang="it" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=ja" hreflang="ja" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=kn" hreflang="kn" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=ko" hreflang="ko" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=mr" hreflang="mr" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=ms" hreflang="ms" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=nb" hreflang="nb" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=nl" hreflang="nl" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=pl" hreflang="pl" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=pt" hreflang="pt" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=ro" hreflang="ro" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=ru" hreflang="ru" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=sk" hreflang="sk" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=sr" hreflang="sr" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=sv" hreflang="sv" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=ta" hreflang="ta" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=th" hreflang="th" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=tr" hreflang="tr" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=uk" hreflang="uk" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=ur" hreflang="ur" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=vi" hreflang="vi" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=zh" hreflang="zh" rel="alternate" data-rh="true">
+<link href="https://twitter.com/theidofalan/status/1302648818060726273?lang=zh-Hant" hreflang="zh-Hant" rel="alternate" data-rh="true">
+<meta content="https://twitter.com/TheIdOfAlan/status/1302648818060726273" property="og:url" data-rh="true">
+<meta content="Id with an i on Twitter" property="og:title" data-rh="true">
+<meta content="So, yeah... I've started playing walk-up music going into my therapy sessions" property="og:description" data-rh="true">
+<meta content="https://pbs.twimg.com/profile_images/1358113266447355904/20P9J9zg_normal.jpg" property="og:image" data-rh="true">
+<meta content="twitter://status?id=1302648818060726273" property="al:ios:url" data-rh="true">
+<meta content="333903271" property="al:ios:app_store_id" data-rh="true">
+<meta content="Twitter" property="al:ios:app_name" data-rh="true">
+<meta content="twitter://status?id=1302648818060726273" property="al:android:url" data-rh="true">
+<meta content="com.twitter.android" property="al:android:package" data-rh="true">
+<meta content="Twitter" property="al:android:app_name" data-rh="true">
+```
+
+---
+
+
+### Wikipedia - Home Page (English) - Source
+
+[source](https://en.wikipedia.org/wiki/Main_Page)
+
+```html
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Wikipedia, the free encyclopedia</title>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.38.0-wmf.6"/>
+<meta name="referrer" content="origin"/>
+<meta name="referrer" content="origin-when-crossorigin"/>
+<meta name="referrer" content="origin-when-cross-origin"/>
+<meta name="format-detection" content="telephone=no"/>
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/b/b5/Charles_Green%2C_CO_2_11th_Battalion_at_Wewak%2C_New_Guinea_in_September_1945.jpg"/>
+<meta property="og:title" content="Wikipedia, the free encyclopedia"/>
+<meta property="og:type" content="website"/>
+<link rel="preconnect" href="//upload.wikimedia.org"/>
+<link rel="alternate" media="only screen and (max-width: 720px)" href="//en.m.wikipedia.org/wiki/Main_Page"/>
+<link rel="alternate" type="application/atom+xml" title="Wikipedia picture of the day feed" href="/w/api.php?action=featuredfeed&amp;feed=potd&amp;feedformat=atom"/>
+<link rel="alternate" type="application/atom+xml" title="Wikipedia featured articles feed" href="/w/api.php?action=featuredfeed&amp;feed=featured&amp;feedformat=atom"/>
+<link rel="alternate" type="application/atom+xml" title="Wikipedia &quot;On this day...&quot; feed" href="/w/api.php?action=featuredfeed&amp;feed=onthisday&amp;feedformat=atom"/>
+<link rel="apple-touch-icon" href="/static/apple-touch/wikipedia.png"/>
+<link rel="shortcut icon" href="/static/favicon/wikipedia.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipedia (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="//en.wikipedia.org/w/api.php?action=rsd"/>
+<link rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/"/>
+<link rel="canonical" href="https://en.wikipedia.org/wiki/Main_Page"/>
+<link rel="dns-prefetch" href="//meta.wikimedia.org" />
+<link rel="dns-prefetch" href="//login.wikimedia.org"/>
+```
+
+---
+
+
+### Wikipedia - Home Page (English) - Elements
+
+[source](https://en.wikipedia.org/wiki/Main_Page)
+
+```html
+<!DOCTYPE html>
+<html class="client-js ve-available" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Wikipedia, the free encyclopedia</title>
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.38.0-wmf.6">
+<meta name="referrer" content="origin">
+<meta name="referrer" content="origin-when-crossorigin">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="format-detection" content="telephone=no">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/b/b5/Charles_Green%2C_CO_2_11th_Battalion_at_Wewak%2C_New_Guinea_in_September_1945.jpg">
+<meta property="og:title" content="Wikipedia, the free encyclopedia">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="//upload.wikimedia.org">
+<link rel="alternate" media="only screen and (max-width: 720px)" href="//en.m.wikipedia.org/wiki/Main_Page">
+<link rel="alternate" type="application/atom+xml" title="Wikipedia picture of the day feed" href="/w/api.php?action=featuredfeed&amp;feed=potd&amp;feedformat=atom">
+<link rel="alternate" type="application/atom+xml" title="Wikipedia featured articles feed" href="/w/api.php?action=featuredfeed&amp;feed=featured&amp;feedformat=atom">
+<link rel="alternate" type="application/atom+xml" title="Wikipedia &quot;On this day...&quot; feed" href="/w/api.php?action=featuredfeed&amp;feed=onthisday&amp;feedformat=atom">
+<link rel="apple-touch-icon" href="/static/apple-touch/wikipedia.png">
+<link rel="shortcut icon" href="/static/favicon/wikipedia.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipedia (en)">
+<link rel="EditURI" type="application/rsd+xml" href="//en.wikipedia.org/w/api.php?action=rsd">
+<link rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">
+<link rel="canonical" href="https://en.wikipedia.org/wiki/Main_Page">
+<link rel="dns-prefetch" href="//meta.wikimedia.org">
+<link rel="dns-prefetch" href="//login.wikimedia.org">
+```
+
+---
+
+### Wikipedia - Content Page - Source
+
+<a href="https://en.wikipedia.org/wiki/Dune_(novel)">source</a>
+
+```html
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Dune (novel) - Wikipedia</title>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.38.0-wmf.6"/>
+<meta name="referrer" content="origin"/>
+<meta name="referrer" content="origin-when-crossorigin"/>
+<meta name="referrer" content="origin-when-cross-origin"/>
+<meta name="format-detection" content="telephone=no"/>
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/en/d/de/Dune-Frank_Herbert_%281965%29_First_edition.jpg"/>
+<meta property="og:title" content="Dune (novel) - Wikipedia"/>
+<meta property="og:type" content="website"/>
+<link rel="preconnect" href="//upload.wikimedia.org"/>
+<link rel="alternate" media="only screen and (max-width: 720px)" href="//en.m.wikipedia.org/wiki/Dune_(novel)"/>
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="/w/index.php?title=Dune_(novel)&amp;action=edit"/>
+<link rel="apple-touch-icon" href="/static/apple-touch/wikipedia.png"/>
+<link rel="shortcut icon" href="/static/favicon/wikipedia.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipedia (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="//en.wikipedia.org/w/api.php?action=rsd"/>
+<link rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/"/>
+<link rel="canonical" href="https://en.wikipedia.org/wiki/Dune_(novel)"/>
+<link rel="dns-prefetch" href="//meta.wikimedia.org" />
+<link rel="dns-prefetch" href="//login.wikimedia.org"/>
+```
+
+---
+
+
+### Wikipedia - Content Page - Elements
+
+<a href="https://en.wikipedia.org/wiki/Dune_(novel)">source</a>
+
+```html
+<!DOCTYPE html>
+<html class="client-js ve-available" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Dune (novel) - Wikipedia</title>
+<meta name="ResourceLoaderDynamicStyles" content="">
+<meta name="generator" content="MediaWiki 1.38.0-wmf.6">
+<meta name="referrer" content="origin">
+<meta name="referrer" content="origin-when-crossorigin">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="format-detection" content="telephone=no">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/en/d/de/Dune-Frank_Herbert_%281965%29_First_edition.jpg">
+<meta property="og:title" content="Dune (novel) - Wikipedia">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="//upload.wikimedia.org">
+<link rel="alternate" media="only screen and (max-width: 720px)" href="//en.m.wikipedia.org/wiki/Dune_(novel)">
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="/w/index.php?title=Dune_(novel)&amp;action=edit">
+<link rel="apple-touch-icon" href="/static/apple-touch/wikipedia.png">
+<link rel="shortcut icon" href="/static/favicon/wikipedia.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipedia (en)">
+<link rel="EditURI" type="application/rsd+xml" href="//en.wikipedia.org/w/api.php?action=rsd">
+<link rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">
+<link rel="canonical" href="https://en.wikipedia.org/wiki/Dune_(novel)">
+<link rel="dns-prefetch" href="//meta.wikimedia.org">
+<link rel="dns-prefetch" href="//login.wikimedia.org">
+```

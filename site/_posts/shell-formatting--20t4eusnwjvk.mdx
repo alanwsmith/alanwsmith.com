@@ -1,0 +1,26 @@
+---
+blurb: ""
+categories:
+  - Command Line
+date: 2005-10-12T00:00:00
+id: 20t4eusnwJVK
+status: archived
+title: Shell Formatting
+type: post
+slug: shell-formatting--20t4eusnwjvk
+---
+
+(originally posted on: http://alancode.blogspot.com/)
+
+
+I like a custom shell prompt when I'm working on a linux box. The one I use is:
+
+```
+PS1='[\e[0;32m\]\u@\h\[\e[m\]:\e[0;32m\]\w\[\e[m\]]\n$ '
+```
+
+(added to the local .bash_profile file.)
+
+The "32m" string can be updated to change the color (assuming the terminal can handle color).
+
+

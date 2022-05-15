@@ -1,0 +1,63 @@
+---
+blurb: ""
+categories:
+  - Miscellaneous
+date: 2022-04-06T18:21:56
+id: 27rx91btbvjs
+status: scratch
+title: Create List of Lists Grid With Empty Values
+type: post
+slug: create-list-of-lists-grid-with-empty-values--27rx91btbvjs
+---
+
+
+These work for creating lists of lists in a grid that you can access:
+
+```python
+grid = []
+
+grid_size = 4
+
+for i in range(0, grid_size):
+	grid.append([None] * grid_size)
+
+print(grid)
+```
+
+---
+    
+
+
+```python
+grid = []
+
+grid_size = 4
+
+for i in range(0, grid_size):
+	grid.append([{"key": "value"}] * grid_size)
+
+print(grid)
+```
+
+
+```txt
+[
+    [{'key': 'value'}, 
+    {'key': 'value'}, 
+    {'key': 'value'}, 
+    {'key': 'value'}], 
+    [{'key': 'value'}, 
+    {'key': 'value'}, 
+    {'key': 'value'}, 
+    {'key': 'value'}], 
+    [{'key': 'value'}, 
+    {'key': 'value'}, 
+    {'key': 'value'}, 
+    {'key': 'value'}], 
+    [{'key': 'value'}, 
+    {'key': 'value'}, 
+    {'key': 'value'}, 
+    {'key': 'value'}]
+]
+```
+

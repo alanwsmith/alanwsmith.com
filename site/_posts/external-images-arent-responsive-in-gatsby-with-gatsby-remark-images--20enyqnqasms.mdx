@@ -1,0 +1,46 @@
+---
+blurb: ""
+categories:
+  - Gatsby
+  - MDX
+date: 2021-02-19T20:54:41
+id: 20eNyqnQaSmS
+status: draft
+title: External Images Arent Responsive In Gatsby With Gatsby Remark Images
+type: post
+slug: external-images-arent-responsive-in-gatsby-with-gatsby-remark-images--20enyqnqasms
+---
+
+
+Using `gatsby-remark-images` images called from another site weren't responsive for me with:  
+
+
+```javascript
+resolve: `gatsby-plugin-mdx`,
+options: {
+    extensions: ['.mdx', '.md'],
+    // a workaround to solve mdx-remark plugin compat issue
+    // https://github.com/gatsbyjs/gatsby/issues/15486
+    plugins: [
+        `gatsby-remark-images`,
+    ],
+    gatsbyRemarkPlugins: [
+
+        {
+            resolve: `gatsby-remark-images`,
+            options: {
+                linkImagesToOriginal: false,
+                maxWidth: 800,
+                quality: 82,
+                loading: "eager",
+                disableBgImage: true,
+            },
+        },
+        
+        ... etc...
+```
+
+TODO: figure out a solution for this
+
+
+

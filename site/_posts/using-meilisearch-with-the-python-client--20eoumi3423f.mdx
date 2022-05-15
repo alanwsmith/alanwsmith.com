@@ -1,0 +1,160 @@
+---
+blurb: ""
+categories:
+  - Python
+date: 2021-09-29T14:51:49
+id: 20eOUmI3423F
+scrubbed_2021: false
+status: scratch
+title: Using Meilisearch With The Python Client
+type: post
+slug: using-meilisearch-with-the-python-client--20eoumi3423f
+---
+
+Install with
+
+```bash
+pip3 install meilisearch
+```
+
+You'll also need an instance of meilisearch running which should be started with a master key (sample-master-key in these examples)
+
+
+---
+
+Get the keys with: 
+
+```python3
+#!/usr/bin/env python3 
+
+import meilisearch 
+
+
+initial_client = meilisearch.Client(
+                        'http://127.0.0.1:7700', 
+                        'sample-master-key'
+                    )
+
+keys = initial_client.get_keys()
+
+print(keys) 
+```
+
+Which will print out something like: 
+
+```json
+{
+  'private': 'd78d875b6d7...', 
+  'public': '8778c642423...'
+}
+```
+
+Use the private key to create the index like this:
+
+
+```python3
+#!/usr/bin/env python3 
+
+import meilisearch 
+
+
+private_key = 'd78d875b6d7128d0438311e26f8dd9c8580c34290bb00df311fde646f11e3b99'
+
+client = meilisearch.Client(
+            'http://127.0.0.1:7700', 
+            private_key
+          )
+
+index = client.get_or_create_index(
+            'sentences', 
+            { 'primaryKey':'id' }
+        ) 
+
+documents = [
+        { 
+            'id': '9a27', 
+            'sentence': 'The quick brown fox jumps over the lazy dog.' 
+        }, 
+        { 
+            'id': 'a503', 
+            'sentence': 'There is a fine hard tang in salty air.' 
+        },
+        { 
+            'id': 'aed1', 
+            'sentence': 'Crouch before you jump or miss the mark.' 
+        }
+    ]
+
+index.add_documents(documents)
+```
+
+(It looks like you can add a document with the same id multiple times and it'll just overwrite each time)
+
+
+
+Then, search using the public key
+
+```python3
+#!/usr/bin/env python3
+
+import meilisearch
+
+
+public_key = '8778c64242aa209cb81906cb29e7dac36b765c1cc704010df0ed4e7899926f43'
+
+client = meilisearch.Client(
+            'http://127.0.0.1:7700', 
+            public_key
+        )
+
+index = client.index('sentences')
+
+results = index.search('jump')
+
+print(results) 
+```
+
+Returns something like:
+
+```python3
+{
+	'hits': [{
+		'id': 'aed1',
+		'sentence': 'Crouch before you jump or miss the mark.'
+	}, {
+		'id': '9a27',
+		'sentence': 'The quick brown fox jumps over the lazy dog.'
+	}],
+	'nbHits': 2,
+	'exhaustiveNbHits': False,
+	'query': 'jump',
+	'limit': 20,
+	'offset': 0,
+	'processingTimeMs': 0
+}
+```
+
+---
+
+
+
+
+
+
+
+
+
+
+Note that when you add documents to the index a update object is returned. You can use it to check the status of the update. You use it by doing this:
+
+```python3
+update_object = index.add_documents(documents)
+
+print(index.get_update_status(update_object['updateId']))
+```
+
+instead of this from the original example:
+
+```python3
+index.add_documents(documents)
+```

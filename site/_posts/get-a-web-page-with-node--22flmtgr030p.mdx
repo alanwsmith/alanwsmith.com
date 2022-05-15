@@ -1,0 +1,32 @@
+---
+blurb: ""
+categories:
+  - Node
+  - JavaScript
+date: 2021-12-13T19:19:30
+id: 22flmtgr030p
+status: scratch
+title: Get A Web Page With Node
+type: post
+slug: get-a-web-page-with-node--22flmtgr030p
+---
+
+
+```javascript
+#!/usr/bin/env node
+
+const https = require('https')
+
+https
+  .get('https://feeds.simplecast.com/xLr7FvDj', (res) => {
+    res.on('data', (d) => {
+        process.stdout.write(d)
+    })
+  })
+  .on('error', (e) => {
+    console.error(e)
+  })
+```
+
+reference: https://nodejs.org/api/https.html#httpsgeturl-options-callback
+

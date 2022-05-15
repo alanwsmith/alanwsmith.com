@@ -1,0 +1,113 @@
+---
+blurb: Work in progress for making the podcast
+categories:
+  - Podcast
+date: 2021-11-07T11:40:30
+id: 20eOhEzFbRJ0
+scrubbed_2021: false
+status: scratch
+title: Podcast Production Runbook
+type: post
+slug: podcast-production-runbook--20eohezfbrj0
+---
+
+
+To Add
+
+Copy in track from IntroMusic starting at the top alphabetically
+- Put up the note on the video that it's raw and any explicit words aren't taken out and there are ums and ahs and sometimes repeating things for new takes. Most of the time it's straight through (figure out how much to put in the title card and how much to put in the video description)
+
+
+
+TODO: Redo these notes to:
+
+- Put in new file locations and naming conventions
+- Don't put music in youtube video. Only do the title card
+- Do the audio editing in a multitrack session on
+
+
+Assembly Checklist
+
+- Drop in a music track
+- Make a new Black Video and drop it in
+- Drop in the actual video
+- Apply Preset 1a and 1b to video for black and white
+- Add text title to the black video 
+- Add Dip to black and front and end of text swim lane
+- Normalize audio of music track to `-6.8dB` (Right click - Audio Gain Normalize Max Peak to: -6.8dB)
+- Normalize audio of main track to `-3dB` (Right click - Audio Gain Normalize Max Peak to: -3dB)
+- Fade out the music by cutting the track to around 12 seconds and starting a fade from when you start speaking with (Effects - Audio Transitions - Crossfade - Exponential Fade)
+- Add Effects - Video Transitions - Dissolve - Dip To Black to front of clip
+- Add Effects - Video Transitions - Dissolve - Dip To Black to end of clip
+
+
+
+For Audio 
+
+- Save as FLAC under assembly
+- Do edits
+- Save mp3 in top level episode directory 48000/192 variable
+- 
+
+
+
+NOTE: Black and white sample:
+
+- ASC CDL 
+    - Red Slobe: 2.065574
+    - Red Offest: -0.229508
+    - Red Power: 0.852459
+    - Saturation: 0.000000
+
+This is under "Presets - AWS Podcast 1a"
+
+
+- Lumetri Color - Vignette
+    - Amount: -3.0
+    - Midpoint: 50.0
+    - Roundness: 100
+    - Feather: 100
+
+This is under "Presets - AWS Podcast 1b"
+
+
+---
+
+
+TODO: Build a script that does the upload stuff.
+
+
+- Do stream setup:
+- Click to Record instead of stream
+- Stop and restart before doing aftershows
+- Move clips to podcast directory
+- Trim video and add fade-in and fade-out in premier
+- Normalize audio to `-3dB` in Premiere (Right click - Audio Gain - Normalize Max Peak to -3dB)
+- Make Black and White:
+
+Effects -> Video Effects -> Color Correction -> Lumetri Color
+
+and dropping the effect on the clip
+
+Then I mess around with the parameters with the following adjustment starting points:
+
+- Saturation: 0
+- Exposure: 0.7
+- Highlights: 22.8
+- Blacks: -19.3
+
+Then 
+
+- Add Vignette 
+    - Amount: -3.0
+    - Midpoint: 50
+    - Roundness: 100
+    - Feather: 100
+
+- Export Media - Format: H.264 - Preset Match Source
+- Upload to YouTube with `ThePodOfAlan - Episode #` title
+- Add to YouTube `ThePodOfAlan` playlist
+- Upload to Vimeo
+- Put up on the site. 
+- Figure out how to get transcripts
+-

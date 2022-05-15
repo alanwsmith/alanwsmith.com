@@ -1,0 +1,77 @@
+---
+blurb: If it's gonna delete something, make sure it's something you don't care about.
+categories:
+  - Miscellaneous
+date: 2016-02-12T00:00:00
+id: 20eN6GlgRgY3
+scrubbed_2021: false
+status: published
+title: Protection from Adobe Creative Clouds Folder Erasing Bug
+type: post
+slug: protection-from-adobe-creative-clouds-folder-erasing-bug--20en6glgrgy3
+---
+
+```
+TODO: Figure out why this isn't working in MDX
+
+
+---
+
+
+_Preface: This post tells you to run commands in the Terminal on your Mac. It's a powerful way to tell a computer what to do and well worth learning a little bit about. However, blindly following these type of directions from unknown folks on the Internet can be dangerous. Sneaky folks can trick you into installing viruses/spyware and other bad things. Always ask a tech-buddy you trust to look at anything like this before you follow the directions to run or install it. (Especially if you see the word `sudo` which has Godlike abilities on Macs.)_
+
+---
+
+
+__Update:__ Good news, everybody. Further reports indicate the bug doesn't delete the folder, just the contents. So, all that needs to be done is to make a protection folder one time. That can be done with:
+
+<pre><code style="white-space: pre; word-wrap: normal; overflow-wrap: normal; overflow-x: scroll; }">sudo mkdir /.aaaaaaProtectionFromAdobeCC</code></pre>
+
+Since the folder itself isn't deleted, there's no need to go through the hassle of the rest of the stuff below. 
+
+---
+
+
+
+A February 2016 update from Adobe Creative Cloud is deleting the first folder it finds alphabetically on Macs.
+
+This is bad. It's [breaking things like Backblaze's backup service](https://forums.adobe.com/thread/2089459?start=0&tstart=0). 
+
+Until it's fixed, the safest thing to do is create an empty, throw-away folder that it'll see. Creative Cloud will kill it while leaving the stuff that makes your Mac actually run alone. And, because there are reports of it happening multiple times, you'll want to setup to automatically recreate it. 
+
+I created a [script](/com.alanwsmith.adobeCreativeCloudProtection.plist) that will make the folder then check to make sure it stays there. To install it, copy and paste the lines below into your Terminal application (hit "Return/Enter" after each one to run them).
+
+1. This line downloads the script file and puts it in a folder that Mac's use for setting up automation:
+
+    <pre><code style="white-space: pre; word-wrap: normal; overflow-wrap: normal; overflow-x: scroll; }">sudo curl -s -o "/Library/LaunchAgents/com.alanwsmith.adobeCreativeCloudProtection.plist" "http://alanwsmith.com/com.alanwsmith.adobeCreativeCloudProtection.plist"</code></pre>
+
+2. The script will automatically start if the Mac is rebooted because it's in the `/Library/LaunchAgents` folder. To start it without rebooting, run this:
+
+    <pre><code style="white-space: pre; word-wrap: normal; overflow-wrap: normal; overflow-x: scroll; }">sudo launchctl load "/Library/LaunchAgents/com.alanwsmith.adobeCreativeCloudProtection.plist"</code></pre>
+
+That should protect you until Adobe corrects the behavior.
+
+[Here's a video on how to open the Terminal](https://www.youtube.com/watch?v=zw7Nd67_aFw) if you need help with that. You'll also need to use an Admin account and enter your password after running the first command. Finally, these lines are long and some will scroll. Be sure to copy the entire thing.
+
+
+---
+
+
+To remove the script after Adobe gets their side fixed, run these three lines in the Terminal to turn off the script:
+
+1. This stops the script from running:
+
+    <pre><code style="white-space: pre; word-wrap: normal; overflow-wrap: normal; overflow-x: scroll; }">sudo launchctl unload /Library/LaunchAgents/com.alanwsmith.adobeCreativeCloudProtection.plist</code></pre>
+
+2. This deletes the file (so it doesn't start again next time you reboot):
+
+    <pre><code style="white-space: pre; word-wrap: normal; overflow-wrap: normal; overflow-x: scroll; }">sudo rm /Library/LaunchAgents/com.alanwsmith.adobeCreativeCloudProtection.plist</code></pre>
+
+3. And this removes the throw-away folder that provided the protection. 
+
+    <pre><code style="white-space: pre; word-wrap: normal; overflow-wrap: normal; overflow-x: scroll; }">sudo rmdir /.aaaaaaProtectionFromAdobeCC</code></pre>
+
+(_Note: You'll need to use an Admin account and enter your password with these too._)
+
+Software development is hard. Adobe's software is incredibly complex. Sure this sucks, but it's worth keeping that in mind before blasting Adobe. The real tests are how quickly they respond and if this same thing ever happens again.
+```

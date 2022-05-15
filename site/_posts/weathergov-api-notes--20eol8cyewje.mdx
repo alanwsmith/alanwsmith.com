@@ -1,0 +1,46 @@
+---
+blurb: ""
+categories:
+  - APIs
+date: 2021-08-15T10:11:46
+id: 20eOL8CYeWJE
+scrubbed_2021: false
+status: scratch
+title: weathergov API Notes
+type: post
+slug: weathergov-api-notes--20eol8cyewje
+---
+
+Docs are here, under Specifications:
+
+    https://www.weather.gov/documentation/services-web-api
+
+There's a feed with a list of the available end points here:
+
+    https://api.weather.gov/openapi.json
+
+Note that not all the endpoints lists in that JSON are considered operational according to the sepcifications
+
+---
+
+I'm pretty sure when you see `{wfo}` it stands for Weather Forecast Office. which appears to be the same as the gridID
+
+---
+
+Get coordinates by looking at google maps and pulling the coords (e.g. `40.123,-71.434` ), then do this:
+
+Use the coordinates to get the data with:
+
+    curl -X GET "https://api.weather.gov/points/40.123%2C-71.434" -H "accept: application/geo+json"
+    
+Not sure you really need the `-H "accept: application/geo+json"`, but it was in the example.
+
+Looks like you can get a current set of data with:
+
+    https://api.weather.gov/gridpoints/LWX/96,70
+    
+You can also get the forecast with:
+
+    https://api.weather.gov/gridpoints/LWX/96,70/forecast
+
+use it to get the forecast data.

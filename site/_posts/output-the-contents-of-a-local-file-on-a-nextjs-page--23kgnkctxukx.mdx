@@ -1,0 +1,105 @@
+---
+blurb: ""
+categories:
+  - Next.js
+  - React
+date: 2022-01-15T16:50:57
+id: 23kgnkctxukx
+status: scratch
+title: Output the contents of a local file on a nextjs page
+type: post
+slug: output-the-contents-of-a-local-file-on-a-nextjs-page--23kgnkctxukx
+---
+
+This is how to pull the contents of a local file out to show it on the site itself:
+
+
+```jsx
+export async function getStaticProps(context) {
+  function loadFileAsString(path) {
+    try {
+      const fileText = fs.readFileSync(path, `utf8`)
+      return fileText
+    } catch (err) {
+      return `Could not load: ${path}`
+    }
+  }
+
+  return {
+    props: {
+      fileAsString: loadFileAsString(
+        // Note that the file path is from the root or the project
+        `./public/scripts/fetch-a-remote-json/content.html`
+      ),
+    },
+  }
+}
+```
+
+
+
+old version:
+
+
+```jsx
+import fs from 'fs'
+
+export default function Page(props) {
+  return (
+    <pre><code>{props.fileAsString}</code></pre>
+  )
+}
+
+
+export async function getStaticProps(context) {
+  // Note that the file path is from the root or the project
+  const fileToRead = `./pages/prism-default-theme-examples/tomorrow.js`
+  try {
+    const fileText = fs.readFileSync(fileToRead, `utf8`)
+    return {
+      props: {
+        fileAsString: fileText,
+      },
+    }
+  } catch (err) {
+    return {
+      props: {
+        data: `Could not find: ${fileToRead}`,
+      },
+    }
+  }
+}
+```
+
+If you're using Prism for syntax highlighting you can do something like below (note that `className="language-jsx"` is required to turn on syntax highlighting)
+
+```jsx
+import { useEffect } from 'react'
+import Prism from 'prismjs'
+
+import 'prismjs/themes/prism-okaidia.css'
+import 'prismjs/components/prism-jsx.js'
+import 'prismjs/plugins/line-numbers/prism-line-numbers.js'
+import 'prismjs/plugins/line-numbers/prism-line-numbers.css'
+
+export default function SourceCode({ code, language, lines = true }) {
+  useEffect(() => {
+    Prism.highlightAll()
+  }, [])
+
+  return (
+    <div className="text-sm">
+      <pre
+        className={`border border-gray-600 ${
+          lines === true ? 'line-numbers' : ''
+        }`}
+      >
+        <code className={`language-${language}`}>{code}</code>
+      </pre>
+    </div>
+  )
+}
+```
+
+
+

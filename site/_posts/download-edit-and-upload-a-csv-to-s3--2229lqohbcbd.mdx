@@ -1,0 +1,36 @@
+---
+blurb: ""
+categories:
+  - Python
+date: 2021-12-08T23:42:47
+id: 2229lqohbcbd
+status: draft
+title: Download Edit And Upload A CSV to S3
+type: post
+slug: download-edit-and-upload-a-csv-to-s3--2229lqohbcbd
+---
+
+TODO: scrub this to verify the includes are setup and pull it out of a function 
+
+```
+import boto3
+import csv
+
+from io import StringIO
+
+
+    def process_csv_files(self):
+        print("-- Processing CSV Files")
+        for attachment in self.attachments:
+            print(attachment['name'])
+            raw_string = s3.get_object(Bucket=self.bucket, Key=attachment['original_key'])['Body'].read().decode('utf-8')
+            lines = raw_string.splitlines()
+            csv_reader = csv.reader(lines)
+            new_csv_data = StringIO()
+            csv_writer = csv.writer(new_csv_data)
+            for row in csv_reader:
+                csv_writer.writerow(['asdf'])
+            s3.put_object(Body=new_csv_data.getvalue(), Bucket=self.bucket, Key=attachment['finalized_key'])
+```
+
+

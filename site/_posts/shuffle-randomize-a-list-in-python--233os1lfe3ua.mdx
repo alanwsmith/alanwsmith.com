@@ -1,0 +1,57 @@
+---
+blurb: Rearrange the items in python list so they are in a random order
+categories:
+  - Python
+date: 2021-12-31T12:35:27
+id: 233os1lfe3ua
+status: published
+type: post
+title: Shuffle/Randomize A List In Python
+slug: shuffle-randomize-a-list-in-python--233os1lfe3ua
+---
+
+### Shuffle A List In Place
+
+The basic way to shuffle a list is:
+
+```python
+#!/usr/bin/env python3
+
+import random
+
+list = ['a', 'b', 'c', 'd', 'e']
+
+random.shuffle(list)
+
+print(list)
+```
+
+The list is shuffled in place and the output of the above script will be something like:
+
+```
+['c', 'e', 'a', 'b', 'd']
+```
+
+---
+
+
+### Shuffle Items Into A New List
+
+If you want to keep the original list in place, you can use `random.sample` to make a new list with the shuffled contents like this:
+
+```python
+#!/usr/bin/env python3
+
+import random
+
+original_list = ['a', 'b', 'c', 'd', 'e']
+
+new_list = random.sample(original_list, len(original_list))
+
+print(original_list)
+print(new_list)
+```
+
+
+
+

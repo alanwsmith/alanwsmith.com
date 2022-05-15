@@ -1,0 +1,64 @@
+---
+blurb: ""
+categories:
+  - Miscellaneous
+date: 2021-06-08T11:45:41
+id: 20eO5Isq0fhT
+scrubbed_2021: false
+status: scratch
+title: Wrap Text To A Specific Character Length In Python
+type: post
+slug: wrap-text-to-a-specific-character-length-in-python--20eo5isq0fht
+---
+
+Use [textwrap.fill(STRING, LENGTH)](https://docs.python.org/3/library/textwrap.html#textwrap.fill) to wrap text to a specific character length in python. 
+
+
+```python
+#!/usr/bin/env python3
+
+import textwrap
+
+
+text = "And in the last place, where this might not be the case, they would be of long standing, would have taken deep root, and would not easily be extirpated. The scheme of revising the constitution, in order to correct recent breaches of it, as well as for other purposes, has been actually tried in one of the States."
+
+formatted_string = textwrap.fill(text, 60)
+
+print(formatted_string)
+```
+
+Ouputs:
+
+```txt
+And in the last place, where this might not be the case,
+they would be of long standing, would have taken deep root,
+and would not easily be extirpated. The scheme of revising
+the constitution, in order to correct recent breaches of it,
+as well as for other purposes, has been actually tried in
+one of the States.
+```
+
+The [textwrap module] offers a bunch of other functions as well:
+
+- wrap - outputs a list with no newlines
+- fill - returns the single string
+- shorten - truncates with an optional `...` type string
+- dedent - remove leading whitespace
+- indent - add whitespace
+
+There is also textwrap.TextWrapper which has:
+
+- width - The maximum length of wrapped lines
+- expand_tabs - All tab characters in text will be expanded to spaces  
+- tabsize - All tab characters in text will be expanded to zero or more spaces
+- replace_whitespace - After tab expansion but before wrapping, the wrap() method will replace each whitespace character with a single space
+- drop_whitespace - Whitespace at the beginning and ending of every line (after wrapping but before indenting) is dropped
+- initial_indent - String that will be prepended to the first line of wrapped output
+- subsequent_indent - String that will be prepended to all lines of wrapped output except the first
+- fix_sentence_endings - Attempt to detect sentence endings and ensure that sentences are always separated by exactly two spaces
+- break_long_words - Words longer than width will be broken in order to ensure that no lines are longer than width
+- break_on_hyphens - Wrapping will occur preferably on whitespaces and right after hyphens in compound words, as it is customary in English
+- max_lines - the output will contain at most max_lines lines, with placeholder appearing at the end of the output
+- placeholder - String that will appear at the end of the output text if it has been truncated
+- wrap - Wraps the single paragraph in text (a string) so every line is at most width characters long and returns a list
+- fill - Wraps the single paragraph in text, and returns a single string containing the wrapped paragraph

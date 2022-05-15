@@ -1,0 +1,33 @@
+---
+blurb: ""
+categories:
+  - Python
+date: 2021-08-25T20:18:04
+id: 20eOMiUjxYRL
+scrubbed_2021: false
+status: scratch
+title: Remove Whitespace From The End Of Python Strings With Strip
+type: post
+slug: remove-whitespace-from-the-end-of-python-strings-with-strip--20eomiujxyrl
+---
+
+Use `.strip()` to remove whitespce from the beginning and end of a string:
+
+```
+has_whitespace = '   giraffe  '
+whitespace_removed = has_whitespace.strip()
+```
+
+Then:
+
+```
+print(f"---{has_whitespace}---")
+print(f"---{whitespace_removed}---")
+```
+
+Outputs:
+
+```
+---   giraffe  ---
+---giraffe---
+```

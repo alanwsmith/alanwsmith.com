@@ -1,0 +1,53 @@
+---
+blurb: ""
+categories:
+  - Tailwind
+date: 2022-03-09T21:51:27
+id: 26aysoojal5v
+status: scratch
+title: Install Tailwind-Elements
+type: post
+slug: install-tailwind-elements--26aysoojal5v
+---
+
+After setting up the basic tailwind install (TKTKTKT - details on tailwind install)
+
+```
+npm install tw-elements
+```
+
+
+Add these to tailwind.config.js
+
+```
+module.exports = {
+  content: ['./node_modules/tw-elements/dist/js/**/*.js'],
+  plugins: [
+    require('tw-elements/dist/plugin')
+  ]
+}
+```
+
+Copy the index.min.js file to where you can get to it:
+
+from the site root:
+
+```
+cp node_modules/tw-elements/dist/js/index.min.js public/
+```
+
+On the page:
+
+```
+import Script from 'next/script'
+
+return (
+<>
+<Script src="/index.min.js" />
+<div>other page stuff</div>
+</>
+)
+```
+
+
+

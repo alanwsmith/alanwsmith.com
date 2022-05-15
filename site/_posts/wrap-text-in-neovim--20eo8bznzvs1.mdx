@@ -1,0 +1,61 @@
+---
+blurb: ""
+categories:
+  - Miscellaneous
+date: 2021-06-14T00:06:04
+id: 20eO8BZnzvS1
+scrubbed_2021: false
+status: scratch
+title: Wrap Text In Neovim
+type: post
+slug: wrap-text-in-neovim--20eo8bznzvs1
+---
+
+### Softwrap
+
+Softwarp text with this (note, need to checkout why the `linebreak` part is there)
+
+    :set wrap linebreak
+
+
+### Hardwrap On 
+
+You can turn on hard wrapping with `tw` set to a specific number. For example:
+
+    :set tw=64
+
+That won't do existing lines, just new ones. 
+
+
+### Hardwrap Existing Lines
+
+If you need to convert an existing text, switch to visual line mode with `v`, select the lines to change then use:
+
+    gq
+
+
+### Hardwrap Off 
+
+To turn off textwrap, set:
+
+    :set tw=0
+
+### Unwrapping Hardwrapped Text
+
+To unwrap text that was hard wrapped, go to the start of the 
+
+
+
+---
+
+
+Read through this for more on softwrapping: https://vim.fandom.com/wiki/Word_wrap_without_line_breaks
+
+---
+
+
+
+
+
+
+via: https://vim.fandom.com/wiki/Automatic_word_wrapping

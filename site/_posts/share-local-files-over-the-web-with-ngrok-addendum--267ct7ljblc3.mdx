@@ -1,0 +1,97 @@
+---
+blurb: More details on using ngrok to serve a local directory on the web
+categories:
+  - Miscellaneous
+date: 2022-03-08T13:50:48
+id: 267ct7ljblc3
+status: scratch
+type: post
+title: Share Local Files Over The Web With ngrok - Addendum
+slug: share-local-files-over-the-web-with-ngrok-addendum--267ct7ljblc3
+---
+
+This is the addendum to [Share Local Files Over The Web With ngrok](/posts/2672d5kxmsfb)
+
+
+---
+
+NOTE: These are just scratch notes. They aren't cohesive or in order and still need to be edited and cleaned up. What you're seeing is very much a work in progress. Keep that in mind and you'll be fine.
+---
+
+
+## Password Note
+
+I only run ngrok for long enough to let someone grab a file. The ngrok URLs are long and random so I'm not worried about someone finding it during the few minutes it's up. That boils down to Security Through Obscurity. That is not a good security practice in general but it's an acceptable risk for me in this case. (Also, I never share anything sensitive this way and I always create a new directory with only the files I need to share in it to mitigate any trouble if someone happened to find their way in)
+
+
+
+
+## More Details
+
+Running the command brings up a status display like:
+
+```txt
+ngrok by @inconshreveable                                                 (Ctrl+C to quit)
+
+Session Status   online
+Account          Alan Smith (Plan: Free)
+Version          2.3.40
+Region           United States (us)
+Web Interface    http://127.0.0.1:4040
+Forwarding       https://1234-12-123-12-123.ngrok.io -> file:///Users/alan/_web_share_tmp
+
+Connections      ttl     opn     rt1     rt5     p50     p90
+                 0       0       0.00    0.00    0.00    0.00
+```
+
+The "Forwarding" line shows that the web accessible address "https://1234-12-123-12-123.ngrok.io" will serve files in the local directory "file:///Users/alan/_web_share_tmp". 
+
+If you have a file named "index.html" in the folder, ngrok will serve it as a web page. Otherwise, it will just show a directory listing of files in the folder. 
+
+
+
+## Some Details
+
+The `$(pwd)` section expands out to the path of the current directory which combines with the "file://" argument to tell ngrok to serve it. 
+
+The `-bind-tls=true` argument tells ngrok to serve the directory over the secure "https" protocol and to disallow  unencrypted "http" traffic.
+
+
+
+## Password Protection
+
+
+## TODO
+
+- The basic windows command would be `ngrok http -bind-tls=true "file:///C:\Users\alan\Public Folder"` - Figure out how to get that setup to automatically set the path to the current directory. 
+
+
+## Links and References
+
+- [ngrok](https://ngrok.com/) - The software that powers the connection 
+- [Security through obscurity](https://en.wikipedia.org/wiki/Security_through_obscurity) - Generally to be avoided, but I'm okay with it in this case
+
+
+## Misc
+
+Another approach I'm considering is keeping one directory around with an index.html file in it and then trowing files in there and setting up the command to just serve that director all the time. The index file will prevent folks from browsing the entire directory and will let me send the links directly. There's some additional security through obscurity going on there if you leave stuff in the directory. So, make sure to clear it when you're done. 
+
+## TODO
+
+- Show the ngd command line shortcut. 
+
+- Make the shortcut switch to the default share directory and open the folder in the finder
+
+- Figure out if there's any issue with not having signed up, or what signing up gets you. 
+
+- I used to use `python3 -m http.server` and then connect ngrok to it, but this way means you don't have to use the python server. 
+
+- ngrok will also launch a local admin dashboard. You can see it at: http://127.0.0.1:4040/
+
+- The local dashboard data can be reached via api as well at: http://127.0.0.1:4040/api - documentation on that is here: https://ngrok.com/docs#client-api
+
+- Add in `--oauth=google` + `--oauth-allow-email=username@example.com` authentication example.
+
+
+
+

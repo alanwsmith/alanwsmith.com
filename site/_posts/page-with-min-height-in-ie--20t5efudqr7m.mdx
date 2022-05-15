@@ -1,0 +1,33 @@
+---
+blurb: ""
+categories:
+  - CSS
+date: 2005-09-28T00:00:00
+id: 20t5eFUdqr7M
+status: archived
+title: Page With min-height in IE
+type: post
+slug: page-with-min-height-in-ie--20t5efudqr7m
+---
+
+(originally posted on: http://alancode.blogspot.com/)
+
+
+Thanks to this article:
+
+http://www.svendtofte.com/code/max_width_in_ie/
+
+I've been trying to figure out a way to apply a minimum height to a page in IE as well as firefox using style sheets.
+
+The expression hack is great. I haven't run it thru a full QA setup but for the two local browsers on my machine (which probably represent over 90% of browsers out there), the following works:
+
+```css
+#theElement {
+    min-height: 510px;
+    height:expression("465px");
+}
+```
+
+It appears that they operate a little differently for the spacing in the way I have them setup. This may or may not be the case all the time.
+
+
