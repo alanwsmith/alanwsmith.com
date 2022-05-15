@@ -18,6 +18,7 @@ beginning
 - [x] Clear the output directory before each run
 - [x] Manage redirects when titles/slugs change via redirects
 - [x] Make `/{KSUID}` redirects for all files
+- [ ] Handle posts that have empty titles
 - [ ] Redirect posts that have been removed to the home page
 - [ ] Do any image moves necessary and make the Img.js file
 - [ ] Publish stream notes
