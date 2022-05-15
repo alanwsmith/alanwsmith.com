@@ -20,6 +20,8 @@ it('makes the output file', () => {
   main({
     input_posts_dir: 'test/_input/samples_a/posts',
     output_posts_dir: 'test/_output/a/posts',
+    redirect_storage_input: 'test/_input/samples_a/data/redirect_storage.json',
+    redirect_storage_output: 'test/_output/a/data/redirect_storage.json',
   })
 
   // Then

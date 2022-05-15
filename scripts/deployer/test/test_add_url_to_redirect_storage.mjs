@@ -1,6 +1,8 @@
 import assert from 'assert'
 import add_url_to_redirect_storage from '../lib/add_url_to_redirect_storage.mjs'
 
+// TODO: Deal with new files with new KSUIDs
+
 it('should add the url to the list', () => {
   // Given
   const json_data = {

@@ -1,11 +1,8 @@
 {
   "redirect_data": {
     "29ajjouaaaaa": {
-      "redirects": [
-        "/posts/29ajjouaaaaa",
-        "/posts/29ajjouaaaaa--test-thing",
-        "/posts/29ajjouaaaaa--todo-add-one-that-already-has-the-same-slug"
-      ]
+      "redirect_from": ["/posts/29ajjouaaaaa"],
+      "redirect_to": "/posts/this-is-new--29ajjouaaaaa"
     }
   }
 }
