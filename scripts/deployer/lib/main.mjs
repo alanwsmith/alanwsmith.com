@@ -16,7 +16,7 @@ function main({
   // ID in the yaml front matter
   // TODO: Only process .txt files.
 
-  const file_list = list_dir(input_posts_dir)
+  const file_list = list_dir({ rootDir: input_posts_dir, isRecursive: false })
 
   // Load redirect_storage json
   let redirect_data = JSON.parse(
@@ -24,6 +24,7 @@ function main({
   )
 
   file_list.forEach((file) => {
+    console.log(`Processing: ${file.full_path}`)
     const file_data = fs.readFileSync(file.full_path, 'utf-8')
 
     const file_parts = file_data.split('---')
