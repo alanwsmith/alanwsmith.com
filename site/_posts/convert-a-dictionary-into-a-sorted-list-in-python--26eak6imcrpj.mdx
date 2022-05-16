@@ -11,7 +11,7 @@ slug: convert-a-dictionary-into-a-sorted-list-in-python--26eak6imcrpj
 ---
 
 
-
+```python
 genres = {
 	"Junk": [1],
 	"Chill": [2],
@@ -30,6 +30,6 @@ genres = {
 items = [{"id": f, "data": genres[f]} for f in sorted(genres.keys(), key=lambda x: x.lower())]
 
 print(items)
-
+```
 
 

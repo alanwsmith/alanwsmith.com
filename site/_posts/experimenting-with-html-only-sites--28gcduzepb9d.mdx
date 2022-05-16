@@ -41,22 +41,16 @@ Moving out of the realm of art, I wanted to create something interactive. A maze
 
 Before getting to that the trick of generating the maze needed to be solved. I could have come up with one by hand, but the chance to dig into algorithms was way more appealing. There are several different [maze generation algorithms](https://en.wikipedia.org/wiki/Maze_generation_algorithm). After reading through the wiki page, I decided to go with the [iterative implementation of randomized depth-first search](https://en.wikipedia.org/wiki/Maze_generation_algorithm#Iterative_implementation) which looks like this:
 
-<ol>
-<li>Choose the initial cell, mark it as visited and push it to the stack</li>
-<li>While the stack is not empty:
-<ol>
-<li>Pop a cell from the stack and make it a current cell</li>
-<li>If the current cell has any neighbours which have not been visited:
-<ol>
-<li>Push the current cell to the stack</li>
-<li>Choose one of the unvisited neighbours</li>
-<li>Remove the wall between the current cell and the chosen cell</li>
-<li>Mark the chosen cell as visited and push it to the stack</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
+```
+- Choose the initial cell, mark it as visited and push it to the stack
+- While the stack is not empty:
+    - Pop a cell from the stack and make it a current cell
+    - If the current cell has any neighbours which have not been visited:
+        - Push the current cell to the stack
+        - Choose one of the unvisited neighbors
+        - Remove the wall between the current cell and the chosen cell
+        - Mark the chosen cell as visited and push it to the stack
+```
 
 The initial algorithm is pretty straight-forward but didn't work for me. It builds a maze that identifies only the cells and then basically adds metadata to them saying which sides have walls. My plan was to implement the maze in an HTML `<table>` without CSS which means I couldn't use `border-left`, `border-right`, etc...
 

@@ -13,14 +13,16 @@ slug: encrypt-and-decrypt-files-on-a-mac-with-gpg--22fvssfyyock
 
 To encrypt a file, use:
 
-    /usr/local/bin/gpg --armor --encrypt --yes -r self@localhost.localdomain {FILE_PATH}
+```bash
+/usr/local/bin/gpg --armor --encrypt --yes -r self@localhost.localdomain {FILE_PATH}
+```
 
 To decrypt a file use:
 
-    /usr/local/bin/gpg --decrypt {FILE_PATH}
+```bash
+/usr/local/bin/gpg --decrypt {FILE_PATH}
+```
 
 
 _NOTE: I'm not sure if gpg is installed by default or if it's something from homebrew_
-
-
 
