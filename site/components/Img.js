@@ -1,7 +1,7 @@
 import Image from 'next/image'
 
 
-
+import screen_grab_test_2008_03 from '../_images/screen_grab_test_2008_03.png'
 import another_spider_aws_20120816_0950 from '../_images/another_spider_aws_20120816_0950.jpg'
 import freenas_harddrive_space_20140927_1720 from '../_images/freenas_harddrive_space_20140927_1720.png'
 import absolute_sandman from '../_images/absolute_sandman.jpeg'
@@ -166,10 +166,10 @@ const imgMap = {
   wobble_wedge_2009_02: wobble_wedge_2009_02,
   youtube_logo_2009_01: youtube_logo_2009_01,
   another_spider_aws_20120816_0950: another_spider_aws_20120816_0950,
+  screen_grab_test_2008_03: screen_grab_test_2008_03,
 }
 
 export default function Img({ src, alt = 'image alt text unavailable' }) {
   const fileParts = src.split('.')
-  console.log(fileParts[0])
   return <Image src={imgMap[fileParts[0]]} alt={alt} />
 }
