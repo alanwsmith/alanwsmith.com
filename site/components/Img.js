@@ -1,7 +1,5 @@
 import Image from 'next/image'
 
-
-
 import freenas_harddrive_space_20140927_1720 from '../_images/freenas_harddrive_space_20140927_1720.png'
 import absolute_sandman from '../_images/absolute_sandman.jpeg'
 import freenas_server_aws_20140925_1137_04a from '../_images/freenas_server_aws_20140925_1137_04a.jpg'
