@@ -6,6 +6,23 @@ easier managment of redirects and setup to flip the
 url slugs so the KSUID is at the end instead of the
 beginning
 
+### Check
+
+Make sure these links redirect properly 
+
+https://www.alanwsmith.com/posts/20en2bcafvnh--a-kind-of-redesign
+
+https://www.alanwsmith.com/posts/21uuqzsw0uzc--access-s3-from-redshift-with-boto3
+
+https://www.alanwsmith.com/posts/20emjwlbwyzp--another-spider--photo-for-august-16-2012
+
+https://www.alanwsmith.com/posts/2648u0uramjp--automatically-generate-a-list-with-the-english-alphabet-in-python
+
+
+
+
+
+
 ### Things to do
 
 - [x] Move files to `_posts` directory
