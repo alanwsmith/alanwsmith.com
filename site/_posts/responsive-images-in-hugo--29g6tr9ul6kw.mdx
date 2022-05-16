@@ -1,0 +1,105 @@
+---
+blurb: When I was running hugo I couldn't find something that did responsive
+  images the way I wanted so I built my own
+categories:
+  - Hugo
+date: 2019-11-01T14:54:52
+id: 29g6tr9ul6kw
+status: published
+type: post
+title: Responsive Images In Hugo
+slug: responsive-images-in-hugo--29g6tr9ul6kw
+---
+
+_NOTE: I haven't run Hugo in a couple years. I don't know if this is still necessary or if something else is available now_
+
+
+This is the first version of responsive image code I made for Hugo. 
+
+It has the hard coded sizes that work with the Tale theme that I setup initially for the site in Nov. 2019.
+
+You can drop full size images in and then when you call it the images are resized automatically by Hugo to the specific sizes. 
+
+It defaults to using the large size if a browser doesn't work with srcset. 
+
+Usage:
+
+```bash
+{{< img2 src="APC_0322.jpg" caption="Small image test" alt="small image test">}}
+```
+
+The code:
+
+```hugo
+{{ $src := .Page.Resources.GetMatch (printf "*%s*" (.Get "src")) }}
+{{ $small1 := $src.Resize "690x" }}
+{{ $medium1 := $src.Resize "1000x" }}
+{{ $large1 := $src.Resize "1324x" }}
+{{ $small2 := $src.Resize "1380x" }}
+{{ $medium2 := $src.Resize "2000x" }}
+{{ $large2 := $src.Resize "2648x" }}
+
+<figure>
+    <img
+      src="{{ $large2.RelPermalink }}"
+      srcset="
+      {{ $small1.RelPermalink }} 690w,
+      {{ $medium1.RelPermalink }} 1000w,
+      {{ $large1.RelPermalink }} 1324w,
+      {{ $small2.RelPermalink }} 1380w,
+      {{ $medium2.RelPermalink }} 2000w,
+      {{ $large2.RelPermalink }} 2648w"
+      alt="{{ if .Get "alt" }}{{ .Get "alt" }}{{ else }}Image without alt text{{ end }}"
+      >
+      {{ if .Get "caption"}}
+        <figcaption>{{ .Get "caption" }}</figcaption>
+      {{ end }}
+</figure>
+```
+
+
+This version is basically the same, but it also prevents upsizing by comparing the width against the source image. Of course, if the CSS upsizes, this won't stop that.
+
+```hugo
+{{ $src := .Page.Resources.GetMatch (printf "*%s*" (.Get "src")) }}
+{{ $small1 := $src.Resize "690x" }}
+{{ $medium1 := $src.Resize "1000x" }}
+{{ $large1 := $src.Resize "1324x" }}
+{{ $small2 := $src.Resize "1380x" }}
+{{ $medium2 := $src.Resize "2000x" }}
+{{ $large2 := $src.Resize "2648x" }}
+
+<figure>
+    <img
+      src="{{ $large2.RelPermalink }}"
+      srcset="
+      {{ with $small1.RelPermalink }}{{.}} 690w{{ end }}
+      {{ if ge $src.Width 1000 }},
+        {{ $medium1.RelPermalink }} 1000w
+      {{ end }}
+      {{ if ge $src.Width 1324 }},
+        {{ $large1.RelPermalink }} 1324w
+      {{ end }}
+      {{ if ge $src.Width 1380 }},
+        {{ $small2.RelPermalink }} 1380w
+      {{ end }}
+      {{ if ge $src.Width 2000 }},
+        {{ $medium2.RelPermalink }} 2000w
+      {{ end }}
+      {{ if ge $src.Width 2648 }},
+        {{ $large2.RelPermalink }} 2648w
+      {{ end }}"
+      alt='{{ if .Get "alt" }}{{ .Get "alt" }}{{ else }}Image without alt text{{ end }}'
+      >
+      {{ if .Get "caption"}}
+        <figcaption>{{ .Get "caption" }}</figcaption>
+      {{ end }}
+</figure>
+```
+
+
+References:
+
+- https://dev.to/stereobooster/responsive-images-for-hugo-dn9
+- https://www.adamwills.io/blog/responsive-images-hugo/
+
