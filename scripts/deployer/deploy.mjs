@@ -25,7 +25,7 @@ function deploy_site(env) {
       redirect_storage_output:
         '/Users/alan/workshop/alanwsmith.com/site/_data/redirect_storage.json',
       redirect_file_path:
-        '/Users/alan/workshop/alanwsmith.com/site/_data/_redirect',
+        '/Users/alan/workshop/alanwsmith.com/site/_data/_redirects',
     },
   }
 
