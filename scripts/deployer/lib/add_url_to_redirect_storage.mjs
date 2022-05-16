@@ -7,7 +7,9 @@ function add_url_to_redirect_storage({ json_data, url }) {
       redirect_to: url,
       redirect_from: [`/${url_id}`],
     }
-  } else {
+  } else if (
+    json_data.ksuid_redirects[url_id].redirect_from.indexOf(url) === -1
+  ) {
     json_data.ksuid_redirects[url_id].redirect_from.push(url)
     json_data.ksuid_redirects[url_id].redirect_to = url
   }

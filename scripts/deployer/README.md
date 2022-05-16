@@ -18,7 +18,7 @@ beginning
 - [x] Clear the output directory before each run
 - [x] Manage redirects when titles/slugs change via redirects
 - [x] Make `/{KSUID}` redirects for all files
-- [ ] Don't add urls multiple times to the 'redirect_from' array 
+- [x] Don't add urls multiple times to the 'redirect_from' array 
 - [ ] Handle posts that have empty titles
 - [ ] Redirect posts that have been removed to the home page
 - [ ] Do any image moves necessary and make the Img.js file

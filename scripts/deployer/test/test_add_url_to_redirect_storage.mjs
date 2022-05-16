@@ -45,3 +45,37 @@ it('should add a new item if it does not already exist', () => {
     '/29ajjoubbbbb'
   )
 })
+
+it('should not push a url on the array multiple times', () => {
+  /////////////////////////////////////////////////
+  // Given
+
+  const json_data = {
+    ksuid_redirects: {
+      '20elg89zsnmm': {
+        redirect_from: [
+          '/posts/first-post--yeah-yeah--20elg89zsnmm',
+          '/20elg89zsnmm',
+        ],
+        redict_to: '/',
+      },
+    },
+  }
+
+  const url = '/posts/first-post--yeah-yeah--20elg89zsnmm'
+
+  /////////////////////////////////////////////////
+  // When
+
+  const result = add_url_to_redirect_storage({
+    json_data: json_data,
+    url: url,
+  })
+
+  console.log(result.ksuid_redirects)
+
+  /////////////////////////////////////////////////
+  // Then
+
+  assert.equal(result.ksuid_redirects['20elg89zsnmm'].redirect_from.length, 2)
+})
