@@ -8,7 +8,7 @@ describe('Test 1', () => {
   it('make a basic redirect with one file and do not redirect to self', () => {
     // Given
     const json_data = {
-      redirect_data: {
+      ksuid_redirects: {
         '29ajjouaaaaa': {
           redirect_from: [
             '/posts/29ajjouaaaaa',
