@@ -15,17 +15,21 @@ In 2011, I wired six hard-drives into a case and made an 8 Terabyte server for m
 
 After three years of faithful service, Coltrane, which is what I named the server, has run out of space. It's possible to increase the size but I went a different route. A new server built with the knowledge and experience gained working on Coltrane. It's an eleven disk FreeNAS beast named Mingus. 
 
-![Mingus during construction. Eleven 4 Terabyte drives prepped and ready to go. ](/aws-20140925--1027-03b.jpg) 
+<Img src="freenas_server_aws_20140925_1027_03b.jpg" alt="A desktop tower computer case with the side open showing eleven hard drives. Six drives are inside the machine and five are in a bracket that has been pulled outside to make them more visible." />
 
-![And here's the machine with all the drives wired up.](/aws-20140925--1137-04a.jpg) 
+<Img src="freenas_server_aws_20140925_1137_04a.jpg" alt="I side view of a desktop computer tower with the side open to see inside where several hard drives and a mini-itx motherboard are visible." />
+
 
 It seems like eleven 4 Terabyte drives should equal 44 Terabytes of storage but that's not how FreeNAS works. Part of the way data is kept safe in a FreeNAS system is by using redundant "parity" drives. The math is interesting<sup>3</sup>, if you're into that sort of thing, but basically it breaks down like this: For every parity drive in a multi-drive setup, one hard drive from the cluster can die without taking all the data with it. Three of Mingus' eleven drives are parity. So, as long as four drives don't all die at the same time, my files are safe from hard-drive failure<sup>4</sup>.
 
 Taking the three parity drives out of the equation leaves (8 x 4TB =) 32 Terabytes of space. A little gets chewed up in the way computers deal with division but seeing roughly 32 Terabytes of well protected space is nice. 
 
-![31.46... 32... Whatever it takes. ](/screengrab-20140927--1720-01a.png) 
+31.46... 32... Whatever it takes. 
+
+<Img src="freenas_harddrive_space_20140927_1720.png" alt="A screenshot of disk information on a Mac for a disk named PhotoArc that shows a capacity of 31.46TB" />
 
 There's definitely effort and expense involved in building a FreeNAS server but it's something anyone willing to put in some time can do. The protection and convenience are more than worth the hassle. 
+
 
 ---
 

@@ -1,6 +1,11 @@
 import Image from 'next/image'
 
+
+
+import freenas_harddrive_space_20140927_1720 from '../_images/freenas_harddrive_space_20140927_1720.png'
 import absolute_sandman from '../_images/absolute_sandman.jpeg'
+import freenas_server_aws_20140925_1137_04a from '../_images/freenas_server_aws_20140925_1137_04a.jpg'
+import freenas_server_aws_20140925_1027_03b from '../_images/freenas_server_aws_20140925_1027_03b.jpg'
 import acme_bag_2008_05 from '../_images/acme_bag_2008_05.jpg'
 import alligator_on_the_golf_course from '../_images/alligator_on_the_golf_course.jpg'
 import amy_20070919_0009 from '../_images/amy_20070919_0009.jpg'
@@ -74,6 +79,9 @@ import wobble_wedge_2009_02 from '../_images/wobble_wedge_2009_02.jpg'
 import youtube_logo_2009_01 from '../_images/youtube_logo_2009_01.gif'
 
 const imgMap = {
+  freenas_harddrive_space_20140927_1720: freenas_harddrive_space_20140927_1720,
+  freenas_server_aws_20140925_1137_04a: freenas_server_aws_20140925_1137_04a,
+  freenas_server_aws_20140925_1027_03b: freenas_server_aws_20140925_1027_03b,
   absolute_sandman: absolute_sandman,
   acme_bag_2008_05: acme_bag_2008_05,
   alligator_on_the_golf_course: alligator_on_the_golf_course,
@@ -81,19 +89,25 @@ const imgMap = {
   armored_bug_20060923_105004_01: armored_bug_20060923_105004_01,
   aws_20080426_glamor_camp_0073: aws_20080426_glamor_camp_0073,
   bama_schedule_sp_20090821_misc_112136: bama_schedule_sp_20090821_misc_112136,
-  beer_bottle_in_a_freezer_with_the_top_missing_and_frozen_beer_leaking_out_20060205_222340a: beer_bottle_in_a_freezer_with_the_top_missing_and_frozen_beer_leaking_out_20060205_222340a,
-  big_ass_grasshopper_20070721_183012_01: big_ass_grasshopper_20070721_183012_01,
+  beer_bottle_in_a_freezer_with_the_top_missing_and_frozen_beer_leaking_out_20060205_222340a:
+    beer_bottle_in_a_freezer_with_the_top_missing_and_frozen_beer_leaking_out_20060205_222340a,
+  big_ass_grasshopper_20070721_183012_01:
+    big_ass_grasshopper_20070721_183012_01,
   black_widow_20051026_230734a1: black_widow_20051026_230734a1,
   bottle_of_change_20060313_150636a: bottle_of_change_20060313_150636a,
   braves_and_bama_comparison: braves_and_bama_comparison,
-  broken_sunpak_tripod_20090829_misc_110949: broken_sunpak_tripod_20090829_misc_110949,
-  camry_odometer_aws_20080701_snapshots_0003: camry_odometer_aws_20080701_snapshots_0003,
+  broken_sunpak_tripod_20090829_misc_110949:
+    broken_sunpak_tripod_20090829_misc_110949,
+  camry_odometer_aws_20080701_snapshots_0003:
+    camry_odometer_aws_20080701_snapshots_0003,
   capline: capline,
   cfl_bulb_2008_05: cfl_bulb_2008_05,
   command_line_ls_2009_04: command_line_ls_2009_04,
   dot_matrix_sky_writing: dot_matrix_sky_writing,
-  drawing_on_the_right_side_of_the_brain_final_portrait: drawing_on_the_right_side_of_the_brain_final_portrait,
-  drawing_on_the_right_side_of_the_brain_initial_portrait: drawing_on_the_right_side_of_the_brain_initial_portrait,
+  drawing_on_the_right_side_of_the_brain_final_portrait:
+    drawing_on_the_right_side_of_the_brain_final_portrait,
+  drawing_on_the_right_side_of_the_brain_initial_portrait:
+    drawing_on_the_right_side_of_the_brain_initial_portrait,
   ecto_logo_2009_03: ecto_logo_2009_03,
   eneloop_2008_05: eneloop_2008_05,
   euthanasia_20080629_snapshots_0003: euthanasia_20080629_snapshots_0003,
@@ -105,7 +119,8 @@ const imgMap = {
   git_logo_2009_08: git_logo_2009_08,
   glock_20060923_114208_01: glock_20060923_114208_01,
   home_and_garden_skull_2009_03: home_and_garden_skull_2009_03,
-  honda_accord_aws_20080630_snapshots_0006: honda_accord_aws_20080630_snapshots_0006,
+  honda_accord_aws_20080630_snapshots_0006:
+    honda_accord_aws_20080630_snapshots_0006,
   horse_in_motion_1878: horse_in_motion_1878,
   iphone_3gs_test_photo_2009_06: iphone_3gs_test_photo_2009_06,
   ir_band_photo_20060805_011554_01: ir_band_photo_20060805_011554_01,
@@ -132,9 +147,11 @@ const imgMap = {
   snow_in_atlanta_dscf0874: snow_in_atlanta_dscf0874,
   sunset_in_key_weat_20060211_191750a: sunset_in_key_weat_20060211_191750a,
   superfad_reel_grab_2009_01: superfad_reel_grab_2009_01,
-  target_with_bullet_holes_20060923_124436_01: target_with_bullet_holes_20060923_124436_01,
+  target_with_bullet_holes_20060923_124436_01:
+    target_with_bullet_holes_20060923_124436_01,
   thepodofalan_ogimage_v1: thepodofalan_ogimage_v1,
-  thermometer_that_was_in_a_car_20070906_0001: thermometer_that_was_in_a_car_20070906_0001,
+  thermometer_that_was_in_a_car_20070906_0001:
+    thermometer_that_was_in_a_car_20070906_0001,
   tree_at_sawgrass_20060329_041114a: tree_at_sawgrass_20060329_041114a,
   trinity: trinity,
   unprocessed_file_20060125_010408a: unprocessed_file_20060125_010408a,
@@ -142,13 +159,15 @@ const imgMap = {
   vivitar_285_hack_2_20060710_212406_01: vivitar_285_hack_2_20060710_212406_01,
   wedding_dance_20080301_0965: wedding_dance_20080301_0965,
   wheels_20060227_093946a: wheels_20060227_093946a,
-  wire_on_the_bottom_of_my_chair_20060921_131744_01: wire_on_the_bottom_of_my_chair_20060921_131744_01,
+  wire_on_the_bottom_of_my_chair_20060921_131744_01:
+    wire_on_the_bottom_of_my_chair_20060921_131744_01,
   wireless_flash_mod_20060430_234118a: wireless_flash_mod_20060430_234118a,
   wobble_wedge_2009_02: wobble_wedge_2009_02,
   youtube_logo_2009_01: youtube_logo_2009_01,
 }
 
-export default function Img({ src, alt = 'image alt text unavailable' }) { 
- const fileParts = src.split('.') 
- return <Image src={imgMap[fileParts[0]]} alt={alt} /> 
+export default function Img({ src, alt = 'image alt text unavailable' }) {
+  const fileParts = src.split('.')
+  console.log(fileParts[0])
+  return <Image src={imgMap[fileParts[0]]} alt={alt} />
 }
