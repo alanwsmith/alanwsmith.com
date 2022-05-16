@@ -1,5 +1,21 @@
 import Image from 'next/image'
 
+
+
+import pinhole_camera_20060307_223000a from '../_images/pinhole_camera_20060307_223000a.jpg'
+import dilbert_2008_02_22_framistan_gabol from '../_images/dilbert_2008_02_22_framistan_gabol.gif'
+import first_camera_image_sawgrass_hole_17_cropped_1720060316_053438a from '../_images/first_camera_image_sawgrass_hole_17_cropped_1720060316_053438a.jpg'
+import first_camera_image_sawgrass_hole_17_20060316_053438a from '../_images/first_camera_image_sawgrass_hole_17_20060316_053438a.jpg'
+import bar_code_sample_2008_07 from '../_images/bar_code_sample_2008_07.jpg'
+import codet_talkers_drummer_20060902_230200_01 from '../_images/codet_talkers_drummer_20060902_230200_01.jpg'
+import bent_objects_regection from '../_images/bent_objects_regection.jpg'
+import exploded_coke_can_20050812_183138a from '../_images/exploded_coke_can_20050812_183138a.jpg'
+import sxsw_logo_2009 from '../_images/sxsw_logo_2009.gif'
+import dave_fire_eyes_2_2007_06_scan from '../_images/dave_fire_eyes_2_2007_06_scan.jpg'
+import bionic_eye_boston_retinal_implace_project from '../_images/bionic_eye_boston_retinal_implace_project.jpg'
+import infrared_test_shot_2006_08 from '../_images/infrared_test_shot_2006_08.jpg'
+import car_door_with_panel_off_20060414_210832a from '../_images/car_door_with_panel_off_20060414_210832a.jpg'
+import adobe_kuler_logo from '../_images/adobe_kuler_logo.png'
 import crayons_by_diem_chau from '../_images/crayons_by_diem_chau.jpg'
 import clonds_from_a_plane_20070703_0008 from '../_images/clonds_from_a_plane_20070703_0008.jpg'
 import apollo_11_on_the_moon from '../_images/apollo_11_on_the_moon.jpg'
@@ -174,7 +190,22 @@ const imgMap = {
   apollo_11_on_the_moon: apollo_11_on_the_moon, 
   clonds_from_a_plane_20070703_0008: clonds_from_a_plane_20070703_0008,
   crayons_by_diem_chau: crayons_by_diem_chau,
+  adobe_kuler_logo: adobe_kuler_logo,
+  car_door_with_panel_off_20060414_210832a: car_door_with_panel_off_20060414_210832a,
+  infrared_test_shot_2006_08: infrared_test_shot_2006_08,
+  bionic_eye_boston_retinal_implace_project: bionic_eye_boston_retinal_implace_project,
+  dave_fire_eyes_2_2007_06_scan: dave_fire_eyes_2_2007_06_scan,
+  sxsw_logo_2009: sxsw_logo_2009,
+  exploded_coke_can_20050812_183138a: exploded_coke_can_20050812_183138a,
+  bent_objects_regection: bent_objects_regection,
+  codet_talkers_drummer_20060902_230200_01: codet_talkers_drummer_20060902_230200_01,
+  bar_code_sample_2008_07: bar_code_sample_2008_07,
+  first_camera_image_sawgrass_hole_17_20060316_053438a: first_camera_image_sawgrass_hole_17_20060316_053438a,
+  first_camera_image_sawgrass_hole_17_cropped_1720060316_053438a: first_camera_image_sawgrass_hole_17_cropped_1720060316_053438a,
+  dilbert_2008_02_22_framistan_gabol: dilbert_2008_02_22_framistan_gabol,
+  pinhole_camera_20060307_223000a: pinhole_camera_20060307_223000a,
 }
+
 
 export default function Img({ src, alt = 'image alt text unavailable' }) {
   const fileParts = src.split('.')
