@@ -1,5 +1,8 @@
 import Image from 'next/image'
 
+
+
+import another_spider_aws_20120816_0950 from '../_images/another_spider_aws_20120816_0950.jpg'
 import freenas_harddrive_space_20140927_1720 from '../_images/freenas_harddrive_space_20140927_1720.png'
 import absolute_sandman from '../_images/absolute_sandman.jpeg'
 import freenas_server_aws_20140925_1137_04a from '../_images/freenas_server_aws_20140925_1137_04a.jpg'
@@ -162,6 +165,7 @@ const imgMap = {
   wireless_flash_mod_20060430_234118a: wireless_flash_mod_20060430_234118a,
   wobble_wedge_2009_02: wobble_wedge_2009_02,
   youtube_logo_2009_01: youtube_logo_2009_01,
+  another_spider_aws_20120816_0950: another_spider_aws_20120816_0950,
 }
 
 export default function Img({ src, alt = 'image alt text unavailable' }) {
