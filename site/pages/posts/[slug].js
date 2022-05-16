@@ -93,6 +93,9 @@ export async function getStaticProps({ params }) {
     fs.readFileSync(path.join(CONTENT_DIR, `${params.slug}.mdx`))
   )
   data.date = data.date.toString()
+  if (data.updated !== undefined) {
+    data.updated = data.updated.toString()
+  }
   const mdxSource = await serialize(content)
   return { props: { source: mdxSource, frontmatter: data } }
 }
