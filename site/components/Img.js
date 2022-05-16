@@ -2,6 +2,8 @@ import Image from 'next/image'
 
 
 
+
+import ar_15_sounds_like_a_canon_20071021_0032 from '../_images/ar_15_sounds_like_a_canon_20071021_0032.jpg'
 import pinhole_camera_20060307_223000a from '../_images/pinhole_camera_20060307_223000a.jpg'
 import dilbert_2008_02_22_framistan_gabol from '../_images/dilbert_2008_02_22_framistan_gabol.gif'
 import first_camera_image_sawgrass_hole_17_cropped_1720060316_053438a from '../_images/first_camera_image_sawgrass_hole_17_cropped_1720060316_053438a.jpg'
@@ -204,6 +206,7 @@ const imgMap = {
   first_camera_image_sawgrass_hole_17_cropped_1720060316_053438a: first_camera_image_sawgrass_hole_17_cropped_1720060316_053438a,
   dilbert_2008_02_22_framistan_gabol: dilbert_2008_02_22_framistan_gabol,
   pinhole_camera_20060307_223000a: pinhole_camera_20060307_223000a,
+  ar_15_sounds_like_a_canon_20071021_0032: ar_15_sounds_like_a_canon_20071021_0032,
 }
 
 

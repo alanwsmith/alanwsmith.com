@@ -835,9 +835,10 @@
         "/20elr3rczpgi",
         "/posts/20elr3rczpgi",
         "/photos-from-the-air-show",
-        "/posts/photos-from-the-air-show--20elr3rczpgi"
+        "/posts/photos-from-the-air-show--20elr3rczpgi",
+        "/posts/photos-from-the-air-show-2005--20elr3rczpgi"
       ],
-      "redirect_to": "/posts/photos-from-the-air-show--20elr3rczpgi"
+      "redirect_to": "/posts/photos-from-the-air-show-2005--20elr3rczpgi"
     },
     "20elr7aqpl0p": {
       "redirect_from": [
@@ -4348,9 +4349,10 @@
         "/20emaq4pu8fq",
         "/posts/20emaq4pu8fq",
         "/canon",
-        "/posts/canon--20emaq4pu8fq"
+        "/posts/canon--20emaq4pu8fq",
+        "/posts/canon-firing-an-ar-15--20emaq4pu8fq"
       ],
-      "redirect_to": "/posts/canon--20emaq4pu8fq"
+      "redirect_to": "/posts/canon-firing-an-ar-15--20emaq4pu8fq"
     },
     "20ematslh75d": {
       "redirect_from": [
@@ -16783,7 +16785,8 @@
     "29g6tr9ul6kw": {
       "redirect_to": "/posts/responsive-images-in-hugo--29g6tr9ul6kw",
       "redirect_from": [
-        "/29g6tr9ul6kw"
+        "/29g6tr9ul6kw",
+        "/posts/responsive-images-in-hugo--29g6tr9ul6kw"
       ]
     }
   }
