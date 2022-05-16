@@ -1,0 +1,31 @@
+---
+blurb: ""
+categories:
+  - Python
+date: 2022-01-18T12:56:01
+id: 23shatajbugt
+status: draft
+title: Process Data Line By Line
+type: post
+slug: process-data-line-by-line--23shatajbugt
+---
+
+```python
+data = '''Alfa
+Bravo
+Charlie
+Delta
+Echo
+Foxtrot'''
+
+data_things = data.split("\n")
+
+line = ", ".join(data_things)
+
+print(line)
+```
+
+```bash
+# Outputs
+Alfa, Bravo, Charlie, Delta, Echo, Foxtrot
+```

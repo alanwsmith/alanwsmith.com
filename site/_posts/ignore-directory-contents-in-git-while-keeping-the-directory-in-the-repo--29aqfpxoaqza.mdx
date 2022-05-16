@@ -1,0 +1,37 @@
+---
+blurb: For when you want the directory to exist in the repo but nothing to be
+  inside of it
+categories:
+  - Git
+date: 2022-05-14T14:38:35
+id: 29aqfpxoaqza
+status: draft
+type: post
+title: Ignore Directory Contents In Git While Keeping The Directory In The Repo
+slug: ignore-directory-contents-in-git-while-keeping-the-directory-in-the-repo--29aqfpxoaqza
+---
+
+
+If you want to keep empty directories inside the version control, the standard way to do that is to touch a ".gitignore" file to create an empty file with that name in the structure. 
+
+If you've got a tree that has sub directories, you only need to add the .gitignore file to the bottom most one. Since it has to be there, the rest of the tree above it must be included also. 
+
+This allows itself to stay in the repo
+
+
+Code for .gitignore to store empty dir
+--------------------------------------
+
+```bash
+*
+!.gitignore
+```
+
+Need to see how this would work on export if you tell the export command to skip .gitignore files. Hopefully, that'll work. 
+
+
+---
+
+tags: ignore, directory
+
+

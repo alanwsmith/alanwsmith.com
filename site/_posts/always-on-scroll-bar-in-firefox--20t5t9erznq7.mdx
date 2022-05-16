@@ -1,0 +1,25 @@
+---
+blurb: ""
+categories:
+  - CSS
+date: 2005-09-28T00:00:00
+id: 20t5t9ErzNq7
+status: archived
+title: Always On Scroll Bar In Firefox
+type: post
+slug: always-on-scroll-bar-in-firefox--20t5t9erznq7
+---
+
+(originally posted on: http://alancode.blogspot.com/)
+
+
+If you have a web design where the content is centered a jaring shift can occur in firefox from one page to the next if the content one one page does not require and another page does. The additional of the scorll bar changes the overall width of the content window which alters where the center of the page is. So, it jumps.
+
+One way to get around this it to setup a style that forces the scroll bar to be active regarless of the length of the content. Once way to do this with css is:
+
+```
+html {
+    height: 100.1%;
+}
+```
+

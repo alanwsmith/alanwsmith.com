@@ -1,0 +1,24 @@
+---
+blurb: ""
+categories:
+  - Miscellaneous
+date: 2022-03-22T10:27:21
+id: 26kezllolfsl
+status: scratch
+title: Get the root html element
+type: post
+slug: get-the-root-html-element--26kezllolfsl
+---
+
+Get the root `<html>` element with:
+
+```
+const rootElement = document.documentElement
+```
+
+You can use this for things like getting the width of the viewport minus the scrollbars (if there are any)
+
+```
+const documentWidth = document.documentElement.clientWidth
+```
+

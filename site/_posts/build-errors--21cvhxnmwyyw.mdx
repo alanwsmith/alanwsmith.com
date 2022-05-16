@@ -1,0 +1,180 @@
+---
+blurb: ""
+categories:
+  - Miscellaneous
+date: 2021-11-20T20:23:14
+id: 21CvHxnMWYYw
+status: scratch
+title: Build Errors
+type: post
+slug: build-errors--21cvhxnmwyyw
+---
+
+Here's the error I ran into:
+
+```
+8:04:21 PM: ────────────────────────────────────────────────────────────────
+8:04:21 PM:   2. Build command from Netlify app                             
+8:04:21 PM: ────────────────────────────────────────────────────────────────
+8:04:21 PM: ​
+8:04:21 PM: $ npm run build
+8:04:22 PM: > build
+8:04:22 PM: > next build && cp _redirects .next/
+8:04:23 PM: info  - Checking validity of types...
+8:04:26 PM: info  - Creating an optimized production build...
+8:04:48 PM: Failed to compile.
+8:04:48 PM: 
+8:04:48 PM: ./node_modules/esbuild/lib/main.d.ts
+8:04:48 PM: Module parse failed: Unexpected token (1:7)
+8:04:48 PM: You may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders
+8:04:48 PM: > export type Platform = 'browser' | 'node' | 'neutral';
+8:04:48 PM: | export type Format = 'iife' | 'cjs' | 'esm';
+8:04:48 PM: | export type Loader = 'js' | 'jsx' | 'ts' | 'tsx' | 'css' | 'json' | 'text' | 'base64' | 'file' | 'dataurl' | 'binary' | 'default';
+8:04:48 PM: Import trace for requested module:
+8:04:48 PM: ./node_modules/esbuild/lib/ sync ^.*\/.*$
+8:04:48 PM: ./node_modules/esbuild/lib/main.js
+8:04:48 PM: ./node_modules/mdx-bundler/dist/index.js
+8:04:48 PM: ./utils/mdx.js
+8:04:48 PM: ./pages/index.js
+8:04:48 PM: ./node_modules/next/dist/build/webpack/loaders/next-serverless-loader/index.js?page=%2F&absolutePagePath=private-next-pages%2Findex.js&absoluteAppPath=private-next-pages%2F_app.js&absoluteDocumentPath=next%2Fdist%2Fpages%2F_document&absoluteErrorPath=next%2Fdist%2Fpages%2F_error&absolute404Path=&distDir=private-dot-next&buildId=oEC5XMKqJ83KbAljH91im&assetPrefix=&generateEtags=true&poweredByHeader=true&canonicalBase=&
+```
+
+Setting this for the build command didn't work:
+
+```bash
+CI= npm run build
+```
+
+This was via: https://answers.netlify.com/t/new-ci-true-build-configuration-treating-warnings-as-errors-because-process-env-ci-true/14434
+
+---
+
+Also tried this, but it didn't work:
+
+```
+npm install --save-dev typescript ts-loader
+```
+
+
+---
+
+This didn't work either:
+
+```
+npm i -D esbuild-loader
+```
+
+---
+
+Trying making a webpack.config.js file with the below, but it didn't work:
+
+
+```json 
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        loader: 'esbuild-loader',
+        options: {
+          loader: 'ts', // Or 'ts' if you don't need tsx
+          target: 'es2015',
+        },
+      },
+    ],
+  },
+}
+```
+
+---
+
+
+Adding this didn't work either:
+
+```
+npm i --save-dev @babel/core
+```
+
+
+---
+
+Tried switching the default install of from 13.x to 12.x but that didn't work. 
+
+```
+"esbuild": "^0.13.15",
+```
+
+to:
+
+```
+"esbuild": "^0.12.29",
+```
+
+---
+
+
+Trying this in the package.json but it didn't work. 
+
+
+```
+    "build": "if [ -f ./node_modules/esbuild/lib/main.d.ts ]; then rm ./node_modules/esbuild/lib/main.d.ts; fi && next build && cp _redirects .next/",
+```
+
+That got a new error:
+
+```
+10:06:55 PM: warn  - Compiled with warnings
+10:06:55 PM: ./node_modules/esbuild/lib/main.js
+10:06:55 PM: Critical dependency: the request of a dependency is an expression
+10:06:55 PM: Import trace for requested module:
+10:06:55 PM: ./node_modules/mdx-bundler/dist/index.js
+10:06:55 PM: ./utils/mdx.js
+10:06:55 PM: ./pages/index.js
+10:06:55 PM: ./node_modules/next/dist/build/webpack/loaders/next-serverless-loader/index.js?page=%2F&absolutePagePath=private-next-pages%2Findex.js&absoluteAppPath=private-next-pages%2F_app.js&absoluteDocumentPath=next%2Fdist%2Fpages%2F_document&absoluteErrorPath=next%2Fdist%2Fpages%2F_error&absolute404Path=&distDir=private-dot-next&buildId=-ZQnt2IqLYGC1__loaOnU&assetPrefix=&generateEtags=true&poweredByHeader=true&canonicalBase=&basePath=&runtimeConfig=&previewProps=%7B%22previewModeId%22%3A%226b15a5ab3397694d19f221ac8e9f687d%22%2C%22previewModeSigningKey%22%3A%2294314108aa8f1893826ebffb25a37dd3dcf95a9ba38030f3fe9600e4293136ac%22%2C%22previewModeEncryptionKey%22%3A%2211b7956bde48683b19b26f03d7627885c4bf2882a969aa52c409f2c1f4840c08%22%7D&loadedEnvFiles=W10%3D&i18n=!
+```
+
+
+---
+
+Trying to removing:
+
+```
+"esbuild": "^0.13.15",
+```
+
+And switching:
+
+```
+"mdx-bundler": "^8.0.0",
+```
+
+to:
+
+```
+"mdx-bundler": "^6.0.3",
+```
+
+
+---
+
+I still haven't figured this out. All that stuff was with v8 of mdx-bundler. I'm trying to go back to v6.
+
+---
+
+NOTE: Netlify pugin v4 does not work with NextJS v12 because of the SWC compiler
+
+Tried this in `next.config.js` config but it didn't work:
+
+```
+swcMinify: false
+```
+
+based off: https://nextjs.org/docs/messages/failed-loading-swc
+
+
+---
+
+
+
+
+

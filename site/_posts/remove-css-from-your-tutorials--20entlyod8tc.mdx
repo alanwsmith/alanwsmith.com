@@ -1,0 +1,168 @@
+---
+blurb: ""
+categories:
+  - Education
+date: 2021-02-07T00:00:00
+id: 20eNtLYOD8tc
+scrubbed_2021: false
+status: published
+title: Remove CSS From Your Tutorials
+type: post
+slug: remove-css-from-your-tutorials--20entlyod8tc
+---
+
+### TL;DR
+
+Tutorial Designers: Stop adding CSS to tutorails that aren't about CSS. It makes it harder to learn.
+
+---
+
+
+### What's This All About?
+
+I'm interested in MDX and have been experimenting with Gatsby to play with it. The [official tutorial](https://www.gatsbyjs.com/docs/tutorial/) is pretty solid. At least, it started that way. Then, I hit the [Data in Gatsby](https://www.gatsbyjs.com/docs/tutorial/part-four/) section.
+
+After cloning the template repo, the first instruction is to run:
+
+```bash
+npm install gatsby-plugin-typography \
+typography react-typography \
+typography-theme-kirkham \
+gatsby-plugin-emotion \
+@emotion/react
+```
+
+
+
+All CSS. 
+
+Zero data. 
+
+In fact, the entire first half is devoted to nothing but adding CSS plugins, imports, files, and code. None of it's necessary. All of it gets in the way of the tutorial.
+
+### Learning Is Hard  
+
+Saying "learning is hard" is cliché. But, we forget how hard it actually is. With our experience, we bring unconscious contexts to our work. We jump between them without noticing. When we're learning, we don't have context. It's what we're after and finding it is _hard_. Being thrown into another context (even one we're familiar with) makes it even harder. 
+
+Consider this: If you were learning a new framework, would it be easier to understand the code on the left or the right?
+
+---
+
+
+```html
+<pre style="color:#f8f8f2;background-color:#272822;line-height:0.7rem"><code class="tiny_code_text" data-lang="python">
+   010110 11101 1111 1011101                                |   000000 11011 1101 1000110
+   011011 1 011 1 0001 1001101111110001                     |   010000 0 1010 1 1110 01011111
+   001100 0 0010 1 0001 01010111                            |   
+                                                            |   100000 1110010 00100010 00011001 10011111 01 1
+   101000 1 111101 1 0100 011110000000010101100             |     111111 1
+                                                            |       00100
+   111100 1010101 01110101 10111100 10011101 01 1           |         00110 111011111
+     101101 1                                               |           1110
+       0000                                                 |             011010 111110 1001
+         000010110                                          |           10100
+           1100001 0 00001                                  |         0101111
+           0110000010 001111                                |         00001 00111100100010 0
+           10011011 0000001101100                           |           11010
+           011111000111 111111101100001                     |         0111101
+         01                                                 |         1010110110
+       0                                                    |       110011
+         10110 100100000                                    |     0
+           110                                              |   0
+             010000101                                      |   
+               10010010101011 0111100101010                 |   
+               01010001 1101111111111                       |   
+               01000111000 1010000                          |   
+             00                                             |   
+           0                                                |   
+             111111 100101 0010                             |   
+           10110                                            |   
+         1111010                                            |   
+         11111                                              |   
+           01011110111011                                   |   
+           010110010                                        |   
+             100101 011100                                  |   
+           10                                               |   
+         0                                                  |   
+           01111                                            |   
+         1110110                                            |   
+         0010000011                                         |   
+       011101                                               |   
+     1                                                      |   
+   0                                                        |   
+
+</code></pre>
+```
+
+
+---
+
+
+
+
+This isn't a hypothetical. It's copied directly from the Gatsby tutorial. The original version is on the left. The right is what it looks like with the CSS removed. 
+
+---
+
+
+
+```html
+<pre style="color:#f8f8f2;background-color:#272822;line-height:0.7rem"><code class="tiny_code_text" data-lang="python">
+   import React from "react"                                |   import React from "react"
+   import { css } from "@emotion/react"                     |   import { Link } from "gatsby"
+   import { Link } from "gatsby"                            |   
+                                                            |   export default function Layout({ children }) {
+   import { rhythm } from "../utils/typography"             |     return (
+                                                            |       &lt;div&gt;   
+   export default function Layout({ children }) {           |         &lt;Link to={`/`}&gt;   
+     return (                                               |           &lt;h3&gt;   
+          &lt;div                                              |             Pandas Eating Lots
+         css={css`                                          |           &lt;/h3&gt;   
+           margin: 0 auto;                                  |         &lt;/Link&gt;   
+           max-width: 700px;                                |         &lt;Link to={`/about/`} &gt;   
+           padding: ${rhythm(2)};                           |           About
+           padding-top: ${rhythm(1.5)};                     |         &lt;/Link&gt;   
+         `}                                                 |         {children}
+       &gt;                                                    |       &lt;/div&gt;   
+            &lt;Link to={`/`}&gt;                                 |     )
+              &lt;h3                                           |   }
+             css={css`                                      |   
+               margin-bottom: ${rhythm(2)};                 |   
+               display: inline-block;                       |   
+               font-style: normal;                          |   
+             `}                                             |   
+           &gt;                                                |   
+             Pandas Eating Lots                             |   
+              &lt;/h3&gt;                                         |   
+            &lt;/Link&gt;                                         |   
+            &lt;Link                                           |   
+           to={`/about/`}                                   |   
+           css={css`                                        |   
+             float: right;                                  |   
+           `}                                               |   
+         &gt;                                                  |   
+           About                                            |   
+            &lt;/Link&gt;                                         |   
+         {children}                                         |   
+          &lt;/div&gt;                                            |   
+     )                                                      |   
+   }                                                        |   
+
+</code></pre>
+```
+
+
+---
+
+
+Each is as good as the other when it comes to demonstrating how data works. As teaching tools, they couldn't be farther apart. The CSS introduces a huge, unnecessary cognitive burden.
+
+
+
+### The Art Of Tutorials
+
+Creating a tutorial is like making a sculpture. We start with a giant block of knowledge and whittle it down to something digestible. But, the goal isn't to make something beautiful. The goal is to transfer knowledge. Adding flourish gets in the way. It's putting form over function when function is all that matters. 
+
+Or responsibility is to keep carving away. To get to the essence. To the bare minimum necessary to show people the way. 
+
+Doing anything less is a disservice to those we're trying to serve.

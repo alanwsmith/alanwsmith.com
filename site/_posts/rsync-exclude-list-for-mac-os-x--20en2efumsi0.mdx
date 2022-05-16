@@ -1,0 +1,18 @@
+---
+blurb: My copy and paste refernce from rsync exclude patterns.
+categories:
+  - Miscellaneous
+date: 2015-01-24T00:00:00
+id: 20eN2EFUMsI0
+scrubbed_2021: false
+status: published
+title: Rsync --exclude List for Mac OS X
+type: post
+slug: rsync-exclude-list-for-mac-os-x--20en2efumsi0
+---
+
+_Updated March 4, 2015 with more cruft identifiers including several from Windows machines_
+
+This is my reference for patterns to exclude when moving files around with rsync. It ignores system cruft that doesn't need to be copied and throws me off when it shows up on my FreeNAS server. I'm posting it to have access to it from anywhere and for anyone else who might find it useful. 
+
+    --exclude='$RECYCLE.BIN' --exclude='$Recycle.Bin' --exclude='.AppleDB' --exclude='.AppleDesktop' --exclude='.AppleDouble' --exclude='.com.apple.timemachine.supported' --exclude='.dbfseventsd' --exclude='.DocumentRevisions-V100*' --exclude='.DS_Store' --exclude='.fseventsd' --exclude='.PKInstallSandboxManager' --exclude='.Spotlight*' --exclude='.SymAV*' --exclude='.symSchedScanLockxz' --exclude='.TemporaryItems' --exclude='.Trash*' --exclude='.vol' --exclude='.VolumeIcon.icns' --exclude='Desktop DB' --exclude='Desktop DF' --exclude='hiberfil.sys' --exclude='lost+found' --exclude='Network Trash Folder' --exclude='pagefile.sys' --exclude='Recycled' --exclude='RECYCLER' --exclude='System Volume Information' --exclude='Temporary Items' --exclude='Thumbs.db'

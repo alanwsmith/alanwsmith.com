@@ -1,0 +1,59 @@
+---
+blurb: The simplest way I've found to get a file to someone.
+categories:
+  - Hacks
+  - Command Line
+  - TODO
+date: 2022-03-08T12:26:27
+id: 2672d5kxmsfb
+status: draft
+type: post
+title: Share Local Files Over The Web With ngrok
+slug: share-local-files-over-the-web-with-ngrok--2672d5kxmsfb
+---
+
+One of the more useful hacks I know is how to share a folder on my computer so folks can grab files from it from a web browser. 
+
+I use a command line application called [ngrok](https://ngrok.com/) to provide the functionality. The command I use to run it on my mac is:
+
+```bash
+ngrok http -bind-tls=true "file://$(pwd)"
+```
+
+The result is a secure URL where the outside world can browse whatever directory on my computer the command was run in.
+
+
+## Windows Version
+
+The Windows command is basically the same. The paths just look a little different. This version is hard coded to a specific directory since I don't know how to dynamically point to the current directory on Windows yet. I'll update the code when I figure that out. 
+ 
+```bash
+ngrok http -bind-tls=true "file:///C:\Users\alan\Public Folder"
+```
+
+## Password Protection
+
+You can also add password protection by adding an argument:
+
+```bash
+-auth="username:password"
+```
+
+For example:
+
+```bash
+ngrok http -auth="alan:mushroomcat" -bind-tls=true "file://$(pwd)"
+```
+
+## The ngrok Software
+
+Here's the [ngrok homepage](https://ngrok.com/) for details on the app. 
+
+This is the [installation page](https://ngrok.com/download) if you want to jump right in. 
+
+Happy Sharing, 
+
+-a
+
+P.S. If you'd like more details, this post has [an addendum](/posts/267ct7ljblc3)
+

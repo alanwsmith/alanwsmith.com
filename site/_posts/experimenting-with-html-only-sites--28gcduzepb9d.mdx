@@ -1,0 +1,97 @@
+---
+blurb: What if we *don't* use JavaScript, CSS, or images?
+categories:
+  - Miscellaneous
+date: 2022-04-24T20:24:03
+id: 28gcduzepb9d
+status: draft
+type: post
+title: Experimenting With HTML Only Sites
+slug: experimenting-with-html-only-sites--28gcduzepb9d
+---
+
+_NOTE: This post is a draft_
+
+[Whitep4nth3r](https://twitter.com/whitep4nth3r) made [a tweet](https://twitter.com/whitep4nth3r/status/1510568114966171649) asking to see HTML only sites. No JavaScript or CSS allowed. The first one of those I saw was [motherf***ingwebside.com](https://motherfuckingwebsite.com/). It's been around forever. It's great. 
+
+The idea of working with just HTML stuck in my head a bit. The constraint seemed like a fun one to play with so I came up with a few ideas and built sites for them.
+
+
+## ASCII Art
+
+The first thing that came to mind was making an ASCII art gallery.
+
+The pages work by using `<pre>` and `<code>` tags around the ASCII strings. Nothing fancy there. The fun part was writing the script to generate the strings themselves. I used [this tutorial](https://www.youtube.com/watch?v=v_raWlX7tZY) to build [my converter](https://github.com/alanwsmith/ascii-art.alanwsmith.com/blob/main/scripts/converter/convert.py) with python's [Pillow/PIL](https://pillow.readthedocs.io/en/stable/) image library.
+
+The final site is here: [ascii-art.alanwsmith.com](https://ascii-art.alanwsmith.com/)
+
+
+## Pixel Art
+
+Working on the ASCII art pages got me thinking about pixel art which, in turn, got me thinking about using an HTML table to make an image. This is where I got to draw on my ancient HTML knowledge from the before times. The `<td>` table cell tag has attributes to set width, height, and background color. The attributes are deprecated and CSS has taken over those roles, but they still work in most browsers. 
+
+Going back to Pillow/PIL, I built [a script](https://github.com/alanwsmith/pixel-art.alanwsmith.com/blob/main/scripts/converter/convert.py) that pulled the pixel values from an image of René Magritte's The Son Of Man and turned it into a 100 pixel wide set of table cells with fixed size and the appropriate color. 
+
+Here's what that looks like: [pixel-art.alanwsmith.com](https://pixel-art.alanwsmith.com/)
+
+
+## Maze
+
+Moving out of the realm of art, I wanted to create something interactive. A maze seemed like it might work. The idea was to provide the movement by generating a page for each possible position, then cross linking them to represent the possible moves. 
+
+Before getting to that the trick of generating the maze needed to be solved. I could have come up with one by hand, but the chance to dig into algorithms was way more appealing. There are several different [maze generation algorithms](https://en.wikipedia.org/wiki/Maze_generation_algorithm). After reading through the wiki page, I decided to go with the [iterative implementation of randomized depth-first search](https://en.wikipedia.org/wiki/Maze_generation_algorithm#Iterative_implementation) which looks like this:
+
+```
+- Choose the initial cell, mark it as visited and push it to the stack
+- While the stack is not empty:
+    - Pop a cell from the stack and make it a current cell
+    - If the current cell has any neighbours which have not been visited:
+        - Push the current cell to the stack
+        - Choose one of the unvisited neighbors
+        - Remove the wall between the current cell and the chosen cell
+        - Mark the chosen cell as visited and push it to the stack
+```
+
+The initial algorithm is pretty straight-forward but didn't work for me. It builds a maze that identifies only the cells and then basically adds metadata to them saying which sides have walls. My plan was to implement the maze in an HTML `<table>` without CSS which means I couldn't use `border-left`, `border-right`, etc...
+
+The solution was to expand out so that each wall got its own table cell in addition to the spaces in the maze the player moves through. I built this with [a generator](https://github.com/alanwsmith/html-maze.alanwsmith.com/blob/main/scripts/maze_generator/generator/generator.py) script to build a JSON and a [second one](https://github.com/alanwsmith/html-maze.alanwsmith.com/blob/main/scripts/maze_generator/generator/make_display.py) to produce the output HTML. 
+
+Those scripts generate every possible position in the maze and provide navigation links between them. If you're crafty, you can hack the URL to jump to the end without having to go through the maze. 
+
+You can play it here: [maze-html.alanwsmith.com](https://html-maze.alanwsmith.com/)
+
+
+## Animation
+
+The ASCII art idea was still percolating at this point and ended up forming into the idea of making an animation out of it. Since I already had the code to make ASCII output from images a big part of the work was done. I decided to use the 1878 images from [The Horse In Motion](https://en.wikipedia.org/wiki/The_Horse_in_Motion) by Eadweard Muybridge. 
+
+I dug back into my memory of ancient knowledge for the way to animate the images. Specifically, I used [meta refresh](https://en.wikipedia.org/wiki/Meta_refresh) calls. I used to use meta refresh to update PGA TOUR leaderboard data at work before we became one of the first sites to use XMLHttpRequest calls. I wasn't sure if the meta tags would still work, but they do. 
+
+In some browsers, the refresh time has to be set at one second intervals. In others, sub-seconds (e.g. "0.3") work. The home page of the site has a little delay before moving into the one second version. There's also a link to the faster version which seems to work best in chrome. 
+
+The big negative of the approach is that the refresh takes control away from the user while it's happening. This can make it hard/impossible to click on links. Sometimes you have to close the browser to get the thing to stop. It can also cause the pages to flash some. So heads up if you're sensitive to that type of thing. 
+
+With those things in mind, you can check it out here: [html-animation.alanwsmith.com](https://html-animation.alanwsmith.com/)
+
+## Display Board
+
+That animation idea stuck in my head a bit too. I was wondering if there was a way to do something like that without jumping between pages with the redirect. That naturally led me to the `<marquee>` tag, but with the idea of pixels from the ASCII art thrown in. Those things combined to see if I could setup a table where every cell had its own marquee tag in it. 
+
+A quick test confirmed that at least on my version of chrome the individual cells would stay in sync if the deprecated `face` tag was applied to make the font monospace. 
+
+You generally need seven pixels of height to create a bitmap font (which is effectively what I needed to do). So, I hand coded an list of lists (aka an array of arrays) in a [python script](https://github.com/alanwsmith/html-display-board.alanwsmith.com/blob/main/scripts/maker/make_it.py) and output them with spacers to generate a "Hello World" display. The width of each cell was set with one of those deprecated attributes to provide the consistency. 
+
+This one feels more like a prototype. I'm thinking of other stuff you could do with it if you narrowed with width and used &block; characters. 
+
+In the mean time, here's what it looks like: [html-display-board.alanwsmith.com](https://html-display-board.alanwsmith.com/)
+
+
+## Fin
+
+This was a really fun set of exercises. 
+
+A natural first reaction to being given a wild constraint like this is that it's ridiculous and to dismiss it. I try to practice letting that feeling hit and then letting it pass. Once it does, I move into a place of playing with the idea. I don't take it seriously, I don't worry about failing. As far as I'm concerned, you can't fail at playing. That concept just doesn't make sense. So, I get to mess around and see what happens. 
+
+Sometimes cool things show up, but mostly (and most importantly) it's just fun. 
+
+

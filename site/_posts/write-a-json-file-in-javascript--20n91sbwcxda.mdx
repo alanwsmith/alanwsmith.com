@@ -1,0 +1,32 @@
+---
+blurb: ""
+categories:
+  - JavaScript
+date: 2021-11-11T17:21:12
+id: 20n91sBWCxDA
+status: draft
+title: Write A JSON File In JavaScript
+type: post
+slug: write-a-json-file-in-javascript--20n91sbwcxda
+---
+
+The basic way to write a JSON file in JavaScript. 
+
+TODO: Run this to verify
+
+TODO: Add `import fs from 'fs'` and `const fs....` stuff for examples
+
+
+```javascript
+
+const theData = { 
+    widget1: "some value"
+    widget2: "another value"
+}
+
+fs.writeFileSync('some-path.json', JSON.stringify(theData, null, 2))
+```
+
+
+
+

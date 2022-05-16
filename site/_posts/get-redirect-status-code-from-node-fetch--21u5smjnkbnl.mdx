@@ -1,0 +1,34 @@
+---
+blurb: ""
+categories:
+  - JavaScript
+date: 2021-11-26T22:17:14
+id: 21U5smjNKBnL
+status: scratch
+title: Get Redirect Status Code From node-fetch
+type: post
+slug: get-redirect-status-code-from-node-fetch--21u5smjnkbnl
+---
+
+By default, node-fetch follows redirects and will return a 200 if the target page exists. 
+
+To get the status of the original page, set the `redirect` option to `manual`. For example:
+
+```javascript
+const fetch = require('node-fetch')
+
+fetch('https://www.alanwsmith.com/first-post-yeah-yeah', {
+  redirect: 'manual',
+}).then((res) => {
+  console.log(res.status)
+})
+```
+
+Returns `301`
+
+---
+
+If you want to see the status code of the final page after processing redirects, remove the option 
+
+
+

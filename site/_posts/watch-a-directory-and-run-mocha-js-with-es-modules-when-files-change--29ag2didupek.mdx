@@ -1,0 +1,33 @@
+---
+blurb: Watch for changes and run Mochajs when they happen
+categories:
+  - JavaScript
+  - Test Driven Development
+  - Mocha
+date: 2022-05-14T13:11:10
+id: 29ag2didupek
+status: published
+type: post
+title: Watch A Directory And Run Mocha JS With ES Modules When Files Change
+slug: watch-a-directory-and-run-mocha-js-with-es-modules-when-files-change--29ag2didupek
+---
+
+This is how I'm running Mochajs in watch mode with ES Modules:
+
+```bash
+mocha --watch --parallel
+```
+
+Adding `--parallel` is based off [this comment](https://github.com/mochajs/mocha/issues/4374#issuecomment-666620281) to a GitHub issue about `--watch` not working by itself with ES Modules. 
+
+If you try to run `mocha --watch` without `--parallel` it produces errors like:
+
+```bash
+Error [ERR_REQUIRE_ESM]: require() of ES Module 
+/file/path/file.mjs not supported.
+Instead change the require of /file/path/file.mjs 
+to a dynamic import() which is available in all 
+CommonJS modules.
+```
+
+(I think I've done the dynamic import stuff before in other projects, but haven't tried it with Mocha yet)

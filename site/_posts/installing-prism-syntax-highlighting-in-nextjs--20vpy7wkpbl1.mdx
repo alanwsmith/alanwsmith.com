@@ -1,0 +1,96 @@
+---
+blurb: ""
+categories:
+  - JavaScript
+date: 2021-11-14T15:35:32
+id: 20vPY7WKPbl1
+status: draft
+title: Installing Prism Syntax Highlighting In NextJS
+type: post
+slug: installing-prism-syntax-highlighting-in-nextjs--20vpy7wkpbl1
+---
+
+
+### NOTE - This may not be the best way to do this
+
+I'm having problems with line highlighting with errors like:
+
+```
+Warning: Prop `className` did not match. Server: "line-numbers language-jsx" Client: "line-numbers"
+```
+
+I'm now looking at this:
+
+https://github.com/FormidableLabs/prism-react-renderer
+
+
+
+---
+
+
+Install with NPM
+
+```
+npm install prismjs
+```
+
+In your pages, do:
+
+(NOTE: I haven't fully tested this code yet so there may be a compile bug in it)
+
+
+```
+import { useEffect } from 'react'
+
+import Prism from 'prismjs'
+import 'prismjs/themes/prism-tomorrow.css'
+
+
+export default function Page() {
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+        Prism.hithlightAll()
+        }
+    }, [])
+}
+
+
+
+return <pre><code class="language-css">YOUR CSS GOES HERE</code></pre>
+```
+
+You can see the themes in your projects `node_modules/prismjs/themes` directory. 
+
+When I installed it, the were:
+
+```
+prism-coy.css                prism-okaidia.css            prism-twilight.css
+prism-coy.min.css            prism-okaidia.min.css        prism-twilight.min.css
+prism-dark.css               prism-solarizedlight.css     prism.css
+prism-dark.min.css           prism-solarizedlight.min.css prism.min.css
+prism-funky.css              prism-tomorrow.css
+prism-funky.min.css          prism-tomorrow.min.css
+```
+
+
+
+There are other themes here, but I haven't looked at how to install them yet. 
+
+https://github.com/PrismJS/prism-themes
+
+
+
+
+
+--- 
+
+Original notes to review: 
+
+This is the basics of what got me going. 
+
+TODO: Make my own version of the example.
+
+TODO: See if pygments can be setup for different styles
+
+https://mxd.codes/articles/syntax-highlighting-with-prism-and-next-js
+

@@ -1,0 +1,39 @@
+---
+blurb: ""
+categories:
+  - Miscellaneous
+date: 2005-09-26T00:00:00
+id: 20t6zOzXuAdw
+status: archived
+title: Locking Your Computer
+type: post
+slug: locking-your-computer--20t6zozxuadw
+---
+
+(originally posted on: http://alancode.blogspot.com/)
+
+
+I'm more paranoid than most. I don't like to leave my computer without 'locking' it. I can confirm that the following works on at least my computer running Windows XP Pro. Other Windows versions should work, but I make no promises. YMMV
+
+To get your lock setup:
+
+- Right click on your desktop and select New -> Shortcut
+- A dialog box will open that asks you to type the location of the item to make the shortcut for. Copy and past the following into that dialog box:
+`%windir%\System32\rundll32.exe user32.dll, LockWorkStation`
+- Click next and you will be asked for a name for the new shortcut. Something like "Lock Desktop" will do.
+- Click finish and your newly created desktop locker will be sitting on your desktop for you. Just double click it whenever you want to lock your desktop.
+
+This next part is optional. It let's you set a "Hot Key" so you don't have find and double click on the Lock Desktop icon each time you want to close it.
+
+- Right click on the Lock Desktop shortcut that you just created and choose "Properties".
+- Click inside the "Shortcut key:" text box and hold down the "Ctrl" and "Alt" keys then hit "L". The text in the box should change to "Ctrl + Alt + L".
+- Hit "OK" and you are done.
+
+Now, you can just hit the "Ctrl + Alt + L" key combination to lock your desktop at any time.
+
+To unlock your desktop just hit "Ctrl + Alt + Delete" and enter your password.
+
+Update: adding tags
+(tagWindows tagComputer tagHacks)
+
+

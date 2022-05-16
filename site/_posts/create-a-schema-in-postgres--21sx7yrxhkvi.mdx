@@ -1,0 +1,31 @@
+---
+blurb: ""
+categories:
+  - Postgres
+date: 2021-11-26T12:35:25
+id: 21Sx7yRxhkvI
+status: published
+title: Create A Schema In Postgres
+type: post
+slug: create-a-schema-in-postgres--21sx7yrxhkvi
+---
+
+Basic schema creation for a role that has the permissions. 
+
+```sql
+CREATE SCHEMA IF NOT EXISTS new_schema_name;
+```
+
+To set the owner of a new schema to another role, use:
+
+```sql
+CREATE SCHEMA IF NOT EXISTS new_schema_name AUTHORIZATION role_name;
+```
+
+---
+
+
+Full details are in [the docs](https://www.postgresql.org/docs/current/sql-createschema.html) if you need them.
+
+
+

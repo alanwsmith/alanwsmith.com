@@ -1,0 +1,318 @@
+---
+blurb: May I never have to look up how to read a directory ever again
+categories:
+  - JavaScript
+date: 2022-03-21T19:02:28
+id: 26iq6c7ybn3r
+status: scratch
+type: post
+title: A New Way To Think About Getting A List Of Files In A Directory
+slug: a-new-way-to-think-about-getting-a-list-of-files-in-a-directory--26iq6c7ybn3r
+---
+
+_TL;DR: The full code sample is at the bottom. It returns an array of arrays with file path segments that make it easy to assemble whatever you need out of it._
+
+<hr />
+
+## The Problem
+
+Maybe it's just me, but getting a list of files in a directory always feels like it's more of a pain than it should be. Especially when recursion is involved.
+
+## The Hypothesis
+
+I've come to realize that the problem isn't as much how I'm getting the list of files as what I'm returning. Namely, an array of files listed as strings. 
+
+The problem isn't the array, it's the strings. 
+
+Instead of a single text field, I've started returning an array of objects. Each file gets it's own with five value in it:
+
+- initial_root - the bsolute path to the root directory queried
+- sub_dir - the relative path for any sub-directories
+- name - The file name itself (including the extension)
+- name_only - the name of the file without the extension 
+- extension - the extension by itself
+
+
+## Example Output
+
+Given a tree like this on my desktop:
+
+```txt
+.
+├── start_here
+│   ├── 1.png
+│   ├── 2.png
+│   └── sub1
+│       ├── 3.png
+│       └── sub2
+│           └── 4.png
+```
+
+The code produces 
+
+TODO: Add `full_path` to output example which is already in the code
+
+
+```txt
+[
+    {
+      initial_root: '/Users/alan/Desktop/start_here',
+      sub_dir: '',
+      name: '1.png',
+      name_only: '1',
+      extension: '.png'
+    },
+    {
+      initial_root: '/Users/alan/Desktop/start_here',
+      sub_dir: '',
+      name: '2.png',
+      name_only: '2',
+      extension: '.png'
+    },
+    {
+      initial_root: '/Users/alan/Desktop/start_here',
+      sub_dir: 'sub1',
+      name: '3.png',
+      name_only: '3',
+      extension: '.png'
+    },
+    {
+      initial_root: '/Users/alan/Desktop/start_here',
+      sub_dir: 'sub1/sub2',
+      name: '4.png',
+      name_only: '4',
+      extension: '.png'
+    }
+]
+```
+
+
+That setup lets me operate on the files in whatever way I need by assembling the paths. 
+
+A big example for me is making a new directory in another location with the same structure. Applying the new root to the sub directories lets me make the new structure and then update files as necessary by adding the names on as well. 
+
+Using the filename without the extension lets me convert image files to another format without having to further parse the names. 
+
+Two optional parameters determine if the listing is recursive and if it should return hidden files. These values default to true and false, respectively.
+
+
+## The Code
+
+The JavaScript version of the code looks like this. (it should go in it's own file called `listDir.js`)
+
+
+_Note: this is for common js, there's a es modules version further below_
+
+_Note: this has been working for me, but there is a possible collision with "fileList" that could be done better_
+
+
+```javascript
+const fs = require('fs')
+const path = require('path')
+
+function listDir(
+  rootDir,
+  isRecursive = true,
+  hiddenFiles = false,
+  subDir = '',
+  fileList = []
+) {
+  if (rootDir.charAt(0) !== '/') {
+    rootDir = path.resolve(rootDir)
+  }
+
+  const subDirExpanded = path.join(rootDir, subDir)
+
+  fileNames = fs.readdirSync(subDirExpanded)
+  fileNames.forEach((fileName) => {
+    filePath = path.join(subDirExpanded, fileName)
+    subDirPath = path.join(subDir, fileName)
+    if (fs.statSync(filePath).isDirectory()) {
+      if (isRecursive) {
+        fileList = listDir(
+          rootDir,
+          isRecursive,
+          hiddenFiles,
+          subDirPath,
+          fileList
+        )
+      }
+    } else {
+      let sub_dirs = subDir.split('/')
+      if (sub_dirs[0] === '') {
+        sub_dirs = []
+      }
+
+      let extension = path.parse(fileName).ext
+      if (extension !== '') {
+        extension = extension.split('.')[1]
+      }
+
+      const fileDetails = {
+        full_path: path.join(
+          rootDir,
+          path.join(...sub_dirs),
+          fileName
+        ),
+        initial_root: rootDir,
+        sub_dirs: sub_dirs,
+        name: fileName,
+        name_lower_case: fileName.toLowerCase(),
+        name_only: path.parse(fileName).name,
+        name_only_lower_case: path.parse(fileName).name.toLowerCase(),
+        extension: extension,
+        extension_lower_case: extension.toLowerCase(),
+      }
+
+      if (hiddenFiles === true) {
+        fileList.push(fileDetails)
+      } else if (fileName.charAt(0) !== '.') {
+        fileList.push(fileDetails)
+      }
+    }
+  })
+
+  return fileList
+}
+
+module.exports = { listDir: listDir }
+```
+
+Require the file and use it like
+
+```javascript
+const { listDir } = ('./listDir')
+
+const files = listDir(
+    '/Users/alan/Desktop/start_here'
+)
+
+```
+
+And with the optional parameters:
+
+```javascript
+const { listDir } = ('./listDir')
+
+const files = listDir(
+    '/Users/alan/Desktop/start_here', 
+    false, 
+    true
+)
+```
+
+Each result looks like:
+
+```json
+  {
+    full_path: '/full/path/to/a/FileName.TXT',
+    initial_root: '/full/path',
+    sub_dirs: [ 'to', 'a' ],
+    name: 'FileName.TXT',
+    name_lower_case: 'filename.txt',
+    name_only: 'FileName',
+    name_only_lower_case: 'filename',
+    extension: 'TXT',
+    extension_lower_case: 'txt'
+  }
+```
+
+
+
+
+
+Then you can loop through the results doing whatever you need
+
+```javascript
+files.forEach((file) => {
+  console.log(file)
+})
+```
+
+
+## And, Done
+
+I don't know how many times I've looked up how to get a directory listing based on what I was trying to do. Feels like I can just reach for this and get at least an 80/20 out of it.
+
+## Note you can use sub_dirs in a path.join by expanding the data like this:
+
+```javascript
+const output_dir = path.join(dest_dir, ...file.sub_dirs,  file.name_only)
+```
+
+Note: this isn't actually a new concept, I just haven't seen it that much. There's some walk directory function in other languages that do effectively the same thing. 
+
+
+
+
+Module version (Note: this was modified and has been working, but could use more through testing)
+
+```javascript
+import fs from 'fs'
+import path from 'path'
+
+function list_dir(
+  rootDir,
+  isRecursive = true,
+  hiddenFiles = false,
+  subDir = '',
+  fileListInitial = []
+) {
+  let localFileList = fileListInitial
+
+  if (rootDir.charAt(0) !== '/') {
+    rootDir = path.resolve(rootDir)
+  }
+
+  const subDirExpanded = path.join(rootDir, subDir)
+
+  let fileNames = fs.readdirSync(subDirExpanded)
+  fileNames.forEach((fileName) => {
+    let filePath = path.join(subDirExpanded, fileName)
+    let subDirPath = path.join(subDir, fileName)
+    if (fs.statSync(filePath).isDirectory()) {
+      if (isRecursive) {
+        localFileList = list_dir(
+          rootDir,
+          isRecursive,
+          hiddenFiles,
+          subDirPath,
+          localFileList
+        )
+      }
+    } else {
+      let sub_dirs = subDir.split('/')
+      if (sub_dirs[0] === '') {
+        sub_dirs = []
+      }
+
+      let extension = path.parse(fileName).ext
+      if (extension !== '') {
+        extension = extension.split('.')[1]
+      }
+
+      const fileDetails = {
+        full_path: path.join(rootDir, path.join(...sub_dirs), fileName),
+        initial_root: rootDir,
+        sub_dirs: sub_dirs,
+        name: fileName,
+        name_lower_case: fileName.toLowerCase(),
+        name_only: path.parse(fileName).name,
+        name_only_lower_case: path.parse(fileName).name.toLowerCase(),
+        extension: extension,
+        extension_lower_case: extension.toLowerCase(),
+      }
+
+      if (hiddenFiles === true) {
+        localFileList.push(fileDetails)
+      } else if (fileName.charAt(0) !== '.') {
+        localFileList.push(fileDetails)
+      }
+    }
+  })
+
+  return localFileList
+}
+
+export default list_dir
+```

@@ -1,0 +1,30 @@
+---
+blurb: ""
+categories:
+  - Command Line
+date: 2021-06-21T14:30:13
+id: 20eODSdxx05F
+scrubbed_2021: false
+status: published
+title: Killing tmux Sessions
+type: post
+slug: killing-tmux-sessions--20eodsdxx05f
+---
+
+This is from an old set of notes I found. Need to check out the kill all command to verify it's still accurate. 
+
+
+### Kill A Named Session
+
+```command
+tmux kill-session -t $NAME_OF_SESSION
+```
+
+    
+
+
+### Kill All Sessions from Command Line
+
+```command
+tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill
+```

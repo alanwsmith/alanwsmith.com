@@ -1,0 +1,62 @@
+---
+blurb: ""
+categories:
+  - Python
+date: 2022-01-02T12:53:25
+id: 239ustxm6t2s
+status: published
+title: Find The Longest And Shortest Strings And Lengths In A Python List
+type: post
+slug: find-the-longest-and-shortest-strings-and-lengths-in-a-python-list--239ustxm6t2s
+---
+
+You can the shortest and longest items in a Python list of strings by using `key=len` with the built-in `min()` and `max()` functions. 
+
+For example:
+
+```python
+state_names = ['Alabama', 'California', 'Iowa', 'Pennsylvania' ]
+
+shortest_name = min(state_names, key=len)
+longest_name = max(state_names, key=len)
+
+print(shortest_name)
+print(longest_name)
+```
+
+Outputs:
+
+```
+Iowa
+Pennsylvania
+```
+
+---
+
+A useful addition is to call `len()` on the results to find the lengths. 
+
+For example:
+
+```python
+state_names = ['Alabama', 'California', 'Iowa', 'Pennsylvania' ]
+
+shortest_string = len(min(state_names, key=len))
+longest_string = len(max(state_names, key=len))
+
+print(shortest_string)
+print(longest_string)
+```
+
+Outputs:
+
+```
+4
+12
+```
+
+Short and sweet. 
+
+Happy coding.
+
+
+

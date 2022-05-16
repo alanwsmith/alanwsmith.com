@@ -1,0 +1,36 @@
+---
+blurb: ""
+categories:
+  - Python
+date: 2021-08-31T20:31:06
+id: 20eOP7kx5wTq
+scrubbed_2021: false
+status: published
+title: Kabob-Case A String In Python
+type: post
+slug: kabob-case-a-string-in-python--20eop7kx5wtq
+---
+
+This is an adaptation of my snake_case function (TKTKTK: link to snake_case function when the site is moved). Haven't put a full test suite on it yet, but spot checking it seems to be fine.
+
+```python3
+#!/usr/bin/env python3
+
+import re 
+
+def kabob(initial_string):
+    
+    return_string = initial_string.lower().replace(' ', '-')
+    return_string = re.sub("'", '', return_string)
+    return_string = re.sub('[^\w\.]', '-', return_string)
+    return_string = re.sub('-+', '-', return_string)
+    return_string = re.sub('-\.', '.', return_string)
+    return_string = re.sub('\.-', '.', return_string)
+    return_string = re.sub('^-+', '', return_string)
+    
+    return return_string
+
+kabob_string = kabob('Kabob Case A String In Python')
+
+print(kabob_string)
+```

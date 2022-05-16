@@ -1,0 +1,24 @@
+---
+blurb: ""
+categories:
+  - Redshift
+date: 2022-01-24T16:54:37
+id: 24a6w40orwim
+status: published
+title: redshift- STL Errors
+type: post
+slug: redshift-stl-errors--24a6w40orwim
+---
+
+
+If something borks when trying to insert data into redshift it throws errors to an `stl_load_errors` table. You can see them with:
+
+```sql
+select *
+from stl_load_errors
+order by starttime desc;
+```    
+
+I'm putting the word `stl_errors` here too because sometimes that's what I search for when I don't remember it properly.   
+
+

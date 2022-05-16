@@ -1,0 +1,69 @@
+---
+blurb: ""
+categories:
+  - Miscellaneous
+date: 2022-01-05T23:43:05
+id: 23jfgm9ztke3
+status: draft
+title: Use Tailwind From A CDN
+type: post
+slug: use-tailwind-from-a-cdn--23jfgm9ztke3
+---
+
+You can use Tailwind from a CDN in a single HTML file like this:
+
+```html
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <h1 class="text-3xl font-bold underline">
+    Hello world!
+  </h1>
+</body>
+</html>
+```
+
+Don't do that for production, but it's great for quick dev work.
+
+You can update the config by adding this to the head:
+
+```html
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          }
+        }
+      }
+    }
+  </script>
+```
+
+
+You can add custom styles like this:
+
+
+```
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+    }
+  </style>
+```
+
+
+Source: https://tailwindcss.com/docs/installation/play-cdn
+
+
+
+
+

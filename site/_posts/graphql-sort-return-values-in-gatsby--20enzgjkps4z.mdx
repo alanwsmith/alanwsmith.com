@@ -1,0 +1,32 @@
+---
+blurb: ""
+categories:
+  - Gatsby-
+  - null
+date: 2021-02-20T18:18:38
+id: 20eNzgJKpS4z
+scrubbed_2021: false
+status: published
+title: GraphQL Sort Return Values In Gatsby
+type: post
+slug: graphql-sort-return-values-in-gatsby--20enzgjkps4z
+---
+
+To sort the return value of a query use: 
+
+
+```graphql
+query MyQuery {
+  allMdx(sort: {fields: frontmatter___date, order: DESC}) {
+    edges {
+      node {
+        id
+        frontmatter {
+          title
+          type
+        }
+      }
+    }
+  }
+}
+```

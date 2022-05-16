@@ -1,0 +1,8 @@
+{
+  "ksuid_redirects": {
+    "29ajjouaaaaa": {
+      "redirect_from": ["/posts/29ajjouaaaaa"],
+      "redirect_to": "/posts/this-is-new--29ajjouaaaaa"
+    }
+  }
+}

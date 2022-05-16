@@ -1,0 +1,69 @@
+---
+blurb: For those times when you need to go from A to Z but don't want to have to
+  do it yourself
+categories:
+  - Python
+date: 2022-03-07T11:48:36
+id: 2648u0uramjp
+status: published
+type: post
+title: Automatically Generate A List With The English Alphabet In Python
+slug: automatically-generate-a-list-with-the-english-alphabet-in-python--2648u0uramjp
+---
+
+Sometimes you want to get your hands on all the letters in the english alphabet. Here's how:
+
+## Lowercase
+
+You can generate a list of with the full alphabet of lowercase english letters using:
+
+```python
+import string
+
+alphabet_lowercase = list(string.ascii_lowercase)
+
+print(alphabet_lowercase)
+```
+
+That Outputs:
+
+```
+['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 
+ 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 
+ 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 
+ 'y', 'z']
+```
+
+## Uppercase 
+
+Uppercase letters can be had with:
+
+```python
+import string
+
+alphabet_uppercase = list(string.ascii_uppercase)
+
+print(alphabet_uppercase)
+```
+
+Which outputs:
+
+```
+['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
+ 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
+ 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 
+ 'Y', 'Z']
+```
+
+## How It Works
+
+The `string.ascii_lowercase` and `string.ascii_uppercase` calls each return single strings with their correspondingly cased alphabets. `abcdefghijklmnopqrstuvwxyz` and `ABCDEFGHIJKLMNOPQRSTUVWXYZ`, respectively. 
+
+Wrapping a string in `list()` splits each character out individually and returns it as a separate item in a list. So, calling `list(string.ascii_lowercase)` is equivalent to calling `list('abcdefghijklmnopqrstuvwxyz')` which does the split and generates our list `['a', 'b', 'c', ...etc ]` 
+
+`string.ascii_lowercase` and `string.ascii_uppercase` are "String Constants". Basically, built-in stuff that does't change (even it the locale does). 
+
+There are a few other String Constants for digits and punctuation that you can <a href="https://docs.python.org/3/library/string.html">check out in the docs</a>.
+
+
+

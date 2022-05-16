@@ -1,0 +1,22 @@
+---
+blurb: ""
+categories:
+  - Miscellaneous
+date: 2022-03-19T19:45:09
+id: 26cr2esjxqeq
+status: draft
+title: Lazy initializer for useState
+type: post
+slug: lazy-initializer-for-usestate--26cr2esjxqeq
+---
+
+
+```jsx
+const [thing, setThing] = useState(() => { some_expensive_operation ? 'yes' : 'no' })
+```
+
+If you pass a function as the argument to useState() it'll use that for the initial load and only call that when necessary instead of on each render
+
+TODO: Confirm that code snippet
+
+

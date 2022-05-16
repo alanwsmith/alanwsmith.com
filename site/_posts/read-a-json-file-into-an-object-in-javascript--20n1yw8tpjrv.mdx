@@ -1,0 +1,23 @@
+---
+blurb: ""
+categories:
+  - JavaScript
+date: 2021-11-11T16:23:11
+id: 20n1yW8TPJrv
+status: draft
+title: Read A JSON File Into An Object In JavaScript
+type: post
+slug: read-a-json-file-into-an-object-in-javascript--20n1yw8tpjrv
+---
+
+This is a quick and dirty one with no error handling:
+
+```javascript
+const fs = require('fs')
+
+const jsonData = JSON.parse(fs.readFileSync('source.json'))
+```
+
+
+
+

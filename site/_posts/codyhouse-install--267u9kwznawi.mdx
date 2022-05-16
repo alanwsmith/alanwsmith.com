@@ -1,0 +1,25 @@
+---
+blurb: ""
+categories:
+  - Miscellaneous
+date: 2022-03-08T19:46:36
+id: 267u9kwznawi
+status: scratch
+title: codyhouse install
+type: post
+slug: codyhouse-install--267u9kwznawi
+---
+
+The directions for installing CodyHouse don't include explicit instructions for next.js
+
+This is what I did:
+
+- create an empty repo on GH and clone it down
+- make a site directory and switch into it `mkdir site`, `cd site`
+- Create a base next app with: `npx create-next-app .`
+- Install CodyHouse Framework: `npm i codyhouse-framework`
+- Install scss support via the `sass` module: `npm install sass`
+- Renamed `styles/global.css` to `styles/global.scss`
+- Updated `pages/_app.js` from `import '../styles/globals.css'` to `import '../styles/globals.scss'`
+- Tried copying Copied the node_modules....custom-style folder and _custom-style.scss to `styles` directory 
+- 

@@ -1,0 +1,34 @@
+---
+blurb: I'm still figuring out how the various flavors of JavaScript work. This
+  is how to deal with `import` in Node
+categories:
+  - JavaScript
+date: 2021-11-04T12:54:03
+id: 20eOfT5QC3jr
+scrubbed_2021: false
+status: published
+title: Fixing A JavaScript SyntaxError - Cannot use import statement outside a
+  module Error
+type: post
+slug: fixing-a-javascript-syntaxerror-cannot-use-import-statement-outside-a-module-error--20eoft5qc3jr
+---
+
+Credit where it's due, these are the notes I took straight from [this page by Kevin Leary](https://www.kevinleary.net/js-fix-for-syntaxerror-cannot-use-import-statement-outside-a-module/)
+
+Node defaults CommonJS. 
+
+That means it uses `require` instead of `import`.
+
+You'll need to switch to treating code as `ECMAScript modules` if you want to use `import`.
+
+You can do that by:
+
+1. Switching your file extension from `.js` to `.mjs`
+2. Add `"type": "module"` to `package.json`, or
+3. Run your script with `node --input-type module`
+
+You can't use both `import` and `require`. You'll have to choose one or the other. (NOTE: I'm pretty sure there is a way to use both with a loader in at least React/Next if not vanialla)
+
+---
+
+[More details on modules in node](https://nodejs.org/api/esm.html#/esm_enabling)

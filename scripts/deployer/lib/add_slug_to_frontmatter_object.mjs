@@ -1,12 +1,15 @@
 function add_slug_to_frontmatter_object(frontmatter) {
-  const dash_replace = /-+/g
   let slug_title = frontmatter['title']
+    .replaceAll(/\W/g, '-')
     .replaceAll(' ', '-')
-    .replace(dash_replace, '-')
+    .replaceAll(/-+/g, '-')
+    .replace(/^-+/, '')
+    .replace(/-+$/, '')
     .toLowerCase()
 
-  let slug = `${slug_title}--${frontmatter.id}`
-  return { slug: slug }
+  let slug = `${slug_title}--${frontmatter.id.toLowerCase()}`
+
+  return { ...frontmatter, slug }
 }
 
-export default add_slug_to_frontmatter_object
+export { add_slug_to_frontmatter_object }

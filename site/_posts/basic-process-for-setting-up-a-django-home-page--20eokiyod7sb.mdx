@@ -1,0 +1,133 @@
+---
+blurb: ""
+categories:
+  - Miscellaneous
+date: 2021-08-12T22:51:21
+id: 20eOKiyod7sB
+scrubbed_2021: false
+status: scratch
+title: Basic Process For Setting Up A Django Home Page
+type: post
+slug: basic-process-for-setting-up-a-django-home-page--20eokiyod7sb
+---
+
+TODO: Fix the formatting of this post that got busted during the move to nextjs
+
+---
+
+
+
+```
+Basic Setup for Foreign Key stuff
+
+
+- Make the name of the project `config` in the same directory as the pyvenv. 
+        
+        
+        django-admin startproject config .
+        python manage.py startapp pages
+        python manage.py migrate
+        
+
+- In `config/settings.py`, Add;
+    
+        'pages'
+        
+    To:
+        
+        INSTALLED_APPS
+                
+    
+- In `config/settings.py, under:
+
+        TEMPLATES
+    
+    Change:
+    
+        'DIRS': [],
+        
+    To:
+    
+        TODO: think about moving this down.
+    
+        'DIRS': [str(BASE_DIR.joinpath('templates'))],
+        
+
+- In `config/urls.py` change:
+
+        from django.urls import path
+        
+    To:
+    
+        from django.urls import includes, path
+        
+
+- In `config/urls.py` add this:
+        
+        path('', include('pages.urls')),
+        
+    To:
+    
+        urlpatterns
+        
+- Create file:
+
+        pages/urls.py
+        
+    With:
+    
+        from django.urls import path
+        
+        from . import views
+        
+        app_name = 'pages'
+        
+        urlpatterns = [
+            path('', views.homepage),
+        ]
+
+- Change `pages/views.py` to:
+
+
+        from django.shortcuts import render
+        
+        def homepage(request):
+            return render(
+                request,
+                'pages/homepage.html'
+            )
+
+
+- Make `pages/templates/pages/homepage.html`
+
+
+      {% extends 'base.html' %}
+      
+      {% block content %}
+      <h3>Welcome to the Music Site</h3>
+      {% endblock content %}
+
+
+    
+- Make `templates/base.html` at the root of the project. With something like:
+    
+        <!DOCTYPE html>
+        <html>
+        <head>
+        <title>Music site</title>
+        </head>
+        <body>
+        <h1>Music Site</h1>
+        {% block content %}{% endblock content %}
+        </body>
+        </html>
+    
+
+---
+
+TODO: Add:
+
+    STATICFILES_DIRS = [
+        BASE_DIR / "static",
+    ]
+```

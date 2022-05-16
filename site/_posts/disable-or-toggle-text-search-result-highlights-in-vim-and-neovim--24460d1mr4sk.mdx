@@ -1,0 +1,47 @@
+---
+blurb: I don't want every text search result highlighted most of the time.
+  Here's how to turn them off or at least toggle them
+categories:
+  - Neovim
+date: 2022-01-22T13:48:09
+id: 24460d1mr4sk
+status: published
+type: post
+title: Disable (Or Toggle) Text Search Result Highlights In Vim and Neovim
+slug: disable-or-toggle-text-search-result-highlights-in-vim-and-neovim--24460d1mr4sk
+---
+
+## Turning Highlights Off
+
+Neovim/Vim highlights all the matching results when you do a text search in a file buffer. You can hide the highlights after the search with `:noh` but that's a pain to do every time. To disable them full time, add this to your `~/.config/nvim/init.vim` or `~/.vimrc` config file:
+
+```
+set nohlsearch
+```
+
+## Toggling Highlights
+
+Another option is to toggle the highlights on and off. Instead of using `set nohlsearch`, this can be done by adding the following to your config file:
+
+```
+set hlsearch!
+nnoremap <F5> :set hlsearch!<CR>
+```
+
+With that in place, hitting `F5` will switch showing highlights on and off. 
+
+## One File Only
+
+You can also run those commands directly in a single file buffer (prepended by a `:`) to apply to just that buffer. That is:
+
+```
+:set nohlsearch
+```
+and 
+
+```
+set hlsearch!
+nnoremap <F5> :set hlsearch!<CR>
+```
+
+

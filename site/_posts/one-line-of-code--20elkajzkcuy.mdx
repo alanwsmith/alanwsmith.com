@@ -1,0 +1,32 @@
+---
+blurb: ""
+categories:
+  - Photography
+  - Programming
+date: 2006-05-15T00:00:00
+id: 20eLkajzKcuY
+status: published
+title: One line of code
+type: post
+slug: one-line-of-code--20elkajzkcuy
+---
+
+For an example of when programming can be a pain in the ass. I spent about three hours today coming up with this one line of code:
+
+```
+convert -resize 310x155 -size 310x155 +swap -gravity center -composite start.jpg background.gif finish.jpg
+```
+
+That line will automatically resize an image to fit inside a 310 pixel wide by 155 pixel high image area with a background image as padding. 
+
+It's simple now that I have it, but it was hard to find documentation and examples to get to the end result. 
+
+As an example, here's a starting image:
+
+<Img src="plr_sample_start.jpg" alt="Initial photo of two golfers shaking hands" />
+
+And after the conversion with a simple black background:
+
+<Img src="plr_sample_finish.jpg" alt="Two golfers shaking hands after a round" />
+
+

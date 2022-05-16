@@ -1,0 +1,65 @@
+---
+blurb: ""
+categories:
+  - Python
+date: 2021-07-13T15:52:05
+id: 20eOHERfZJIt
+scrubbed_2021: false
+status: scratch
+title: A Light Python unittest Setup
+type: post
+slug: a-light-python-unittest-setup--20eoherfzjit
+---
+
+TODO: Run these samples to verify they work as expected
+
+
+This is what I'm using when I don't want to make a full module for python. It keeps all the files in the same directory which isn't wonderful from a tidyness perspective, but it's fine. The other option is to setup a `tests` directory, but that requires jumping through some more hoops. 
+
+NOTE: Another way I'm doing this is to name the test files `x01_whatever.py` then switching the run call to `x*.py`. This makes tab completition a little easier.
+
+
+### ./run_tests.bash
+
+```command
+#!/bin/bash
+
+python -m unittest discover -s . -p '*_test.py'
+```
+
+### ./test_01_basic_example.py
+
+NOTE: This file cannot start with a number
+
+```python
+#!/usr/bin/env python 
+
+import unittest
+# ^ this wasn't in the orignal sample, but I think it needs to be here
+
+from charlie_snake import SnakeControl
+
+class SnakeControlTest(unittest.TestCase):
+
+    def setUp(self):
+        global sc 
+        sc = SnakeControl()
+
+    def test_equality(self):
+        expected = True
+        result = sc.example_method()
+        self.assertEqual(expected, result)
+        
+if __name__ == '__main__':
+    unittest.main()
+```
+
+### ./charlie_snake.py
+
+```python
+#!/usr/bin/env python
+
+class SnakeControl():
+    def example_method(self):
+        return True
+```

@@ -1,0 +1,67 @@
+---
+blurb: ""
+categories:
+  - CSS
+  - Tailwind
+date: 2021-12-30T13:53:27
+id: 2318oceuqjmx
+status: draft
+title: Install Tailwind CSS In NextJS
+type: post
+slug: install-tailwind-css-in-nextjs--2318oceuqjmx
+---
+
+Go through this:
+
+```
+npm install -D tailwindcss postcss autoprefixer && npx tailwindcss init -p
+```
+
+Update `tailwind.config.js` with:
+
+```
+  content: [
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+  ],
+```
+
+Setup `styles/global.css` with just this:
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-900;
+    @apply text-gray-300;
+    @apply pt-6;
+    @apply max-w-prose;
+    @apply mx-auto;
+  }
+  a {
+    @apply text-blue-400;
+  }
+  h1 {
+    @apply text-3xl;
+    @apply font-bold;
+  }
+  h2 {
+    @apply text-2xl;
+    @apply font-bold;
+  }
+  h3 {
+    @apply text-xl;
+    @apply font-bold;
+  }
+}
+```
+
+restart: 
+
+```
+netlify dev
+```
+

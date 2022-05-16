@@ -1,0 +1,37 @@
+---
+blurb: ""
+categories:
+  - Miscellaneous
+date: 2021-11-25T21:55:01
+id: 21RE3er23t2Y
+status: scratch
+title: Create A Postgres Database
+type: post
+slug: create-a-postgres-database--21re3er23t2y
+---
+
+Connect to the main `postgres` database with a user that has create database privileges via:
+
+```
+psql -U user_name -d postgres
+```
+
+(Or, `psql postgres` if your setup for that)
+
+
+Run:
+
+```
+CREATE DATABASE your_database_name;
+```
+
+The database is made from a clone of the `template1` database. So, any changes made there will show up in your new database. 
+
+
+
+---
+
+NOTES:
+
+You can check what permissions users have with `\du` when logged into the database
+
