@@ -1,6 +1,9 @@
 import Image from 'next/image'
 
-
+import crayons_by_diem_chau from '../_images/crayons_by_diem_chau.jpg'
+import clonds_from_a_plane_20070703_0008 from '../_images/clonds_from_a_plane_20070703_0008.jpg'
+import apollo_11_on_the_moon from '../_images/apollo_11_on_the_moon.jpg'
+import scarlett_2008_05 from '../_images/scarlett_2008_05.jpg'
 import screen_grab_test_2008_03 from '../_images/screen_grab_test_2008_03.png'
 import another_spider_aws_20120816_0950 from '../_images/another_spider_aws_20120816_0950.jpg'
 import freenas_harddrive_space_20140927_1720 from '../_images/freenas_harddrive_space_20140927_1720.png'
@@ -167,6 +170,10 @@ const imgMap = {
   youtube_logo_2009_01: youtube_logo_2009_01,
   another_spider_aws_20120816_0950: another_spider_aws_20120816_0950,
   screen_grab_test_2008_03: screen_grab_test_2008_03,
+  scarlett_2008_05: scarlett_2008_05,
+  apollo_11_on_the_moon: apollo_11_on_the_moon, 
+  clonds_from_a_plane_20070703_0008: clonds_from_a_plane_20070703_0008,
+  crayons_by_diem_chau: crayons_by_diem_chau,
 }
 
 export default function Img({ src, alt = 'image alt text unavailable' }) {
