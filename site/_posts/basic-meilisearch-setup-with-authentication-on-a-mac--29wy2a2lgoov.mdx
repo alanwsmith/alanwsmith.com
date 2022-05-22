@@ -1,0 +1,225 @@
+---
+blurb: A basic Meilisearch install with auth via keychain access on a Mac
+categories:
+  - Meilisearch
+  - How-To
+date: 2022-05-22T14:08:49
+id: 29wy2a2lgoov
+status: draft
+type: post
+title: Basic Meilisearch Setup With Authentication On A Mac
+slug: basic-meilisearch-setup-with-authentication-on-a-mac--29wy2a2lgoov
+---
+
+The [official quick start](https://docs.meilisearch.com/learn/getting_started/quick_start.html) for Meilisearch doesn't include authentication. This post is a version of the quick start with authentication included. The details are for running on a mac and storing keys in the default macOS Keychain Access app for programmatic access. Other systems (or using plain text) for storing and uses the keys could be substituted as well. 
+
+
+## Install Meilisearch
+
+Install the Meilisearch software via Homebrew with:
+
+```bash
+brew update && brew install meilisearch
+```
+
+(There are [other installation options](https://docs.meilisearch.com/learn/getting_started/quick_start.html#step-1-setup-and-installation) as well)
+
+
+## Create A Root Key
+
+Create a new key in Keychain Access with a good random key value that will be used for the top level root key. (I use a space in front of commands that contain passwords and keys to keep them out of my command history via [this setting in zsh](https://superuser.com/a/352858))
+
+
+```bash
+ security add-generic-password -a YOUR_USERNAME -s meilisearch--root-key -w SOME_GOOD_KEY
+```
+
+_Note: The Meilisearch documentation calls the key a master key. I use the term 'root' instead_
+
+
+## Create A Startup Script
+
+To make it easier to start meilisearch with the main/master key and some other params, I use this script named `meilisearch-startup.bash`
+
+
+```bash
+#!/bin/bash 
+
+export MEILI_MASTER_KEY=$(security find-generic-password -w -a YOUR_USERNAME -s meilisearch--root-key)
+export MEILI_HTTP_ADDR=127.0.0.1:7700
+export MEILI_ENV=development
+export MEILI_DB_PATH=./data-ms
+export MEILI_NO_ANALYTICS=true
+
+meilisearch
+```
+
+Change permissions on the script to make it executable:
+
+
+```bash
+chmod u+x meilisearch-startup.bash
+```
+
+Then, run the script in the terminal with this command (NOTE: The first time you run this you'll be asked for your for your main user account password one or two times. Enter it and click 'Always Allow' so you don't have to enter it every time)
+
+```bash
+./meilisearch-startup.bash
+```
+
+The server will startup and show a basic splash screen in the terminal window
+
+
+## Get Search and Admin API Keys
+
+The Main/Master key you created above and used to start the server should not be used for anything other than getting the two keys that will be used to run and query the system. 
+
+Those keys are the Search Key which is a public key. And, the Admin Key which should be kept private and only used internally to manage the Meilisearch server and indexes
+
+The terminal command to get the Search and Admin keys is:
+
+```bash
+curl \
+    -X GET 'http://127.0.0.1:7700/keys' \
+    -H "Authorization: Bearer $(security find-generic-password -w -a YOUR_USERNAME -s meilisearch--root-key)"
+```
+
+That command will return a JSON response that looks like:
+
+```json
+{
+  "results": [
+    {
+      "description": "Default Search API Key (Use it to search from the frontend)",
+      "key": "RANDOM_SEARCH_KEY_VALUE",
+      "actions": [
+        "search"
+      ],
+      "indexes": [
+        "*"
+      ],
+      "expiresAt": null,
+      "createdAt": "2022-05-22T17:35:31.190234Z",
+      "updatedAt": "2022-05-22T17:35:31.190234Z"
+    },
+    {
+      "description": "Default Admin API Key (Use it for all other operations. Caution! Do not use it on a public frontend)",
+      "key": "RANDOM_ADMIN_KEY_VALUE",
+      "actions": [
+        "*"
+      ],
+      "indexes": [
+        "*"
+      ],
+      "expiresAt": null,
+      "createdAt": "2022-05-22T17:35:31.190015Z",
+      "updatedAt": "2022-05-22T17:35:31.190015Z"
+    }
+  ]
+}
+```
+
+Grab the `RANDOM_SEARCH_KEY_VALUE` and `RANDOM_ADMIN_KEY_VALUE` and add them to Keychain Access with:
+
+```bash
+ security add-generic-password -a YOUR_USERNAME -s meilisearch--search-key -w RANDOM_SEARCH_KEY_VALUE_FROM_JSON
+```
+
+and
+
+```bash
+ security add-generic-password -a YOUR_USERNAME -s meilisearch--admin-key -w RANDOM_ADMIN_KEY_VALUE_FROM_JSON
+```
+
+
+---
+
+### Create An Index Via JSON
+
+Indexes can be [created manually](https://docs.meilisearch.com/reference/api/indexes.html#create-an-index) or automatically by uploading documents (which are the things to search). Following the same format at the official quick start, we'll do the latter. 
+
+Download this sample file: [movies.json](https://docs.meilisearch.com/movies.json) 
+
+You can get it with this command:
+
+```bash
+curl https://docs.meilisearch.com/movies.json --output movies.json
+```
+
+The structure of the `movies.json` file is an array of objects that look like:
+
+```json
+{
+  "id": "287947",
+  "title": "Shazam!",
+  "poster": "https://image.tmdb.org/t/p/w500/xnopI5Xtky18MPhK40cZAGAOVeV.jpg",
+  "overview": "A boy is given the ability to become an adult superhero in times of need with a single magic word.",
+  "release_date": 1553299200,
+  "genres": ["Action", "Comedy", "Fantasy"]
+}
+```
+
+
+Add the data to Meilisearch (and implicitly create the index) with this command:
+
+```bash
+curl \
+  -X POST 'http://127.0.0.1:7700/indexes/movies/documents' \
+  -H 'Content-Type: application/json' \
+  -H "Authorization: Bearer $(security find-generic-password -w -a YOUR_USERNAME -s meilisearch--admin-key)" \
+  --data-binary @movies.json
+```
+
+(The name of the index will be `movies` since the url path started with `indexes/movies`)
+
+Meilisearch handles adding the documents asynchronously in the background. Check the status with:
+
+```bash
+curl \
+	-H "Authorization: Bearer $(security find-generic-password -w -a YOUR_USERNAME -s meilisearch--admin-key)" \
+	-X GET 'http://localhost:7700/indexes/movies/tasks/0'
+```
+
+Everything is ready when you see `"status":"succeeded"` in the response.
+
+
+## Searching Via Website
+
+Now that the index is setup and populated you can access the local web page to search. 
+
+Go to: [http://localhost:7700](http://localhost:7700) and enter your admin API Key. 
+
+If you don't still have the JSON up with the Admin Key, you can get it inside the Keychain Access GUI app by searching for meilisearch, or use this command to get it:
+
+```bash
+security find-generic-password -w -a YOUR_USERNAME -s meilisearch--admin-key
+```
+
+Play around with the search to see how fast it is with the 19K+ movies
+
+
+## Searching Programatically
+
+Programatic searches use the Search Key. A curl command to run a search looks like this:
+
+
+```bash
+curl \
+  	-X POST 'http://127.0.0.1:7700/indexes/movies/search' \
+  	-H 'Content-Type: application/json' \
+	-H "Authorization: Bearer $(security find-generic-password -w -a YOUR_USERNAME -s meilisearch--search-key)" \
+    --data-binary '{ "q": "botman" }'
+```
+
+Running that will return a JSON response with details on all the hits.
+
+
+## Next Steps
+
+
+That has the basics up and running. For the next step, check out the [Official Meilisearch 101 Documentation](https://docs.meilisearch.com/learn/getting_started/filtering_and_sorting.html). You can also check out [all the official SDKs](https://docs.meilisearch.com/learn/what_is_meilisearch/sdks.html) the Meilisearch offers for integration. 
+
+It still blows me away that something this fast and powerful is open source. Kudos to the folks how made and maintain it.
+
+
+  

@@ -37,6 +37,7 @@ export default function BlogList({ posts }) {
               alphabetical list of posts on the site. Click around and see if
               you find something you like.
             </p>
+
             <div className="max-w-prose pt-4 border-t border-gray-400 text-blue-200">
               <ul>
                 {posts.map((post, index) => (
@@ -59,6 +60,7 @@ export async function getStaticProps({ params }) {
   const posts = fs
     .readdirSync(contentDir)
     .filter((filePath) => /\.mdx?$/.test(filePath))
+    .sort() // TODO figure this out
     .map((filePath) => {
       const slug = filePath.replace(/\.mdx$/, '')
       const { content, data } = matter(

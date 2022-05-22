@@ -1,0 +1,156 @@
+---
+blurb: ""
+categories:
+  - Miscellaneous
+date: 2022-05-16T22:46:13
+id: 29h2dvkwtf3e
+status: scratch
+type: post
+title: My Basic Emails Setup Process
+slug: my-basic-emails-setup-process--29h2dvkwtf3e
+---
+
+There are notes on what I did to setup emacs via spacemacs on my mac (lots of macs there)
+
+Installed emacs with:
+
+```
+brew install emacs
+```
+
+then ran this to get Spacemacs config stuff in place
+
+```
+git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+```
+
+via: https://www.spacemacs.org/#
+
+---
+
+Setup to use 'vim' style in the initial setup (I don't remember the text of it)
+
+
+---
+
+Edit ~/.spacemacs
+
+
+Added all this to `dotspacemacs-configuration-layers`
+
+- org - for org mode
+- python - for python to work in org mode via babble 
+- javascript - for javascript to work in org mode via babble
+
+
+Tried `osx` to get the option key to work as the meta key but it didn't work. 
+
+Instead, I used this in iTerm2
+
+Preferences > Profiles > Keys > Left Option Key 
+
+And set it to: `Esc+`
+
+(Did `Esc+` instead of `Meta` based on the [emacs wiki](https://www.emacswiki.org/emacs/MetaKeyProblems#h5o-15))
+
+
+---
+
+To get javascript code blocks working in code blocks use `js` instead of `javascript`
+
+e.g.
+
+```
+#+begin_src js
+```
+
+or this to see the output that prints to the console
+
+```
+#+begin_src js :results output
+```
+
+---
+
+Added `afternoon` as the first item under `dotspacemacs-themes` to use that theme
+
+(This did not require adding the [Themes Megabuck layer](https://develop.spacemacs.org/layers/+themes/themes-megapack/README.html))
+
+---
+
+Considering: changing these from `SPC` to `,` to set the leader to the comma:
+
+```
+dotspacemacs-leader-key
+dotspacemacs-emacs-leader-key
+```
+
+
+---
+
+
+Added deft for nvalt style stuff (hopefully) by adding 
+
+```
+deft
+```
+
+to 
+
+```
+dotspacemacs-configuration-layers
+```
+
+---
+
+Set:
+
+```lisp
+(defun dotspacemacs/user-config ()
+    ...
+)
+```
+
+To
+
+```lisp
+(defun dotspacemacs/user-config ()
+  (setq org-confirm-babel-evaluate nil)
+  (setq deft-directory "~/Desktop/Grimoire")
+  (require 'org-tempo)
+)
+```
+
+---
+
+The `(require 'org-tempo)` was what got it working so you can type `<s` then TAB as a snippet that auto-expands into a source block
+
+Via [this](https://github.com/syl20bnr/spacemacs/issues/11798#issuecomment-504739959) and the note that I missed in [the docs](https://orgmode.org/manual/Structure-Templates.html)
+
+
+
+---
+
+
+Removed `helm` and added `compleseus` to `dotspacemacs-configuration-layers`
+
+Then added this in the `define dotspacemacs/user-config` section
+
+```
+(compleseus :variables
+            compleseus-engine 'selectrum)
+```
+
+This is a goal to get a dynamic completion setup for `comlpeting-read` in the mini buffer to use for the grimoire (with the dynamic update it doesn't seem like there's a way to use an external search)
+
+
+---
+
+Note: installed `brew install ripgrep` to see about using `rg` with: https://manueluberti.eu/emacs/2020/02/22/ripgrepping-with-helm/ 
+
+Not actually doing that, but keeping it here as a note for the process
+
+---
+
+
+

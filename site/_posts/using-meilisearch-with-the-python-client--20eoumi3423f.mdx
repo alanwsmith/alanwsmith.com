@@ -58,7 +58,7 @@ Use the private key to create the index like this:
 import meilisearch 
 
 
-private_key = 'd78d875b6d7128d0438311e26f8dd9c8580c34290bb00df311fde646f11e3b99'
+private_key = '123412341234123412341234123412341234'
 
 client = meilisearch.Client(
             'http://127.0.0.1:7700', 
@@ -88,6 +88,9 @@ documents = [
 index.add_documents(documents)
 ```
 
+
+- NOTE: ids might need to be numbers
+
 (It looks like you can add a document with the same id multiple times and it'll just overwrite each time)
 
 
@@ -100,7 +103,7 @@ Then, search using the public key
 import meilisearch
 
 
-public_key = '8778c64242aa209cb81906cb29e7dac36b765c1cc704010df0ed4e7899926f43'
+public_key = '1234123412341234123412341234123412341234'
 
 client = meilisearch.Client(
             'http://127.0.0.1:7700', 

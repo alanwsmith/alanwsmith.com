@@ -1,0 +1,51 @@
+---
+blurb: ""
+categories:
+  - Miscellaneous
+date: 2022-05-18T23:16:34
+id: 29mka1vyfeba
+status: scratch
+type: post
+title: Setting Up Org Mode Source Code Block Snippets In Spacemacs (Emacs)
+slug: setting-up-org-mode-source-code-block-snippets-in-spacemacs-emacs--29mka1vyfeba
+---
+
+Took a bit to figure this one out. The goal it to setup snippets that auto expand into Org mode source code blocks. By default, you can type "SPC m i b s" when you're not in edit mode to generate a generic source code block like this:
+
+```txt
+#+begin_src
+#+end_src
+```
+
+That's a lot of keys and you still have to define the language and any other options. I made the following additions to the `defun dotspacemacs/user-config` section at the bottom of my `~/.spacemacs` config file to make it nicer.
+
+```lisp
+(defun dotspacemacs/user-config ()
+  (require 'org-tempo)
+  (add-to-list 'org-structure-template-alist
+               '("j" . "src js :results output"))
+  (add-to-list 'org-structure-template-alist
+               '("p" . "src python :results output"))
+)
+```
+
+The `(require 'org-tempo)` line turns on some default snippet expansions like `<s` followed by TAB at the start of a line (in INSERT mode) for the basic begin/end src block. 
+
+The `add-to-list` items let me type `<j` followed by TAB and `<p` followed by a TAB to generate:
+
+
+```txt
+#+begin_src js :results output
+
+#+end_src
+```
+
+and
+
+```txt
+#+begin_src python :results output
+
+#+end_src
+```
+
+
