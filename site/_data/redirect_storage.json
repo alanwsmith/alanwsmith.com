@@ -14020,9 +14020,10 @@
         "/posts/21fzm1jjodkg--mdxjs-loader-install",
         "/21fzm1jjodkg",
         "/posts/21fzm1jjodkg",
-        "/posts/mdx-js-loader-install--21fzm1jjodkg"
+        "/posts/mdx-js-loader-install--21fzm1jjodkg",
+        "/posts/could-not-get-mdx-js-loader-to-work--21fzm1jjodkg"
       ],
-      "redirect_to": "/posts/mdx-js-loader-install--21fzm1jjodkg"
+      "redirect_to": "/posts/could-not-get-mdx-js-loader-to-work--21fzm1jjodkg"
     },
     "21ksduspp3xt": {
       "redirect_from": [
@@ -15674,9 +15675,10 @@
         "/23qrlwhb8tam",
         "/posts/23qrlwhb8tam",
         "/posts/23qrlwhb8tam--install-prism-syntax-highlighting-in-nextjs-with-line-numbers",
-        "/posts/add-line-numbers-to-prismjs-code-blocks-in-a-next-js-project--23qrlwhb8tam"
+        "/posts/add-line-numbers-to-prismjs-code-blocks-in-a-next-js-project--23qrlwhb8tam",
+        "/posts/add-line-numbers-to-prismjs-syntax-highlighting-code-blocks-in-a-next-js-project--23qrlwhb8tam"
       ],
-      "redirect_to": "/posts/add-line-numbers-to-prismjs-code-blocks-in-a-next-js-project--23qrlwhb8tam"
+      "redirect_to": "/posts/add-line-numbers-to-prismjs-syntax-highlighting-code-blocks-in-a-next-js-project--23qrlwhb8tam"
     },
     "23ofrngohupu": {
       "redirect_from": [
@@ -16787,6 +16789,76 @@
       "redirect_from": [
         "/29g6tr9ul6kw",
         "/posts/responsive-images-in-hugo--29g6tr9ul6kw"
+      ]
+    },
+    "29oa1fwtd60o": {
+      "redirect_to": "/posts/dump-redshift-data-to-a-single-csv-file-in-s3-with-unload--29oa1fwtd60o",
+      "redirect_from": [
+        "/29oa1fwtd60o",
+        "/posts/dump-redshift-data-to-a-single-csv-file-in-s3-with-unload--29oa1fwtd60o"
+      ]
+    },
+    "29h2dvkwtf3e": {
+      "redirect_to": "/posts/my-basic-emails-setup-process--29h2dvkwtf3e",
+      "redirect_from": [
+        "/29h2dvkwtf3e",
+        "/posts/my-basic-emails-setup-process--29h2dvkwtf3e"
+      ]
+    },
+    "29iynwzbalt3": {
+      "redirect_to": "/posts/emacs-commands-to-start-out--29iynwzbalt3",
+      "redirect_from": [
+        "/29iynwzbalt3",
+        "/posts/emacs-commands-to-start-out--29iynwzbalt3"
+      ]
+    },
+    "29mka1vyfeba": {
+      "redirect_to": "/posts/setting-up-org-mode-source-code-block-snippets-in-spacemacs-emacs--29mka1vyfeba",
+      "redirect_from": [
+        "/29mka1vyfeba",
+        "/posts/setting-up-org-mode-source-code-block-snippets-in-spacemacs-emacs--29mka1vyfeba"
+      ]
+    },
+    "29hpnnfe5amr": {
+      "redirect_to": "/posts/spacemacs-themes-for-emacs--29hpnnfe5amr",
+      "redirect_from": [
+        "/29hpnnfe5amr",
+        "/posts/spacemacs-themes-for-emacs--29hpnnfe5amr"
+      ]
+    },
+    "29rxxc0r7ovj": {
+      "redirect_to": "/posts/close-a-window-in-emacs--29rxxc0r7ovj",
+      "redirect_from": [
+        "/29rxxc0r7ovj",
+        "/posts/close-a-window-in-emacs--29rxxc0r7ovj"
+      ]
+    },
+    "29ry8lsbcyfw": {
+      "redirect_to": "/posts/kill-delete-a-buffer-in-emacs--29ry8lsbcyfw",
+      "redirect_from": [
+        "/29ry8lsbcyfw",
+        "/posts/kill-delete-a-buffer-in-emacs--29ry8lsbcyfw"
+      ]
+    },
+    "29rivzqweykw": {
+      "redirect_to": "/posts/emacs-notes--29rivzqweykw",
+      "redirect_from": [
+        "/29rivzqweykw",
+        "/posts/emacs-notes--29rivzqweykw"
+      ]
+    },
+    "29rfkcgmhse0": {
+      "redirect_to": "/posts/eval-an-emacs-lisp-buffer-or-expression-to-reload-it--29rfkcgmhse0",
+      "redirect_from": [
+        "/29rfkcgmhse0",
+        "/posts/eval-an-emacs-lisp-buffer-or-expression-to-reload-it--29rfkcgmhse0"
+      ]
+    },
+    "29wy2a2lgoov": {
+      "redirect_to": "/posts/basic-meilisearch-setup-with-authentication-on-a-mac--29wy2a2lgoov",
+      "redirect_from": [
+        "/29wy2a2lgoov",
+        "/posts/basic-meilisearch-setup-with-authentication-on-a-mac--29wy2a2lgoov"
       ]
     }
   }

@@ -1,0 +1,38 @@
+---
+blurb: Getting a CSV out of Redshift without having to assemble parts
+categories:
+  - AWS
+  - Redshift
+  - SQL
+date: 2022-05-19T14:52:51
+id: 29oa1fwtd60o
+status: published
+type: post
+title: Dump Redshift Data To A Single CSV File In S3 With UNLOAD
+slug: dump-redshift-data-to-a-single-csv-file-in-s3-with-unload--29oa1fwtd60o
+---
+
+
+```sql
+unload ('SELECT * FROM schema_name.table_name')
+to 's3://bucket_name/folder_name/output.csv_' 
+iam_role 'arn:aws:iam::123456789012:role/RoleName'
+allowoverwrite
+parallel off;
+```
+
+This will dump the file to:
+
+```txt
+s3://bucket_name/folder_name/output.csv_000
+```
+
+### Notes
+
+- By default, the output separator is the `|` character instead of a comma. If you need a comma, or some other character, you can change it with the `delimiter` option (e.g. `delimiter ','`)
+- To make a tab delimited file, us `delimiter as '\t'`
+- The `allowoverwrite` will let Redshift overwrite the file each time the SQL is run.
+- The `parallel off` is what tells Redshift to a single file instead of creating multiple files.
+- As of May 2022, there isn't a way to dump a CSV file and have it land with a `.csv` extension directly. It always adds the `000` part number
+- If the file is larger than 6.2GB another file will be created at every 6.2GB of size interval
+
